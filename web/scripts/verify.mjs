@@ -73,9 +73,75 @@ function wcagInPage() {
   return { lum, contrast, effectiveBg }
 }
 
-/** 开一个干净的页面，收集控制台错误 */
-async function open(mode = 'dark') {
-  const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } })
+/**
+ * 浅色模式全站扫一遍，返回低于地板的文字。
+ *
+ * 两件事和 wcagInPage 不同，都是被坑出来的：
+ *  1. color-mix() 算出来是 color(srgb r g b / a)，三个分量是 0–1 浮点。
+ *     用 /[\d.]+/g 抓会当成 0–255 读，得到一个近乎全黑的假背景——
+ *     我据此误判过导航文字"对比度只有 2.37"。
+ *  2. 半透明背景必须逐层合成。导航是 color-mix(... 88%, transparent)，
+ *     只看自己不合成，拿到的不是真实底色。
+ * 这个函数整段跑在页面里，所以直接传给 page.evaluate，不走 new Function。
+ */
+function lightScanInPage() {
+  const parse = (s) => {
+    s = String(s).trim()
+    const cs = s.match(/^color\(srgb\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)(?:\s*\/\s*([\d.]+))?\)/)
+    if (cs) return [+cs[1] * 255, +cs[2] * 255, +cs[3] * 255, cs[4] === undefined ? 1 : +cs[4]]
+    const n = (s.match(/[\d.]+/g) || []).map(Number)
+    if (s.startsWith('rgb(')) return [n[0], n[1], n[2], 1]
+    if (s.startsWith('rgba(')) return [n[0], n[1], n[2], n[3] === undefined ? 1 : n[3]]
+    return null
+  }
+  const lum = (c) => {
+    const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4) }
+    return 0.2126 * f(c[0]) + 0.7152 * f(c[1]) + 0.0722 * f(c[2])
+  }
+  const over = (fg, bg) => { const a = fg[3]; return [0, 1, 2].map((i) => Math.round(fg[i] * a + bg[i] * (1 - a))) }
+  const effBg = (el) => {
+    let n = el
+    while (n && n !== document.documentElement) {
+      const p = parse(getComputedStyle(n).backgroundColor)
+      if (p) {
+        if (p[3] > 0.95) return p.slice(0, 3)
+        if (p[3] > 0) return over(p, effBg(n.parentElement))
+      }
+      n = n.parentElement
+    }
+    const b = parse(getComputedStyle(document.body).backgroundColor)
+    return b ? b.slice(0, 3) : [255, 255, 255]
+  }
+  const FLOOR = 2.8
+  const out = []
+  for (const el of document.querySelectorAll('body *')) {
+    const txt = [...el.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent.trim()).join('')
+    if (!txt) continue
+    const cs = getComputedStyle(el)
+    if (cs.visibility === 'hidden' || cs.display === 'none' || +cs.opacity === 0) continue
+    const r = el.getBoundingClientRect()
+    if (r.width < 2 || r.height < 2) continue
+    const fg = parse(cs.color)
+    if (!fg) continue
+    const bg = effBg(el)
+    const [hi, lo] = [lum(fg), lum(bg)].sort((a, b) => b - a)
+    const ratio = +(((hi + 0.05) / (lo + 0.05)).toFixed(2))
+    if (ratio >= FLOOR) continue
+    const cls = typeof el.className === 'string' && el.className.trim()
+      ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.')
+      : ''
+    out.push({ ratio, sel: el.tagName.toLowerCase() + cls, txt: txt.slice(0, 14), color: cs.color, size: cs.fontSize })
+  }
+  const seen = new Map()
+  for (const w of out) if (!seen.has(w.sel) || seen.get(w.sel).ratio > w.ratio) seen.set(w.sel, w)
+  return [...seen.values()].sort((a, b) => a.ratio - b.ratio).slice(0, 5)
+}
+
+/** 开一个干净的页面，收集控制台错误。
+ *  opts 透传给 newPage——只给需要它的检查：reducedMotion 会把过渡压成瞬时，
+ *  量到的才是落定色；但动效那条检查恰恰要看动画，所以不能全局开。 */
+async function open(mode = 'dark', opts = {}) {
+  const p = await browser.newPage({ viewport: { width: 1440, height: 1000 }, ...opts })
   p.__errors = []
   p.on('pageerror', (e) => p.__errors.push(String(e).slice(0, 200)))
   p.on('console', (m) => { if (m.type() === 'error') p.__errors.push(m.text().slice(0, 200)) })
@@ -164,8 +230,34 @@ check('contrast: 门口的逐行依据卡（暗场）', async () => {
     : ok(`${r.条数} 条　行名 ${r.行名}:1　依据 ${r.依据}:1　标记 ${r.标记}:1`)
 })
 
-check('geometry: 朱批印不与文字重叠', async () => {
-  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+/* 浅色模式的灾难性地板。
+   这一类已经踩过三次：门口依据卡的纸面色 #4e4840（1.91:1）、
+   .sys-note 写死的 #9fb0bd（1.85:1）、--cang 没有浅色值却被当正文色（2.62:1）。
+   共同点是「暗场的颜色留在浅底上」——渲染层不报错，肉眼才知道。
+   2.8 是地板不是目标：--su-mute 那类刻意压弱的层级落在 3.0 附近，
+   抬不抬是设计取舍，不该由这条检查替用户决定。 */
+check('contrast: 浅色模式全站文字（灾难性地板 2.8:1）', async () => {
+  // reducedMotion：.nav .links a 之类有 transition，不等落定量到的是插值中间色，
+  // 报出来的是假数（我见过 a 1.41:1 这种），检查会飘
+  const p = await open('light', { reducedMotion: 'reduce' })
+  const all = []
+  for (const url of ['/', '/p/jingke', '/p/jingke/01-yanwei']) {
+    await p.goto(`${BASE}${url}`, { waitUntil: 'networkidle' })
+    await p.evaluate(() => document.body.classList.contains('light-stage')
+      || document.body.classList.add('light-stage'))
+    await p.waitForTimeout(250)
+    for (const w of await p.evaluate(lightScanInPage)) all.push({ url, ...w })
+  }
+  await p.close()
+  const uniq = new Map()
+  for (const w of all) if (!uniq.has(w.sel) || uniq.get(w.sel).ratio > w.ratio) uniq.set(w.sel, w)
+  const worst = [...uniq.values()].sort((a, b) => a.ratio - b.ratio)
+  return worst.length
+    ? fail(worst.slice(0, 4).map((w) => `${w.sel} ${w.ratio}:1（${w.size}「${w.txt}」${w.color}）`).join('；'))
+    : ok('3 个页面，无一处低于 2.8:1')
+})
+
+check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate(() => {
     const card = document.querySelector('.story-card.ready')

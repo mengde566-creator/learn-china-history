@@ -114,8 +114,15 @@ body.light-stage{
   --stage-rule:   rgba(43,40,35,.22);
   --stage-emerge: #14120f;
   --stage-halo:   rgba(255,255,255,0);
-  --accent:       #4d6b7a;
-  --accent-soft:  rgba(77,107,122,.3);
+
+  /* --cang 和 --zhe 原先没有浅色值，但它们被当作正文色用
+     （.seed-view .q 提问、.opening .when 时间戳、.badge、.mk-doubt），
+     压在米底上只有 2.6–2.9:1。这里按暗场的对称关系补齐：
+     暗场是 --accent: var(--cang)，浅色照写。 */
+  --cang:   #45606e;
+  --zhe:    #7d5828;
+  --accent: var(--cang);
+  --accent-soft:  rgba(69,96,110,.3);
   --beat-dim:     .4;
   --beat-rule:    rgba(43,40,35,.09);
   --text-strong:  #14120f;
@@ -126,6 +133,12 @@ body.light-stage{
   --paper-hover:  #eae5d8;
   --paper-edge:   rgba(0,0,0,.11);
 }
+
+/* 墨痕滤镜的 defs 容器。
+   内联 <svg> 不给宽高，浏览器按默认 300×150 排——它会变成导航上方一整条空白。
+   不能用 display:none（部分浏览器会连带失效被引用的 filter），
+   用 position:absolute + 0 尺寸：不占布局，仍可被 url(#id) 引用。 */
+.svg-defs{position:absolute;width:0;height:0;overflow:hidden}
 
 /* ══════════════════════════════════════════════
    导航
@@ -178,8 +191,13 @@ body.light-stage{
 .mk-source{color:var(--zhu)}
 .mk-infer {color:var(--cang)}
 .mk-doubt {color:var(--zhe)}
+/* 「—」和另外三个不一样。◆ ○ △ 用的是会随主题翻转的色，
+   而 --mo-mute 是纸面色——纸在两套主题下都是纸，它不翻。
+   Marker 同时用在纸面（背景卡的标记）和暗场（门口图例、铺陈行），
+   所以这里必须按表面分：不分的后果是浅色模式下 2.75:1（校验抓到的）。 */
 .mk-silent{color:var(--mo-mute)}
-.on-dark .mk-silent{color:var(--su-mute)}
+.note-box .mk-silent,
+.opening  .mk-silent{color:var(--su-mute)}
 
 /* 标记图例 */
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0;font-size:12px;color:var(--su-dim);letter-spacing:.03em}
@@ -500,7 +518,7 @@ body.light-stage{
 .sys-note{
   margin-top:22px;padding:13px 16px;border-radius:3px;
   background:rgba(125,154,168,.07);border-left:2px solid rgba(125,154,168,.4);
-  font-family:var(--f-mono);font-size:12px;line-height:1.85;color:#9fb0bd;
+  font-family:var(--f-mono);font-size:12px;line-height:1.85;color:var(--accent);
   white-space:pre-wrap;
 }
 .seed-meta{margin-top:26px;padding-top:18px;border-top:1px solid var(--xuan-4)}
@@ -550,7 +568,7 @@ body.light-stage{
 .opening{
   max-width:640px;margin:60px auto;padding:56px 48px;
   background:
-    radial-gradient(120% 90% at 50% 0%, #1c2430 0%, transparent 55%),
+    radial-gradient(120% 90% at 50% 0%, var(--stage-glow-1) 0%, transparent 55%),
     var(--xuan-2);
   border:1px solid var(--xuan-4);border-radius:4px;
   text-align:center;
