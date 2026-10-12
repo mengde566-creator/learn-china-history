@@ -1,0 +1,854 @@
+/* ══════════════════════════════════════════════════════════════
+   观史 · 设计系统
+   从 design/style-tile.html 移植。核心命题：
+   屏幕上同时存在「入戏的场景」和「可核查的史料」，
+   它们必须一眼可分，又不能割裂。
+   ══════════════════════════════════════════════════════════════ */
+
+:root{
+  /* ── 色彩母题：易水 ───────────────────────── */
+  --xuan:   #101318;   /* 玄 · 暗场最深底 */
+  --xuan-2: #171b22;   /* 场景面 */
+  --xuan-3: #212630;   /* 抬起面 */
+  --xuan-4: #2a313d;   /* 边框 */
+  --su:     #ece7dd;   /* 素 · 暗场主文字（牙白） */
+  --su-dim: #8d949e;   /* 暗场次要 */
+  --su-mute:#5c636e;   /* 暗场最弱 */
+
+  --cang:   #7d9aa8;   /* 苍 · 易水的冷青 */
+  --zhu:    #b8402f;   /* 朱 · 朱批 */
+  --zhe:    #a97c4a;   /* 赭 · 竹简暖褐 */
+
+  --zhi:    #f7f4ec;   /* 纸 · 查账面 */
+  --zhi-2:  #efe9dc;
+  --zhi-3:  #e4dccc;
+  --mo:     #2b2823;   /* 墨 · 纸面主文字 */
+  --mo-dim: #6f685c;
+  --mo-mute:#9a9086;
+
+  /* ── 字体语义：宋 = 那个时代 / 楷 = 你 / 黑 = 工具 ── */
+  --f-song: "Songti SC","STSong","Noto Serif SC","SimSun",serif;
+  --f-kai:  "Kaiti SC","STKaiti","KaiTi","Noto Serif SC",serif;
+  --f-hei:  "PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono: ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+
+  --ease: cubic-bezier(.2,.7,.3,1);
+  --nav-h: 56px;
+
+  /* ── 场景区专用（暗场）。
+     这些必须走变量——写死的话浅色模式会坏：
+     深色渐变留在浅底上，而台词色是白的，等于白字白底。 */
+  --stage-glow-1: #1c2430;
+  --stage-glow-2: #1a1f27;
+  --stage-haze:   rgba(125,154,168,.05);
+  --stage-rule:   rgba(236,231,221,.28);
+  --stage-emerge: #ffffff;
+  --stage-halo:   rgba(236,231,221,.13);
+  --accent:       var(--cang);
+  --accent-soft:  rgba(125,154,168,.35);
+  --beat-dim:     .28;
+  --beat-rule:    rgba(255,255,255,.055);
+
+  /* 当前表面上最亮的正文色。暗场是白，浅色是近黑——
+     写死 #fff 会在浅色模式下变成白底白字。 */
+  --text-strong:  #ffffff;
+
+  /* 纸面：卡片是一张纸，不是一块面板。
+     纸在两种模式下都是纸——在暗场里它是"亮的物体"。
+     实测：纸面对暗底 9.7:1，卡片一眼就是实体。
+     （反面：暗色卡片对暗底只有 1.3:1，卡片几乎不存在。） */
+  --paper:        #e7e2d7;
+  --paper-hover:  #dbd5c7;   /* ≈ 6% 压暗，数字藏经洞的悬停强度 */
+  --paper-ink:    #26231e;
+  --paper-ink-2:  #4a4438;
+  --paper-ink-3:  #605949;
+  --paper-edge:   rgba(0,0,0,.16);
+  /* 墨痕 */
+  --ink:          var(--zhu);
+}
+
+
+/* 「閱」单独一个分片。批阅的本字——
+   皇帝在奏折上批「閱」就是"看过了、准了"，它天然是"选中"的语义。
+   只用这一个字，所以只带 52.9 KB 的那一片。 */
+/* 印章用字。字体是构建时子集化的，不是用 fontsource 的现成分片——
+   字表在 config/seal-chars.txt，一个字表，一条命令，一个文件。
+   加字不用查"哪个分片里有它"，改字表跑 npm run font 就行。 */
+@font-face{
+  font-family:'Guanshi Seal';
+  src:url('/fonts/seal.woff2') format('woff2');
+  font-display:block;
+  font-weight:400;font-style:normal;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth}
+
+body{
+  background:var(--xuan);
+  color:var(--su);
+  font-family:var(--f-hei);
+  line-height:1.6;
+  min-height:100vh;
+}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+
+/* ── 全局浅色（照顾长时间暗色阅读疲劳）
+   注意：这不只是换底色，而是把整个场景区改成纸面感。
+   凡是只换变量、不动硬编码颜色的做法，都会做出白字白底。 */
+body.light-stage{
+  --xuan:   #e7e2d7;
+  --xuan-2: #f4f0e7;
+  --xuan-3: #e2dccf;
+  --xuan-4: #d0c8b8;
+  --su:     #2b2823;
+  --su-dim: #5f594f;
+  --su-mute:#8a8177;
+
+  --stage-glow-1: #ffffff;
+  --stage-glow-2: #f1ece1;
+  --stage-haze:   rgba(169,124,74,.05);
+  --stage-rule:   rgba(43,40,35,.22);
+  --stage-emerge: #14120f;
+  --stage-halo:   rgba(255,255,255,0);
+  --accent:       #4d6b7a;
+  --accent-soft:  rgba(77,107,122,.3);
+  --beat-dim:     .4;
+  --beat-rule:    rgba(43,40,35,.09);
+  --text-strong:  #14120f;
+  --ink:          #8a3a2c;
+
+  /* 浅色模式下页面本身就是米黄，卡片要更亮一档才分得出来 */
+  --paper:        #f6f2e8;
+  --paper-hover:  #eae5d8;
+  --paper-edge:   rgba(0,0,0,.11);
+}
+
+/* ══════════════════════════════════════════════
+   导航
+   ══════════════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:50;height:var(--nav-h);
+  display:flex;align-items:center;gap:22px;
+  padding:0 28px;
+  background:color-mix(in srgb, var(--xuan) 88%, transparent);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--xuan-4);
+}
+.nav .brand{font-family:var(--f-song);font-size:17px;letter-spacing:.24em;padding-right:6px}
+.nav .links{display:flex;gap:4px;margin-left:auto}
+.nav .links a{
+  font-size:12.5px;letter-spacing:.1em;color:var(--su-dim);
+  padding:7px 13px;border-radius:3px;transition:all .25s var(--ease);
+}
+.nav .links a:hover{color:var(--su);background:var(--xuan-3)}
+.nav .links a[aria-current="page"]{color:var(--su);background:var(--xuan-3)}
+.nav .tag{
+  font-size:10.5px;letter-spacing:.14em;color:var(--su-mute);
+  border:1px solid var(--xuan-4);border-radius:2px;padding:3px 8px;
+}
+.nav .theme{
+  font-size:11.5px;color:var(--su-dim);letter-spacing:.08em;
+  padding:6px 11px;border:1px solid var(--xuan-4);border-radius:3px;
+  transition:all .25s var(--ease);
+}
+.nav .theme:hover{color:var(--su);border-color:var(--su-mute)}
+
+/* ══════════════════════════════════════════════
+   通用容器
+   ══════════════════════════════════════════════ */
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.wrap-narrow{max-width:820px;margin:0 auto;padding:0 28px}
+
+.page-head{padding:52px 0 30px}
+.page-head h1{
+  font-family:var(--f-song);font-size:30px;font-weight:600;
+  letter-spacing:.16em;margin-bottom:12px;
+}
+.page-head .sub{font-size:13px;color:var(--su-dim);letter-spacing:.04em;line-height:1.9;max-width:56em}
+.page-head .sub b{color:var(--su);font-weight:500}
+
+/* ══════════════════════════════════════════════
+   标记　◆ 出自原文 · ○ 合理推演 · △ 存疑 · — 史书的沉默
+   ══════════════════════════════════════════════ */
+.mk{font-size:12px;line-height:1;font-family:var(--f-hei)}
+.mk-source{color:var(--zhu)}
+.mk-infer {color:var(--cang)}
+.mk-doubt {color:var(--zhe)}
+.mk-silent{color:var(--mo-mute)}
+.on-dark .mk-silent{color:var(--su-mute)}
+
+/* 标记图例 */
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0;font-size:12px;color:var(--su-dim);letter-spacing:.03em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend b{font-weight:400}
+/* 全局规则说一次就够，不逐条重复 */
+.global-note{
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--beat-rule);
+  font-size:11.5px;line-height:1.8;color:var(--su-mute);letter-spacing:.02em;
+}
+
+/* ══════════════════════════════════════════════
+   双面 · 明暗即语义
+   ══════════════════════════════════════════════ */
+.face{
+  display:grid;grid-template-columns:minmax(0,1fr) 356px;
+  border:1px solid var(--xuan-4);border-radius:4px;
+  min-height:620px;
+  transition:box-shadow .5s var(--ease);
+}
+/* overflow:hidden 会破坏 sticky，所以圆角交给子元素各自处理 */
+.stage{border-radius:4px 0 0 4px}
+.face.dim .stage{filter:brightness(.4) saturate(.65);transform:scale(.988)}
+
+/* ── 桌面：阅读器布局（左右各自固定，左侧独立滚动）
+   为什么不用 sticky：sticky 只能在包含块内吸住。场景高 1800px+、面板 940px，
+   面板吸到 scrollY≈890 就被包含块底边推走——读到后三分之一右侧就空了。
+   这正是「对照起来费劲、而且是断的」的成因。 */
+@media (min-width:1081px){
+  .face{
+    height:calc(100vh - var(--nav-h) - 28px);
+    min-height:520px;
+    overflow:hidden;
+  }
+  .stage{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+  .panel{min-height:0}
+}
+
+/* ── 暗场：场景区 ─────────────────────────── */
+.stage{
+  position:relative;
+  background:
+    radial-gradient(120% 90% at 50% 0%, var(--stage-glow-1) 0%, transparent 55%),
+    radial-gradient(80% 60% at 15% 100%, var(--stage-glow-2) 0%, transparent 60%),
+    var(--xuan-2);
+  padding:46px 50px 0;
+  display:flex;flex-direction:column;
+  transition:filter .6s var(--ease),transform .6s var(--ease);
+  min-width:0;
+}
+.stage::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,var(--stage-haze) 38%,var(--stage-haze) 52%,transparent 70%);
+}
+.stage > *{position:relative;z-index:1}
+
+.scene-meta{
+  font-size:11.5px;letter-spacing:.22em;color:var(--accent);opacity:.85;
+  margin-bottom:32px;display:flex;align-items:center;gap:12px;
+}
+.scene-meta::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--accent-soft),transparent)}
+
+/* 叙述：宋体 —— 史书在说话 */
+.narration{
+  font-family:var(--f-song);font-size:17.5px;line-height:2.15;
+  color:var(--su);letter-spacing:.03em;max-width:34em;
+}
+.narration p{margin-bottom:1.4em}
+.narration .quiet{color:var(--su-dim);font-size:16px}
+.narration .gap{height:1.2em}
+
+/* 人物浮现：无框、无气泡、无头像 */
+.emerge{
+  font-family:var(--f-song);font-size:18px;line-height:2.1;
+  color:var(--stage-emerge);letter-spacing:.04em;max-width:32em;
+  margin:1.8em 0 0 .3em;padding-left:22px;position:relative;
+  text-shadow:0 0 26px var(--stage-halo);
+}
+.emerge::before{
+  content:"";position:absolute;left:0;top:.55em;bottom:.55em;width:1px;
+  background:linear-gradient(180deg,transparent,var(--stage-rule),transparent);
+}
+.who{
+  display:block;font-family:var(--f-hei);font-size:11px;letter-spacing:.24em;
+  color:var(--su-dim);margin-bottom:.85em;
+}
+.emerge cite{display:block;font-style:normal;font-size:20px;letter-spacing:.1em;color:var(--stage-emerge);margin:.45em 0}
+
+/* 你的声音：楷体 */
+.inner-voice{
+  font-family:var(--f-kai);font-size:17px;line-height:2;letter-spacing:.05em;
+  color:var(--su-dim);margin:2.4em 0 0 auto;max-width:26em;
+  padding-left:22px;border-left:1px solid var(--accent-soft);
+}
+.inner-voice .who{color:var(--accent);opacity:.9}
+
+/* 依据入口：默认极轻，但预告内容 */
+.ground{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--f-hei);font-size:11px;letter-spacing:.14em;
+  color:var(--su-mute);margin-top:15px;padding:5px 10px 5px 7px;
+  border-radius:3px;transition:all .25s var(--ease);
+}
+.ground:hover{color:var(--su);background:rgba(128,128,128,.1)}
+.ground b{font-weight:400;font-size:9.5px;line-height:1;opacity:.85;transition:opacity .25s var(--ease)}
+.ground:hover b{opacity:1}
+.ground .g-source{color:var(--zhu);text-shadow:0 0 10px rgba(184,64,47,.5)}
+.ground .g-infer {color:var(--cang)}
+.ground .g-doubt {color:var(--zhe)}
+.ground .g-silent{color:var(--su-mute)}
+.ground .sep{opacity:.25;margin:0 1px}
+/* 依据入口直接标出对应哪段原文，不用点开就知道 */
+.ground .src-id{
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;
+  color:var(--su-mute);opacity:.75;margin-left:5px;
+  border:1px solid var(--beat-rule);border-radius:2px;padding:1px 4px;
+}
+
+/* 提问栏 */
+.ask{
+  margin-top:auto;padding:26px 0 32px;
+  position:sticky;bottom:0;
+  background:linear-gradient(180deg,transparent,var(--xuan-2) 30%);
+}
+.ask-btn{
+  width:100%;text-align:left;
+  border-top:1px solid var(--xuan-4);padding-top:16px;
+  font-family:var(--f-kai);font-size:16.5px;color:var(--su-mute);
+  display:flex;align-items:center;gap:10px;
+  transition:color .25s var(--ease);
+}
+.ask-btn:hover{color:var(--accent)}
+.ask-btn .caret{width:1.5px;height:20px;background:var(--accent);animation:blink 1.15s steps(1) infinite;flex:none}
+.ask-btn .hint{margin-left:auto;font-family:var(--f-hei);font-size:11px;letter-spacing:.12em;color:var(--su-mute)}
+/* 还没有对话种子时的占位——不用一个点了没反应的按钮 */
+.ask-empty{
+  border-top:1px solid var(--xuan-4);padding-top:16px;
+  font-size:12px;letter-spacing:.1em;color:var(--su-mute);
+}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* ── 纸面：侧栏 ───────────────────────────── */
+.panel{
+  position:relative;background:var(--xuan-3);
+  border-left:1px solid var(--xuan-4);border-radius:0 4px 4px 0;
+  min-width:0;
+  display:flex;flex-direction:column;
+}
+
+/* 页签：依据 / 原文 / 背景 / 映射 / 在场 */
+.panel-tabs{
+  flex:none;display:flex;gap:1px;
+  border-bottom:1px solid var(--xuan-4);
+  background:var(--xuan-3);
+}
+.panel-tabs button{
+  flex:1;padding:11px 2px;font-size:11px;letter-spacing:.06em;
+  color:var(--su-mute);transition:all .22s var(--ease);
+  border-bottom:2px solid transparent;
+}
+.panel-tabs button:hover{color:var(--su)}
+.panel-tabs button[aria-current="true"]{color:var(--su);border-bottom-color:var(--accent)}
+.panel-tabs button .dot{
+  display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--accent);margin-left:4px;vertical-align:middle;
+}
+.panel-body{flex:1;position:relative;min-height:0}
+
+.panel-face{position:absolute;inset:0;overflow-y:auto;padding:26px 24px 40px}
+.panel-face.paper{background:var(--zhi);color:var(--mo);font-family:var(--f-hei)}
+.panel-face h3{
+  font-size:11px;letter-spacing:.24em;color:var(--su-dim);
+  font-weight:400;margin-bottom:16px;
+}
+.panel-face.paper h3{color:var(--mo-dim)}
+
+/* 全景卡片 */
+.view-card{
+  border:1px solid var(--xuan-4);border-radius:3px;padding:14px 16px;margin-bottom:10px;
+  transition:all .25s var(--ease);cursor:pointer;text-align:left;width:100%;display:block;
+}
+.view-card:hover{border-color:var(--su-mute);background:var(--xuan-4)}
+.view-card .t{font-family:var(--f-song);font-size:15px;letter-spacing:.08em;margin-bottom:4px;color:var(--su)}
+.view-card .d{font-size:12px;color:var(--su-dim);letter-spacing:.02em;line-height:1.7}
+.view-card.off{opacity:.42;cursor:not-allowed}
+.view-card.off:hover{border-color:var(--xuan-4);background:none}
+.view-card .soon{font-size:10px;letter-spacing:.14em;color:var(--su-mute);border:1px solid var(--xuan-4);border-radius:2px;padding:1px 5px;margin-left:6px}
+
+.present{margin-top:24px;padding-top:20px;border-top:1px solid var(--xuan-4)}
+.present h4{font-size:11px;letter-spacing:.24em;color:var(--su-dim);font-weight:400;margin-bottom:12px}
+.person{display:flex;align-items:center;gap:10px;padding:6px 0}
+.person .dot{width:5px;height:5px;border-radius:50%;background:var(--cang);flex:none}
+.person .n{font-family:var(--f-song);font-size:14.5px;letter-spacing:.06em}
+.person .r{font-size:11.5px;color:var(--su-dim);letter-spacing:.02em}
+.person.dead .dot{background:var(--su-mute)}
+.person.dead .n{color:var(--su-mute);text-decoration:line-through;text-decoration-color:var(--su-mute)}
+
+/* 依据面板内容 */
+.paper .lead{
+  font-family:var(--f-song);font-size:15px;color:var(--mo);letter-spacing:.05em;
+  line-height:1.85;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid var(--zhi-3);
+}
+.mark-block{padding:14px 0;border-bottom:1px solid var(--zhi-3)}
+.mark-block:last-child{border-bottom:none}
+.mark-block .hd{display:flex;align-items:baseline;gap:9px;margin-bottom:8px}
+.mark-block .label{font-size:12.5px;letter-spacing:.14em;font-weight:500}
+.mark-block .src{font-size:11px;color:var(--mo-dim);letter-spacing:.04em;margin-left:auto}
+.mark-block.source .glyph,.mark-block.source .label{color:var(--zhu)}
+.mark-block.infer  .glyph,.mark-block.infer  .label{color:var(--cang)}
+.mark-block.doubt  .glyph,.mark-block.doubt  .label{color:var(--zhe)}
+.mark-block.silent .glyph,.mark-block.silent .label{color:var(--mo-mute)}
+.mark-block .quote{
+  font-family:var(--f-song);font-size:14.5px;line-height:1.95;color:var(--mo);
+  letter-spacing:.04em;background:rgba(184,64,47,.045);
+  border-left:2px solid rgba(184,64,47,.4);padding:9px 13px;margin:9px 0;
+}
+.mark-block .body{font-size:13px;line-height:1.95;color:#4e4840;letter-spacing:.02em;white-space:pre-wrap}
+.mark-block .body em{font-style:normal;color:var(--zhu);border-bottom:1px dotted rgba(184,64,47,.5)}
+.mark-block .body code{
+  font-family:var(--f-mono);font-size:11.5px;background:rgba(0,0,0,.05);
+  padding:1px 5px;border-radius:2px;color:var(--mo-dim);
+}
+
+.panel-close{
+  position:absolute;top:16px;right:16px;z-index:2;
+  font-size:16px;line-height:1;color:var(--su-dim);padding:6px 9px;border-radius:3px;
+  transition:all .25s var(--ease);
+}
+.panel-close:hover{color:var(--su);background:var(--xuan-4)}
+
+/* ══════════════════════════════════════════════
+   情节点推进
+   ══════════════════════════════════════════════ */
+/* 场景区里的段落不带任何编号或标题。
+   「情节点 3」这种是分镜表上的词，不是易水边会发生的事——
+   把它显示出来会立刻把人从场景里拽出来。段落之间只留呼吸。 */
+.beats{display:flex;flex-direction:column}
+.beat{padding:30px 0;opacity:var(--beat-dim);transition:opacity .5s var(--ease)}
+.beat + .beat{border-top:1px solid var(--beat-rule)}
+.beat.active,.beat.read{opacity:1}
+
+/* 推进按钮：只有一个词 + 几个点。
+   原来写「继续 · 下一个情节点（3 / 5）」——进度用点表示，不用制作术语。 */
+.continue{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:18px;
+  padding:15px;border:1px solid var(--xuan-4);border-radius:3px;
+  transition:all .25s var(--ease);
+}
+.continue:hover{border-color:var(--su-mute);background:rgba(128,128,128,.06)}
+.continue .word{font-size:12px;letter-spacing:.3em;color:var(--su-dim);transition:color .25s var(--ease)}
+.continue:hover .word{color:var(--su)}
+.continue .dots{display:flex;gap:5px}
+.continue .dots i{width:5px;height:5px;border-radius:50%;background:var(--xuan-4);transition:background .35s var(--ease)}
+.continue .dots i.on{background:var(--accent)}
+/* ══════════════════════════════════════════════
+   浮现动画
+   ══════════════════════════════════════════════ */
+@keyframes emerge{
+  from{opacity:0;filter:blur(7px);transform:translateY(12px)}
+  to  {opacity:1;filter:blur(0);transform:none}
+}
+@keyframes fade-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.anim-emerge{animation:emerge 1.3s var(--ease) backwards}
+.anim-fade{animation:fade-up .5s var(--ease) backwards}
+.d1{animation-delay:.25s}.d2{animation-delay:.5s}.d3{animation-delay:.75s}.d4{animation-delay:1s}.d5{animation-delay:1.25s}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+
+/* ══════════════════════════════════════════════
+   提问面板（覆盖层）
+   ══════════════════════════════════════════════ */
+.sheet{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(8,10,13,.72);backdrop-filter:blur(6px);
+  display:flex;align-items:flex-end;justify-content:center;
+  animation:fade-up .28s var(--ease);
+}
+.sheet-inner{
+  width:min(1080px,100%);max-height:88vh;
+  background:var(--xuan-2);border:1px solid var(--xuan-4);
+  border-radius:6px 6px 0 0;display:flex;flex-direction:column;overflow:hidden;
+}
+.sheet-head{
+  padding:22px 28px 16px;border-bottom:1px solid var(--xuan-4);
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.sheet-head h2{font-family:var(--f-song);font-size:17px;letter-spacing:.14em;font-weight:600}
+.sheet-head .note{font-size:11.5px;color:var(--su-dim);letter-spacing:.03em}
+.sheet-head .x{margin-left:auto;font-size:17px;color:var(--su-dim);padding:6px 10px;border-radius:3px}
+.sheet-head .x:hover{color:var(--su);background:var(--xuan-3)}
+.sheet-body{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:0;flex:1}
+
+.seed-nav{border-right:1px solid var(--xuan-4);overflow-y:auto;padding:16px 0}
+.seed-nav .grp{
+  font-size:10.5px;letter-spacing:.2em;color:var(--su-mute);
+  padding:14px 22px 7px;
+}
+.seed-nav button{
+  display:block;width:100%;text-align:left;
+  font-family:var(--f-song);font-size:13.5px;line-height:1.65;letter-spacing:.02em;
+  color:var(--su-dim);padding:9px 22px 9px 18px;
+  border-left:2px solid transparent;transition:all .2s var(--ease);
+}
+.seed-nav button:hover{color:var(--su);background:rgba(255,255,255,.03)}
+.seed-nav button[aria-current="true"]{color:var(--su);border-left-color:var(--cang);background:rgba(125,154,168,.08)}
+
+.seed-view{overflow-y:auto;padding:32px 34px 44px;min-width:0}
+.seed-view .q{
+  font-family:var(--f-kai);font-size:17px;letter-spacing:.05em;color:var(--cang);
+  padding-left:20px;border-left:1px solid rgba(125,154,168,.35);margin-bottom:26px;
+}
+.seed-view .a p{
+  font-family:var(--f-song);font-size:18px;line-height:2.1;letter-spacing:.04em;
+  color:var(--text-strong);margin-bottom:.7em;text-shadow:0 0 24px var(--stage-halo);
+}
+.seed-view .a .stage-dir{color:var(--su-dim);font-size:16px}
+.sys-note{
+  margin-top:22px;padding:13px 16px;border-radius:3px;
+  background:rgba(125,154,168,.07);border-left:2px solid rgba(125,154,168,.4);
+  font-family:var(--f-mono);font-size:12px;line-height:1.85;color:#9fb0bd;
+  white-space:pre-wrap;
+}
+.seed-meta{margin-top:26px;padding-top:18px;border-top:1px solid var(--xuan-4)}
+.seed-meta .row{display:flex;gap:14px;padding:7px 0;font-size:12.5px;line-height:1.85}
+.seed-meta .k{color:var(--su-mute);letter-spacing:.1em;flex:none;width:66px}
+.seed-meta .v{color:var(--su-dim)}
+.seed-meta .v code{
+  font-family:var(--f-mono);font-size:11.5px;background:rgba(255,255,255,.06);
+  padding:1px 5px;border-radius:2px;
+}
+.seed-meta .v b{color:var(--su);font-weight:500}
+
+/* ══════════════════════════════════════════════
+   复习卡
+   ══════════════════════════════════════════════ */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:8px}
+.card{
+  background:var(--zhi);color:var(--mo);border-radius:4px;padding:24px 26px;
+  display:flex;flex-direction:column;
+}
+.card .tag{font-size:10px;letter-spacing:.2em;color:var(--zhu);margin-bottom:13px}
+.card .q{font-family:var(--f-song);font-size:16px;line-height:1.85;letter-spacing:.04em;margin-bottom:16px}
+.card .a{
+  font-size:12.5px;line-height:1.95;color:#514a41;letter-spacing:.02em;
+  padding-top:14px;border-top:1px solid var(--zhi-3);margin-top:auto;
+}
+.card .a b{color:var(--zhu);font-weight:500}
+.card .a code{font-family:var(--f-mono);font-size:11px;background:rgba(0,0,0,.05);padding:1px 4px;border-radius:2px}
+.mini-table{
+  width:100%;border-collapse:collapse;margin:.5em 0 .9em;font-size:12px;
+}
+.mini-table th{
+  text-align:left;font-weight:500;color:var(--mo-mute);font-size:10.5px;letter-spacing:.12em;
+  padding:5px 8px 5px 0;border-bottom:1px solid var(--zhi-3);
+}
+.mini-table td{
+  padding:5px 8px 5px 0;border-bottom:1px solid var(--zhi-3);color:#514a41;vertical-align:top;
+}
+.mini-table tr:last-child td{border-bottom:none}
+.card-hint{
+  margin-top:14px;font-size:11.5px;color:var(--su-mute);letter-spacing:.06em;text-align:center;
+}
+
+/* ══════════════════════════════════════════════
+   情境铺陈 / 入口
+   ══════════════════════════════════════════════ */
+.opening{
+  max-width:640px;margin:60px auto;padding:56px 48px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, #1c2430 0%, transparent 55%),
+    var(--xuan-2);
+  border:1px solid var(--xuan-4);border-radius:4px;
+  text-align:center;
+}
+.opening .when{font-size:11.5px;letter-spacing:.24em;color:var(--cang);margin-bottom:34px}
+.opening .lines{
+  font-family:var(--f-song);font-size:18px;line-height:2.3;letter-spacing:.05em;
+  color:var(--su);margin-bottom:40px;
+}
+.opening .lines p{margin-bottom:1.1em}
+.opening .lines .dim{color:var(--su-dim)}
+.opening .cta{
+  display:inline-block;font-size:13px;letter-spacing:.2em;
+  color:var(--su);border:1px solid var(--su-mute);border-radius:3px;
+  padding:13px 34px;transition:all .3s var(--ease);
+}
+.opening .cta:hover{background:var(--su);color:var(--xuan);border-color:var(--su)}
+
+/* 封面：进入故事前当背景用，压一层暗色遮罩保证文字可读。
+   没有图时这些元素根本不渲染，布局不受影响。 */
+.opening.has-img{position:relative;overflow:hidden;max-width:820px}
+.opening-bg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:.72;
+}
+.opening-veil{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(16,19,24,.62) 0%, rgba(16,19,24,.44) 42%, rgba(16,19,24,.86) 100%);
+}
+.opening.has-img .when,
+.opening.has-img .lines,
+.opening.has-img .cta{position:relative;z-index:1}
+
+/* 单段插图位：内容里填了「图」才出现 */
+.beat-figure{margin:26px 0 4px;max-width:34em}
+.beat-figure img{
+  display:block;width:100%;height:auto;border-radius:3px;
+  border:1px solid var(--xuan-4);background:var(--xuan-3);
+}
+.beat-figure figcaption{
+  margin-top:10px;font-size:11.5px;letter-spacing:.06em;
+  color:var(--su-mute);line-height:1.7;
+}
+
+/* 人物画像 */
+.portrait{
+  float:right;width:180px;margin:0 0 20px 28px;
+  border:1px solid var(--xuan-4);border-radius:3px;overflow:hidden;
+}
+.portrait img{display:block;width:100%;height:auto}
+@media (max-width:640px){.portrait{float:none;width:100%;margin:0 0 20px}}
+
+/* 故事卡缩略图 */
+.story-card .thumb{
+  width:74px;height:48px;border-radius:2px;object-fit:cover;flex:none;
+  border:1px solid var(--xuan-4);opacity:.8;
+}
+
+/* 首页场景卡 */
+.scene-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.scene-card{
+  border:1px solid var(--xuan-4);border-radius:4px;padding:22px 24px;
+  transition:all .28s var(--ease);display:block;
+}
+.scene-card:hover{border-color:var(--su-mute);background:var(--xuan-2);transform:translateY(-2px)}
+.scene-card .n{font-size:10.5px;letter-spacing:.2em;color:var(--su-mute);margin-bottom:9px}
+.scene-card .t{font-family:var(--f-song);font-size:18px;letter-spacing:.1em;margin-bottom:9px}
+.scene-card .q{font-size:12.5px;color:var(--su-dim);line-height:1.8;margin-bottom:13px}
+.scene-card .m{font-size:11px;color:var(--su-mute);letter-spacing:.04em}
+.scene-card.ready{border-color:rgba(125,154,168,.35)}
+.scene-card.ready:hover{border-color:var(--cang)}
+.scene-card.locked{opacity:.42;cursor:not-allowed}
+.scene-card.locked:hover{transform:none;border-color:var(--xuan-4);background:none}
+
+/* ══════════════════════════════════════════════
+   设置页
+   ══════════════════════════════════════════════ */
+.set-row{
+  display:flex;align-items:flex-start;gap:24px;
+  padding:24px 0;border-bottom:1px solid var(--xuan-4);
+}
+.set-row:last-child{border-bottom:none}
+.set-row .info{flex:1;min-width:0}
+.set-row .info h3{font-size:14px;letter-spacing:.06em;margin-bottom:7px;font-weight:500}
+.set-row .info p{font-size:12.5px;color:var(--su-dim);line-height:1.85;letter-spacing:.02em}
+.set-row .info p code{
+  font-family:var(--f-mono);font-size:11.5px;background:var(--xuan-3);
+  padding:1px 5px;border-radius:2px;
+}
+.set-row .ctrl{flex:none;padding-top:2px}
+
+.switch{
+  position:relative;width:46px;height:26px;border-radius:14px;
+  background:var(--xuan-4);transition:background .3s var(--ease);
+}
+.switch::after{
+  content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;
+  background:var(--su-dim);transition:all .3s var(--ease);
+}
+.switch[aria-checked="true"]{background:rgba(125,154,168,.35)}
+.switch[aria-checked="true"]::after{left:23px;background:var(--cang)}
+.switch:disabled{opacity:.4;cursor:not-allowed}
+
+.badge{
+  display:inline-block;font-size:10.5px;letter-spacing:.14em;
+  border-radius:2px;padding:3px 9px;
+}
+.badge.off{color:var(--su-mute);border:1px solid var(--xuan-4)}
+.badge.on{color:var(--cang);border:1px solid rgba(125,154,168,.4)}
+.badge.plan{color:var(--zhe);border:1px solid rgba(169,124,74,.4)}
+
+.note-box{
+  margin-top:22px;padding:18px 20px;border-radius:4px;
+  background:var(--xuan-2);border:1px solid var(--xuan-4);
+  font-size:12.5px;color:var(--su-dim);line-height:1.95;
+}
+.note-box b{color:var(--su);font-weight:500}
+.note-box code{font-family:var(--f-mono);font-size:11.5px;background:var(--xuan-3);padding:1px 5px;border-radius:2px}
+
+/* 门口的逐行依据卡：复用 .mark-block 的形状，但它落在暗场上，
+   纸面那套配色（.body 写死 #4e4840）在这里会看不见，必须翻过来 */
+.note-box .mark-block{padding:11px 0;border-bottom-color:var(--xuan-4)}
+.note-box .mark-block .hd{margin-bottom:5px}
+.note-box .mark-block .label{flex:1;min-width:0;color:var(--su);font-size:12px;letter-spacing:.03em;font-weight:400}
+.note-box .mark-block .body{font-size:12px;line-height:1.9;color:var(--su-dim)}
+.note-box .mark-block .body code{background:var(--xuan-3);color:var(--su-dim)}
+
+/* ══════════════════════════════════════════════
+   总览 · 人物
+   ══════════════════════════════════════════════ */
+.crumbs{
+  font-size:11.5px;letter-spacing:.14em;color:var(--su-mute);
+  margin-bottom:14px;display:flex;gap:8px;align-items:center;
+}
+.crumbs a{color:var(--su-dim);transition:color .25s var(--ease)}
+.crumbs a:hover{color:var(--su)}
+
+/* 时代只是分组标签，不做成一级页面 */
+/* 时代做左栏，不做横贯的分节标题——
+   只有一个人时，横贯标题会让那一行空掉 3/4。 */
+.era-row{
+  display:grid;grid-template-columns:118px minmax(0,1fr);gap:30px;
+  align-items:start;padding:22px 0 26px;border-top:1px solid var(--beat-rule);
+}
+.era-row:first-of-type{border-top:none}
+.era-name{
+  font-family:var(--f-song);font-size:13px;letter-spacing:.2em;color:var(--su-dim);
+  padding-top:30px;white-space:nowrap;
+}
+.people-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:14px}
+/* 纸面卡：底色 + 纸纹，靠 multiply 混色进入（不是叠一层上去）。
+   纹理幅度实测 1.13%，和数字藏经洞/台北故宫同一个量级。 */
+.person-card{
+  position:relative;display:block;border-radius:3px;
+  padding:26px 28px 30px;
+  background-color:var(--paper);
+  background-image:url('/textures/paper.svg');
+  background-size:280px 280px;
+  background-blend-mode:multiply;
+  box-shadow:0 1px 0 var(--paper-edge), 0 10px 26px -14px rgba(0,0,0,.5);
+  transition:background-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+  overflow:hidden;
+}
+
+/* 朱批印：笔圈 + 「閱」。
+   不是纹样，是印章——古代批阅的形式，天生带"选中"的语义。
+   笔圈是自己划出来的（conic 遮罩扫一圈），不是淡入。 */
+.seal{
+  position:relative;display:inline-block;flex:none;
+  width:var(--seal,54px);height:var(--seal,54px);
+  --sweep:360deg;
+  -webkit-mask-image:conic-gradient(from -60deg, #000 0deg, #000 var(--sweep), transparent var(--sweep));
+          mask-image:conic-gradient(from -60deg, #000 0deg, #000 var(--sweep), transparent var(--sweep));
+}
+.seal img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.seal b{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Guanshi Seal',serif;font-weight:400;
+  font-size:calc(var(--seal,54px) * .52);
+  color:#a8342a;padding-bottom:calc(var(--seal,54px) * .03);
+  opacity:0;transition:opacity .2s var(--ease);
+}
+.seal.on b{opacity:1}
+
+/* 卡片右下角的印 */
+.story-card .seal{position:absolute;right:26px;top:50%;transform:translateY(-50%);--seal:52px}
+.person-card .seal{position:absolute;right:22px;bottom:18px;--seal:56px}
+
+/* .seal 要排除掉——它必须能绝对定位到角落，
+   不能被子元素这条规则强制成 relative。 */
+.person-card > *:not(.seal){position:relative;z-index:1}
+/* 悬停 = 6% 压暗的薄纱。不新增元素，只让纸变深一点。 */
+.person-card:hover{background-color:var(--paper-hover);transform:translateY(-2px);
+  box-shadow:0 1px 0 var(--paper-edge), 0 16px 34px -16px rgba(0,0,0,.62)}
+.person-card .nm{font-family:var(--f-song);font-size:22px;letter-spacing:.12em;margin-bottom:10px;color:var(--paper-ink)}
+.person-card .bk{font-size:12px;color:var(--paper-ink-2);letter-spacing:.02em;margin-bottom:14px}
+.person-card .mt{font-size:11.5px;color:var(--paper-ink-3);letter-spacing:.04em}
+.person-card .mt .ok{color:#7a3a2c}
+.person-card .mt .todo{color:var(--paper-ink-3)}
+/* 未开始的：不给它纸，也不给它块。
+   灰方块会跟可读的那张抢注意力——留一个淡淡的轮廓就够了。 */
+.person-card.locked{
+  background:none;box-shadow:none;cursor:default;
+  border:1px dashed var(--xuan-4);
+}
+.person-card.locked .nm{color:var(--su-mute)}
+.person-card.locked .bk{color:var(--su-mute);opacity:.6}
+.person-card.locked:hover{transform:none;background:none;border-color:var(--xuan-4)}
+
+/* ══════════════════════════════════════════════
+   人物页
+   ══════════════════════════════════════════════ */
+.sec-title{
+  font-family:var(--f-song);font-size:16px;letter-spacing:.16em;font-weight:600;
+  margin-bottom:18px;
+}
+.prose-block{max-width:44em}
+.prose-block p{
+  font-family:var(--f-song);font-size:16px;line-height:2.05;letter-spacing:.03em;
+  color:var(--su-dim);margin-bottom:1.15em;
+}
+.prose-block.why p{color:var(--su)}
+.prose-block.why p b,.prose-block p b{color:var(--su);font-weight:600}
+
+/* 故事列表是**一张纸**，不是八张。
+   八张纸叠在一起太重，而且未写的那几张会变成灰卡。
+   一页纸上写着八篇——这才是目录该有的样子。 */
+.story-list{
+  position:relative;          /* ::after 的 inset:0 需要它 */
+  border-radius:3px;overflow:hidden;
+  background-color:var(--paper);
+  background-image:url('/textures/paper.svg');
+  background-size:280px 280px;
+  background-blend-mode:multiply;
+  box-shadow:0 1px 0 var(--paper-edge), 0 14px 34px -18px rgba(0,0,0,.55);
+}
+.story-card{
+  position:relative;display:block;padding:22px 90px 22px 26px;
+  transition:background-color .3s var(--ease);
+  overflow:hidden;
+  border-bottom:1px solid rgba(0,0,0,.07);
+}
+.story-card:last-child{border-bottom:none}
+/* 卡片内容压在墨痕之上 */
+.story-card > *:not(.seal){position:relative;z-index:1}
+
+.story-card .q{
+  font-family:var(--f-song);font-size:17px;letter-spacing:.04em;color:var(--paper-ink);
+  margin-bottom:14px;
+}
+.story-card .nm{font-size:12px;letter-spacing:.16em;color:var(--paper-ink-2);margin-bottom:6px}
+.story-card .mt{font-size:11px;color:var(--paper-ink-3);letter-spacing:.03em}
+.story-card.ready{cursor:pointer}
+/* 悬停 = 6% 压暗的薄纱。不新增元素。 */
+.story-card.ready:hover{background-color:rgba(0,0,0,.06)}
+/* 未写的：把墨色调淡，而不是把整张卡变透明——
+   透明会让纸变成灰的。 */
+.story-card.locked .q{color:var(--paper-ink-3);opacity:.62}
+.story-card.locked .nm{opacity:.6}
+.story-card.locked .mt{opacity:.55}
+.story-card .badge-todo{
+  position:absolute;right:22px;top:50%;transform:translateY(-50%);
+  font-size:11px;letter-spacing:.16em;z-index:1;
+}
+/* 「进入」默认不显示，悬停才浮现——列表才安静 */
+.story-card .badge-todo{color:var(--paper-ink-3)}
+
+.timeline{border-left:1px solid var(--xuan-4);padding-left:22px;margin-left:6px}
+.tl-row{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:16px;padding:9px 0;align-items:baseline}
+.tl-time{font-size:11.5px;letter-spacing:.08em;color:var(--accent);font-variant-numeric:tabular-nums}
+.tl-event{font-size:13.5px;color:var(--su-dim);line-height:1.75}
+.tl-story{font-size:11px;letter-spacing:.06em;color:var(--su-mute);white-space:nowrap}
+
+/* 脚注：只陈述事实，不解释自己 */
+.footnote{
+  margin-top:16px;font-size:11.5px;line-height:1.9;
+  color:var(--su-mute);letter-spacing:.02em;max-width:46em;
+}
+.footnote b{color:var(--su-dim);font-weight:500}
+
+/* ══════════════════════════════════════════════
+   响应式
+   ══════════════════════════════════════════════ */
+@media (max-width:1080px){
+  .face{grid-template-columns:1fr}
+  .panel{border-left:none;border-top:1px solid var(--xuan-4);min-height:420px}
+  .panel-face{position:relative;inset:auto;max-height:60vh}
+  .sheet-body{grid-template-columns:1fr}
+  .seed-nav{border-right:none;border-bottom:1px solid var(--xuan-4);max-height:190px}
+}
+@media (max-width:640px){
+  .wrap,.wrap-narrow{padding:0 16px}
+  .stage{padding:30px 22px 0}
+  .narration{font-size:16.5px}
+  .emerge{font-size:17px}
+  .opening{padding:36px 24px;margin:24px auto}
+  .opening .lines{font-size:16.5px}
+  .nav{padding:0 16px;gap:12px}
+  .nav .tag{display:none}
+}

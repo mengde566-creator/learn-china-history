@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a3543"/>
+      <stop offset="42%" stop-color="#1d242e"/>
+      <stop offset="100%" stop-color="#11151b"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fb0c0" stop-opacity=".40"/>
+      <stop offset="100%" stop-color="#8fb0c0" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="72%" cy="20%" r="26%">
+      <stop offset="0%" stop-color="#e8eef2" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="#e8eef2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#moon)"/>
+  <circle cx="1150" cy="180" r="46" fill="#e8eef2" fill-opacity=".16"/>
+
+  <!-- 远山两重 -->
+  <path d="M0 566 L210 486 L392 552 L604 470 L836 560 L1064 492 L1300 558 L1600 508 L1600 900 L0 900 Z"
+        fill="#232c37" opacity=".9"/>
+  <path d="M0 624 L260 566 L520 618 L780 570 L1040 622 L1320 578 L1600 616 L1600 900 L0 900 Z"
+        fill="#1a2029" opacity=".95"/>
+
+  <!-- 水面 -->
+  <rect x="0" y="640" width="1600" height="260" fill="url(#water)"/>
+  <g stroke="#8fb0c0" stroke-opacity=".26" stroke-width="1.5" fill="none">
+    <path d="M-40 704 q130 -13 260 0 t260 0 t260 0 t260 0 t260 0 t260 0"/>
+    <path d="M-120 762 q150 -15 300 0 t300 0 t300 0 t300 0 t300 0"/>
+    <path d="M40 826 q130 -13 260 0 t260 0 t260 0 t260 0 t260 0"/>
+  </g>
+
+  <!-- 送行者：白衣冠 -->
+  <g fill="#f2eee6" fill-opacity=".62">
+    <ellipse cx="600" cy="654" rx="16" ry="36"/>
+    <ellipse cx="656" cy="658" rx="15" ry="34"/>
+    <ellipse cx="714" cy="656" rx="17" ry="37"/>
+    <ellipse cx="774" cy="660" rx="15" ry="34"/>
+    <ellipse cx="836" cy="657" rx="16" ry="36"/>
+  </g>
+  <g fill="#f2eee6" fill-opacity=".30">
+    <rect x="587" y="620" width="26" height="9" rx="4"/>
+    <rect x="644" y="625" width="24" height="8" rx="4"/>
+    <rect x="700" y="621" width="28" height="9" rx="4"/>
+    <rect x="762" y="626" width="24" height="8" rx="4"/>
+    <rect x="824" y="622" width="26" height="9" rx="4"/>
+  </g>
+
+  <!-- 车 -->
+  <g fill="#f2eee6" fill-opacity=".38">
+    <rect x="990" y="632" width="168" height="50" rx="7"/>
+    <circle cx="1026" cy="692" r="19"/>
+    <circle cx="1124" cy="692" r="19"/>
+  </g>
+
+  <!-- 高渐离的筑 -->
+  <g stroke="#f2eee6" stroke-opacity=".34" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M700 600 L700 578"/>
+    <path d="M690 586 L710 586"/>
+  </g>
+</svg>

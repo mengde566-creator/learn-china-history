@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240">
+  <!--
+    纸纹。程序生成，无版权问题。
+
+    两次湍流（横向 + 竖向）用 screen 混合，得到"乱向纤维"。
+    单向纤维会读成布纹或刷痕，均匀颗粒会读成砂纸——
+    只有交叉的才读作纸的牙口。
+
+    幅度是照着三个真实站点的实测调的：
+      数字藏经洞 menu_bai.png   标准差 1.15%  峰谷 5.4%
+      台北故宫 bg-paper.jpg     标准差 0.73%  峰谷 3.6%
+      本文件（实测）            标准差 0.59%  峰谷 2.8%
+
+    stitchTiles="stitch" 是无缝平铺的关键——没有它 background-repeat 会露接缝。
+    color-interpolation-filters="sRGB" 不能省——省了颜色会偏。
+  -->
+  <filter id="p" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9 0.12" numOctaves="3"
+                  seed="7" stitchTiles="stitch" result="a"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.12 0.9" numOctaves="3"
+                  seed="23" stitchTiles="stitch" result="b"/>
+    <feBlend in="a" in2="b" mode="screen" result="n"/>
+    <feColorMatrix in="n" type="matrix"
+      values="0 0 0 0.07  0.93
+              0 0 0 0.065 0.905
+              0 0 0 0.055 0.875
+              0 0 0 0     1"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#p)"/>
+</svg>

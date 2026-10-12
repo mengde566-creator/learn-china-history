@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>观史 · 视觉风格样张 v0.1</title>
+<style>
+/* ============================================================
+   观史 · 视觉风格样张
+   这是设计稿，不是产品。无功能、无数据、无 AI。
+   用途：判断风格方向是否正确。
+   ============================================================ */
+
+:root{
+  /* ── 色彩母题：易水 ────────────────────────── */
+  --xuan:   #101318;   /* 玄 · 暗场最深底 */
+  --xuan-2: #171b22;   /* 场景面 */
+  --xuan-3: #212630;   /* 抬起面 */
+  --su:     #ece7dd;   /* 素 · 暗场主文字（牙白） */
+  --su-dim: #8d949e;   /* 暗场次要文字 */
+  --cang:   #7d9aa8;   /* 苍 · 易水的冷青 */
+  --zhu:    #b8402f;   /* 朱 · 朱批，用于「出自原文」 */
+  --zhe:    #a97c4a;   /* 赭 · 竹简暖褐，用于「存疑」 */
+
+  --zhi:    #f7f4ec;   /* 纸 · 查账面 */
+  --zhi-2:  #efe9dc;   /* 纸 · 次层 */
+  --mo:     #2b2823;   /* 墨 · 纸面主文字 */
+  --mo-dim: #6f685c;   /* 纸面次要文字 */
+
+  /* ── 字体语义 ──────────────────────────────
+     宋 = 那个时代  楷 = 你  黑 = 工具与考据  */
+  --f-song: "Songti SC","STSong","Noto Serif SC","SimSun",serif;
+  --f-kai:  "Kaiti SC","STKaiti","KaiTi","Noto Serif SC",serif;
+  --f-hei:  "PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+
+  --ease: cubic-bezier(.2,.7,.3,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+body{
+  background:#0a0c0f;
+  color:var(--su);
+  font-family:var(--f-hei);
+  padding:0 0 120px;
+  min-height:100vh;
+}
+
+/* ══════════════════════════════════════════════
+   页头
+   ══════════════════════════════════════════════ */
+.tile-head{
+  padding:44px 56px 32px;
+  max-width:1240px;margin:0 auto;
+  display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
+}
+.tile-head h1{
+  font-family:var(--f-song);
+  font-size:26px;font-weight:600;letter-spacing:.16em;color:var(--su);
+}
+.tile-head .ver{
+  font-size:11px;letter-spacing:.14em;color:var(--su-dim);
+  border:1px solid #2c323c;border-radius:2px;padding:3px 8px;
+}
+.tile-head .warn{
+  font-size:12px;color:var(--zhe);letter-spacing:.04em;
+  margin-left:auto;
+}
+
+/* ══════════════════════════════════════════════
+   状态切换（样张专用控件）
+   ══════════════════════════════════════════════ */
+.switch{
+  max-width:1240px;margin:0 auto 18px;padding:0 56px;
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+}
+.switch button{
+  font-family:var(--f-hei);font-size:12.5px;letter-spacing:.08em;
+  color:var(--su-dim);background:transparent;
+  border:1px solid #2c323c;border-radius:2px;
+  padding:7px 15px;cursor:pointer;
+  transition:all .3s var(--ease);
+}
+.switch button:hover{color:var(--su);border-color:#454d5a}
+.switch button[aria-pressed="true"]{
+  color:var(--xuan);background:var(--su);border-color:var(--su);
+}
+.switch .hint{
+  font-size:12px;color:#5c636e;letter-spacing:.03em;margin-left:6px;
+}
+
+/* ══════════════════════════════════════════════
+   主体验：双面
+   ══════════════════════════════════════════════ */
+.device{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 340px;
+  border-radius:4px;overflow:hidden;
+  box-shadow:0 30px 90px rgba(0,0,0,.7), 0 0 0 1px #232831;
+  min-height:660px;
+  transition:box-shadow .6s var(--ease);
+}
+
+/* ── 场景区（暗场） ───────────────────────── */
+.stage{
+  position:relative;
+  background:
+    radial-gradient(120% 90% at 50% 0%, #1c2430 0%, transparent 55%),
+    radial-gradient(80% 60% at 15% 100%, #1a1f27 0%, transparent 60%),
+    var(--xuan-2);
+  padding:52px 58px 0;
+  display:flex;flex-direction:column;
+  transition:filter .7s var(--ease), transform .7s var(--ease), opacity .7s var(--ease);
+}
+/* 水汽：极淡的横向光带，呼应易水 */
+.stage::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,
+    transparent 0%, rgba(125,154,168,.05) 38%,
+    rgba(125,154,168,.02) 52%, transparent 70%);
+}
+
+.scene-meta{
+  font-family:var(--f-hei);font-size:11.5px;letter-spacing:.22em;
+  color:var(--cang);opacity:.75;margin-bottom:34px;
+  display:flex;align-items:center;gap:12px;
+}
+.scene-meta::after{
+  content:"";flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(125,154,168,.35),transparent);
+}
+
+.narration{
+  font-family:var(--f-song);
+  font-size:17.5px;line-height:2.15;color:var(--su);
+  letter-spacing:.03em;max-width:34em;
+}
+.narration p{margin-bottom:1.5em}
+.narration .quiet{color:var(--su-dim);font-size:16px}
+.narration.after{margin-top:2.2em}
+
+/* 无框浮现：人物的话长在场景里 */
+.emerge{
+  font-family:var(--f-song);
+  font-size:18px;line-height:2.1;letter-spacing:.04em;
+  color:#fff;
+  max-width:32em;
+  margin:2.2em 0 0 .4em;
+  padding-left:22px;
+  position:relative;
+  text-shadow:0 0 26px rgba(236,231,221,.13);
+}
+.emerge::before{
+  content:"";position:absolute;left:0;top:.55em;bottom:.55em;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(236,231,221,.28),transparent);
+}
+.emerge .who{
+  display:block;font-family:var(--f-hei);font-size:11px;letter-spacing:.24em;
+  color:var(--su-dim);margin-bottom:.9em;
+}
+.emerge cite{
+  display:block;font-style:normal;font-size:20px;
+  letter-spacing:.1em;color:#fff;margin:.5em 0;
+}
+
+/* 依据入口：极轻，不打断 */
+.ground{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--f-hei);font-size:11px;letter-spacing:.14em;
+  color:#545c68;margin-top:16px;cursor:pointer;
+  transition:color .3s var(--ease);
+}
+.ground:hover{color:#aeb7c2}
+/* 入口预告内容：有原文依据就亮一个朱点 */
+.ground b{
+  font-weight:400;font-size:9.5px;line-height:1;
+  opacity:.8;transition:opacity .3s var(--ease),text-shadow .3s var(--ease);
+}
+.ground:hover b{opacity:1}
+.ground .g-src{color:var(--zhu);text-shadow:0 0 10px rgba(184,64,47,.55)}
+.ground .g-inf{color:var(--cang)}
+.ground .g-dbt{color:var(--zhe)}
+.ground .sep{opacity:.25;margin:0 2px}
+
+/* 你的声音：楷体 */
+.inner-voice{
+  font-family:var(--f-kai);
+  font-size:17px;line-height:2;letter-spacing:.05em;
+  color:#b9c2cc;
+  margin:2.6em 0 0 auto;max-width:26em;
+  padding-left:22px;border-left:1px solid rgba(125,154,168,.35);
+}
+.inner-voice .who{
+  display:block;font-family:var(--f-hei);font-size:11px;letter-spacing:.24em;
+  color:var(--cang);opacity:.8;margin-bottom:.7em;
+}
+
+/* 提问栏 */
+.ask{
+  margin-top:auto;padding:26px 0 34px;
+}
+.ask-field{
+  border-top:1px solid #2a303a;
+  padding-top:18px;
+  font-family:var(--f-kai);font-size:16.5px;color:#6d757f;
+  display:flex;align-items:center;gap:10px;
+}
+.ask-field .caret{
+  width:1.5px;height:20px;background:var(--cang);
+  animation:blink 1.15s steps(1) infinite;
+}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* ── 侧栏（双面的另一面） ─────────────────── */
+.panel{
+  position:relative;
+  transition:background-color .7s var(--ease), color .7s var(--ease);
+  overflow:hidden;
+}
+.panel > .face{
+  position:absolute;inset:0;padding:34px 30px;
+  overflow-y:auto;
+  transition:opacity .45s var(--ease), transform .55s var(--ease);
+}
+
+/* 面一：全景层（暗） */
+.face.panorama{
+  background:var(--xuan-3);color:var(--su);
+}
+.face.panorama h3{
+  font-family:var(--f-hei);font-size:11px;letter-spacing:.24em;
+  color:var(--su-dim);font-weight:400;margin-bottom:20px;
+}
+.view-card{
+  border:1px solid #2f3742;border-radius:3px;
+  padding:16px 18px;margin-bottom:12px;
+  transition:border-color .3s var(--ease), background .3s var(--ease);
+  cursor:pointer;
+}
+.view-card:hover{border-color:#46505e;background:#262c36}
+.view-card .t{font-family:var(--f-song);font-size:15.5px;letter-spacing:.08em;margin-bottom:5px}
+.view-card .d{font-size:12px;color:var(--su-dim);letter-spacing:.03em;line-height:1.7}
+
+/* 人在这场景里 */
+.present{margin-top:26px;padding-top:22px;border-top:1px solid #2a303a}
+.present h4{
+  font-family:var(--f-hei);font-size:11px;letter-spacing:.24em;
+  color:var(--su-dim);font-weight:400;margin-bottom:14px;
+}
+.person{
+  display:flex;align-items:center;gap:11px;padding:7px 0;
+}
+.person .dot{
+  width:5px;height:5px;border-radius:50%;background:var(--cang);flex:none;
+}
+.person .n{font-family:var(--f-song);font-size:14.5px;letter-spacing:.06em}
+.person .r{font-size:11.5px;color:var(--su-dim);letter-spacing:.03em}
+
+/* 面二：依据层（纸） */
+.face.evidence{
+  background:var(--zhi);color:var(--mo);
+  opacity:0;transform:translateY(10px);pointer-events:none;
+  font-family:var(--f-hei);
+}
+.face.evidence h3{
+  font-size:11px;letter-spacing:.24em;color:var(--mo-dim);
+  font-weight:400;margin-bottom:6px;
+}
+.face.evidence .lead{
+  font-family:var(--f-song);font-size:15px;color:var(--mo);
+  letter-spacing:.05em;line-height:1.8;margin-bottom:22px;
+  padding-bottom:16px;border-bottom:1px solid #ded6c6;
+}
+
+.mark{
+  padding:15px 0;border-bottom:1px solid #e6dfd1;
+}
+.mark:last-of-type{border-bottom:none}
+.mark .hd{
+  display:flex;align-items:baseline;gap:9px;margin-bottom:8px;
+}
+.mark .glyph{font-size:13px;line-height:1}
+.mark .label{font-size:12.5px;letter-spacing:.14em;font-weight:500}
+.mark .src{font-size:11px;color:var(--mo-dim);letter-spacing:.04em;margin-left:auto}
+
+.mark.source .glyph,.mark.source .label{color:var(--zhu)}
+.mark.infer  .glyph,.mark.infer  .label{color:var(--cang)}
+.mark.doubt  .glyph,.mark.doubt  .label{color:var(--zhe)}
+
+.mark .quote{
+  font-family:var(--f-song);font-size:14.5px;line-height:1.95;
+  color:var(--mo);letter-spacing:.04em;
+  background:rgba(184,64,47,.045);
+  border-left:2px solid rgba(184,64,47,.4);
+  padding:9px 13px;margin:9px 0;
+}
+.mark .body{font-size:13px;line-height:1.95;color:#4e4840;letter-spacing:.02em}
+.mark .body em{
+  font-style:normal;color:var(--zhu);
+  border-bottom:1px dotted rgba(184,64,47,.5);
+}
+
+/* 双面状态 */
+.device[data-mode="evidence"] .stage{
+  filter:brightness(.36) saturate(.6);
+  transform:scale(.982);
+}
+.device[data-mode="evidence"] .face.panorama{
+  opacity:0;transform:scale(.97);pointer-events:none;
+}
+.device[data-mode="evidence"] .face.evidence{
+  opacity:1;transform:none;pointer-events:auto;
+}
+
+/* ── 浮现动画 ─────────────────────────────── */
+@keyframes emerge{
+  from{opacity:0;filter:blur(7px);transform:translateY(12px)}
+  to  {opacity:1;filter:blur(0);  transform:none}
+}
+.emerge,.ground{animation:emerge 1.5s var(--ease) backwards}
+.emerge{animation-delay:.5s}
+.ground{animation-delay:1.15s}
+.inner-voice{animation:emerge 1.4s var(--ease) .1s backwards}
+.replay .emerge,.replay .ground,.replay .inner-voice{animation:none}
+
+/* ══════════════════════════════════════════════
+   规范区
+   ══════════════════════════════════════════════ */
+.spec{max-width:1240px;margin:96px auto 0;padding:0 56px}
+.spec > h2{
+  font-family:var(--f-song);font-size:19px;font-weight:600;
+  letter-spacing:.14em;color:var(--su);margin-bottom:8px;
+}
+.spec > .sub{
+  font-size:12.5px;color:var(--su-dim);letter-spacing:.05em;
+  margin-bottom:34px;line-height:1.8;
+}
+.spec-block{
+  border:1px solid #222831;border-radius:4px;
+  padding:34px 36px;margin-bottom:22px;background:#0d1014;
+}
+.spec-block h4{
+  font-size:11px;letter-spacing:.24em;color:var(--cang);
+  font-weight:400;margin-bottom:24px;
+}
+
+/* 色板 */
+.swatches{display:flex;flex-wrap:wrap;gap:14px}
+.sw{flex:1 1 130px;min-width:130px}
+.sw .chip{height:74px;border-radius:2px;margin-bottom:10px;border:1px solid rgba(255,255,255,.07)}
+.sw .nm{font-family:var(--f-song);font-size:14px;letter-spacing:.1em;margin-bottom:3px}
+.sw .hx{font-size:10.5px;color:var(--su-dim);letter-spacing:.1em;font-family:ui-monospace,monospace}
+.sw .use{font-size:11px;color:#616873;margin-top:5px;line-height:1.6}
+
+/* 字体语义 */
+.typo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.typo-card{border:1px solid #232a33;border-radius:3px;padding:20px 22px}
+.typo-card .role{
+  font-family:var(--f-hei);font-size:10.5px;letter-spacing:.2em;
+  color:var(--cang);margin-bottom:14px;
+}
+.typo-card .sample{font-size:21px;line-height:1.7;letter-spacing:.04em;margin-bottom:12px}
+.typo-card .note{font-size:11.5px;color:var(--su-dim);line-height:1.75}
+.t-song .sample{font-family:var(--f-song);color:#fff}
+.t-kai  .sample{font-family:var(--f-kai);color:#c3ccd6}
+.t-hei  .sample{font-family:var(--f-hei);color:var(--su-dim);font-size:17px}
+
+/* 古籍模式 */
+.classical{
+  background:var(--zhi);border-radius:3px;padding:44px 40px;
+  display:flex;gap:44px;align-items:flex-start;
+  position:relative;overflow:hidden;
+}
+.classical::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg,rgba(120,100,70,.028) 0 1px,transparent 1px 4px),
+    radial-gradient(90% 70% at 20% 10%,rgba(169,124,74,.07),transparent 70%);
+}
+.vertical{
+  writing-mode:vertical-rl;text-orientation:upright;
+  font-family:var(--f-song);
+  font-size:17px;line-height:2.05;letter-spacing:.14em;
+  color:#2e2a24;height:330px;
+  position:relative;z-index:1;
+}
+.vertical .hl{
+  color:var(--zhu);
+  border-right:2px solid rgba(184,64,47,.45);
+  padding-right:2px;
+}
+.classical .anno{
+  font-family:var(--f-hei);font-size:12px;color:var(--mo-dim);
+  line-height:2;letter-spacing:.03em;max-width:230px;
+  position:relative;z-index:1;padding-top:6px;
+}
+.classical .anno b{color:var(--zhu);font-weight:500}
+.classical .anno .cap{
+  display:block;font-size:10.5px;letter-spacing:.2em;
+  color:#9a9086;margin-bottom:12px;
+}
+
+/* 复习卡 */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{
+  background:var(--zhi);border-radius:3px;padding:24px 26px;color:var(--mo);
+  position:relative;
+}
+.card .tag{
+  font-family:var(--f-hei);font-size:10px;letter-spacing:.2em;
+  color:var(--zhu);margin-bottom:14px;display:block;
+}
+.card .q{
+  font-family:var(--f-song);font-size:16px;line-height:1.85;
+  letter-spacing:.04em;margin-bottom:18px;
+}
+.card .a{
+  font-size:12.5px;line-height:1.95;color:#514a41;
+  padding-top:15px;border-top:1px solid #e4dccc;letter-spacing:.02em;
+}
+.card .a b{color:var(--zhu);font-weight:500}
+
+/* 说明列表 */
+.notes{list-style:none;font-size:13px;line-height:2.1;color:var(--su-dim)}
+.notes li{padding-left:20px;position:relative;margin-bottom:12px}
+.notes li::before{
+  content:"—";position:absolute;left:0;color:#3d4550;
+}
+.notes b{color:var(--su);font-weight:500}
+
+@media(max-width:1080px){
+  .device{grid-template-columns:1fr}
+  .panel{min-height:420px}
+  .typo,.cards{grid-template-columns:1fr}
+  .classical{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header class="tile-head">
+  <h1>观 史</h1>
+  <span class="ver">视觉风格样张 v0.1</span>
+  <span class="warn">← 这是设计稿，不是产品。无功能 · 无数据 · 无 AI</span>
+</header>
+
+<div class="switch">
+  <button id="btn-scene" aria-pressed="true">场景态 · 入戏</button>
+  <button id="btn-evidence" aria-pressed="false">依据态 · 查账</button>
+  <button id="btn-replay" aria-pressed="false">重播浮现</button>
+  <span class="hint">切换两个状态，看明暗如何承担语义</span>
+</div>
+
+<!-- ══════════ 主体验 ══════════ -->
+<div class="device" id="device" data-mode="scene">
+
+  <!-- 场景区 -->
+  <section class="stage" id="stage">
+    <div class="scene-meta">公元前 227 年 · 深秋 · 易水</div>
+
+    <div class="narration">
+      <p>太子及宾客知道这件事的人，都穿着白衣、戴着白冠来送他。</p>
+      <p class="quiet">白衣白冠是送葬的装束。所有人都知道，包括他自己。</p>
+      <p>到了易水岸边，祭过路神，就要上路。</p>
+      <p>高渐离击筑，荆轲和而歌。</p>
+    </div>
+
+    <div class="emerge">
+      <span class="who">荆 轲</span>
+      <cite>「风萧萧兮易水寒，壮士一去兮不复还。」</cite>
+      <span class="ground" id="ground">
+        <b class="g-src">◆</b><b class="g-inf">○</b><b class="g-dbt">△</b>
+        <span class="sep">·</span>依据
+      </span>
+    </div>
+
+    <div class="narration after">
+      <p>又向前走，唱出慷慨的羽声。送行的人都睁大了眼睛，头发直竖，顶起了帽子。</p>
+      <p class="quiet">于是荆轲就车而去，终已不顾。</p>
+    </div>
+
+    <div class="inner-voice">
+      <span class="who">你 问</span>
+      此去心中所想？
+    </div>
+
+    <div class="ask">
+      <div class="ask-field">
+        <span class="caret"></span>
+        <span>你想说什么</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 侧栏：双面的另一面 -->
+  <aside class="panel">
+
+    <!-- 面一：全景层 -->
+    <div class="face panorama">
+      <h3>全 景</h3>
+
+      <div class="view-card">
+        <div class="t">地图 · 易水</div>
+        <div class="d">燕下都 → 易水 → 咸阳<br>古今地名对照</div>
+      </div>
+      <div class="view-card">
+        <div class="t">人物关系</div>
+        <div class="d">荆轲 · 太子丹 · 高渐离<br>田光 · 樊於期</div>
+      </div>
+      <div class="view-card">
+        <div class="t">因果链</div>
+        <div class="d">燕国危局 → 受命 → 易水 → 图穷匕见</div>
+      </div>
+
+      <div class="present">
+        <h4>此 刻 在 场</h4>
+        <div class="person"><span class="dot"></span><span class="n">荆轲</span><span class="r">卫人 · 上卿</span></div>
+        <div class="person"><span class="dot"></span><span class="n">高渐离</span><span class="r">燕人 · 善击筑</span></div>
+        <div class="person"><span class="dot"></span><span class="n">太子丹</span><span class="r">燕太子</span></div>
+      </div>
+    </div>
+
+    <!-- 面二：依据层 -->
+    <div class="face evidence">
+      <h3>这 条 回 答 的 依 据</h3>
+      <div class="lead">「太子及宾客知其事者，皆白衣冠以送之。」</div>
+
+      <div class="mark source">
+        <div class="hd">
+          <span class="glyph">◆</span>
+          <span class="label">出自原文</span>
+          <span class="src">刺客列传 二十六</span>
+        </div>
+        <div class="quote">太子及宾客知其事者，皆白衣冠以送之。至易水之上，既祖，取道，高渐离击筑，荆轲和而歌，为变徵之声，士皆垂泪涕泣。</div>
+        <div class="body">「白衣冠」是送葬之服，此为史书明载，可直接核对原文。</div>
+      </div>
+
+      <div class="mark infer">
+        <div class="hd">
+          <span class="glyph">○</span>
+          <span class="label">合理推演</span>
+        </div>
+        <div class="body">
+          原文未直写荆轲此刻的心理。此处的推演基于两条线索：一是<em>「皆白衣冠」</em>——送葬之服意味着众人已认定他不会生还；二是下文<em>「壮士一去兮不复还」</em>——他自己唱出的正是这个判断。故「他知道自己不会回来」可以成立。
+        </div>
+      </div>
+
+      <div class="mark doubt">
+        <div class="hd">
+          <span class="glyph">△</span>
+          <span class="label">存疑</span>
+        </div>
+        <div class="body">
+          荆轲对太子丹的真实态度，史书未载。事件末尾有<em>「荆轲怒」</em>的记载（因太子丹催促），后世因此对其是否真心事燕存在争议：一说为报知遇，一说为势不得已。此处不取定论。
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ══════════ 规范 ══════════ -->
+<div class="spec">
+  <h2>设 计 规 范</h2>
+  <p class="sub">
+    以下不是装饰，是《观史》的形式语言。每条规则都在回答同一个问题：<br>
+    屏幕上同时存在「入戏的场景」和「可核查的史料」，如何让人一眼分清？
+  </p>
+
+  <!-- 色板 -->
+  <div class="spec-block">
+    <h4>色 彩 母 题 · 易 水</h4>
+    <div class="swatches">
+      <div class="sw">
+        <div class="chip" style="background:#101318"></div>
+        <div class="nm">玄</div><div class="hx">#101318</div>
+        <div class="use">暗场最底。入戏的背景</div>
+      </div>
+      <div class="sw">
+        <div class="chip" style="background:#ece7dd"></div>
+        <div class="nm">素</div><div class="hx">#ECE7DD</div>
+        <div class="use">白衣冠。暗场文字</div>
+      </div>
+      <div class="sw">
+        <div class="chip" style="background:#f7f4ec"></div>
+        <div class="nm">纸</div><div class="hx">#F7F4EC</div>
+        <div class="use">查账面。依据与复习</div>
+      </div>
+      <div class="sw">
+        <div class="chip" style="background:#7d9aa8"></div>
+        <div class="nm">苍</div><div class="hx">#7D9AA8</div>
+        <div class="use">易水之冷。你的声音、推演</div>
+      </div>
+      <div class="sw">
+        <div class="chip" style="background:#b8402f"></div>
+        <div class="nm">朱</div><div class="hx">#B8402F</div>
+        <div class="use">朱批。原文依据、重点</div>
+      </div>
+      <div class="sw">
+        <div class="chip" style="background:#a97c4a"></div>
+        <div class="nm">赭</div><div class="hx">#A97C4A</div>
+        <div class="use">竹简之暖。存疑、古籍模式</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 字体语义 -->
+  <div class="spec-block">
+    <h4>字 体 即 语 义</h4>
+    <div class="typo">
+      <div class="typo-card t-song">
+        <div class="role">宋 体</div>
+        <div class="sample">风萧萧兮易水寒</div>
+        <div class="note">一切属于那个时代的东西：叙述、原文、人物台词。看到宋体，就是史书在说话。</div>
+      </div>
+      <div class="typo-card t-kai">
+        <div class="role">楷 体</div>
+        <div class="sample">此去心中所想？</div>
+        <div class="note">你的声音。你的提问、你的心声。看到楷体，就是你在说话。</div>
+      </div>
+      <div class="typo-card t-hei">
+        <div class="role">黑 体</div>
+        <div class="sample">出自原文 · 刺客列传二十六</div>
+        <div class="note">工具与考据。依据面板、标注、UI。看到黑体，就是系统在说话。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三类标记 -->
+  <div class="spec-block">
+    <h4>三 类 标 记</h4>
+    <ul class="notes">
+      <li><b>◆ 出自原文（朱）</b> —— 可逐字核对。这是产品可信度的地基，不可与推演混同。</li>
+      <li><b>○ 合理推演（苍）</b> —— 史书没写，但从史书有写的部分能推出。必须展示推演链条，不能只说结论。</li>
+      <li><b>△ 存疑（赭）</b> —— 史书未载且有争议。列出主要说法，不替用户下结论。</li>
+      <li>人物每句话后的入口<b>会预告内容</b>——亮起朱色 ◆，就说明这条里有可逐字核对的原文。你不点开也知道值不值得点。</li>
+      <li>三类标记<b>默认全部收起</b>。沉浸优先，但账随时可查。</li>
+      <li>任何一条 AI 回答<b>必须</b>落在三类之一。落不进去的，说明这条回答不该存在。</li>
+    </ul>
+  </div>
+
+  <!-- 古籍模式 -->
+  <div class="spec-block">
+    <h4>古 籍 模 式 · 可 切 换</h4>
+    <div class="classical">
+      <div class="vertical">
+        太子及賓客知其事者，皆白衣冠以送之。至易水之上，既祖，取道，高漸離擊筑，荊軻和而歌，為變徵之聲，士皆垂淚涕泣。又前而為歌曰：<span class="hl">「風蕭蕭兮易水寒，壯士一去兮不復還！」</span>復為羽聲忼慨，士皆瞋目，髮盡上指冠。於是荊軻就車而去，終已不顧。
+      </div>
+      <div class="anno">
+        <span class="cap">古 籍 模 式 说 明</span>
+        默认横排简体，保证可读性。<br>
+        需要史料质感时，一键切到<b>竖排繁体</b>。<br><br>
+        原文层独立于叙述层——它永远在，但从不挡路。<br><br>
+        <span class="cap" style="margin-top:20px">异 文</span>
+        「羽声忼慨」，一作「慷慨」。<b>用字待核实体书，此处不作定论。</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- 复习卡 -->
+  <div class="spec-block">
+    <h4>复 习 卡 · 问 动 机 不 问 年 代</h4>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">动 机</span>
+        <div class="q">送行的人为什么都穿白衣、戴白冠？</div>
+        <div class="a">那是<b>送葬的装束</b>。所有到场的人——包括荆轲自己——都认定他不会活着回来。这不是仪式，是提前的葬礼。</div>
+      </div>
+      <div class="card">
+        <span class="tag">因 果</span>
+        <div class="q">荆轲在易水边为什么先唱「变徵之声」，再唱「羽声」？</div>
+        <div class="a">变徵之声音调悲凉，众人<b>垂泪涕泣</b>；羽声慷慨激越，众人<b>瞋目、发尽上指冠</b>。情绪从哀转怒——这是他给送行者留下的最后一件东西。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* 样张专用：仅用于切换展示状态，不含任何产品逻辑 */
+(function(){
+  const device = document.getElementById('device');
+  const btnS = document.getElementById('btn-scene');
+  const btnE = document.getElementById('btn-evidence');
+  const btnR = document.getElementById('btn-replay');
+  const stage = document.getElementById('stage');
+
+  function setMode(m){
+    device.dataset.mode = m;
+    btnS.setAttribute('aria-pressed', m==='scene');
+    btnE.setAttribute('aria-pressed', m==='evidence');
+    replay();
+  }
+  function replay(){
+    stage.classList.add('replay');
+    void stage.offsetWidth;
+    stage.classList.remove('replay');
+  }
+
+  btnS.onclick = ()=>setMode('scene');
+  btnE.onclick = ()=>setMode('evidence');
+  btnR.onclick = ()=>{ replay(); btnR.setAttribute('aria-pressed','true');
+                       setTimeout(()=>btnR.setAttribute('aria-pressed','false'),400); };
+  document.getElementById('ground').onclick = ()=>setMode('evidence');
+
+  replay();
+})();
+</script>
+
+</body>
+</html>
