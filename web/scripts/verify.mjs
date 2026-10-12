@@ -257,6 +257,46 @@ check('contrast: 浅色模式全站文字（灾难性地板 2.8:1）', async () 
     : ok('3 个页面，无一处低于 2.8:1')
 })
 
+/* 分节标题必须立得住。
+   守的是「引子」曾经和正文同字号同字体（都是 16px 宋体），只差字距和字重——
+   读起来就是上一段散文的下一行。引子是三个模块里唯一没有容器的
+   （故事有纸、行迹有线表），标题一塌，整个模块的边界就全压在这两个字上。 */
+check('geometry: 分节标题与正文有层级差，且朱标和分割线都渲染', async () => {
+  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+  const r = await page.evaluate(() => {
+    const ts = [...document.querySelectorAll('.sec-title')]
+    const p = document.querySelector('.prose-block p')
+    if (!ts.length || !p) return null
+    const body = parseFloat(getComputedStyle(p).fontSize)
+    const clear = (c) => !c || /rgba\(0,\s*0,\s*0,\s*0\)|transparent/.test(c)
+    return {
+      body,
+      titles: ts.map((t) => {
+        const bar = getComputedStyle(t, '::before')
+        const rule = getComputedStyle(t, '::after')
+        return {
+          text: t.textContent,
+          size: parseFloat(getComputedStyle(t).fontSize),
+          barW: parseFloat(bar.width) || 0, barH: parseFloat(bar.height) || 0, barBg: bar.backgroundColor,
+          ruleW: parseFloat(rule.width) || 0, ruleH: parseFloat(rule.height) || 0, ruleBg: rule.backgroundColor,
+        }
+      }),
+      clear: ts.map((t) => [clear(getComputedStyle(t, '::before').backgroundColor),
+                            clear(getComputedStyle(t, '::after').backgroundColor)]),
+    }
+  })
+  if (!r) return fail('人物页上找不到 .sec-title 或 .prose-block p')
+  const bad = []
+  r.titles.forEach((t, i) => {
+    if (t.size < r.body + 2) bad.push(`「${t.text}」${t.size}px 对正文 ${r.body}px，差不足 2px`)
+    if (!(t.barW > 0 && t.barH > 0) || r.clear[i][0]) bad.push(`「${t.text}」朱标没渲染`)
+    if (!(t.ruleW > 0 && t.ruleH > 0) || r.clear[i][1]) bad.push(`「${t.text}」分割线没渲染`)
+  })
+  return bad.length
+    ? fail(bad.join('；'))
+    : ok(`${r.titles.length} 个标题　${r.titles[0].size}px 对正文 ${r.body}px　朱标 ${r.titles[0].barW}×${r.titles[0].barH}　线宽 ${Math.round(r.titles[0].ruleW)}`)
+})
+
 check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate(() => {

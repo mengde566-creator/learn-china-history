@@ -782,10 +782,23 @@ body.light-stage{
 /* ══════════════════════════════════════════════
    人物页
    ══════════════════════════════════════════════ */
+/* 分节标题。
+   原来和正文同字号同字体（16px / 宋体），只差字距和字重——结果「引子」读起来
+   就是上一段散文的下一行，立不住。故事／行迹靠各自的容器（一张纸 / 细线表）
+   撑着还行，而引子是唯一**没有容器**的模块，全部重量都压在标题上。
+   朱标用的是产品自己的批阅色（同朱批印、同 ◆）；细线拉到内容栏宽度，
+   和「故事」那张纸的左边界对齐。 */
+.sec{margin-top:58px}
 .sec-title{
-  font-family:var(--f-song);font-size:16px;letter-spacing:.16em;font-weight:600;
-  margin-bottom:18px;
+  display:flex;align-items:center;gap:14px;
+  font-family:var(--f-song);font-size:19px;letter-spacing:.2em;font-weight:600;
+  margin-bottom:24px;
 }
+.sec-title::before{
+  content:'';flex:none;width:3px;height:1.05em;
+  background:var(--zhu);border-radius:1.5px;
+}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--xuan-4)}
 .prose-block{max-width:44em}
 .prose-block p{
   font-family:var(--f-song);font-size:16px;line-height:2.05;letter-spacing:.03em;

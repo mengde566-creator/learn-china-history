@@ -49,7 +49,7 @@ export default async function PersonPage({ params }) {
       )}
 
       {person.why.length > 0 && (
-        <section style={{ marginTop: 40 }}>
+        <section className="sec">
           <h2 className="sec-title">引子</h2>
           <div className="prose-block why">
             {person.why.map((p, i) => <p key={i}>{p}</p>)}
@@ -57,7 +57,7 @@ export default async function PersonPage({ params }) {
         </section>
       )}
 
-      <section style={{ marginTop: 52 }}>
+      <section className="sec">
         <h2 className="sec-title">故事</h2>
         <div className="story-list">
           {person.storyList.map((s) => {
@@ -92,7 +92,7 @@ export default async function PersonPage({ params }) {
       </section>
 
       {person.timeline?.length > 0 && (
-        <section style={{ marginTop: 52 }}>
+        <section className="sec">
           <h2 className="sec-title">行迹</h2>
           <div className="timeline">
             {person.timeline.map((t, i) => (
