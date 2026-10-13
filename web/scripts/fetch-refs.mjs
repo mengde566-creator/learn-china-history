@@ -32,6 +32,14 @@ const REFS = [
     min: 1_000_000,
   },
   {
+    file: 'cike.html',
+    title: '《史記·刺客列傳》',
+    url: 'https://raw.githubusercontent.com/hunterhug/china-history/master/%E5%8F%B2%E8%AE%B0/%E4%B8%83%E5%8D%81%E5%88%97%E4%BC%A0/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0-%E5%88%BA%E5%AE%A2%E5%88%97%E4%BC%A0-%E5%8E%9F%E6%96%87.html',
+    about: 'https://github.com/hunterhug/china-history',
+    min: 20_000,
+    note: 'Gutenberg 的《史記》#24226 缺〈刺客列传〉整篇，换用这一份',
+  },
+  {
     file: 'sgyy.txt',
     title: '《三國志演義》罗贯中',
     url: 'https://www.gutenberg.org/ebooks/23950.txt.utf-8',

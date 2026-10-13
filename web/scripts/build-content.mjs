@@ -500,7 +500,7 @@ function parseStoryContent(rel, source) {
     }
 
     if (section === 'bg') {
-      const h = line.match(/^### (.+?)(?:\s+([◆○△—]))?\s*$/)
+      const h = line.match(/^### (.+?)(?:\s+([◆◇○△—]))?\s*$/)
       if (h) { flushBg(); bg = { name: h[1].trim(), marker: h[2] || null, body: [], basis: null, imgFile: null, imgCaption: null }; return }
       if (!bg) return
       if (line.startsWith('> ')) {
@@ -597,7 +597,7 @@ function parseSeeds(rel) {
       return
     }
 
-    const markerRow = line.match(/^\|\s*标记\s*\|\s*([◆○△—])\s*\|/)
+    const markerRow = line.match(/^\|\s*标记\s*\|\s*([◆◇○△—])\s*\|/)
     if (markerRow) { seed.marker = markerRow[1]; return }
 
     const cells = tableRow(line)

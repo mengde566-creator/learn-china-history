@@ -32,6 +32,13 @@ const tw2cn = require('opencc-js').Converter({ from: 'tw', to: 'cn' })
    参考文本按固定宽度折行，不剥掉的话每一段都会"对不上"。 */
 const only = (t) => String(t).replace(/[^\u4e00-\u9fff]/g, '')
 
+/* **两边走同一个转换。**
+   参考文本一部分是繁体（Gutenberg 的《三國志》），一部分本来就是简体
+   （GitHub 那份《刺客列传》）。给简体文本做繁转简会**改字**——
+   「於期」会变成「于期」，于是本库写对的「樊於期」反而"对不上"。
+   所以不比"谁转成了什么"，比的是"两边转完是不是同一个东西"。 */
+const norm = (t) => only(tw2cn(t))
+
 /* 从 `## 底本N · 档次 · 书名` 小节里把条目读出来。
    和 build-content.mjs 的 parseSource 是两套独立实现：
    用同一份的话，解析器错了这边跟着错，就白核了。 */
@@ -44,8 +51,14 @@ function readSource(rel, defaultBook) {
     if (h) { book = { tier: h[1].trim(), book: h[2].trim() }; return }
     const cells = line.split('|').slice(1, -1).map((c) => c.trim())
     if (cells.length < 3 || !/^\d{3}$/.test(cells[0])) return
+    /* 只认真原文行：优先级那格必须是 A/B/C（四列表的话在第四格）。
+       少了这一条，source.md 里别的表——比如「五段的结构」——
+       会被当成原文拉进来一起比，凭空多出一堆"对不上"。 */
+    const pri = (x) => String(x || '').replace(/\*\*|`/g, '').trim()
+    let priority = cells[2]
+    if (!/^[ABC]/.test(pri(priority))) priority = cells[3] ?? ''
+    if (!/^[ABC]/.test(pri(priority))) return
     let text = cells[1]
-    if (!/^[ABC]/.test((cells[2] || '').replace(/\*\*|`/g, ''))) text = cells[1]
     out.push({
       id: cells[0],
       book: book?.book || defaultBook || '(没有底本小节)',
@@ -63,12 +76,17 @@ function slice(ref, from, to) {
   if (cache.has(key)) return cache.get(key)
   const p = path.join(REFS, ref)
   if (!fs.existsSync(p)) throw new Error(`缺 .refs/${ref}——先跑 node scripts/fetch-refs.mjs`)
-  const flat = only(tw2cn(fs.readFileSync(p, 'utf8')))
+  /* HTML 参考文本：正文都在 <p> 里，先把标签剥掉再拼起来 */
+  const raw = fs.readFileSync(p, 'utf8')
+  const src = ref.endsWith('.html')
+    ? [...raw.matchAll(/<p>([\s\S]*?)<\/p>/g)].map((m) => m[1].replace(/<[^>]+>/g, ' ')).join('')
+    : raw
+  const flat = norm(src)
   /* 锚点也要过一遍繁转简：refs.json 里写的是书名/回目的原样，
      而上面刚把整份参考文本转成了简体，不转就对不上。 */
-  const i = flat.indexOf(only(tw2cn(from)))
+  const i = flat.indexOf(norm(from))
   if (i < 0) throw new Error(`.refs/${ref} 里找不到起始锚点「${from}」`)
-  const j = flat.indexOf(only(tw2cn(to)), i + 1)
+  const j = to ? flat.indexOf(norm(to), i + 1) : -1
   const text = flat.slice(i, j < 0 ? undefined : j)
   cache.set(key, text)
   return text
@@ -120,7 +138,7 @@ for (const id of people) {
     /* 校勘：参考文本作 A，本库作 B，比对时按 B 算。
        每一次替换都必须在这里留一条——偷偷改字比错字更坏。 */
     for (const [refReads, weWrite] of (c.校勘 || [])) {
-      hay = hay.split(only(tw2cn(refReads))).join(only(tw2cn(weWrite)))
+      hay = hay.split(norm(refReads)).join(norm(weWrite))
     }
     /* **按小句比对，不按整段，也不按整句。**
        《三國志》的电子本把裴松之注夹在正文句子中间——
@@ -129,7 +147,7 @@ for (const id of people) {
        按整段比一定对不上，按整句比也会漏掉后面那种。
        切到小句、每片至少 4 个字，就两头都盖住了。
        代价是很短的片段可能在参考文本里别处撞上——4 个字以下的碎片不查。 */
-    const sentences = e.text.split(/[。！？；，、]/).map(only).filter((x) => x.length >= 4)
+    const sentences = e.text.split(/[。！？；，、]/).map(norm).filter((x) => x.length >= 4)
     const bad = sentences.filter((x) => !hay.includes(x))
     if (!sentences.length) { skip++; console.log(`    · ${e.id}  读不出可比的句子`); continue }
     if (!bad.length) {
