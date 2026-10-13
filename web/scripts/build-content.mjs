@@ -217,9 +217,15 @@ function parseStoryList(rel) {
   if (start < 0) throw new ParseError(rel, 0, '找不到「## 故事一览」小节')
 
   const list = []
+  let stage = null
+  let end = lines.length
   for (let i = start + 1; i < lines.length; i++) {
     const l = lines[i]
-    if (/^##\s/.test(l)) break
+    if (/^##\s/.test(l)) { end = i; break }
+    /* 「### 阶段名」把故事一览再分组（曹操那种几十篇的人物要用）。
+       用三级标题，因为二级标题在「故事一览」这里意味着这一节结束了。 */
+    const h = l.match(/^###\s+(.+?)\s*$/)
+    if (h) { stage = h[1]; continue }
     const c = tableRow(l)
     if (!c || c.length < 5) continue
     const id = clean(c[0])
@@ -228,6 +234,7 @@ function parseStoryList(rel) {
     if (!/^\d{2}-[a-z0-9-]+$/i.test(id)) continue
     list.push({
       id,
+      stage,
       name: clean(c[1]),
       question: clean(c[2]),   // 兼容旧列名
       scene: clean(c[2]),
@@ -238,6 +245,21 @@ function parseStoryList(rel) {
       statusLabel: clean(c[7] ?? ''),
     })
   }
+
+  /* 地雷：README 原来教人用「## 阶段名」分段，而二级标题在这里是"这一节结束"。
+     照它写，阶段里的故事会**一条都不进列表，而且不报错**——实测过，
+     校验还报"全部通过"。这里把那种写法拦下来。 */
+  const orphan = []
+  for (let i = end; i < lines.length; i++) {
+    const c = tableRow(lines[i])
+    if (c && /^\d{2}-[a-z0-9-]+$/i.test(clean(c[0]))) orphan.push(clean(c[0]))
+  }
+  if (orphan.length) {
+    throw new ParseError(rel, end + 1,
+      `「## 故事一览」之后还有 ${orphan.length} 条故事（${orphan.slice(0, 3).join('、')}…），` +
+      '它们不会被读进来。分组请用「### 阶段名」，写在「## 故事一览」里面')
+  }
+
   if (!list.length) throw new ParseError(rel, 0, '故事一览表是空的')
   return list
 }
@@ -736,7 +758,9 @@ function validateContent(people) {
       checks++
       if (!s.scene && !s.question) warn(`${who} · stories.md`, `故事「${s.id}」缺「情境」这一列`)
       checks++
-      if (!s.sourceRange) warn(`${who} · stories.md`, `故事「${s.id}」缺原文范围`)
+      /* 只对**已实现**的篇目要求原文范围。待写的篇目还没有原文段落，
+         对它报这一条只是噪音——曹操那十篇计划一次刷出九条。 */
+      if (s.ready && !s.sourceRange) warn(`${who} · stories.md`, `故事「${s.id}」缺原文范围`)
     }
     // 有文件但没登记在故事一览里
     const dir = path.join(PEOPLE, p.id, 'stories')

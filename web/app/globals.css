@@ -850,6 +850,15 @@ body.light-stage{
 .prose-block.why p{color:var(--su)}
 .prose-block.why p b,.prose-block p b{color:var(--su);font-weight:600}
 
+/* 故事列表里的阶段标签（曹操那种几十篇的人物才用）。
+   比故事卡片低一档：它是分组名，不是标题。
+   不要用 :first-child 去掉上边距——每个阶段各自包在一个 div 里，
+   那样**每个标签**都会命中，紧贴着上一张纸，被纸的投影切掉一道。 */
+.stage-label{
+  font-family:var(--f-song);font-size:14px;letter-spacing:.2em;font-weight:400;
+  color:var(--su-dim);margin:34px 0 12px;
+}
+
 /* 故事列表是**一张纸**，不是八张。
    八张纸叠在一起太重，而且未写的那几张会变成灰卡。
    一页纸上写着八篇——这才是目录该有的样子。 */

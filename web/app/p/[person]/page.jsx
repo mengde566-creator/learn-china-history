@@ -59,36 +59,52 @@ export default async function PersonPage({ params }) {
 
       <section className="sec">
         <h2 className="sec-title">故事</h2>
-        <div className="story-list">
-          {person.storyList.map((s) => {
-            const inner = (
-              <>
-                {/* 墨痕挂在标题下面——它是"给这一条划的重点"，
-                    不是卡片的装饰边框 */}
-                <div className="q">{s.scene || s.question}</div>
-                <div className="nm">{s.name}</div>
-                <div className="mt">
-                  {s.time}
-                  {s.duration && <>　·　{s.duration}</>}
-                  {s.sourceRange && <>　·　原文 {s.sourceRange}</>}
-                </div>
-              </>
-            )
-            return s.ready ? (
-              <Link key={s.id} href={`/p/${person.id}/${s.id}`} className="story-card ready">
-                <div style={{ display: 'flex', gap: 18, alignItems: 'flex-start' }}>
-                  {s.img && <img className="thumb" src={s.img} alt="" aria-hidden="true" />}
-                  <div style={{ minWidth: 0, flex: 1 }}>{inner}</div>
-                </div>
-                <SealMark />
-              </Link>
-            ) : (
-              <div key={s.id} className="story-card locked">
-                {inner}
+        {/* 按「### 阶段名」分组（曹操那种几十篇的人物要用）。
+            没有阶段时只有一个分组，和原来一模一样——荆轲那八篇不受影响。
+            每一组各自是一张纸：阶段之间换纸，比在同一张纸上堆五十条清楚。 */}
+        {(() => {
+          const groups = []
+          for (const s of person.storyList) {
+            const g = groups.find((x) => x.stage === s.stage)
+            if (g) g.items.push(s)
+            else groups.push({ stage: s.stage, items: [s] })
+          }
+          return groups.map((g, gi) => (
+            <div key={gi}>
+              {g.stage && <h3 className="stage-label">{g.stage}</h3>}
+              <div className="story-list">
+                {g.items.map((s) => {
+                  const inner = (
+                    <>
+                      {/* 墨痕挂在标题下面——它是"给这一条划的重点"，
+                          不是卡片的装饰边框 */}
+                      <div className="q">{s.scene || s.question}</div>
+                      <div className="nm">{s.name}</div>
+                      <div className="mt">
+                        {s.time}
+                        {s.duration && <>　·　{s.duration}</>}
+                        {s.sourceRange && <>　·　原文 {s.sourceRange}</>}
+                      </div>
+                    </>
+                  )
+                  return s.ready ? (
+                    <Link key={s.id} href={`/p/${person.id}/${s.id}`} className="story-card ready">
+                      <div style={{ display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+                        {s.img && <img className="thumb" src={s.img} alt="" aria-hidden="true" />}
+                        <div style={{ minWidth: 0, flex: 1 }}>{inner}</div>
+                      </div>
+                      <SealMark />
+                    </Link>
+                  ) : (
+                    <div key={s.id} className="story-card locked">
+                      {inner}
+                    </div>
+                  )
+                })}
               </div>
-            )
-          })}
-        </div>
+            </div>
+          ))
+        })()}
       </section>
 
       {person.timeline?.length > 0 && (
