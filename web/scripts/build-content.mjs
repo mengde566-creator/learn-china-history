@@ -164,6 +164,12 @@ function parsePersonMeta(rel) {
     era: meta['时代'] || '未分期',
     died: meta['卒年'] || null,
     sourceBook: meta['出处'] || null,
+    /* 人物页用的底本范围。故事早就有「原文」范围，人物页一句都没有——
+       于是曹操的引子讲了七件底本里没有的事（`source.md` 那时只有 4 段，
+       全是刺董那一刻），谁都不报错。README 里「没有原文编号支撑的陈述
+       不能进产品」这条一直写着，缺的是机制；这个字段就是机制。
+       不渲染，只给编译器查。 */
+    sourceRange: meta['底本'] || null,
     storyCountLabel: meta['故事'] || null,
     imgFile: meta['画像'] || null,
     intro: sectionParagraphs(lines, '他是谁'),
@@ -180,9 +186,13 @@ function parseSource(rel, fileLabel) {
   let story = null
 
   lines.forEach((line) => {
-    const m = line.match(/^## 场景 (\d) · (.+)$/)
+    /* 分组标题。原来是「## 场景 N · 篇名」；人物页用的段落不属于任何一篇故事
+       （家世、举孝廉、济南相都在刺董之前），另立一组，所以放一个通用回退：
+       任何 ## 标题都当组名，不再只认「场景 N」。 */
+    const m = line.match(/^## 场景 (\d+) · (.+)$/)
     if (m) { story = m[1]; return }
     if (/^## 尾声/.test(line)) { story = 'end'; return }
+    if (/^## /.test(line)) { story = line.replace(/^##\s*/, '').trim(); return }
 
     const cells = tableRow(line)
     if (!cells || cells.length < 3) return
@@ -193,14 +203,23 @@ function parseSource(rel, fileLabel) {
     const priority = cells[2]
     if (!/^[ABC]/.test(priority.replace(/\*\*/g, '').trim())) return
 
+    /* 「注」标记：这一条不是本纪正文（裴松之注引别史、或出自别的传）。
+       写法 `注` 或 `注 · 裴松之注引《魏书》`，点后面那截是给读者看的来源。
+       和正文并排、同样挂 ◆ 的话，读者会以为曹操闯张让室是陈寿写的——
+       而《魏书》是魏方立场、只此一源，更不该看着像两方互证。
+       渲染层按 noted 分段另排（`StoryClient` 的「本篇原文」页签）。 */
+    const NOTE = /`注(?:\s*·\s*([^`]+))?`/
+    const noteM = rawText.match(NOTE)
+
     source[id] = {
       id,
       story,
-      text: rawText.replace(/★/g, '').replace(/`异文`/g, '').trim(),
+      text: rawText.replace(/★/g, '').replace(/`异文`/g, '').replace(NOTE, '').trim(),
       priority: priority.replace(/\*\*/g, '').trim()[0],
       key: /★/.test(rawText),
       variant: /异文/.test(rawText) || /异文/.test(priority),
       compressed: /压缩/.test(priority),
+      noted: noteM ? (noteM[1] || '注').trim() : null,
     }
   })
 
@@ -814,6 +833,32 @@ function validateContent(people) {
         checks++
         const m = SELF_REF.exec(stripDialogue(t))
         if (m) err(where, `出现了「${m[0]}」——这是产品在说自己。引子要写的是那个人`)
+      }
+    }
+
+    /* 人物页要交代自己的底本范围。
+       故事早就有一条「原文」范围；人物页原来什么都没有，于是曹操的引子
+       讲了七件底本里没有的事——其中「赤壁烧掉了自己的船」还是魏方单方面
+       的说法，正文只有「乃引军还」——而编译器一路绿灯。
+       这一条只保证范围**声明了而且编号存在**，保证不了逐句对得上；
+       但有了范围，写的人就得先回答"这些事凭什么"。 */
+    checks++
+    const personProse = (p.intro?.length || 0) + (p.why?.length || 0)
+    if (personProse > 0 && !p.sourceRange) {
+      err(`${who} · person.md`,
+        '没声明「底本」范围——「他是谁」和「引子」里每句话都要能回到 source.md 的编号，' +
+        '在标题下的元数据表里加一行「| **底本** | `001–019` |」')
+    }
+    if (p.sourceRange) {
+      const range = []
+      const rm = String(p.sourceRange).match(/(\d{3})\s*[–\-—~]\s*(\d{3})/)
+      if (rm) { for (let i = Number(rm[1]); i <= Number(rm[2]); i++) range.push(String(i).padStart(3, '0')) }
+      else range.push(...(String(p.sourceRange).match(/\d{3}/g) || []))
+      checks++
+      if (!range.length) err(`${who} · person.md`, `「底本」写成「${p.sourceRange}」了，读不出编号`)
+      for (const id of range) {
+        checks++
+        if (!p.source[id]) err(`${who} · person.md`, `「底本」里的编号 ${id} 在 source.md 里不存在`)
       }
     }
 

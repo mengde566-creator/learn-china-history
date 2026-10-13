@@ -203,6 +203,9 @@ body.light-stage{
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0;font-size:12px;color:var(--su-dim);letter-spacing:.03em}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend b{font-weight:400}
+/* 小字（外证／训释）的解释：整行另起，比四个标记低一档 */
+.legend .sub{flex-basis:100%;margin-top:2px;font-size:11.5px;line-height:1.9;color:var(--su-mute);letter-spacing:.02em}
+.legend .sub em{font-style:normal;color:var(--accent)}
 /* 全局规则说一次就够，不逐条重复 */
 .global-note{
   margin-top:14px;padding-top:12px;border-top:1px solid var(--beat-rule);
@@ -418,6 +421,19 @@ body.light-stage{
 .mark-block.infer  .glyph,.mark-block.infer  .label{color:var(--cang)}
 .mark-block.doubt  .glyph,.mark-block.doubt  .label{color:var(--zhe)}
 .mark-block.silent .glyph,.mark-block.silent .label{color:var(--mo-mute)}
+/* 「本篇原文」里出自注的那一段。它仍然是原文，所以字形还是 ◆；
+   区分靠整块的色调和上方的小标题，不新增第五个标记。 */
+.mark-block.noted .quote{
+  background:rgba(90,84,76,.05);border-left-color:rgba(90,84,76,.38);color:var(--mo-dim);
+}
+.mark-block .tag{
+  font-size:10.5px;letter-spacing:.06em;color:var(--mo-mute);
+  border:1px solid var(--zhi-3);border-radius:2px;padding:1px 7px;white-space:nowrap;
+}
+.panel-face .sub-head{
+  margin:22px 0 0;padding-top:18px;border-top:1px solid var(--zhi-3);
+  font-size:11px;font-weight:400;letter-spacing:.2em;color:var(--su-dim);
+}
 .mark-block .quote{
   font-family:var(--f-song);font-size:14.5px;line-height:1.95;color:var(--mo);
   letter-spacing:.04em;background:rgba(184,64,47,.045);

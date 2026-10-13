@@ -321,7 +321,7 @@ export default function StoryClient({ person, story, source }) {
                     <div key={id} className="lead">
                       「{source[id]?.text}」
                       <div style={{ fontSize: 11, color: 'var(--mo-mute)', marginTop: 6, letterSpacing: '.06em' }}>
-                        {person.sourceBook} {id}
+                        {person.sourceBook} {id}{source[id]?.noted ? ` · ${source[id].noted}` : ''}
                       </div>
                     </div>
                   ))}
@@ -343,20 +343,38 @@ export default function StoryClient({ person, story, source }) {
                 </div>
               )}
 
-              {tab === 'source' && (
-                <div className="panel-face paper anim-fade">
-                  <h3>本 篇 原 文 · {story.sourceRange}</h3>
-                  {Object.values(source).map((s) => (
-                    <div key={s.id} className="mark-block source">
-                      <div className="hd">
-                        <span className="glyph mk"><Marker ch="◆" size={11} /></span>
-                        <span className="src">{person.sourceBook} {s.id}</span>
-                      </div>
-                      <div className="quote">{s.text}</div>
+              {tab === 'source' && (() => {
+                /* 「注」和正文分开排。
+                   004「太祖尝私入中常侍张让室」是裴松之注引《魏书》，不是陈寿正文；
+                   和 001–003 并排、同样挂 ◆，读者会以为曹操闯张让室是《武帝纪》写的。
+                   标记不新增第五个字形（图例只有四个）——分段、加副标题和来源小牌，
+                   位置本身就是区分。 */
+                const all = Object.values(source)
+                const main = all.filter((s) => !s.noted)
+                const aside = all.filter((s) => s.noted)
+                const row = (s) => (
+                  <div key={s.id} className={`mark-block ${s.noted ? 'noted' : 'source'}`}>
+                    <div className="hd">
+                      <span className="glyph mk"><Marker ch="◆" size={11} /></span>
+                      {s.noted && <span className="tag">{s.noted}</span>}
+                      <span className="src">{person.sourceBook} {s.id}</span>
                     </div>
-                  ))}
-                </div>
-              )}
+                    <div className="quote">{s.text}</div>
+                  </div>
+                )
+                return (
+                  <div className="panel-face paper anim-fade">
+                    <h3>本 篇 原 文 · {story.sourceRange}</h3>
+                    {main.map(row)}
+                    {aside.length > 0 && (
+                      <>
+                        <h4 className="sub-head">以下几段不是正文，出自注</h4>
+                        {aside.map(row)}
+                      </>
+                    )}
+                  </div>
+                )
+              })()}
 
               {tab === 'backgrounds' && (
                 <div className="panel-face paper anim-fade">
