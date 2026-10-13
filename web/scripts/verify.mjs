@@ -403,29 +403,45 @@ check('content: 正文里的「原文」块逐字出自底本', async () => {
 
 /* 读完一篇不能是死路。
    用户报过：「读完故事一之后没有能直接进入下一个故事二的地方」。
-   最后一篇除外——它本来就该收尾。 */
+   最后一篇除外——它本来就该收尾。
+
+   **按人物分组**：上一篇/下一篇是同一个人物内部的顺序。
+   早先这里把所有人拉成一条全局序列，加进曹操（只有一篇）之后
+   就以为《曹操刺董》该链到荆轲的《尾声》——那是检查自己写错了。 */
 check('routes: 每篇读完都有通往下一篇的出口', async () => {
   const bad = []
-  for (let i = 0; i < READY.length; i++) {
-    const { person, story } = READY[i]
-    await page.goto(`${BASE}${routeOf({ person, story })}`, { waitUntil: 'networkidle' })
-    await page.click('button.cta')
-    for (let k = 0; k < 40; k++) {
-      const c = await page.$('button.continue')
-      if (!c) break
-      await c.click(); await page.waitForTimeout(60)
-    }
-    const hrefs = await page.$$eval('.next-bar a', (as) => as.map((a) => a.getAttribute('href')))
-    const last = i === READY.length - 1
-    if (!last) {
-      const want = routeOf(READY[i + 1])
-      if (!hrefs.includes(want)) bad.push(`${story.id} 读完没有通往 ${READY[i + 1].story.id} 的入口`)
-    }
-    if (i > 0 && !hrefs.includes(routeOf(READY[i - 1]))) {
-      bad.push(`${story.id} 读完没有回到 ${READY[i - 1].story.id} 的入口`)
+  const byPerson = new Map()
+  for (const r of READY) {
+    if (!byPerson.has(r.person.id)) byPerson.set(r.person.id, [])
+    byPerson.get(r.person.id).push(r)
+  }
+  let visited = 0
+  for (const list of byPerson.values()) {
+    for (let i = 0; i < list.length; i++) {
+      const { person, story } = list[i]
+      visited++
+      await page.goto(`${BASE}${routeOf({ person, story })}`, { waitUntil: 'networkidle' })
+      await page.click('button.cta')
+      for (let k = 0; k < 40; k++) {
+        const c = await page.$('button.continue')
+        if (!c) break
+        await c.click(); await page.waitForTimeout(60)
+      }
+      const hrefs = await page.$$eval('.next-bar a', (as) => as.map((a) => a.getAttribute('href')))
+      /* 出口栏不能是空的。只有一篇的人物 prev/next 都不存在——
+         早先那里渲染成一条空栏，读者走到死路。 */
+      if (!hrefs.length) bad.push(`${person.id}/${story.id} 读完之后出口栏是空的`)
+      if (i < list.length - 1 && !hrefs.includes(routeOf(list[i + 1]))) {
+        bad.push(`${person.id}/${story.id} 读完没有通往 ${list[i + 1].story.id} 的入口`)
+      }
+      if (i > 0 && !hrefs.includes(routeOf(list[i - 1]))) {
+        bad.push(`${person.id}/${story.id} 读完没有回到 ${list[i - 1].story.id} 的入口`)
+      }
     }
   }
-  return bad.length ? fail(bad.slice(0, 3).join('；')) : ok(`${READY.length} 篇，读完都能接着往下走`)
+  return bad.length
+    ? fail(bad.slice(0, 3).join('；'))
+    : ok(`${byPerson.size} 个人物 · ${visited} 篇，读完都能接着往下走`)
 })
 
 check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })

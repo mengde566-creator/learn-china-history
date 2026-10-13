@@ -282,7 +282,16 @@ export default function StoryClient({ person, story, source }) {
                       </Link>
                     : <span />}
                 </nav>
-              ) : null}
+              ) : (
+                /* 这个人物只有这一篇时，上一篇/下一篇都不存在——
+                   不留下一条空栏。退回到人物页，别让读者走到死路。 */
+                <nav className="next-bar">
+                  <span />
+                  <Link href={`/p/${person.id}`} className="next">
+                    <span className="k">回到</span><span className="t">{person.name}</span>
+                  </Link>
+                </nav>
+              )}
             </div>
           </section>
 

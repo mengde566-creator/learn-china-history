@@ -315,13 +315,19 @@ function parseStoryContent(rel, source) {
         if (k === '地点') story.place = clean(cells[1])
       }
     }
-    if (/^## 一、/.test(line)) { section = 'intro'; return }
-    if (/^## 二、/.test(line)) { section = 'beats'; return }
-    if (/^## 三、/.test(line)) { section = 'skip'; flushBeat(); return }
-    if (/^## 四、/.test(line)) { section = 'bg'; flushBg(); return }
-    if (/^## 五、/.test(line)) { section = 'ground'; flushBg(); return }
-    if (/^## 六、/.test(line)) { section = 'present'; flushBg(); return }
-    if (/^## 七、/.test(line)) { section = 'skip'; flushBg(); return }
+    /* 进入任何新的 `##` 小节，都先把待收的情节点和背景卡收掉。
+       原来只有「## 三、」调了 flushBeat()，其余几节只调 flushBg()——
+       一篇故事如果从情节点直接跳到「## 四、背景卡」（没有对话种子那一节），
+       **最后一段会被静默丢掉**。曹操那篇就是这么丢了第 4 段：
+       文件里写着 4 个情节点，编译器只收到 3 个，而且不报错。 */
+    const enter = (name) => { flushBeat(); flushBg(); section = name }
+    if (/^## 一、/.test(line)) return enter('intro')
+    if (/^## 二、/.test(line)) return enter('beats')
+    if (/^## 三、/.test(line)) return enter('skip')
+    if (/^## 四、/.test(line)) return enter('bg')
+    if (/^## 五、/.test(line)) return enter('ground')
+    if (/^## 六、/.test(line)) return enter('present')
+    if (/^## 七、/.test(line)) return enter('skip')
 
     if (section === 'intro') {
       if (/^```/.test(line)) { inIntroCode = !inIntroCode; return }
@@ -418,6 +424,15 @@ function parseStoryContent(rel, source) {
   })
 
   if (!story.beats.length) throw new ParseError(rel, 0, '没有解析出任何情节点')
+
+  /* 文件里写了几个「### 情节点」，就必须收到几个。
+     这一条守的是解析器的静默丢段：小节切换时没有收尾，最后一段会不声不响
+     地消失——曹操那篇丢过第 4 段，页面上少一段，谁都不报错。 */
+  const declared = lines.filter((l) => /^### 情节点 \d+/.test(l)).length
+  if (declared !== story.beats.length) {
+    throw new ParseError(rel, 0,
+      `文件里有 ${declared} 个情节点，只解析出 ${story.beats.length} 个——解析器丢了段落`)
+  }
   return story
 }
 
@@ -991,10 +1006,28 @@ function main() {
   }
 
   // 交叉校验：所有被引用的编号必须在原文底本里存在
+  //
+  // 只扫**真正会带编号的字段**，不扫整个序列化对象。
+  // 原来扫 JSON.stringify(s) 里的 "(\d{3})"，于是 stories.md「时间」一列写的
+  // `189` 被当成了底本编号——公元 189 年。荆轲写的是「前 227」（带"前"和空格，
+  // 不是纯三位数）所以躲过了；**三国、晋、南北朝的年份全是三位数，必然撞**。
+  // 加一篇三国故事就报「引用了不存在的原文编号 189」，而 189 根本不是编号。
+  const cited = (s) => [
+    s.sourceRange,
+    ...(s.beats || []).flatMap((b) => [b.source, ...(b.sources || []), b.ground]),
+    ...(s.backgrounds || []).map((b) => b.basis),
+    ...(s.groundTable || []).map((r) => r.basis),
+    ...(s.intro?.basis || []).map((r) => r.basis),
+    ...(s.seeds || []).flatMap((d) => [...(d.meta || []).map((m) => m.v), d.sys]),
+    ...(s.cards || []).flatMap((c) => (c.meta || []).map((m) => m.v)),
+  ].filter(Boolean).join('\n')
+
   for (const p of people) {
     const bad = new Set()
     for (const s of Object.values(p.stories)) {
-      for (const m of JSON.stringify(s).matchAll(/"(\d{3})"/g)) {
+      /* 后面跟着「年」的三位数是公元纪年，不是编号。
+         荆轲的「公元前 227 年」、曹操的「189 年」都落在这里。 */
+      for (const m of cited(s).matchAll(/`?(\d{3})`?(?!\s*年)/g)) {
         if (!p.source[m[1]]) bad.add(m[1])
       }
     }
