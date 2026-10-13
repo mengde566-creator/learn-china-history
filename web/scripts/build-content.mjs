@@ -249,7 +249,7 @@ function parseSource(rel, fileLabel, defaultBook) {
     }
     if (bandOf(id) !== TIER_BAND[tier]) {
       throw new ParseError(rel, i + 1,
-        `编号 ${id} 落在「${TIERS[bandOf(id)]}」号段（${TIER_BAND[tier] * 100}xx），` +
+        `编号 ${id} 落在「${TIERS[bandOf(id)]}」号段（${bandOf(id) * 100}xx），` +
         `可它现在挂在「${tier}」这一本底下。号段和底本档次必须对得上：` +
         '正史 0xx、注 1xx、小说 2xx、野史 3xx')
     }
@@ -297,6 +297,14 @@ function parseStoryList(rel) {
     const id = clean(c[0])
     // id 约定为「两位序号-短名」（如 06-yishui），也就是故事文件名。
     // 用严格正则，表头行（id | 故事 | …）就不会被当成一条故事。
+    /* 三位数的 id（`100-xxx`）原来在这里被 `continue` **静默跳过**——
+       写进故事一览，编译一条错误都不报，只在文件已存在时冒出一句
+       「没有登记」。那是这个项目最怕的一类失败：东西丢了，没人知道。 */
+    if (/^\d+-[a-z0-9-]+$/i.test(id) && !/^\d{2}-[a-z0-9-]+$/i.test(id)) {
+      throw new ParseError(rel, i + 1,
+        `故事 id「${id}」不合规。id 是「两位序号-短名」（如 06-yishui）——` +
+        '两位数是硬限制，`100-` 开头的写法读不进来')
+    }
     if (!/^\d{2}-[a-z0-9-]+$/i.test(id)) continue
     list.push({
       id,
@@ -493,6 +501,8 @@ function parseStoryContent(rel, source) {
           const id = ids(cells[1])[0]
           beat.source = id || null
           beat.sourceText = source[id]?.text ?? null
+          /* 原始那一格留着给校验用——见下面「原文栏的文字必须和编号对得上」 */
+          beat.sourceCell = clean(cells[1])
         }
         if (k === '依据') beat.ground = clean(cells[1])
       }
@@ -1022,6 +1032,25 @@ function validateContent(people) {
         if (!fictionIds.length && markerOf(b.marker) === '◇') {
           err(`${at} · 第 ${b.n} 段`, `标了 ◇（出自小说），可这一段引的 ${tiers.join(' ')} 里没有小说`)
         }
+        /* **「原文」栏的文字，必须是它标的那个编号的开头。**
+           子智能体的变异测试：把情节点 2 的 `| 原文 | \`018\`` 改成 `\`001\``，
+           正文一个字没动——编译全绿。后果是「依据」面板里给读者看的是
+           001 的原文，而场景讲的是 018 的事。**这是零成本的伪造。**
+           查法：把单元格里编号之后的那截归一化，看它在不在 source[id].text 里。
+           **不能只比开头**——引用一段中间的某一句是正当写法
+           （05-yanzhou 第 2 段讲的就是 019 中段的「刘岱欲击之」）。 */
+        if (b.source && b.sourceCell && p.source[b.source]) {
+          checks++
+          const after = String(b.sourceCell).replace(/^\s*`?\d{3}`?\s*/, '').trim()
+          const a = normalizeQuote(after).slice(0, 14)
+          const full = normalizeQuote(p.source[b.source].text)
+          if (a.length >= 6 && !full.includes(a)) {
+            err(`${at} · 第 ${b.n} 段`,
+              `「原文」栏写的是 \`${b.source}\`，可这一栏的文字不是 ${b.source} 的开头——` +
+              `${b.source} 作「${full.slice(0, 20)}…」，这一栏作「${after.slice(0, 20)}…」。` +
+              '编号和正文要指同一段')
+          }
+        }
         checks++
         if (b.imgFile && !b.imgCaption) warn(`${at} · 第 ${b.n} 段`, '有插图但没写图注')
       }
@@ -1046,6 +1075,55 @@ function validateContent(people) {
           checks++
           if (!row.basis) err(label, '缺依据说明')
         }
+
+        /* **门口和「逐行依据」必须对得上。**
+           原来这三件事一件都没查，而它们正是 `new-story.mjs` 声称已经解决了
+           的那个「最耗人的串线」。子智能体的变异测试：删掉门口一行、
+           把「行」栏换成无关句子、把行尾的 `◆ 017` 改成 `◆ 018`——
+           三样都能编译通过。门口是读者进门看到的第一屏，
+           它和依据对不上，等于第一屏就在撒谎。
+
+           判据不能要求"行数相等、逐行对应"：荆轲那边的 fence 会**折行**
+           （一句话拆成两个物理行，第二行没有标记），而依据表按**逻辑行**
+           排，有时还把一行拆成两条（时间戳拆成「年份」和「地点」）。
+           所以查三件跟排版无关的事。 */
+        const lines = st.intro.lines || []
+        const rows = st.intro.basis || []
+        const cjk = (t) => String(t || '').replace(/[^\u4e00-\u9fff]/g, '')
+        /* 两条文字有没有连续 4 个汉字一样。成稿会压缩、会插字、fence 会折行
+           （门口「田光死了。他是自刎的」对依据「田光死了，是自刎的」——
+           门口多插了一个「他」），所以不能用全等，也不能把门槛定太高。 */
+        const shares = (a, b) => {
+          const x = cjk(a), y = cjk(b)
+          if (x.length < 4 || y.length < 4) return true
+          for (let i = 0; i + 4 <= x.length; i++) if (y.includes(x.slice(i, i + 4))) return true
+          return false
+        }
+        const fenceText = lines.map((l) => l.text).join('')
+        const basisText = rows.map((r) => r.basis).join('')
+        for (const row of rows) {
+          checks++
+          if (!shares(row.line, fenceText)) {
+            err(`${at} · 情境铺陈 · 逐行依据「${String(row.line).slice(0, 16)}…」`,
+              '这一条依据在门口里找不到对应的话——「行」栏要写门口那一行' +
+              '（门口会折行，但整句话要在门口里找得到）')
+          }
+        }
+        const fenceIds = [...new Set(lines.flatMap((l) => String(l.marker || '').match(/\b\d{3}\b/g) || []))]
+        for (const id of fenceIds) {
+          checks++
+          if (!basisText.includes(id)) {
+            err(`${at} · 情境铺陈`, `门口有一行标着 \`${id}\`，可整张「逐行依据」里没有这个编号`)
+          }
+        }
+        const fenceGlyphs = lines.filter((l) => l.marker).map((l) => markerOf(l.marker)).filter(Boolean)
+        const basisGlyphs = new Set(rows.map((r) => markerOf(r.marker)))
+        for (const g of new Set(fenceGlyphs)) {
+          checks++
+          if (!basisGlyphs.has(g)) {
+            err(`${at} · 情境铺陈`, `门口用了标记「${g}」，可「逐行依据」里一条这个标记都没有`)
+          }
+        }
       }
 
       /* 读者可见字段里不许出现内部行话。
@@ -1060,7 +1138,21 @@ function validateContent(people) {
          这条检查就是拦它——生成完骨架，编译必须是红的。 */
       const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|需补编号|待补编号|补编号|待补|TODO|待写|待填|待定|XXX|xxx|\$\{/
       const visible = [
-        ...st.beats.flatMap((b) => [
+        /* **渲染出去的字段一个都不能漏。**
+           原来漏了「地点」和「在场人物」，而这两个都上屏——
+           骨架里的 `| **地点** | （待填） |` 会被渲染成按钮「进 入 （待填）」，
+           `| （待填） | | **在场** |` 会在「此刻在场」面板里列出一个叫「（待填）」的人。
+           把七处占位符改掉、忘了这两处，`npm run check` 就是绿的，
+           而产品里挂着一个「进入（待填）」的按钮。 */
+        ['篇名', st.name],
+        ['地点', st.place],
+        ...(st.present || []).flatMap((x) => [
+          ['在场人物 · 人物', x.name],
+          ['在场人物 · 身份', x.role],
+          ['在场人物 · 状态', x.state],
+        ]),
+        ...(st.beats || []).flatMap((b) => [
+          [`第 ${b.n} 段 · 小标题`, b.title],
           [`第 ${b.n} 段 · 依据`, b.ground],
           ...b.prose.map((p) => [`第 ${b.n} 段 · 正文`, p]),
         ]),
