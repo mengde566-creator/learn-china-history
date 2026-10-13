@@ -261,7 +261,7 @@ export default function StoryClient({ person, story, source }) {
             <div className="ask">
               {!isLast ? (
                 <button className="continue" onClick={() => setRevealed((n) => n + 1)}>
-                  <span className="word">继 续</span>
+                  <span className="word">再 往 前</span>
                   <span className="dots">
                     {beats.map((_, i) => <i key={i} className={i < revealed ? 'on' : ''} />)}
                   </span>

@@ -456,7 +456,15 @@ body.light-stage{
   transition:all .25s var(--ease);
 }
 .continue:hover{border-color:var(--su-mute);background:rgba(128,128,128,.06)}
-.continue .word{font-size:12px;letter-spacing:.3em;color:var(--su-dim);transition:color .25s var(--ease)}
+/* 「再往前」是**你**的动作（往场景里再走一步），所以用楷体——
+   和「你想说什么」配对：这两个按钮就是你的两个动词，走 / 问。
+   它原来没指定字体，继承 body 的黑体，等于用「工具」的语气说话，
+   语域和依据面板、页码是一伙的，跟场景不是。
+   框留着：去掉方框试过，左边一行字加右边圆点读起来像状态栏，看不出能点。 */
+.continue .word{
+  font-family:var(--f-kai);font-size:15px;letter-spacing:.24em;
+  color:var(--su-dim);transition:color .25s var(--ease);
+}
 .continue:hover .word{color:var(--su)}
 .continue .dots{display:flex;gap:5px}
 .continue .dots i{width:5px;height:5px;border-radius:50%;background:var(--xuan-4);transition:background .35s var(--ease)}
