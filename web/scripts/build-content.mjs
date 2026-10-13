@@ -283,14 +283,22 @@ function parseStoryContent(rel, source) {
     beat.sources = [...new Set(
       ((beat.source || '') + ' ' + (beat.ground || '')).match(/\b\d{3}\b/g) || []
     )].filter((id) => source[id])
+    /* 引文与它的白话回译。
+       回译写成紧跟引文之后、以「——」开头的一行
+       （06 段 5 的「——始终没有回头。」就是这个形状）。
+       两条都记下**在 prose 里的下标**：渲染时要放回原位。
+       早先把引文统一抽到段末，回译就会跑到引文前面去。 */
     beat.quotes = []
-    for (const p of beat.prose) {
+    beat.prose.forEach((p, i) => {
       const t = p.trim()
-      if (!/^[「『]/.test(t) || !/[」』]$/.test(t)) continue
+      if (!/^[「『]/.test(t) || !/[」』]$/.test(t)) return
       const n = normalizeQuote(t)
-      if (n.length < 6) continue
-      if (beat.sources.some((id) => normalizeQuote(source[id].text).includes(n))) beat.quotes.push(p)
-    }
+      if (n.length < 6) return
+      if (!beat.sources.some((id) => normalizeQuote(source[id].text).includes(n))) return
+      const next = (beat.prose[i + 1] || '').trim()
+      const gloss = /^——/.test(next) ? next.replace(/^——\s*/, '') : null
+      beat.quotes.push({ text: p, at: i, gloss, glossAt: gloss ? i + 1 : null })
+    })
     story.beats.push(beat)
     beat = null
   }
@@ -822,8 +830,24 @@ function validateContent(people) {
           checks++
           if (!b.sources?.length) {
             err(`${at} · 第 ${b.n} 段`, '正文里有「原文」块，但这一段没有任何编号撑着')
-          } else if (!b.sources.some((id) => quoteFound(q, p.source[id].text))) {
+          } else if (!b.sources.some((id) => quoteFound(q.text, p.source[id].text))) {
             err(`${at} · 第 ${b.n} 段`, `「原文」块在 ${b.sources.join(' ')} 里找不到`)
+          }
+          /* 原文台词一律带回译。写成紧跟其后、以「——」开头的一行。
+             不写回译，读不懂文言的读者就卡在这一句上——
+             而这条规则必须没有例外，否则有的有有的没有，读者不知道什么时候该指望它。 */
+          checks++
+          if (!q.gloss) {
+            err(`${at} · 第 ${b.n} 段`, `原文台词「${String(q.text).slice(0, 14)}…」缺白话回译（紧跟其后写一行「——……」）`)
+          }
+          /* 引出原文台词的那一句不要用「——」收尾。
+             引文是独立的块，破折号会折行、孤零零掉到下一行（长引入句必现）。
+             规矩：「：」引出原文台词，「——」引出白话回译
+             （回译在块内另起一行，孤立不了）。 */
+          const prev = b.prose[q.at - 1]
+          checks++
+          if (prev && prev.trim().endsWith('——')) {
+            err(`${at} · 第 ${b.n} 段`, '引出原文台词的那句拿「——」收尾了——破折号会折行掉到下一行，改用「：」')
           }
         }
       }

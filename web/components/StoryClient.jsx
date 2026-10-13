@@ -200,23 +200,28 @@ export default function StoryClient({ person, story, source }) {
             <div className="beats">
               {beats.slice(0, revealed).map((b) => {
                 /* b.quotes 由编译器给：只有**逐字对得上底本**的那些行才算原文。
-                   本地不要再用「有没有引号」去猜——白话对白也带引号。 */
+                   本地不要再用「有没有引号」去猜——白话对白也带引号。
+                   就地渲染，不抽到段末：抽走的话，紧跟其后的白话回译会跑到引文前面。
+                   回译跟着引文一起走，就是 06 段 5「——始终没有回头。」那个形状。 */
                 const quotes = b.quotes || []
-                const rest = b.prose.filter((p) => !quotes.includes(p))
+                const glossAt = new Set(quotes.map((q) => q.glossAt).filter((x) => x !== null))
                 return (
                   <article key={b.n} data-n={b.n} id={`beat-${b.n}`} className="beat active">
                     <div className="narration anim-emerge">
-                      {rest.map((p, i) => <p key={i}>{p}</p>)}
+                      {b.prose.map((p, i) => {
+                        const q = quotes.find((x) => x.at === i)
+                        if (q) {
+                          return (
+                            <div key={i} className="emerge anim-emerge d2">
+                              <cite>{q.text}</cite>
+                              {q.gloss && <span className="gloss">{q.gloss}</span>}
+                            </div>
+                          )
+                        }
+                        if (glossAt.has(i)) return null
+                        return <p key={i}>{p}</p>
+                      })}
                     </div>
-
-                    {/* 不加「《史记》原文」那一行。说话人正文里已经交代过
-                        （「他又向前走了一步，唱道——」），这一行只会把一句台词
-                        重新框成书里的引文。设计稿 .who 放的也是说话人，不是书名。 */}
-                    {quotes.length > 0 && (
-                      <div className="emerge anim-emerge d2">
-                        {quotes.map((q, i) => <cite key={i}>{q}</cite>)}
-                      </div>
-                    )}
 
                     {/* 插图位：内容里填了「图」才渲染，没填就什么都不占 */}
                     {b.img && (

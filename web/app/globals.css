@@ -288,6 +288,12 @@ body.light-stage{
   color:var(--su-dim);margin-bottom:.85em;
 }
 .emerge cite{display:block;font-style:normal;font-size:26px;letter-spacing:.16em;color:var(--stage-emerge);margin:0}
+/* 白话回译。跟在文言台词下面，用米色压低——靠白与米的反差区分"哪句是原文"，
+   不靠字号。所以它是旁白，不是小字注：不做上标、不加括号。 */
+.emerge .gloss{
+  display:block;font-family:var(--f-song);font-size:15px;line-height:1.95;
+  letter-spacing:.03em;color:var(--su-dim);margin-top:.9em;
+}
 
 /* 你的声音：楷体 */
 .inner-voice{
@@ -467,7 +473,11 @@ body.light-stage{
 .anim-fade{animation:fade-up .5s var(--ease) backwards}
 .d1{animation-delay:.25s}.d2{animation-delay:.5s}.d3{animation-delay:.75s}.d4{animation-delay:1s}.d5{animation-delay:1.25s}
 @media (prefers-reduced-motion:reduce){
-  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  /* animation-delay 也必须压掉。只压 duration 的话，.d2/.d5 的 0.5–1.25s 延迟还在，
+     而动画是 backwards 填充——元素会停在透明的第一帧，等于开着减弱动效的人
+     反而要对着空白等一秒。 */
+  *{animation-duration:.01ms !important;animation-delay:0s !important;
+    animation-iteration-count:1 !important;transition-duration:.01ms !important}
 }
 
 /* ══════════════════════════════════════════════

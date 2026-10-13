@@ -145,7 +145,7 @@ async function open(mode = 'dark', opts = {}) {
   p.__errors = []
   p.on('pageerror', (e) => p.__errors.push(String(e).slice(0, 200)))
   p.on('console', (m) => { if (m.type() === 'error') p.__errors.push(m.text().slice(0, 200)) })
-  await p.goto(`${BASE}/`, { waitUntil: 'networkidle' })
+  await p.goto(`${BASE}/`, { waitUntil: 'networkidle', timeout: 15000 })
   await p.evaluate((m) => {
     localStorage.setItem('guanshi.settings.v1', JSON.stringify({ aiEnabled: false, lightStage: m === 'light' }))
   }, mode)
@@ -435,11 +435,14 @@ check('font: 印章字体已加载且覆盖字表', async () => {
 try {
   if (!fs.existsSync(CHROME)) throw new Error(`找不到 Chromium：${CHROME}`)
   browser = await chromium.launch({ executablePath: CHROME })
-  page = await open()
 
-  // 先确认服务器活着，不然所有检查都会以奇怪的方式失败
+  /* 探活就是 open() 本身——它已经会导航到 BASE/。
+     不要在这之后再对**同一个 URL** goto 一次并等 domcontentloaded：
+     Chromium 不会为第二次同址导航再发一次这个事件，goto 会一直挂到超时，
+     于是所有检查都报「连不上」，而 curl 明明是 200。
+     （同址 goto 用 waitUntil:'commit' 或 reload() 都正常，只有 domcontentloaded 会挂。） */
   try {
-    await page.goto(`${BASE}/`, { waitUntil: 'domcontentloaded', timeout: 8000 })
+    page = await open()
   } catch {
     console.error(`\n  ✗ 连不上 ${BASE}\n    先跑 npm run dev 或 npm start\n`)
     await browser.close()
