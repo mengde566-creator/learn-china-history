@@ -16,11 +16,6 @@ const TITLES = {
 }
 const MARK_CLASS = { '◆': 'g-source', '○': 'g-infer', '△': 'g-doubt', '—': 'g-silent' }
 
-/** 判断一行叙述是不是人物台词 */
-function isQuote(line) {
-  return /[「『]/.test(line) && /[」』]/.test(line)
-}
-
 const TABS = [
   { k: 'evidence',    label: '依据' },
   { k: 'source',      label: '原文' },
@@ -204,18 +199,22 @@ export default function StoryClient({ person, story, source }) {
 
             <div className="beats">
               {beats.slice(0, revealed).map((b) => {
-                const quote = b.prose.find(isQuote)
-                const rest = b.prose.filter((p) => p !== quote)
+                /* b.quotes 由编译器给：只有**逐字对得上底本**的那些行才算原文。
+                   本地不要再用「有没有引号」去猜——白话对白也带引号。 */
+                const quotes = b.quotes || []
+                const rest = b.prose.filter((p) => !quotes.includes(p))
                 return (
                   <article key={b.n} data-n={b.n} id={`beat-${b.n}`} className="beat active">
                     <div className="narration anim-emerge">
                       {rest.map((p, i) => <p key={i}>{p}</p>)}
                     </div>
 
-                    {quote && (
+                    {/* 不加「《史记》原文」那一行。说话人正文里已经交代过
+                        （「他又向前走了一步，唱道——」），这一行只会把一句台词
+                        重新框成书里的引文。设计稿 .who 放的也是说话人，不是书名。 */}
+                    {quotes.length > 0 && (
                       <div className="emerge anim-emerge d2">
-                        <span className="who">{person.sourceBook} 原文</span>
-                        <cite>{quote}</cite>
+                        {quotes.map((q, i) => <cite key={i}>{q}</cite>)}
                       </div>
                     )}
 
@@ -258,7 +257,7 @@ export default function StoryClient({ person, story, source }) {
                 </button>
               ) : (
                 /* 还没有对话种子时，不显示一个点了没反应的入口 */
-                <div className="ask-empty">本篇的对话种子尚未编写</div>
+                <div className="ask-empty">本篇暂无可问的问题</div>
               )}
             </div>
           </section>
@@ -383,18 +382,6 @@ export default function StoryClient({ person, story, source }) {
                       ))}
                     </>
                   )}
-
-                  <h4 style={{ marginTop: 24, fontSize: 11, letterSpacing: '.24em', color: 'var(--su-dim)', fontWeight: 400, marginBottom: 12 }}>
-                    待 做
-                  </h4>
-                  <div className="view-card off">
-                    <div className="t">地图 <span className="soon">M3</span></div>
-                    <div className="d">{story.name} · 地点与路线</div>
-                  </div>
-                  <div className="view-card off">
-                    <div className="t">人物关系 <span className="soon">M3</span></div>
-                    <div className="d">{[...presentHere, ...presentAway].map((p) => p.name).join(' · ')}</div>
-                  </div>
                 </div>
               )}
             </div>
@@ -410,14 +397,12 @@ export default function StoryClient({ person, story, source }) {
                   <h2 style={{ fontFamily: 'var(--f-song)', fontSize: 17, letterSpacing: '.14em', fontWeight: 600 }}>
                     读完之后 · {story.cards.length} 张复习卡
                   </h2>
-                  <span style={{ fontSize: 11.5, color: 'var(--su-mute)' }}>问动机，不问年代</span>
                 </div>
                 <ReviewCards cards={story.cards} />
-                <div className="card-hint">复习节奏建议：读完当天 → 第 3 天 → 第 7 天</div>
               </>
             ) : (
               <div className="card-hint" style={{ textAlign: 'left' }}>
-                本篇的复习卡尚未编写
+                本篇暂无复习卡
               </div>
             )}
 

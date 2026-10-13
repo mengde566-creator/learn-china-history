@@ -268,6 +268,29 @@ function parseStoryContent(rel, source) {
     delete beat.tableSeen
     if (!beat.prose.length) throw new ParseError(rel, 0, `第 ${beat.n} 段没有正文`)
     if (!beat.marker) throw new ParseError(rel, 0, `第 ${beat.n} 段缺少「标记」行`)
+    /* 正文里**逐字**嵌进来的原文，渲染时抽出来单独成块，挂「《史记》原文」的牌子。
+    
+       判别标准不是「有没有引号」——白话对白也带引号，而且大量是整行引号。
+       曾经用 /[「『]/ && /[」』]/ 判，结果 49 行独立引文里 45 行是白话，
+       全被挂到了「原文」标题底下。读者说「标记了原文又用了翻译」，
+       指的就是这个。
+    
+       标准只能是「和底本对不对得上」：整行是引号，且归一化后能逐字找到。
+
+       找的范围是**该段「原文」∪「依据」两栏的全部编号**。原来只看「原文」栏那一个，
+       而台词经常出自「依据」栏的别的段落——抽查 8 处有 6 处如此，
+       01 的段 8/9/10 更是分别出自 010/013/015。只看一个会漏掉真原文。 */
+    beat.sources = [...new Set(
+      ((beat.source || '') + ' ' + (beat.ground || '')).match(/\b\d{3}\b/g) || []
+    )].filter((id) => source[id])
+    beat.quotes = []
+    for (const p of beat.prose) {
+      const t = p.trim()
+      if (!/^[「『]/.test(t) || !/[」』]$/.test(t)) continue
+      const n = normalizeQuote(t)
+      if (n.length < 6) continue
+      if (beat.sources.some((id) => normalizeQuote(source[id].text).includes(n))) beat.quotes.push(p)
+    }
     story.beats.push(beat)
     beat = null
   }
@@ -319,7 +342,7 @@ function parseStoryContent(rel, source) {
       const h = line.match(/^### 情节点 (\d+) · (.+)$/)
       if (h) {
         flushBeat()
-        beat = { n: Number(h[1]), title: h[2].trim(), prose: [], marker: null, source: null, sourceText: null, ground: null, tableSeen: false }
+        beat = { n: Number(h[1]), title: h[2].trim(), prose: [], marker: null, source: null, sourceText: null, ground: null, sources: [], quotes: [], tableSeen: false }
         return
       }
       if (!beat) return
@@ -747,9 +770,62 @@ function validateContent(people) {
         }
       }
 
+      /* 读者可见字段里不许出现内部行话。
+         踩过这些：把「C 级 · 压缩」写进映射表和复习卡的「依据」栏、写进种子的 ⓘ 回答；
+         把「已标出 6 段高优先级核对项，另有 15 处待核疑点」写进设置页。
+         读者看不懂「C 级」是什么意思，而且这些话解释的是我们的流程，
+         不是他要读的那段历史。它们只该留在 source.md 和 审校记录.md 里。 */
+      const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b/
+      const visible = [
+        ...st.beats.flatMap((b) => [
+          [`第 ${b.n} 段 · 依据`, b.ground],
+          ...b.prose.map((p) => [`第 ${b.n} 段 · 正文`, p]),
+        ]),
+        ...st.groundTable.flatMap((r) => [
+          ['依据映射表 · 陈述', r.claim],
+          ['依据映射表 · 依据', r.basis],
+        ]),
+        ...st.cards.flatMap((c) => [
+          [`复习卡 ${c.n} · 题面`, c.q],
+          ...(c.meta || []).map((m) => [`复习卡 ${c.n} · ${m.k}`, m.v]),
+          ...(c.blocks || []).flatMap((bl) => [
+            [`复习卡 ${c.n} · 答案`, bl.v],
+            ...(bl.rows || []).flatMap((row) => row.map((cell) => [`复习卡 ${c.n} · 表格`, cell])),
+          ]),
+        ]),
+        ...st.seeds.flatMap((sd) => {
+          const q = `种子「${String(sd.q).slice(0, 12)}…」`
+          return [
+            ...(sd.answer || []).map((a) => [`${q} · 回答`, a]),
+            [`${q} · ⓘ`, sd.sys],
+            ...(sd.meta || []).map((m) => [`${q} · ${m.k}`, m.v]),
+          ]
+        }),
+      ]
+      for (const [where, text] of visible) {
+        if (!text) continue
+        checks++
+        const m = JARGON.exec(String(text))
+        if (m) err(`${at} · ${where}`, `出现了内部行话「${m[0]}」——读者看不懂，这类话只该留在 source.md 和 审校记录.md 里`)
+      }
+
       for (const row of st.groundTable) {
         checks++
         if (!VALID_MARKERS.has(markerOf(row.marker))) err(`${at} · 依据映射表`, `「${row.claim.slice(0, 12)}…」的标记「${row.marker}」无效`)
+      }
+
+      /* 正文里挂「原文」牌子的那一行，必须有编号撑着。
+         判别标准本身（整行引号 **且** 与底本逐字相同）由 verify 的端到端检查守：
+         它从渲染出来的 <cite> 反查「原文」页签里的底本，两边是独立的。 */
+      for (const b of st.beats) {
+        for (const q of b.quotes || []) {
+          checks++
+          if (!b.sources?.length) {
+            err(`${at} · 第 ${b.n} 段`, '正文里有「原文」块，但这一段没有任何编号撑着')
+          } else if (!b.sources.some((id) => quoteFound(q, p.source[id].text))) {
+            err(`${at} · 第 ${b.n} 段`, `「原文」块在 ${b.sources.join(' ')} 里找不到`)
+          }
+        }
       }
 
       checks++

@@ -297,6 +297,68 @@ check('geometry: 分节标题与正文有层级差，且朱标和分割线都渲
     : ok(`${r.titles.length} 个标题　${r.titles[0].size}px 对正文 ${r.body}px　朱标 ${r.titles[0].barW}×${r.titles[0].barH}　线宽 ${Math.round(r.titles[0].ruleW)}`)
 })
 
+/* 正文里挂「原文」牌子的那一行，必须真的出自底本。
+   守的是曾经那段代码：判别用「有没有引号」，49 行独立引文里 45 行是白话，
+   全被挂到了「原文」标题底下——读者看到的就是"标了原文又用翻译"。
+   这条从**渲染结果**反查同一篇的「原文」页签，和编译器的判别是两套算法。
+   两头都要拦：对不上底本是放松，一个都抽不出来是收紧。 */
+/* 界面上不许出现内部行话。
+   踩过：导航顶上「M2a · 无 AI 模式」、设置页「已标出 6 段高优先级核对项，
+   另有 15 处待核疑点」、正文里「本篇的对话种子尚未编写」。
+   读者看不懂，而且这些话解释的是我们的流程，不是他要读的那段历史。
+   内容侧的同类问题由编译器的 JARGON 检查拦，这条拦界面。 */
+check('content: 界面上没有内部行话', async () => {
+  const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|尚未编写|里程碑/
+  const bad = []
+  for (const url of ['/', '/p/jingke', '/p/jingke/01-yanwei', '/settings']) {
+    await page.goto(`${BASE}${url}`, { waitUntil: 'networkidle' })
+    const hits = await page.evaluate((src) => {
+      const re = new RegExp(src)
+      const out = []
+      const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT)
+      let n
+      while ((n = walk.nextNode())) {
+        const t = n.textContent.trim()
+        if (t && re.test(t)) out.push(t.slice(0, 30))
+      }
+      return out
+    }, JARGON.source)
+    for (const h of hits) bad.push(`${url} 「${h}」`)
+  }
+  return bad.length ? fail(bad.slice(0, 4).join('；')) : ok('4 个页面，无内部行话')
+})
+
+check('content: 正文里的「原文」块逐字出自底本', async () => {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'content.json'), 'utf8'))
+  const person = data.people.find((x) => x.id === 'jingke')
+  const ids = Object.keys(person.stories)
+  const norm = (v) => String(v).replace(/\*\*|`/g, '')
+    .replace(/[『』「」“”"']/g, '').replace(/[，。；：、！？…—·　\s＝=]/g, '')
+  let cites = 0
+  const bad = []
+  for (const id of ids) {
+    await page.goto(`${BASE}/p/jingke/${id}`, { waitUntil: 'networkidle' })
+    await page.click('button.cta')
+    for (let i = 0; i < 30; i++) {
+      const c = await page.$('button.continue')
+      if (!c) break
+      await c.click(); await page.waitForTimeout(100)
+    }
+    const got = await page.$$eval('cite', (els) => els.map((e) => e.textContent.trim()))
+    if (!got.length) continue
+    cites += got.length
+    await page.click('.panel-tabs button:has-text("原文")')
+    await page.waitForTimeout(250)
+    const hay = (await page.$$eval('.panel-face.paper .quote', (els) => els.map((e) => e.textContent.trim())))
+      .map(norm).join('|')
+    for (const c of got) if (!hay.includes(norm(c))) bad.push(`${id}「${c.slice(0, 16)}…」`)
+  }
+  if (!cites) return fail('全篇一个正文「原文」块都没有——判别可能过严，原文再也抽不出来')
+  return bad.length
+    ? fail(`${bad.length} 处对不上底本：${bad.slice(0, 3).join('；')}`)
+    : ok(`${ids.length} 篇　正文「原文」块 ${cites} 处，均逐字对得上「原文」页签`)
+})
+
 check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate(() => {

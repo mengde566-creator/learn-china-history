@@ -269,11 +269,14 @@ body.light-stage{
 .narration .quiet{color:var(--su-dim);font-size:16px}
 .narration .gap{height:1.2em}
 
-/* 人物浮现：无框、无气泡、无头像 */
+/* 原文台词：正文里逐字嵌进来的《史记》句子，单独成块。
+   顶上原来压一行「《史记·刺客列传》原文」——那是把一句台词重新框成
+   书里的引文，而且说话人正文里已经交代过（「他又向前走了一步，唱道——」）。
+   去掉之后字才立得住，所以字号从 20 提到 26。 */
 .emerge{
   font-family:var(--f-song);font-size:18px;line-height:2.1;
   color:var(--stage-emerge);letter-spacing:.04em;max-width:32em;
-  margin:1.8em 0 0 .3em;padding-left:22px;position:relative;
+  margin:2.4em 0 0 .3em;padding-left:22px;position:relative;
   text-shadow:0 0 26px var(--stage-halo);
 }
 .emerge::before{
@@ -284,7 +287,7 @@ body.light-stage{
   display:block;font-family:var(--f-hei);font-size:11px;letter-spacing:.24em;
   color:var(--su-dim);margin-bottom:.85em;
 }
-.emerge cite{display:block;font-style:normal;font-size:20px;letter-spacing:.1em;color:var(--stage-emerge);margin:.45em 0}
+.emerge cite{display:block;font-style:normal;font-size:26px;letter-spacing:.16em;color:var(--stage-emerge);margin:0}
 
 /* 你的声音：楷体 */
 .inner-voice{
