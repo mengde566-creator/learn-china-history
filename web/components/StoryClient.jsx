@@ -266,16 +266,23 @@ export default function StoryClient({ person, story, source }) {
                     {beats.map((_, i) => <i key={i} className={i < revealed ? 'on' : ''} />)}
                   </span>
                 </button>
-              ) : story.seeds.length > 0 ? (
-                <button className="ask-btn" onClick={() => setSheet(true)}>
-                  <span className="caret" />
-                  <span>你想说什么</span>
-                  <span className="hint">{story.seeds.length} 个问题可选</span>
-                </button>
-              ) : (
-                /* 还没有对话种子时，不显示一个点了没反应的入口 */
-                <div className="ask-empty">本篇暂无可问的问题</div>
-              )}
+              ) : (prevStory || nextStory) ? (
+                /* 读完之后，场景底部的这条常驻位换成出口。
+                   和「继续」用同一套语言：贴着场景底的一条细线、暗场的字；
+                   不是贴一张纸进来（纸是「查账」那边的语言，属于场景外）。 */
+                <nav className="next-bar">
+                  {prevStory
+                    ? <Link href={`/p/${person.id}/${prevStory.id}`} className="prev">
+                        <span className="k">上一篇</span><span className="t">{prevStory.name}</span>
+                      </Link>
+                    : <span />}
+                  {nextStory
+                    ? <Link href={`/p/${person.id}/${nextStory.id}`} className="next">
+                        <span className="k">下一篇</span><span className="t">{nextStory.name}</span>
+                      </Link>
+                    : <span />}
+                </nav>
+              ) : null}
             </div>
           </section>
 
@@ -425,19 +432,18 @@ export default function StoryClient({ person, story, source }) {
               </div>
             )}
 
-            {(prevStory || nextStory) && (
-              <nav className="story-nav">
-                {prevStory
-                  ? <Link href={`/p/${person.id}/${prevStory.id}`} className="prev">
-                      <span className="k">上一篇</span><span className="t">{prevStory.name}</span>
-                    </Link>
-                  : <span />}
-                {nextStory
-                  ? <Link href={`/p/${person.id}/${nextStory.id}`} className="next">
-                      <span className="k">下一篇</span><span className="t">{nextStory.name}</span>
-                    </Link>
-                  : <span />}
-              </nav>
+            {/* 提问入口。原来贴在场景底部，现在挪到复习卡之后——
+                读完之后先看这一篇的账（复习卡），再开口问。
+                仍然是和「继续」同一种形态：一条细线、左侧光标、右侧提示。 */}
+            {story.seeds.length > 0 ? (
+              <button className="ask-btn ask-after" onClick={() => setSheet(true)}>
+                <span className="caret" />
+                <span>你想说什么</span>
+                <span className="hint">{story.seeds.length} 个问题可选</span>
+              </button>
+            ) : (
+              /* 还没有对话种子时，不显示一个点了没反应的入口 */
+              <div className="ask-empty ask-after">本篇暂无可问的问题</div>
             )}
 
             <div className="note-box" style={{ marginTop: 34 }}>

@@ -415,7 +415,7 @@ check('routes: 每篇读完都有通往下一篇的出口', async () => {
       if (!c) break
       await c.click(); await page.waitForTimeout(60)
     }
-    const hrefs = await page.$$eval('.story-nav a', (as) => as.map((a) => a.getAttribute('href')))
+    const hrefs = await page.$$eval('.next-bar a', (as) => as.map((a) => a.getAttribute('href')))
     const last = i === READY.length - 1
     if (!last) {
       const want = routeOf(READY[i + 1])
