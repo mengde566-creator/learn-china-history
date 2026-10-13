@@ -2,7 +2,7 @@
  * 把内容里的轻量标记渲染成带样式的文本。
  *
  * 支持：
- *   ◆ ○ △        四类依据标记里可内联的三个
+ *   ◆ ◇ ○ △      依据标记里可内联的四个
  *   —             仅在独立成词时视为「史书的沉默」标记
  *   **粗体**       → <b>
  *   `编号`         → <code>
@@ -13,6 +13,7 @@
 
 const MARK_CLASS = {
   '◆': 'mk-source',
+  '◇': 'mk-fiction',
   '○': 'mk-infer',
   '△': 'mk-doubt',
   '—': 'mk-silent',
@@ -21,7 +22,7 @@ const MARK_CLASS = {
 function renderInline(text, keyPrefix) {
   const out = []
   // 一次扫描，按优先级切分：标记 → 粗体 → 代码
-  const re = /([◆○△](?=\s|$))|(?<=^|\s)(—)(?=\s|$)|(\*\*[^*]+\*\*)|(`[^`]+`)/g
+  const re = /([◆◇○△](?=\s|$))|(?<=^|\s)(—)(?=\s|$)|(\*\*[^*]+\*\*)|(`[^`]+`)/g
   let last = 0
   let m
   let i = 0
@@ -77,6 +78,7 @@ export function Legend() {
   return (
     <div className="legend">
       <span><Marker ch="◆" /> 出自原文，可逐字核对</span>
+      <span><Marker ch="◇" /> 出自小说（《三国演义》），不是史书</span>
       <span><Marker ch="○" /> 合理推演，附推演链条</span>
       <span><Marker ch="△" /> 史书未载，后世有争议</span>
       <span><Marker ch="—" /> 史书未载，且推不出来</span>

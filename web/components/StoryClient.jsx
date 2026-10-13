@@ -10,11 +10,12 @@ import ReviewCards from '@/components/ReviewCards'
    原来每个标记都重复一遍「出自原文，可逐字核对」，纯属噪音。 */
 const TITLES = {
   '◆': '出自原文',
+  '◇': '出自小说',
   '○': '合理推演',
   '△': '存疑',
   '—': '史书未载',
 }
-const MARK_CLASS = { '◆': 'g-source', '○': 'g-infer', '△': 'g-doubt', '—': 'g-silent' }
+const MARK_CLASS = { '◆': 'g-source', '◇': 'g-fiction', '○': 'g-infer', '△': 'g-doubt', '—': 'g-silent' }
 
 const TABS = [
   { k: 'evidence',    label: '依据' },
@@ -157,7 +158,7 @@ export default function StoryClient({ person, story, source }) {
               if (!ib.length) {
                 return <b>{story.intro.lines.length} 行铺陈，尚无逐行依据。</b>
               }
-              const orig = ib.filter((r) => r.marker.includes('◆')).length
+              const orig = ib.filter((r) => r.marker.includes('◆') || r.marker.includes('◇')).length
               return (
                 <>
                   <b>
@@ -170,7 +171,10 @@ export default function StoryClient({ person, story, source }) {
                           <span className="label">{r.line}</span>
                           <span
                             className="src mk"
-                            style={{ color: r.marker.includes('◆') ? 'var(--zhu)' : 'var(--accent)' }}
+                            style={{
+                              color: r.marker.includes('◆') ? 'var(--zhu)'
+                                : r.marker.includes('◇') ? 'var(--zi)' : 'var(--accent)',
+                            }}
                           >
                             {r.marker}
                           </span>
@@ -321,7 +325,7 @@ export default function StoryClient({ person, story, source }) {
                     <div key={id} className="lead">
                       「{source[id]?.text}」
                       <div style={{ fontSize: 11, color: 'var(--mo-mute)', marginTop: 6, letterSpacing: '.06em' }}>
-                        {person.sourceBook} {id}{source[id]?.noted ? ` · ${source[id].noted}` : ''}
+                        {source[id]?.origin || person.sourceBook} {id}
                       </div>
                     </div>
                   ))}
@@ -344,20 +348,29 @@ export default function StoryClient({ person, story, source }) {
               )}
 
               {tab === 'source' && (() => {
-                /* 「注」和正文分开排。
-                   004「太祖尝私入中常侍张让室」是裴松之注引《魏书》，不是陈寿正文；
-                   和 001–003 并排、同样挂 ◆，读者会以为曹操闯张让室是《武帝纪》写的。
-                   标记不新增第五个字形（图例只有四个）——分段、加副标题和来源小牌，
-                   位置本身就是区分。 */
+                /* 「本篇原文」按**底本**分节。
+                   一个人可能同时在读好几本书：曹操这篇的 001–003 是陈寿正文、
+                   101 是裴松之注引孙盛《异同杂语》、201 是十四世纪的《三国演义》。
+                   并排摊成一张单子、同样挂 ◆，读者会以为「闻司徒有七星宝刀一口」
+                   是陈寿写的。分节 + 各自的书名 + 小说用空心标记，位置本身就是区分。 */
                 const all = Object.values(source)
-                const main = all.filter((s) => !s.noted)
-                const aside = all.filter((s) => s.noted)
+                const groups = (person.books || [])
+                  .map((b) => ({ ...b, rows: b.ids.map((id) => source[id]).filter(Boolean) }))
+                  .filter((b) => b.rows.length)
+                const SUB_HEAD = {
+                  正史: '正文',
+                  注: '不是正文，出自注',
+                  小说: '不是史书，出自小说',
+                  野史: '不是正史，出自野史',
+                }
                 const row = (s) => (
-                  <div key={s.id} className={`mark-block ${s.noted ? 'noted' : 'source'}`}>
+                  <div key={s.id} className={`mark-block ${s.tier === '正史' ? 'source' : s.tier === '小说' ? 'fiction' : 'noted'}`}>
                     <div className="hd">
-                      <span className="glyph mk"><Marker ch="◆" size={11} /></span>
-                      {s.noted && <span className="tag">{s.noted}</span>}
-                      <span className="src">{person.sourceBook} {s.id}</span>
+                      <span className="glyph mk"><Marker ch={s.tier === '小说' ? '◇' : '◆'} size={11} /></span>
+                      {/* 书名在标题里（正史）或者在牌上（注、小说），行尾只留编号，
+                          不然会出现「《三国演义》第四回　《三国演义》第四回 201」 */}
+                      {s.tier !== '正史' && <span className="tag">{s.origin}</span>}
+                      <span className="src">{s.id}</span>
                     </div>
                     <div className="quote">{s.text}</div>
                   </div>
@@ -365,13 +378,14 @@ export default function StoryClient({ person, story, source }) {
                 return (
                   <div className="panel-face paper anim-fade">
                     <h3>本 篇 原 文 · {story.sourceRange}</h3>
-                    {main.map(row)}
-                    {aside.length > 0 && (
-                      <>
-                        <h4 className="sub-head">以下几段不是正文，出自注</h4>
-                        {aside.map(row)}
-                      </>
-                    )}
+                    {groups.map((b, i) => (
+                      <section className="src-group" key={`${b.tier}-${b.book}`}>
+                        <h4 className={i === 0 ? 'sub-head first' : 'sub-head'}>
+                          {b.tier === '正史' ? `正史 · ${b.book}` : `${b.tier} · ${SUB_HEAD[b.tier] || ''}`}
+                        </h4>
+                        {b.rows.map(row)}
+                      </section>
+                    ))}
                   </div>
                 )
               })()}

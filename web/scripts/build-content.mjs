@@ -183,19 +183,44 @@ function parsePersonMeta(rel) {
 
 /* ── source.md ──────────────────────────────────── */
 
-function parseSource(rel, fileLabel) {
+/* 底本的档次。一个人可以有好几本：正史正文、注家引的别史、小说、野史。
+   曹操就是四本——这正是「曹操刺董」这个篇名能被回答的原因：
+   正史里没有那一刀，演义里有。 */
+
+const TIERS = ['正史', '注', '小说', '野史']
+
+/* 编号按底本分号段，光看号码就知道是哪一档：
+     0xx  正史正文
+     1xx  注（裴松之引的别史）
+     2xx  小说
+     3xx  野史
+   这样「引用 201」在 Markdown 里一眼就不是正史，
+   不会像原来那样，裴注的 004 和正文的 003 挤在一条序列上。 */
+const TIER_BAND = { 正史: 0, 注: 1, 小说: 2, 野史: 3 }
+const bandOf = (id) => TIER_BAND[TIERS[Math.floor(Number(id) / 100)] ?? '正史']
+
+function parseSource(rel, fileLabel, defaultBook) {
   const { lines } = read(rel)
   const source = {}
-  let story = null
+  let book = defaultBook || '未署名的底本'
+  let tier = '正史'
 
-  lines.forEach((line) => {
-    /* 分组标题。原来是「## 场景 N · 篇名」；人物页用的段落不属于任何一篇故事
-       （家世、举孝廉、济南相都在刺董之前），另立一组，所以放一个通用回退：
-       任何 ## 标题都当组名，不再只认「场景 N」。 */
-    const m = line.match(/^## 场景 (\d+) · (.+)$/)
-    if (m) { story = m[1]; return }
-    if (/^## 尾声/.test(line)) { story = 'end'; return }
-    if (/^## /.test(line)) { story = line.replace(/^##\s*/, '').trim(); return }
+  lines.forEach((line, i) => {
+    /* `## 底本一 · 正史 ·《史记·刺客列传》`
+       不写底本小节的行，默认归 person.md「出处」那一本的正文——
+       荆轲的 source.md 一个小节都没有，照旧。 */
+    const h = line.match(/^##\s*底本[^·]*·\s*([^·]+?)\s*·\s*(.+?)\s*$/)
+    if (h) {
+      const t = h[1].trim()
+      if (!TIERS.includes(t)) {
+        throw new ParseError(rel, i + 1,
+          `底本档次「${t}」不认识。只认 ${TIERS.join(' / ')}——` +
+          '写成「## 底本一 · 正史 ·《某某书》」')
+      }
+      tier = t
+      book = h[2].trim()
+      return
+    }
 
     const cells = tableRow(line)
     if (!cells || cells.length < 3) return
@@ -203,26 +228,45 @@ function parseSource(rel, fileLabel) {
 
     const id = cells[0]
     const rawText = cells[1]
-    const priority = cells[2]
-    if (!/^[ABC]/.test(priority.replace(/\*\*/g, '').trim())) return
+    /* 表可以是三列（编号 | 原文 | 优先级），也可以是四列
+       （编号 | 原文 | 出处 | 优先级）——同一本底本里各条出自不同的书时要用四列，
+       比如裴松之注引的那三条分别出自《异同杂语》和《曹瞒传》。
+       判据是"第三格像不像优先级"，像就当三列读。 */
+    let rowNote = null
+    let priority = cells[2]
+    if (!/^[ABC]/.test(String(priority).replace(/\*\*/g, '').trim())) {
+      rowNote = clean(cells[2])
+      priority = cells[3] ?? ''
+    }
+    if (!/^[ABC]/.test(String(priority).replace(/\*\*/g, '').trim())) return
 
-    /* 「注」标记：这一条不是本纪正文（裴松之注引别史、或出自别的传）。
-       写法 `注` 或 `注 · 裴松之注引《魏书》`，点后面那截是给读者看的来源。
-       和正文并排、同样挂 ◆ 的话，读者会以为曹操闯张让室是陈寿写的——
-       而《魏书》是魏方立场、只此一源，更不该看着像两方互证。
-       渲染层按 noted 分段另排（`StoryClient` 的「本篇原文」页签）。 */
+    /* 行内的 `注 · …`：四列表已经能说清出处，这个留给三列表偶尔要补一句的情况。 */
     const NOTE = /`注(?:\s*·\s*([^`]+))?`/
     const noteM = rawText.match(NOTE)
 
+    if (source[id]) {
+      throw new ParseError(rel, i + 1, `编号 ${id} 出现了两次——同一本底本里编号必须唯一`)
+    }
+    if (bandOf(id) !== TIER_BAND[tier]) {
+      throw new ParseError(rel, i + 1,
+        `编号 ${id} 落在「${TIERS[bandOf(id)]}」号段（${TIER_BAND[tier] * 100}xx），` +
+        `可它现在挂在「${tier}」这一本底下。号段和底本档次必须对得上：` +
+        '正史 0xx、注 1xx、小说 2xx、野史 3xx')
+    }
+
     source[id] = {
       id,
-      story,
+      book,
+      tier,
+      /* 引用时显示哪一行字：本条自己的出处优先，没有就用底本小节的书名。
+         读者看到的「《曹瞒传》101」和「《三国演义》第四回 201」靠的是它。 */
+      origin: rowNote || (noteM ? (noteM[1] || '注').trim() : null) || book,
+      line: i + 1,
       text: rawText.replace(/★/g, '').replace(/`异文`/g, '').replace(NOTE, '').trim(),
-      priority: priority.replace(/\*\*/g, '').trim()[0],
+      priority: String(priority).replace(/\*\*/g, '').trim()[0],
       key: /★/.test(rawText),
       variant: /异文/.test(rawText) || /异文/.test(priority),
       compressed: /压缩/.test(priority),
-      noted: noteM ? (noteM[1] || '注').trim() : null,
     }
   })
 
@@ -686,7 +730,7 @@ function buildPerson(id) {
   const assets = syncAssets(id)
 
   const meta = parsePersonMeta(`${dir}/person.md`)
-  const source = parseSource(`${dir}/source.md`, `${dir}/source.md`)
+  const source = parseSource(`${dir}/source.md`, `${dir}/source.md`, meta['出处'] || null)
   const storyList = parseStoryList(`${dir}/stories.md`)
   const cast = exists(`${dir}/cast.md`) ? parseCast(`${dir}/cast.md`) : { people: [], others: [] }
 
@@ -719,6 +763,21 @@ function buildPerson(id) {
     stories[s.id] = st
   }
 
+  /* 这个人的底本清单，按档次和书分组。
+     渲染层拿它给「本篇原文」页签分节，也拿它给引用行标书名。
+     **顺序必须显式排**：不能靠 Object.values 的次序——
+     JS 对象把「101」这种键当整数索引排在后面，而「001」不是，
+     两类的相对次序不是文件里的次序，正史会被挤到注后面去。 */
+  const books = []
+  for (const s of Object.values(source)) {
+    let g = books.find((b) => b.book === s.book && b.tier === s.tier)
+    if (!g) { g = { book: s.book, tier: s.tier, ids: [] }; books.push(g) }
+    g.ids.push(s.id)
+  }
+  const tierRank = (t) => { const i = TIERS.indexOf(t); return i < 0 ? 99 : i }
+  books.sort((a, b) => tierRank(a.tier) - tierRank(b.tier) || a.book.localeCompare(b.book))
+  for (const b of books) b.ids.sort()
+
   return {
     id,
     ...meta,
@@ -727,6 +786,7 @@ function buildPerson(id) {
     warnings: warn,
     sourceCount: Object.keys(source).length,
     source,
+    books,
     storyList: storyList.map((s) => ({ ...s, ready: !!stories[s.id], img: stories[s.id]?.img || null })),
     cast,
     stories,
@@ -743,7 +803,12 @@ function listPeople() {
 
 /* ── 校验 ──────────────────────────────────────── */
 
-const VALID_MARKERS = new Set(['◆', '○', '△', '—'])
+/* 四个标记说的是「这句话在史料上站得住多少」。
+   ◇ 是第五个，说的是**别的书**：这条出自底本正文之外的记载——小说、野史。
+   它不是"更不可靠的 ◆"，是"另一个世界的说法"，所以给一个不同的字形，
+   书名永远跟着一起显示（依据面板、「本篇原文」的分节标题）。
+   注（裴松之引的别史）仍用 ◆：那是史料，只是不在正文里，书名标出来就够。 */
+const VALID_MARKERS = new Set(['◆', '◇', '○', '△', '—'])
 
 /**
  * 标记可以带副标注，例如「○ 外证」「○ 训释」——
@@ -865,12 +930,20 @@ function validateContent(people) {
       }
     }
 
-    /* 原文底本 */
-    checks++
-    const srcIds = Object.keys(p.source)
-    const expected = Array.from({ length: srcIds.length }, (_, i) => String(i + 1).padStart(3, '0'))
-    const missingSrc = expected.filter((id) => !p.source[id])
-    if (missingSrc.length) err(`${who} · source.md`, `编号不连续，缺 ${missingSrc.slice(0, 8).join(', ')}${missingSrc.length > 8 ? ' …' : ''}`)
+    /* 原文底本的编号连续性，**按底本分别查**。
+       号段本来就是分开的（正史 0xx、注 1xx、小说 2xx），跨底本连着数没有意义——
+       016 后面本来就该是 101，不是 017。 */
+    for (const b of p.books || []) {
+      checks++
+      const nums = b.ids.map(Number).sort((x, y) => x - y)
+      const base = Math.floor(nums[0] / 100) * 100
+      const want = nums.map((_, i) => String(base + i + 1).padStart(3, '0'))
+      const missing = want.filter((id) => !p.source[id])
+      if (missing.length) {
+        err(`${who} · source.md`,
+          `「${b.book}」的编号不连续，缺 ${missing.slice(0, 8).join(', ')}${missing.length > 8 ? ' …' : ''}`)
+      }
+    }
 
     /* 故事一览 vs 实际文件 */
     const listed = new Set(p.storyList.map((s) => s.id))
@@ -931,6 +1004,24 @@ function validateContent(people) {
         if (b.source && !/^\d{3}$/.test(b.source)) err(`${at} · 第 ${b.n} 段`, `原文编号「${b.source}」不是三位数字`)
         checks++
         if (!b.source && markerOf(b.marker) === '◆') err(`${at} · 第 ${b.n} 段`, '标了 ◆（出自原文）但没有原文编号')
+        checks++
+        if (!b.source && markerOf(b.marker) === '◇') err(`${at} · 第 ${b.n} 段`, '标了 ◇（出自小说）但没有原文编号')
+        /* 引了小说就必须标 ◇，反过来标了 ◇ 就必须真引了小说。
+           ◆ 在这套东西里的意思是「这是史书写的」——拿它罩住《三国演义》，
+           读者会把十四世纪的小说当成陈寿的记载。这两个方向都要拦：
+           只拦一个方向的话，把小说段落改标成 ◆ 没人管，把正史段落改标成 ◇ 也没人管。 */
+        const tiers = (b.sources || []).map((id) => p.source[id]?.tier).filter(Boolean)
+        const fictionIds = (b.sources || []).filter((id) => p.source[id]?.tier === '小说')
+        checks++
+        if (fictionIds.length && markerOf(b.marker) !== '◇') {
+          err(`${at} · 第 ${b.n} 段`,
+            `这一段引了小说（${fictionIds.join(' ')}），标记必须是 ◇（出自小说，不是史书），` +
+            `现在是「${b.marker}」`)
+        }
+        checks++
+        if (!fictionIds.length && markerOf(b.marker) === '◇') {
+          err(`${at} · 第 ${b.n} 段`, `标了 ◇（出自小说），可这一段引的 ${tiers.join(' ')} 里没有小说`)
+        }
         checks++
         if (b.imgFile && !b.imgCaption) warn(`${at} · 第 ${b.n} 段`, '有插图但没写图注')
       }

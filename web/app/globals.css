@@ -18,6 +18,7 @@
   --cang:   #7d9aa8;   /* 苍 · 易水的冷青 */
   --zhu:    #b8402f;   /* 朱 · 朱批 */
   --zhe:    #a97c4a;   /* 赭 · 竹简暖褐 */
+  --zi:     #9c7aa6;   /* 紫 · 小说。四色（朱苍赭紫）里唯一不属于史料的一个 */
 
   --zhi:    #f7f4ec;   /* 纸 · 查账面 */
   --zhi-2:  #efe9dc;
@@ -121,6 +122,7 @@ body.light-stage{
      暗场是 --accent: var(--cang)，浅色照写。 */
   --cang:   #45606e;
   --zhe:    #7d5828;
+  --zi:     #6f5378;
   --accent: var(--cang);
   --accent-soft:  rgba(69,96,110,.3);
   --beat-dim:     .4;
@@ -189,6 +191,9 @@ body.light-stage{
    ══════════════════════════════════════════════ */
 .mk{font-size:12px;line-height:1;font-family:var(--f-hei)}
 .mk-source{color:var(--zhu)}
+/* 小说不是史料，所以不给它朱色——朱在这套东西里的意思是"这是原文"。
+   空心 ◇ + 紫，和实心 ◆ + 朱 分得开。 */
+.mk-fiction{color:var(--zi)}
 .mk-infer {color:var(--cang)}
 .mk-doubt {color:var(--zhe)}
 /* 「—」和另外三个不一样。◆ ○ △ 用的是会随主题翻转的色，
@@ -317,6 +322,7 @@ body.light-stage{
 .ground b{font-weight:400;font-size:9.5px;line-height:1;opacity:.85;transition:opacity .25s var(--ease)}
 .ground:hover b{opacity:1}
 .ground .g-source{color:var(--zhu);text-shadow:0 0 10px rgba(184,64,47,.5)}
+.ground .g-fiction{color:var(--zi)}
 .ground .g-infer {color:var(--cang)}
 .ground .g-doubt {color:var(--zhe)}
 .ground .g-silent{color:var(--su-mute)}
@@ -426,14 +432,21 @@ body.light-stage{
 .mark-block.noted .quote{
   background:rgba(90,84,76,.05);border-left-color:rgba(90,84,76,.38);color:var(--mo-dim);
 }
+/* 小说那一块：色相换掉，读者一眼看得出这不是档案里的东西 */
+.mark-block.fiction .quote{
+  background:rgba(124,90,134,.07);border-left-color:rgba(124,90,134,.5);
+}
 .mark-block .tag{
   font-size:10.5px;letter-spacing:.06em;color:var(--mo-mute);
   border:1px solid var(--zhi-3);border-radius:2px;padding:1px 7px;white-space:nowrap;
 }
 .panel-face .sub-head{
   margin:22px 0 0;padding-top:18px;border-top:1px solid var(--zhi-3);
-  font-size:11px;font-weight:400;letter-spacing:.2em;color:var(--su-dim);
+  font-size:11px;font-weight:400;letter-spacing:.2em;color:var(--mo-mute);
 }
+/* 第一组不用再画一条线——卡片标题下面就是它 */
+.panel-face .sub-head.first{margin-top:0;padding-top:0;border-top:none}
+.src-group{display:block}
 .mark-block .quote{
   font-family:var(--f-song);font-size:14.5px;line-height:1.95;color:var(--mo);
   letter-spacing:.04em;background:rgba(184,64,47,.045);

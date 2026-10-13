@@ -11,7 +11,9 @@
     "build": "npm run content && npm run font && next build",
     "start": "next start",
     "verify": "node scripts/verify.mjs",
-    "shots": "node scripts/screenshots.mjs"
+    "shots": "node scripts/screenshots.mjs",
+    "refs": "node scripts/fetch-refs.mjs",
+    "check-sources": "node scripts/check-sources.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@fontsource/ma-shan-zheng": "^5.3.1",
+    "opencc-js": "^1.4.2",
     "playwright-core": "^1.64.0",
     "subset-font": "^2.9.0"
   }
