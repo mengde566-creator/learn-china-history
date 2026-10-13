@@ -37,14 +37,19 @@ function Crumbs({ person, story }) {
   )
 }
 
-/** 判断「依据」正文是否只是在重复上面已经引过的原文。
- *  是的话就不渲染——原文本身就是证据，标记负责说明它的地位。 */
-function evidenceAdds(beat) {
-  const strip = (s) => (s || '').replace(/`\d{3}`/g, '').replace(/[「」『』。，、；：！？·\s（）()]/g, '')
+/** 判断「依据」正文是否只是在重复旁边已经引过的原文。
+ *  是的话就不渲染——原文本身就是证据，标记负责说明它的地位。
+ *  比对的是该段**全部**底本（sources），不只「原文」栏那一条。
+ *  编号本身不算内容：作者常写「012〈…〉；013 鞠武谏；014」这种指路条，
+ *  把编号剥掉之后它就只是引文的拼接，和上面列的重复。 */
+function evidenceAdds(beat, source) {
+  const strip = (s) => (s || '')
+    .replace(/`?\d{3}`?/g, '')
+    .replace(/[「」『』。，、；：！？·\s（）()]/g, '')
   const g = strip(beat?.ground)
-  const s = strip(beat?.sourceText)
-  if (!g) return false
-  return !(s && s.includes(g)) && g.length > 4
+  if (!g || g.length <= 4) return false
+  const hay = (beat?.sources || []).map((id) => strip(source[id]?.text)).join('')
+  return !hay.includes(g)
 }
 
 export default function StoryClient({ person, story, source }) {
@@ -58,6 +63,13 @@ export default function StoryClient({ person, story, source }) {
   const beats = story.beats
   const isLast = revealed >= beats.length
   const shownBeat = beats[following - 1] || beats[0]
+
+  /* 读完一篇直接进下一篇。顺序取人物页的篇目顺序，只数已实现的——
+     未实现的排进去会点进一个空页。 */
+  const readyList = person.storyList.filter((s) => s.ready)
+  const at = readyList.findIndex((s) => s.id === story.id)
+  const prevStory = at > 0 ? readyList[at - 1] : null
+  const nextStory = at >= 0 && at < readyList.length - 1 ? readyList[at + 1] : null
 
   /* 把某一段滚到滚动区中央。
      桌面是阅读器布局——场景区自己是滚动容器，所以滚它，不滚页面。
@@ -286,14 +298,17 @@ export default function StoryClient({ person, story, source }) {
                 <div className="panel-face paper anim-fade" key={shownBeat.n}>
                   <h3>这 一 处 的 依 据</h3>
 
-                  {shownBeat.source && (
-                    <div className="lead">
-                      「{shownBeat.sourceText}」
+                  {/* 把这一段依赖的**全部**底本都列出来，不只「原文」栏那一条。
+                      场景里常有两三句白话，各自出自不同段落；只引一条，
+                      读者会以为译文多出来一段——这正是被指出的那个问题。 */}
+                  {(shownBeat.sources || []).map((id) => (
+                    <div key={id} className="lead">
+                      「{source[id]?.text}」
                       <div style={{ fontSize: 11, color: 'var(--mo-mute)', marginTop: 6, letterSpacing: '.06em' }}>
-                        {person.sourceBook} {shownBeat.source}
+                        {person.sourceBook} {id}
                       </div>
                     </div>
-                  )}
+                  ))}
 
                   <div className={`mark-block ${
                     shownMark === '◆' ? 'source' : shownMark === '○' ? 'infer' : shownMark === '△' ? 'doubt' : 'silent'
@@ -302,12 +317,11 @@ export default function StoryClient({ person, story, source }) {
                       <span className="glyph mk"><Marker ch={shownMark} size={13} /></span>
                       <span className="label">{TITLES[shownMark]}</span>
                     </div>
-                    {evidenceAdds(shownBeat) ? (
+                    {/* 依据正文只有在本段底本里找不到时才显示。
+                        没有可显示的就不显示——不再补一句「引文即证据，见上」。
+                        标记本身已经说完了。 */}
+                    {evidenceAdds(shownBeat, source) && (
                       <div className="body"><RichText text={shownBeat.ground} /></div>
-                    ) : (
-                      <div className="body" style={{ color: 'var(--mo-mute)', fontSize: 12 }}>
-                        {shownBeat.source ? '引文即证据，见上。' : '原文未载，此处不推。'}
-                      </div>
                     )}
                   </div>
                 </div>
@@ -409,6 +423,21 @@ export default function StoryClient({ person, story, source }) {
               <div className="card-hint" style={{ textAlign: 'left' }}>
                 本篇暂无复习卡
               </div>
+            )}
+
+            {(prevStory || nextStory) && (
+              <nav className="story-nav">
+                {prevStory
+                  ? <Link href={`/p/${person.id}/${prevStory.id}`} className="prev">
+                      <span className="k">上一篇</span><span className="t">{prevStory.name}</span>
+                    </Link>
+                  : <span />}
+                {nextStory
+                  ? <Link href={`/p/${person.id}/${nextStory.id}`} className="next">
+                      <span className="k">下一篇</span><span className="t">{nextStory.name}</span>
+                    </Link>
+                  : <span />}
+              </nav>
             )}
 
             <div className="note-box" style={{ marginTop: 34 }}>

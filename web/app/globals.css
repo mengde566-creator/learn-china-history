@@ -480,6 +480,26 @@ body.light-stage{
     animation-iteration-count:1 !important;transition-duration:.01ms !important}
 }
 
+/* 读完一篇，直接进下一篇。
+   和「故事」列表用的是同一种语言：一张纸。 */
+.story-nav{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
+.story-nav > span{flex:1;min-width:200px}
+.story-nav a{
+  flex:1;min-width:200px;display:block;padding:17px 22px;border-radius:4px;
+  background:var(--paper);border:1px solid var(--paper-edge);
+  transition:background .25s var(--ease),transform .25s var(--ease);
+}
+.story-nav a:hover{background:var(--paper-hover);transform:translateY(-1px)}
+.story-nav .k{
+  display:block;font-family:var(--f-hei);font-size:10.5px;letter-spacing:.24em;
+  color:var(--paper-ink-3);margin-bottom:8px;
+}
+.story-nav .t{
+  display:block;font-family:var(--f-song);font-size:17px;letter-spacing:.06em;
+  color:var(--paper-ink);
+}
+.story-nav .next{text-align:right}
+
 /* ══════════════════════════════════════════════
    提问面板（覆盖层）
    ══════════════════════════════════════════════ */

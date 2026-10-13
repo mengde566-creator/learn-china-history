@@ -401,6 +401,33 @@ check('content: 正文里的「原文」块逐字出自底本', async () => {
     : ok(`${pages} 篇（${withQuote} 篇带原文台词）　正文「原文」块 ${cites} 处，均逐字对得上「原文」页签`)
 })
 
+/* 读完一篇不能是死路。
+   用户报过：「读完故事一之后没有能直接进入下一个故事二的地方」。
+   最后一篇除外——它本来就该收尾。 */
+check('routes: 每篇读完都有通往下一篇的出口', async () => {
+  const bad = []
+  for (let i = 0; i < READY.length; i++) {
+    const { person, story } = READY[i]
+    await page.goto(`${BASE}${routeOf({ person, story })}`, { waitUntil: 'networkidle' })
+    await page.click('button.cta')
+    for (let k = 0; k < 40; k++) {
+      const c = await page.$('button.continue')
+      if (!c) break
+      await c.click(); await page.waitForTimeout(60)
+    }
+    const hrefs = await page.$$eval('.story-nav a', (as) => as.map((a) => a.getAttribute('href')))
+    const last = i === READY.length - 1
+    if (!last) {
+      const want = routeOf(READY[i + 1])
+      if (!hrefs.includes(want)) bad.push(`${story.id} 读完没有通往 ${READY[i + 1].story.id} 的入口`)
+    }
+    if (i > 0 && !hrefs.includes(routeOf(READY[i - 1]))) {
+      bad.push(`${story.id} 读完没有回到 ${READY[i - 1].story.id} 的入口`)
+    }
+  }
+  return bad.length ? fail(bad.slice(0, 3).join('；')) : ok(`${READY.length} 篇，读完都能接着往下走`)
+})
+
 check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate(() => {
