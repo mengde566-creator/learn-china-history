@@ -732,6 +732,14 @@ function validateContent(people) {
   const err = (loc, msg) => errs.push(`${loc}\n      ${msg}`)
   const warn = (loc, msg) => warns.push(`${loc}\n      ${msg}`)
 
+  /* 「产品在说自己」的口吻。引子、正文里都不许出现。
+     踩过两次：一次是把「C 级 · 压缩」写进读者看得见的地方（行话），
+     一次是给曹操写的引子四段全是「这一篇不回答…」「它把这个人拆成很多篇
+     故事…」——**主语是产品，不是那个人**。用户原话：
+     「全是解释的话和曹操有什么关系」。
+     注：「依据映射表」不在管辖内——那张表本身就是关于"我们怎么标的"。 */
+  const SELF_REF = /这一篇|本篇|本文|本产品|这个产品|读者/
+
   for (const p of people) {
     const who = p.name
 
@@ -740,6 +748,20 @@ function validateContent(people) {
     if (!p.intro?.length) err(`${who} · person.md`, '「他是谁」一节是空的')
     checks++
     if (!p.timeline?.length) warn(`${who} · person.md`, '没有「关键时点」表')
+
+    /* 「他是谁」和「引子」里不许出现产品自述的口吻。
+       对照荆轲那段：每句话的主语都是荆轲，而且有一句论断
+       （「他不是一个刺客。他是去签一份合同的。」）。 */
+    for (const [where, texts] of [
+      [`${who} · person.md「他是谁」`, p.intro || []],
+      [`${who} · person.md「引子」`, p.why || []],
+    ]) {
+      for (const t of texts) {
+        checks++
+        const m = SELF_REF.exec(String(t))
+        if (m) err(where, `出现了「${m[0]}」——这是产品在说自己。引子要写的是那个人`)
+      }
+    }
 
     /* 原文底本 */
     checks++
@@ -854,6 +876,15 @@ function validateContent(people) {
         checks++
         const m = JARGON.exec(String(text))
         if (m) err(`${at} · ${where}`, `出现了内部行话「${m[0]}」——读者看不懂，这类话只该留在 source.md 和 审校记录.md 里`)
+      }
+
+      /* 场景正文里同样不许出现"产品在说自己"。 */
+      for (const b of st.beats) {
+        for (const t of b.prose) {
+          checks++
+          const m = SELF_REF.exec(String(t))
+          if (m) err(`${at} · 第 ${b.n} 段 · 正文`, `出现了「${m[0]}」——这是产品在说自己，正文要写的是那件事`)
+        }
       }
 
       for (const row of st.groundTable) {
