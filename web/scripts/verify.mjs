@@ -31,7 +31,35 @@ const CHROME = path.join(
 )
 const FILTER = process.argv.slice(2).find((a) => !a.startsWith('-'))
 
-const ROUTES = ['/', '/p/jingke', '/p/jingke/06-yishui', '/p/jingke/07-tupo', '/settings']
+/* ── 页面清单从内容里现取，不写死 ──────────────────
+   写死 jingke 的后果不是报错，是**静默地少查**：加到第二个人物时，
+   这些检查仍然只跑荆轲，而输出看起来一切正常。
+   所以人物、篇目、路由全部由 data/content.json 推出来。 */
+const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'content.json'), 'utf8'))
+const PEOPLE = DATA.people
+/* storyList 里只有摘要（id / 篇名 / ready），正文在 person.stories[id]。
+   取错层会拿到一个没有 beats 的对象。 */
+const READY = PEOPLE.flatMap((p) =>
+  p.storyList.filter((s) => s.ready)
+    .map((s) => ({ person: p, story: p.stories[s.id] }))
+    .filter((x) => x.story))
+const routeOf = ({ person, story }) => `/p/${person.id}/${story.id}`
+
+const ROUTES = [
+  '/', '/settings',
+  ...PEOPLE.map((p) => `/p/${p.id}`),
+  ...READY.map(routeOf),
+]
+/* 挑样本时优先用「有原文台词」和「铺陈不带内联标记」的篇目——
+   这两种是最容易出问题、也最值得盯的形态。没有就退回第一篇。 */
+const firstWith = (pred, fallback) => READY.find(pred) || fallback
+const SAMPLE = {
+  person: READY[0].person,
+  story: READY[0].story,
+  quoted: firstWith(({ story }) => story.beats.some((b) => b.quotes?.length), READY[0]),
+  bare: firstWith(({ story }) => story.intro?.lines?.some((l) => !l.marker), READY[0]),
+}
+const sampleRoute = (which) => routeOf(SAMPLE[which])
 
 /* ── 收集器 ─────────────────────────────────────── */
 
@@ -166,7 +194,7 @@ check('routes: 所有路由可访问且无控制台报错', async () => {
 })
 
 check('contrast: 纸面卡上的文字（暗场）', async () => {
-  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate((getTools) => {
     const { lum, contrast, effectiveBg } = new Function('return (' + getTools + ')()')()
@@ -188,7 +216,7 @@ check('contrast: 纸面卡上的文字（暗场）', async () => {
 
 check('contrast: 纸面卡上的文字（浅色模式）', async () => {
   const p = await open('light')
-  await p.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+  await p.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
   await p.evaluate(() => document.fonts.ready)
   const r = await p.evaluate((getTools) => {
     const { lum, contrast, effectiveBg } = new Function('return (' + getTools + ')()')()
@@ -204,7 +232,7 @@ check('contrast: 纸面卡上的文字（浅色模式）', async () => {
    纸面 .body 写死 #4e4840，在 --xuan-2 上只有 1.91:1——肉眼几乎看不见。
    这条守的就是那次覆盖，用 01（依据只在这张表里，没有内联标记）当最坏样本。 */
 check('contrast: 门口的逐行依据卡（暗场）', async () => {
-  await page.goto(`${BASE}/p/jingke/01-yanwei`, { waitUntil: 'networkidle' })
+  await page.goto(`${BASE}${sampleRoute('bare')}`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate((getTools) => {
     const { lum, contrast, effectiveBg } = new Function('return (' + getTools + ')()')()
@@ -241,7 +269,7 @@ check('contrast: 浅色模式全站文字（灾难性地板 2.8:1）', async () 
   // 报出来的是假数（我见过 a 1.41:1 这种），检查会飘
   const p = await open('light', { reducedMotion: 'reduce' })
   const all = []
-  for (const url of ['/', '/p/jingke', '/p/jingke/01-yanwei']) {
+  for (const url of ['/', `/p/${SAMPLE.person.id}`, sampleRoute('bare')]) {
     await p.goto(`${BASE}${url}`, { waitUntil: 'networkidle' })
     await p.evaluate(() => document.body.classList.contains('light-stage')
       || document.body.classList.add('light-stage'))
@@ -262,7 +290,7 @@ check('contrast: 浅色模式全站文字（灾难性地板 2.8:1）', async () 
    读起来就是上一段散文的下一行。引子是三个模块里唯一没有容器的
    （故事有纸、行迹有线表），标题一塌，整个模块的边界就全压在这两个字上。 */
 check('geometry: 分节标题与正文有层级差，且朱标和分割线都渲染', async () => {
-  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
   const r = await page.evaluate(() => {
     const ts = [...document.querySelectorAll('.sec-title')]
     const p = document.querySelector('.prose-block p')
@@ -310,7 +338,9 @@ check('geometry: 分节标题与正文有层级差，且朱标和分割线都渲
 check('content: 界面上没有内部行话', async () => {
   const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|尚未编写|里程碑/
   const bad = []
-  for (const url of ['/', '/p/jingke', '/p/jingke/01-yanwei', '/settings']) {
+  const pages = ['/', '/settings', ...PEOPLE.map((p) => `/p/${p.id}`),
+                 sampleRoute('bare'), sampleRoute('quoted')]
+  for (const url of pages) {
     await page.goto(`${BASE}${url}`, { waitUntil: 'networkidle' })
     const hits = await page.evaluate((src) => {
       const re = new RegExp(src)
@@ -325,21 +355,22 @@ check('content: 界面上没有内部行话', async () => {
     }, JARGON.source)
     for (const h of hits) bad.push(`${url} 「${h}」`)
   }
-  return bad.length ? fail(bad.slice(0, 4).join('；')) : ok('4 个页面，无内部行话')
+  return bad.length ? fail(bad.slice(0, 4).join('；')) : ok(`${pages.length} 个页面，无内部行话`)
 })
 
 check('content: 正文里的「原文」块逐字出自底本', async () => {
-  const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'content.json'), 'utf8'))
-  const person = data.people.find((x) => x.id === 'jingke')
-  const ids = Object.keys(person.stories)
   const norm = (v) => String(v).replace(/\*\*|`/g, '')
     .replace(/[『』「」“”"']/g, '').replace(/[，。；：、！？…—·　\s＝=]/g, '')
-  let cites = 0
+  let cites = 0, pages = 0, withQuote = 0
   const bad = []
-  for (const id of ids) {
-    await page.goto(`${BASE}/p/jingke/${id}`, { waitUntil: 'networkidle' })
+  /* 遍历**所有人物、所有已实现篇目**。写死一个人的话，
+     加到第二个人物时这条检查会静默地只查荆轲。 */
+  for (const { person, story } of READY) {
+    pages++
+    if (story.beats.some((b) => b.quotes?.length)) withQuote++
+    await page.goto(`${BASE}${routeOf({ person, story })}`, { waitUntil: 'networkidle' })
     await page.click('button.cta')
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 40; i++) {
       const c = await page.$('button.continue')
       if (!c) break
       await c.click(); await page.waitForTimeout(100)
@@ -351,15 +382,26 @@ check('content: 正文里的「原文」块逐字出自底本', async () => {
     await page.waitForTimeout(250)
     const hay = (await page.$$eval('.panel-face.paper .quote', (els) => els.map((e) => e.textContent.trim())))
       .map(norm).join('|')
-    for (const c of got) if (!hay.includes(norm(c))) bad.push(`${id}「${c.slice(0, 16)}…」`)
+    for (const c of got) if (!hay.includes(norm(c))) bad.push(`${person.id}/${story.id}「${c.slice(0, 16)}…」`)
   }
   if (!cites) return fail('全篇一个正文「原文」块都没有——判别可能过严，原文再也抽不出来')
+  /* 内容侧说有几篇带引文，浏览器侧就该在几篇里看到 <cite>。
+     两边对不上说明有篇目的引文根本没渲染出来。 */
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'content.json'), 'utf8'))
+  const declared = data.people.flatMap((p) => p.storyList.filter((s) => s.ready))
+  const expect = declared.filter(({ id }) => {
+    const full = data.people.flatMap((p) => Object.values(p.stories)).find((s) => s.id === id)
+    return full?.beats?.some((b) => b.quotes?.length)
+  }).length
+  if (withQuote !== expect) {
+    return fail(`内容侧有 ${expect} 篇带原文台词，浏览器里只在 ${withQuote} 篇看到——有篇目的引文没渲染`)
+  }
   return bad.length
     ? fail(`${bad.length} 处对不上底本：${bad.slice(0, 3).join('；')}`)
-    : ok(`${ids.length} 篇　正文「原文」块 ${cites} 处，均逐字对得上「原文」页签`)
+    : ok(`${pages} 篇（${withQuote} 篇带原文台词）　正文「原文」块 ${cites} 处，均逐字对得上「原文」页签`)
 })
 
-check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate(() => {
     const card = document.querySelector('.story-card.ready')
@@ -374,7 +416,7 @@ check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`$
 })
 
 check('animation: 朱批笔圈确实在扫（不是瞬间出现）', async () => {
-  await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   await page.locator('.story-card.ready').first().hover()
   const pump = (n) => page.evaluate((k) => new Promise((res) => {

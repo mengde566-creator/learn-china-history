@@ -19,6 +19,22 @@ const EXEC = path.join(
   'Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'
 )
 
+/* 拍谁，从内容里现取，不写死。写死 jingke 的后果是：加到第二个人物时，
+   这套截图仍然只拍荆轲，而且不会报错。 */
+const DATA = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'data', 'content.json'), 'utf8'))
+/* storyList 里只有摘要（id / 篇名 / ready），正文在 person.stories[id]。
+   取错层会拿到一个没有 beats 的对象。 */
+const READY = DATA.people.flatMap((p) =>
+  p.storyList.filter((s) => s.ready)
+    .map((s) => ({ person: p, story: p.stories[s.id] }))
+    .filter((x) => x.story))
+if (!READY.length) throw new Error('data/content.json 里一个已实现的篇目都没有')
+const PERSON = READY[0].person
+/* 走查用的那篇优先挑「有原文台词」的——那是产品里最复杂的一种形态，
+   拿它当样板，缺什么一眼看得出。 */
+const WALK = READY.find(({ story }) => story.beats.some((b) => b.quotes?.length)) || READY[0]
+const storyRoute = ({ person, story }) => `/p/${person.id}/${story.id}`
+
 fs.mkdirSync(OUT, { recursive: true })
 
 const shots = []
@@ -45,11 +61,11 @@ await page.goto(`${BASE}/`, { waitUntil: 'networkidle' })
 await shot(page, '01-总览-人物')
 
 /* 2. 人物页 */
-await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+await page.goto(`${BASE}/p/${PERSON.id}`, { waitUntil: 'networkidle' })
 await shot(page, '02-人物页', { full: true })
 
 /* 3. 故事页 · 情境铺陈 */
-await page.goto(`${BASE}/p/jingke/06-yishui`, { waitUntil: 'networkidle' })
+await page.goto(`${BASE}${storyRoute(WALK)}`, { waitUntil: 'networkidle' })
 await shot(page, '03-情境铺陈', { full: true })
 
 /* 4. 进入 · 第一段 */
@@ -112,7 +128,7 @@ await shot(page, '15-设置', { full: true })
 
 /* 16+. 八篇弧线：每篇的门口各拍一张。
    篇目从人物页现取，不写死——以后再加故事，这一段自动跟着长。 */
-await page.goto(`${BASE}/p/jingke`, { waitUntil: 'networkidle' })
+await page.goto(`${BASE}/p/${PERSON.id}`, { waitUntil: 'networkidle' })
 const arcIds = await page.$$eval('a.story-card.ready', (as) =>
   as.map((a) => a.getAttribute('href').split('/').pop())
 )
@@ -121,7 +137,7 @@ console.log(`\n  ── 弧线 ${arcIds.length} 篇 ──`)
 
 let n = 16
 for (const id of arcIds) {
-  await page.goto(`${BASE}/p/jingke/${id}`, { waitUntil: 'networkidle' })
+  await page.goto(`${BASE}/p/${PERSON.id}/${id}`, { waitUntil: 'networkidle' })
   await page.waitForTimeout(500)
   await shot(page, `${String(n++).padStart(2, '0')}-弧线-${id}`, { wait: 300 })
 }
