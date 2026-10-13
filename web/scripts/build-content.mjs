@@ -1053,8 +1053,12 @@ function validateContent(people) {
          把「已标出 6 段高优先级核对项，另有 15 处待核疑点」写进设置页；
          把「需补编号」留在映射表的依据栏——那是写给自己的待办，读者看到的是
          一句没头没尾的施工告示。读者看不懂「C 级」，也不需要知道我们欠了什么。
-         这些话只该留在 source.md 和 审校记录.md 里。 */
-      const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|需补编号|待补编号|补编号|待补|TODO/
+         这些话只该留在 source.md 和 审校记录.md 里。
+
+         「待写」「待填」是 `new-story.mjs` 骨架里的占位符。**骨架能编译通过**
+         是最坏的一种情况：它会让一篇没写完的故事以「已完成」的样子混进产品。
+         这条检查就是拦它——生成完骨架，编译必须是红的。 */
+      const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|需补编号|待补编号|补编号|待补|TODO|待写|待填|待定|XXX|xxx|\$\{/
       const visible = [
         ...st.beats.flatMap((b) => [
           [`第 ${b.n} 段 · 依据`, b.ground],
@@ -1095,7 +1099,7 @@ function validateContent(people) {
         if (!text) continue
         checks++
         const m = JARGON.exec(String(text))
-        if (m) err(`${at} · ${where}`, `出现了内部行话「${m[0]}」——读者看不懂，这类话只该留在 source.md 和 审校记录.md 里`)
+        if (m) err(`${at} · ${where}`, `出现了读者不该看到的东西「${m[0]}」——内部行话、模板占位符、写作待办，都只该留在 source.md 和 审校记录.md 里`)
       }
 
       /* 场景正文里同样不许出现"产品在说自己"。
