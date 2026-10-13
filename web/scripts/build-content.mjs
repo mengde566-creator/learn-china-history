@@ -24,6 +24,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+/* 原文范围的写法，和渲染层共用同一份实现（`lib/content.js` 也引它）。
+   两边各写一份正则的话，编译器校验的和页面渲染的迟早不是同一件事。 */
+import { parseRange } from '../lib/range.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..', '..')
@@ -882,6 +885,22 @@ function validateContent(people) {
       /* 只对**已实现**的篇目要求原文范围。待写的篇目还没有原文段落，
          对它报这一条只是噪音——曹操那十篇计划一次刷出九条。 */
       if (s.ready && !s.sourceRange) warn(`${who} · stories.md`, `故事「${s.id}」缺原文范围`)
+      else if (s.sourceRange) {
+        /* 范围里的编号必须真的存在。
+           `sourceRange()` 取不到编号就**静默跳过**，而「本篇原文」页签的标题
+           印的是原文范围——写成 `001–004、019` 而 019 不存在，页面上只是
+           少一段原文，标题照样是完整那串，看不出少了。 */
+        const range = parseRange(s.sourceRange)
+        checks++
+        if (!range.length) err(`${who} · stories.md`, `故事「${s.id}」的原文范围「${s.sourceRange}」读不出编号`)
+        const miss = range.filter((id) => !p.source[id])
+        checks++
+        if (miss.length) {
+          err(`${who} · stories.md`,
+            `故事「${s.id}」的原文范围里有 source.md 中不存在的编号 ${miss.join(', ')}——` +
+            '页面会把它们静默跳过，只少几段原文，标题却照印')
+        }
+      }
     }
     // 有文件但没登记在故事一览里
     const dir = path.join(PEOPLE, p.id, 'stories')

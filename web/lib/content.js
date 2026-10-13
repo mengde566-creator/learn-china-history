@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { parseRange } from './range.mjs'
 
 /**
  * 读取内容编译产物。
@@ -49,21 +50,12 @@ export function groupByEra(people) {
 
 /**
  * 取某个故事用到的原文段落。
- * 故事的 sourceRange 形如 "054–058" 或 "001–016"。
+ * 范围怎么写（`001–004`、`001 005 010`、`001–004、010`）由 `range.mjs` 说了算，
+ * 编译器和这里引的是同一份实现，不会各认各的。
  */
 export function sourceRange(person, range) {
   const out = {}
-  const m = String(range || '').match(/(\d{3})\s*[–\-—~]\s*(\d{3})/)
-  if (m) {
-    for (let i = Number(m[1]); i <= Number(m[2]); i++) {
-      const id = String(i).padStart(3, '0')
-      if (person.source[id]) out[id] = person.source[id]
-    }
-  } else {
-    for (const id of String(range || '').match(/\d{3}/g) || []) {
-      if (person.source[id]) out[id] = person.source[id]
-    }
-  }
+  for (const id of parseRange(range)) if (person.source[id]) out[id] = person.source[id]
   return out
 }
 
