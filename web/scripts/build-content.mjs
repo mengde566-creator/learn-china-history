@@ -248,16 +248,26 @@ function parseStoryList(rel) {
 
   /* 地雷：README 原来教人用「## 阶段名」分段，而二级标题在这里是"这一节结束"。
      照它写，阶段里的故事会**一条都不进列表，而且不报错**——实测过，
-     校验还报"全部通过"。这里把那种写法拦下来。 */
+     校验还报"全部通过"。这里把那种写法拦下来。
+
+     拦的是"小节之后还挂着故事条目"，所以认的是**外形**，不是"单元格正好等于 id"：
+       · 表格首列以 id 开头即可（`` `03-chenliu` 待写 `` 也要抓）
+       · 项目符号列表里出现 id 也抓（有人会用列表分行写）
+     代价是"故事一览之后再放一张正经索引表"会误报。这是有意选的：
+     误报看得见、改一下就好，静默丢八篇看不见。报错里写了怎么绕开。 */
+  const ID_TOKEN = /\b\d{2}-[a-z0-9-]{2,}\b/i
   const orphan = []
   for (let i = end; i < lines.length; i++) {
-    const c = tableRow(lines[i])
-    if (c && /^\d{2}-[a-z0-9-]+$/i.test(clean(c[0]))) orphan.push(clean(c[0]))
+    const l = lines[i]
+    const c = tableRow(l)
+    if (c && ID_TOKEN.test(clean(c[0]))) { orphan.push(clean(c[0]).slice(0, 24)); continue }
+    if (/^\s*(?:[-*+]|\d+\.)\s+\S/.test(l) && ID_TOKEN.test(l)) orphan.push(l.trim().slice(0, 24))
   }
   if (orphan.length) {
     throw new ParseError(rel, end + 1,
       `「## 故事一览」之后还有 ${orphan.length} 条故事（${orphan.slice(0, 3).join('、')}…），` +
-      '它们不会被读进来。分组请用「### 阶段名」，写在「## 故事一览」里面')
+      '它们不会被读进来。分组请用「### 阶段名」，写在「## 故事一览」里面；' +
+      '如果那本来就是一张索引表、不是故事分组，把它挪到别的小节')
   }
 
   if (!list.length) throw new ParseError(rel, 0, '故事一览表是空的')
@@ -284,6 +294,7 @@ function parseStoryContent(rel, source) {
   let beat = null
   let bg = null
   let inIntroCode = false
+  const beatHeadings = []
 
   const flushBeat = () => {
     if (!beat) return
@@ -313,7 +324,11 @@ function parseStoryContent(rel, source) {
     beat.quotes = []
     beat.prose.forEach((p, i) => {
       const t = p.trim()
-      if (!/^[「『]/.test(t) || !/[」』]$/.test(t)) return
+      /* 整行是引号，**后面还可以拖一个句号**——`「……终已不顾」` 和
+         `「……终已不顾」。` 都是引文。只认"引号正好收在行尾"的话，
+         补个句号就从引文掉成白话，「原文」牌子和白话回译一起消失，校验还全绿。
+         归一化本来就把标点去掉了，所以只放宽形状、不改判据。 */
+      if (!/^[「『][\s\S]*[」』][。！？；，、：]*$/.test(t)) return
       const n = normalizeQuote(t)
       if (n.length < 6) return
       if (!beat.sources.some((id) => normalizeQuote(source[id].text).includes(n))) return
@@ -326,7 +341,7 @@ function parseStoryContent(rel, source) {
   }
   const flushBg = () => { if (bg) { story.backgrounds.push(bg); bg = null } }
 
-  lines.forEach((line) => {
+  lines.forEach((line, i) => {
     // 标题下方的元数据（封面、地点等）——还没有进入任何 ## 小节
     if (section === null) {
       const cells = tableRow(line)
@@ -376,6 +391,17 @@ function parseStoryContent(rel, source) {
 
     if (section === 'beats') {
       const h = line.match(/^### 情节点 (\d+) · (.+)$/)
+      /* 情节点标题漏写编号，是最难发现的一类丢段：
+         「### 情节点 · 东归」不像标题，会被当成上一段的正文——
+         第 3 段的白话并进第 2 段，段数少一个，而校验报"全部通过"。
+         标题在这个小节里只可能是情节点，形状不对就直接报错。 */
+      if (/^###/.test(line)) {
+        beatHeadings.push(line)
+        if (!h) {
+          throw new ParseError(rel, i + 1,
+            `情节点标题写成「${line.trim()}」了，读不出来。要写成「### 情节点 3 · 东归」——编号、「·」、小标题三样都不能少`)
+        }
+      }
       if (h) {
         flushBeat()
         beat = { n: Number(h[1]), title: h[2].trim(), prose: [], marker: null, source: null, sourceText: null, ground: null, sources: [], quotes: [], tableSeen: false }
@@ -425,7 +451,11 @@ function parseStoryContent(rel, source) {
 
     if (section === 'ground') {
       const cells = tableRow(line)
-      if (cells && cells.length >= 3 && cells[0] !== '场景中的陈述') {
+      /* 表头那一行跳过。列名换过两次：早先叫「场景中的陈述」，但表里一直
+         混着场景没写进去的行（「—」是明确不回答的，「◆ 注」是注解级的），
+         所以改叫「本篇的说法」。三种写法都认，免得改一次列名就报一次
+         「标记『标记』无效」。 */
+      if (cells && cells.length >= 3 && !/^(场景中的陈述|本篇的说法|陈述|说法)$/.test(clean(cells[0]))) {
         story.groundTable.push({ claim: clean(cells[0]), marker: clean(cells[1]), basis: clean(cells[2]) })
       }
       return
@@ -447,13 +477,16 @@ function parseStoryContent(rel, source) {
 
   if (!story.beats.length) throw new ParseError(rel, 0, '没有解析出任何情节点')
 
-  /* 文件里写了几个「### 情节点」，就必须收到几个。
+  /* 文件里写了几个「### 情节点」标题，就必须收到几个情节点。
      这一条守的是解析器的静默丢段：小节切换时没有收尾，最后一段会不声不响
-     地消失——曹操那篇丢过第 4 段，页面上少一段，谁都不报错。 */
-  const declared = lines.filter((l) => /^### 情节点 \d+/.test(l)).length
+     地消失——曹操那篇丢过第 4 段，页面上少一段，谁都不报错。
+
+     只数**情节点小节里**的标题，不数全文件：设计说明（## 七、）里引用一个
+     标题样板是正常写法，不该被算进来。 */
+  const declared = beatHeadings.length
   if (declared !== story.beats.length) {
     throw new ParseError(rel, 0,
-      `文件里有 ${declared} 个情节点，只解析出 ${story.beats.length} 个——解析器丢了段落`)
+      `情节点小节里有 ${declared} 个「### 情节点」标题，只收到 ${story.beats.length} 段——解析器丢了段落`)
   }
   return story
 }
@@ -732,18 +765,34 @@ function validateContent(people) {
   const err = (loc, msg) => errs.push(`${loc}\n      ${msg}`)
   const warn = (loc, msg) => warns.push(`${loc}\n      ${msg}`)
 
-  /* 「产品在说自己」或者「跟读者说话」的口吻。引子、正文里都不许出现。
+  /* 「产品在说自己」或者「跟读者说话」的口吻。入戏的内容里都不许出现。
      踩过两次：一次是给曹操写的引子四段全是「这一篇不回答…」「它把这个人
      拆成很多篇故事…」；一次是场景末段写成
      「你记得的不是这个。……这一段，《武帝纪》里没有。」——用户的原话是
      「写的很破坏氛围感」，因为**读者的主语被从相府门口拽出来上了一课**。
 
-     范围只到「谈论文本 / 读者的既有印象」。**不能拿「你」当判据**——
-     台词里「让你能到你面前来说这些」「请你留意」都是正当用法（跑过全库，
-     场景正文里「你」出现 5 次，3 次是人物在说话）。
+     判据只有三条，都在问"这句话的主语是谁"：
+       · 拿书当主语：底本 / 正史 / 史书 / 《某某书》 + 没有·不载·未载·只记
+       · 拿读者当主语：你记得 / 你以为 / 你可能不知道 / 大家都知道
+       · 拿这份东西当主语：本篇 / 本文 / 这篇故事 / 本产品
+     早先的词表里塞了「这一段」「这一节」——那会误伤正常的叙述
+     （「这一段路走了三天」被读成"产品在说自己"）；而真正要拦的那句
+     「这一段，《武帝纪》里没有」本来就被第一条抓住。所以只留带书名的形状。
+     同样**不能拿「你」当判据**——台词里「请你留意」是正当用法。
+     测之前先把「」里的台词摘掉：人物说什么都行。
 
-     注：「依据映射表」不在管辖内——那张表本身就是关于"我们怎么标的"。 */
-  const SELF_REF = /这一段|这一篇|这一节|这一处|本篇|本文|本产品|这个产品|读者|你记得|你以为|你可能不知道|书里没有|书上没有|史书里没有/
+     查的是**入戏内容**：person.md 的「他是谁」「引子」、门口的情境铺陈（含它的
+     「行」列）、情节点正文。背景卡、依据映射表、逐行依据的「依据」列**不在管辖内**
+     ——那几处的本分就是谈书，「正史里没有这把刀」是「七星刀」那张卡的全部内容。 */
+  const SELF_REF = new RegExp([
+    '(?:底本|正史|史书|原文|本纪|列传|《[^》]{1,14}》)[^。！？\\n]{0,10}?(?:没有|没写|没记|不载|未载|不记|只说|只记|只写)',
+    '书上?(?:没有|没写|没记)',
+    '你记得|你以为|你可能不知道|大家都知道',
+    '本篇|本文|这篇故事|本产品|这个产品|读者',
+  ].join('|'))
+
+  /* 台词摘掉再判——人物嘴里什么都能说。 */
+  const stripDialogue = (t) => String(t).replace(/[「『][^」』]*[」』]/g, '')
 
   for (const p of people) {
     const who = p.name
@@ -763,7 +812,7 @@ function validateContent(people) {
     ]) {
       for (const t of texts) {
         checks++
-        const m = SELF_REF.exec(String(t))
+        const m = SELF_REF.exec(stripDialogue(t))
         if (m) err(where, `出现了「${m[0]}」——这是产品在说自己。引子要写的是那个人`)
       }
     }
@@ -846,10 +895,11 @@ function validateContent(people) {
 
       /* 读者可见字段里不许出现内部行话。
          踩过这些：把「C 级 · 压缩」写进映射表和复习卡的「依据」栏、写进种子的 ⓘ 回答；
-         把「已标出 6 段高优先级核对项，另有 15 处待核疑点」写进设置页。
-         读者看不懂「C 级」是什么意思，而且这些话解释的是我们的流程，
-         不是他要读的那段历史。它们只该留在 source.md 和 审校记录.md 里。 */
-      const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b/
+         把「已标出 6 段高优先级核对项，另有 15 处待核疑点」写进设置页；
+         把「需补编号」留在映射表的依据栏——那是写给自己的待办，读者看到的是
+         一句没头没尾的施工告示。读者看不懂「C 级」，也不需要知道我们欠了什么。
+         这些话只该留在 source.md 和 审校记录.md 里。 */
+      const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|需补编号|待补编号|补编号|待补|TODO/
       const visible = [
         ...st.beats.flatMap((b) => [
           [`第 ${b.n} 段 · 依据`, b.ground],
@@ -858,6 +908,16 @@ function validateContent(people) {
         ...st.groundTable.flatMap((r) => [
           ['依据映射表 · 陈述', r.claim],
           ['依据映射表 · 依据', r.basis],
+        ]),
+        ...(st.intro?.lines || []).map((l) => ['情境铺陈 · 正文', l.text]),
+        ...(st.intro?.basis || []).flatMap((r) => [
+          ['逐行依据 · 行', r.line],
+          ['逐行依据 · 依据', r.basis],
+        ]),
+        ...st.backgrounds.flatMap((bg) => [
+          [`背景卡「${bg.name}」· 名称`, bg.name],
+          ...(bg.body || []).map((t) => [`背景卡「${bg.name}」· 正文`, t]),
+          [`背景卡「${bg.name}」· 依据`, bg.basis],
         ]),
         ...st.cards.flatMap((c) => [
           [`复习卡 ${c.n} · 题面`, c.q],
@@ -883,12 +943,68 @@ function validateContent(people) {
         if (m) err(`${at} · ${where}`, `出现了内部行话「${m[0]}」——读者看不懂，这类话只该留在 source.md 和 审校记录.md 里`)
       }
 
-      /* 场景正文里同样不许出现"产品在说自己"。 */
+      /* 场景正文里同样不许出现"产品在说自己"。
+         门口的情境铺陈（fence 本体）也是入戏内容——它就在读者点进来之前那一屏，
+         曾经一段「这一段，《武帝纪》里没有」写进这里也能过关。
+         它的「逐行依据」表不查这一条：那张表的本分就是谈书和谈体例
+         （「本篇的时间跨度」是正当的行标，「底本 4 段中无任何公元纪年」是正当的依据）。 */
+      const onstage = [
+        ...st.beats.flatMap((b) => b.prose.map((t) => [`第 ${b.n} 段 · 正文`, t])),
+        ...(st.intro?.lines || []).map((l) => ['情境铺陈 · 正文', l.text]),
+      ]
+      for (const [where, t] of onstage) {
+        checks++
+        const m = SELF_REF.exec(stripDialogue(t))
+        if (m) err(`${at} · ${where}`, `出现了「${m[0]}」——这是产品在说自己，这里要写的是那件事`)
+      }
+
+      /* 正文里逐字出现底本原句，就必须**整行**用「」包起来。
+         漏挂的后果不是"少块装饰"：文言留在正文里，既没有「原文」标示，
+         也没有白话回译——读不懂文言的读者直接卡在这一句上。
+         上面那条判据问的是"形状像引文、而且是原文"；这一条反过来问
+         "是原文、却没有被当成引文"，专治形状判据被绕开的情况
+         （后面补个句号、前面加一句「他唱：」都会让形状判据失效）。
+
+         判法用 n-gram 而不是整行比对：`他唱：「风萧萧兮易水寒……」` 整行
+         归一化之后不等于底本任何一段，但里面藏着 20 个字连着一样的原文。
+
+         门槛定 12 个字，是量出来的：全库跑 8 个字会误伤 6 处——那些都是
+         白话里顺手留下的文言短语（「高渐离击筑荆轲和」9 字、「为人智深而勇沉」
+         8 字、「秦并天下立号为皇帝」9 字，还有一处是白话回译里重复了原句）。
+         这些短语读者看得懂，算不得"文言卡住人"；连着 12 个字和底本一样，
+         就只可能是原文没挂牌子。 */
+      const NGRAM = 12
+      const gramSet = (s) => {
+        const out = new Set()
+        for (let i = 0; i + NGRAM <= s.length; i++) out.add(s.slice(i, i + NGRAM))
+        return out
+      }
+      const srcGrams = new Map()
+      const quoteRuns = (line, ids) => {
+        const n = normalizeQuote(line)
+        if (n.length < NGRAM) return null
+        for (const id of ids) {
+          if (!srcGrams.has(id)) srcGrams.set(id, gramSet(normalizeQuote(p.source[id].text)))
+          const g = srcGrams.get(id)
+          for (let i = 0; i + NGRAM <= n.length; i++) if (g.has(n.slice(i, i + NGRAM))) return id
+        }
+        return null
+      }
       for (const b of st.beats) {
-        for (const t of b.prose) {
+        if (!b.sources?.length) continue
+        /* 引文本身和它的白话回译都跳过：回译里重复原句是正常写法
+           （`02-tianguang` 段 8 的「——我听说，长者为行，不使人疑之」）。 */
+        const skip = new Set((b.quotes || []).flatMap((q) => [q.at, q.glossAt]).filter((x) => x != null))
+        for (const [i, line] of (b.prose || []).entries()) {
+          if (skip.has(i)) continue
           checks++
-          const m = SELF_REF.exec(String(t))
-          if (m) err(`${at} · 第 ${b.n} 段 · 正文`, `出现了「${m[0]}」——这是产品在说自己，正文要写的是那件事`)
+          const id = quoteRuns(line, b.sources)
+          if (id) {
+            err(`${at} · 第 ${b.n} 段 · 正文`,
+              `这一行里有和 \`${id}\` 逐字相同的原文（「${String(line).slice(0, 16)}…」），` +
+              '却没挂「原文」牌子。把原文那一句单独占一行、整行用「」包起来（后面可以带句号）——' +
+              '它才会渲染成原文块，也才会被要求配白话回译')
+          }
         }
       }
 
@@ -1067,27 +1183,48 @@ function main() {
 
   // 交叉校验：所有被引用的编号必须在原文底本里存在
   //
-  // 只扫**真正会带编号的字段**，不扫整个序列化对象。
-  // 原来扫 JSON.stringify(s) 里的 "(\d{3})"，于是 stories.md「时间」一列写的
-  // `189` 被当成了底本编号——公元 189 年。荆轲写的是「前 227」（带"前"和空格，
-  // 不是纯三位数）所以躲过了；**三国、晋、南北朝的年份全是三位数，必然撞**。
-  // 加一篇三国故事就报「引用了不存在的原文编号 189」，而 189 根本不是编号。
+  // 三位数在这套内容里有两个身份：**底本编号**（001–091）和**公元纪年**（189 年）。
+  // 早先的写法是扫整个序列化对象再补一个 (?!\s*年)，两个毛病：
+  //   · 只挡得住紧跟着「年」的那一种。「公元 189–190 年」「公元 189、190 年」
+  //     「公元 189」全部照报「引用了不存在的原文编号 189」，而且是 throw，
+  //     整次编译中断。
+  //   · 为了躲开年份把扫描面收窄到几个字段，于是写进**情节点正文、背景卡正文、
+  //     情境铺陈（含它的标记位）**的编号没人管——fence 标记位是旧版能抓到的，属回归。
+  //
+  // 现在反过来做：先把**年份表达式**整段挖成占位符，再在剩下的话里找编号。
+  // 扫描面恢复到"读者看得见的所有文字"，年份挡在挖除那一步。
+  const YEAR_EXPR = new RegExp(
+    [
+      '公元\\s*前?\\s*\\d{1,4}(?:\\s*[–—~\\-－、,，/至到]\\s*\\d{1,4})*\\s*年?',
+      '(?<![\\d])\\d{1,4}(?:\\s*[–—~\\-－、,，/至到]\\s*\\d{1,4})*\\s*年',
+      /* 「前 227」——省掉「公元」的写法。要求「前」前面不是汉字，
+         免得把「门前227」这种真数字也挖掉。 */
+      '(?<![\\d\\u4e00-\\u9fff])前\\s*\\d{1,4}(?:\\s*[–—~\\-－、,，/至到]\\s*\\d{1,4})*',
+    ].join('|'),
+    'gm'
+  )
+  const blankYears = (t) => t.replace(YEAR_EXPR, (m) => m.replace(/\d/g, '·'))
+
   const cited = (s) => [
     s.sourceRange,
-    ...(s.beats || []).flatMap((b) => [b.source, ...(b.sources || []), b.ground]),
-    ...(s.backgrounds || []).map((b) => b.basis),
-    ...(s.groundTable || []).map((r) => r.basis),
-    ...(s.intro?.basis || []).map((r) => r.basis),
-    ...(s.seeds || []).flatMap((d) => [...(d.meta || []).map((m) => m.v), d.sys]),
-    ...(s.cards || []).flatMap((c) => (c.meta || []).map((m) => m.v)),
+    ...(s.beats || []).flatMap((b) => [
+      b.title, b.source, ...(b.sources || []), b.ground, ...(b.prose || []),
+    ]),
+    ...(s.backgrounds || []).flatMap((b) => [b.name, b.basis, ...(b.body || [])]),
+    ...(s.groundTable || []).flatMap((r) => [r.claim, r.basis]),
+    ...(s.intro?.lines || []).flatMap((l) => [l.text, l.marker]),
+    ...(s.intro?.basis || []).flatMap((r) => [r.line, r.basis]),
+    ...(s.present || []).flatMap((x) => [x.name, x.role, x.state]),
+    ...(s.seeds || []).flatMap((d) => [...(d.meta || []).map((m) => m.v), d.sys, ...(d.answer || [])]),
+    ...(s.cards || []).flatMap((c) => [...(c.meta || []).map((m) => m.v), c.q, c.a]),
   ].filter(Boolean).join('\n')
 
   for (const p of people) {
     const bad = new Set()
     for (const s of Object.values(p.stories)) {
-      /* 后面跟着「年」的三位数是公元纪年，不是编号。
-         荆轲的「公元前 227 年」、曹操的「189 年」都落在这里。 */
-      for (const m of cited(s).matchAll(/`?(\d{3})`?(?!\s*年)/g)) {
+      /* 反引号是"这确实是个编号"的显式写法（`099`），裸三位数可能是年份——
+         两条都收，收完再看它在不在底本里。 */
+      for (const m of blankYears(cited(s)).matchAll(/`?(\d{3})`?/g)) {
         if (!p.source[m[1]]) bad.add(m[1])
       }
     }

@@ -120,7 +120,7 @@ export default async function PersonPage({ params }) {
             ))}
           </div>
           <p className="footnote">
-            表中的绝对年代不是《史记》原文所载，系后世考证。
+            表中的绝对年代不是{person.sourceBook || '底本'}原文所载，系后世考证。
           </p>
         </section>
       )}

@@ -72,10 +72,15 @@ await shot(page, '03-情境铺陈', { full: true })
 await page.click('button.cta')
 await shot(page, '04-第一段')
 
-/* 5. 推进到全部段落 */
-for (let i = 0; i < 4; i++) {
-  await page.click('button.continue')
-  await page.waitForTimeout(450)
+/* 5. 推进到全部段落。
+   按到「再往前」消失为止——原来写死四次，那是因为当时走查的那篇只有五段；
+   换一篇十段的，四次之后还停在中途，后面找 `.ask-btn`（读完才出现）就 timeout，
+   而报错完全指不到真正的原因。 */
+for (let i = 0; i < 40; i++) {
+  const more = await page.$('button.continue')
+  if (!more) break
+  await more.click()
+  await page.waitForTimeout(320)
 }
 await shot(page, '05-全部段落')
 
@@ -99,27 +104,45 @@ await shot(page, '09-原文')
 await page.click('.panel-tabs button:has-text("在场")')
 await shot(page, '10-在场')
 
-/* 11. 提问面板（回到依据页签） */
-await page.click('.panel-tabs button:has-text("依据")')
-await page.waitForTimeout(300)
-await page.click('.ask-btn')
-await shot(page, '11-提问清单')
+/* 11–14. 提问面板与复习卡。
+   种子和复习卡都是**可选件**（`content/README.md`：没有种子就不显示入口）。
+   曹操那篇两个都没有，所以这一段必须按内容判断，不能默认存在——
+   写死的话，走查到第 11 步就 timeout，而且报的是"找不到 .ask-btn"，
+   完全看不出真正的原因是"这一篇本来就没有可问的问题"。 */
+const seeds = WALK.story.seeds || []
+const cards = WALK.story.cards || []
 
-/* 12. 一条预置回答 */
-await page.click('.seed-nav button:has-text("此去心中所想")')
-await shot(page, '12-预置回答')
+if (!seeds.length) {
+  console.log('  · 这一篇没有对话种子，跳过提问面板（产品里也不显示入口）')
+} else {
+  await page.click('.panel-tabs button:has-text("依据")')
+  await page.waitForTimeout(300)
+  await page.click('.ask-btn')
+  await shot(page, '11-提问清单')
 
-/* 13. 边界外提问（带系统提示） */
-await page.click('.seed-nav button:has-text("你知道后来秦灭六国了吗")')
-await shot(page, '13-边界外提问')
+  /* 拿内容里的问题当选择器，不写死荆轲那两问。 */
+  const normal = seeds.find((s) => !s.sys)
+  const bounded = seeds.find((s) => s.sys)
+  if (normal) {
+    await page.click(`.seed-nav button:has-text(${JSON.stringify(normal.q.slice(0, 10))})`)
+    await shot(page, '12-预置回答')
+  }
+  if (bounded) {
+    await page.click(`.seed-nav button:has-text(${JSON.stringify(bounded.q.slice(0, 10))})`)
+    await shot(page, '13-边界外提问')
+  }
+  await page.click('.sheet-head .x')
+  await page.waitForTimeout(400)
+}
 
-/* 14. 复习卡（展开一张） */
-await page.click('.sheet-head .x')
-await page.waitForTimeout(400)
-await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
-await page.waitForTimeout(500)
-await page.click('.card button:has-text("点开看答案")')
-await shot(page, '14-复习卡')
+if (!cards.length) {
+  console.log('  · 这一篇没有复习卡，跳过（产品里显示「本篇暂无复习卡」）')
+} else {
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
+  await page.waitForTimeout(500)
+  await page.click('.card button:has-text("点开看答案")')
+  await shot(page, '14-复习卡')
+}
 
 /* 15. 设置 */
 await page.goto(`${BASE}/settings`, { waitUntil: 'networkidle' })
@@ -142,10 +165,16 @@ for (const id of arcIds) {
   await shot(page, `${String(n++).padStart(2, '0')}-弧线-${id}`, { wait: 300 })
 }
 
-/* 把最后一篇读进去，收尾 */
+/* 把最后一篇读进去，收尾。
+   「再往前」按到没有为止——写死两次的话，三段的篇目按到第二下就没了按钮。 */
 await page.click('button.cta')
 await page.waitForTimeout(400)
-for (let i = 0; i < 2; i++) { await page.click('button.continue'); await page.waitForTimeout(350) }
+for (let i = 0; i < 20; i++) {
+  const more = await page.$('button.continue')
+  if (!more) break
+  await more.click()
+  await page.waitForTimeout(350)
+}
 await shot(page, `${String(n).padStart(2, '0')}-弧线-读完`)
 
 await browser.close()
