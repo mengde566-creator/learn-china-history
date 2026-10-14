@@ -14,8 +14,9 @@ const TITLES = {
   '○': '合理推演',
   '△': '存疑',
   '—': '史书未载',
+  'ⓘ': '产品说明',
 }
-const MARK_CLASS = { '◆': 'g-source', '◇': 'g-fiction', '○': 'g-infer', '△': 'g-doubt', '—': 'g-silent' }
+const MARK_CLASS = { '◆': 'g-source', '◇': 'g-fiction', '○': 'g-infer', '△': 'g-doubt', '—': 'g-silent', 'ⓘ': 'g-info' }
 
 /* 非史书的两档。它们用同一个字形 ◇ 和同一个紫色——
    「这不是史书写的」是同一个意思，区别在书名，不在标记。 */

@@ -201,8 +201,16 @@ body.light-stage{
    Marker 同时用在纸面（背景卡的标记）和暗场（门口图例、铺陈行），
    所以这里必须按表面分：不分的后果是浅色模式下 2.75:1（校验抓到的）。 */
 .mk-silent{color:var(--mo-mute)}
+/* `ⓘ` 产品说明：**不给它史料四色里的任何一个**。
+   前五个标记说的是"这句话在史料上站得住多少"，而 ⓘ 说的是"这条回答跟史料无关"——
+   用朱苍赭紫里任何一个，读者都会以为那是一句有出处的话。
+   中性灰，和 `—` 的纸面色分开：`—` 是"史料沉默了"（也是一种史料判断），
+   `ⓘ` 是"这条不问史料"。 */
+.mk-info{color:var(--su-dim)}
 .note-box .mk-silent,
 .opening  .mk-silent{color:var(--su-mute)}
+.note-box .mk-info,
+.opening  .mk-info{color:var(--mo-dim)}
 
 /* 标记图例 */
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0;font-size:12px;color:var(--su-dim);letter-spacing:.03em}
@@ -326,6 +334,7 @@ body.light-stage{
 .ground .g-infer {color:var(--cang)}
 .ground .g-doubt {color:var(--zhe)}
 .ground .g-silent{color:var(--su-mute)}
+.ground .g-info{color:var(--su-dim)}
 .ground .sep{opacity:.25;margin:0 1px}
 /* 依据入口直接标出对应哪段原文，不用点开就知道 */
 .ground .src-id{

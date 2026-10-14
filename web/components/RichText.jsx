@@ -17,6 +17,7 @@ const MARK_CLASS = {
   '○': 'mk-infer',
   '△': 'mk-doubt',
   '—': 'mk-silent',
+  'ⓘ': 'mk-info',
 }
 
 function renderInline(text, keyPrefix) {
@@ -98,6 +99,8 @@ export function Legend({ foreign }) {
       <span><Marker ch="○" /> 合理推演，附推演链条</span>
       <span><Marker ch="△" /> 史书未载，后世有争议</span>
       <span><Marker ch="—" /> 不回答：史书未载、推不出来，或者不在本篇范围内</span>
+      {/* 第六个。前五个都是给史料问题的，这一条不是。 */}
+      <span><Marker ch="ⓘ" /> 产品说明：这一条回答的是产品本身，跟史料无关</span>
       {/* ○ 后面常跟一个小字（「外证」「训释」）。那是推演链条的**来源**，
           全库 33 处，读者每一处都看得见，而这里原来一句解释都没有——
           「外证」是训诂学的词，不是给读者看的。说一次就够。 */}
