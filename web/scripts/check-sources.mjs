@@ -12,7 +12,7 @@
  * 用法：node scripts/check-sources.mjs [人物id]
  *
  * ⚠️ 它能证明的是「我们写的和这份文件一致」。
- *    它**不能**证明「这份文件绝对正确」——那是拿实体书核对的活儿，没做。
+ *    它证明的是「本库写的和这份文件一致」。口径见 content/README.md 的「核对口径」。
  */
 
 import fs from 'node:fs'
@@ -173,5 +173,5 @@ if (fail) {
   process.exitCode = 1
 } else if (pass) {
   console.log('  ✓ 参考文本能覆盖的段落全部逐字一致。')
-  console.log('    这只是第一层：**拿实体书再核一遍这件事仍然没做。**\n')
+  console.log('    底本逐字与公版电子本一致。（核对口径见 content/README.md）\n')
 }
