@@ -102,7 +102,11 @@ export default function SeedSheet({ seeds, onClose }) {
                   )}
                 </div>
 
-                {seed.sys && <div className="sys-note">{seed.sys}</div>}
+                {/* **走 RichText，不走明文。** 系统说明里写了 `` `013` `` 这种编号，
+                    明文渲染会把反引号一起印给读者（全库 250 条 sys 里 13 条含 markdown）。
+                    RichText 认反引号和粗体——顺带把「粗体写了不显示」那个老毛病
+                    在这一块也修掉。 */}
+                {seed.sys && <div className="sys-note"><RichText text={seed.sys} /></div>}
 
                 {seed.meta.length > 0 && (
                   <div className="seed-meta">

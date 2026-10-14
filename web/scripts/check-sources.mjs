@@ -59,14 +59,57 @@ function readSource(rel, defaultBook) {
     if (!/^[ABC]/.test(pri(priority))) priority = cells[3] ?? ''
     if (!/^[ABC]/.test(pri(priority))) return
     let text = cells[1]
+    /* 四列表第三格是「出处」（如「第四回」）。**它是可核的**——
+       2026-10-14 查出 `205` 标着「第五十回」，而电子本里那句在第四十九回，
+       全库 22 处跟着错。逐字核对管不着这个格子，所以单独查一遍。 */
+    let note = null
+    if (!/^[ABC]/.test(pri(cells[2]))) note = cells[2]
     out.push({
       id: cells[0],
+      note,
       book: book?.book || defaultBook || '(没有底本小节)',
       tier: book?.tier || '正史',
       text: text.replace(/★/g, '').replace(/`[^`]*`/g, '').trim(),
       line: i + 1,
     })
   })
+  return out
+}
+
+/* ── 回目核对 ──
+   四列表的「出处」栏写着这一条出自第几回。那是**能核的**：
+   电子本里有「第N回：」的标题行，一条原文落在哪两回标题之间是一定的。
+   2026-10-14 之前没人核过这个格子，于是 `205` 标着第五十回、
+   而它在第四十九回——全库 22 处跟着错，包括底本表本身。
+
+   两个坑：
+   1. `slice()` 返回的是 **norm 过的文本**（标点全没了），所以判据不能带「：」，
+      只能靠「第N回」本身。为免正文里的「从第四十三回写到第五十回」这种引用
+      混进来，只收**严格递增**的那些——章回标题天然是从第一回往后排的。
+   2. 中文数字有两种写法：`第四十九回` 和 `第一一九回`（这部电子本后段用后者）。
+   顺带查出来：**这份电子本缺第一百回到第一一〇回**（从第九十九回直接跳到
+   第一一一回）。不影响本库（我们只用到第四回和第四十九回），但要知道。 */
+const CN = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 〇: 0, 零: 0 }
+function cnNum(t) {
+  t = String(t).trim()
+  if (/^\d+$/.test(t)) return Number(t)
+  if (t.includes('十') || t.includes('百')) {
+    let n = 0
+    if (t[0] === '百') { n = 100; t = t.slice(1) }
+    const m = t.match(/^(.)?十(.)?$/)
+    if (m) return n + (m[1] ? CN[m[1]] : 1) * 10 + (m[2] ? CN[m[2]] : 0)
+    return n + (CN[t[0]] || 0)
+  }
+  return [...t].reduce((a, c) => a * 10 + (CN[c] ?? 0), 0)   // 一一九 → 119
+}
+function chapterSpans(text) {
+  const out = []
+  const re = /第([一二三四五六七八九十百〇零\d]+)回/g
+  let m, last = 0
+  while ((m = re.exec(text))) {
+    const num = cnNum(m[1])
+    if (num > last) { out.push({ num, at: m.index }); last = num }
+  }
   return out
 }
 
@@ -115,7 +158,8 @@ const people = fs.readdirSync(PEOPLE, { withFileTypes: true })
   .filter((d) => d.isDirectory() && (!only_ || d.name === only_))
   .map((d) => d.name).sort()
 
-let pass = 0, fail = 0, skip = 0
+let pass = 0
+let chFail = 0, fail = 0, skip = 0
 console.log('\n逐字核对 source.md ←→ .refs/\n')
 
 for (const id of people) {
@@ -125,6 +169,7 @@ for (const id of people) {
   const pm = path.join(PEOPLE, id, 'person.md')
   const dm = fs.existsSync(pm) && fs.readFileSync(pm, 'utf8').match(/\|\s*\*\*出处\*\*\s*\|\s*([^|]+?)\s*\|/)
   const entries = readSource(rel, dm && dm[1])
+  const bad章节 = []
   const conf = map[id]
   console.log(`  ${id}  （${entries.length} 段）`)
   for (const e of entries) {
@@ -135,6 +180,20 @@ for (const id of people) {
       continue
     }
     let hay = slice(c.ref, c.from, c.to)
+
+    /* 回目核对：出处栏写了「第几回」，那一条就得真落在那一回里。
+       只对**电子本里带「第N回：」标题**的书生效（《三国演义》是）；
+       《三国志》是纪传体、没有回目，note 多为书名或「裴松之注引…」，自动跳过。 */
+    const spans = chapterSpans(hay)
+    if (spans.length && e.note && /第[一二三四五六七八九十百\d]+回/.test(e.note)) {
+      const want = cnNum(String(e.note).match(/第([一二三四五六七八九十百\d]+)回/)[1])
+      const probe = e.text.split(/[。！？；，、]/).map(norm).find((x) => x.length >= 6)
+      const hit = probe ? hay.indexOf(probe) : -1
+      const cur = hit < 0 ? null : [...spans].reverse().find((sp) => sp.at <= hit)
+      if (cur && cur.num !== want) {
+        bad章节.push(`${e.id}「${e.note}」实为第${cur.num}回`)
+      }
+    }
     /* 校勘：参考文本作 A，本库作 B，比对时按 B 算。
        每一次替换都必须在这里留一条——偷偷改字比错字更坏。 */
     for (const [refReads, weWrite] of (c.校勘 || [])) {
@@ -164,11 +223,15 @@ for (const id of people) {
       console.log(`         本库：source.md:${e.line}`)
     }
   }
+  if (bad章节.length) {
+    console.log(`    ✗ 回目对不上：${bad章节.join('；')}`)
+    chFail += bad章节.length
+  }
   console.log('')
 }
 
-console.log(`  对得上 ${pass} · 对不上 ${fail} · 跳过 ${skip}\n`)
-if (fail) {
+console.log(`  对得上 ${pass} · 对不上 ${fail} · 跳过 ${skip}` + (chFail ? ` · 回目对不上 ${chFail}` : '') + '\n')
+if (fail || chFail) {
   console.log('  ✗ 有对不上的段落。改内容或者改 source.md，不要放着。\n')
   process.exitCode = 1
 } else if (pass) {
