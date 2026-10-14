@@ -132,7 +132,7 @@ export default async function PersonPage({ params }) {
             这里原来是 `编号 001–{段数}`——32 段就印成「编号 001–032」，
             而真正的编号是 001–020、101–103、201–209，**页面上写了一句不存在的话**。
             而且那三个号段就是三本书，读者该看到的是书名，不是「底本」两个字。 */}
-        底本 {person.sourceCount} 段{books.length > 1 ? `，分 ${books.length} 本` : ''}：
+        <b>底本</b>（这一页所依据的书）{person.sourceCount} 段{books.length > 1 ? `，分 ${books.length} 本` : ''}：
         {books.map((b) => `${b.book} ${formatRanges(b.ids)}`).join(' · ')}。
         <b>尚未与实体书核对。</b>
       </p>

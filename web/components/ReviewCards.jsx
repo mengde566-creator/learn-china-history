@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import RichText from '@/components/RichText'
+import RichText, { Marker } from '@/components/RichText'
 
 /**
  * 复习卡。默认只显示问题，点开看答案——这样才叫复习，不是读一遍。
@@ -50,7 +50,14 @@ export default function ReviewCards({ cards }) {
                     {c.meta.map((m, i) => (
                       <div key={i} style={{ display: 'flex', gap: 10, padding: '2px 0' }}>
                         <span style={{ flex: 'none', width: 46 }}>{m.k}</span>
-                        <span><RichText text={m.v} /></span>
+                        <span>
+                          {/* 「标记」这一行渲染成徽章，和种子清单一致——
+                              原来它只是一行灰字，读者看到的是一串「◆ 出自原文」，
+                              而标记的颜色是这套东西里区分史料等级的唯一手段。 */}
+                          {m.k === '标记' && c.marker
+                            ? <><Marker ch={c.marker} size={11} /> {m.v.replace(/^[◆◇○△—]\s*/, '')}</>
+                            : <RichText text={m.v} />}
+                        </span>
                       </div>
                     ))}
                   </div>

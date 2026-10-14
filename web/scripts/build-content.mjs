@@ -808,7 +808,23 @@ function parseCards(rel) {
     if (cells) {
       if (META_KEYS.has(clean(cells[0]))) {
         pushTable()
-        card.meta.push({ k: clean(cells[0]), v: clean(cells[1] ?? '') })
+        const k = clean(cells[0])
+        const v = clean(cells[1] ?? '')
+        card.meta.push({ k, v })
+        /* 卡片也有标记，而且**从这条路取出来**。
+           原来「标记」只进 meta，`card.marker` 永远是 undefined：
+           界面上没有徽章（读者看到的是一行光秃秃的「标记 ◆ 出自原文」），
+           而且「卡片必须有标记」这条闸门根本无从写起——
+           `cards/06-yishui.md` 的卡 8 整个没有标记行，编译一路全绿。 */
+        if (k === '标记') {
+          const g = markerOf(v)
+          if (!VALID_MARKERS.has(g)) {
+            throw new ParseError(rel, ln,
+              `复习卡的「标记」行读不出标记：「${v}」。只能是 ` +
+              `${[...VALID_MARKERS].join(' ')} 里面的一个，后面可以跟小字（像「○ 外训」）`)
+          }
+          card.marker = g
+        }
         return
       }
       if (!table) table = { t: 'table', head: cells.map(clean), rows: [] }
@@ -1346,6 +1362,22 @@ function validateContent(people) {
          是最坏的一种情况：它会让一篇没写完的故事以「已完成」的样子混进产品。
          这条检查就是拦它——生成完骨架，编译必须是红的。 */
       const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|需补编号|待补编号|补编号|待补|TODO|待写|待填|待定|XXX|xxx|\$\{/
+
+/* ── 用语：「原文」和「底本」 ──
+   「底本」＝这一页依据的那本书（《三国志·魏书·武帝纪》这种）；
+   「原文」＝引出来的那段文字（页签、◆ 出自原文、原文块、原文台词）。
+   写「这本书没有记载 X」用底本；写「这段文字里没有 X」用原文。
+   判据放在这里、由 validateContent 用在**读者可见的字段**上（见那边的循环）。
+
+   「本底本」原来也在拦，靠"前一个字是不是量词"排除误伤——排不干净：
+   「这本底本」「那本底本」「哪本底本」「日本底本」全是正常中文。
+   一个词读起来别扭，不值得为它养一条会咬人的正则。 */
+const BAD_PAIR = /原文底本|底本原文/
+/* 「原文」＋最多十四个字＋否定谓语。
+   「三段原文」「五篇原文」是"引的那几段"，正当用法，排除。
+   （这一条是补的：上一个提交只拦了三个自我修饰，却在 README 里宣称
+   "编译器会拦"——实测在内容里写「原文不载」全绿。） */
+const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^。！？\n]{0,14}(?:[不未没无][载写记解释裁决回答作点明说给答释录]|没有)/
       const visible = [
         /* **渲染出去的字段一个都不能漏。**
            原来漏了「地点」和「在场人物」，而这两个都上屏——
@@ -1401,6 +1433,25 @@ function validateContent(people) {
         checks++
         const m = JARGON.exec(String(text))
         if (m) err(`${at} · ${where}`, `出现了读者不该看到的东西「${m[0]}」——内部行话、模板占位符、写作待办，都只该留在 source.md 和 审校记录.md 里`)
+
+        /* 「原文」和「底本」用混了。
+           **查的是读者看得见的字段，不是文件的行。** 第一版写成扫 `content/` 全树，
+           于是要一份一份地排除：README 是规则文档（「原文」在它里面是被定义的词）、
+           source.md 除了底本表都不上屏、stories.md 只有「故事一览」那一节上屏……
+           排到第三份就该明白：要的不是"哪些文件"，是"哪些文字读者会看到"——
+           那正是这个 `visible` 列表。挂在这里，一个文件都不用排除。 */
+        checks++
+        const raw = String(text)
+        const bare = raw.replace(/《[^》]*》原文/g, '')
+        if (BAD_PAIR.test(bare)) {
+          err(`${at} · ${where}`, `「原文底本」这种说法是在用一个词修饰它自己。` +
+            '「底本」是这一页依据的那本书，「原文」是引出来的那段文字——写「底本」就够')
+        } else if (MIXED.test(bare)) {
+          err(`${at} · ${where}`,
+            `写「原文『不载／没有写』」了。说「**这本书**没有记载 X」要用**底本**——` +
+            `现在是「${raw.slice(0, 30)}」。` +
+            '「原文」只留给引出来的那段文字（页签、◆ 出自原文、原文块、原文台词）')
+        }
       }
 
       /* 场景正文里同样不许出现"产品在说自己"。
@@ -1576,6 +1627,28 @@ function validateContent(people) {
       for (const c of st.cards) {
         checks++
         if (!c.q) err(at, '有张复习卡没有题面')
+        /* 卡片的标记也走同一条闸门：引了小说／野史，就得在同一张卡上写出书名。
+           这段原来是漏的——`cards/02-cidong.md` 手写了两处「◇ 出自小说」，
+           而**同一屏的图例**印着「◇ 出自小说《三国演义》，不是史书」，
+           读者一边有书名一边没有，正是用户当场问过的那一处。 */
+        if (markerOf(c.marker) === '◇') {
+          const text = [c.q, c.a, ...(c.meta || []).map((m) => m.v)].filter(Boolean).join(' ')
+          const cited = new Set([...text.matchAll(/(?<!\d)(\d{3})(?!\d)(?!\s*年)/g)].map((m) => m[1]))
+          for (const id of cited) {
+            const src = p.source[id]
+            if (!src || (src.tier !== '小说' && src.tier !== '野史')) continue
+            checks++
+            if (!text.includes(src.book)) {
+              err(at, `复习卡「${c.q?.slice(0, 14)}…」的标记是 ◇，引了 ${id}，` +
+                `却没写出它出自 ${src.book}——读者要靠书名判断这条该不该信`)
+            }
+          }
+        }
+        checks++
+        if (!c.marker) {
+          err(at, `复习卡「${c.q?.slice(0, 16)}…」没有标记——` +
+            '读者要靠它判断这条答案在史料上站得住多少。写一行「| 标记 | ○ |」（可以跟小字）')
+        }
         checks++
         if (!c.blocks?.length) err(at, `复习卡「${c.q?.slice(0, 14)}…」没有答案`)
       }
@@ -1743,39 +1816,6 @@ function main() {
     if (bad.size) throw new Error(`${p.name}：引用了不存在的原文编号 ${[...bad].join(', ')}`)
   }
   console.log('\n  ✓ 编号交叉校验  全部有效')
-
-  /* ── 用语：一个词不能修饰它自己 ──
-     「底本」＝这一页依据的那本书；「原文」＝引出来的那段文字（页签、◆、原文块）。
-     两者是不同的东西，所以「原文底本」「本底本」「底本原文」都是说岔了：
-     说「这本书没有记载」用底本，说「这段文字里没有」用原文。
-     2026-10-14 统一过一次（152 处「原文不载」这类改成「底本不载」），这条防它漂回去。 */
-  {
-    /* 「好几本底本」「同一本底本」是正常说法（量词 + 底本），不能误伤；
-       要拦的是「本底本」当"这个底本"讲的那种自我修饰。 */
-    const BAD_PAIR = /原文底本|底本原文|(?<![几一两二三四五六七八九十数多同每])本底本/
-    const hits = []
-    const walk = (d) => {
-      for (const e of fs.readdirSync(d, { withFileTypes: true })) {
-        if (e.name.startsWith('.')) continue
-        const fp = path.join(d, e.name)
-        if (e.isDirectory()) { walk(fp); continue }
-        if (!/\.md$/.test(e.name)) continue
-        fs.readFileSync(fp, 'utf8').split('\n').forEach((l, i) => {
-          /* 反引号里是**提到**这个词（README 讲这条规则时就得写出反例），
-             不是在用。剥掉再判。 */
-          const bare = l.replace(/`[^`]*`/g, '')
-          if (BAD_PAIR.test(bare)) hits.push(`${path.relative(CONTENT, fp)}:${i + 1}  ${l.trim().slice(0, 40)}`)
-        })
-      }
-    }
-    walk(CONTENT)
-    if (hits.length) {
-      throw new Error(
-        `「原文」和「底本」搅在一起了（${hits.length} 处）：\n    ` + hits.slice(0, 5).join('\n    ') +
-        '\n  「底本」是这一页依据的那本书，「原文」是引出来的那段文字。' +
-        '说「这本书没有记载」用底本；说「这段文字里没有」用原文。两者不能互相修饰')
-    }
-  }
 
   validateContent(people)
 
