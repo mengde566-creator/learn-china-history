@@ -772,6 +772,26 @@ function parseSeeds(rel) {
     throw new ParseError(rel, 0,
       `以下种子的「依据/备注」里混入了审校批注（应移入「内部」或审校记录）：\n    ${leaks.map((s) => s.q).join('、')}`)
   }
+  /* 「### 标记分布」那张表：**编译器能数，就该数。**
+     它原来没有任何校验，全库 12 份种子里的数字只能靠人眼——
+     实测栽过两次：02-cidong 整张表没有（没人发现），
+     08-guandu 的表把同一条算了两遍（◆写 5、实际 4）。
+     而 ⓘ 那次迁移又把 9 份表变成了旧的。
+     键取字形：`○ 合理推演` 和 `○ 外证` 都算 `○` 这一档（分两行写没关系，合计要对）。 */
+  seeds.dist = {}
+  const di = lines.findIndex((l) => /^###\s*标记分布/.test(l))
+  if (di > -1) {
+    for (let k = di + 1; k < lines.length; k++) {
+      const l = lines[k]
+      if (/^##\s/.test(l) && !/^###/.test(l)) break
+      const c = tableRow(l)
+      if (!c || c.length < 2) continue
+      const g = markerOf(clean(c[0]))
+      const num = Number(String(clean(c[1])).replace(/[^\d]/g, ''))
+      if (VALID_MARKERS.has(g) && Number.isFinite(num)) seeds.dist[g] = (seeds.dist[g] || 0) + num
+    }
+  }
+
   return seeds
 }
 
@@ -1247,6 +1267,29 @@ function validateContent(people) {
          读者照着去核，核了个空。 */
       for (const sd of st.seeds) {
         if (sd.ground) sweep(`种子「${String(sd.q).slice(0, 12)}…」· 依据`, sd.ground)
+      }
+
+      /* **统计表对账。** 那张「### 标记分布」表原来没有任何校验——
+         数字错了没人知道（02 整张表没有、08 把一条算了两遍、
+         ⓘ 迁移之后 9 份表变成旧的）。编译器本来就能数，没有理由靠人眼。
+         分两行写同一档（`○ 合理推演` / `○ 外证`）没关系，按字形合计。 */
+      if (st.seeds.length) {
+        checks++
+        if (!Object.keys(st.seeds.dist || {}).length) {
+          err(at, '种子文件里没有「### 标记分布」表——那是读者判断这一篇"底子有多硬"的地方。' +
+            '补一张，数字按实际标记数写（编译器会对账）')
+        } else {
+          const real = {}
+          for (const sd of st.seeds) { const g = markerOf(sd.marker); if (g) real[g] = (real[g] || 0) + 1 }
+          for (const g of new Set([...Object.keys(real), ...Object.keys(st.seeds.dist)])) {
+            checks++
+            const a = real[g] || 0, b = st.seeds.dist[g] || 0
+            if (a !== b) {
+              err(at, `「标记分布」表和实际对不上：${g} 表里写 ${b}，实际 ${a}。` +
+                `（实际分布：${Object.entries(real).map(([k, v]) => k + v).join(' ')}，共 ${st.seeds.length} 条）`)
+            }
+          }
+        }
       }
       for (const c of st.cards) {
         ;(c.meta || []).filter((m) => m.k === '依据').forEach((m) => sweep(`复习卡 ${c.n} · 依据`, m.v))
