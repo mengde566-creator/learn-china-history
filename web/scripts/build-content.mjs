@@ -210,6 +210,17 @@ function parseSource(rel, fileLabel, defaultBook) {
        不写底本小节的行，默认归 person.md「出处」那一本的正文——
        荆轲的 source.md 一个小节都没有，照旧。 */
     const h = line.match(/^##\s*底本[^·]*·\s*([^·]+?)\s*·\s*(.+?)\s*$/)
+    /* 写了个「## 底本」，但三段没写全——**必须报错，不能当没看见**。
+       原来只在正则匹配上时才处理，于是 `## 底本三 · 小说` 这种半截标题
+       会被静默跳过：后面那些行悄悄挂在上一本底本下面，书名丢了，
+       号段校验也绕过去了，编译还是一片绿。
+       书名是读者判断「这句该不该信」的唯一依据，不能允许它可有可无。 */
+    if (!h && /^##\s*底本/.test(line)) {
+      throw new ParseError(rel, i + 1,
+        '底本小节的标题写不全。必须是「## 底本<序号> · <档次> ·《书名>」三段——' +
+        `现在这一行是「${line.trim()}」。` +
+        `（档次只认 ${TIERS.join(' / ')}；书名不能省，界面上要拿它标出处）`)
+    }
     if (h) {
       const t = h[1].trim()
       if (!TIERS.includes(t)) {
@@ -259,8 +270,19 @@ function parseSource(rel, fileLabel, defaultBook) {
       book,
       tier,
       /* 引用时显示哪一行字：本条自己的出处优先，没有就用底本小节的书名。
-         读者看到的「《曹瞒传》101」和「《三国演义》第四回 201」靠的是它。 */
-      origin: rowNote || (noteM ? (noteM[1] || '注').trim() : null) || book,
+         读者看到的「《曹瞒传》101」和「《三国演义》第四回 201」靠的是它。
+
+         **小说这一档要把书名接上。** 出处那一列写的是「第四回」——
+         单看「第四回 201」，不知道是谁的第四回。
+         这里原来就只写「第四回」，于是界面上只剩「小说」两个字，
+         读者分不出引的是《三国演义》还是别的什么。
+         （2026-10-14 被当场问住：「你要是引的三国演义就应该标记三国演义」）
+         正史和注不用接：正史那一档 origin 本来就是整本书名，
+         注那一档写的是「裴松之注引孙盛《异同杂语》」，本身就带书名。 */
+      origin: (() => {
+        const o = rowNote || (noteM ? (noteM[1] || '注').trim() : null) || book
+        return tier === '小说' && !o.includes(book) ? `${book}${o}` : o
+      })(),
       line: i + 1,
       text: rawText.replace(/★/g, '').replace(/`异文`/g, '').replace(NOTE, '').trim(),
       priority: String(priority).replace(/\*\*/g, '').trim()[0],
@@ -272,6 +294,20 @@ function parseSource(rel, fileLabel, defaultBook) {
 
   const n = Object.keys(source).length
   if (n === 0) throw new ParseError(fileLabel, 0, '没有解析出任何原文段落')
+
+  /* 底本得有个名字。名字从两个地方来：`## 底本` 小节的书名，
+     或者 person.md「出处」那一行（没有小节时全篇归它）。
+     两个都没有，就会掉进「未署名的底本」这个兜底——
+     而那句话会原样印到「原文」面板的分节标题上。
+     底本是读者判断「这句该不该信」的唯一依据，不能没有名字。 */
+  const nameless = Object.values(source).filter((s) => !s.book || /未署名/.test(s.book))
+  if (nameless.length) {
+    throw new ParseError(fileLabel, nameless[0].line,
+      `原文 ${nameless[0].id} 的底本没有名字（现在写作「${nameless[0].book}」）。` +
+      '两种写法选一个：在 source.md 里写「## 底本一 · 正史 ·《某某书》」，' +
+      '或者在 person.md 的表里填「| **出处** | 《某某书》 |」。' +
+      '界面上会把书名印在「原文」面板的分节标题里，不能空着')
+  }
   return source
 }
 
@@ -308,6 +344,7 @@ function parseStoryList(rel) {
     if (!/^\d{2}-[a-z0-9-]+$/i.test(id)) continue
     list.push({
       id,
+      line: i + 1,
       stage,
       name: clean(c[1]),
       question: clean(c[2]),   // 兼容旧列名
@@ -345,6 +382,49 @@ function parseStoryList(rel) {
   }
 
   if (!list.length) throw new ParseError(rel, 0, '故事一览表是空的')
+
+  /* ── 两道顺序闸门 ─────────────────────────────
+     这张表是**读者读的顺序**，而文件是按 id 排序的。两者不一致时，
+     页面上的顺序和 id 顺序打架，谁也不会报错。
+     2026-10-14 就是这么被打回来的：曹操的「五色棒」是 174 年的事，
+     「刺董」是 189 年，表里却把刺董排在前面——因为那一行是先写的。
+     （同一天补的 `scripts/renumber.mjs` 会警告行序，但它只是个工具，
+     人不看它的输出就白搭；闸门在编译器里才算数。） */
+
+  /* 一、id 必须顺着排。
+     重编号工具改了文件名和字样，行序还是旧的——这是它最容易留下的坑。 */
+  for (let i = 1; i < list.length; i++) {
+    if (list[i].id < list[i - 1].id) {
+      throw new ParseError(rel, list[i].line,
+        `故事一览里的行序和编号对不上：${list[i - 1].id}（第 ${list[i - 1].line} 行）` +
+        `后面跟着 ${list[i].id}。文件的排序按 id 来，表却按写的顺序——` +
+        '两边一打架，读者看到的顺序就是错的。把那两行对调过来')
+    }
+  }
+
+  /* 二、同一个分组里，时间要么递增，要么就别写成能干瞪眼比较的形式。
+     「同年」「前 227」「前 232 – 前 228」这类写法这里一律跳过——
+     年代本身还没核过（荆轲那一页写着「需另行核对」），
+     拿没核实的文字做判据，闸门迟早会误报。只拦一眼能看出的倒序：
+     纯数字的公元年份。曹操那十篇全部落在这一档，够用了。 */
+  const bareYear = (t) =>
+    { const m = String(t).replace(/\*\*/g, '').trim().match(/^(?:公元)?\s*(\d{3,4})\s*年?$/)
+      return m ? Number(m[1]) : null }
+  let prev = null
+  for (const s of list) {
+    const y = bareYear(s.time)
+    if (s.stage !== prev?.stage) { prev = null }   // 换了分组，不跨组比
+    if (y === null) { prev = { stage: s.stage, y: null, s }; continue }
+    if (prev && prev.y !== null && y < prev.y) {
+      throw new ParseError(rel, s.line,
+        `「${s.stage || '（未分组）'}」这一组里时间是倒着的：${prev.s.id} 是 ${prev.y} 年，` +
+        `后面 ${s.id} 却是 ${y} 年。\n` +
+        '    故事一览就是读的顺序，按时间排。要改编号就先用 ' +
+        '`node scripts/renumber.mjs <人物> 旧id=新id`，再把这一行挪到该在的位置')
+    }
+    prev = { stage: s.stage, y, s }
+  }
+
   return list
 }
 
@@ -740,7 +820,13 @@ function buildPerson(id) {
   const assets = syncAssets(id)
 
   const meta = parsePersonMeta(`${dir}/person.md`)
-  const source = parseSource(`${dir}/source.md`, `${dir}/source.md`, meta['出处'] || null)
+  /* 第三个参数是「这一本叫什么」——没有 `## 底本` 小节时全篇都归它。
+     **取的是 meta.sourceBook，不是 meta['出处']。**
+     parsePersonMeta 返回的是**输出字段名**（sourceBook / sourceRange / …），
+     中文键只活在它内部；写 `meta['出处']` 永远是 undefined。
+     代价是荆轲那一页的「原文」分节标题印着「正史 · 未署名的底本」——
+     一句内部占位符，摆在读者面前，一路绿灯。 */
+  const source = parseSource(`${dir}/source.md`, `${dir}/source.md`, meta.sourceBook || null)
   const storyList = parseStoryList(`${dir}/stories.md`)
   const cast = exists(`${dir}/cast.md`) ? parseCast(`${dir}/cast.md`) : { people: [], others: [] }
 
@@ -1276,6 +1362,35 @@ function validateContent(people) {
       for (const row of st.groundTable) {
         checks++
         if (!VALID_MARKERS.has(markerOf(row.marker))) err(`${at} · 依据映射表`, `「${row.claim.slice(0, 12)}…」的标记「${row.marker}」无效`)
+      }
+
+      /* 映射表里引了小说或野史，就得在**同一行**写出书名。
+         一个编号看不出档次——`201` 和 `001` 长得一模一样，而 `◇` 的意思
+         正是「这一句不是史书」。写在上一行也不行：02-cidong 原来第一行写
+         「`201`（《三国演义》第四回）」，接着三行全是「（同上）」，
+         读者从中间往下看，就不知道那是谁的第四回。
+         （2026-10-14 用户指着这一处问：「你要是引的三国演义就应该标记三国演义」）
+         正史和注不拦：正史是默认那一档，注那一档的编号自带书名
+         （「裴松之注引孙盛《异同杂语》」）。 */
+      for (const row of st.groundTable) {
+        /* 编号在这里已经**没有反引号了**——`clean()` 会把 `` `201` `` 洗成 `201`。
+           （第一版按反引号找，结果一条都没匹配上，闸门全绿，白装。）
+           后面那个 `(?!\s*年)` 是防年份：205 年 / 208 年 都可能撞上编号，
+           而「公元 208 年是后世系年」不是在引原文。 */
+        const cited = new Set(
+          [...String(row.basis).matchAll(/(?<!\d)(\d{3})(?!\d)(?!\s*年)/g)].map((m) => m[1])
+        )
+        for (const id of cited) {
+          const src = p.source[id]
+          if (!src || (src.tier !== '小说' && src.tier !== '野史')) continue
+          checks++
+          if (!String(row.basis).includes(src.book)) {
+            err(`${at} · 依据映射表`,
+              `「${row.claim.slice(0, 14)}…」引了 ${id}，却没写出它出自 ${src.book}。` +
+              `这一行的依据现在是「${String(row.basis).slice(0, 26)}」——` +
+              '别用「同上」：读者从中间看起，就不知道是谁的书')
+          }
+        }
       }
 
       /* 正文里挂「原文」牌子的那一行，必须有编号撑着。

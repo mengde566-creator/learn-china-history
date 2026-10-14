@@ -15,7 +15,8 @@
     "refs": "node scripts/fetch-refs.mjs",
     "check-sources": "node scripts/check-sources.mjs",
     "ref-grep": "node scripts/ref-grep.mjs",
-    "new-story": "node scripts/new-story.mjs"
+    "new-story": "node scripts/new-story.mjs",
+    "renumber": "node scripts/renumber.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

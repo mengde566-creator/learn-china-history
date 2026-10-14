@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPerson, listPeople } from '@/lib/content'
+import { formatRanges } from '@/lib/range'
 import SealMark from '@/components/SealMark'
 
 export function generateStaticParams() {
@@ -126,7 +127,12 @@ export default async function PersonPage({ params }) {
       )}
 
       <p className="footnote" style={{ marginTop: 44 }}>
-        底本 {person.sourceCount} 段，编号 001–{String(person.sourceCount).padStart(3, '0')}。
+        {/* 编号按**底本**分组写，并且把书名带出来。
+            这里原来是 `编号 001–{段数}`——32 段就印成「编号 001–032」，
+            而真正的编号是 001–020、101–103、201–209，**页面上写了一句不存在的话**。
+            而且那三个号段就是三本书，读者该看到的是书名，不是「底本」两个字。 */}
+        底本 {person.sourceCount} 段，分 {(person.books || []).length} 本：
+        {(person.books || []).map((b) => `${b.book} ${formatRanges(b.ids)}`).join(' · ')}。
         <b>尚未与实体书核对。</b>
       </p>
 

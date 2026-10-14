@@ -17,6 +17,20 @@ const TITLES = {
 }
 const MARK_CLASS = { '◆': 'g-source', '◇': 'g-fiction', '○': 'g-infer', '△': 'g-doubt', '—': 'g-silent' }
 
+/* 这一页用到的某一档底本，都叫什么书。
+   书名是内容里的东西——`source.md` 的底本小节写着「## 底本三 · 小说 ·《三国演义》」。
+   界面不自己编一个，也不假装「小说」两个字就够了：
+   读者要能一眼看出这一句出自哪本书，才谈得上信不信。 */
+const booksOfTier = (person, tier) =>
+  (person?.books || []).filter((b) => b.tier === tier).map((b) => b.book)
+
+/** 标记的短标签。只有 ◇ 要补书名——别的档次，书名在「原文」的分节标题上。 */
+function titleOf(marker, person) {
+  if (marker !== '◇') return TITLES[marker] || ''
+  const novels = booksOfTier(person, '小说')
+  return novels.length ? `出自小说${novels.join('、')}` : TITLES['◇']
+}
+
 const TABS = [
   { k: 'evidence',    label: '依据' },
   { k: 'source',      label: '原文' },
@@ -186,7 +200,7 @@ export default function StoryClient({ person, story, source }) {
                 </>
               )
             })()}
-            <div style={{ marginTop: 14 }}><Legend /></div>
+            <div style={{ marginTop: 14 }}><Legend novels={booksOfTier(person, '小说')} /></div>
           </div>
         </div>
       </main>
@@ -250,7 +264,7 @@ export default function StoryClient({ person, story, source }) {
                     <button
                       className="ground anim-fade d3"
                       onClick={() => { setTab('evidence'); scrollToBeat(b.n) }}
-                      title={TITLES[b.marker] || ''}
+                      title={titleOf(b.marker, person)}
                     >
                       <b className={MARK_CLASS[b.marker] || 'g-silent'}>{b.marker || '—'}</b>
                       <span className="sep">·</span>
@@ -335,7 +349,7 @@ export default function StoryClient({ person, story, source }) {
                   }`}>
                     <div className="hd">
                       <span className="glyph mk"><Marker ch={shownMark} size={13} /></span>
-                      <span className="label">{TITLES[shownMark]}</span>
+                      <span className="label">{titleOf(shownMark, person)}</span>
                     </div>
                     {/* 依据正文只有在本段底本里找不到时才显示。
                         没有可显示的就不显示——不再补一句「引文即证据，见上」。
@@ -357,11 +371,18 @@ export default function StoryClient({ person, story, source }) {
                 const groups = (person.books || [])
                   .map((b) => ({ ...b, rows: b.ids.map((id) => source[id]).filter(Boolean) }))
                   .filter((b) => b.rows.length)
+                /* 分节标题的写法：`档次 · 书名 · 这一档要提醒什么`。
+                   四档都要**写出书名**——读者看的是「这一句出自哪本书」，
+                   不是「这一句出自哪一档」。原来非正史三档只写档次
+                   （「小说 · 不是史书，出自小说」），书名一个字没有：
+                   正史那节写着《三国志·魏书·武帝纪》，小说那节却只有「小说」，
+                   同一个人物、同一个面板，两套交代方式。
+                   `b.book` 来自 source.md 的底本小节，界面不自己编。 */
                 const SUB_HEAD = {
-                  正史: '正文',
-                  注: '不是正文，出自注',
-                  小说: '不是史书，出自小说',
-                  野史: '不是正史，出自野史',
+                  正史: '',
+                  注: '不是正文',
+                  小说: '不是史书',
+                  野史: '不是正史',
                 }
                 const row = (s) => (
                   <div key={s.id} className={`mark-block ${s.tier === '正史' ? 'source' : s.tier === '小说' ? 'fiction' : 'noted'}`}>
@@ -381,7 +402,7 @@ export default function StoryClient({ person, story, source }) {
                     {groups.map((b, i) => (
                       <section className="src-group" key={`${b.tier}-${b.book}`}>
                         <h4 className={i === 0 ? 'sub-head first' : 'sub-head'}>
-                          {b.tier === '正史' ? `正史 · ${b.book}` : `${b.tier} · ${SUB_HEAD[b.tier] || ''}`}
+                          {[b.tier, b.book, SUB_HEAD[b.tier]].filter(Boolean).join(' · ')}
                         </h4>
                         {b.rows.map(row)}
                       </section>

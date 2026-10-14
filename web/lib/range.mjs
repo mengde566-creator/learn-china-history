@@ -34,3 +34,27 @@ export function parseRange(range) {
   }
   return [...new Set(ids)]
 }
+
+/**
+ * `parseRange` 的反向：一串编号 → 它最省字的写法。
+ *
+ *   ['001','002','003','008'] → `001–003、008`
+ *
+ * 用来在人物页写「底本 32 段，正史 001–020、注 101–103、小说 201–209」。
+ * 原来那一句是拿段数硬拼出来的——`编号 001–{段数}`，32 段就写成 `001–032`，
+ * 而实际编号是 001–020、101–103、201–209。**页面上印了一句不存在的话**，
+ * 谁也没报错，因为它是拼出来的，不是从编号来的。
+ * 凡是能算出来的，就不要手写。
+ */
+export function formatRanges(ids) {
+  const n = [...new Set(ids)].map(Number).sort((a, b) => a - b)
+  const parts = []
+  for (let i = 0; i < n.length; ) {
+    let j = i
+    while (j + 1 < n.length && n[j + 1] === n[j] + 1) j++
+    const pad = (v) => String(v).padStart(3, '0')
+    parts.push(j > i ? `${pad(n[i])}–${pad(n[j])}` : pad(n[i]))
+    i = j + 1
+  }
+  return parts.join('、')
+}

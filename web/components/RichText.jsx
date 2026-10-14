@@ -73,12 +73,22 @@ export function Marker({ ch, size = 12 }) {
   )
 }
 
-/** 四个标记的图例。长说明只在这里出现一次。 */
-export function Legend() {
+/**
+ * 四个标记的图例。长说明只在这里出现一次。
+ *
+ * `novels` 是这一页用到的**小说书名**（《三国演义》这种），由调用方从 person.books 取。
+ * 原来这里写死「（《三国演义》）」——曹操那一页碰巧是对的，换一个人物就是假话；
+ * 而正文里的 `◇ 出自小说` 又完全不说书名。两头都不对：
+ * 该由内容决定的东西，界面不能自己编一个，也不能一个字都不给。
+ */
+export function Legend({ novels }) {
+  const novelList = (novels || []).join('、')
   return (
     <div className="legend">
       <span><Marker ch="◆" /> 出自原文，可逐字核对</span>
-      <span><Marker ch="◇" /> 出自小说（《三国演义》），不是史书</span>
+      <span>
+        <Marker ch="◇" /> 出自小说{novelList}，不是史书
+      </span>
       <span><Marker ch="○" /> 合理推演，附推演链条</span>
       <span><Marker ch="△" /> 史书未载，后世有争议</span>
       <span><Marker ch="—" /> 史书未载，且推不出来</span>
