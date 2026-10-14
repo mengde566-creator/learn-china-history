@@ -668,20 +668,27 @@ function parseStoryContent(rel, source) {
  */
 function checkOwnNumber(rel, id) {
   const { lines } = read(rel)
-  const h1 = (lines.find((l) => /^#\s/.test(l)) || '').trim()
   const want = id.slice(0, 2)
+  const h1 = (lines.find((l) => /^#\s/.test(l)) || '').trim()
   if (!h1) throw new ParseError(rel, 1, '第一行必须是标题，标题里要带这一篇的序号')
-  const m = h1.match(/\b(\d{2})\b/)
-  if (!m) {
+  if (!h1.match(/\b(\d{2})\b/)) {
     throw new ParseError(rel, 1,
       `标题里没有序号：「${h1}」。写成「# 对话种子 · 场景 ${want} · 篇名」这种形式——` +
       '标题不渲染，它是回头找东西时唯一的路标')
   }
-  if (m[1] !== want) {
-    throw new ParseError(rel, 1,
-      `标题里的序号和文件名对不上：文件是 ${id}.md，标题写的是「${h1}」。` +
-      `应该是 ${want}。界面上不渲染，所以错了没人看得见`)
-  }
+  /* **查全篇，不只第一行。** 第一版只查 H1，于是
+     `cards/02-cidong.md` 里那个「## 场景 01 · 曹操刺董（8 张）」漏了过去——
+     文件是 02，H1 也早改成了 02，就中间那个二级标题还写着 01。
+     凡是「场景 NN」「故事 NN」这种自带序号的说法，都得和文件名对得上。 */
+  lines.forEach((line, i) => {
+    for (const m of line.matchAll(/(?:场景|故事)\s*(\d{2})(?!\d)/g)) {
+      if (m[1] !== want) {
+        throw new ParseError(rel, i + 1,
+          `这一行里的序号和文件名对不上：文件是 ${id}.md（第 ${want} 篇），` +
+          `写的却是「${line.trim().slice(0, 30)}」。界面上不渲染，所以错了没人看得见`)
+      }
+    }
+  })
 }
 
 function parseSeeds(rel) {
@@ -722,8 +729,23 @@ function parseSeeds(rel) {
       return
     }
 
-    const markerRow = line.match(/^\|\s*标记\s*\|\s*([◆◇○△—])\s*\|/)
-    if (markerRow) { seed.marker = markerRow[1]; return }
+    /* 「标记」行。**原来只认「| 标记 | ○ |」这一种写法**——
+       写成「| 标记 | ○ 外证 |」时正则匹配不上，这一行掉到下面的通用分支，
+       被 `if (k === '标记') return` 静静吞掉：种子没有标记、界面不显示徽章、
+       编译一路全绿。而图例恰恰在教作者写「○ 后面跟一个小字」，
+       映射表和复习卡里也都是那个写法。**编译器在罚它自己教的写法。**
+       现在按 `markerOf` 取第一个字符，取不出标记就直接报错，不再静默。 */
+    const markerRow = line.match(/^\|\s*标记\s*\|\s*(.*?)\s*\|\s*$/)
+    if (markerRow) {
+      const g = markerOf(markerRow[1])
+      if (!VALID_MARKERS.has(g)) {
+        throw new ParseError(rel, ln,
+          `「标记」行读不出标记：「${markerRow[1]}」。只能是 ` +
+          `${[...VALID_MARKERS].join(' ')} 里面的一个，后面可以跟小字（像「○ 外证」）`)
+      }
+      seed.marker = g
+      return
+    }
 
     const cells = tableRow(line)
     if (!cells || cells.length < 2) return
@@ -1533,6 +1555,16 @@ function validateContent(people) {
       for (const seed of st.seeds) {
         checks++
         if (!seed.q) err(at, '有条对话种子没有「问」')
+        /* 每条种子都得有标记。写漏了不会报错的话，界面上的标记徽章就没了，
+           而徽章是读者判断「这句话在史料上站得住多少」的唯一入口。
+           （2026-10-14：写成「| 标记 | ○ 外证 |」会被静默丢掉，已修；
+           这条闸门防的是干脆没写。）
+           系统层的种子（`sys`）除外：那些是产品边界说明，不是史料回答。 */
+        checks++
+        if (!seed.marker && !seed.sys?.trim()) {
+          err(at, `对话种子「${seed.q?.slice(0, 16)}…」没有标记——` +
+            '读者要靠它判断这句话在史料上站得住多少。写一行「| 标记 | ○ |」（可以跟小字，如「○ 外证」）')
+        }
         checks++
         // 答案可以是：对话回答 / 系统提示（产品边界题）/ 标了"无"
         const hasAnswer = seed.answer?.length || seed.sys?.trim() || seed.meta?.length
@@ -1697,8 +1729,14 @@ function main() {
     const bad = new Set()
     for (const s of Object.values(p.stories)) {
       /* 反引号是"这确实是个编号"的显式写法（`099`），裸三位数可能是年份——
-         两条都收，收完再看它在不在底本里。 */
-      for (const m of blankYears(cited(s)).matchAll(/`?(\d{3})`?/g)) {
+         两条都收，收完再看它在不在底本里。
+
+         **但必须是"整个数字恰好三位"。** 原来写的是 `/`?(\d{3})`?/g`，
+         于是「5000 人」里的前三位被当成编号 500，**整次编译直接中断**：
+         写作者只是说了一个正常的大数目，编译器却说他引了一段不存在的原文。
+         （2026-10-14 子智能体写种子时踩到，只能绕道写「五千」。）
+         前后各加一个「不是数字」的约束就对了——年份那一层由 blankYears 负责挡。 */
+      for (const m of blankYears(cited(s)).matchAll(/(?<!\d)`?(\d{3})`?(?!\d)/g)) {
         if (!p.source[m[1]]) bad.add(m[1])
       }
     }
