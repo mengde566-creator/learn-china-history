@@ -47,7 +47,10 @@ export function parseRange(range) {
  * 凡是能算出来的，就不要手写。
  */
 export function formatRanges(ids) {
-  const n = [...new Set(ids)].map(Number).sort((a, b) => a - b)
+  /* 非编号的东西直接丢掉。今天进来的都被 `^\d{3}$` 过了一遍，触发不了；
+     但 `formatRanges(['001','abc','002'])` 原来会拼出「001、NaN、002」印到人物页上。
+     算得出来的东西就不要让它算出 NaN。 */
+  const n = [...new Set(ids)].map(Number).filter(Number.isFinite).sort((a, b) => a - b)
   const parts = []
   for (let i = 0; i < n.length; ) {
     let j = i

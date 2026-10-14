@@ -27,6 +27,7 @@ import { fileURLToPath } from 'node:url'
 /* 原文范围的写法，和渲染层共用同一份实现（`lib/content.js` 也引它）。
    两边各写一份正则的话，编译器校验的和页面渲染的迟早不是同一件事。 */
 import { parseRange } from '../lib/range.mjs'
+import { citeOf } from '../lib/cite.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..', '..')
@@ -269,20 +270,10 @@ function parseSource(rel, fileLabel, defaultBook) {
       id,
       book,
       tier,
-      /* 引用时显示哪一行字：本条自己的出处优先，没有就用底本小节的书名。
-         读者看到的「《曹瞒传》101」和「《三国演义》第四回 201」靠的是它。
-
-         **小说这一档要把书名接上。** 出处那一列写的是「第四回」——
-         单看「第四回 201」，不知道是谁的第四回。
-         这里原来就只写「第四回」，于是界面上只剩「小说」两个字，
-         读者分不出引的是《三国演义》还是别的什么。
-         （2026-10-14 被当场问住：「你要是引的三国演义就应该标记三国演义」）
-         正史和注不用接：正史那一档 origin 本来就是整本书名，
-         注那一档写的是「裴松之注引孙盛《异同杂语》」，本身就带书名。 */
-      origin: (() => {
-        const o = rowNote || (noteM ? (noteM[1] || '注').trim() : null) || book
-        return tier === '小说' && !o.includes(book) ? `${book}${o}` : o
-      })(),
+      /* 引用时显示哪一行字。规则在 `lib/cite.mjs`——**和 new-story.mjs 共用一份**：
+         那边自己算过一份不一样的，结果骨架生成器生成的文件被闸门当场拒绝。
+         （2026-10-14 用户问：「你要是引的三国演义就应该标记三国演义」） */
+      origin: citeOf({ tier, book, note: rowNote || (noteM ? (noteM[1] || '注').trim() : null) }),
       line: i + 1,
       text: rawText.replace(/★/g, '').replace(/`异文`/g, '').replace(NOTE, '').trim(),
       priority: String(priority).replace(/\*\*/g, '').trim()[0],
@@ -397,8 +388,10 @@ function parseStoryList(rel) {
     if (list[i].id < list[i - 1].id) {
       throw new ParseError(rel, list[i].line,
         `故事一览里的行序和编号对不上：${list[i - 1].id}（第 ${list[i - 1].line} 行）` +
-        `后面跟着 ${list[i].id}。文件的排序按 id 来，表却按写的顺序——` +
-        '两边一打架，读者看到的顺序就是错的。把那两行对调过来')
+        `后面跟着 ${list[i].id}。\n` +
+        '    编号被约定为阅读顺序的次序号（文件按 id 排、链接按 id 找），' +
+        '行序才是读者看到的顺序。两者打架，说明这次改编号只改了一半——' +
+        '多半是 `renumber.mjs` 改完文件、忘了把这一行挪到该在的位置。')
     }
   }
 
@@ -433,12 +426,26 @@ function parseStoryList(rel) {
 function parseStoryContent(rel, source) {
   const { lines } = read(rel)
 
+  /* 第一行是篇名。曹操那几篇写成 `# 02-cidong · 曹操刺董`，
+     荆轲那几篇写成 `# 燕国危局`——两种都认，去掉可能存在的 id 前缀。
+     这个名字以前**没人读**：页面上的篇名一律来自 `stories.md`。
+     于是把故事一览的篇名改成另一篇的名字，编译全绿，
+     读者看到「曹操刺董」那张卡，点进去是五色棒。 */
+  const h1 = (lines.find((l) => /^#\s/.test(l)) || '').replace(/^#\s*/, '').trim()
+  const h1Title = h1 ? h1.replace(/^\d{2}-[a-z0-9-]+\s*·\s*/i, '').trim() : null
+
   const story = {
     intro: { lines: [], basis: [], note: '' },
     beats: [],
     backgrounds: [],
     groundTable: [],
     present: [],
+    /* title 和 declaredRange 从前**根本没人读**：文件第一行的篇名、
+       前表里的「| **原文** |」那一行，都是装饰。谁改都不会响——
+       而页面上的篇名只来自 stories.md，改错了读者看到的就是另一篇的名字。
+       现在读进来，交给 validateContent 和 stories.md 对账。 */
+    title: h1Title,
+    declaredRange: null,
     imgFile: null,
     imgCaption: null,
     place: null,
@@ -504,6 +511,7 @@ function parseStoryContent(rel, source) {
         if (k === '封面') story.imgFile = clean(cells[1])
         if (k === '图注') story.imgCaption = clean(cells[1])
         if (k === '地点') story.place = clean(cells[1])
+        if (k === '原文') story.declaredRange = clean(cells[1])
       }
     }
     /* 进入任何新的 `##` 小节，都先把待收的情节点和背景卡收掉。
@@ -648,6 +656,33 @@ function parseStoryContent(rel, source) {
 }
 
 /* ── seeds/<id>.md ──────────────────────────────── */
+
+/**
+ * 种子／复习卡的标题里那个序号，必须等于文件名里的序号。
+ *
+ * 这两个标题界面上一律不渲染，所以**谁改都不会响**——可它们是作者回头找东西时
+ * 唯一的路标。加这条闸门时实测已有三处对不上：
+ * 曹操的 `seeds/02-cidong.md`、`cards/02-cidong.md` 写着「场景 01」（改编号时漏的），
+ * 荆轲的 `cards/06-yishui.md` 写着「# 05 · 复习卡」（一开始就写错的）。
+ * 三处都是子智能体审核扫出来的——人眼扫不到，因为没人会去看第一行。
+ */
+function checkOwnNumber(rel, id) {
+  const { lines } = read(rel)
+  const h1 = (lines.find((l) => /^#\s/.test(l)) || '').trim()
+  const want = id.slice(0, 2)
+  if (!h1) throw new ParseError(rel, 1, '第一行必须是标题，标题里要带这一篇的序号')
+  const m = h1.match(/\b(\d{2})\b/)
+  if (!m) {
+    throw new ParseError(rel, 1,
+      `标题里没有序号：「${h1}」。写成「# 对话种子 · 场景 ${want} · 篇名」这种形式——` +
+      '标题不渲染，它是回头找东西时唯一的路标')
+  }
+  if (m[1] !== want) {
+    throw new ParseError(rel, 1,
+      `标题里的序号和文件名对不上：文件是 ${id}.md，标题写的是「${h1}」。` +
+      `应该是 ${want}。界面上不渲染，所以错了没人看得见`)
+  }
+}
 
 function parseSeeds(rel) {
   const { lines } = read(rel)
@@ -843,8 +878,8 @@ function buildPerson(id) {
       ...s,
       ready: true,
       ...content,
-      seeds: exists(seedsRel) ? parseSeeds(seedsRel) : [],
-      cards: exists(cardsRel) ? parseCards(cardsRel) : [],
+      seeds: exists(seedsRel) ? (checkOwnNumber(seedsRel, s.id), parseSeeds(seedsRel)) : [],
+      cards: exists(cardsRel) ? (checkOwnNumber(cardsRel, s.id), parseCards(cardsRel)) : [],
     }
 
     // 图片：内容里只写文件名，这里解析成 URL。缺图只警告，不阻断编译。
@@ -1105,6 +1140,48 @@ function validateContent(people) {
       checks++
       if (!st.beats.length) err(at, '没有情节点')
 
+      /* ── 故事一览 ⟷ 故事文件，两边对账 ─────────────
+         这一对离得最近，却一直没人查：**文件里那两处声明，从前没有任何代码读。**
+         文件第一行的篇名是装饰（页面篇名一律取自 stories.md），
+         前表的「| **原文** |」也是装饰（只有「地点」被读）。
+         于是把故事一览里 `01-wusebang` 那一行的篇名改成「曹操刺董」，
+         编译全绿——而读者看到「曹操刺董」这张卡，点进去是五色棒。
+         这正是这次要修的失败模式，只是换了一对字段。 */
+      const bareName = (x) => String(x || '').replace(/[★\s]/g, '')
+      checks++
+      if (st.title && bareName(st.title) !== bareName(st.name)) {
+        err(at, `故事一览写的篇名是「${st.name}」，故事文件第一行写的是「${st.title}」。` +
+          `页面上的篇名取自故事一览，读者会看到「${st.name}」这张卡、点进去却是「${st.title}」。两边改成一样`)
+      }
+
+      const declared = parseRange(s.sourceRange)
+      checks++
+      if (!declared.length) err(at, '故事一览的「原文」列是空的——这一篇用到了哪些编号，得写出来')
+      if (st.declaredRange) {
+        const inFile = parseRange(st.declaredRange)
+        checks++
+        if (inFile.length !== declared.length || inFile.some((x) => !declared.includes(x))) {
+          err(at, `故事一览的「原文」列写的是 ${s.sourceRange}，故事文件前表写的是 ${st.declaredRange}——` +
+            '两处必须一致。文件那一行是给读者看的，故事一览那一列是给编译器看的，对不上时没人知道该信哪个')
+        }
+      }
+
+      /* 每一段引的编号，必须落在这一篇声明的范围里。
+         原来把故事一览的范围改小（001–003、008、201–209 → 001–003），
+         编译照样全绿，而这一篇 6 段里有 4 段引的是范围外的编号。 */
+      for (const b of st.beats) {
+        checks++
+        const outside = (b.sources || []).filter((id) => !declared.includes(id))
+        if (outside.length) {
+          err(`${at} · 第 ${b.n} 段`,
+            `这一段引了 ${outside.join(' ')}，可本篇声明的原文范围是 ${s.sourceRange}，不含这几个编号。` +
+            '三条路：把它补进故事一览那一列（大于一篇真正会摊开给读者的原文）、' +
+            '说明是依据挂错了段落、或者——如果只是想指路——写篇名而不是编号。' +
+            '**范围外的编号，读者在「依据」面板里只会看到一对空的引号**，因为那一栏的正文' +
+            '是按本篇范围取的')
+        }
+      }
+
       for (const b of st.beats) {
         checks++
         if (!VALID_MARKERS.has(markerOf(b.marker))) err(`${at} · 第 ${b.n} 段`, `标记「${b.marker}」不是有效值（只能是 ◆ ○ △ —）`)
@@ -1116,21 +1193,31 @@ function validateContent(people) {
         if (!b.source && markerOf(b.marker) === '◆') err(`${at} · 第 ${b.n} 段`, '标了 ◆（出自原文）但没有原文编号')
         checks++
         if (!b.source && markerOf(b.marker) === '◇') err(`${at} · 第 ${b.n} 段`, '标了 ◇（出自小说）但没有原文编号')
-        /* 引了小说就必须标 ◇，反过来标了 ◇ 就必须真引了小说。
+        /* 引了底本正文之外的另一本书（小说、野史）就必须标 ◇，
+           反过来标了 ◇ 就必须真引了这样一本。
            ◆ 在这套东西里的意思是「这是史书写的」——拿它罩住《三国演义》，
-           读者会把十四世纪的小说当成陈寿的记载。这两个方向都要拦：
-           只拦一个方向的话，把小说段落改标成 ◆ 没人管，把正史段落改标成 ◇ 也没人管。 */
+           读者会把十四世纪的小说当成陈寿的记载。两个方向都要拦：
+           只拦一个方向的话，把小说段落改标成 ◆ 没人管，把正史段落改标成 ◇ 也没人管。
+
+           **野史也是 ◇。** 标记的定义（见 VALID_MARKERS 上面那段）写的就是
+           「别的书：小说、野史」，可这里原来只认小说档：真加了野史内容，
+           挂 ◆ 被语义否定、挂 ◇ 又被这里判成「不是小说」，两条路都堵死。
+           （2026-10-14 子智能体审核查出来的半截接线。）
+           注（1xx）仍用 ◆：那是史料，只是不在正文里。 */
+        const FOREIGN = new Set(['小说', '野史'])
         const tiers = (b.sources || []).map((id) => p.source[id]?.tier).filter(Boolean)
-        const fictionIds = (b.sources || []).filter((id) => p.source[id]?.tier === '小说')
+        const foreignIds = (b.sources || []).filter((id) => FOREIGN.has(p.source[id]?.tier))
+        const foreignTiers = [...new Set(foreignIds.map((id) => p.source[id].tier))]
         checks++
-        if (fictionIds.length && markerOf(b.marker) !== '◇') {
+        if (foreignIds.length && markerOf(b.marker) !== '◇') {
           err(`${at} · 第 ${b.n} 段`,
-            `这一段引了小说（${fictionIds.join(' ')}），标记必须是 ◇（出自小说，不是史书），` +
-            `现在是「${b.marker}」`)
+            `这一段引了${foreignTiers.join('、')}（${foreignIds.join(' ')}），` +
+            `标记必须是 ◇（出自小说或野史，不是史书），现在是「${b.marker}」`)
         }
         checks++
-        if (!fictionIds.length && markerOf(b.marker) === '◇') {
-          err(`${at} · 第 ${b.n} 段`, `标了 ◇（出自小说），可这一段引的 ${tiers.join(' ')} 里没有小说`)
+        if (!foreignIds.length && markerOf(b.marker) === '◇') {
+          err(`${at} · 第 ${b.n} 段`,
+            `标了 ◇（出自小说或野史），可这一段引的 ${tiers.join(' ')} 里没有小说也没有野史`)
         }
         /* **「原文」栏的文字，必须是它标的那个编号的开头。**
            子智能体的变异测试：把情节点 2 的 `| 原文 | \`018\`` 改成 `\`001\``，
@@ -1375,10 +1462,17 @@ function validateContent(people) {
       for (const row of st.groundTable) {
         /* 编号在这里已经**没有反引号了**——`clean()` 会把 `` `201` `` 洗成 `201`。
            （第一版按反引号找，结果一条都没匹配上，闸门全绿，白装。）
-           后面那个 `(?!\s*年)` 是防年份：205 年 / 208 年 都可能撞上编号，
-           而「公元 208 年是后世系年」不是在引原文。 */
+           所以只在**引用长什么样**上收紧，不能在「是不是数字」上收紧：
+           曹操的底本里 201–209 正好是小说号段，而 208（赤壁）、209（魏王）
+           又是公元年，年份写成「208，建安十三年」「208–209 两年」都会被
+           当成引用。原来只挡了「N 年」一种写法，其余照误报。
+           判据：编号后面紧跟的是**引文**（「」、：）或者就是一个独立编号，
+           不是年份会跟的那种字（年、–、—、~、前后的数字）。
+           实话说这条闸门是**提醒**，不是证明——它挡的是「顺手写个编号
+           不写书名」，挡不住存心绕过（写成「不是《三国演义》的说法」它也会过）。 */
         const cited = new Set(
-          [...String(row.basis).matchAll(/(?<!\d)(\d{3})(?!\d)(?!\s*年)/g)].map((m) => m[1])
+          [...String(row.basis).matchAll(/(?<![\d–—~-])(\d{3})(?![\d–—~-])(?!\s*年)/g)]
+            .map((m) => m[1])
         )
         for (const id of cited) {
           const src = p.source[id]

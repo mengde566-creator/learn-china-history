@@ -17,6 +17,10 @@ const TITLES = {
 }
 const MARK_CLASS = { '◆': 'g-source', '◇': 'g-fiction', '○': 'g-infer', '△': 'g-doubt', '—': 'g-silent' }
 
+/* 非史书的两档。它们用同一个字形 ◇ 和同一个紫色——
+   「这不是史书写的」是同一个意思，区别在书名，不在标记。 */
+const FOREIGN_TIERS = new Set(['小说', '野史'])
+
 /* 这一页用到的某一档底本，都叫什么书。
    书名是内容里的东西——`source.md` 的底本小节写着「## 底本三 · 小说 ·《三国演义》」。
    界面不自己编一个，也不假装「小说」两个字就够了：
@@ -24,11 +28,21 @@ const MARK_CLASS = { '◆': 'g-source', '◇': 'g-fiction', '○': 'g-infer', '�
 const booksOfTier = (person, tier) =>
   (person?.books || []).filter((b) => b.tier === tier).map((b) => b.book)
 
-/** 标记的短标签。只有 ◇ 要补书名——别的档次，书名在「原文」的分节标题上。 */
-function titleOf(marker, person) {
+/** 这一页用到的**非史书底本**（小说、野史），按档次分好。图例按它生成。 */
+const foreignBooks = (person) => ['小说', '野史']
+  .flatMap((tier) => booksOfTier(person, tier).map((book) => ({ tier, book })))
+
+/** 标记的短标签。只有 ◇ 要补书名——别的档次，书名在「原文」的分节标题上。
+    补哪一本，看**这一段实际引的编号**，不看人物的底本清单：
+    同一个人可能既有演义又有野史，而这一段只引了其中一本。 */
+function titleOf(marker, person, beat, source) {
   if (marker !== '◇') return TITLES[marker] || ''
-  const novels = booksOfTier(person, '小说')
-  return novels.length ? `出自小说${novels.join('、')}` : TITLES['◇']
+  const cited = [...new Set((beat?.sources || []).map((id) => source?.[id]?.tier))]
+  const tiers = ['小说', '野史'].filter((t) => cited.includes(t))
+  const use = tiers.length ? tiers : ['小说', '野史']
+  const books = [...new Set(use.flatMap((t) => booksOfTier(person, t)))]
+  if (!books.length) return TITLES['◇']
+  return `出自${use[0]}${books.join('、')}`
 }
 
 const TABS = [
@@ -200,7 +214,7 @@ export default function StoryClient({ person, story, source }) {
                 </>
               )
             })()}
-            <div style={{ marginTop: 14 }}><Legend novels={booksOfTier(person, '小说')} /></div>
+            <div style={{ marginTop: 14 }}><Legend foreign={foreignBooks(person)} /></div>
           </div>
         </div>
       </main>
@@ -264,7 +278,7 @@ export default function StoryClient({ person, story, source }) {
                     <button
                       className="ground anim-fade d3"
                       onClick={() => { setTab('evidence'); scrollToBeat(b.n) }}
-                      title={titleOf(b.marker, person)}
+                      title={titleOf(b.marker, person, b, source)}
                     >
                       <b className={MARK_CLASS[b.marker] || 'g-silent'}>{b.marker || '—'}</b>
                       <span className="sep">·</span>
@@ -349,7 +363,7 @@ export default function StoryClient({ person, story, source }) {
                   }`}>
                     <div className="hd">
                       <span className="glyph mk"><Marker ch={shownMark} size={13} /></span>
-                      <span className="label">{titleOf(shownMark, person)}</span>
+                      <span className="label">{titleOf(shownMark, person, shownBeat, source)}</span>
                     </div>
                     {/* 依据正文只有在本段底本里找不到时才显示。
                         没有可显示的就不显示——不再补一句「引文即证据，见上」。
@@ -385,9 +399,9 @@ export default function StoryClient({ person, story, source }) {
                   野史: '不是正史',
                 }
                 const row = (s) => (
-                  <div key={s.id} className={`mark-block ${s.tier === '正史' ? 'source' : s.tier === '小说' ? 'fiction' : 'noted'}`}>
+                  <div key={s.id} className={`mark-block ${s.tier === '正史' ? 'source' : FOREIGN_TIERS.has(s.tier) ? 'fiction' : 'noted'}`}>
                     <div className="hd">
-                      <span className="glyph mk"><Marker ch={s.tier === '小说' ? '◇' : '◆'} size={11} /></span>
+                      <span className="glyph mk"><Marker ch={FOREIGN_TIERS.has(s.tier) ? '◇' : '◆'} size={11} /></span>
                       {/* 书名在标题里（正史）或者在牌上（注、小说），行尾只留编号，
                           不然会出现「《三国演义》第四回　《三国演义》第四回 201」 */}
                       {s.tier !== '正史' && <span className="tag">{s.origin}</span>}

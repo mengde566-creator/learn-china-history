@@ -19,6 +19,7 @@
  * 生成之后：填白话 → npm run check → npm run check-sources
  */
 
+import { citeOf } from '../lib/cite.mjs'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -69,7 +70,11 @@ srcText.split('\n').forEach((line) => {
     id: c[0],
     tier: book?.tier || '正史',
     book: book?.book || '',
-    origin: rowNote || book?.book || '',
+    /* 出处怎么拼，规则在 `lib/cite.mjs`——**和 build-content.mjs 共用一份**。
+       这里原来自己算「rowNote || book」，于是小说档生成的是「第四回」，
+       而闸门要求写出书名：生成出来的骨架第一次 npm run check 就红，
+       报错还指向刚生成的那一行。加一篇故事的标准动作第一步就卡死。 */
+    origin: citeOf({ tier: book?.tier, book: book?.book, note: rowNote }),
     text: c[1].replace(/★/g, '').replace(/`[^`]*`/g, '').trim(),
   }
 })

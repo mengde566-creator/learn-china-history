@@ -81,14 +81,20 @@ export function Marker({ ch, size = 12 }) {
  * 而正文里的 `◇ 出自小说` 又完全不说书名。两头都不对：
  * 该由内容决定的东西，界面不能自己编一个，也不能一个字都不给。
  */
-export function Legend({ novels }) {
-  const novelList = (novels || []).join('、')
+export function Legend({ foreign }) {
+  /* `foreign` 是这一页用到的**非史书底本**：[{ tier:'小说', book:'《三国演义》' }, …]。
+     一个人没有演义、没有野史时，这一行**整条不印**——
+     印一句「出自小说」而不说是哪一本，正是用户当时问的那一句
+     （「你要是引的三国演义就应该标记三国演义」）。荆轲没有小说底本，
+     图例却一直挂着一行「出自小说，不是史书」。 */
   return (
     <div className="legend">
       <span><Marker ch="◆" /> 出自原文，可逐字核对</span>
-      <span>
-        <Marker ch="◇" /> 出自小说{novelList}，不是史书
-      </span>
+      {(foreign || []).map((b) => (
+        <span key={b.book}>
+          <Marker ch="◇" /> 出自{b.tier}{b.book}，{b.tier === '小说' ? '不是史书' : '不是正史'}
+        </span>
+      ))}
       <span><Marker ch="○" /> 合理推演，附推演链条</span>
       <span><Marker ch="△" /> 史书未载，后世有争议</span>
       <span><Marker ch="—" /> 史书未载，且推不出来</span>

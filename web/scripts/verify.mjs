@@ -335,6 +335,63 @@ check('geometry: 分节标题与正文有层级差，且朱标和分割线都渲
    另有 15 处待核疑点」、正文里「本篇的对话种子尚未编写」。
    读者看不懂，而且这些话解释的是我们的流程，不是他要读的那段历史。
    内容侧的同类问题由编译器的 JARGON 检查拦，这条拦界面。 */
+/* 用户当场问过的那句话：「你要是引的三国演义就应该标记三国演义啊，
+   原文你知道标三国志武帝纪怎么这里又不标注了」。
+   这一条守的就是它：**页面上只要出现「小说」两个字，同一行里就得有书名。**
+   标记（◇）、档次名、书名是三样东西，只有书名告诉读者该不该信。
+
+   为什么放在 verify 而不是编译器里：这是一个**渲染结果**的性质。
+   编译器管得了内容，管不了「图例由哪个人物的哪个字段生成」。
+   实测漏过一处——荆轲没有小说底本，图例却无条件印着「出自小说，不是史书」。
+   编译器对那一行一无所知。 */
+check('content: 说了「小说」就得说是哪一本', async () => {
+  const bad = []
+  const pages = PEOPLE.flatMap((p) => [p.id, ...p.storyList.filter((s) => s.ready).map((s) => `${p.id}/${s.id}`)])
+  for (const r of pages) {
+    const url = r.includes('/') ? `/p/${r}` : `/p/${r}`
+    await page.goto(`${BASE}${url}`, { waitUntil: 'networkidle' })
+    /* 故事页的图例在「门口」那一屏，点进去就没了——两个状态都要看 */
+    const seen = new Set()
+    for (const step of [0, 1]) {
+      if (step === 1) {
+        const cta = await page.$('button.cta')
+        if (!cta) break
+        await cta.click()
+        await page.waitForTimeout(150)
+      }
+      const hits = await page.evaluate(() => {
+        const out = []
+        const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT)
+        let n
+        while ((n = walk.nextNode())) {
+          if (!n.textContent.includes('小说')) continue
+          /* **看的是包含这个文字节点的元素，不是那个文字节点本身。**
+             JSX 里写 `出自小说{book}，不是史书`，浏览器拿到的是三个并列的文字节点，
+             中间那个（「出自小说」）没有书名号——按节点判会误报。
+             按元素判就对了：它拿到的是一整行的文字。
+             但也不能一路往上找到 body（那样整页别的书名会把这一行救下来），
+             所以取最近的这个元素，不再往上。 */
+          const el = n.parentElement
+          /* 跳过 <script>：Next 的 flight 数据里也有「小说」两个字，
+             而它的「元素」是整段序列化的载荷。 */
+          if (!el || /^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE)$/.test(el.tagName)) continue
+          const t = (el.textContent || '').trim()
+          if (t) out.push(t)
+        }
+        return out
+      })
+      for (const h of hits) seen.add(h)
+    }
+    for (const h of seen) {
+      if (!/[《〈].+?[》〉]/.test(h)) bad.push(`${url} 「${h.slice(0, 34)}」`)
+    }
+
+  }
+  return bad.length
+    ? fail(`说了小说不说是哪一本：${bad.slice(0, 3).join('；')}`)
+    : ok(`${pages.length} 个页面 · 两个状态，凡说「小说」都带着书名`)
+})
+
 check('content: 界面上没有内部行话', async () => {
   const JARGON = /C 级|C级|A 级|B 级|待核疑点|高优先级|核对项|优先级|底本标|复核|M2a|M2b|M3\b|尚未编写|里程碑/
   const bad = []
