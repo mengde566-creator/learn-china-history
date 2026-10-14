@@ -964,6 +964,20 @@ function validateContent(people) {
       if (!s.name) err(`${who} · stories.md`, `故事「${s.id}」缺名称`)
       checks++
       if (!s.scene && !s.question) warn(`${who} · stories.md`, `故事「${s.id}」缺「情境」这一列`)
+      /* **「状态」这一列不能和事实相反。**
+         它原来没有任何校验，于是曹操那 10 行里 9 行写着「⬜ 待写」，
+         而编译器按文件是否存在算，报「已实现 10」。一列没人管的字段
+         迟早变成负债——要么废弃它，要么看着它。这里选看着它。 */
+      checks++
+      const label = String(s.statusLabel || '')
+      const saysReady = /已实现|✅/.test(label)
+      const saysPlan = /待写|⬜/.test(label)
+      if (s.ready && saysPlan) {
+        err(`${who} · stories.md`, `故事「${s.id}」状态写的是「${label}」，可 stories/${s.id}.md 已经存在——改状态，或者删文件`)
+      }
+      if (!s.ready && saysReady) {
+        err(`${who} · stories.md`, `故事「${s.id}」状态写的是「${label}」，可 stories/${s.id}.md 并不存在`)
+      }
       checks++
       /* 只对**已实现**的篇目要求原文范围。待写的篇目还没有原文段落，
          对它报这一条只是噪音——曹操那十篇计划一次刷出九条。 */
