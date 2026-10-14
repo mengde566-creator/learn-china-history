@@ -1744,6 +1744,39 @@ function main() {
   }
   console.log('\n  ✓ 编号交叉校验  全部有效')
 
+  /* ── 用语：一个词不能修饰它自己 ──
+     「底本」＝这一页依据的那本书；「原文」＝引出来的那段文字（页签、◆、原文块）。
+     两者是不同的东西，所以「原文底本」「本底本」「底本原文」都是说岔了：
+     说「这本书没有记载」用底本，说「这段文字里没有」用原文。
+     2026-10-14 统一过一次（152 处「原文不载」这类改成「底本不载」），这条防它漂回去。 */
+  {
+    /* 「好几本底本」「同一本底本」是正常说法（量词 + 底本），不能误伤；
+       要拦的是「本底本」当"这个底本"讲的那种自我修饰。 */
+    const BAD_PAIR = /原文底本|底本原文|(?<![几一两二三四五六七八九十数多同每])本底本/
+    const hits = []
+    const walk = (d) => {
+      for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+        if (e.name.startsWith('.')) continue
+        const fp = path.join(d, e.name)
+        if (e.isDirectory()) { walk(fp); continue }
+        if (!/\.md$/.test(e.name)) continue
+        fs.readFileSync(fp, 'utf8').split('\n').forEach((l, i) => {
+          /* 反引号里是**提到**这个词（README 讲这条规则时就得写出反例），
+             不是在用。剥掉再判。 */
+          const bare = l.replace(/`[^`]*`/g, '')
+          if (BAD_PAIR.test(bare)) hits.push(`${path.relative(CONTENT, fp)}:${i + 1}  ${l.trim().slice(0, 40)}`)
+        })
+      }
+    }
+    walk(CONTENT)
+    if (hits.length) {
+      throw new Error(
+        `「原文」和「底本」搅在一起了（${hits.length} 处）：\n    ` + hits.slice(0, 5).join('\n    ') +
+        '\n  「底本」是这一页依据的那本书，「原文」是引出来的那段文字。' +
+        '说「这本书没有记载」用底本；说「这段文字里没有」用原文。两者不能互相修饰')
+    }
+  }
+
   validateContent(people)
 
   // 防回归：正文里以破折号结尾的行，不能被当成标记
