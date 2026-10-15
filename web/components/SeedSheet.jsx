@@ -104,8 +104,8 @@ export default function SeedSheet({ seeds, onClose }) {
 
                 {/* **走 RichText，不走明文。** 系统说明里写了 `` `013` `` 这种编号，
                     明文渲染会把反引号一起印给读者（全库 250 条 sys 里 13 条含 markdown）。
-                    RichText 认反引号和粗体——顺带把「粗体写了不显示」那个老毛病
-                    在这一块也修掉。 */}
+                    粗体不渲染（见 README「`**粗体**` 不渲染，这是有意的」）——
+                    解析时已经剥掉，这里只管把反引号变成 <code>。 */}
                 {seed.sys && <div className="sys-note"><RichText text={seed.sys} /></div>}
 
                 {seed.meta.length > 0 && (

@@ -778,6 +778,13 @@ function parseSeeds(rel) {
      08-guandu 的表把同一条算了两遍（◆写 5、实际 4）。
      而 ⓘ 那次迁移又把 9 份表变成了旧的。
      键取字形：`○ 合理推演` 和 `○ 外证` 都算 `○` 这一档（分两行写没关系，合计要对）。 */
+  /* 围栏里的 ⓘ 不过 `clean()`（它进的是 sys，不是回答行），所以那里的 `**`
+     会经 RichText 渲染成粗体——**和「粗体不渲染」这个决定不一致**。
+     在这里统一剥掉。反引号留着：`` `013` `` 渲染成 <code> 是想要的。 */
+  for (const sd of seeds) {
+    if (sd.sys) sd.sys = sd.sys.replace(/\*\*(.+?)\*\*/g, '$1')
+  }
+
   seeds.dist = {}
   const di = lines.findIndex((l) => /^###\s*标记分布/.test(l))
   if (di > -1) {
