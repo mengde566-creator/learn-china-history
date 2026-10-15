@@ -37,7 +37,15 @@ const only = (t) => String(t).replace(/[^\u4e00-\u9fff]/g, '')
    （GitHub 那份《刺客列传》）。给简体文本做繁转简会**改字**——
    「於期」会变成「于期」，于是本库写对的「樊於期」反而"对不上"。
    所以不比"谁转成了什么"，比的是"两边转完是不是同一个东西"。 */
-const norm = (t) => only(tw2cn(t))
+/* **归一化必须两边一致，而繁转简是看上下文的。**
+   实测：整篇转的时候「忠誠顯著」→「忠诚显著」，可把同一段切出来单独转就变成「忠诚显着」——
+   参考文本是整篇转的、我们的段落是片段转的，于是同一句话两边归一化成不同的字，
+   被判成「对不上」（`303` `309` 就是这么假红的）。
+   解法：把繁简转换里**有歧义的那几个字收敛到同一个写法**，再比。
+   · 著 / 着 —— 同一个来源的两种转法
+   · 於 / 于 —— 电子本保留「於」，本库写简体正字「于」
+   这是**比对用的归一化**，不改动任何一处的原文。 */
+const norm = (t) => only(tw2cn(t)).replace(/[著着]/g, '著').replace(/於/g, '于')
 
 /* 从 `## 底本N · 档次 · 书名` 小节里把条目读出来。
    和 build-content.mjs 的 parseSource 是两套独立实现：
@@ -159,7 +167,7 @@ const people = fs.readdirSync(PEOPLE, { withFileTypes: true })
   .map((d) => d.name).sort()
 
 let pass = 0
-let chFail = 0, fail = 0, skip = 0
+let chFail = 0, gapFail = 0, fail = 0, skip = 0
 console.log('\n逐字核对 source.md ←→ .refs/\n')
 
 for (const id of people) {
@@ -170,6 +178,7 @@ for (const id of people) {
   const dm = fs.existsSync(pm) && fs.readFileSync(pm, 'utf8').match(/\|\s*\*\*出处\*\*\s*\|\s*([^|]+?)\s*\|/)
   const entries = readSource(rel, dm && dm[1])
   const bad章节 = []
+  const gaps = []
   const conf = map[id]
   console.log(`  ${id}  （${entries.length} 段）`)
   for (const e of entries) {
@@ -206,6 +215,26 @@ for (const id of people) {
        按整段比一定对不上，按整句比也会漏掉后面那种。
        切到小句、每片至少 4 个字，就两头都盖住了。
        代价是很短的片段可能在参考文本里别处撞上——4 个字以下的碎片不查。 */
+    /* ── 连续性：**整段必须是参考文本里的一段连续文字** ──
+       上面那层「小句都在里面」有个盲区：把不相邻的两句拼成一段，它照样绿。
+       实测 `008` 就是这么写的——参考文本里「始起兵於己吾」和「是歲中平六年也」
+       中间隔着裴注「世語曰：陳留孝廉衛茲以家財資太祖，使起兵，眾有五千人」，
+       收集时把那句删掉、两半拼成一句。**卫兹那句话就是这么丢的**，
+       而它是整个故事里唯一交代「钱从哪来」的话。
+       小句都在 → 绿；整段连续 → 红。这一条能抓出拼接、切错、漏字。
+       （归一化之后比，所以标点和繁简的差异不算。） */
+    const whole = norm(e.text)
+    if (whole.length >= 8 && !hay.includes(whole)) {
+      /* 找出从哪儿断的，报给作者看 */
+      let lo = 0, hi = whole.length
+      while (lo < hi) {                       // 二分找最长前缀
+        const mid = (lo + hi + 1) >> 1
+        if (hay.includes(whole.slice(0, mid))) lo = mid; else hi = mid - 1
+      }
+      const tail = whole.slice(lo, lo + 14)
+      gaps.push(`${e.id} 从「${tail}…」处断开（前 ${lo} 字连续）`)
+    }
+
     const sentences = e.text.split(/[。！？；，、]/).map(norm).filter((x) => x.length >= 4)
     const bad = sentences.filter((x) => !hay.includes(x))
     if (!sentences.length) { skip++; console.log(`    · ${e.id}  读不出可比的句子`); continue }
@@ -223,6 +252,11 @@ for (const id of people) {
       console.log(`         本库：source.md:${e.line}`)
     }
   }
+  if (gaps.length) {
+    console.log(`    ✗ 不是连续文字：${gaps.length} 段`)
+    for (const g of gaps.slice(0, 6)) console.log(`        ${g}`)
+    gapFail += gaps.length
+  }
   if (bad章节.length) {
     console.log(`    ✗ 回目对不上：${bad章节.join('；')}`)
     chFail += bad章节.length
@@ -230,8 +264,8 @@ for (const id of people) {
   console.log('')
 }
 
-console.log(`  对得上 ${pass} · 对不上 ${fail} · 跳过 ${skip}` + (chFail ? ` · 回目对不上 ${chFail}` : '') + '\n')
-if (fail || chFail) {
+console.log(`  对得上 ${pass} · 对不上 ${fail} · 跳过 ${skip}` + (chFail ? ` · 回目对不上 ${chFail}` : '') + (gapFail ? ` · 不连续 ${gapFail}` : '') + '\n')
+if (fail || chFail || gapFail) {
   console.log('  ✗ 有对不上的段落。改内容或者改 source.md，不要放着。\n')
   process.exitCode = 1
 } else if (pass) {

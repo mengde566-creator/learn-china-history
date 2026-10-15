@@ -205,8 +205,14 @@ const TIERS = ['正史', '注', '小说', '野史']
      3xx  野史
    这样「引用 201」在 Markdown 里一眼就不是正史，
    不会像原来那样，裴注的 004 和正文的 003 挤在一条序列上。 */
-const TIER_BAND = { 正史: 0, 注: 1, 小说: 2, 野史: 3 }
-const bandOf = (id) => TIER_BAND[TIERS[Math.floor(Number(id) / 100)] ?? '正史']
+/* 号段：正史 001–199、注 201–399、小说 401–599、野史 601–799。
+   **2026-10-15 从「每档 100 个位置」加宽到 200**——《武帝纪》全收要
+   112 段正文 ＋ 111 段注，100 个位置装不下。再长的本纪（南北朝那些动辄两万字）
+   还可能要加宽，但那是以后的事。 */
+const bandOf = (id) => {
+  const n = Number(id)
+  return n <= 199 ? 0 : n <= 399 ? 1 : n <= 599 ? 2 : n <= 799 ? 3 : 9
+}
 
 function parseSource(rel, fileLabel, defaultBook) {
   const { lines } = read(rel)
@@ -267,11 +273,12 @@ function parseSource(rel, fileLabel, defaultBook) {
     if (source[id]) {
       throw new ParseError(rel, i + 1, `编号 ${id} 出现了两次——同一本底本里编号必须唯一`)
     }
-    if (bandOf(id) !== TIER_BAND[tier]) {
+    const BAND_OF_TIER = { 正史: 0, 注: 1, 小说: 2, 野史: 3 }
+    if (bandOf(id) !== BAND_OF_TIER[tier]) {
       throw new ParseError(rel, i + 1,
         `编号 ${id} 落在「${TIERS[bandOf(id)]}」号段（${bandOf(id) * 100}xx），` +
         `可它现在挂在「${tier}」这一本底下。号段和底本档次必须对得上：` +
-        '正史 0xx、注 1xx、小说 2xx、野史 3xx')
+        '正史 001–199、注 201–399、小说 401–599、野史 601–799')
     }
 
     source[id] = {
