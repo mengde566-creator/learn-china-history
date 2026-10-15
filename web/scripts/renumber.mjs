@@ -24,6 +24,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { requireCleanTree } from './lib/guard.mjs'
+
+/* **批量脚本的安全闸门。** 2026-10-15：这个脚本的同类（一个全库重编号脚本）
+   在有未提交工作时跑了两遍，改坏 31 个文件，唯一的退路是 `git checkout --`——
+   而它把一篇刚做完、已验证的正文一起带走了。
+   所以：工作区不干净就拒绝跑。`--force` 可以越过，但要知道代价。 */
+/* `--dry` 不写文件，所以不用过闸门——空跑正是脏工作区里该做的事。 */
+if (!process.argv.includes('--dry')) requireCleanTree('renumber（会改文件名和全库引用）')
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(HERE, '..', '..')
