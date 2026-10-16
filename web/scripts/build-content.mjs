@@ -1952,6 +1952,45 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     }
   }
 
+  /* ── 引文归属审计 ──
+     **每一条引文，都要出自这一行引的编号。**
+     编译器本来有一条严格档（依据行只引一个编号时，行内 ≥6 字的「」都要命中它），
+     但它只查「依据/原文行」，而且门槛是 6 个字。实测（2026-10-15 独立审计）：
+     全库 1145 个单编号行里有 **24 处**引文错位，全部落在它够不着的地方——
+     `内部` 栏、说明行、卡片备注，或者引文只有 4–5 个字。曹操和荆轲都中。
+
+     这一条把口径放到最宽：**只要一行引了编号，行内每一处 ≥4 个汉字的「」
+     都要在那一行引的编号里找得到**；找不到就报出它真正在哪一段。 */
+  for (const p of people) {
+    const norm = {}
+    for (const [id, seg] of Object.entries(p.source || {})) norm[id] = normalizeQuote(seg.text || '')
+    const all = Object.entries(norm)
+    for (const st of Object.values(p.stories || {})) {
+      for (const rel of [`people/${p.id}/stories/${st.id}.md`, `people/${p.id}/seeds/${st.id}.md`, `people/${p.id}/cards/${st.id}.md`]) {
+        const full = path.join(ROOT, 'content', rel)
+        if (!fs.existsSync(full)) continue
+        const lines = fs.readFileSync(full, 'utf8').split('\n')
+        lines.forEach((line, i) => {
+          const ids = [...new Set([...line.matchAll(/`(\d{3})`/g)].map((m) => m[1]))]
+          if (ids.length !== 1) return                    // 多编号行归并起来对，这里只管单编号行
+          const id = ids[0]
+          const hay = norm[id] || ''
+          for (const m of line.matchAll(/「([^」]{4,})」/g)) {
+            const q = normalizeQuote(m[1])
+            if (q.length < 4 || hay.includes(q)) continue
+            const hit = all.filter(([, v]) => v.includes(q)).map(([k]) => k)
+            checks++
+            if (hit.length) {
+              err(`people/${p.id}/…`, `${rel}:${i + 1}　引文「${m[1].slice(0, 16)}」不在 \`${id}\` 里，` +
+                `实出 \`${hit.join('\` `')}\`。**引文要出自这一行引的编号**——` +
+                `读者会照着编号去核，核到的是另一段话`)
+            }
+          }
+        })
+      }
+    }
+  }
+
   console.log('')
   if (warns.length) {
     console.log(`  ⚠ ${warns.length} 处提醒`)
