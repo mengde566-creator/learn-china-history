@@ -741,7 +741,13 @@ function parseSeeds(rel) {
 
   lines.forEach((line, i) => {
     const ln = i + 1
-    const g = line.match(/^## ([一二三四五六]、[^（(]+)/)
+    /* **分组编号要认到十。** 原来是 `[一二三四五六]`——只认到六，
+       于是「七、」「八、」「九、」的分组标题被**静默忽略**，那些种子落进上一个
+       匹配到的组里。而 `SeedSheet` 直接把 `group` 印给读者看：
+       实测 `04-xingyang` 印成「边界外的提问 · 18」（实际是边界外 8 ＋ 系统层 10），
+       `05-yanzhou` 印成「青州黄巾 · 21」（实际是 5 ＋ 7 ＋ 9）。
+       **读者看到的是产品说明混在史料提问里。** */
+    const g = line.match(/^## ([一二三四五六七八九十]+、[^（(]+)/)
     if (g) { flush(); group = g[1].trim(); return }
     if (/^## (统计|写作规则|文件格式)/.test(line)) { flush(); group = null; return }
 
