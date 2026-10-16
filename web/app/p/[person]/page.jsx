@@ -52,6 +52,16 @@ export default async function PersonPage({ params }) {
 
       {person.why.length > 0 && (
         <section className="sec">
+      <section style={{ marginTop: 26 }}>
+        <Link href={`/p/${person.id}/source`} className="entry-card">
+          <b>完整资料入口</b>
+          <span>
+            底本 {person.sourceCount} 段全在这里，按编号列，每段配直译。
+            {person.sourceCount - 0 > 0 && ' 故事里够不着的那些，只有这里能读到。'}
+          </span>
+        </Link>
+      </section>
+
           <h2 className="sec-title">引子</h2>
           <div className="prose-block why">
             {person.why.map((p, i) => <p key={i}>{p}</p>)}

@@ -973,3 +973,32 @@ body.light-stage{
   .nav{padding:0 16px;gap:12px}
   .nav .tag{display:none}
 }
+
+/* ── ⑥ 完整资料入口（/p/<person>/source）──
+   底本全收之后，曹操 232 段里只有 73 段有故事够得着，剩下 159 段
+   （家世、王芬谋废灵帝、征陶谦、张绣……）读者在故事里一辈子碰不到。
+   这一页按编号列全部段，每段配一句直译。
+   排版上刻意**不像故事页**：故事页是给人读的，这一页是给人查的。 */
+.src-list{list-style:none;margin:10px 0 0;padding:0}
+.src-item{display:grid;grid-template-columns:64px 1fr;gap:4px 14px;padding:11px 0;
+  border-top:1px solid var(--line,rgba(0,0,0,.08))}
+.src-item.src-only{background:linear-gradient(90deg,rgba(180,140,60,.06),transparent 62%)}
+.src-no{font-family:var(--mono,ui-monospace,monospace);font-size:12.5px;color:var(--su-dim);
+  padding-top:2px;white-space:nowrap}
+.src-no a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
+.src-no .tag{display:block;margin-top:4px;font-size:10.5px;letter-spacing:.04em;
+  color:#8a6a2a;border:1px solid rgba(138,106,42,.4);border-radius:2px;padding:0 4px;width:max-content}
+.src-text{margin:0;font-family:var(--song,serif);font-size:15.5px;line-height:1.85;
+  letter-spacing:.02em;color:var(--ink,#222)}
+.src-gloss{margin:6px 0 0;font-size:14px;line-height:1.8;color:var(--su,#555)}
+.src-gloss.none{color:var(--su-dim);opacity:.6}
+.src-gloss .lead{display:inline-block;margin-right:8px;font-size:10.5px;letter-spacing:.1em;
+  color:var(--su-dim);border:1px solid currentColor;border-radius:2px;padding:0 4px;
+  vertical-align:1px;opacity:.75}
+@media(max-width:640px){.src-item{grid-template-columns:1fr;gap:2px}
+  .src-no{display:flex;gap:8px;align-items:baseline}}
+.entry-card{display:block;padding:14px 16px;border:1px solid var(--line,rgba(0,0,0,.12));
+  border-radius:3px;text-decoration:none;color:inherit;background:rgba(0,0,0,.015)}
+.entry-card b{display:block;font-size:15px;letter-spacing:.06em;margin-bottom:5px}
+.entry-card span{font-size:13.5px;color:var(--su,#555);line-height:1.7}
+.entry-card:hover{border-color:rgba(0,0,0,.3)}
