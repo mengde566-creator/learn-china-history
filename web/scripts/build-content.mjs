@@ -175,7 +175,7 @@ function resolveImg(name, assets, warn, where) {
   const n = String(name ?? '').trim().replace(/`/g, '')
   if (!n || n === '—' || n === '-') return null
   if (!assets[n]) {
-    warn.push(`${where}：找不到图片 assets/${n}`)
+    warn(`${where}：找不到图片 assets/${n}`)
     return null
   }
   return assets[n]
@@ -2147,6 +2147,53 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
               parts.map((x, i) => `「${x.slice(0, 10)}」在 ${hits[i].map((h) => '\`' + h + '\`').join('／')}`).join('，') +
               `。**这是把两段话接成了一句**：要么拆成两条引文，要么照原文连着写`)
           }
+        }
+      }
+    }
+  }
+
+  /* ── 两篇之间不许大段重复 ──
+     **这是最基础的检查，它本该第一天就在，结果活到今天。**
+     用户的原话：「怎么陈留起兵还是曹操刺董的事情，我现在对你的自我审核很怀疑啊，
+     这种明显错误还存在」「这种内容重复已经是最基础的错误了」
+
+     病灶：`03-chenliu`（陈留起兵）的正文里 **71% 的字能在 `02-cidong`（曹操刺董）里
+     逐字找到**——9 个情节点里 6 个是同一件事。而它是我**审核过两次**的：
+       · 第 9 轮重做时我在任务书里写了「03 讲起兵那一件事」，交回来我读了，没看出来
+       · 第 21 轮独立审核查了「跨篇同事实」，结论是「说法全部对得上 ✓」——
+         **它对，但答的不是这个问题**：问的是「是不是同一件事」，答的是「说法一不一致」
+
+     **我原来的闸门全在看「这一行对不对」（引文逐字、引文归属、标记、行数），
+     没有一条在看「整篇」** ✗。这一条补的就是那个位置。
+
+     判据：把 B 篇的正文（白话＋原文＋回译）切成 8 字窗口，
+     看多少能在 A 篇里逐字找到。共用一个编号是允许的（视角不同），
+     **正文逐字相同就是同一件事讲了两遍**。 */
+  {
+    const only = (t) => String(t).replace(/[^\u4e00-\u9fff]/g, '')
+    const all = []
+    for (const p of people) {
+      for (const st of Object.values(p.stories || {})) {
+        const body = []
+        for (const b of st.beats || []) body.push(...(b.prose || []))
+        all.push({ id: `${p.id}/${st.id}`, name: `${p.name}·${st.id}`, text: only(body.join('')) })
+      }
+    }
+    for (const B of all) {
+      if (B.text.length < 200) continue
+      for (const A of all) {
+        if (A === B || A.text.length < 200) continue
+        let hit = 0
+        for (let k = 0; k + 8 <= B.text.length; k++) if (A.text.includes(B.text.slice(k, k + 8))) hit++
+        const r = hit / (B.text.length - 7)
+        checks++
+        if (r >= 0.30) {
+          err(B.name, `${(r * 100).toFixed(0)}% 的正文能在 ${A.name} 里逐字找到——` +
+            '**这两篇在讲同一件事**。共用一个编号是允许的（视角不同），' +
+            '正文逐字相同不是。把属于对方的那几段还给对方，或者换一个切入角')
+        } else if (r >= 0.20) {
+          warns.push(`${B.name}：${(r * 100).toFixed(0)}% 的正文能在 ${A.name} 里找到——` +
+            '两篇共用编号时，引文本身就会重叠；确认一下是不是有意共用的')
         }
       }
     }
