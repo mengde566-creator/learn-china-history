@@ -2036,6 +2036,46 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     }
   }
 
+  /* ── 拼接引文 ──
+     **整行是「」、而那句话不在底本的任何一段里，但按标点切开之后每一截都在
+     （可能来自不同的段）——那是把两段话接成了一句。**
+     为什么需要这一条：编译器的「原文」块判别标准是「整行引号 **且** 与底本逐字相同」。
+     于是**逐字对不上的整行引号会被静默当成白话**——一声不响。
+     2026-10-15 `01-wusebang` 的子智能体撞上了它（「迁顿丘令，征拜议郎」是
+     `006`+`007` 拼接），自己写脚本才抓出来。
+
+     判据为什么是「每一截都在」而不是「像文言」：试过后者，分不开——
+     荆轲的八篇里有 36 行整行引号是**正当的白话回译**（「我叮嘱田先生不要说出去…」），
+     文言虚词占比最高的一行反而是白话（0.17）。而「每一截都在底本里」这条
+     在全库误报 0 处、且精确抓住已知的那个例子。 */
+  {
+    const segs = []
+    for (const p of people) for (const [id, seg] of Object.entries(p.source || {}).sort((a, b) => Number(a[0]) - Number(b[0]))) segs.push([id, normalizeQuote(seg.text || '')])
+    const whereIs = (t) => segs.filter(([, v]) => v.includes(t)).map(([k]) => k)
+    for (const p of people) {
+      for (const st of Object.values(p.stories || {})) {
+        for (const b of st.beats || []) {
+          /* `prose` 是**数组**（一行一条），不是字符串——`String()` 一拼，
+             `^…$` 就再也匹配不上，闸门会静默失效（实测踩到）。 */
+          const lines = Array.isArray(b.prose) ? b.prose : [b.prose || '']
+          for (const raw of lines.map((l) => String(l).match(/^「(.+)」\s*。?$/)).filter(Boolean).map((m) => m[1])) {
+            checks++
+            const whole = normalizeQuote(raw)
+            if (whole.length < 8 || whereIs(whole).length) continue
+            const parts = String(raw).split(/[，。；：、！？]/).map(normalizeQuote).filter((x) => x.length >= 4)
+            if (parts.length < 2) continue
+            const hits = parts.map(whereIs)
+            if (!hits.every((h) => h.length)) continue
+            err(`${p.name} · ${st.id}`, `整行引号的那句话「${raw.slice(0, 20)}…」不在底本任何一段里，` +
+              `但**按标点切开之后每一截都在**——` +
+              parts.map((x, i) => `「${x.slice(0, 10)}」在 ${hits[i].map((h) => '\`' + h + '\`').join('／')}`).join('，') +
+              `。**这是把两段话接成了一句**：要么拆成两条引文，要么照原文连着写`)
+          }
+        }
+      }
+    }
+  }
+
   console.log('')
   if (warns.length) {
     console.log(`  ⚠ ${warns.length} 处提醒`)
