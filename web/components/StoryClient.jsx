@@ -195,8 +195,13 @@ export default function StoryClient({ person, story, source }) {
                   <div>
                     {ib.map((r, i) => (
                       <div key={i} className="mark-block">
+                        {/* **这里原来把门口那一行逐字又印了一遍。**
+                             「他年少，机警，有权数，任侠放荡，不治行业——没有人看好他。」
+                             在页面上出现两次：门口一次，这里一次——而这一栏就在门口正下方。
+                             用户：「你这是不是渲染的问题」——**是**。
+                             顺序与门口一一对应，所以用序号代替原文，读者照样对得上。 */}
                         <div className="hd">
-                          <span className="label">{r.line}</span>
+                          <span className="label">{i + 1}</span>
                           <span
                             className="src mk"
                             style={{
@@ -258,7 +263,10 @@ export default function StoryClient({ person, story, source }) {
                           return (
                             <div key={i} className="emerge anim-emerge d2">
                               <cite>{q.text}</cite>
-                              {q.gloss && <span className="gloss">{q.gloss}</span>}
+                              {/* **回译和白话重复时不渲染。** 同一句话在页面上出现三遍
+                                  （白话 → 原文 → 回译 → 白话），读者读到的是复述。
+                                   白话已经把这句原文译过了，回译就没有存在的理由。 */}
+                              {q.gloss && !q.glossRedundant && <span className="gloss">{q.gloss}</span>}
                             </div>
                           )
                         }

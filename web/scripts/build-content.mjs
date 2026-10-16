@@ -534,7 +534,23 @@ function parseStoryContent(rel, source) {
       if (!beat.sources.some((id) => normalizeQuote(source[id].text).includes(n))) return
       const next = (beat.prose[i + 1] || '').trim()
       const gloss = /^——/.test(next) ? next.replace(/^——\s*/, '') : null
-      beat.quotes.push({ text: p, at: i, gloss, glossAt: gloss ? i + 1 : null })
+      /* **回译和这一段的白话重复时，标记出来，界面上不渲染它。**
+         用户指着页面说：「翻译句出现了两遍，重复太多了」——
+         实情是同一句话说了三遍：白话 → 原文 → 回译 → 白话。
+         白话本来就是照着这句原文译的，再给一遍回译就是复述。
+         编译器要求「原文台词一律带回译」是为了**读者不卡在文言上**；
+         白话已经覆盖了这一句，这个目的就达到了，回译只剩噪音。
+         判据：回译里 4 字滑窗有多少落在这一段的白话里，≥0.7 就算重复。 */
+      const norm4 = (t) => String(t || '').replace(/[^\u4e00-\u9fff]/g, '')
+      const sayAll = norm4((beat.prose || []).filter((x) => x !== p && !/^——/.test(x)).join(''))
+      const g = norm4(gloss)
+      let redundant = false
+      if (g.length >= 8 && sayAll.length >= 8) {
+        let hit = 0
+        for (let k = 0; k + 4 <= g.length; k++) if (sayAll.includes(g.slice(k, k + 4))) hit++
+        redundant = hit / (g.length - 3) >= 0.7
+      }
+      beat.quotes.push({ text: p, at: i, gloss, glossAt: gloss ? i + 1 : null, glossRedundant: redundant })
     })
     story.beats.push(beat)
     beat = null
