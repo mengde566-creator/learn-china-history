@@ -1,8 +1,8 @@
 {
  "caocao/01-wusebang": {
   "range": "004–009、206–209",
-  "seeds": "f0fd50c940d40065",
-  "cards": "7ebf248e0101266f"
+  "seeds": "3da1234f54306134",
+  "cards": "ffd1600b265b531b"
  },
  "caocao/02-cidong": {
   "range": "012、014、205、401–409",
@@ -20,14 +20,14 @@
   "cards": "038c7b29b84465c2"
  },
  "caocao/05-yanzhou": {
-  "range": "025–026",
-  "seeds": "9bf1d90542cd72b1",
-  "cards": "b8e37c3bebbab67a"
+  "range": "023–026",
+  "seeds": "fd0d2cef75227ff4",
+  "cards": "3d01459ad11969a8"
  },
  "caocao/06-qingzhou": {
   "range": "025–027、029",
-  "seeds": "290886fe974b0202",
-  "cards": "1040bcf6b2ee0310"
+  "seeds": "c14460d7d2682449",
+  "cards": "1d6a1ff902ec492d"
  },
  "caocao/07-fengtianzi": {
   "range": "031–034",
