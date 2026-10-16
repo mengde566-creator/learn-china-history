@@ -1,8 +1,8 @@
 {
  "caocao/01-wusebang": {
-  "range": "006、008、206",
-  "seeds": "4d51149d27072603",
-  "cards": "54e1baafc6a08e50"
+  "range": "004–009、206–209",
+  "seeds": "f0fd50c940d40065",
+  "cards": "7ebf248e0101266f"
  },
  "caocao/02-cidong": {
   "range": "012、014、205、401–409",
@@ -46,8 +46,8 @@
  },
  "caocao/10-weiwang": {
   "range": "074–080、095–099、108–112",
-  "seeds": "3a97b071286ee6a2",
-  "cards": "d46b2e2be8d54947"
+  "seeds": "e21e66fd32b413dd",
+  "cards": "c7effd994d649e07"
  },
  "jingke/01-yanwei": {
   "range": "001–016",
