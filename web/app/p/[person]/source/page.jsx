@@ -87,12 +87,11 @@ export default async function SourcePage({ params }) {
               <li key={id} id={`s-${id}`} className={reachable.has(id) ? 'src-item' : 'src-item src-only'}>
                 <div className="src-no">
                   <a href={`#s-${id}`}>{id}</a>
-                  {!reachable.has(id) && <span className="tag" title="没有任何一篇故事引用这一段">只此一处</span>}
                 </div>
                 <p className="src-text">{source[id].text}</p>
                 {gloss[id]
                   ? <p className="src-gloss"><span className="lead">直译</span>{gloss[id]}</p>
-                  : <p className="src-gloss none"><span className="lead">直译</span>（未做）</p>}
+                  : null}
               </li>
             ))}
           </ol>

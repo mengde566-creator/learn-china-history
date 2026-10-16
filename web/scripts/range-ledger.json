@@ -61,7 +61,7 @@
  },
  "jingke/03-shouming": {
   "range": "022–035",
-  "seeds": "257c4e2f1aa9c15b",
+  "seeds": "6b26c7c48e129cac",
   "cards": "cbf02118bd730f52"
  },
  "jingke/04-fanyuqi": {
@@ -71,8 +71,8 @@
  },
  "jingke/05-taizidan": {
   "range": "048–053",
-  "seeds": "fd4bdcb853c4215e",
-  "cards": "ca6a8abcb56fecfd"
+  "seeds": "c264e2189a98ce1a",
+  "cards": "b603ce19b91d349e"
  },
  "jingke/06-yishui": {
   "range": "054–058",
@@ -86,7 +86,7 @@
  },
  "jingke/08-weisheng": {
   "range": "077–093",
-  "seeds": "9fe090cf4c1f8963",
-  "cards": "66b1c5ef89d088f4"
+  "seeds": "04b63fad3f779754",
+  "cards": "0a67f23c9e06ef11"
  }
 }

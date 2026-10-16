@@ -6,7 +6,7 @@
   "scripts": {
     "content": "node scripts/build-content.mjs",
     "font": "node scripts/build-font.mjs",
-    "check": "node scripts/build-content.mjs --check && node scripts/build-font.mjs --check",
+    "check": "node scripts/build-content.mjs --check && node scripts/build-font.mjs --check && node scripts/check-ui-words.mjs",
     "dev": "npm run content && next dev",
     "build": "npm run content && npm run font && next build",
     "start": "next start",

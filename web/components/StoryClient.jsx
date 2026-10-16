@@ -185,7 +185,7 @@ export default function StoryClient({ person, story, source }) {
             {(() => {
               const ib = story.intro.basis || []
               if (!ib.length) {
-                return <b>门口这几行还没有逐行依据。</b>
+                return null
               }
               /* **这里原来有一行统计：「铺陈 26 行 · 逐行依据 26 条 · 其中 25 条出自原文。」**
                  那是**制作过程的话**——读者不关心门口有几行、几条出自原文。
