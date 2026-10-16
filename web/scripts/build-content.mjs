@@ -2036,6 +2036,35 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     }
   }
 
+  /* ── 直译（gloss.md）──
+     `content/people/<id>/gloss.md` 是**逐段直译**：跟着原文的字序和句法走，
+     不替它顺句子、不补它没说的主语。它和故事里的白话是两回事（那一份是给人读的）。
+     这里只做机械核对：**编号必须在 `source.md` 里存在、直译栏不能空、
+     编号不能重复**。直译写得「够不够直」是判断，编译器管不了——
+     但「指向一段不存在的话」和「留了个空栏」它管得了。 */
+  for (const p of people) {
+    const g = path.join(ROOT, 'content', `people/${p.id}/gloss.md`)
+    if (!fs.existsSync(g)) continue
+    const seen = new Set()
+    fs.readFileSync(g, 'utf8').split('\n').forEach((l, i) => {
+      const m = l.match(/^\|\s*(\d{3})\s*\|([^|]*)\|([^|]*)\|\s*$/)
+      if (!m) return
+      checks++
+      const [, id, src, gloss] = m
+      if (!p.source[id]) {
+        err(`people/${p.id}/gloss.md`, `第 ${i + 1} 行直译的是 \`${id}\`，而 \`source.md\` 里没有这个编号——` +
+          '读者会照这个号去「原文」页签里核，核到的是空的')
+      }
+      checks++
+      if (seen.has(id)) err(`people/${p.id}/gloss.md`, `第 ${i + 1} 行 \`${id}\` 出现了两次`)
+      seen.add(id)
+      checks++
+      if (!gloss.trim()) err(`people/${p.id}/gloss.md`, `第 ${i + 1} 行 \`${id}\` 的直译栏是空的`)
+      checks++
+      if (!src.trim()) err(`people/${p.id}/gloss.md`, `第 ${i + 1} 行 \`${id}\` 的原文栏是空的`)
+    })
+  }
+
   /* ── 拼接引文 ──
      **整行是「」、而那句话不在底本的任何一段里，但按标点切开之后每一截都在
      （可能来自不同的段）——那是把两段话接成了一句。**
