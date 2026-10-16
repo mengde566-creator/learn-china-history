@@ -2267,6 +2267,10 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
 
          这里只做机械的那一半：**门口的行不许和首段逐字重复**。
          「门口讲到哪儿」是判断，机器判不了——写进 `content/README.md` 的清单。 */
+  const INTRO_MAX = 8
+  for (const p of people) {
+    for (const st of Object.values(p.stories || {})) {
+      const n = (st.intro?.lines || []).length
       const n4 = (t) => String(t).replace(/[^\u4e00-\u9fff]/g, '')
       const first = (st.beats || [])[0]
       if (first) {
@@ -2284,12 +2288,6 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
           }
         }
       }
-
-
-  const INTRO_MAX = 8
-  for (const p of people) {
-    for (const st of Object.values(p.stories || {})) {
-      const n = (st.intro?.lines || []).length
       checks++
       /* 依据栏也要短。**它是「这一行从哪来」，不是「我对这一行的看法」。**
          门口的依据涨成一段带议论的文字，读者在进入场景之前先读了一篇考据。 */
