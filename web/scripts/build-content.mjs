@@ -24,6 +24,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { createHash } from 'node:crypto'
 /* 原文范围的写法，和渲染层共用同一份实现（`lib/content.js` 也引它）。
    两边各写一份正则的话，编译器校验的和页面渲染的迟早不是同一件事。 */
 import { parseRange } from '../lib/range.mjs'
@@ -1067,6 +1068,27 @@ const SYS_ONLY = (seed) => !!seed?.sys?.trim() && !seed?.answer?.length
  */
 const markerOf = (v) => String(v ?? '').trim().replace(/^[*`\s]+/, '').charAt(0)
 
+/* ── 范围变更账本 ──
+   **「范围变了，话要跟着变」这条规矩，机械化的难点是它会变成循环**：
+   如果让文件自己声明「我对着哪个范围写的」，那么改范围的人只要顺手改那个声明，
+   闸门就闭嘴了——同一只手既改范围、又改声明、又是唯一判定归绿的人。
+
+   所以改成**查事件**：账本记两样东西——
+     ① 这一篇上一次是对着哪个范围写的
+     ② 当时 seeds/cards 的**内容指纹**
+   规则：范围变了、而指纹**没变** → 红（你只改了范围，没重读种子卡）；
+        指纹也变了 → 说明真重读了 → 账本更新，放行。
+   **没有可以被改绿的自述字段**：唯一能让闸门闭嘴的动作，就是真的去动那个文件。 */
+const LEDGER = path.join(path.dirname(fileURLToPath(import.meta.url)), 'range-ledger.json')
+function readLedger() {
+  try { return JSON.parse(fs.readFileSync(LEDGER, 'utf8')) } catch { return {} }
+}
+const hashOf = (rel) => {
+  const full = path.join(ROOT, 'content', rel)
+  if (!fs.existsSync(full)) return '(缺)'
+  return createHash('sha256').update(fs.readFileSync(full)).digest('hex').slice(0, 16)
+}
+
 /**
  * 引文核对用。
  *
@@ -1131,6 +1153,9 @@ function validateContent(people) {
 
   /* 台词摘掉再判——人物嘴里什么都能说。 */
   const stripDialogue = (t) => String(t).replace(/[「『][^」』]*[」』]/g, '')
+
+  const ledger = readLedger()
+  const nextLedger = { ...ledger }
 
   for (const p of people) {
     const who = p.name
@@ -1229,6 +1254,26 @@ function validateContent(people) {
            印的是原文范围——写成 `001–004、019` 而 019 不存在，页面上只是
            少一段原文，标题照样是完整那串，看不出少了。 */
         const range = parseRange(s.sourceRange)
+        /* 范围变更对账：范围变了、种子和卡的内容指纹没变 → 红。 */
+        {
+          const key = `${p.id}/${s.id}`
+          const now = {
+            range: String(s.sourceRange || '').trim(),
+            seeds: hashOf(`people/${p.id}/seeds/${s.id}.md`),
+            cards: hashOf(`people/${p.id}/cards/${s.id}.md`),
+          }
+          const was = ledger[key]
+          checks++
+          if (was && was.range !== now.range && was.seeds === now.seeds && was.cards === now.cards) {
+            err(`${who} · stories.md`,
+              `故事「${s.id}」的原文范围从「${was.range}」变成了「${now.range}」，` +
+              '**而 seeds/ 和 cards/ 一个字都没动**。范围一变，那两个文件里所有' +
+              '「本篇这几段」「这几段里没有」的说法就全是假话——**而编译器查不出来**。' +
+              '重读一遍再改范围')
+          } else if (!was || was.range !== now.range || was.seeds !== now.seeds || was.cards !== now.cards) {
+            nextLedger[key] = now
+          }
+        }
         checks++
         if (!range.length) err(`${who} · stories.md`, `故事「${s.id}」的原文范围「${s.sourceRange}」读不出编号`)
         const miss = range.filter((id) => !p.source[id])
@@ -2004,6 +2049,12 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     throw new Error(`内容校验未通过：${errs.length} 处错误`)
   }
   console.log(`  ✓ 内容校验  检查了 ${checks} 项，全部通过`)
+  /* 非 --check 时把账本落盘：范围或指纹变了就记下新的。
+     `--check` 不写任何文件——它在 CI 和本地都要能安全地跑。 */
+  if (!CHECK_ONLY && JSON.stringify(nextLedger) !== JSON.stringify(ledger)) {
+    fs.writeFileSync(LEDGER, JSON.stringify(nextLedger, null, 1) + '\n')
+    console.log('  · 范围变更账本已更新（scripts/range-ledger.json）')
+  }
 }
 
 function main() {

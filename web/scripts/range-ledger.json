@@ -1,0 +1,92 @@
+{
+ "caocao/01-wusebang": {
+  "range": "006、008、206",
+  "seeds": "4d51149d27072603",
+  "cards": "54e1baafc6a08e50"
+ },
+ "caocao/02-cidong": {
+  "range": "012、014、205、401–409",
+  "seeds": "ac64830d554721de",
+  "cards": "0c8aac3c7d5a05f6"
+ },
+ "caocao/03-chenliu": {
+  "range": "011–015、211–214",
+  "seeds": "85a4455b3d5c8534",
+  "cards": "0d160ab428956da0"
+ },
+ "caocao/04-xingyang": {
+  "range": "015–021",
+  "seeds": "ed084c028dd65947",
+  "cards": "038c7b29b84465c2"
+ },
+ "caocao/05-yanzhou": {
+  "range": "025–026",
+  "seeds": "9bf1d90542cd72b1",
+  "cards": "b8e37c3bebbab67a"
+ },
+ "caocao/06-qingzhou": {
+  "range": "025–027、029",
+  "seeds": "290886fe974b0202",
+  "cards": "1040bcf6b2ee0310"
+ },
+ "caocao/07-fengtianzi": {
+  "range": "031–034",
+  "seeds": "e76c60d177b5e075",
+  "cards": "121f1ba5dafe0aa7"
+ },
+ "caocao/08-guandu": {
+  "range": "040–045、242–244",
+  "seeds": "a4d30f902d23f20f",
+  "cards": "4e767a8e8487dc44"
+ },
+ "caocao/09-chibi": {
+  "range": "064–066、265、405",
+  "seeds": "e8feeb1a96aac8f7",
+  "cards": "8008292d759a6b9d"
+ },
+ "caocao/10-weiwang": {
+  "range": "074、097、110–111",
+  "seeds": "9ec4eb3e8ec740e9",
+  "cards": "f1c0ff615a601606"
+ },
+ "jingke/01-yanwei": {
+  "range": "001–016",
+  "seeds": "41384e103cf03adf",
+  "cards": "0570302e8e08d671"
+ },
+ "jingke/02-tianguang": {
+  "range": "017–025",
+  "seeds": "9f951bad1927579e",
+  "cards": "236d026aaff98d76"
+ },
+ "jingke/03-shouming": {
+  "range": "022–035",
+  "seeds": "1d2375149445ccdc",
+  "cards": "7cc4e9a8f2c0b6c6"
+ },
+ "jingke/04-fanyuqi": {
+  "range": "035–047",
+  "seeds": "4e6af5e129de9c75",
+  "cards": "c22f5c75cb92cd90"
+ },
+ "jingke/05-taizidan": {
+  "range": "048–053",
+  "seeds": "fd4bdcb853c4215e",
+  "cards": "ca6a8abcb56fecfd"
+ },
+ "jingke/06-yishui": {
+  "range": "054–058",
+  "seeds": "32de6c33b45eb1a0",
+  "cards": "8a7ae17bf07f6f00"
+ },
+ "jingke/07-tupo": {
+  "range": "059–076",
+  "seeds": "fb182a778644aa45",
+  "cards": "8fce657238600fb1"
+ },
+ "jingke/08-weisheng": {
+  "range": "077–093",
+  "seeds": "b51ea26a2e5d3e56",
+  "cards": "1d0c79a1e28341f2"
+ }
+}
