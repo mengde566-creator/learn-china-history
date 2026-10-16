@@ -92,7 +92,30 @@ function clean(s) {
  * 审核员实测过：检查项 16799→16798，行数少一项，没有任何提示。
  * 一个"写两遍"就能关掉的闸门，等于没有。
  */
-const ids = (s) => [...new Set([...String(s ?? '').matchAll(/`?(\d{3})`?/g)].map((m) => m[1]))]
+/* 从一行里抽出所有编号。**必须展开区间。**
+   原来只做 `/`?(\d{3})`?/g`，于是 `` `040`–`045` `` 只取到 040 和 045——
+   中间四段全丢。而引文核对用的是这个函数：一行写区间、引文落在区间中间，
+   就会报「引文在 040 045 里找不到」（假红）；反过来，区间中间那几段里的
+   真错误也查不出来（假绿）。全库 72 处这种写法。
+   实测踩到的是 `08-guandu` 的复习卡：`040`–`045` 漏掉 044，
+   而「大破琼等，皆斩之」正在 044 里。
+   区间只在**两端都像编号、且跨度合理**时才展开，免得把年份范围当成编号。 */
+const ids = (s) => {
+  const t = String(s ?? '')
+  const out = new Set()
+  /* 反引号可以夹在数字和破折号之间：`` `040`–`045` `` —— 这是本库最常用的写法。 */
+  for (const m of t.matchAll(/`?(\d{3})`?\s*[–—-]\s*`?(\d{3})`?/g)) {
+    const a = Number(m[1]), b = Number(m[2])
+    if (!(a >= 1 && b >= 1 && b > a && b - a <= 60)) continue
+    /* 年份范围不是编号：「公元 189–191 年」。前后有「公元」或后面跟「年」就不展开。 */
+    const before = t.slice(Math.max(0, m.index - 6), m.index)
+    const after = t.slice(m.index + m[0].length, m.index + m[0].length + 2)
+    if (/公元\s*$/.test(before) || /^\s*年/.test(after)) continue
+    for (let i = a; i <= b; i++) out.add(String(i).padStart(3, '0'))
+  }
+  for (const m of t.matchAll(/`?(\d{3})`?/g)) out.add(m[1])
+  return [...out]
+}
 
 /** 收集某个二级标题下的正文段落 */
 function sectionParagraphs(lines, heading) {
