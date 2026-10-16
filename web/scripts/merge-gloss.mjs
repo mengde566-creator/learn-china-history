@@ -22,12 +22,24 @@ for (const p of who ? [who] : fs.readdirSync(path.join(ROOT, 'content/people')))
      实测第一次就抄错两行（`202` 少 314 字、`204` 少 69 字，从被截断的终端显示里手抄的）。
      分片里那一栏现在只是**写作时的参照**，合的时候一律用 `source.md` 覆盖。
      （编译器另有一条闸门核对两栏逐字相同，防的是有人直接改 `gloss.md`。） */
+  /* **读 `source.md` 的规则必须和编译器一模一样**，否则两栏对不上、闸门会红。
+     踩过的坑：荆轲的 `source.md` 里**还有第二张表**（4 列的人名表
+     `| 004 | 鲁勾践 | 鲁句践 | 非越王勾践，战国时人 |`），照单全收会把它
+     当成 `004` 的原文（填进去是「鲁勾践」三个字）。
+     编译器的判据是：**第三格得像优先级（`^[ABC]`）**——不像就当四列读，再不像就跳过。 */
   const segs = {}
   const src = path.join(ROOT, 'content/people', p, 'source.md')
   if (fs.existsSync(src)) {
     for (const l of fs.readFileSync(src, 'utf8').split('\n')) {
-      const c = l.split('|').slice(1, -1).map((x) => x.trim())
-      if (c.length >= 3 && /^\d{3}$/.test(c[0])) segs[c[0]] = c[1]
+      if (!l.trim().startsWith('|')) continue
+      const c = l.trim().replace(/^\||\|$/g, '').split('|').map((x) => x.trim())
+      if (c.length < 3 || c.every((x) => /^[-:]*$/.test(x)) || !/^\d{3}$/.test(c[0])) continue
+      let pri = c[2]
+      if (!/^[ABC]/.test(String(pri).replace(/\*\*/g, '').trim())) pri = c[3] ?? ''
+      if (!/^[ABC]/.test(String(pri).replace(/\*\*/g, '').trim())) continue
+      /* 记号的处理也要和编译器一致：`★` 去掉、`` `异文` `` **整段去掉**（不是去反引号留字），
+         `` `注 · …` `` 也去掉。差一个「异文」两个字，闸门就会红。 */
+      segs[c[0]] = c[1].replace(/★/g, '').replace(/`异文`/g, '').replace(/`注(?:\s*·\s*[^`]+)?`/g, '').trim()
     }
   }
   const rows = new Map()

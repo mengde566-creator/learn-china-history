@@ -1027,11 +1027,32 @@ function buildPerson(id) {
     warnings: warn,
     sourceCount: Object.keys(source).length,
     source,
+    /* 直译（`gloss.md`）。**只带直译文本**，原文在 `source` 里已经有了——
+       两处都带一遍，页面就会把同一段原文发两次。 */
+    gloss: readGloss(id),
     books,
     storyList: storyList.map((s) => ({ ...s, ready: !!stories[s.id], img: stories[s.id]?.img || null })),
     cast,
     stories,
   }
+}
+
+/**
+ * 读 `people/<id>/gloss.md` 里的逐段直译，返回 `{ 编号: 直译 }`。
+ *
+ * 它是 ⑥「完整资料入口」要用的东西：底本收全之后，**曹操 232 段里只有 73 段
+ * 有故事够得着**，剩下 159 段（家世、王芬谋废灵帝、征陶谦、张绣……）
+ * 读者在故事里一辈子碰不到。入口按编号列全部段，每段配一句直译。
+ */
+function readGloss(id) {
+  const p = path.join(PEOPLE, id, 'gloss.md')
+  if (!fs.existsSync(p)) return {}
+  const out = {}
+  for (const l of fs.readFileSync(p, 'utf8').split('\n')) {
+    const m = l.match(/^\|\s*(\d{3})\s*\|([^|]*)\|([^|]*)\|\s*$/)
+    if (m && m[3].trim()) out[m[1]] = m[3].trim()
+  }
+  return out
 }
 
 function listPeople() {
