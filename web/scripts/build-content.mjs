@@ -2254,6 +2254,38 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
      于是十篇的门口涨到 13–32 行，把整篇故事又讲了一遍——
      正文里每一点都在门口出现过，读者读到正文时已经没有新东西了。
      **这是我的设计错误，不是写作者偷懒。** 上限写成 8 行，留一点余地。 */
+      /* **门口和第一个情节点不许说同一句话。**
+         用户的原话：「每个故事的入口这是多少文字，这还是简介吗」——
+         砍到 4–6 行之后，独立审核又把 18 篇逐篇读了，结论是 **18/18 接不上**：
+
+             门口末句    二十岁，举孝廉；朝廷授他洛阳北部尉。   ← 讲到了正文第一段之后
+             首段首句    他年少的时候，机警，有权数……         ← 又从 `004` 讲起
+
+         **病根：门口是「整场戏的压缩」，末句落在正文第一段之后，
+         所以正文开头永远是门口的重读。**
+         补法：**门口末句停在正文首句的前一刻，后面的一律砍。**
+
+         这里只做机械的那一半：**门口的行不许和首段逐字重复**。
+         「门口讲到哪儿」是判断，机器判不了——写进 `content/README.md` 的清单。 */
+      const n4 = (t) => String(t).replace(/[^\u4e00-\u9fff]/g, '')
+      const first = (st.beats || [])[0]
+      if (first) {
+        const say = n4((first.prose || []).filter((x) => !/^[「——]/.test(x)).join(''))
+        for (const l of st.intro?.lines || []) {
+          const t = n4(l.text)
+          if (t.length < 8) continue
+          let hit = 0
+          for (let k = 0; k + 8 <= t.length; k++) if (say.includes(t.slice(k, k + 8))) hit++
+          checks++
+          if (hit / Math.max(1, t.length - 7) >= 0.5) {
+            err(`${p.name} · ${st.id}`, `门口那一行「${String(l.text).slice(0, 20)}…」` +
+              '**和第一个情节点说的是同一句话**——门口跑到了正文前面。' +
+              '门口末句要停在正文首句的前一刻，后面的一律砍')
+          }
+        }
+      }
+
+
   const INTRO_MAX = 8
   for (const p of people) {
     for (const st of Object.values(p.stories || {})) {
