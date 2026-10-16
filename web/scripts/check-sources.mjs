@@ -237,7 +237,22 @@ for (const id of people) {
 
     const sentences = e.text.split(/[。！？；，、]/).map(norm).filter((x) => x.length >= 4)
     const bad = sentences.filter((x) => !hay.includes(x))
-    if (!sentences.length) { skip++; console.log(`    · ${e.id}  读不出可比的句子`); continue }
+    /* **短段不能跳过。** 切分是按「同档次的一整段连续文字」做的，所以裴注插在
+       句子中间时，正文会被劈出一个很短的碎片——`100`「冬十月，治兵，」就是，
+       它只有 4 个汉字，切成小句每片都不足 4 字，于是**一句都不查就跳过了**。
+       被跳过的段等于没验：`check-sources` 印「跳过 1」、退出码 0、照样印绿。
+       短段改用**整段包含**来验——不切句，直接看它在不在参考文本里。 */
+    if (!sentences.length) {
+      const wholeShort = norm(e.text)
+      if (wholeShort.length >= 2 && hay.includes(wholeShort)) {
+        pass++
+        console.log(`    ✓ ${e.id}  ${e.tier}　逐字对得上（整段 ${wholeShort.length} 字）`)
+      } else {
+        fail++
+        console.log(`    ✗ ${e.id}  ${e.tier}　整段「${e.text.slice(0, 20)}」在参考文本里找不到`)
+      }
+      continue
+    }
     if (!bad.length) {
       pass++
       console.log(`    ✓ ${e.id}  ${e.tier}　逐字对得上（${sentences.length} 句）`)
