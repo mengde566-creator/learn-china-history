@@ -54,11 +54,8 @@ export default async function PersonPage({ params }) {
         <section className="sec">
       <section style={{ marginTop: 26 }}>
         <Link href={`/p/${person.id}/source`} className="entry-card">
-          <b>完整资料入口</b>
-          <span>
-            底本 {person.sourceCount} 段全在这里，按编号列，每段配直译。
-            {person.sourceCount - 0 > 0 && ' 故事里够不着的那些，只有这里能读到。'}
-          </span>
+          <b>完整资料</b>
+          <span>{person.sourceCount} 段原文，逐段附直译</span>
         </Link>
       </section>
 

@@ -68,15 +68,10 @@ export default async function SourcePage({ params }) {
         <h1>
           完整资料 <SealMark char="原" />
         </h1>
+        {/* 这一页原来有一整块自我说明（「底本 232 段全在这里……那是有意的」）。
+            **读者打开一页资料，先读了一段产品说明书。** 删掉：页面上只留数字。 */}
         <p className="sub" style={{ marginTop: 6 }}>
-          底本 <b>{total}</b> 段，全在这里。
-          {onlyHere > 0 && <>　其中 <b>{onlyHere}</b> 段没有任何一篇故事够得着——<b>只有这一页能读到</b>。</>}
-          {glossed > 0 && <>　已有直译 <b>{glossed}</b> 段。</>}
-        </p>
-        <p className="note" style={{ marginTop: 10 }}>
-          <b>这一页和故事里的白话不是一回事。</b>故事里的白话是给人读的，可以顺语序、补主语；
-          这里的<b>直译</b>跟着原文的字序和句法走，不替它顺句子、不补它没说的主语——
-          所以读起来生硬，<b>那是有意的</b>：它要让人看见原文长什么样。
+          {total} 段{glossed > 0 && <>　·　直译 {glossed} 段</>}
         </p>
       </header>
 
@@ -104,10 +99,9 @@ export default async function SourcePage({ params }) {
         </section>
       ))}
 
-      <p className="note" style={{ marginTop: 28 }}>
-        段号与故事里的引文编号一一对应——故事里写 <code>042</code>，这里就找 <code>042</code>。
-        正文与注分开列：<b>注</b>是后人补的，不是陈寿（或司马迁）写的，它挂在哪一段下面，哪一段就是它要解释的正文。
-      </p>
+      {/* 页尾原来还有一段解释「段号和引文编号一一对应」「注是后人补的」——
+          也是同一类。读者要看的是原文，不是这一页怎么设计的。 */}
+
     </main>
   )
 }

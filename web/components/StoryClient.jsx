@@ -185,15 +185,14 @@ export default function StoryClient({ person, story, source }) {
             {(() => {
               const ib = story.intro.basis || []
               if (!ib.length) {
-                return <b>{story.intro.lines.length} 行铺陈，尚无逐行依据。</b>
+                return <b>门口这几行还没有逐行依据。</b>
               }
-              const orig = ib.filter((r) => r.marker.includes('◆') || r.marker.includes('◇')).length
+              /* **这里原来有一行统计：「铺陈 26 行 · 逐行依据 26 条 · 其中 25 条出自原文。」**
+                 那是**制作过程的话**——读者不关心门口有几行、几条出自原文。
+                 用户的原话：「这还不算垃圾解释？」 删掉，面板直接进内容。 */
               return (
                 <>
-                  <b>
-                    铺陈 {story.intro.lines.length} 行 · 逐行依据 {ib.length} 条 · 其中 {orig} 条出自原文。
-                  </b>
-                  <div style={{ marginTop: 6 }}>
+                  <div>
                     {ib.map((r, i) => (
                       <div key={i} className="mark-block">
                         <div className="hd">
