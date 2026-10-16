@@ -17,12 +17,28 @@ for (const p of who ? [who] : fs.readdirSync(path.join(ROOT, 'content/people')))
   const out = path.join(ROOT, 'content/people', p, 'gloss.md')
   if (!fs.existsSync(dir) || !fs.existsSync(out)) continue
   const head = fs.readFileSync(out, 'utf8').split('| 编号 | 原文 | 直译 |')[0]
+  /* **原文栏由这一支脚本填，不从分片里读。**
+     理由：这一栏完全由 `source.md` 决定，人抄一遍只会引入错误——
+     实测第一次就抄错两行（`202` 少 314 字、`204` 少 69 字，从被截断的终端显示里手抄的）。
+     分片里那一栏现在只是**写作时的参照**，合的时候一律用 `source.md` 覆盖。
+     （编译器另有一条闸门核对两栏逐字相同，防的是有人直接改 `gloss.md`。） */
+  const segs = {}
+  const src = path.join(ROOT, 'content/people', p, 'source.md')
+  if (fs.existsSync(src)) {
+    for (const l of fs.readFileSync(src, 'utf8').split('\n')) {
+      const c = l.split('|').slice(1, -1).map((x) => x.trim())
+      if (c.length >= 3 && /^\d{3}$/.test(c[0])) segs[c[0]] = c[1]
+    }
+  }
   const rows = new Map()
   for (const f of fs.readdirSync(dir).sort()) {
     if (!f.endsWith('.md')) continue
     for (const l of fs.readFileSync(path.join(dir, f), 'utf8').split('\n')) {
-      const m = l.match(/^\|\s*(\d{3})\s*\|/)
-      if (m) rows.set(m[1], l.trim())
+      const m = l.match(/^\|\s*(\d{3})\s*\|([^|]*)\|([^|]*)\|\s*$/)
+      if (!m) continue
+      const [, id, , gloss] = m
+      const text = segs[id] ?? m[2].trim()
+      rows.set(id, `| ${id} | ${text} | ${gloss.trim()} |`)
     }
   }
   if (!rows.size) { console.log(`  ${p}: 分片里没有行，跳过`); continue }

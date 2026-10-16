@@ -2062,6 +2062,16 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
       if (!gloss.trim()) err(`people/${p.id}/gloss.md`, `第 ${i + 1} 行 \`${id}\` 的直译栏是空的`)
       checks++
       if (!src.trim()) err(`people/${p.id}/gloss.md`, `第 ${i + 1} 行 \`${id}\` 的原文栏是空的`)
+      /* **原文栏必须和 source.md 逐字相同。**
+         这一栏是读者拿去和「原文」页签对照的唯一依据——它要是自己改写过的，
+         读者照着核就会核到别的话，而这一份的全部意义就是「原文是这么说的」。 */
+      checks++
+      const want = String(p.source[id]?.text ?? '').trim()
+      if (src.trim() && want && src.trim() !== want) {
+        err(`people/${p.id}/gloss.md`, `第 ${i + 1} 行 \`${id}\` 的原文栏和 \`source.md\` 对不上。` +
+          `**直译表的原文栏必须逐字照抄**——读者拿它和「原文」页签对照，抄错一个字就核不上。` +
+          `\n        直译表：${src.trim().slice(0, 40)}…\n        source.md：${want.slice(0, 40)}…`)
+      }
     })
   }
 
