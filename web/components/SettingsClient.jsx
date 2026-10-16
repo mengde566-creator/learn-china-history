@@ -23,7 +23,6 @@ export default function SettingsClient() {
               </span>
             </h3>
             <p>开启后可以自己输入问题；关闭时用预置问答，完整循环一样走得通。</p>
-            <p style={{ marginTop: 8, color: 'var(--zhe)' }}>还没有接入。开关先记住你的选择。</p>
           </div>
           <div className="ctrl">
             <button

@@ -2136,6 +2136,87 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     }
   }
 
+  /* ── 读者看得见的地方，不许有「写给作者的话」 ──
+     用户连着指出四处（门口的统计行、人页的自述、⑥ 页顶上那一整块、逐行依据里的
+     「需另行核对」），每一次都是「你指一处、我改一处」。**这一类必须机械拦死**，
+     否则他还要指第五次。
+
+     三类：
+       ① **作者的待办**——「需另行核对」「待核」「待写」「TODO」。读者不办这件事。
+       ② **改稿史**——「本文件早先写成」「原先」「已改」「上一版」。读者没有上一版。
+       ③ **内部行话**——「口径」「闸门」「编译器」「校验」「越界」。
+
+     查的是**读者看得见的每一处**：门口（行＋依据）、情节点说明、背景卡、种子答案与依据、
+     复习卡的题面和答案、以及 person.md 的「他是谁」「引子」。
+     **注意**：编译器的报错信息、`内部` 栏、设计说明不在其列——那些本来就只给写作者看。 */
+  {
+    const JUNK = [
+      [/需(?:另行|再)核对|待核|待查|待写|待定|待补|另核|尚未核|TODO|FIXME/, '作者的待办'],
+      [/本文件(?:早先|原来|原先)|早先写成|上一版|改过之后|已改成|原先写/, '改稿史'],
+      [/口径|闸门|编译器|校验|自查|越界|边界外/, '内部行话'],
+    ]
+    const scan = (where, text) => {
+      const t = String(text || '')
+      if (t.length < 5) return
+      for (const [re, kind] of JUNK) {
+        const m = t.match(re)
+        if (m) {
+          checks++
+          err(where, `读者看得见的地方出现了**${kind}**：「${m[0]}」。` +
+            `\n        …${t.slice(Math.max(0, m.index - 24), m.index + 40)}…` +
+            `\n        **读者不办这件事、没有上一版、也不需要知道我们怎么做的。**`)
+          return
+        }
+      }
+    }
+    for (const p of people) {
+      scan(`${p.name} · 他是谁`, p.who)
+      scan(`${p.name} · 引子`, (p.intro || []).join(' '))
+      for (const st of Object.values(p.stories || {})) {
+        const at = `${p.name} · ${st.id}`
+        for (const l of st.intro?.lines || []) scan(`${at} · 门口`, l.text)
+        for (const b of st.intro?.basis || []) scan(`${at} · 逐行依据`, b.basis)
+        for (const b of st.beats || []) scan(`${at} · 第 ${b.n} 段 · 说明`, b.note)
+        for (const b of st.blocks || []) scan(`${at} · 背景卡「${b.title}」`, b.body)
+        for (const sd of st.seeds || []) { scan(`${at} · 种子`, sd.answer); scan(`${at} · 种子依据`, sd.ground) }
+        for (const cd of st.cards || []) { scan(`${at} · 复习卡`, cd.q); scan(`${at} · 复习卡答案`, cd.a) }
+      }
+    }
+  }
+
+  /* ── 门口的长度 ──
+     **门口是简介，不是正文。** 它只负责「30 秒内建立代入感，然后把人交出去」——
+     所以它有长度上限。荆轲八篇是 1–7 行（本来就是对的）；
+     曹操十篇重做时我给的目标是「白话 1000 字以上」，**没把门口和正文分开**，
+     于是十篇的门口涨到 13–32 行，把整篇故事又讲了一遍——
+     正文里每一点都在门口出现过，读者读到正文时已经没有新东西了。
+     **这是我的设计错误，不是写作者偷懒。** 上限写成 8 行，留一点余地。 */
+  const INTRO_MAX = 8
+  for (const p of people) {
+    for (const st of Object.values(p.stories || {})) {
+      const n = (st.intro?.lines || []).length
+      checks++
+      /* 依据栏也要短。**它是「这一行从哪来」，不是「我对这一行的看法」。**
+         门口的依据涨成一段带议论的文字，读者在进入场景之前先读了一篇考据。 */
+      const BASIS_MAX = 90
+      for (const b of st.intro?.basis || []) {
+        checks++
+        if (String(b.basis || '').length > BASIS_MAX) {
+          err(`${p.name} · ${st.id}`, `门口第「${String(b.line).slice(0, 14)}…」行的依据有 ` +
+            `${String(b.basis).length} 字，超过 ${BASIS_MAX} 字。` +
+            '**依据是「这一行从哪来」，不是「我对这一行的看法」**——' +
+            '写清编号和那句话就够了，议论放正文。')
+        }
+      }
+      if (n > INTRO_MAX) {
+        err(`${p.name} · ${st.id}`, `门口有 ${n} 行，超过 ${INTRO_MAX} 行。` +
+          '**门口是简介，不是正文**——它只负责建立处境，然后把读者交给正文。' +
+          '正文里每一点都在门口讲过一遍的话，读者读到正文时就没有新东西了。' +
+          '（荆轲八篇是 1–7 行，那是标准。）')
+      }
+    }
+  }
+
   console.log('')
   if (warns.length) {
     console.log(`  ⚠ ${warns.length} 处提醒`)
