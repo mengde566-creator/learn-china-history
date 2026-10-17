@@ -598,8 +598,23 @@ try {
    R01–R10 的回归检查
    ══════════════════════════════════════════════ */
 
+/**
+ * **每条检查开始前清掉本机进度。**
+ *
+ * R12 之后，故事页会把阅读位置存进 localStorage——同一个浏览器上下文里，
+ * 上一条检查进过场景，下一条 `goto` 就会**直接恢复到正文**，
+ * 于是入场页的按钮和逐行依据都不在了，检查报「找不到 button.cta」。
+ * 这不是产品的问题，是检查要自己保证起点的干净。
+ */
+async function resetLocal() {
+  try {
+    await page.evaluate(() => { try { localStorage.clear() } catch {} })
+  } catch {}
+}
+
 /** 走到正文里（入场页上有个「进 入」按钮）。 */
 async function enterStory() {
+  await resetLocal()
   const cta = await page.$('button.cta')
   if (cta) { await cta.click(); await page.waitForTimeout(500) }
 }
@@ -675,6 +690,9 @@ const todo = FILTER ? results.filter((r) => r.name.includes(FILTER)) : results
 
   let failed = 0
   for (const { name, fn } of todo) {
+    /* 起点要干净：上一条检查可能把阅读进度写进了 localStorage */
+    await page.goto(BASE, { waitUntil: 'domcontentloaded' }).catch(() => {})
+    await resetLocal()
     let r
     try { r = await fn() } catch (e) { r = fail(`检查本身出错：${String(e.message).slice(0, 160)}`) }
     console.log(`  ${r.pass ? '✓' : '✗'} ${name}`)
