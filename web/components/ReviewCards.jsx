@@ -2,12 +2,18 @@
 
 import { useState } from 'react'
 import RichText, { Marker } from '@/components/RichText'
+import { useProgress, markReview, storyKey } from '@/lib/progress'
 
 /**
  * 复习卡。默认只显示问题，点开看答案——这样才叫复习，不是读一遍。
+ *
+ * **「展开过答案」不写任何状态。** 掌握与否只能由读者自己按——
+ * 展开就记成「已掌握」，那是替读者下结论（任务书 R12 明说）。
  */
-export default function ReviewCards({ cards }) {
+export default function ReviewCards({ cards, personId, storyId }) {
   const [open, setOpen] = useState(() => new Set())
+  const { progress, ready } = useProgress()
+  const mine = (progress.review[storyKey(personId, storyId)] || {})
 
   const toggle = (n) =>
     setOpen((prev) => {
@@ -74,12 +80,35 @@ export default function ReviewCards({ cards }) {
             )}
 
             {shown && (
-              <button
-                onClick={() => toggle(c.n)}
-                style={{ marginTop: 14, fontSize: 11.5, color: 'var(--mo-mute)', letterSpacing: '.08em', textAlign: 'left' }}
-              >
-                收起
-              </button>
+              <>
+                <button
+                  onClick={() => toggle(c.n)}
+                  style={{ marginTop: 14, fontSize: 11.5, color: 'var(--mo-mute)', letterSpacing: '.08em', textAlign: 'left' }}
+                >
+                  收起
+                </button>
+                {/* **掌握与否由读者按。** 展开只是展开，不写状态。 */}
+                <div style={{ display: 'flex', gap: 8, marginTop: 10, alignItems: 'center' }}>
+                  {[['todo', '待复习'], ['known', '已掌握']].map(([k, label]) => (
+                    <button
+                      key={k}
+                      onClick={() => markReview(personId, storyId, c.n, mine[c.n] === k ? null : k)}
+                      aria-pressed={ready && mine[c.n] === k}
+                      style={{
+                        fontSize: 11.5, letterSpacing: '.06em', padding: '3px 9px', cursor: 'pointer',
+                        borderRadius: 2, background: 'none',
+                        border: `1px solid ${mine[c.n] === k ? 'var(--zhu)' : 'var(--zhi-3, rgba(0,0,0,.16))'}`,
+                        color: mine[c.n] === k ? 'var(--zhu)' : 'var(--mo-mute)',
+                      }}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                  {mine[c.n] && (
+                    <span style={{ fontSize: 11, color: 'var(--mo-mute)' }}>已记在本机（再按一次可取消）</span>
+                  )}
+                </div>
+              </>
             )}
           </article>
         )

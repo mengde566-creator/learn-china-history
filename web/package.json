@@ -17,7 +17,8 @@
     "ref-grep": "node scripts/ref-grep.mjs",
     "new-story": "node scripts/new-story.mjs",
     "renumber": "node scripts/renumber.mjs",
-    "test-visible": "node scripts/test-visible-fields.mjs"
+    "test-visible": "node scripts/test-visible-fields.mjs",
+    "refs:verify": "node scripts/fetch-refs.mjs --verify"
   },
   "dependencies": {
     "gsap": "^3.15.0",

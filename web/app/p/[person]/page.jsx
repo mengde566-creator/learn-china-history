@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getPerson, listPeople } from '@/lib/content'
 import { formatRanges } from '@/lib/range'
 import SealMark from '@/components/SealMark'
+import RecentRead from '@/components/RecentRead'
 
 export function generateStaticParams() {
   return listPeople().map((p) => ({ person: p.id }))
@@ -52,6 +53,9 @@ export default async function PersonPage({ params }) {
 
       {person.why.length > 0 && (
         <section className="sec">
+      {/* 最近读到哪一篇（本机数据，服务端渲染时为空） */}
+      <RecentRead personId={person.id} stories={person.storyList} />
+
       <section style={{ marginTop: 26 }}>
         <Link href={`/p/${person.id}/source`} className="entry-card">
           <b>完整资料</b>

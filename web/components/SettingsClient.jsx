@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useSettings } from '@/lib/settings'
+import { clearProgress } from '@/lib/progress'
 
 export default function SettingsClient() {
   const { settings, update, ready } = useSettings()
@@ -14,6 +15,18 @@ export default function SettingsClient() {
       </header>
 
       <section>
+        {/* **本地数据的出口。** 阅读进度和复习状态存在这台设备上，
+            读者要能看见它、也要能清掉它（R12 验收）。 */}
+        <div className="set-row">
+          <div className="info">
+            <h3>阅读进度与复习状态</h3>
+            <p>存在这台设备的浏览器里，不会上传。清掉之后，各篇的阅读位置和复习标记都归零。</p>
+          </div>
+          <div className="ctrl">
+            <button className="switch" onClick={clearProgress} aria-label="清除本机保存的阅读数据">清 除</button>
+          </div>
+        </div>
+
         <div className="set-row">
           <div className="info">
             <h3>场景区浅色</h3>

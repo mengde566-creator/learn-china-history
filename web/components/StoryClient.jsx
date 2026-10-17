@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import RichText, { Marker, Legend } from '@/components/RichText'
 import CiteText from '@/components/CiteText'
+import { useProgress, markRead, resetStory, storyKey } from '@/lib/progress'
 import SeedSheet from '@/components/SeedSheet'
 import ReviewCards from '@/components/ReviewCards'
 
@@ -86,6 +87,7 @@ function evidenceAdds(beat, source) {
 export default function StoryClient({ person, story, source }) {
   const [phase, setPhase] = useState('opening') // opening | live
   const [revealed, setRevealed] = useState(1)
+
   const [tab, setTab] = useState('evidence')
   /* 引用跳转之前在哪——原文那一段上给一个「返回」 */
   const [cameFrom, setCameFrom] = useState(null)
@@ -97,7 +99,30 @@ export default function StoryClient({ person, story, source }) {
   const stageRef = useRef(null)
 
   const beats = story.beats
+
+  /* **本地阅读进度。** 刷新、往返查证、关掉再打开，都能接着读。
+     只用 localStorage；存坏了读不了就照常从头读（见 lib/progress.js）。 */
+  const { progress, ready: progressReady } = useProgress()
+  const savedRead = progress.read[storyKey(person.id, story.id)]
+  const restoredRef = useRef(false)
+  useEffect(() => {
+    if (!progressReady || restoredRef.current) return
+    restoredRef.current = true
+    const saved = progress.read[storyKey(person.id, story.id)]
+    if (!saved) return
+    /* **段号要裁剪**：故事改短过之后，旧段号可能超出——夹到范围内，别把人送到空白处 */
+    const n = Math.min(Math.max(1, saved.beat || 1), Math.max(1, beats.length))
+    setRevealed(n)
+    if (saved.phase === 'live') setPhase('live')
+  }, [progressReady, progress, person.id, story.id, beats.length])
+  /* 每推进一步就记一次（只在正文里记，入场页不算「读到第几段」） */
+  useEffect(() => {
+    if (!progressReady || phase !== 'live') return
+    markRead(person.id, story.id, { beat: revealed, phase: 'live', done: revealed >= beats.length })
+  }, [progressReady, phase, revealed, person.id, story.id, beats.length])
   const isLast = revealed >= beats.length
+  /* 正文里也能从头读（进度存在本机时才有意义） */
+  const restart = () => { resetStory(person.id, story.id); setRevealed(1); setPhase('opening') }
   const shownBeat = beats[following - 1] || beats[0]
 
   /* 读完一篇直接进下一篇。顺序取人物页的篇目顺序，只数已实现的——
@@ -210,8 +235,17 @@ export default function StoryClient({ person, story, source }) {
             ))}
           </div>
           <button className="cta" onClick={() => setPhase('live')}>
-            进 入 {story.place || story.name}
+            {savedRead && !savedRead.done ? `继 续 ${story.place || story.name} · 第 ${Math.min(savedRead.beat || 1, beats.length)} 段` : `进 入 ${story.place || story.name}`}
           </button>
+          {/* **从头读**：有进度的时候才出现。清进度、回第一段。 */}
+          {savedRead && (
+            <button
+              className="cta-ghost"
+              onClick={() => { resetStory(person.id, story.id); setRevealed(1); setPhase('live') }}
+            >
+              从 头 读
+            </button>
+          )}
         </div>
 
         <div className="wrap-narrow" style={{ paddingBottom: 90 }}>
@@ -371,6 +405,12 @@ export default function StoryClient({ person, story, source }) {
 
           {/* 纸面 */}
           <aside className="panel">
+            {/* **从头读**：正文里也给一个（进度存在本机时才有意义）。
+                点它清掉这一篇的进度、回入场页——复习状态不动，那是两件事。 */}
+            {savedRead && (
+              <button type="button" className="cta-ghost in-stage" onClick={restart}>从 头 读</button>
+            )}
+
             <div className="panel-tabs">
               {TABS.map((t) => (
                 <button
@@ -562,7 +602,7 @@ export default function StoryClient({ person, story, source }) {
                     读完之后 · {story.cards.length} 张复习卡
                   </h2>
                 </div>
-                <ReviewCards cards={story.cards} />
+                <ReviewCards cards={story.cards} personId={person.id} storyId={story.id} />
               </>
             ) : (
               <div className="card-hint" style={{ textAlign: 'left' }}>

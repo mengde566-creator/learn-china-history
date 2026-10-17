@@ -1035,3 +1035,10 @@ body.light-stage{
 .mark-block.flash{animation:cite-flash 1.6s var(--ease)}
 @keyframes cite-flash{0%,30%{background:rgba(184,64,47,.10);box-shadow:inset 2px 0 0 var(--zhu)}
   100%{background:transparent;box-shadow:inset 2px 0 0 transparent}}
+
+/* 「从头读」——有阅读进度时才出现在入场按钮旁边（R12） */
+.cta-ghost{display:block;margin:10px auto 0;background:none;border:0;cursor:pointer;
+  font-family:var(--f-kai);font-size:13px;letter-spacing:.14em;color:var(--su-dim);
+  padding:6px 10px;border-bottom:1px dotted currentColor}
+.cta-ghost:hover{color:var(--su)}
+.cta-ghost.in-stage{margin:0 0 10px;padding:4px 8px;font-size:12px;display:inline-block}
