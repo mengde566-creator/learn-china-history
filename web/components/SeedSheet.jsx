@@ -8,7 +8,7 @@ import RichText, { Marker } from '@/components/RichText'
  *
  * ⚠️ 这是「无 AI 模式」的形态：不是禁用输入框，而是换成一份可选的问题清单。
  * 降级不是错误态，是另一种形态——用户不该感觉到"少了什么"。
- * M2b 接入 AI 后，这里会再加上自由输入，但清单仍然保留（缓存 + 范例）。
+ * **产品不做 AI 自由对话**（用户已明确），所以这里只有这份清单——不会再加上自由输入。
  */
 export default function SeedSheet({ seeds, onClose }) {
   const [active, setActive] = useState(0)

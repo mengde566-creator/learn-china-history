@@ -226,10 +226,10 @@ function parsePersonMeta(rel) {
 const TIERS = ['正史', '注', '小说', '野史']
 
 /* 编号按底本分号段，光看号码就知道是哪一档：
-     0xx  正史正文
-     1xx  注（裴松之引的别史）
-     2xx  小说
-     3xx  野史
+     001–199  正史正文
+     201–399  注（裴松之引的别史）
+     401–599  小说
+     601–799  野史
    这样「引用 201」在 Markdown 里一眼就不是正史，
    不会像原来那样，裴注的 004 和正文的 003 挤在一条序列上。 */
 /* 号段：正史 001–199、注 201–399、小说 401–599、野史 601–799。
@@ -303,7 +303,7 @@ function parseSource(rel, fileLabel, defaultBook) {
     const BAND_OF_TIER = { 正史: 0, 注: 1, 小说: 2, 野史: 3 }
     if (bandOf(id) !== BAND_OF_TIER[tier]) {
       throw new ParseError(rel, i + 1,
-        `编号 ${id} 落在「${TIERS[bandOf(id)]}」号段（${bandOf(id) * 100}xx），` +
+        `编号 ${id} 落在「${TIERS[bandOf(id)]}」号段（${[1,2,4,6][bandOf(id)] * 100}xx），` +
         `可它现在挂在「${tier}」这一本底下。号段和底本档次必须对得上：` +
         '正史 001–199、注 201–399、小说 401–599、野史 601–799')
     }
@@ -1280,7 +1280,7 @@ function validateContent(people) {
     }
 
     /* 原文底本的编号连续性，**按底本分别查**。
-       号段本来就是分开的（正史 0xx、注 1xx、小说 2xx），跨底本连着数没有意义——
+       号段本来就是分开的（正史 001–199、注 201–399、小说 401–599），跨底本连着数没有意义——
        016 后面本来就该是 101，不是 017。 */
     for (const b of p.books || []) {
       checks++
@@ -1510,7 +1510,7 @@ function validateContent(people) {
            「别的书：小说、野史」，可这里原来只认小说档：真加了野史内容，
            挂 ◆ 被语义否定、挂 ◇ 又被这里判成「不是小说」，两条路都堵死。
            （2026-10-14 子智能体审核查出来的半截接线。）
-           注（1xx）仍用 ◆：那是史料，只是不在正文里。 */
+           注（201–399）仍用 ◆：那是史料，只是不在正文里。 */
         const FOREIGN = new Set(['小说', '野史'])
         const tiers = (b.sources || []).map((id) => p.source[id]?.tier).filter(Boolean)
         const foreignIds = (b.sources || []).filter((id) => FOREIGN.has(p.source[id]?.tier))

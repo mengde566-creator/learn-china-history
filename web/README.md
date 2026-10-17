@@ -36,14 +36,15 @@ npm run dev     # 打开 http://localhost:3000
 | `npm run dev` | `content` ＋ `next dev` | 开发服务器 | 日常 |
 | `npm run verify` | `node scripts/verify.mjs` | 浏览器端验证套件，**需要服务器先跑着**，可筛单项 | 改完界面 |
 | `npm run shots` | `node scripts/screenshots.mjs` | 开发用：走一遍流程并截图（默认 `http://127.0.0.1:3100`） | 自查视觉 |
-| `npm run refs` | `node scripts/fetch-refs.mjs` | 把核对用的参考文本取到 `.refs/`（不进版本库） | 首次 / 换机器 |
+| `npm run refs` | `node scripts/fetch-refs.mjs` | 把核对用的参考文本取到 `.refs/` + **记 / 校验哈希**（`manifest.json`，不进版本库） | 首次 / 换机器 |
+| `npm run refs:verify` | `node scripts/fetch-refs.mjs --verify` | **只校验不下载**：文件哈希对不上就明确失败，不静默换基准 | 怀疑参考文本变了 |
 | `npm run ref-grep` | `node scripts/ref-grep.mjs` | 在已核对的底本里检索句子（繁转简、跨底本定位已做好） | 写原文 |
 | `npm run new-story` | `node scripts/new-story.mjs` | 从「故事一览」那一行 ＋ 底本范围生成故事骨架 | 加一篇故事 |
 | `npm run renumber` | `node scripts/renumber.mjs` | 给故事改编号（含文件、种子、复习卡、全部引用） | 调整篇序 |
 | `npm run test-visible` | `node scripts/test-visible-fields.mjs` | 回归：在隔离副本里注入审校批注，断言读者可见字段的扫描真的扫得到 | 动扫描规则 |
 
-`scripts/merge-gloss.mjs`（把 `gloss-parts/*.md` 合进 `gloss.md`）没有进 `scripts`，
-直接 `node scripts/merge-gloss.mjs [人物id]`。
+`scripts/merge-gloss.mjs`（把 `gloss-parts/*.md` 合进 `gloss.md`）**没有注册进
+`package.json` 的 scripts**，直接 `node scripts/merge-gloss.mjs [人物id]` 跑。
 
 **`npm run verify` 需要服务器先跑着**（`npm run dev` 或 `npm start`）。可以筛单项：
 
@@ -64,7 +65,7 @@ npm run verify contrast     # 只跑名字里含 contrast 的
 | 路径 | 文件 | 页面 |
 |---|---|---|
 | `/` | `app/page.jsx` | 总览：按时代分组的人物（已实现的可进入，未实现的锁着） |
-| `/p/<person>` | `app/p/[person]/page.jsx` | 人物页：他是谁 / 为什么读他 / 故事列表 / 关键时点 |
+| `/p/<person>` | `app/p/[person]/page.jsx` | 人物页：他是谁 / 为什么读他 / 故事列表 / 关键时点 / 最近阅读（本机数据） |
 | `/p/<person>/<story>` | `app/p/[person]/[story]/page.jsx` | 故事页：情境铺陈 → 情节点 → 原文 / 背景卡 / 依据映射表 → 复习卡 → 提问 |
 | `/p/<person>/source` | `app/p/[person]/source/page.jsx` | **完整资料页**：全篇底本 ＋ 逐段直译，按号段分档 |
 | `/settings` | `app/settings/page.jsx` | 设置页 |
@@ -99,9 +100,10 @@ npm run verify contrast     # 只跑名字里含 contrast 的
 | 依据面板 | 六个标记（◆ ◇ ○ △ — ⓘ），附原文与推演链条 |
 | 原文 / 背景卡 / 依据映射表 | 侧栏三个全景视图 |
 | **预置问答** | 按分组排列，全部经人工审校，带依据标注 |
-| 复习卡 | 默认折叠，点开才看答案 |
+| 复习卡 | 默认折叠，点开才看答案；可标「待复习／已掌握」 |
+| 阅读进度 | 每篇记到第几段，**只存在本机**（localStorage），可接着读、也可从头读 |
 | **完整资料页** | `/p/<person>/source`：全篇底本 ＋ 直译 |
-| 设置页 | 本地设置（存在这台设备的浏览器里，不上传） |
+| 设置页 | 本地设置（场景区浅色）＋ 清除本机阅读数据；**不上传任何东西** |
 
 界面不会出现「功能不可用」这类话——**没有要降级的东西**。
 
@@ -177,12 +179,14 @@ web/
     RichText.jsx          标记与轻量 Markdown 渲染
     CiteText.jsx          依据里的编号与引文
     SealMark.jsx          印章字
+    RecentRead.jsx        人物页的「最近阅读」（本机数据）
     SettingsClient.jsx    设置（客户端）
   lib/
     content.js            读编译产物
     range.mjs             「原文范围」的唯一实现（编译器和渲染层共用）
     cite.mjs              「拼出处」的唯一实现（编译器和骨架生成器共用）
     settings.js           本地设置存取（localStorage）
+    progress.js           阅读进度与复习状态（localStorage，模块级状态 + 订阅）
   scripts/                见上面的命令表
   data/content.json       编译产物（自动生成，不进版本库）
 ```
@@ -201,7 +205,7 @@ web/
 设计文档原本写的是 Next.js + Tailwind。实际用了**纯 CSS**：
 
 - `design/style-tile.html` 里已经有一份审过的 CSS，Tailwind 意味着把它重写成工具类
-- 竖排（`writing-mode`）、浮现动画、双面明暗切换这些，用工具类反而更难写
+- 浮现动画、双面明暗切换（以及设计里将来可能的竖排 `writing-mode`）这些，用工具类反而更难写
 
 **保真度优先于时髦。** 整个设计系统在 `app/globals.css` 一个文件里。
 
