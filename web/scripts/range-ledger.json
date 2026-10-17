@@ -17,7 +17,7 @@
  "caocao/04-xingyang": {
   "range": "015–021",
   "seeds": "ed084c028dd65947",
-  "cards": "a6a287bc794d02a5"
+  "cards": "6080ca56f47f0200"
  },
  "caocao/05-yanzhou": {
   "range": "023–026",
@@ -56,7 +56,7 @@
  },
  "jingke/02-tianguang": {
   "range": "017–025",
-  "seeds": "6f8b9061781f345c",
+  "seeds": "d792897744bec1c3",
   "cards": "3bab17b5d440c3ce"
  },
  "jingke/03-shouming": {
@@ -71,7 +71,7 @@
  },
  "jingke/05-taizidan": {
   "range": "048–053",
-  "seeds": "333ff449797369e7",
+  "seeds": "728f386cdcc62df5",
   "cards": "36de29adc3bd4438"
  },
  "jingke/06-yishui": {
@@ -86,7 +86,7 @@
  },
  "jingke/08-weisheng": {
   "range": "077–093",
-  "seeds": "fd834d6d308dfb1b",
+  "seeds": "36e5fa107ced0450",
   "cards": "45a74de8503b89c9"
  }
 }

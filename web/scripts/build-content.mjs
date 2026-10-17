@@ -32,7 +32,10 @@ import { citeOf } from '../lib/cite.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..', '..')
-const CONTENT = path.join(ROOT, 'content')
+/* 内容根目录可覆盖——**只为回归测试**（`scripts/test-visible-fields.mjs` 要把内容
+   复制到临时目录、注入批注，再跑同一份编译器）。生产路径不变。
+   `read()`／`exists()` 都走这个常量，所以覆盖它对整个编译流程生效。 */
+const CONTENT = process.env.CONTENT_ROOT ? path.resolve(process.env.CONTENT_ROOT) : path.join(ROOT, 'content')
 const PEOPLE = path.join(CONTENT, 'people')
 const OUT = path.join(ROOT, 'web', 'data')
 const CHECK_ONLY = process.argv.includes('--check')
@@ -654,17 +657,50 @@ function parseStoryContent(rel, source) {
 
     if (section === 'bg') {
       const h = line.match(/^### (.+?)(?:\s+([◆◇○△—]))?\s*$/)
-      if (h) { flushBg(); bg = { name: h[1].trim(), marker: h[2] || null, body: [], basis: null, imgFile: null, imgCaption: null }; return }
+      if (h) {
+        flushBg()
+        /* **背景卡用显式块，不再只收普通段落。**
+           原来这里是 `!/^[|#\-`]/.test(...)` ——**以 `|` 开头的行被静默跳过**，
+           于是「谁烧的船」那张三行出处对照表在编译产物里整张消失，
+           页面上只剩「还有两说」「三个方向」这些前后文。
+           见 docs/问题清单与研发整改任务书-2026-10-17.md 的 R02。 */
+        bg = { name: h[1].trim(), marker: h[2] || null, body: [], blocks: [], basis: null, imgFile: null, imgCaption: null,
+          /* 源文件里这张卡有几行表（不含分隔行）——出产物时用它对账，
+             这样「解析器把表吞了」才会红。见下面的回归检查。 */
+          __srcTableRows: 0 }
+        return
+      }
       if (!bg) return
       if (line.startsWith('> ')) {
         const raw = line.slice(2)
         if (/^\*\*依据\*\*/.test(raw)) { bg.basis = clean(raw.replace(/^\*\*依据\*\*：?/, '')); return }
         if (/^\*\*图\*\*/.test(raw)) { bg.imgFile = clean(raw.replace(/^\*\*图\*\*：?/, '')); return }
         if (/^\*\*图注\*\*/.test(raw)) { bg.imgCaption = clean(raw.replace(/^\*\*图注\*\*：?/, '')); return }
-        const t = clean(raw); if (t) bg.body.push(t)
+        const t = clean(raw); if (t) { bg.body.push(t); bg.blocks.push({ type: 'p', text: t }) }
         return
       }
-      if (line.trim() && !/^[|#\-`]/.test(line.trim())) bg.body.push(clean(line))
+      /* 表格：连续的 `| … |` 行收成一块，第一行是表头，第二行是分隔行（丢掉） */
+      if (/^\s*\|/.test(line)) {
+        const cells = line.trim().replace(/^\||\|$/g, '').split('|').map((c) => clean(c))
+        if (cells.every((c) => /^[-:]*$/.test(c))) return          // 分隔行
+        bg.__srcTableRows = (bg.__srcTableRows || 0) + 1
+        const last = bg.blocks[bg.blocks.length - 1]
+        if (last && last.type === 'table') last.rows.push(cells)
+        else bg.blocks.push({ type: 'table', head: cells, rows: [] })
+        bg.body.push(cells.join(' ｜ '))
+        return
+      }
+      if (line.trim()) {
+        /* **不支持的块要报错，不许吞。** 标题、围栏、行内代码开头的行
+           在背景卡里没有对应的渲染方式——以前它们被静默跳过。 */
+        if (/^#{1,6}\s/.test(line.trim()) || /^```/.test(line.trim())) {
+          throw new ParseError(rel, i + 1,
+            `背景卡「${bg.name}」里有一行是这个块解析器不支持的写法：「${line.trim().slice(0, 40)}」。` +
+            '**背景卡只认普通段落、`> ` 开头的依据/图注、以及 `|` 表格。**' +
+            '不支持的结构必须报出来，不能静默丢掉——丢掉的话读者看到的是残缺的卡，而编译一片绿')
+        }
+        const t = clean(line); if (t) { bg.body.push(t); bg.blocks.push({ type: 'p', text: t }) }
+      }
       return
     }
 
@@ -2152,6 +2188,50 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     }
   }
 
+  /* ── 背景卡的表格不许被吞（R02 的回归检查）──
+     **源文件里有几行表，编译产物里就得有几块表。**
+     这条检查的用法是「删掉解析或渲染逻辑时它会失败」：
+     `bg.blocks` 不再产出 `table` 块 → 这里报错；
+     `StoryClient` 不再渲染 `.bg-table` → `verify.mjs` 那边报错。
+     原来那张三行出处对照表在源文件里躺了很久，页面上一个字都没有，
+     而编译一片绿——所以这条要按「源文件 vs 产物」对账，不按「产物非空」。 */
+  for (const p of people) {
+    for (const st of Object.values(p.stories || {})) {
+      for (const bg of st.backgrounds || []) {
+        const tables = (bg.blocks || []).filter((b) => b.type === 'table')
+        /* **源文件里有几行表，产物里就得有几行。** 这才叫「删掉解析逻辑它会失败」——
+           只验「已存在的表」是验不出「表被吞掉」的。 */
+        const outRows = tables.reduce((n, t) => n + (t.rows?.length || 0) + 1, 0)
+        checks++
+        if ((bg.__srcTableRows || 0) > 0 && outRows !== bg.__srcTableRows) {
+          err(`${p.name} · ${st.id}`,
+            `背景卡「${bg.name}」的源文件里有 ${bg.__srcTableRows} 行表，编译产物里只有 ${outRows} 行——` +
+            '**表格被吞掉了**（R02）。以 `|` 开头的行不许静默丢弃')
+        }
+        /* 依据里如果写着 `NNN` 却连一段正文都没有，也是丢内容的一种 */
+        if (bg.basis && !String(bg.basis).trim()) {
+          err(`${p.name} · ${st.id}`, `背景卡「${bg.name}」有依据行但是空的`)
+        }
+        for (const t of tables) {
+          checks++
+          if (!t.head?.length || !t.rows?.length) {
+            err(`${p.name} · ${st.id}`,
+              `背景卡「${bg.name}」里有一块表，但只有表头没有数据行——` +
+              '**表格被解析成空壳了**（R02：表格不许被吞）')
+          }
+          for (const r of t.rows) {
+            checks++
+            if (r.length !== t.head.length) {
+              err(`${p.name} · ${st.id}`,
+                `背景卡「${bg.name}」的表里有一行是 ${r.length} 格，表头是 ${t.head.length} 格——` +
+                '列数对不上，渲染出来会错位')
+            }
+          }
+        }
+      }
+    }
+  }
+
   /* ── 两篇之间不许大段重复 ──
      **这是最基础的检查，它本该第一天就在，结果活到今天。**
      用户的原话：「怎么陈留起兵还是曹操刺董的事情，我现在对你的自我审核很怀疑啊，
@@ -2232,19 +2312,7 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
         }
       }
     }
-    for (const p of people) {
-      scan(`${p.name} · 他是谁`, p.who)
-      scan(`${p.name} · 引子`, (p.intro || []).join(' '))
-      for (const st of Object.values(p.stories || {})) {
-        const at = `${p.name} · ${st.id}`
-        for (const l of st.intro?.lines || []) scan(`${at} · 门口`, l.text)
-        for (const b of st.intro?.basis || []) scan(`${at} · 逐行依据`, b.basis)
-        for (const b of st.beats || []) scan(`${at} · 第 ${b.n} 段 · 说明`, b.note)
-        for (const b of st.blocks || []) scan(`${at} · 背景卡「${b.title}」`, b.body)
-        for (const sd of st.seeds || []) { scan(`${at} · 种子`, sd.answer); scan(`${at} · 种子依据`, sd.ground) }
-        for (const cd of st.cards || []) { scan(`${at} · 复习卡`, cd.q); scan(`${at} · 复习卡答案`, cd.a) }
-      }
-    }
+    for (const [where, text] of visibleFields(people)) scan(where, text)
   }
 
   /* ── 门口的长度 ──
@@ -2329,6 +2397,67 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     fs.writeFileSync(LEDGER, JSON.stringify(nextLedger, null, 1) + '\n')
     console.log('  · 范围变更账本已更新（scripts/range-ledger.json）')
   }
+}
+
+/**
+ * **读者可见字段的唯一遍历入口。**
+ *
+ * 这一段是 R03 的整改结果。原来那段扫描写的是 `st.blocks`、`sd.ground`、`cd.a`——
+ * **三个字段都不存在**（真名是 `st.backgrounds`、`sd.meta`、`cd.blocks`），
+ * 所以它声称覆盖的地方一处也没扫到：往背景卡里塞一句「本文件早先写成另一版本，
+ * 需另行核对。」，`--check` 照样退出 0。
+ *
+ * 现在的规矩：**要扫读者可见的文字，就从这里拿；不许各条规则自己拼字段列表。**
+ * 覆盖：人物简介与引子、人物时间线、故事门口与逐行依据、情节点正文与说明、
+ * 背景卡（段落／表格／依据）、问答（回答／系统说明／元数据）、
+ * 复习卡（题面／段落／表格／元数据）。
+ *
+ * **编辑备注和内部字段不在这里**——`sd.internal`、`b.note` 的「内部」语义、
+ * 设计说明那些是给写作者看的，渲染不到读者面前。
+ */
+function visibleFields(people) {
+  const out = []
+  const push = (where, text) => { if (text != null && String(text).trim()) out.push([where, String(text)]) }
+  for (const p of people) {
+    push(`${p.name} · 他是谁`, p.who)
+    push(`${p.name} · 引子`, (p.intro || []).join(' '))
+    for (const t of p.timeline || []) push(`${p.name} · 时间线 ${t.time}`, `${t.event}${t.story ? '（' + t.story + '）' : ''}`)
+    for (const st of Object.values(p.stories || {})) {
+      const at = `${p.name} · ${st.id}`
+      for (const l of st.intro?.lines || []) push(`${at} · 门口`, l.text)
+      for (const b of st.intro?.basis || []) push(`${at} · 逐行依据`, b.basis)
+      for (const b of st.beats || []) {
+        push(`${at} · 第 ${b.n} 段`, (b.prose || []).join(' '))
+        push(`${at} · 第 ${b.n} 段 · 说明`, b.note)
+      }
+      for (const bg of st.backgrounds || []) {
+        for (const blk of bg.blocks || []) {
+          if (blk.type === 'table') {
+            push(`${at} · 背景卡「${bg.name}」· 表头`, (blk.head || []).join(' ｜ '))
+            ;(blk.rows || []).forEach((r, k) => push(`${at} · 背景卡「${bg.name}」· 第 ${k + 1} 行`, r.join(' ｜ ')))
+          } else push(`${at} · 背景卡「${bg.name}」`, blk.text)
+        }
+        push(`${at} · 背景卡「${bg.name}」· 依据`, bg.basis)
+        push(`${at} · 背景卡「${bg.name}」· 图注`, bg.imgCaption)
+      }
+      for (const sd of st.seeds || []) {
+        push(`${at} · 种子`, sd.answer)
+        push(`${at} · 种子 · 系统说明`, sd.sys)
+        for (const m of sd.meta || []) push(`${at} · 种子 · ${m.k}`, m.v)
+      }
+      for (const cd of st.cards || []) {
+        push(`${at} · 复习卡`, cd.q)
+        for (const blk of cd.blocks || []) {
+          if (blk.t === 'table') {
+            push(`${at} · 复习卡 · 表头`, (blk.head || []).join(' ｜ '))
+            ;(blk.rows || []).forEach((r, k) => push(`${at} · 复习卡 · 第 ${k + 1} 行`, r.join(' ｜ ')))
+          } else push(`${at} · 复习卡 · 答案`, blk.v)
+        }
+        for (const m of cd.meta || []) push(`${at} · 复习卡 · ${m.k}`, m.v)
+      }
+    }
+  }
+  return out
 }
 
 function main() {

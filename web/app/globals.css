@@ -988,8 +988,13 @@ body.light-stage{
 .src-no a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
 .src-no .tag{display:block;margin-top:4px;font-size:10.5px;letter-spacing:.04em;
   color:#8a6a2a;border:1px solid rgba(138,106,42,.4);border-radius:2px;padding:0 4px;width:max-content}
-.src-text{margin:0;font-family:var(--song,serif);font-size:15.5px;line-height:1.85;
-  letter-spacing:.02em;color:var(--ink,#222)}
+/* 原文：**暗场正文色**（`--su`）和设计系统里的 `--f-song`。
+   原来写的是 `--ink`——那个变量在本项目里是**朱红墨痕**（`--zhu`），
+   于是整页原文呈红色；`--song` 这个变量根本不存在，字体静默回退到 serif。
+   见 R01。 */
+.src-body{min-width:0}
+.src-text{margin:0;font-family:var(--f-song);font-size:15.5px;line-height:1.85;
+  letter-spacing:.02em;color:var(--su)}
 .src-gloss{margin:6px 0 0;font-size:14px;line-height:1.8;color:var(--su,#555)}
 .src-gloss.none{color:var(--su-dim);opacity:.6}
 .src-gloss .lead{display:inline-block;margin-right:8px;font-size:10.5px;letter-spacing:.1em;
@@ -1002,3 +1007,17 @@ body.light-stage{
 .entry-card b{display:block;font-size:15px;letter-spacing:.06em;margin-bottom:5px}
 .entry-card span{font-size:13.5px;color:var(--su,#555);line-height:1.7}
 .entry-card:hover{border-color:rgba(0,0,0,.3)}
+
+/* 背景卡里的出处对照表（R02）。
+   在这之前，以 `|` 开头的行在编译期被静默丢掉——表在源文件里，
+   页面上只剩「还有两说」「三个方向」这些前后文。 */
+.bg-table{width:100%;border-collapse:collapse;margin:10px 0 12px;font-size:12.5px;line-height:1.75}
+.bg-table th,.bg-table td{text-align:left;vertical-align:top;padding:7px 10px;
+  border-bottom:1px solid var(--xuan-3,rgba(255,255,255,.08))}
+.bg-table th{font-weight:500;color:var(--su-dim);letter-spacing:.04em;
+  border-bottom-color:var(--stage-rule,rgba(236,231,221,.28))}
+.bg-table td:first-child{white-space:nowrap;color:var(--su-dim)}
+.bg-table td{color:var(--su)}
+@media(max-width:640px){.bg-table{font-size:12px}
+  .bg-table th,.bg-table td{padding:6px 6px}
+  .bg-table td:first-child{white-space:normal}}

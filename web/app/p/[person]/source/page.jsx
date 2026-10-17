@@ -15,6 +15,12 @@ export async function generateMetadata({ params }) {
 
 /* 号段 → 档次。和编译器里的号段表是同一个口径：
    正史 001–199 · 注 201–399 · 小说 401–599 · 野史 601–799。 */
+/* 底本和直译里夹着写作时的记号：`**` 是「这句是我说的、不是原文」，
+   `` ` `` 是编号。规范（content/README.md「**粗体** 不渲染，这是有意的」）说
+   **界面上不渲染它们**——所以这里剥掉，而不是交给 RichText 变成 <b>，
+   更不是把未处理的 HTML 塞进页面。 */
+const plain = (t) => String(t ?? '').replace(/\*\*/g, '').replace(/`/g, '')
+
 const bandOf = (id) => {
   const n = Number(id)
   if (n >= 601) return '野史'
@@ -88,10 +94,16 @@ export default async function SourcePage({ params }) {
                 <div className="src-no">
                   <a href={`#s-${id}`}>{id}</a>
                 </div>
-                <p className="src-text">{source[id].text}</p>
-                {gloss[id]
-                  ? <p className="src-gloss"><span className="lead">直译</span>{gloss[id]}</p>
-                  : null}
+                {/* **原文和直译必须在同一个正文列里。**
+                    原来是三个并列子元素（编号／原文／直译），而栅格只有两列——
+                    直译自动落到第二行第一列，宽度只有编号列那么宽（64px）。
+                    见 docs/问题清单与研发整改任务书-2026-10-17.md 的 R01。 */}
+                <div className="src-body">
+                  <p className="src-text">{plain(source[id].text)}</p>
+                  {gloss[id]
+                    ? <p className="src-gloss"><span className="lead">直译</span>{plain(gloss[id])}</p>
+                    : null}
+                </div>
               </li>
             ))}
           </ol>

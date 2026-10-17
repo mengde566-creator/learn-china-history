@@ -442,8 +442,23 @@ export default function StoryClient({ person, story, source }) {
                         <span className="label" style={{ color: 'var(--mo)' }}>{bg.name}</span>
                         {bg.marker && <span className="glyph mk"><Marker ch={bg.marker} size={11} /></span>}
                       </div>
-                      {bg.body.map((p, j) => (
-                        <div key={j} className="body" style={{ marginBottom: 8 }}><RichText text={p} /></div>
+                      {/* **按块渲染，不按段落数组渲染。**
+                          背景卡里原来只有段落；出处对照表那种表格在编译期就被丢掉了
+                          （见 R02）。现在编译器给出 `blocks`，表格原样渲染成表格。
+                          老数据没有 `blocks` 时退回 `body`，不让既有背景卡变空。 */}
+                      {(bg.blocks?.length ? bg.blocks : bg.body.map((text) => ({ type: 'p', text }))).map((blk, j) => (
+                        blk.type === 'table' ? (
+                          <table key={j} className="bg-table">
+                            <thead><tr>{blk.head.map((c, k) => <th key={k}><RichText text={c} /></th>)}</tr></thead>
+                            <tbody>
+                              {blk.rows.map((r, k) => (
+                                <tr key={k}>{r.map((c, m) => <td key={m}><RichText text={c} /></td>)}</tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        ) : (
+                          <div key={j} className="body" style={{ marginBottom: 8 }}><RichText text={blk.text} /></div>
+                        )
                       ))}
                       {bg.basis && (
                         <div className="body" style={{ fontSize: 11.5, color: 'var(--mo-mute)', marginTop: 10, paddingTop: 9, borderTop: '1px solid var(--zhi-3)' }}>
