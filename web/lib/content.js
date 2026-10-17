@@ -45,7 +45,11 @@ export function groupByEra(people) {
     if (!map.has(era)) map.set(era, [])
     map.get(era).push(p)
   }
-  return [...map.entries()].map(([era, list]) => ({ era, list }))
+  /* **按时代先后排**，不按人物目录的顺序。 */
+  const rank = (e) => { const i = ERA_ORDER.indexOf(e); return i < 0 ? ERA_ORDER.length : i }
+  return [...map.entries()]
+    .sort((a, b) => rank(a[0]) - rank(b[0]) || a[0].localeCompare(b[0], 'zh'))
+    .map(([era, list]) => ({ era, list }))
 }
 
 /**
@@ -59,10 +63,19 @@ export function sourceRange(person, range) {
   return out
 }
 
-/** 计划中的人物 —— 还没有内容，只在总览里占一个位置 */
+/**
+ * 计划中的人物 —— 还没有内容，只在总览里占一个位置。
+ *
+ * **`id` 必须和已实现人物共用一套**：`曹操` 曾经既在这里、又在已实现列表里，
+ * 首页于是同时显示「可进入的曹操」和「锁定的曹操」两张卡。
+ * 现在按 `id` 去重（见 `app/page.jsx`），所以这里的 id 要和 `people/<id>/` 对得上。
+ */
 export const PLANNED = [
-  { name: '曹操', era: '三国', book: '《三国志·武帝纪》' },
-  { name: '刘裕', era: '东晋 · 南朝宋', book: '《宋书·武帝纪》' },
-  { name: '高欢', era: '东魏 · 北齐', book: '《北齐书·神武帝纪》' },
-  { name: '宇文泰', era: '西魏 · 北周', book: '《周书·文帝纪》' },
+  { id: 'liuyu', name: '刘裕', era: '东晋 · 南朝宋', book: '《宋书·武帝纪》' },
+  { id: 'gaohuan', name: '高欢', era: '东魏 · 北齐', book: '《北齐书·神武帝纪》' },
+  { id: 'yuwentai', name: '宇文泰', era: '西魏 · 北周', book: '《周书·文帝纪》' },
 ]
+
+/** 时代的先后。**不能按人物目录的顺序插**——那会先出三国、再出战国末。
+    没列进来的时代排在最后（按名字），不静默丢。 */
+export const ERA_ORDER = ['战国末', '秦', '西汉', '东汉', '三国', '西晋', '东晋 · 南朝宋', '东魏 · 北齐', '西魏 · 北周', '隋', '唐']

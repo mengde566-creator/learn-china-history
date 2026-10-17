@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import RichText, { Marker, Legend } from '@/components/RichText'
+import CiteText from '@/components/CiteText'
 import SeedSheet from '@/components/SeedSheet'
 import ReviewCards from '@/components/ReviewCards'
 
@@ -86,6 +87,11 @@ export default function StoryClient({ person, story, source }) {
   const [phase, setPhase] = useState('opening') // opening | live
   const [revealed, setRevealed] = useState(1)
   const [tab, setTab] = useState('evidence')
+  /* 引用跳转之前在哪——原文那一段上给一个「返回」 */
+  const [cameFrom, setCameFrom] = useState(null)
+  /* 本篇「原文」页签里真的有的编号——依据里的编号只有在这范围内才给跳，
+     范围外的点了会落空（那种编号本来也不该出现，编译器另有跨篇提醒）。 */
+  const sourceIds = useMemo(() => new Set(Object.keys(source || {})), [source])
   const [following, setFollowing] = useState(1)  // 读到第几段（依据面板跟着它走）
   const [sheet, setSheet] = useState(false)
   const stageRef = useRef(null)
@@ -104,6 +110,25 @@ export default function StoryClient({ person, story, source }) {
   /* 把某一段滚到滚动区中央。
      桌面是阅读器布局——场景区自己是滚动容器，所以滚它，不滚页面。
      内容还没超出容器时什么都不做（此时本来也不需要滚）。 */
+  /* **引用跳转**：点依据里的编号 → 切到「原文」页签、滚到那一段。
+     并记下跳之前在哪，好在原文那一段上给一个「返回」。 */
+  const jumpToSource = useCallback((id) => {
+    /* **入场页上点编号**：先得进场景，「原文」页签才存在。
+       记下来的「从哪来」是入场页——返回时回到入场页，读者不会莫名被推进正文。 */
+    setCameFrom((prev) => prev ?? { tab, beat: revealed, entrance: phase !== 'live' })
+    if (phase !== 'live') setPhase('live')
+    setTab('source')
+    requestAnimationFrame(() => {
+      const el = document.getElementById(`src-${id}`)
+      const box = document.querySelector('.stage') || document.scrollingElement
+      if (!el) return
+      const top = el.getBoundingClientRect().top - (box.getBoundingClientRect?.().top || 0) + (box.scrollTop || 0) - 12
+      box.scrollTo ? box.scrollTo({ top, behavior: 'smooth' }) : el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      el.classList.add('flash')
+      setTimeout(() => el.classList.remove('flash'), 1600)
+    })
+  }, [tab, revealed])
+
   const scrollToBeat = useCallback((n) => {
     const stage = stageRef.current
     const el = document.getElementById(`beat-${n}`)
@@ -122,6 +147,15 @@ export default function StoryClient({ person, story, source }) {
   useEffect(() => {
     if (phase === 'live') scrollToBeat(revealed)
   }, [revealed, phase, scrollToBeat])
+
+  const backFromSource = useCallback(() => {
+    if (!cameFrom) return
+    /* 从入场页跳过来的，返回时回到入场页 */
+    if (cameFrom.entrance) { setPhase('opening'); setCameFrom(null); return }
+    setTab(cameFrom.tab)
+    setCameFrom(null)
+    requestAnimationFrame(() => scrollToBeat(cameFrom.beat))
+  }, [cameFrom, scrollToBeat])
 
   /* 依据面板跟随阅读位置：
      取「穿过滚动区中线」的那个情节点，左右就不会各看各的。 */
@@ -212,7 +246,7 @@ export default function StoryClient({ person, story, source }) {
                             {r.marker}
                           </span>
                         </div>
-                        <div className="body">{r.basis}</div>
+                        <div className="body"><CiteText text={r.basis} ids={sourceIds} onJump={jumpToSource} /></div>
                       </div>
                     ))}
                   </div>
@@ -377,7 +411,7 @@ export default function StoryClient({ person, story, source }) {
                         没有可显示的就不显示——不再补一句「引文即证据，见上」。
                         标记本身已经说完了。 */}
                     {evidenceAdds(shownBeat, source) && (
-                      <div className="body"><RichText text={shownBeat.ground} /></div>
+                      <div className="body"><CiteText text={shownBeat.ground} ids={sourceIds} onJump={jumpToSource} /></div>
                     )}
                   </div>
                 </div>
@@ -407,13 +441,18 @@ export default function StoryClient({ person, story, source }) {
                   野史: '不是正史',
                 }
                 const row = (s) => (
-                  <div key={s.id} className={`mark-block ${s.tier === '正史' ? 'source' : FOREIGN_TIERS.has(s.tier) ? 'fiction' : 'noted'}`}>
+                  <div key={s.id} id={`src-${s.id}`}
+                    className={`mark-block ${s.tier === '正史' ? 'source' : FOREIGN_TIERS.has(s.tier) ? 'fiction' : 'noted'}`}>
                     <div className="hd">
                       <span className="glyph mk"><Marker ch={FOREIGN_TIERS.has(s.tier) ? '◇' : '◆'} size={11} /></span>
                       {/* 书名在标题里（正史）或者在牌上（注、小说），行尾只留编号，
                           不然会出现「《三国演义》第四回　《三国演义》第四回 201」 */}
                       {s.tier !== '正史' && <span className="tag">{s.origin}</span>}
                       <span className="src">{s.id}</span>
+                      {/* **返回**：从依据点编号跳过来的人，要能一步回到刚才读的地方 */}
+                      {cameFrom && (
+                        <button type="button" className="cite back" onClick={backFromSource}>← 返回</button>
+                      )}
                     </div>
                     <div className="quote">{s.text}</div>
                   </div>
@@ -479,7 +518,7 @@ export default function StoryClient({ person, story, source }) {
                         <span className="label" style={{ color: 'var(--mo)', fontWeight: 400, fontSize: 13 }}>{row.claim}</span>
                         <span className="src"><RichText text={row.marker} /></span>
                       </div>
-                      <div className="body" style={{ fontSize: 12 }}><RichText text={row.basis} /></div>
+                      <div className="body" style={{ fontSize: 12 }}><CiteText text={row.basis} ids={sourceIds} onJump={jumpToSource} /></div>
                     </div>
                   ))}
                 </div>

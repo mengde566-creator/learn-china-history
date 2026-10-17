@@ -7,9 +7,12 @@ export default function Home() {
 
   /* 已实现的 + 计划中的，一起按时代分组。
      计划中的那些不做成独立区块——它们本来就是"还没到的时代"。 */
+  /* **按 id 去重。** 曹操曾经既在 `PLANNED` 里、又在已实现列表里，
+     首页于是同时出现「可进入的曹操」和「锁定的曹操」。 */
+  const have = new Set(people.map((p) => p.id))
   const all = [
     ...people.map((p) => ({ ...p, planned: false })),
-    ...PLANNED.map((p) => ({ ...p, id: null, planned: true, storyList: [] })),
+    ...PLANNED.filter((p) => !have.has(p.id)).map((p) => ({ ...p, planned: true, storyList: [] })),
   ]
   const groups = groupByEra(all)
 

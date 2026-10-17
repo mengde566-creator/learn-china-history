@@ -1021,3 +1021,17 @@ body.light-stage{
 @media(max-width:640px){.bg-table{font-size:12px}
   .bg-table th,.bg-table td{padding:6px 6px}
   .bg-table td:first-child{white-space:normal}}
+
+/* 依据里的编号可以点（R09：引用跳转与返回）。
+   点它 → 切到「原文」页签、滚到那一段、闪一下；那一段上有「← 返回」回到原处。 */
+.cite{font-family:var(--f-mono);font-size:12.5px;color:var(--accent);
+  background:none;border:0;border-bottom:1px dotted currentColor;padding:0 1px;margin:0 1px;
+  cursor:pointer;line-height:inherit}
+.cite:hover{color:var(--su);border-bottom-style:solid}
+.cite.back{margin-left:auto;font-size:11.5px;letter-spacing:.04em;border-bottom:0;
+  color:var(--su-dim);padding:2px 7px;border:1px solid var(--xuan-3,rgba(255,255,255,.14));border-radius:2px}
+.cite.back:hover{color:var(--su);border-color:var(--stage-rule,rgba(236,231,221,.34))}
+/* 跳过去的那一段闪一下，让眼睛找得到 */
+.mark-block.flash{animation:cite-flash 1.6s var(--ease)}
+@keyframes cite-flash{0%,30%{background:rgba(184,64,47,.10);box-shadow:inset 2px 0 0 var(--zhu)}
+  100%{background:transparent;box-shadow:inset 2px 0 0 transparent}}

@@ -16,27 +16,6 @@ export default function SettingsClient() {
       <section>
         <div className="set-row">
           <div className="info">
-            <h3>
-              AI 自由对话
-              <span className={`badge ${settings.aiEnabled ? 'on' : 'off'}`} style={{ marginLeft: 10 }}>
-                {settings.aiEnabled ? '已开启' : '未开启'}
-              </span>
-            </h3>
-            <p>开启后可以自己输入问题；关闭时用预置问答，完整循环一样走得通。</p>
-          </div>
-          <div className="ctrl">
-            <button
-              className="switch"
-              role="switch"
-              aria-checked={ready && settings.aiEnabled}
-              aria-label="AI 自由对话"
-              onClick={() => update({ aiEnabled: !settings.aiEnabled })}
-            />
-          </div>
-        </div>
-
-        <div className="set-row">
-          <div className="info">
             <h3>场景区浅色</h3>
             <p>长时间阅读觉得暗场累，可以打开。</p>
           </div>

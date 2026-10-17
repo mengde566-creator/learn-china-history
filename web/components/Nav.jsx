@@ -19,7 +19,6 @@ export default function Nav() {
   return (
     <nav className="nav">
       <span className="brand">观 史</span>
-      <span className="tag">无 AI 模式</span>
       <div className="links">
         {LINKS.map((l) => (
           <Link key={l.href} href={l.href} aria-current={pathname === l.href ? 'page' : undefined}>

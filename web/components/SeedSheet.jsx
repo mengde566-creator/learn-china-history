@@ -39,7 +39,7 @@ export default function SeedSheet({ seeds, onClose }) {
         <div className="sheet-head">
           <h2>你 此 刻 想 问 谁 ？</h2>
           <span className="note">
-            当前为无 AI 模式 · 共 {seeds.length} 个问题，全部经人工审校
+            共 {seeds.length} 个问题，全部经人工审校
           </span>
           <button className="x" onClick={onClose} aria-label="关闭">×</button>
         </div>

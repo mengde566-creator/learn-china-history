@@ -48,6 +48,9 @@ const routeOf = ({ person, story }) => `/p/${person.id}/${story.id}`
 const ROUTES = [
   '/', '/settings',
   ...PEOPLE.map((p) => `/p/${p.id}`),
+  /* **完整资料页也要进验证清单。** 评估时 22 个页面里没有它，
+     而 R01 的排版故障就出在这一页上。 */
+  ...PEOPLE.map((p) => `/p/${p.id}/source`),
   ...READY.map(routeOf),
 ]
 /* 挑样本时优先用「有原文台词」和「铺陈不带内联标记」的篇目——
@@ -591,7 +594,83 @@ try {
     process.exit(1)
   }
 
-  const todo = FILTER ? results.filter((r) => r.name.includes(FILTER)) : results
+  /* ══════════════════════════════════════════════
+   R01–R10 的回归检查
+   ══════════════════════════════════════════════ */
+
+/** 走到正文里（入场页上有个「进 入」按钮）。 */
+async function enterStory() {
+  const cta = await page.$('button.cta')
+  if (cta) { await cta.click(); await page.waitForTimeout(500) }
+}
+
+check('R01: 资料页的原文与直译在同一列、原文不是朱红、没有裸露的 **', async () => {
+  const bad = []
+  for (const person of PEOPLE) {
+    await page.goto(`${BASE}/p/${person.id}/source`, { waitUntil: 'networkidle' })
+    const r = await page.evaluate(() => {
+      const li = document.querySelector('.src-item')
+      if (!li) return null
+      const tx = li.querySelector('.src-text')?.getBoundingClientRect()
+      const gl = li.querySelector('.src-gloss')?.getBoundingClientRect()
+      const cs = li.querySelector('.src-text') ? getComputedStyle(li.querySelector('.src-text')) : null
+      return {
+        txX: tx ? Math.round(tx.left) : null, txW: tx ? Math.round(tx.width) : null,
+        glX: gl ? Math.round(gl.left) : null,
+        color: cs?.color,
+        stars: (document.body.innerText.match(/\*\*/g) || []).length,
+      }
+    })
+    if (!r) { bad.push(`${person.id}/source 没有 .src-item`); continue }
+    if (!(r.txW > 200)) bad.push(`${person.id}/source 原文列只有 ${r.txW}px`)
+    if (r.glX !== null && r.glX !== r.txX) bad.push(`${person.id}/source 直译左 ${r.glX} ≠ 原文 ${r.txX}（掉进编号列）`)
+    if (/^rgb\(184, 64, 47\)/.test(r.color)) bad.push(`${person.id}/source 原文是朱红 ${r.color}`)
+    if (r.stars) bad.push(`${person.id}/source 露出 ${r.stars} 处 **`)
+  }
+  return bad.length ? fail(bad.join('；')) : ok(`${PEOPLE.length} 个资料页：同列、正文色、无 **`)
+})
+
+check('R02: 背景卡的出处对照表渲染成表格，不是被吞掉', async () => {
+  await page.goto(`${BASE}/p/caocao/09-chibi`, { waitUntil: 'networkidle' })
+  await enterStory()
+  await page.getByRole('button', { name: '背景' }).click()
+  await page.waitForTimeout(400)
+  const t = page.locator('.bg-table').first()
+  if (!(await t.count())) return fail('背景卡里没有 .bg-table——表格在编译期被吞了')
+  const rows = await t.locator('tbody tr').count()
+  const head = await t.locator('th').count()
+  if (head < 2) return fail(`表头只有 ${head} 格`)
+  if (rows < 3) return fail(`表体只有 ${rows} 行（「谁烧的船」应有 4 行）`)
+  return ok(`「谁烧的船」对照表：表头 ${head} 格、表体 ${rows} 行`)
+})
+
+check('R09: 依据里的编号能跳到原文，并且能返回', async () => {
+  await page.goto(`${BASE}/p/caocao/08-guandu`, { waitUntil: 'networkidle' })
+  const cites = await page.locator('button.cite:not(.back)').count()
+  if (!cites) return fail('入场页的逐行依据里没有可点编号')
+  const id = (await page.locator('button.cite:not(.back)').first().textContent()).trim()
+  await page.locator('button.cite:not(.back)').first().click()
+  await page.waitForTimeout(800)
+  if (!(await page.locator(`#src-${id}`).count())) return fail(`点了「${id}」但原文页签里没有 #src-${id}`)
+  const back = page.locator('button.cite.back')
+  if (!(await back.count())) return fail(`跳到 ${id} 之后没有返回入口`)
+  await back.first().click()
+  await page.waitForTimeout(600)
+  if (!(await page.locator('.note-box').count())) return fail('点返回之后没有回到入场页')
+  return ok(`${cites} 个可点编号；点「${id}」跳转并返回都在`)
+})
+
+check('R10: 面板页签可以用键盘走到', async () => {
+  await page.goto(`${BASE}${routeOf(READY[0])}`, { waitUntil: 'networkidle' })
+  await enterStory()
+  const btns = await page.evaluate(() =>
+    [...document.querySelectorAll('.panel-tabs button')].map((b) => ({ tag: b.tagName, tab: b.tabIndex, dis: b.disabled })))
+  if (btns.length < 5) return fail(`面板页签只有 ${btns.length} 个`)
+  const bad = btns.filter((b) => b.tag !== 'BUTTON' || b.tab < 0 || b.dis)
+  return bad.length ? fail(`${bad.length} 个页签不是可聚焦的 button（键盘走不到）`) : ok(`${btns.length} 个页签都是可聚焦的 button`)
+})
+
+const todo = FILTER ? results.filter((r) => r.name.includes(FILTER)) : results
   console.log(`\n观史 · 浏览器验证${FILTER ? `（筛选：${FILTER}）` : ''}\n`)
 
   let failed = 0
@@ -611,3 +690,4 @@ try {
   if (browser) await browser.close()
   process.exit(1)
 }
+
