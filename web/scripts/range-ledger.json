@@ -12,7 +12,7 @@
  "caocao/03-chenliu": {
   "range": "014–015、214–219",
   "seeds": "a0f241135ef08402",
-  "cards": "9292be19d6a171e7"
+  "cards": "a88b6028d7ec70a8"
  },
  "caocao/04-xingyang": {
   "range": "015–021",
@@ -40,9 +40,9 @@
   "cards": "569478e31054c729"
  },
  "caocao/09-chibi": {
-  "range": "064–066、113–116、265、405",
-  "seeds": "c2b98f295498de28",
-  "cards": "92ce1012ef22a8dd"
+  "range": "064–066、113、114、265、312、313、405",
+  "seeds": "a81cb4e07f3def68",
+  "cards": "f3af737faa5458f9"
  },
  "caocao/10-weiwang": {
   "range": "074–080、095–099、108–112",
@@ -87,6 +87,6 @@
  "jingke/08-weisheng": {
   "range": "077–093",
   "seeds": "abfdf6c71c997895",
-  "cards": "5c4bb65a671a8a7b"
+  "cards": "8970c2a22d7cbcf4"
  }
 }
