@@ -24,10 +24,12 @@ const JUNK = '本文件早先写成另一版本，需另行核对。'
    **表格行要插在收尾 `|` 之前**——插在它后面是格外的文字，会被正常丢掉，
    那不是「漏扫」，是注入方式不对（第一次就踩了这个）。 */
 const CASES = [
-  ['背景卡（段落）', 'people/caocao/stories/09-chibi.md', '最眼熟的那一说是：黄盖的火船。', 'para'],
+  /* 锚点要跟着内容走——R05 把这张卡重写过一次，旧的锚点就失效了。
+     夹具找不到锚点会报「锚点没找到」，那是**测试失效**，不是漏扫。 */
+  ['背景卡（段落）', 'people/caocao/stories/09-chibi.md', '这一件事，正史和小说都写了', 'para'],
   ['人物引子', 'people/jingke/person.md', '## 他是谁', 'after2'],
   ['问答依据', 'people/jingke/seeds/06-yishui.md', '| 依据 |', 'cell'],
-  ['复习卡答案', 'people/jingke/cards/06-yishui.md', '答：因为那是', 'line'],
+  ['复习卡答案', 'people/jingke/cards/06-yishui.md', '答：**常被解释为送死之服', 'line'],
 ]
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'guanshi-vis-'))
