@@ -21,7 +21,7 @@
  },
  "caocao/05-yanzhou": {
   "range": "023–026",
-  "seeds": "abc5330a36fba5ca",
+  "seeds": "981ffb76a9990d05",
   "cards": "eb1b94216563b05c"
  },
  "caocao/06-qingzhou": {
@@ -30,9 +30,9 @@
   "cards": "417d37a2e517e556"
  },
  "caocao/07-fengtianzi": {
-  "range": "031–034",
-  "seeds": "f32fd6a687e6bdae",
-  "cards": "dea62d16ec7d29a9"
+  "range": "031–034、234",
+  "seeds": "2296a32c56fba3f0",
+  "cards": "1da1449c11756607"
  },
  "caocao/08-guandu": {
   "range": "040–045、242–244",
