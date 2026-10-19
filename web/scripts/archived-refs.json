@@ -1,0 +1,52 @@
+[
+  {
+    "file": "beiqishu-01.txt",
+    "title": "《北齐书》卷一",
+    "url": "https://zh.wikisource.org/w/index.php?title=北齊書/卷1&oldid=2432532",
+    "about": "https://zh.wikisource.org/w/index.php?title=北齊書/卷1&oldid=2432532",
+    "revision": "2432532",
+    "archive": "content/references/beiqishu-01.txt",
+    "sha256": "be8ef639280826d6ac8bcab00b6ee71e678691cbdf50167e6bc63220b0931add",
+    "min": 1
+  },
+  {
+    "file": "beiqishu-02.txt",
+    "title": "《北齐书》卷二",
+    "url": "https://zh.wikisource.org/w/index.php?title=北齊書/卷2&oldid=2432493",
+    "about": "https://zh.wikisource.org/w/index.php?title=北齊書/卷2&oldid=2432493",
+    "revision": "2432493",
+    "archive": "content/references/beiqishu-02.txt",
+    "sha256": "d3c22db60e453f3618908277658edb966474610547fae70ae293f1c4062441fe",
+    "min": 1
+  },
+  {
+    "file": "gaohuan-wei-10.txt",
+    "title": "《魏书》四库全书本卷十摘录",
+    "url": "https://zh.wikisource.org/wiki/魏書_(四庫全書本)/卷010",
+    "about": "https://zh.wikisource.org/wiki/魏書_(四庫全書本)/卷010",
+    "revision": "2026-10-18 页面工具摘录",
+    "archive": "content/references/gaohuan-wei-10.txt",
+    "sha256": "334526ed6fb077e98a50aa2d1552e3904d32c18b4c2fcad057f665c405474de7",
+    "min": 1
+  },
+  {
+    "file": "gaohuan-zhou-02.txt",
+    "title": "《周书》卷二摘录",
+    "url": "https://zh.wikisource.org/wiki/周書/卷02",
+    "about": "https://zh.wikisource.org/wiki/周書/卷02",
+    "revision": "2026-10-18 页面工具摘录",
+    "archive": "content/references/gaohuan-zhou-02.txt",
+    "sha256": "b14fc45201ae50c4cf1271af677512843c3691b40e7bff24a490142ebfac6709",
+    "min": 1
+  },
+  {
+    "file": "gaohuan-zhou-31.txt",
+    "title": "《周书》卷三十一摘录",
+    "url": "https://zh.wikisource.org/wiki/周書/卷31",
+    "about": "https://zh.wikisource.org/wiki/周書/卷31",
+    "revision": "2026-10-18 页面工具摘录",
+    "archive": "content/references/gaohuan-zhou-31.txt",
+    "sha256": "cd44a45cfa48808dee415ba79a9c981162aafbd66ad12a916e45967441d5f164",
+    "min": 1
+  }
+]

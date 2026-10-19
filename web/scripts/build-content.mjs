@@ -29,6 +29,7 @@ import { createHash } from 'node:crypto'
    两边各写一份正则的话，编译器校验的和页面渲染的迟早不是同一件事。 */
 import { parseRange } from '../lib/range.mjs'
 import { citeOf } from '../lib/cite.mjs'
+import { supplementaryIds } from '../lib/story-sources.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..', '..')
@@ -195,7 +196,7 @@ function parsePersonMeta(rel) {
     if (c && c.length >= 2 && c[0] && c[1]) meta[clean(c[0]).replace(/\*\*/g, '')] = clean(c[1])
   }
   const timeline = sectionTable(lines, '关键时点', 3).map((c) => ({
-    time: c[0], event: c[1], story: c[2] ?? '',
+    time: c[0], event: c.length >= 4 ? `${c[1]} · ${c[2]}` : c[1], story: c.length >= 4 ? c[3] : (c[2] ?? ''),
   }))
 
   return {
@@ -900,18 +901,28 @@ function parseCards(rel) {
   let card = null
   let blocks = []
   let table = null
+  let code = null
 
   const pushTable = () => { if (table) { blocks.push(table); table = null } }
   const flush = () => {
     if (!card) return
+    if (code) throw new ParseError(rel, 0, '复习卡代码块缺少结束围栏')
     pushTable()
-    card.blocks = blocks.filter((b) => (b.t === 'p' ? b.v.trim() : b.rows.length))
+    card.blocks = blocks.filter((b) => (b.t === 'table' ? b.rows.length : b.v.trim()))
     if (card.q && card.blocks.length) cards.push(card)
     card = null
     blocks = []
   }
 
-  lines.forEach((line) => {
+  lines.forEach((line, i) => {
+    const ln = i + 1
+    if (card && /^```/.test(line.trim())) {
+      pushTable()
+      if (code) { blocks.push({ t: 'pre', v: code.join('\n') }); code = null }
+      else code = []
+      return
+    }
+    if (code) { code.push(clean(line)); return }
     const h = line.match(/^### 卡 (\d+) · (.+?)(?:\s*[★⚠️]+)?\s*$/)
     if (h) { flush(); card = { n: Number(h[1]), type: h[2].trim(), q: null, blocks: [], meta: [] }; return }
     if (!card) return
@@ -957,9 +968,9 @@ function parseCards(rel) {
     }
 
     if (line.trim().startsWith('|')) return  // 分隔行
-    if (line.trim() && !/^[#\-`]/.test(line.trim())) {
+    if (line.trim() && !/^#|^[-*_]{3,}$/.test(line.trim())) {
       pushTable()
-      blocks.push({ t: 'p', v: clean(line) })
+      blocks.push({ t: 'p', v: clean(line).replace(/^[-*+]\s+/, '• ') })
     }
   })
   flush()
@@ -1412,10 +1423,11 @@ function validateContent(people) {
          02 的卡片就是这么把演义第四回中牟段引进来、还挂在 `201`–`209` 底下的。
          查的是**每一处提到编号的地方**，一处都不能漏。 */
       const outOfRange = []
+      const accessible = new Set([...declared, ...supplementaryIds(st, p.source, new Set(declared))])
       const sweep = (where, text) => {
         if (!text) return
         for (const id of new Set([...String(text).matchAll(/(?<!\d)(\d{3})(?!\d)(?!\s*年)/g)].map((m) => m[1]))) {
-          if (p.source[id] && !declared.includes(id)) outOfRange.push(`${where} 引了 ${id}`)
+          if (p.source[id] && !accessible.has(id)) outOfRange.push(`${where} 引了 ${id}`)
         }
       }
       /* **只查"读者被告知这就是依据"的栏目**，不查映射表和背景卡的散文。
@@ -2315,26 +2327,12 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
     for (const [where, text] of visibleFields(people)) scan(where, text)
   }
 
-  /* ── 门口的长度 ──
-     **门口是简介，不是正文。** 它只负责「30 秒内建立代入感，然后把人交出去」——
-     所以它有长度上限。荆轲八篇是 1–7 行（本来就是对的）；
-     曹操十篇重做时我给的目标是「白话 1000 字以上」，**没把门口和正文分开**，
-     于是十篇的门口涨到 13–32 行，把整篇故事又讲了一遍——
-     正文里每一点都在门口出现过，读者读到正文时已经没有新东西了。
-     **这是我的设计错误，不是写作者偷懒。** 上限写成 8 行，留一点余地。 */
-      /* **门口和第一个情节点不许说同一句话。**
-         用户的原话：「每个故事的入口这是多少文字，这还是简介吗」——
-         砍到 4–6 行之后，独立审核又把 18 篇逐篇读了，结论是 **18/18 接不上**：
-
-             门口末句    二十岁，举孝廉；朝廷授他洛阳北部尉。   ← 讲到了正文第一段之后
-             首段首句    他年少的时候，机警，有权数……         ← 又从 `004` 讲起
-
-         **病根：门口是「整场戏的压缩」，末句落在正文第一段之后，
-         所以正文开头永远是门口的重读。**
-         补法：**门口末句停在正文首句的前一刻，后面的一律砍。**
-
-         这里只做机械的那一半：**门口的行不许和首段逐字重复**。
-         「门口讲到哪儿」是判断，机器判不了——写进 `content/README.md` 的清单。 */
+  /* ── 铺陈长度与正文衔接 ──
+     铺陈交代人物、处境与眼前的张力；正文接着发生新的事情。
+     8 行是上限，不是目标。完整性由前情、正文、背景共同承担。
+     若铺陈与首段重复，应重新分配内容：必要前情可从正文移入铺陈，
+     名单、官制、旁证可放背景；不能只删铺陈，直到只剩一句家世。
+     此处仅查逐字重合，语义衔接仍需人工通读，见 content/README.md。 */
   const INTRO_MAX = 8
   for (const p of people) {
     for (const st of Object.values(p.stories || {})) {
@@ -2351,8 +2349,8 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
           checks++
           if (hit / Math.max(1, t.length - 7) >= 0.5) {
             err(`${p.name} · ${st.id}`, `门口那一行「${String(l.text).slice(0, 20)}…」` +
-              '**和第一个情节点说的是同一句话**——门口跑到了正文前面。' +
-              '门口末句要停在正文首句的前一刻，后面的一律砍')
+              '**和第一个情节点说的是同一句话**。' +
+              '请重新分配前情与正文，让首段接着发生新事；保留必要背景，不要只删铺陈。')
           }
         }
       }

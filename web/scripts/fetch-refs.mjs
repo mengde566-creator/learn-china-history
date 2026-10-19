@@ -39,6 +39,7 @@ const MANIFEST = path.join(DIR, 'manifest.json')
 /* **来源清单。** `revision` 是固定修订：Gutenberg 的电子本编号本身就是固定版；
    GitHub 那份必须用 commit SHA——`master` 是移动分支，明天下的可能不是同一份。 */
 const REFS = [
+  ...JSON.parse(fs.readFileSync(path.join(ROOT, 'web/scripts/archived-refs.json'), 'utf8')),
   {
     file: 'sgz.txt',
     title: '《三國志》陈寿（含裴松之注）',
@@ -132,6 +133,16 @@ console.log('\n参考文本 → .refs/\n')
 let bad = 0
 for (const ref of REFS) {
   const out = path.join(DIR, ref.file)
+  if (ref.archive) {
+    const archive = path.join(ROOT, ref.archive)
+    if (!fs.existsSync(archive) || sha256(archive) !== ref.sha256) {
+      bad++; console.log(`  ✗ ${ref.file}  随库参考摘录缺失或哈希不符`); continue
+    }
+    if (!fs.existsSync(out) && !verifyOnly) fs.copyFileSync(archive, out)
+    if (fs.existsSync(out) && sha256(out) !== ref.sha256) {
+      bad++; console.log(`  ✗ ${ref.file}  本地参考与固定摘录哈希不符`); continue
+    }
+  }
   const rec = manifest.files[ref.file]
   const pinned = rec?.revision && ref.url.includes('{{REV}}') ? rec.revision : ref.revision
   const exists = fs.existsSync(out)
