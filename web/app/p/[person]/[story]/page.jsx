@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getStory, listPeople, sourceRange } from '@/lib/content'
 import StoryClient from '@/components/StoryClient'
+import { supplementaryIds } from '@/lib/story-sources.mjs'
 
 export function generateStaticParams() {
   const out = []
@@ -25,6 +26,9 @@ export default async function StoryPage({ params }) {
 
   const { person, story } = hit
   const src = sourceRange(person, story.sourceRange)
+  // 前情、比较与复习也可能引到本篇范围外。只补入确实引用的条目，供原地查阅。
+  const supplementalSourceIds = supplementaryIds(story, person.source, new Set(Object.keys(src)))
+  for (const id of supplementalSourceIds) src[id] = person.source[id]
 
   /* **只喂 StoryClient 真正用到的字段。**
      原来传整个 `person`，于是每一页都把这一篇根本不用的东西发给浏览器：
@@ -39,6 +43,7 @@ export default async function StoryPage({ params }) {
     books: person.books,
     sourceBook: person.sourceBook,
     storyList: person.storyList,
+    supplementalSourceIds,
   }
   return <StoryClient person={brief} story={story} source={src} />
 }

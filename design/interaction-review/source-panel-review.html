@@ -1,0 +1,107 @@
+<style>
+#guanshi-source-review{--gs-page:light-dark(#e9e4d9,#11171d);--gs-paper:light-dark(#fbf8f1,#1b222a);--gs-note:light-dark(#f2eee5,#232c35);--gs-ink:light-dark(#302e29,#e8e3d9);--gs-muted:light-dark(#716d64,#b6b1a8);--gs-line:light-dark(#d5cdbd,#3d4650);--gs-red:light-dark(#a7402b,#e49a80);--gs-link:light-dark(#496873,#a1bdc9);color:var(--gs-ink);font-family:"Songti SC","STSong",serif}
+#guanshi-source-review .gs-product{container-type:inline-size;background:var(--gs-page);color:var(--gs-ink);min-height:680px;padding-bottom:24px}
+#guanshi-source-review .gs-header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;border-bottom:1px solid var(--gs-line);font-size:16px;letter-spacing:.2em}
+#guanshi-source-review .gs-header span:last-child{font-size:12px;letter-spacing:.06em;color:var(--gs-muted)}
+#guanshi-source-review .gs-crumb{margin:22px 28px;color:var(--gs-muted);font-size:12px}
+#guanshi-source-review .gs-actions{display:flex;justify-content:flex-end;max-width:900px;margin:0 auto 14px;padding:0 28px}
+#guanshi-source-review button{font:inherit;font-size:13px;line-height:1.4;color:var(--gs-ink);border:1px solid var(--gs-line);border-radius:3px;background:transparent;padding:10px 13px;min-height:44px;cursor:var(--cursor-interaction,pointer)}
+#guanshi-source-review button:hover{background:var(--gs-note)}
+#guanshi-source-review button:focus-visible{outline:2px solid var(--gs-link);outline-offset:3px}
+#guanshi-source-review .gs-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:0 24px;max-width:760px;margin:0 auto;padding:0 28px}
+#guanshi-source-review .gs-parallel.gs-open .gs-layout{max-width:100%;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+#guanshi-source-review .gs-story{background:var(--gs-paper);padding:32px 30px 18px;min-width:0;border:1px solid var(--gs-line);border-bottom:0}
+#guanshi-source-review .gs-time{font-size:12px;letter-spacing:.16em;color:var(--gs-link);margin-bottom:22px}
+#guanshi-source-review h2{font-size:27px;font-weight:400;letter-spacing:.12em;margin:0 0 28px}
+#guanshi-source-review .gs-prose{font-size:17px;line-height:2.15;letter-spacing:.025em}
+#guanshi-source-review .gs-prose p{margin:0 0 18px}
+#guanshi-source-review .gs-ground{border:0;color:var(--gs-link);font-size:12px;padding:8px 0}
+#guanshi-source-review .gs-diamond{color:var(--gs-red);margin-right:10px}
+#guanshi-source-review .gs-following{grid-column:1;background:var(--gs-paper);padding:18px 30px 32px;min-width:0;border:1px solid var(--gs-line);border-top:0}
+#guanshi-source-review .gs-following:before{content:"";display:block;border-top:1px solid var(--gs-line);margin-bottom:28px}
+#guanshi-source-review .gs-pane{display:grid;grid-template-rows:0fr;min-width:0;grid-column:1;transition:grid-template-rows 180ms ease}
+#guanshi-source-review .gs-pane-inner{overflow:hidden;min-height:0}
+#guanshi-source-review .gs-pane-content{background:var(--gs-note);border:1px solid var(--gs-line)}
+#guanshi-source-review .gs-open .gs-pane{grid-template-rows:1fr}
+#guanshi-source-review .gs-parallel.gs-open .gs-pane{grid-column:2;grid-row:1 / span 2;align-self:start}
+#guanshi-source-review .gs-parallel:not(.gs-open) .gs-pane{display:none}
+#guanshi-source-review .gs-inline .gs-pane{grid-row:2}
+#guanshi-source-review .gs-inline .gs-following{grid-row:3}
+#guanshi-source-review .gs-pane-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 15px;border-bottom:1px solid var(--gs-line);font-size:13px}
+#guanshi-source-review .gs-pane-head button{border:0;padding:8px;white-space:nowrap}
+#guanshi-source-review .gs-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--gs-line);padding:0 8px}
+#guanshi-source-review .gs-tabs button{border:0;border-radius:0;flex:1;font-size:12px;padding:10px 6px;color:var(--gs-muted)}
+#guanshi-source-review .gs-tabs button[aria-selected="true"]{border-bottom:2px solid var(--gs-link);color:var(--gs-ink)}
+#guanshi-source-review .gs-note-body{padding:22px 18px;font-size:15px;line-height:1.95}
+#guanshi-source-review .gs-note-body p{margin:0 0 12px}
+#guanshi-source-review .gs-note-body p:last-child{margin-bottom:0}
+#guanshi-source-review .gs-source-label{font-family:system-ui,sans-serif;font-size:11px;color:var(--gs-muted);margin-bottom:14px}
+#guanshi-source-review blockquote{margin:0;border-left:2px solid var(--gs-red);padding:0 0 0 14px}
+#guanshi-source-review .gs-return{margin-top:20px;width:100%}
+#guanshi-source-review .gs-mobile.gs-product{max-width:390px;margin:0 auto}
+#guanshi-source-review .gs-reduced .gs-pane{transition:none}
+@container(max-width:700px){
+ #guanshi-source-review .gs-parallel.gs-open .gs-layout{grid-template-columns:minmax(0,1fr)}
+ #guanshi-source-review .gs-parallel.gs-open .gs-pane{grid-column:1;grid-row:2}
+ #guanshi-source-review .gs-parallel.gs-open .gs-following{grid-row:3}
+ #guanshi-source-review .gs-layout{padding:0 16px}
+ #guanshi-source-review .gs-story{padding:24px 22px 12px}
+ #guanshi-source-review .gs-following{padding:12px 22px 24px}
+ #guanshi-source-review .gs-header{padding:18px 20px}
+ #guanshi-source-review .gs-crumb{margin:20px}
+ #guanshi-source-review .gs-prose{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){#guanshi-source-review .gs-pane{transition:none}}
+</style>
+<div id="guanshi-source-review">
+ <div class="viz-carousel" aria-label="查证交互候选" data-previous-label="上一方案" data-next-label="下一方案">
+  <section data-variant="并排查证" aria-label="并排查证候选">
+   <div class="gs-product gs-parallel gs-open" data-design="parallel">
+    <div class="gs-header"><span>观 史</span><span>阅读</span></div>
+    <div class="gs-crumb">总览　／　曹操　／　五色棒</div>
+    <div class="gs-actions"><button type="button" class="gs-toggle" aria-expanded="true" aria-controls="gs-parallel-pane">查证与背景</button></div>
+    <div class="gs-layout">
+     <article class="gs-story"><div class="gs-time">汉灵帝时 · 洛阳</div><h2>五色棒</h2><div class="gs-prose"><p>曹操刚到任，进了尉的官署，先把四面的门修治了一遍。</p><p>造出五色棒，挂在官署门左右，各十几根。</p><p>有犯禁的人，不避豪强，都用棒打死。</p></div><button type="button" class="gs-ground" aria-controls="gs-parallel-pane"><span class="gs-diamond">◆</span>依据　206</button></article>
+     <aside class="gs-pane" id="gs-parallel-pane" aria-label="这一段的查证"><div class="gs-pane-inner"><div class="gs-pane-content"><div class="gs-pane-head"><span>这一段的查证</span><button class="gs-close" type="button">关闭</button></div><div class="gs-tabs" role="tablist" aria-label="查证内容"></div><div class="gs-note-body" role="tabpanel"></div></div></div></aside>
+     <article class="gs-following"><div class="gs-prose"><p>过了几个月，灵帝所宠爱的小黄门蹇硕的叔父夜里出行，曹操当即把他杀了。</p><p>京城里的人都收敛形迹，没有敢犯禁的。</p></div><span class="gs-diamond">◆</span><span class="gs-source-label">裴松之注引《曹瞒传》 · 206</span></article>
+    </div>
+   </div>
+  </section>
+  <section data-variant="段后展开" aria-label="段后展开候选" hidden>
+   <div class="gs-product gs-inline gs-open" data-design="inline">
+    <div class="gs-header"><span>观 史</span><span>阅读</span></div>
+    <div class="gs-crumb">总览　／　曹操　／　五色棒</div>
+    <div class="gs-actions"><button type="button" class="gs-toggle" aria-expanded="true" aria-controls="gs-inline-pane">查证与背景</button></div>
+    <div class="gs-layout">
+     <article class="gs-story"><div class="gs-time">汉灵帝时 · 洛阳</div><h2>五色棒</h2><div class="gs-prose"><p>曹操刚到任，进了尉的官署，先把四面的门修治了一遍。</p><p>造出五色棒，挂在官署门左右，各十几根。</p><p>有犯禁的人，不避豪强，都用棒打死。</p></div><button type="button" class="gs-ground" aria-controls="gs-inline-pane"><span class="gs-diamond">◆</span>依据　206</button></article>
+     <aside class="gs-pane" id="gs-inline-pane" aria-label="这一段的查证"><div class="gs-pane-inner"><div class="gs-pane-content"><div class="gs-pane-head"><span>这一段的查证</span><button class="gs-close" type="button">关闭</button></div><div class="gs-tabs" role="tablist" aria-label="查证内容"></div><div class="gs-note-body" role="tabpanel"></div></div></div></aside>
+     <article class="gs-following"><div class="gs-prose"><p>过了几个月，灵帝所宠爱的小黄门蹇硕的叔父夜里出行，曹操当即把他杀了。</p><p>京城里的人都收敛形迹，没有敢犯禁的。</p></div><span class="gs-diamond">◆</span><span class="gs-source-label">裴松之注引《曹瞒传》 · 206</span></article>
+    </div>
+   </div>
+  </section>
+ </div>
+</div>
+<script>
+(()=>{
+ const root=document.getElementById('guanshi-source-review');
+ const content={
+  '依据':'<div class="gs-source-label">裴松之注引《曹瞒传》 · 206</div><blockquote>曹瞒传曰：太祖初入尉廨，缮治四门。造五色棒，县门左右各十余枚，有犯禁者，不避豪强，皆棒杀之。</blockquote>',
+  '原文':'<div class="gs-source-label">裴松之注引《曹瞒传》 · 206</div><blockquote>曹瞒传曰：太祖初入尉廨，缮治四门。造五色棒，县门左右各十余枚，有犯禁者，不避豪强，皆棒杀之。后数月，灵帝爱幸小黄门蹇硕叔父夜行，即杀之。京师敛迹，莫敢犯者。近习宠臣咸疾之，然不能伤，于是共称荐之，故迁为顿丘令。</blockquote>',
+  '背景':'<div class="gs-source-label">故事与来源</div><p>这件事见裴松之注所引《曹瞒传》，不是陈寿《武帝纪》的正文。</p><p>《武帝纪》正文006记曹操任洛阳北部尉、迁顿丘令；棒杀蹇硕叔父的细节由注文补入。</p>',
+  '映射':'<div class="gs-source-label">叙述对应</div><p>修治四门 → 缮治四门</p><p>造棒、挂在门旁 → 造五色棒，县门左右各十余枚</p><p>不避豪强、棒杀犯禁者 → 有犯禁者，不避豪强，皆棒杀之</p>',
+  '人物':'<div class="gs-source-label">这段记载中的人物</div><p>曹操：洛阳北部尉。</p><p>蹇硕叔父：下一段所记夜间犯禁者。</p>'
+ };
+ const saved=window.openai?.widgetState?.privateContent||{};
+ const states={};
+ const save=()=>{window.openai?.setWidgetState?.({modelContent:{review:'查证交互候选'},privateContent:states})?.catch(()=>{});};
+ root.querySelectorAll('.gs-product').forEach(product=>{
+  const name=product.dataset.design,pane=product.querySelector('.gs-pane'),trigger=product.querySelector('.gs-toggle'),ground=product.querySelector('.gs-ground'),body=product.querySelector('.gs-note-body'),tabs=product.querySelector('.gs-tabs');
+  const state={open:saved[name]?.open??true,tab:saved[name]?.tab||'依据'};states[name]=state;let origin=trigger;
+  const render=()=>{product.classList.toggle('gs-open',state.open);trigger.setAttribute('aria-expanded',String(state.open));pane.setAttribute('aria-hidden',String(!state.open));pane.inert=!state.open;tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.textContent===state.tab)));body.innerHTML=content[state.tab]+'<button type="button" class="gs-return">收起，继续阅读</button>';body.querySelector('.gs-return').onclick=close;};
+  function close(){state.open=false;render();origin.focus({preventScroll:true});save();}
+  Object.keys(content).forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.setAttribute('role','tab');b.id='gs-'+name+'-tab-'+i;b.setAttribute('aria-controls','gs-'+name+'-body');b.onclick=()=>{state.tab=label;state.open=true;render();body.setAttribute('aria-labelledby',b.id);save();};tabs.appendChild(b);});body.id='gs-'+name+'-body';
+  trigger.onclick=()=>{origin=trigger;state.open=!state.open;render();save();};ground.onclick=()=>{origin=ground;state.tab='依据';state.open=true;render();save();};product.querySelector('.gs-close').onclick=close;product.addEventListener('keydown',e=>{if(e.key==='Escape'&&state.open){e.preventDefault();close();}});render();
+  if(globalThis.Tweak){const options={viewport:'桌面',reduced:false};const tweak=new Tweak({container:product,onChange:()=>{product.classList.toggle('gs-mobile',options.viewport==='手机');product.classList.toggle('gs-reduced',options.reduced);}});tweak.addSelect(options,'viewport',{label:'预览宽度',options:['桌面','手机']});tweak.addToggle(options,'reduced',{label:'减弱动效'});}
+ });
+})();
+</script>

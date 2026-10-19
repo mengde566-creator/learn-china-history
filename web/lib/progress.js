@@ -52,6 +52,25 @@ function emit() { for (const fn of subs) fn(state) }
 
 export const storyKey = (personId, storyId) => `${personId}/${storyId}`
 
+// 2026-10-18：三篇将开头的前情移入铺陈与背景，正文段号随之提前。
+// 旧记录没有段数，无法分辨是否读过上一轮样例；宁可重读几段，也不跳过未读内容。
+const OPENING_EDITS = {
+  'caocao/01-wusebang': { before: 10, after: 7, removed: 3 },
+  'caocao/04-xingyang': { before: 9, after: 8, removed: 1 },
+  'caocao/06-qingzhou': { before: 10, after: 5, removed: 5 },
+}
+
+export function resumeBeat(personId, storyId, saved, count) {
+  const total = Math.max(1, count)
+  if (saved?.done) return total
+  let n = Number(saved?.beat) || 1
+  const edit = OPENING_EDITS[storyKey(personId, storyId)]
+  if (edit && count === edit.after && (saved?.beatCount == null || saved.beatCount === edit.before)) {
+    n -= edit.removed
+  }
+  return Math.min(Math.max(1, Math.floor(n)), total)
+}
+
 /** 记下读到第几段 / 读完了。 */
 export function markRead(personId, storyId, patch) {
   const k = storyKey(personId, storyId)

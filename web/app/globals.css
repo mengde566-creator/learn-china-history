@@ -229,27 +229,18 @@ body.light-stage{
    双面 · 明暗即语义
    ══════════════════════════════════════════════ */
 .face{
-  display:grid;grid-template-columns:minmax(0,1fr) 356px;
+  display:grid;grid-template-columns:minmax(0,1fr);
   border:1px solid var(--xuan-4);border-radius:4px;
-  min-height:620px;
+  max-width:860px;margin:0 auto;min-height:0;
   transition:box-shadow .5s var(--ease);
 }
 /* overflow:hidden 会破坏 sticky，所以圆角交给子元素各自处理 */
-.stage{border-radius:4px 0 0 4px}
+.stage{border-radius:4px}
 .face.dim .stage{filter:brightness(.4) saturate(.65);transform:scale(.988)}
 
-/* ── 桌面：阅读器布局（左右各自固定，左侧独立滚动）
-   为什么不用 sticky：sticky 只能在包含块内吸住。场景高 1800px+、面板 940px，
-   面板吸到 scrollY≈890 就被包含块底边推走——读到后三分之一右侧就空了。
-   这正是「对照起来费劲、而且是断的」的成因。 */
+/* 正文随页面连贯滚动；查证时才出现独立滚动的侧栏。 */
 @media (min-width:1081px){
-  .face{
-    height:calc(100vh - var(--nav-h) - 28px);
-    min-height:520px;
-    overflow:hidden;
-  }
-  .stage{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
-  .panel{min-height:0}
+  .face .reader-panel{position:fixed;z-index:70;right:24px;top:calc(var(--nav-h) + 14px);width:420px;height:calc(100vh - var(--nav-h) - 28px);min-height:0;border:1px solid var(--xuan-4);border-radius:6px;box-shadow:-12px 8px 50px rgba(0,0,0,.3)}
 }
 
 /* ── 暗场：场景区 ─────────────────────────── */
@@ -647,7 +638,7 @@ body.light-stage{
    情境铺陈 / 入口
    ══════════════════════════════════════════════ */
 .opening{
-  max-width:640px;margin:60px auto;padding:56px 48px;
+  max-width:720px;margin:40px auto 24px;padding:40px 48px;
   background:
     radial-gradient(120% 90% at 50% 0%, var(--stage-glow-1) 0%, transparent 55%),
     var(--xuan-2);
@@ -655,18 +646,55 @@ body.light-stage{
   text-align:center;
 }
 .opening .when{font-size:11.5px;letter-spacing:.24em;color:var(--cang);margin-bottom:34px}
+.opening-title{font-family:var(--f-song);font-size:25px;font-weight:500;letter-spacing:.14em;margin-bottom:28px}
 .opening .lines{
-  font-family:var(--f-song);font-size:18px;line-height:2.3;letter-spacing:.05em;
-  color:var(--su);margin-bottom:40px;
+  font-family:var(--f-song);font-size:18px;line-height:2.1;letter-spacing:.04em;
+  color:var(--su);margin:0 auto 30px;max-width:32em;text-align:left;
 }
-.opening .lines p{margin-bottom:1.1em}
-.opening .lines .dim{color:var(--su-dim)}
+.opening .lines p{margin-bottom:.8em}
+.opening .lines p:last-child{margin-bottom:0}
+.opening .line-tail{white-space:nowrap}
+.opening .line-mark{margin-left:10px}
+.reader-actions{display:flex;justify-content:flex-end;gap:18px;max-width:860px;margin:0 auto 14px;font-size:12px;color:var(--su-dim)}
+.reader-actions button{padding:8px 3px;min-height:40px;border-bottom:1px solid var(--xuan-4)}
+.reader-actions button:hover{color:var(--su)}
+.reading-title{font-family:var(--f-song);font-size:28px;letter-spacing:.12em;font-weight:500;margin-bottom:22px}
+.reader .scene-meta{margin-bottom:16px}
+.reader .beats{width:100%;max-width:640px;margin:0 auto}
+.reader .narration{max-width:none}
+.reader .narration p{margin-bottom:.85em}
+.reader .anim-emerge{animation:none;opacity:1;filter:none;transform:none}
+.reader-panel .panel-tabs button,.reader-panel .panel-close{min-height:44px}
+.reader .beat{padding:22px 0;opacity:1;scroll-margin-top:105px}
+.reader .ground{padding:9px 4px;min-height:44px;color:var(--su-dim)}
+.reader .emerge cite{font-size:22px;line-height:1.95;letter-spacing:.07em}
+.seed-citation{background:var(--zhi);color:var(--mo);padding:20px;margin-top:20px;border-radius:4px;font-size:15px;line-height:1.9}
+.seed-citation button{min-height:44px;color:var(--mo)}
+.seed-citation p{font-size:12px;margin:8px 0}
+.review-code{max-width:100%;overflow-x:auto;white-space:pre-wrap;font-family:var(--f-mono);font-size:13px;line-height:1.9;margin:12px 0}
+.reader .ask{position:static;margin-top:22px;background:none}
+.reader-after{max-width:860px;margin-left:auto;margin-right:auto}
+.panel[hidden]{display:none}
+.panel-heading{display:flex;flex:none;align-items:center;justify-content:space-between;padding:10px 18px;font-size:12px;color:var(--su-dim);border-bottom:1px solid var(--xuan-4)}
+.panel-close{padding:8px;min-height:40px;color:var(--su)}
+.reader-panel .panel-close{position:static;flex:none}
+.reader-actions button:focus-visible,.panel-close:focus-visible,.ground:focus-visible{outline:2px solid var(--cang);outline-offset:3px}
+.person.away .n{color:var(--su-dim)}
+.opening-notes{max-width:720px;margin:0 auto;color:var(--su-dim)}
+.opening-notes summary{cursor:pointer;width:fit-content;margin:0 auto;padding:12px 8px;font-size:12px;letter-spacing:.08em}
+.opening-notes summary:hover{color:var(--su)}
+.opening-notes summary:focus-visible{outline:2px solid var(--cang);outline-offset:4px;border-radius:2px}
+.opening-notes .note-box{margin-top:12px}
 .opening .cta{
   display:inline-block;font-size:13px;letter-spacing:.2em;
   color:var(--su);border:1px solid var(--su-mute);border-radius:3px;
   padding:13px 34px;transition:all .3s var(--ease);
 }
 .opening .cta:hover{background:var(--su);color:var(--xuan);border-color:var(--su)}
+.source-context{margin-top:12px}
+.source-context summary{cursor:pointer;font-size:12px;color:var(--mo-dim);font-family:var(--f-hei)}
+.source-context summary:focus-visible{outline:2px solid var(--cang);outline-offset:4px}
+.source-context-text{margin-top:14px;white-space:pre-line}
 
 /* 封面：进入故事前当背景用，压一层暗色遮罩保证文字可读。
    没有图时这些元素根本不渲染，布局不受影响。 */
@@ -962,6 +990,8 @@ body.light-stage{
   .panel-face{position:relative;inset:auto;max-height:60vh}
   .sheet-body{grid-template-columns:1fr}
   .seed-nav{border-right:none;border-bottom:1px solid var(--xuan-4);max-height:190px}
+  .reader-panel{position:fixed;z-index:70;left:12px;right:12px;bottom:0;height:70vh;min-height:0;max-height:calc(100vh - var(--nav-h) - 20px);border:1px solid var(--xuan-4);border-radius:6px 6px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.2)}
+  .reader-panel .panel-face{position:absolute;inset:0;max-height:none}
 }
 @media (max-width:640px){
   .wrap,.wrap-narrow{padding:0 16px}

@@ -54,12 +54,14 @@ export default async function PersonPage({ params }) {
       {person.why.length > 0 && (
         <section className="sec">
       {/* 最近读到哪一篇（本机数据，服务端渲染时为空） */}
-      <RecentRead personId={person.id} stories={person.storyList} />
+      <RecentRead personId={person.id} stories={person.storyList.map((story) => ({
+        ...story, beatTotal: person.stories[story.id]?.beats.length || 1,
+      }))} />
 
       <section style={{ marginTop: 26 }}>
         <Link href={`/p/${person.id}/source`} className="entry-card">
           <b>完整资料</b>
-          <span>{person.sourceCount} 段原文，逐段附直译</span>
+          <span>{person.sourceCount} 段原文，附逐段白话</span>
         </Link>
       </section>
 

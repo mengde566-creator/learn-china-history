@@ -29,7 +29,7 @@ const CASES = [
   ['背景卡（段落）', 'people/caocao/stories/09-chibi.md', '这一件事，正史和小说都写了', 'para'],
   ['人物引子', 'people/jingke/person.md', '## 他是谁', 'after2'],
   ['问答依据', 'people/jingke/seeds/06-yishui.md', '| 依据 |', 'cell'],
-  ['复习卡答案', 'people/jingke/cards/06-yishui.md', '答：**常被解释为送死之服', 'line'],
+  ['复习卡答案', 'people/jingke/cards/06-yishui.md', '答：**这一段没有交代穿白的原因', 'line'],
 ]
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'guanshi-vis-'))

@@ -72,16 +72,9 @@ await shot(page, '03-情境铺陈', { full: true })
 await page.click('button.cta')
 await shot(page, '04-第一段')
 
-/* 5. 推进到全部段落。
-   按到「再往前」消失为止——原来写死四次，那是因为当时走查的那篇只有五段；
-   换一篇十段的，四次之后还停在中途，后面找 `.ask-btn`（读完才出现）就 timeout，
-   而报错完全指不到真正的原因。 */
-for (let i = 0; i < 40; i++) {
-  const more = await page.$('button.continue')
-  if (!more) break
-  await more.click()
-  await page.waitForTimeout(320)
-}
+/* 5. 连续正文按真实滚动读到结尾，不能把「已渲染全文」当成读完。 */
+await page.locator('.next-bar').scrollIntoViewIfNeeded()
+await page.waitForSelector('.reader-after')
 await shot(page, '05-全部段落')
 
 /* 6. 依据面板（默认页签，自动跟随阅读位置） */
@@ -101,7 +94,7 @@ await page.click('.panel-tabs button:has-text("原文")')
 await shot(page, '09-原文')
 
 /* 10. 在场 */
-await page.click('.panel-tabs button:has-text("在场")')
+await page.click('.panel-tabs button:has-text("人物")')
 await shot(page, '10-在场')
 
 /* 11–14. 提问面板与复习卡。
@@ -115,8 +108,7 @@ const cards = WALK.story.cards || []
 if (!seeds.length) {
   console.log('  · 这一篇没有对话种子，跳过提问面板（产品里也不显示入口）')
 } else {
-  await page.click('.panel-tabs button:has-text("依据")')
-  await page.waitForTimeout(300)
+  await page.keyboard.press('Escape')
   await page.click('.ask-btn')
   await shot(page, '11-提问清单')
 
@@ -165,16 +157,11 @@ for (const id of arcIds) {
   await shot(page, `${String(n++).padStart(2, '0')}-弧线-${id}`, { wait: 300 })
 }
 
-/* 把最后一篇读进去，收尾。
-   「再往前」按到没有为止——写死两次的话，三段的篇目按到第二下就没了按钮。 */
+/* 把最后一篇实际滚动读完，收尾。 */
 await page.click('button.cta')
 await page.waitForTimeout(400)
-for (let i = 0; i < 20; i++) {
-  const more = await page.$('button.continue')
-  if (!more) break
-  await more.click()
-  await page.waitForTimeout(350)
-}
+await page.locator('.next-bar').scrollIntoViewIfNeeded()
+await page.waitForSelector('.reader-after')
 await shot(page, `${String(n).padStart(2, '0')}-弧线-读完`)
 
 await browser.close()

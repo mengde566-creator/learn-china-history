@@ -237,6 +237,7 @@ check('contrast: 纸面卡上的文字（浅色模式）', async () => {
 check('contrast: 门口的逐行依据卡（暗场）', async () => {
   await page.goto(`${BASE}${sampleRoute('bare')}`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
+  await page.locator('.opening-notes summary').click()
   const r = await page.evaluate((getTools) => {
     const { lum, contrast, effectiveBg } = new Function('return (' + getTools + ')()')()
     const box = document.querySelector('.note-box')
@@ -438,6 +439,7 @@ check('content: 正文里的「原文」块逐字出自底本', async () => {
     const got = await page.$$eval('cite', (els) => els.map((e) => e.textContent.trim()))
     if (!got.length) continue
     cites += got.length
+    await page.getByRole('button', { name: '查证与背景', exact: true }).click()
     await page.click('.panel-tabs button:has-text("原文")')
     await page.waitForTimeout(250)
     const hay = (await page.$$eval('.panel-face.paper .quote', (els) => els.map((e) => e.textContent.trim())))
@@ -648,7 +650,8 @@ check('R01: 资料页的原文与直译在同一列、原文不是朱红、没�
 check('R02: 背景卡的出处对照表渲染成表格，不是被吞掉', async () => {
   await page.goto(`${BASE}/p/caocao/09-chibi`, { waitUntil: 'networkidle' })
   await enterStory()
-  await page.getByRole('button', { name: '背景' }).click()
+  await page.getByRole('button', { name: '查证与背景', exact: true }).click()
+  await page.getByRole('button', { name: '背景', exact: true }).click()
   await page.waitForTimeout(400)
   const t = page.locator('.bg-table').first()
   if (!(await t.count())) return fail('背景卡里没有 .bg-table——表格在编译期被吞了')
@@ -661,6 +664,11 @@ check('R02: 背景卡的出处对照表渲染成表格，不是被吞掉', async
 
 check('R09: 依据里的编号能跳到原文，并且能返回', async () => {
   await page.goto(`${BASE}/p/caocao/08-guandu`, { waitUntil: 'networkidle' })
+  const notes = page.locator('.opening-notes')
+  if (await notes.getAttribute('open') !== null) return fail('铺陈依据应默认收起')
+  await notes.locator('summary').focus()
+  await page.keyboard.press('Enter')
+  await page.waitForFunction(() => document.querySelector('.opening-notes')?.open)
   const cites = await page.locator('button.cite:not(.back)').count()
   if (!cites) return fail('入场页的逐行依据里没有可点编号')
   const id = (await page.locator('button.cite:not(.back)').first().textContent()).trim()
@@ -672,17 +680,279 @@ check('R09: 依据里的编号能跳到原文，并且能返回', async () => {
   await back.first().click()
   await page.waitForTimeout(600)
   if (!(await page.locator('.note-box').count())) return fail('点返回之后没有回到入场页')
-  return ok(`${cites} 个可点编号；点「${id}」跳转并返回都在`)
+  if (await notes.getAttribute('open') === null) return fail('返回后没有保留依据展开状态')
+  if (!(await page.evaluate(() => document.activeElement?.classList.contains('cite')))) return fail('返回后键盘焦点未回原编号')
+  return ok(`默认收起、键盘展开；${cites} 个可点编号；点「${id}」跳转并返回后仍展开`)
 })
 
 check('R10: 面板页签可以用键盘走到', async () => {
   await page.goto(`${BASE}${routeOf(READY[0])}`, { waitUntil: 'networkidle' })
   await enterStory()
+  await page.getByRole('button', { name: '查证与背景', exact: true }).click()
+  await page.keyboard.press('Tab')
   const btns = await page.evaluate(() =>
     [...document.querySelectorAll('.panel-tabs button')].map((b) => ({ tag: b.tagName, tab: b.tabIndex, dis: b.disabled })))
   if (btns.length < 5) return fail(`面板页签只有 ${btns.length} 个`)
   const bad = btns.filter((b) => b.tag !== 'BUTTON' || b.tab < 0 || b.dis)
   return bad.length ? fail(`${bad.length} 个页签不是可聚焦的 button（键盘走不到）`) : ok(`${btns.length} 个页签都是可聚焦的 button`)
+})
+
+check('铺陈衔接: 依据先展示当前摘句，全文与多来源均可核对', async () => {
+  for (const [id, current, later] of [
+    ['01-wusebang', '太祖初入尉廨', '蹇硕叔父夜行'],
+    ['04-xingyang', '二月，卓闻兵起', '遇卓将徐荣'],
+  ]) {
+    await page.goto(`${BASE}/p/caocao/${id}`, { waitUntil: 'networkidle' })
+    await enterStory()
+    await page.locator('#beat-1 .ground').click()
+    const panel = page.locator('.panel-body')
+    const initial = await panel.innerText()
+    if (!initial.includes(current) || initial.includes(later)) return fail(`${id} 摘句没有聚焦当前情节`)
+    const context = panel.locator('.source-context').first()
+    await context.locator('summary').focus()
+    await page.keyboard.press('Enter')
+    if (!(await panel.innerText()).includes(later)) return fail(`${id} 完整上下文未展开`)
+    if (id === '01-wusebang') {
+      await page.locator('#beat-3 .ground').click()
+      await page.waitForFunction(() => document.querySelectorAll('.panel-body .lead').length === 3)
+      if (await panel.locator('.lead').count() !== 3) return fail('多来源情节漏掉了关联底本')
+      const evidence = await panel.innerText()
+      if (!evidence.includes('征拜议郎') || !evidence.includes('迁顿丘令')) return fail('关联来源的文字不完整')
+    }
+  }
+  return ok('两篇首段不提前展开后续情节；键盘可展开全文；三来源情节均保留')
+})
+
+check('铺陈衔接: 全部故事在桌面与手机入口可读且能直接进入', async () => {
+  const bad = []
+  let visited = 0
+  for (const [mode, viewport] of [
+    ['dark', { width: 1440, height: 1000 }],
+    ['light', { width: 390, height: 844 }],
+  ]) {
+    const p = await open(mode, { viewport, reducedMotion: 'reduce' })
+    try {
+      for (const item of READY) {
+        await p.goto(`${BASE}${routeOf(item)}`, { waitUntil: 'networkidle' })
+        await p.evaluate(() => document.fonts.ready)
+        const r = await p.evaluate(() => {
+          const opening = document.querySelector('.opening')
+          const cta = opening?.querySelector('button.cta')
+          return {
+            paragraphs: opening?.querySelectorAll('.lines p').length || 0,
+            cta: cta?.getBoundingClientRect().bottom,
+            overflow: document.documentElement.scrollWidth > innerWidth,
+            notesOpen: document.querySelector('.opening-notes')?.open,
+          }
+        })
+        visited++
+        const label = `${routeOf(item)} ${viewport.width}px`
+        if (!r.paragraphs || !r.cta) bad.push(`${label} 缺铺陈或入口`)
+        if (r.cta > viewport.height) bad.push(`${label} 入口落在首屏之外`)
+        if (r.overflow) bad.push(`${label} 横向溢出`)
+        if (r.notesOpen) bad.push(`${label} 依据未默认收起`)
+        if (p.__errors.length) bad.push(`${label} ${p.__errors[0]}`)
+        p.__errors = []
+      }
+    } finally {
+      await p.close()
+    }
+  }
+  return bad.length ? fail(bad.slice(0, 5).join('；')) : ok(`${READY.length} 篇 · ${visited} 个入口，明暗两种模式、桌面与手机均无溢出，按钮在首屏`)
+})
+
+check('铺陈衔接: 改段后的旧进度继续阅读且保留复习记录', async () => {
+  const cases = [
+    ['caocao', '01-wusebang', { beat: 5 }, 2],
+    ['caocao', '04-xingyang', { beat: 5 }, 4],
+    ['caocao', '06-qingzhou', { beat: 7, beatCount: 10 }, 2],
+    ['caocao', '06-qingzhou', { beat: 10, done: true }, 5],
+    ['caocao', '01-wusebang', { beat: 3, beatCount: 7 }, 3],
+    ['jingke', '07-tupo', { beat: 3 }, 3],
+  ]
+  for (const [person, story, record, expected] of cases) {
+    await page.goto(BASE, { waitUntil: 'networkidle' })
+    const key = `${person}/${story}`
+    await page.evaluate(({ key, record }) => {
+      localStorage.setItem('guanshi.progress.v1', JSON.stringify({
+        read: { [key]: { ...record, phase: 'live' } }, review: { [key]: { '1': 'known' } }, last: null,
+      }))
+    }, { key, record })
+    await page.goto(`${BASE}/p/${person}`, { waitUntil: 'networkidle' })
+    const recent = await page.getByRole('heading', { name: '最近阅读', exact: true }).locator('..').innerText()
+    if (!recent.includes(record.done ? '读完了' : `读到第 ${expected} 段`)) return fail(`${key} 人物页仍显示旧段号`)
+    await page.goto(`${BASE}/p/${person}/${story}`, { waitUntil: 'networkidle' })
+    await page.waitForFunction(({ key, expected }) => {
+      const saved = JSON.parse(localStorage.getItem('guanshi.progress.v1'))?.read?.[key]
+      return saved?.beat === expected && saved?.beatCount > 0
+    }, { key, expected })
+    const position = await page.locator(`#beat-${expected}`).boundingBox()
+    if (!position || Math.abs(position.y - 105) > 30) return fail(`${key} 应恢复到 ${expected} 段，实际顶部 ${position?.y}`)
+    const review = await page.evaluate(key => JSON.parse(localStorage.getItem('guanshi.progress.v1')).review[key], key)
+    if (review['1'] !== 'known') return fail(`${key} 复习记录被改动`)
+  }
+  return ok('六种旧记录、已完成记录与新版记录均恢复正确，复习状态保留')
+})
+
+check('连续阅读: 查证不遮挡正文，关闭后原位返回', async () => {
+  const findObscuredText = () => {
+        const pane = document.querySelector('#source-panel').getBoundingClientRect()
+        const hits = []
+        for (const area of document.querySelectorAll('.reader .narration')) {
+          const walker = document.createTreeWalker(area, NodeFilter.SHOW_TEXT)
+          while (walker.nextNode()) {
+            const node = walker.currentNode
+            if (!node.textContent.trim()) continue
+            const range = document.createRange(); range.selectNodeContents(node)
+            for (const r of range.getClientRects()) {
+              const left = Math.max(r.left, pane.left, 0), right = Math.min(r.right, pane.right, innerWidth)
+              const top = Math.max(r.top, pane.top, 55), bottom = Math.min(r.bottom, pane.bottom, innerHeight)
+              if (right - left > 2 && bottom - top > 2) { hits.push(node.textContent.trim().slice(0, 32)); break }
+            }
+            if (hits.length) break
+          }
+          if (hits.length) break
+        }
+        return hits
+  }
+
+  for (const viewport of [{ width: 1324, height: 841 }, { width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
+    const p = await open('light', { viewport, reducedMotion: 'reduce' })
+    try {
+      if (viewport.width === 1324) {
+        await p.goto(`${BASE}/p/caocao/01-wusebang`, { waitUntil: 'networkidle' })
+        await p.locator('button.cta').click()
+        await p.getByRole('button', { name: '查证与背景', exact: true }).click()
+        const covered = await p.evaluate(findObscuredText)
+        if (covered.length) return fail(`1324px 五色棒查证栏遮住正文：${covered[0]}`)
+        await p.locator('.panel-close').click()
+      }
+      await p.goto(`${BASE}/p/caocao/04-xingyang`, { waitUntil: 'networkidle' })
+      await p.locator('button.cta').click()
+      await p.waitForTimeout(200)
+      if (await p.locator('.beat').count() !== 8 || await p.locator('button.continue').count()) return fail('仍按点击截断正文')
+      if (await p.locator('#source-panel').isVisible()) return fail('查证面板默认占屏')
+      const saved = () => p.evaluate(() => JSON.parse(localStorage.getItem('guanshi.progress.v1'))?.read?.['caocao/04-xingyang'])
+      if ((await saved())?.done) return fail('仅渲染全文就记成已读完')
+      await p.evaluate(() => window.scrollTo(0, scrollY + document.querySelector('#beat-4').getBoundingClientRect().top - 110))
+      await p.waitForFunction(() => JSON.parse(localStorage.getItem('guanshi.progress.v1'))?.read?.['caocao/04-xingyang']?.beat >= 4)
+      const before = await p.locator('#beat-4').boundingBox()
+      const reading = await saved()
+      await p.locator('#beat-4 .ground').click()
+      await p.waitForTimeout(150)
+      const panel = await p.locator('#source-panel').boundingBox()
+      const after = await p.locator('#beat-4').boundingBox()
+      if (!panel || panel.y < 55 || panel.y + panel.height > viewport.height + 2) return fail(`${viewport.width}px 查证栏跑到视口之外`)
+      const heading = await p.locator('.panel-heading').boundingBox()
+      const close = await p.locator('.panel-close').boundingBox()
+      const restart = await p.locator('#source-panel .cta-ghost').boundingBox()
+      if (close.y < heading.y || close.y + close.height > heading.y + heading.height + 1 || (restart && close.y + close.height > restart.y + 1)) return fail('查证关闭按钮越出标题栏，压到从头读')
+      // 正文宽度不变不能证明未遮挡；逐个可见文字行检查是否被面板覆盖。
+      const obscured = await p.evaluate(findObscuredText)
+      if (obscured.length) return fail(`${viewport.width}px 查证栏遮住正文：${obscured[0]}`)
+      if ((await saved()).beat !== reading.beat) return fail('查证行为推进了阅读进度')
+      await p.keyboard.press('Escape')
+      if (await p.locator('#source-panel').isVisible()) return fail('Escape 未关闭查证')
+      if (!(await p.evaluate(() => document.activeElement === document.querySelector('#beat-4 .ground')))) return fail('查证关闭后焦点未返回依据入口')
+      await p.reload({ waitUntil: 'networkidle' })
+      const anchor = await p.locator(`#beat-${reading.beat}`).boundingBox()
+      if (Math.abs(anchor.y - 105) > 30) return fail('刷新未接着阅读位置')
+      if (await p.evaluate(() => document.documentElement.scrollWidth > innerWidth)) return fail('正文横向溢出')
+    } finally { await p.close() }
+  }
+  return ok('全文连贯呈现；真实滚动推进、查证原位、焦点返回与刷新续读，桌面手机均通过')
+})
+
+check('读后追问: 手机桌面原地查证，键盘关闭与焦点返回', async () => {
+  for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
+    const p = await open('light', { viewport, reducedMotion: 'reduce' })
+    try {
+      await p.goto(`${BASE}/p/gaohuan/01-hanshi`, { waitUntil: 'networkidle' })
+      await p.locator('button.cta').click()
+      await p.locator('.next-bar').scrollIntoViewIfNeeded()
+      await p.locator('.ask-btn').scrollIntoViewIfNeeded()
+      const before = await p.evaluate(() => ({ y: scrollY, saved: localStorage.getItem('guanshi.progress.v1') }))
+      await p.locator('.ask-btn').click()
+      const dialog = p.getByRole('dialog')
+      if (await dialog.getAttribute('aria-modal') !== 'true' || await dialog.locator('input,textarea').count()) return fail('追问不是预置问题模态面板')
+      await dialog.locator('.seed-meta button.cite').first().click()
+      const quote = await dialog.locator('.seed-citation blockquote').innerText()
+      const expected = DATA.people.find(person => person.id === 'gaohuan').source['004'].text
+      if (quote.replace(/\s/g, '') !== expected.replace(/\s/g, '')) return fail('追问引用未原地展示相应底本')
+      if (await p.locator('#source-panel').isVisible()) return fail('追问查证打开了另一个冲突面板')
+      await dialog.locator('button').last().focus()
+      await p.keyboard.press('Tab')
+      if (!(await p.evaluate(() => document.activeElement === document.querySelector('.sheet-inner button')))) return fail('Tab 焦点逃出追问面板')
+      await p.keyboard.press('Escape')
+      if (await dialog.count()) return fail('Escape 没有关掉追问')
+      const after = await p.evaluate(() => ({ y: scrollY, saved: localStorage.getItem('guanshi.progress.v1'), focus: document.activeElement === document.querySelector('.ask-btn'), overflow: document.body.style.overflow }))
+      if (!after.focus || Math.abs(after.y - before.y) > 2 || after.overflow === 'hidden') return fail('关闭后未恢复阅读位置、滚动或焦点')
+      if (after.saved !== before.saved) return fail('问答查证改写了阅读记录')
+    } finally { await p.close() }
+  }
+  return ok('预置追问内可查原文，焦点留在面板内；关闭后回到原阅读位置，进度不变')
+})
+
+check('高欢查证: 十篇逐段显示具体依据，多书原文不缺失', async () => {
+  const person = DATA.people.find(person => person.id === 'gaohuan')
+  const p = await open('light', { viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' })
+  const compact = text => String(text).replace(/[`\s]/g, '')
+  let beats = 0
+  let citations = 0
+  try {
+    for (const story of Object.values(person.stories)) {
+      await p.goto(`${BASE}/p/gaohuan/${story.id}`, { waitUntil: 'networkidle' })
+      await p.locator('button.cta').click()
+      for (const beat of story.beats) {
+        await p.locator(`#beat-${beat.n} .ground`).click()
+        const face = p.locator('#source-panel .panel-face')
+        const ground = await face.locator('.mark-block .body').innerText()
+        if (compact(ground) !== compact(beat.ground) || ground.includes('叙述中明确说明的比较与判断')) return fail(`${story.id} 第${beat.n}段未展示具体依据`)
+        const leads = compact((await face.locator('.lead').allInnerTexts()).join(''))
+        for (const id of beat.sources) {
+          if (!leads.includes(compact(person.source[id].text))) return fail(`${story.id} 第${beat.n}段的${id}原文缺失`)
+          citations++
+        }
+        beats++
+        await p.keyboard.press('Escape')
+      }
+    }
+    return ok(`${Object.keys(person.stories).length}篇 · ${beats}段具体依据 · ${citations}处引用，手机可展开查看完整原文`)
+  } finally { await p.close() }
+})
+
+check('复习查证: 编号开头、列表和因果图不丢失，跨篇依据可原地查阅', async () => {
+  await page.goto(`${BASE}/p/caocao/01-wusebang`, { waitUntil: 'networkidle' })
+  await enterStory()
+  await page.locator('.next-bar').scrollIntoViewIfNeeded()
+  await page.waitForSelector('.reader-after .card')
+  const time = page.locator('.card').filter({ hasText: '这一篇里，时间给了几个刻度' })
+  await time.getByRole('button', { name: /点开看答案/ }).click()
+  const text = await time.innerText()
+  if (!text.includes('单凭它定不了公元年份') || !text.includes('光和末')) return fail('编号开头的答案被吞掉')
+  await resetLocal()
+  await page.goto(`${BASE}/p/jingke/03-shouming`, { waitUntil: 'networkidle' })
+  await enterStory()
+  await page.locator('.next-bar').scrollIntoViewIfNeeded()
+  await page.waitForSelector('.reader-after .card')
+  const cause = page.locator('.card').filter({ hasText: '为什么要把国事交给' })
+  await cause.getByRole('button', { name: /点开看答案/ }).click()
+  if (!(await cause.locator('pre').innerText()).includes('秦欲不可足')) return fail('因果图丢失')
+  await resetLocal()
+  await page.goto(`${BASE}/p/jingke/08-weisheng`, { waitUntil: 'networkidle' })
+  await enterStory()
+  await page.locator('.next-bar').scrollIntoViewIfNeeded()
+  await page.waitForSelector('.reader-after .card')
+  const parallel = page.locator('.card').filter({ hasText: '荆轲那一击和高渐离那一击' })
+  await parallel.getByRole('button', { name: /点开看答案/ }).click()
+  const ref = parallel.locator('button.cite').filter({ hasText: '065' }).first()
+  if (!(await ref.count())) return fail('跨篇依据 065 仍不可点')
+  await ref.click()
+  await page.waitForSelector('#src-065')
+  if (!(await page.locator('#src-065').innerText()).includes('补充参照')) return fail('跨篇原文未说明补充性质')
+  await page.locator('#src-065 button.back').click()
+  if (await page.locator('#source-panel').isVisible()) return fail('查证返回后仍挡着复习答案')
+  return ok('年龄依据、因果图与跨篇补充原文均完整可见，可返回原答案')
 })
 
 const todo = FILTER ? results.filter((r) => r.name.includes(FILTER)) : results
@@ -708,4 +978,3 @@ const todo = FILTER ? results.filter((r) => r.name.includes(FILTER)) : results
   if (browser) await browser.close()
   process.exit(1)
 }
-

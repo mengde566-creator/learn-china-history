@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef, useId } from 'react'
 import RichText, { Marker } from '@/components/RichText'
+import CiteText from '@/components/CiteText'
 
 /**
  * 提问面板。
@@ -10,8 +11,13 @@ import RichText, { Marker } from '@/components/RichText'
  * 降级不是错误态，是另一种形态——用户不该感觉到"少了什么"。
  * **产品不做 AI 自由对话**（用户已明确），所以这里只有这份清单——不会再加上自由输入。
  */
-export default function SeedSheet({ seeds, onClose }) {
+export default function SeedSheet({ seeds, source = {}, onClose }) {
   const [active, setActive] = useState(0)
+  const [citation, setCitation] = useState(null)
+  const dialog = useRef(null)
+  const closeRef = useRef(onClose)
+  closeRef.current = onClose
+  const titleId = useId()
 
   const grouped = useMemo(() => {
     const map = new Map()
@@ -26,20 +32,35 @@ export default function SeedSheet({ seeds, onClose }) {
   const seed = flat[active]
 
   useEffect(() => {
-    const onKey = (e) => e.key === 'Escape' && onClose()
+    const origin = document.activeElement
+    const overflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    dialog.current?.querySelector('button')?.focus({ preventScroll: true })
+    const onKey = (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeRef.current(); return }
+      if (e.key !== 'Tab') return
+      const items = [...(dialog.current?.querySelectorAll('button,a[href],[tabindex="0"]') || [])].filter(el => el.getClientRects().length)
+      if (!items.length) return
+      if (e.shiftKey && document.activeElement === items[0]) { e.preventDefault(); items.at(-1).focus() }
+      else if (!e.shiftKey && document.activeElement === items.at(-1)) { e.preventDefault(); items[0].focus() }
+    }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = overflow
+      if (origin?.isConnected) origin.focus({ preventScroll: true })
+    }
+  }, [])
 
   let idx = -1
 
   return (
     <div className="sheet" onClick={(e) => e.target === e.currentTarget && onClose()}>
-      <div className="sheet-inner">
+      <div className="sheet-inner" ref={dialog} role="dialog" aria-modal="true" aria-labelledby={titleId}>
         <div className="sheet-head">
-          <h2>你 此 刻 想 问 谁 ？</h2>
+          <h2 id={titleId}>读 后 追 问</h2>
           <span className="note">
-            共 {seeds.length} 个问题，全部经人工审校
+            共 {seeds.length} 个预置问题，附史料依据
           </span>
           <button className="x" onClick={onClose} aria-label="关闭">×</button>
         </div>
@@ -58,7 +79,7 @@ export default function SeedSheet({ seeds, onClose }) {
                     <button
                       key={mine}
                       aria-current={mine === active}
-                      onClick={() => setActive(mine)}
+                      onClick={() => { setActive(mine); setCitation(null) }}
                     >
                       {s.q}
                     </button>
@@ -113,11 +134,19 @@ export default function SeedSheet({ seeds, onClose }) {
                     {seed.meta.map((m, i) => (
                       <div className="row" key={i}>
                         <span className="k">{m.k}</span>
-                        <span className="v"><RichText text={m.v} /></span>
+                        <span className="v">{m.k === '依据' ? <CiteText text={m.v} ids={Object.keys(source)} onJump={setCitation} /> : <RichText text={m.v} />}</span>
                       </div>
                     ))}
                   </div>
-                )}              </div>
+                )}
+                {citation && source[citation] && (
+                  <section className="seed-citation">
+                    <button type="button" onClick={() => setCitation(null)}>收起原文</button>
+                    <p>{source[citation].origin} · {citation}</p>
+                    <blockquote>{source[citation].text}</blockquote>
+                  </section>
+                )}
+              </div>
             )}
           </div>
         </div>

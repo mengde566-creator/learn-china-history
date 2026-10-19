@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import RichText, { Marker } from '@/components/RichText'
+import CiteText from '@/components/CiteText'
 import { useProgress, markReview, storyKey } from '@/lib/progress'
 
 /**
@@ -10,7 +11,7 @@ import { useProgress, markReview, storyKey } from '@/lib/progress'
  * **「展开过答案」不写任何状态。** 掌握与否只能由读者自己按——
  * 展开就记成「已掌握」，那是替读者下结论（任务书 R12 明说）。
  */
-export default function ReviewCards({ cards, personId, storyId }) {
+export default function ReviewCards({ cards, personId, storyId, sourceIds, onJump }) {
   const [open, setOpen] = useState(() => new Set())
   const { progress, ready } = useProgress()
   const mine = (progress.review[storyKey(personId, storyId)] || {})
@@ -36,6 +37,8 @@ export default function ReviewCards({ cards, personId, storyId }) {
                 {(c.blocks || []).map((b, i) =>
                   b.t === 'p' ? (
                     <p key={i} style={{ marginBottom: '.6em' }}><RichText text={b.v} /></p>
+                  ) : b.t === 'pre' ? (
+                    <pre key={i} className="review-code">{b.v}</pre>
                   ) : (
                     <table key={i} className="mini-table">
                       <thead>
@@ -62,7 +65,7 @@ export default function ReviewCards({ cards, personId, storyId }) {
                               而标记的颜色是这套东西里区分史料等级的唯一手段。 */}
                           {m.k === '标记' && c.marker
                             ? <><Marker ch={c.marker} size={11} /> {m.v.replace(/^[◆◇○△—]\s*/, '')}</>
-                            : <RichText text={m.v} />}
+                            : m.k === '依据' ? <CiteText text={m.v} ids={sourceIds} onJump={onJump} /> : <RichText text={m.v} />}
                         </span>
                       </div>
                     ))}

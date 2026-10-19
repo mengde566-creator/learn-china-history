@@ -4,7 +4,7 @@ import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import RichText, { Marker, Legend } from '@/components/RichText'
 import CiteText from '@/components/CiteText'
-import { useProgress, markRead, resetStory, storyKey } from '@/lib/progress'
+import { useProgress, markRead, resetStory, storyKey, resumeBeat } from '@/lib/progress'
 import SeedSheet from '@/components/SeedSheet'
 import ReviewCards from '@/components/ReviewCards'
 
@@ -53,7 +53,7 @@ const TABS = [
   { k: 'source',      label: '原文' },
   { k: 'backgrounds', label: '背景' },
   { k: 'ground',      label: '映射' },
-  { k: 'present',     label: '在场' },
+  { k: 'present',     label: '人物' },
 ]
 
 /** 面包屑：导航只放全局入口，层级靠这里走 */
@@ -84,9 +84,29 @@ function evidenceAdds(beat, source) {
   return !hay.includes(g)
 }
 
+// 只使用能在对应底本中连续找到的摘句；省略、拼接或编号不符时保留全文。
+function evidenceExcerpt(beat, id, full) {
+  const match = String(beat?.sourceCell || '').match(/^(\d{3})\s+([\s\S]+)$/)
+  if (!match || match[1] !== id) return null
+  const excerpt = match[2].trim()
+  const compact = (text) => String(text).replace(/\s/g, '')
+  const whole = compact(full)
+  const part = compact(excerpt)
+  return part && part !== whole && whole.includes(part) ? excerpt : null
+}
+
 export default function StoryClient({ person, story, source }) {
   const [phase, setPhase] = useState('opening') // opening | live
   const [revealed, setRevealed] = useState(1)
+  const [openingNotesOpen, setOpeningNotesOpen] = useState(false)
+  const [panelOpen, setPanelOpen] = useState(false)
+  const panelTrigger = useRef(null)
+  const restoring = useRef(true)
+  useEffect(() => {
+    const previous = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+    return () => { window.history.scrollRestoration = previous }
+  }, [])
 
   const [tab, setTab] = useState('evidence')
   /* 引用跳转之前在哪——原文那一段上给一个「返回」 */
@@ -103,26 +123,33 @@ export default function StoryClient({ person, story, source }) {
   /* **本地阅读进度。** 刷新、往返查证、关掉再打开，都能接着读。
      只用 localStorage；存坏了读不了就照常从头读（见 lib/progress.js）。 */
   const { progress, ready: progressReady } = useProgress()
+  const [readReady, setReadReady] = useState(false)
   const savedRead = progress.read[storyKey(person.id, story.id)]
   const restoredRef = useRef(false)
   useEffect(() => {
     if (!progressReady || restoredRef.current) return
     restoredRef.current = true
     const saved = progress.read[storyKey(person.id, story.id)]
-    if (!saved) return
-    /* **段号要裁剪**：故事改短过之后，旧段号可能超出——夹到范围内，别把人送到空白处 */
-    const n = Math.min(Math.max(1, saved.beat || 1), Math.max(1, beats.length))
-    setRevealed(n)
-    if (saved.phase === 'live') setPhase('live')
+    if (saved) {
+      const n = resumeBeat(person.id, story.id, saved, beats.length)
+      setRevealed(n)
+      if (saved.phase === 'live') setPhase('live')
+    }
+    setReadReady(true)
   }, [progressReady, progress, person.id, story.id, beats.length])
   /* 每推进一步就记一次（只在正文里记，入场页不算「读到第几段」） */
   useEffect(() => {
-    if (!progressReady || phase !== 'live') return
-    markRead(person.id, story.id, { beat: revealed, phase: 'live', done: revealed >= beats.length })
-  }, [progressReady, phase, revealed, person.id, story.id, beats.length])
+    if (!readReady || phase !== 'live' || cameFrom?.entrance) return
+    markRead(person.id, story.id, { beat: revealed, beatCount: beats.length, phase: 'live', done: revealed >= beats.length })
+  }, [readReady, phase, revealed, person.id, story.id, beats.length, cameFrom?.entrance])
   const isLast = revealed >= beats.length
   /* 正文里也能从头读（进度存在本机时才有意义） */
-  const restart = () => { resetStory(person.id, story.id); setRevealed(1); setPhase('opening') }
+  const restart = () => {
+    resetStory(person.id, story.id)
+    setRevealed(1); setFollowing(1); setPanelOpen(false); setCameFrom(null)
+    restoring.current = true
+    setPhase('opening'); window.scrollTo({ top: 0, behavior: 'instant' })
+  }
   const shownBeat = beats[following - 1] || beats[0]
 
   /* 读完一篇直接进下一篇。顺序取人物页的篇目顺序，只数已实现的——
@@ -132,79 +159,149 @@ export default function StoryClient({ person, story, source }) {
   const prevStory = at > 0 ? readyList[at - 1] : null
   const nextStory = at >= 0 && at < readyList.length - 1 ? readyList[at + 1] : null
 
-  /* 把某一段滚到滚动区中央。
-     桌面是阅读器布局——场景区自己是滚动容器，所以滚它，不滚页面。
-     内容还没超出容器时什么都不做（此时本来也不需要滚）。 */
-  /* **引用跳转**：点依据里的编号 → 切到「原文」页签、滚到那一段。
-     并记下跳之前在哪，好在原文那一段上给一个「返回」。 */
+  const showPanel = (trigger) => {
+    panelTrigger.current = trigger || document.activeElement
+    setPanelOpen(true)
+  }
+  const closePanel = () => {
+    if (cameFrom?.entrance) { backFromSource(); return }
+    const focus = cameFrom?.focus || panelTrigger.current
+    setPanelOpen(false)
+    setCameFrom(null)
+    requestAnimationFrame(() => {
+      if (focus?.isConnected) focus.focus({ preventScroll: true })
+    })
+  }
+  useEffect(() => {
+    if (!panelOpen) return
+    document.querySelector('.panel-close')?.focus({ preventScroll: true })
+    const escape = (event) => { if (event.key === 'Escape') closePanel() }
+    document.addEventListener('keydown', escape)
+    return () => document.removeEventListener('keydown', escape)
+  }, [panelOpen, cameFrom?.entrance])
+
+  // 查证在自己的面板内滚动；正文的位置与尚未读到的进度都不受影响。
   const jumpToSource = useCallback((id) => {
-    /* **入场页上点编号**：先得进场景，「原文」页签才存在。
-       记下来的「从哪来」是入场页——返回时回到入场页，读者不会莫名被推进正文。 */
-    setCameFrom((prev) => prev ?? { tab, beat: revealed, entrance: phase !== 'live' })
+    const active = document.activeElement
+    const cites = [...document.querySelectorAll('.opening-notes button.cite')]
+    setCameFrom((prev) => prev ?? {
+      tab, beat: following, entrance: phase !== 'live', scrollY: window.scrollY,
+      panelWasOpen: panelOpen,
+      panelCiteAt: [...document.querySelectorAll('.panel-body button.cite')].indexOf(active),
+      citeAt: cites.indexOf(active), focus: active,
+    })
+    if (!panelOpen) panelTrigger.current = active
     if (phase !== 'live') setPhase('live')
+    setPanelOpen(true)
     setTab('source')
     requestAnimationFrame(() => {
       const el = document.getElementById(`src-${id}`)
-      const box = document.querySelector('.stage') || document.scrollingElement
+      const box = el?.closest('.panel-face')
       if (!el) return
-      const top = el.getBoundingClientRect().top - (box.getBoundingClientRect?.().top || 0) + (box.scrollTop || 0) - 12
-      box.scrollTo ? box.scrollTo({ top, behavior: 'smooth' }) : el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      if (box) box.scrollTop += el.getBoundingClientRect().top - box.getBoundingClientRect().top - 12
       el.classList.add('flash')
+      el.focus({ preventScroll: true })
       setTimeout(() => el.classList.remove('flash'), 1600)
     })
-  }, [tab, revealed])
+  }, [tab, following, phase, panelOpen])
 
   const scrollToBeat = useCallback((n) => {
-    const stage = stageRef.current
     const el = document.getElementById(`beat-${n}`)
-    if (!stage || !el) return
-    if (stage.scrollHeight <= stage.clientHeight + 4) return
-    const top = el.offsetTop - stage.clientHeight / 2 + el.clientHeight / 2
-    stage.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
+    if (el) window.scrollTo({ top: Math.max(0, window.scrollY + el.getBoundingClientRect().top - 105), behavior: 'instant' })
   }, [])
 
-  /* 进入场景时把页面拉回顶部。
-     页面本身只负责露出下面的复习卡；阅读发生在场景区内部。 */
+  // 连续阅读按实际可见位置记进度，不把“已渲染全文”记成“已读完”。
   useEffect(() => {
-    if (phase === 'live') window.scrollTo({ top: 0 })
-  }, [phase])
-
-  useEffect(() => {
-    if (phase === 'live') scrollToBeat(revealed)
-  }, [revealed, phase, scrollToBeat])
+    if (phase !== 'live' || !progressReady || cameFrom?.entrance) return
+    // 新开篇直接就位，不延后滚动去覆盖读者已开始的操作。
+    if (revealed <= 1) {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+      restoring.current = false
+      return
+    }
+    restoring.current = true
+    let frame = 0
+    let cancelled = false
+    let previous = null
+    let stable = 0
+    let attempts = 0
+    // 刷新后正文先挂载，样式应用和字体排版可能还在改变上方高度。
+    // 等位置连续稳定再恢复，避免刚滚到段落就被后续布局挤走。
+    const settle = () => {
+      if (cancelled) return
+      const el = document.getElementById(`beat-${revealed}`)
+      const position = el ? window.scrollY + el.getBoundingClientRect().top : 0
+      stable = previous !== null && Math.abs(position - previous) < .5 ? stable + 1 : 0
+      previous = position
+      if (stable < 3 && ++attempts < 60) { frame = requestAnimationFrame(settle); return }
+      if (revealed > 1) scrollToBeat(revealed)
+      else window.scrollTo({ top: 0, behavior: 'instant' })
+      frame = requestAnimationFrame(() => {
+        restoring.current = false
+        window.dispatchEvent(new Event('scroll'))
+      })
+    }
+    const stop = () => {
+      cancelled = true
+      cancelAnimationFrame(frame)
+      restoring.current = false
+      window.dispatchEvent(new Event('scroll'))
+    }
+    const onKey = (event) => { if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) stop() }
+    window.addEventListener('wheel', stop, { passive: true })
+    window.addEventListener('touchstart', stop, { passive: true })
+    window.addEventListener('keydown', onKey)
+    document.fonts.ready.then(() => { if (!cancelled) frame = requestAnimationFrame(settle) })
+    return () => {
+      cancelled = true
+      cancelAnimationFrame(frame)
+      window.removeEventListener('wheel', stop)
+      window.removeEventListener('touchstart', stop)
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [phase, progressReady, scrollToBeat])
 
   const backFromSource = useCallback(() => {
     if (!cameFrom) return
-    /* 从入场页跳过来的，返回时回到入场页 */
-    if (cameFrom.entrance) { setPhase('opening'); setCameFrom(null); return }
-    setTab(cameFrom.tab)
+    const origin = cameFrom
+    if (origin.entrance) { setPhase('opening'); setPanelOpen(false) }
+    else { setTab(origin.tab); setFollowing(origin.beat); setPanelOpen(origin.panelWasOpen) }
     setCameFrom(null)
-    requestAnimationFrame(() => scrollToBeat(cameFrom.beat))
-  }, [cameFrom, scrollToBeat])
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: origin.scrollY, behavior: 'instant' })
+      const focus = origin.entrance
+        ? document.querySelectorAll('.opening-notes button.cite')[origin.citeAt]
+        : origin.focus?.isConnected ? origin.focus : document.querySelectorAll('.panel-body button.cite')[origin.panelCiteAt]
+      if (focus?.isConnected) focus.focus({ preventScroll: true })
+    })
+  }, [cameFrom])
 
-  /* 依据面板跟随阅读位置：
-     取「穿过滚动区中线」的那个情节点，左右就不会各看各的。 */
   useEffect(() => {
-    if (phase !== 'live') return
-    const stage = stageRef.current
-    const els = document.querySelectorAll('.beat[data-n]')
+    if (phase !== 'live' || panelOpen || cameFrom) return
+    const els = [...document.querySelectorAll('.beat[data-n]')]
     if (!els.length) return
-    const io = new IntersectionObserver(
-      (entries) => {
-        const hit = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
-        if (hit) setFollowing(Number(hit.target.dataset.n))
-      },
-      {
-        root: stage && stage.scrollHeight > stage.clientHeight + 4 ? stage : null,
-        rootMargin: '-45% 0px -45% 0px',
-        threshold: 0,
-      }
-    )
-    els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
-  }, [phase, revealed])
+    let frame = 0
+    const locate = () => {
+      frame = 0
+      if (restoring.current) return
+      const line = 140
+      let current = els[0]
+      for (const el of els) if (el.getBoundingClientRect().top <= line) current = el
+      if (els.at(-1).getBoundingClientRect().bottom <= window.innerHeight - 30) current = els.at(-1)
+      const n = Number(current.dataset.n)
+      setFollowing(n)
+      setRevealed((previous) => Math.max(previous, n))
+    }
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(locate) }
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    schedule()
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+    }
+  }, [phase, panelOpen, cameFrom])
 
   /* 时间地点戳：铺陈代码块的第一行就是它 */
   const stamp = story.intro.lines[0]?.text || story.time || ''
@@ -226,16 +323,24 @@ export default function StoryClient({ person, story, source }) {
             </>
           )}
           <div className="when">{stamp}</div>
+          <h1 className="opening-title">{story.name.replace(/\s*★/g, '')}</h1>
           <div className="lines">
             {lines.map((l, i) => (
-              <p key={i} className={i >= 2 ? 'dim' : undefined}>
-                {l.text}
-                {l.marker && <span style={{ marginLeft: 10 }}><Marker ch={l.marker.trim()[0]} size={11} /></span>}
+              <p key={i}>
+                {l.marker ? (
+                  <>
+                    {l.text.slice(0, -3)}
+                    <span className="line-tail">
+                      {l.text.slice(-3)}
+                      <span className="line-mark"><Marker ch={l.marker.trim()[0]} size={11} /></span>
+                    </span>
+                  </>
+                ) : l.text}
               </p>
             ))}
           </div>
           <button className="cta" onClick={() => setPhase('live')}>
-            {savedRead && !savedRead.done ? `继 续 ${story.place || story.name} · 第 ${Math.min(savedRead.beat || 1, beats.length)} 段` : `进 入 ${story.place || story.name}`}
+            {savedRead && !savedRead.done ? `继续阅读 · 第 ${resumeBeat(person.id, story.id, savedRead, beats.length)} 段` : '进入故事'}
           </button>
           {/* **从头读**：有进度的时候才出现。清进度、回第一段。 */}
           {savedRead && (
@@ -249,46 +354,34 @@ export default function StoryClient({ person, story, source }) {
         </div>
 
         <div className="wrap-narrow" style={{ paddingBottom: 90 }}>
-          <div className="note-box">
-            {(() => {
-              const ib = story.intro.basis || []
-              if (!ib.length) {
-                return null
-              }
-              /* **这里原来有一行统计：「铺陈 26 行 · 逐行依据 26 条 · 其中 25 条出自原文。」**
-                 那是**制作过程的话**——读者不关心门口有几行、几条出自原文。
-                 用户的原话：「这还不算垃圾解释？」 删掉，面板直接进内容。 */
-              return (
-                <>
-                  <div>
-                    {ib.map((r, i) => (
-                      <div key={i} className="mark-block">
-                        {/* **这里原来把门口那一行逐字又印了一遍。**
-                             「他年少，机警，有权数，任侠放荡，不治行业——没有人看好他。」
-                             在页面上出现两次：门口一次，这里一次——而这一栏就在门口正下方。
-                             用户：「你这是不是渲染的问题」——**是**。
-                             顺序与门口一一对应，所以用序号代替原文，读者照样对得上。 */}
-                        <div className="hd">
-                          <span className="label">{i + 1}</span>
-                          <span
-                            className="src mk"
-                            style={{
-                              color: r.marker.includes('◆') ? 'var(--zhu)'
-                                : r.marker.includes('◇') ? 'var(--zi)' : 'var(--accent)',
-                            }}
-                          >
-                            {r.marker}
-                          </span>
-                        </div>
-                        <div className="body"><CiteText text={r.basis} ids={sourceIds} onJump={jumpToSource} /></div>
-                      </div>
-                    ))}
+          <details
+            className="opening-notes"
+            open={openingNotesOpen}
+            onToggle={(event) => setOpeningNotesOpen(event.currentTarget.open)}
+          >
+            <summary>查阅铺陈依据与标记</summary>
+            <div className="note-box">
+              {/* 依据按铺陈顺序编号，点击编号可查原文并返回这里。 */}
+              {(story.intro.basis || []).map((r, i) => (
+                <div key={i} className="mark-block">
+                  <div className="hd">
+                    <span className="label">{i + 1}</span>
+                    <span
+                      className="src mk"
+                      style={{
+                        color: r.marker.includes('◆') ? 'var(--zhu)'
+                          : r.marker.includes('◇') ? 'var(--zi)' : 'var(--accent)',
+                      }}
+                    >
+                      {r.marker}
+                    </span>
                   </div>
-                </>
-              )
-            })()}
-            <div style={{ marginTop: 14 }}><Legend foreign={foreignBooks(person)} /></div>
-          </div>
+                  <div className="body"><CiteText text={r.basis} ids={sourceIds} onJump={jumpToSource} /></div>
+                </div>
+              ))}
+              <div style={{ marginTop: 14 }}><Legend foreign={foreignBooks(person)} /></div>
+            </div>
+          </details>
         </div>
       </main>
 
@@ -309,13 +402,18 @@ export default function StoryClient({ person, story, source }) {
         <div style={{ paddingTop: 24 }}>
           <Crumbs person={person} story={story} />
         </div>
-        <div className="face">
+        <div className="reader-actions">
+          <button type="button" onClick={() => { setPanelOpen(false); setPhase('opening'); window.scrollTo({ top: 0, behavior: 'instant' }) }}>回看引入</button>
+          <button type="button" aria-expanded={panelOpen} aria-controls="source-panel" onClick={(event) => panelOpen ? closePanel() : showPanel(event.currentTarget)}>查证与背景</button>
+        </div>
+        <div className={`face reader${panelOpen ? ' with-panel' : ''}`}>
           {/* 暗场 */}
           <section className="stage" ref={stageRef}>
             <div className="scene-meta">{stamp}</div>
+            <h1 className="reading-title">{story.name.replace(/\s*★/g, '')}</h1>
 
             <div className="beats">
-              {beats.slice(0, revealed).map((b) => {
+              {beats.map((b) => {
                 /* b.quotes 由编译器给：只有**逐字对得上底本**的那些行才算原文。
                    本地不要再用「有没有引号」去猜——白话对白也带引号。
                    就地渲染，不抽到段末：抽走的话，紧跟其后的白话回译会跑到引文前面。
@@ -353,7 +451,8 @@ export default function StoryClient({ person, story, source }) {
 
                     <button
                       className="ground anim-fade d3"
-                      onClick={() => { setTab('evidence'); scrollToBeat(b.n) }}
+                      onClick={(event) => { setTab('evidence'); setFollowing(b.n); showPanel(event.currentTarget) }}
+                      aria-controls="source-panel"
                       title={titleOf(b.marker, person, b, source)}
                     >
                       <b className={MARK_CLASS[b.marker] || 'g-silent'}>{b.marker || '—'}</b>
@@ -367,14 +466,7 @@ export default function StoryClient({ person, story, source }) {
             </div>
 
             <div className="ask">
-              {!isLast ? (
-                <button className="continue" onClick={() => setRevealed((n) => n + 1)}>
-                  <span className="word">再 往 前</span>
-                  <span className="dots">
-                    {beats.map((_, i) => <i key={i} className={i < revealed ? 'on' : ''} />)}
-                  </span>
-                </button>
-              ) : (prevStory || nextStory) ? (
+              {(prevStory || nextStory) ? (
                 /* 读完之后，场景底部的这条常驻位换成出口。
                    和「继续」用同一套语言：贴着场景底的一条细线、暗场的字；
                    不是贴一张纸进来（纸是「查账」那边的语言，属于场景外）。 */
@@ -404,7 +496,11 @@ export default function StoryClient({ person, story, source }) {
           </section>
 
           {/* 纸面 */}
-          <aside className="panel">
+          <aside className="panel reader-panel" id="source-panel" hidden={!panelOpen} aria-label="史料查阅">
+            <div className="panel-heading">
+              <span>史料查阅</span>
+              <button type="button" className="panel-close" onClick={closePanel}>关闭</button>
+            </div>
             {/* **从头读**：正文里也给一个（进度存在本机时才有意义）。
                 点它清掉这一篇的进度、回入场页——复习状态不动，那是两件事。 */}
             {savedRead && (
@@ -428,17 +524,25 @@ export default function StoryClient({ person, story, source }) {
                 <div className="panel-face paper anim-fade" key={shownBeat.n}>
                   <h3>这 一 处 的 依 据</h3>
 
-                  {/* 把这一段依赖的**全部**底本都列出来，不只「原文」栏那一条。
-                      场景里常有两三句白话，各自出自不同段落；只引一条，
-                      读者会以为译文多出来一段——这正是被指出的那个问题。 */}
-                  {(shownBeat.sources || []).map((id) => (
-                    <div key={id} className="lead">
-                      「{source[id]?.text}」
-                      <div style={{ fontSize: 11, color: 'var(--mo-mute)', marginTop: 6, letterSpacing: '.06em' }}>
-                        {source[id]?.origin || person.sourceBook} {id}
+                  {/* 每个来源都保留。已逐字匹配的当前摘句先显示，完整上下文按需展开。 */}
+                  {(shownBeat.sources || []).map((id) => {
+                    const full = source[id]?.text || ''
+                    const excerpt = evidenceExcerpt(shownBeat, id, full)
+                    return (
+                      <div key={id} className="lead">
+                        「{excerpt || full}」
+                        <div style={{ fontSize: 11, color: 'var(--mo-mute)', marginTop: 6, letterSpacing: '.06em' }}>
+                          {source[id]?.origin || person.sourceBook} {id}
+                        </div>
+                        {excerpt && (
+                          <details className="source-context">
+                            <summary>展开完整底本 · {id}</summary>
+                            <div className="source-context-text">{full}</div>
+                          </details>
+                        )}
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
 
                   <div className={`mark-block ${
                     shownMark === '◆' ? 'source' : shownMark === '○' ? 'infer' : shownMark === '△' ? 'doubt' : 'silent'
@@ -463,7 +567,6 @@ export default function StoryClient({ person, story, source }) {
                    101 是裴松之注引孙盛《异同杂语》、201 是十四世纪的《三国演义》。
                    并排摊成一张单子、同样挂 ◆，读者会以为「闻司徒有七星宝刀一口」
                    是陈寿写的。分节 + 各自的书名 + 小说用空心标记，位置本身就是区分。 */
-                const all = Object.values(source)
                 const groups = (person.books || [])
                   .map((b) => ({ ...b, rows: b.ids.map((id) => source[id]).filter(Boolean) }))
                   .filter((b) => b.rows.length)
@@ -481,7 +584,7 @@ export default function StoryClient({ person, story, source }) {
                   野史: '不是正史',
                 }
                 const row = (s) => (
-                  <div key={s.id} id={`src-${s.id}`}
+                  <div key={s.id} id={`src-${s.id}`} tabIndex={-1}
                     className={`mark-block ${s.tier === '正史' ? 'source' : FOREIGN_TIERS.has(s.tier) ? 'fiction' : 'noted'}`}>
                     <div className="hd">
                       <span className="glyph mk"><Marker ch={FOREIGN_TIERS.has(s.tier) ? '◇' : '◆'} size={11} /></span>
@@ -489,6 +592,7 @@ export default function StoryClient({ person, story, source }) {
                           不然会出现「《三国演义》第四回　《三国演义》第四回 201」 */}
                       {s.tier !== '正史' && <span className="tag">{s.origin}</span>}
                       <span className="src">{s.id}</span>
+                      {person.supplementalSourceIds?.includes(s.id) && <span className="tag">补充参照</span>}
                       {/* **返回**：从依据点编号跳过来的人，要能一步回到刚才读的地方 */}
                       {cameFrom && (
                         <button type="button" className="cite back" onClick={backFromSource}>← 返回</button>
@@ -576,10 +680,10 @@ export default function StoryClient({ person, story, source }) {
                   {presentAway.length > 0 && (
                     <>
                       <h4 style={{ marginTop: 24, fontSize: 11, letterSpacing: '.24em', color: 'var(--su-dim)', fontWeight: 400, marginBottom: 12 }}>
-                        已 不 在 场
+                        其 他 相 关 人 物
                       </h4>
                       {presentAway.map((p) => (
-                        <div key={p.name} className="person dead">
+                        <div key={p.name} className="person away">
                           <span className="dot" /><span className="n">{p.name}</span>
                           <span className="r">{p.state.replace(/^不在场[（(]?/, '').replace(/[）)]$/, '')}</span>
                         </div>
@@ -594,7 +698,7 @@ export default function StoryClient({ person, story, source }) {
 
         {/* 读完之后 */}
         {isLast && (
-          <section style={{ marginTop: 56 }}>
+          <section className="reader-after" style={{ marginTop: 56 }}>
             {story.cards.length > 0 ? (
               <>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 20, flexWrap: 'wrap' }}>
@@ -602,7 +706,7 @@ export default function StoryClient({ person, story, source }) {
                     读完之后 · {story.cards.length} 张复习卡
                   </h2>
                 </div>
-                <ReviewCards cards={story.cards} personId={person.id} storyId={story.id} />
+                <ReviewCards cards={story.cards} personId={person.id} storyId={story.id} sourceIds={sourceIds} onJump={jumpToSource} />
               </>
             ) : (
               <div className="card-hint" style={{ textAlign: 'left' }}>
@@ -616,7 +720,7 @@ export default function StoryClient({ person, story, source }) {
             {story.seeds.length > 0 ? (
               <button className="ask-btn ask-after" onClick={() => setSheet(true)}>
                 <span className="caret" />
-                <span>你想说什么</span>
+                <span>读后追问</span>
                 <span className="hint">{story.seeds.length} 个问题可选</span>
               </button>
             ) : (
@@ -635,7 +739,7 @@ export default function StoryClient({ person, story, source }) {
         )}
       </main>
 
-      {sheet && <SeedSheet seeds={story.seeds} onClose={() => setSheet(false)} />}
+      {sheet && <SeedSheet seeds={story.seeds} source={source} onClose={() => setSheet(false)} />}
     </>
   )
 }

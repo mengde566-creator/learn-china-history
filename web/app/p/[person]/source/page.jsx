@@ -77,7 +77,7 @@ export default async function SourcePage({ params }) {
         {/* 这一页原来有一整块自我说明（「底本 232 段全在这里……那是有意的」）。
             **读者打开一页资料，先读了一段产品说明书。** 删掉：页面上只留数字。 */}
         <p className="sub" style={{ marginTop: 6 }}>
-          {total} 段{glossed > 0 && <>　·　直译 {glossed} 段</>}
+          {total} 段{glossed > 0 && <>　·　白话 {glossed} 段</>}
         </p>
       </header>
 
@@ -101,7 +101,7 @@ export default async function SourcePage({ params }) {
                 <div className="src-body">
                   <p className="src-text">{plain(source[id].text)}</p>
                   {gloss[id]
-                    ? <p className="src-gloss"><span className="lead">直译</span>{plain(gloss[id])}</p>
+                    ? <p className="src-gloss"><span className="lead">白话</span>{plain(gloss[id])}</p>
                     : null}
                 </div>
               </li>
