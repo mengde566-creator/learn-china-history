@@ -9,6 +9,8 @@ import { plainSourceText } from '../lib/source-layers.mjs'
 const data = JSON.parse(fs.readFileSync(new URL('../data/content.json', import.meta.url)))
 const person = data.people.find(p => p.id === process.argv[2])
 assert.ok(person, '传入已接入的人物ID，如 yuwentai')
+const storyId = process.argv.find(arg => arg.startsWith('--story='))?.slice('--story='.length)
+assert.ok(!storyId || person.stories[storyId], `故事不存在：${storyId}`)
 const base = process.env.BASE_URL || 'http://127.0.0.1:3100'
 const norm = v => plainSourceText(v).replace(/\s/g, '')
 const settle = p => p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
@@ -46,6 +48,7 @@ try {
     }
     const entries = person.storyList.filter(s => s.ready)
     for (const [index, entry] of entries.entries()) {
+      if (storyId && entry.id !== storyId) continue
       const story = person.stories[entry.id]
       await page.goto(`${base}/p/${person.id}/${entry.id}`, { waitUntil: 'networkidle' })
       const opening = await page.locator('.opening').innerText()
@@ -129,9 +132,12 @@ try {
           if (['p', 'pre'].includes(block.t)) assert.ok(shown.includes(norm(block.v)))
           else for (const cell of [...block.head, ...block.rows.flat()]) assert.ok(shown.includes(norm(cell)))
         }
-        const ids = await article.locator('button.cite').allTextContents()
-        for (const id of ids.map(v => v.trim()).filter(v => /^\d{3}$/.test(v))) {
-          await article.getByRole('button', { name: id, exact: true }).click()
+        const cites = article.locator('.a button.cite')
+        const ids = await cites.allTextContents()
+        for (const [ci, value] of ids.entries()) {
+          const id = value.trim()
+          if (!/^\d{3}$/.test(id)) continue
+          await cites.nth(ci).click()
           await citation(id)
           await page.keyboard.press('Escape')
         }
@@ -141,13 +147,23 @@ try {
       await page.locator('.ask-btn').click()
       const dialog = page.getByRole('dialog')
       assert.equal(await dialog.locator('textarea,input').count(), 0)
+      const seedGroups = new Map()
       for (const seed of story.seeds) {
-        await dialog.locator('.seed-nav').getByRole('button', { name: seed.q, exact: true }).click()
+        if (!seedGroups.has(seed.group)) seedGroups.set(seed.group, [])
+        seedGroups.get(seed.group).push(seed)
+      }
+      for (const [seedIndex, seed] of [...seedGroups.values()].flat().entries()) {
+        const choice = dialog.locator('.seed-nav button').nth(seedIndex)
+        assert.equal(await choice.innerText(), seed.q)
+        await choice.click()
         const text = norm(await dialog.locator('.seed-view').innerText())
         for (const paragraph of seed.answer) assert.ok(text.includes(norm(paragraph)))
-        const ids = await dialog.locator('.seed-meta .cite').allTextContents()
-        for (const id of ids.map(v => v.trim()).filter(v => /^\d{3}$/.test(v))) {
-          await dialog.locator('.seed-meta').getByRole('button', { name: id, exact: true }).click()
+        const cites = dialog.locator('.seed-meta .cite')
+        const ids = await cites.allTextContents()
+        for (const [ci, value] of ids.entries()) {
+          const id = value.trim()
+          if (!/^\d{3}$/.test(id)) continue
+          await cites.nth(ci).click()
           assert.equal(norm(await dialog.locator('.seed-citation blockquote').innerText()), norm(person.source[id].text))
           assert.ok(norm(await dialog.locator('.seed-citation p').innerText()).includes(norm(person.source[id].origin)))
           counts.citations++
