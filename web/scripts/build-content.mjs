@@ -28,6 +28,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createHash } from 'node:crypto'
 import { attachSourceLayers } from '../lib/source-layers.mjs'
+import { validateEvidenceExcerpts } from '../lib/evidence.mjs'
 /* 原文范围的写法，和渲染层共用同一份实现（`lib/content.js` 也引它）。
    两边各写一份正则的话，编译器校验的和页面渲染的迟早不是同一件事。 */
 import { parseRange } from '../lib/range.mjs'
@@ -523,6 +524,8 @@ function parseStoryContent(rel, source) {
     beat.sources = [...new Set(
       ((beat.source || '') + ' ' + (beat.ground || '')).match(/\b\d{3}\b/g) || []
     )].filter((id) => source[id])
+    try { validateEvidenceExcerpts(beat, source) }
+    catch (error) { throw new ParseError(rel, 0, `第${beat.n}段：${error.message}`) }
     /* 引文与它的白话回译。
        回译写成紧跟引文之后、以「——」开头的一行
        （06 段 5 的「——始终没有回头。」就是这个形状）。
@@ -647,6 +650,13 @@ function parseStoryContent(rel, source) {
         if (k === '标记') { beat.marker = clean(cells[1]); return }
         if (k === '图') { beat.imgFile = clean(cells[1]); return }
         if (k === '图注') { beat.imgCaption = clean(cells[1]); return }
+        const excerptId = k.match(/^摘句(\d{3})$/)?.[1]
+        if (excerptId) {
+          beat.sourceExcerpts ||= {}
+          if (Object.hasOwn(beat.sourceExcerpts, excerptId)) throw new ParseError(rel, 0, `第${beat.n}段摘句${excerptId}重复`)
+          beat.sourceExcerpts[excerptId] = clean(cells[1])
+          return
+        }
         if (k === '原文') {
           const id = ids(cells[1])[0]
           beat.source = id || null

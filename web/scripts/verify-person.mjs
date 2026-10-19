@@ -60,6 +60,20 @@ try {
           assert.ok(text.includes(norm(paragraph.replace(/^——/, ''))), `${entry.id}/${beat.n} 正文缺失: ${paragraph}`)
         }
         counts.beats++
+        // 每条显式摘句必须可见；展开后仍是原来的完整底本。
+        if (beat.sourceExcerpts) {
+          const trigger = page.locator(`#beat-${beat.n} .ground`)
+          await trigger.click()
+          for (const [id, excerpt] of Object.entries(beat.sourceExcerpts)) {
+            const lead = page.locator('#source-panel .lead').nth(beat.sources.indexOf(id))
+            assert.ok(norm(await lead.innerText()).includes(norm(excerpt)), `${entry.id}/${beat.n}/${id} 摘句缺失`)
+            const details = lead.locator('details.source-context')
+            await details.locator('summary').click()
+            assert.equal(norm(await details.locator('.source-context-text').innerText()), norm(person.source[id].text))
+            counts.citations++
+          }
+          await page.keyboard.press('Escape')
+        }
       }
       const prev = page.locator('.next-bar a.prev'), next = page.locator('.next-bar a.next')
       assert.equal(await prev.count() ? await prev.getAttribute('href') : null, index ? `/p/${person.id}/${entries[index - 1].id}` : null)

@@ -10,6 +10,7 @@ import SeedSheet from '@/components/SeedSheet'
 import ReviewCards from '@/components/ReviewCards'
 import SourceText from '@/components/SourceText'
 import { hasMixedSourceLayers, sourceExcerptOrigin } from '@/lib/source-layers.mjs'
+import { evidenceExcerpt } from '@/lib/evidence.mjs'
 
 /* 界面上只放短标签。长说明在图例里出现一次就够——
    原来每个标记都重复一遍「出自原文，可逐字核对」，纯属噪音。 */
@@ -85,17 +86,6 @@ function evidenceAdds(beat, source) {
   if (!g || g.length <= 4) return false
   const hay = (beat?.sources || []).map((id) => strip(source[id]?.text)).join('')
   return !hay.includes(g)
-}
-
-// 只使用能在对应底本中连续找到的摘句；省略、拼接或编号不符时保留全文。
-function evidenceExcerpt(beat, id, full) {
-  const match = String(beat?.sourceCell || '').match(/^(\d{3})\s+([\s\S]+)$/)
-  if (!match || match[1] !== id) return null
-  const excerpt = match[2].trim()
-  const compact = (text) => String(text).replace(/\s/g, '')
-  const whole = compact(full)
-  const part = compact(excerpt)
-  return part && part !== whole && whole.includes(part) ? excerpt : null
 }
 
 export default function StoryClient({ person, story, source }) {
