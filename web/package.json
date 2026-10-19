@@ -11,6 +11,7 @@
     "build": "npm run content && npm run font && next build",
     "start": "next start",
     "verify": "node scripts/verify.mjs",
+    "verify:panel": "node scripts/verify-reader-panel.mjs",
     "shots": "node scripts/screenshots.mjs",
     "refs": "node scripts/fetch-refs.mjs",
     "check-sources": "node scripts/check-sources.mjs",

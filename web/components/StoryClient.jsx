@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
+import { useState, useMemo, useRef, useEffect, useLayoutEffect, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import RichText, { Marker, Legend } from '@/components/RichText'
 import CiteText from '@/components/CiteText'
@@ -101,6 +102,16 @@ export default function StoryClient({ person, story, source }) {
   const [openingNotesOpen, setOpeningNotesOpen] = useState(false)
   const [panelOpen, setPanelOpen] = useState(false)
   const panelTrigger = useRef(null)
+  const panelReturn = useRef(null)
+  const panelDock = useRef(null)
+  const [panelHost, setPanelHost] = useState(null)
+  const [widePanel, setWidePanel] = useState(false)
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 1081px)')
+    const update = () => setWidePanel(query.matches)
+    update(); query.addEventListener('change', update)
+    return () => query.removeEventListener('change', update)
+  }, [])
   const restoring = useRef(true)
   useEffect(() => {
     const previous = window.history.scrollRestoration
@@ -117,6 +128,42 @@ export default function StoryClient({ person, story, source }) {
   const [following, setFollowing] = useState(1)  // 读到第几段（依据面板跟着它走）
   const [sheet, setSheet] = useState(false)
   const stageRef = useRef(null)
+
+  // 一个面板只挂载一次：宽屏放入相邻列，窄屏放入触发段落/复习卡之后。
+  useLayoutEffect(() => {
+    if (phase !== 'live') { setPanelHost(null); return }
+    const context = panelTrigger.current?.closest('.beat, .card')
+    const inline = context?.querySelector('[data-panel-host]')
+      || document.querySelector(`#beat-${following} [data-panel-host]`)
+    setPanelHost(widePanel && !context?.matches('.card') ? panelDock.current : inline)
+  }, [phase, panelOpen, following, widePanel])
+  useLayoutEffect(() => {
+    if (!panelOpen || !panelHost) return
+    let cancelled = false
+    let frame = 0
+    const align = () => {
+      if (cancelled) return
+      const anchor = panelReturn.current
+      if (panelHost === panelDock.current && anchor?.el?.isConnected) {
+        window.scrollBy({ top: anchor.el.getBoundingClientRect().top - anchor.top, behavior: 'instant' })
+      } else {
+        const panel = document.getElementById('source-panel')
+        if (panel) window.scrollBy({ top: panel.getBoundingClientRect().top - 110, behavior: 'instant' })
+      }
+    }
+    align()
+    const observer = new ResizeObserver(() => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(align)
+    })
+    if (stageRef.current) observer.observe(stageRef.current)
+    const actions = document.querySelector('.reader-actions')
+    if (actions) observer.observe(actions)
+    // 从引入页首次挂载正文时，字体加载还会改变前文高度。
+    // 字体就绪后再对齐一次，避免查证标题被导航栏挡住。
+    document.fonts.ready.then(() => { if (!cancelled) frame = requestAnimationFrame(align) })
+    return () => { cancelled = true; cancelAnimationFrame(frame); observer.disconnect() }
+  }, [panelOpen, panelHost, widePanel])
 
   const beats = story.beats
 
@@ -161,14 +208,20 @@ export default function StoryClient({ person, story, source }) {
 
   const showPanel = (trigger) => {
     panelTrigger.current = trigger || document.activeElement
+    const el = panelTrigger.current
+    panelReturn.current = el ? { el, top: el.getBoundingClientRect().top } : null
     setPanelOpen(true)
   }
   const closePanel = () => {
     if (cameFrom?.entrance) { backFromSource(); return }
-    const focus = cameFrom?.focus || panelTrigger.current
+    const focus = cameFrom?.focus?.isConnected ? cameFrom.focus : panelTrigger.current
+    restoring.current = true
     setPanelOpen(false)
     setCameFrom(null)
     requestAnimationFrame(() => {
+      const anchor = panelReturn.current
+      if (anchor?.el?.isConnected) window.scrollBy({ top: anchor.el.getBoundingClientRect().top - anchor.top, behavior: 'instant' })
+      requestAnimationFrame(() => { restoring.current = false })
       if (focus?.isConnected) focus.focus({ preventScroll: true })
     })
   }
@@ -178,7 +231,7 @@ export default function StoryClient({ person, story, source }) {
     const escape = (event) => { if (event.key === 'Escape') closePanel() }
     document.addEventListener('keydown', escape)
     return () => document.removeEventListener('keydown', escape)
-  }, [panelOpen, cameFrom?.entrance])
+  }, [panelOpen, panelHost, cameFrom?.entrance])
 
   // 查证在自己的面板内滚动；正文的位置与尚未读到的进度都不受影响。
   const jumpToSource = useCallback((id) => {
@@ -190,7 +243,10 @@ export default function StoryClient({ person, story, source }) {
       panelCiteAt: [...document.querySelectorAll('.panel-body button.cite')].indexOf(active),
       citeAt: cites.indexOf(active), focus: active,
     })
-    if (!panelOpen) panelTrigger.current = active
+    if (!panelOpen) {
+      panelTrigger.current = active
+      panelReturn.current = active ? { el: active, top: active.getBoundingClientRect().top } : null
+    }
     if (phase !== 'live') setPhase('live')
     setPanelOpen(true)
     setTab('source')
@@ -396,106 +452,7 @@ export default function StoryClient({ person, story, source }) {
   const presentHere = story.present.filter((p) => p.here)
   const presentAway = story.present.filter((p) => !p.here)
 
-  return (
-    <>
-      <main className="wrap" style={{ paddingBottom: 80 }}>
-        <div style={{ paddingTop: 24 }}>
-          <Crumbs person={person} story={story} />
-        </div>
-        <div className="reader-actions">
-          <button type="button" onClick={() => { setPanelOpen(false); setPhase('opening'); window.scrollTo({ top: 0, behavior: 'instant' }) }}>回看引入</button>
-          <button type="button" aria-expanded={panelOpen} aria-controls="source-panel" onClick={(event) => panelOpen ? closePanel() : showPanel(event.currentTarget)}>查证与背景</button>
-        </div>
-        <div className={`face reader${panelOpen ? ' with-panel' : ''}`}>
-          {/* 暗场 */}
-          <section className="stage" ref={stageRef}>
-            <div className="scene-meta">{stamp}</div>
-            <h1 className="reading-title">{story.name.replace(/\s*★/g, '')}</h1>
-
-            <div className="beats">
-              {beats.map((b) => {
-                /* b.quotes 由编译器给：只有**逐字对得上底本**的那些行才算原文。
-                   本地不要再用「有没有引号」去猜——白话对白也带引号。
-                   就地渲染，不抽到段末：抽走的话，紧跟其后的白话回译会跑到引文前面。
-                   回译跟着引文一起走，就是 06 段 5「——始终没有回头。」那个形状。 */
-                const quotes = b.quotes || []
-                const glossAt = new Set(quotes.map((q) => q.glossAt).filter((x) => x !== null))
-                return (
-                  <article key={b.n} data-n={b.n} id={`beat-${b.n}`} className="beat active">
-                    <div className="narration anim-emerge">
-                      {b.prose.map((p, i) => {
-                        const q = quotes.find((x) => x.at === i)
-                        if (q) {
-                          return (
-                            <div key={i} className="emerge anim-emerge d2">
-                              <cite>{q.text}</cite>
-                              {/* **回译和白话重复时不渲染。** 同一句话在页面上出现三遍
-                                  （白话 → 原文 → 回译 → 白话），读者读到的是复述。
-                                   白话已经把这句原文译过了，回译就没有存在的理由。 */}
-                              {q.gloss && !q.glossRedundant && <span className="gloss">{q.gloss}</span>}
-                            </div>
-                          )
-                        }
-                        if (glossAt.has(i)) return null
-                        return <p key={i}>{p}</p>
-                      })}
-                    </div>
-
-                    {/* 插图位：内容里填了「图」才渲染，没填就什么都不占 */}
-                    {b.img && (
-                      <figure className="beat-figure">
-                        <img src={b.img} alt={b.imgCaption || ''} loading="lazy" />
-                        {b.imgCaption && <figcaption>{b.imgCaption}</figcaption>}
-                      </figure>
-                    )}
-
-                    <button
-                      className="ground anim-fade d3"
-                      onClick={(event) => { setTab('evidence'); setFollowing(b.n); showPanel(event.currentTarget) }}
-                      aria-controls="source-panel"
-                      title={titleOf(b.marker, person, b, source)}
-                    >
-                      <b className={MARK_CLASS[b.marker] || 'g-silent'}>{b.marker || '—'}</b>
-                      <span className="sep">·</span>
-                      依据
-                      {b.source && <span className="src-id">{b.source}</span>}
-                    </button>
-                  </article>
-                )
-              })}
-            </div>
-
-            <div className="ask">
-              {(prevStory || nextStory) ? (
-                /* 读完之后，场景底部的这条常驻位换成出口。
-                   和「继续」用同一套语言：贴着场景底的一条细线、暗场的字；
-                   不是贴一张纸进来（纸是「查账」那边的语言，属于场景外）。 */
-                <nav className="next-bar">
-                  {prevStory
-                    ? <Link href={`/p/${person.id}/${prevStory.id}`} className="prev">
-                        <span className="k">上一篇</span><span className="t">{prevStory.name}</span>
-                      </Link>
-                    : <span />}
-                  {nextStory
-                    ? <Link href={`/p/${person.id}/${nextStory.id}`} className="next">
-                        <span className="k">下一篇</span><span className="t">{nextStory.name}</span>
-                      </Link>
-                    : <span />}
-                </nav>
-              ) : (
-                /* 这个人物只有这一篇时，上一篇/下一篇都不存在——
-                   不留下一条空栏。退回到人物页，别让读者走到死路。 */
-                <nav className="next-bar">
-                  <span />
-                  <Link href={`/p/${person.id}`} className="next">
-                    <span className="k">回到</span><span className="t">{person.name}</span>
-                  </Link>
-                </nav>
-              )}
-            </div>
-          </section>
-
-          {/* 纸面 */}
+  const sourcePanel = (
           <aside className="panel reader-panel" id="source-panel" hidden={!panelOpen} aria-label="史料查阅">
             <div className="panel-heading">
               <span>史料查阅</span>
@@ -694,6 +651,111 @@ export default function StoryClient({ person, story, source }) {
               )}
             </div>
           </aside>
+  )
+
+  return (
+    <>
+      <main className="wrap" style={{ paddingBottom: 80 }}>
+        <div style={{ paddingTop: 24 }}>
+          <Crumbs person={person} story={story} />
+        </div>
+        <div className="reader-actions">
+          <button type="button" onClick={() => { setPanelOpen(false); setPhase('opening'); window.scrollTo({ top: 0, behavior: 'instant' }) }}>回看引入</button>
+          <button type="button" aria-expanded={panelOpen} aria-controls="source-panel" onClick={(event) => panelOpen ? closePanel() : showPanel(event.currentTarget)}>查证与背景</button>
+        </div>
+        <div className={`face reader${panelOpen && panelHost === panelDock.current ? ' with-panel' : ''}`}>
+          {/* 暗场 */}
+          <section className="stage" ref={stageRef}>
+            <div className="scene-meta">{stamp}</div>
+            <h1 className="reading-title">{story.name.replace(/\s*★/g, '')}</h1>
+
+            <div className="beats">
+              {beats.map((b) => {
+                /* b.quotes 由编译器给：只有**逐字对得上底本**的那些行才算原文。
+                   本地不要再用「有没有引号」去猜——白话对白也带引号。
+                   就地渲染，不抽到段末：抽走的话，紧跟其后的白话回译会跑到引文前面。
+                   回译跟着引文一起走，就是 06 段 5「——始终没有回头。」那个形状。 */
+                const quotes = b.quotes || []
+                const glossAt = new Set(quotes.map((q) => q.glossAt).filter((x) => x !== null))
+                return (
+                  <article key={b.n} data-n={b.n} id={`beat-${b.n}`} className="beat active">
+                    <div className="narration anim-emerge">
+                      {b.prose.map((p, i) => {
+                        const q = quotes.find((x) => x.at === i)
+                        if (q) {
+                          return (
+                            <div key={i} className="emerge anim-emerge d2">
+                              <cite>{q.text}</cite>
+                              {/* **回译和白话重复时不渲染。** 同一句话在页面上出现三遍
+                                  （白话 → 原文 → 回译 → 白话），读者读到的是复述。
+                                   白话已经把这句原文译过了，回译就没有存在的理由。 */}
+                              {q.gloss && !q.glossRedundant && <span className="gloss">{q.gloss}</span>}
+                            </div>
+                          )
+                        }
+                        if (glossAt.has(i)) return null
+                        return <p key={i}>{p}</p>
+                      })}
+                    </div>
+
+                    {/* 插图位：内容里填了「图」才渲染，没填就什么都不占 */}
+                    {b.img && (
+                      <figure className="beat-figure">
+                        <img src={b.img} alt={b.imgCaption || ''} loading="lazy" />
+                        {b.imgCaption && <figcaption>{b.imgCaption}</figcaption>}
+                      </figure>
+                    )}
+
+                    <button
+                      className="ground anim-fade d3"
+                      onClick={(event) => { setTab('evidence'); setFollowing(b.n); showPanel(event.currentTarget) }}
+                      aria-controls="source-panel"
+                      title={titleOf(b.marker, person, b, source)}
+                    >
+                      <b className={MARK_CLASS[b.marker] || 'g-silent'}>{b.marker || '—'}</b>
+                      <span className="sep">·</span>
+                      依据
+                      {b.source && <span className="src-id">{b.source}</span>}
+                    </button>
+                    <div className="inline-panel-host" data-panel-host />
+                  </article>
+                )
+              })}
+            </div>
+
+            <div className="ask">
+              {(prevStory || nextStory) ? (
+                /* 读完之后，场景底部的这条常驻位换成出口。
+                   和「继续」用同一套语言：贴着场景底的一条细线、暗场的字；
+                   不是贴一张纸进来（纸是「查账」那边的语言，属于场景外）。 */
+                <nav className="next-bar">
+                  {prevStory
+                    ? <Link href={`/p/${person.id}/${prevStory.id}`} className="prev">
+                        <span className="k">上一篇</span><span className="t">{prevStory.name}</span>
+                      </Link>
+                    : <span />}
+                  {nextStory
+                    ? <Link href={`/p/${person.id}/${nextStory.id}`} className="next">
+                        <span className="k">下一篇</span><span className="t">{nextStory.name}</span>
+                      </Link>
+                    : <span />}
+                </nav>
+              ) : (
+                /* 这个人物只有这一篇时，上一篇/下一篇都不存在——
+                   不留下一条空栏。退回到人物页，别让读者走到死路。 */
+                <nav className="next-bar">
+                  <span />
+                  <Link href={`/p/${person.id}`} className="next">
+                    <span className="k">回到</span><span className="t">{person.name}</span>
+                  </Link>
+                </nav>
+              )}
+            </div>
+          </section>
+
+          {/* 纸面 */}
+          <div className="reader-panel-dock" ref={panelDock} hidden={!panelOpen || panelHost !== panelDock.current} />
+          {panelHost && createPortal(sourcePanel, panelHost)}
         </div>
 
         {/* 读完之后 */}

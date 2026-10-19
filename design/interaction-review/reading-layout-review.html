@@ -1,0 +1,124 @@
+<style>
+#gs-reading-review{--page:light-dark(#e9e4d9,#11171d);--paper:light-dark(#fcf9f2,#1c232b);--ink:light-dark(#34342e,#e6e2d9);--sub:light-dark(#706f66,#b3b4ae);--line:light-dark(#d8d1c3,#3d464e);--note:light-dark(#f1ece2,#252e36);--red:light-dark(#a7432d,#e19377);--blue:light-dark(#526c73,#abc0c5);font-family:"Songti SC","STSong",serif;color:var(--ink)}
+#gs-reading-review .gs-app{background:var(--page);color:var(--ink);min-height:1000px;padding-bottom:44px;container-type:inline-size}
+#gs-reading-review .gs-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 36px;border-bottom:1px solid var(--line);letter-spacing:.22em}
+#gs-reading-review .gs-nav small{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em;color:var(--sub)}
+#gs-reading-review .gs-crumb{font-family:system-ui,sans-serif;font-size:12px;color:var(--sub);padding:24px 36px 12px}
+#gs-reading-review button{font:inherit;color:var(--ink);background:transparent;border:0;min-height:44px;padding:8px 4px;cursor:var(--cursor-interaction,pointer)}
+#gs-reading-review .gs-tools{display:flex;justify-content:flex-end;gap:20px;padding:0 36px 16px;font-family:system-ui,sans-serif;font-size:12px;color:var(--sub)}
+#gs-reading-review .gs-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.54fr);gap:32px;margin:0 36px;align-items:start}
+#gs-reading-review .gs-paper{background:var(--paper);padding:38px 38px 22px;min-width:0;border:1px solid var(--line);border-radius:4px}
+#gs-reading-review .gs-meta{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.15em;color:var(--blue);margin-bottom:20px}
+#gs-reading-review h1{font-size:29px;font-weight:400;letter-spacing:.16em;margin:0 0 24px}
+#gs-reading-review .gs-beat{padding:20px 0 22px;border-bottom:1px solid var(--line);transition:opacity 180ms ease}
+#gs-reading-review .gs-beat:last-child{border-bottom:0}
+#gs-reading-review .gs-prose{font-size:18px;line-height:2.1;letter-spacing:.035em}
+#gs-reading-review p{margin:0 0 13px}
+#gs-reading-review .gs-ground{font-family:system-ui,sans-serif;font-size:12px;color:var(--sub);display:flex;align-items:center;gap:12px;margin-top:14px;letter-spacing:.08em}
+#gs-reading-review .gs-ground b{font-weight:400;color:var(--red)}
+#gs-reading-review .gs-beat[data-current=true] .gs-ground{color:var(--red)}
+#gs-reading-review .gs-note{min-width:0;position:sticky;top:24px;transition:opacity 200ms ease,transform 240ms ease}
+#gs-reading-review .gs-note-head{display:flex;align-items:center;justify-content:space-between;color:var(--sub);font-size:12px;letter-spacing:.14em;padding:0 0 6px;border-bottom:1px solid var(--line)}
+#gs-reading-review .gs-note-head button{font-size:12px;color:var(--sub)}
+#gs-reading-review .gs-tabs{display:flex;justify-content:space-between;gap:4px;padding:8px 0 18px;font-family:system-ui,sans-serif;font-size:12px}
+#gs-reading-review .gs-tabs button{color:var(--sub);padding:7px 2px;min-width:30px;white-space:nowrap;border-bottom:1px solid transparent}
+#gs-reading-review .gs-tabs button[aria-pressed=true]{color:var(--ink);border-bottom-color:var(--blue)}
+#gs-reading-review .gs-source{font-family:system-ui,sans-serif;font-size:11px;line-height:1.8;color:var(--sub);margin:0 0 18px}
+#gs-reading-review .gs-note-copy{font-size:16px;line-height:2;letter-spacing:.025em}
+#gs-reading-review .gs-quote{margin:0;padding:0 0 0 16px;border-left:2px solid var(--red)}
+#gs-reading-review .gs-mark{font-family:system-ui,sans-serif;font-size:11px;color:var(--red);margin-top:24px;letter-spacing:.08em}
+#gs-reading-review .gs-note.is-changing{animation:gs-note-change 220ms ease both}
+@keyframes gs-note-change{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
+#gs-reading-review .gs-app[data-kind=margin] .gs-note{padding:24px 0 20px;margin-top:80px}
+#gs-reading-review .gs-app[data-kind=spread] .gs-layout{gap:0;border:1px solid var(--line);border-radius:5px;background:var(--paper)}
+#gs-reading-review .gs-app[data-kind=spread] .gs-paper{border:0;border-radius:5px 0 0 5px;background:transparent}
+#gs-reading-review .gs-app[data-kind=spread] .gs-note{padding:28px 24px 34px;border-left:1px solid var(--line);background:linear-gradient(90deg,var(--note),var(--paper) 24px);border-radius:0 5px 5px 0;margin:0}
+#gs-reading-review .gs-app[data-kind=inline] .gs-layout{grid-template-columns:minmax(0,720px);justify-content:center;gap:0}
+#gs-reading-review .gs-inline-host .gs-note{position:static;background:var(--note);padding:18px 22px 22px;border-radius:3px;margin:12px 0 8px;border:1px solid var(--line)}
+#gs-reading-review .gs-app.gs-closed .gs-layout{grid-template-columns:minmax(0,720px);justify-content:center}
+#gs-reading-review .gs-app.gs-closed .gs-note{display:none}
+#gs-reading-review .gs-app.gs-mobile{max-width:390px;margin-inline:auto}
+#gs-reading-review .gs-app.gs-reduced *,#gs-reading-review .gs-app.gs-reduced .gs-note.is-changing{animation:none;transition:none}
+@container(max-width:700px){
+ #gs-reading-review .gs-nav{padding:20px 22px}
+ #gs-reading-review .gs-crumb{padding:20px 22px 8px}
+ #gs-reading-review .gs-tools{padding:0 22px 12px;gap:14px}
+ #gs-reading-review .gs-layout{grid-template-columns:minmax(0,1fr);margin:0 16px;gap:0}
+ #gs-reading-review .gs-paper{padding:28px 24px 14px}
+ #gs-reading-review .gs-prose{font-size:17px}
+ #gs-reading-review .gs-inline-host .gs-note{padding:16px 18px 22px}
+ #gs-reading-review .gs-app[data-kind=spread] .gs-paper{border-radius:4px;background:var(--paper)}
+ #gs-reading-review .gs-app[data-kind=spread] .gs-note{border:1px solid var(--line);background:var(--note);border-radius:3px;padding:16px 18px 22px}
+ #gs-reading-review .gs-app[data-kind=margin] .gs-note{margin-top:12px;padding:16px 18px 22px}
+ #gs-reading-review .gs-tabs{gap:3px;padding-bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){#gs-reading-review *{animation:none!important;transition:none!important}}
+</style>
+<div id="gs-reading-review">
+ <div class="viz-carousel" aria-label="观史阅读与查证设计" data-previous-label="上一稿" data-next-label="下一稿">
+  <section data-variant="书页旁批" aria-label="书页旁批设计"><div class="gs-app" data-kind="margin"></div></section>
+  <section data-variant="双页对读" aria-label="双页对读设计" hidden><div class="gs-app" data-kind="spread"></div></section>
+  <section data-variant="随段批注" aria-label="随段批注设计" hidden><div class="gs-app" data-kind="inline"></div></section>
+ </div>
+ <template id="gs-reading-template">
+  <div class="gs-nav"><span>观 史</span><small>总览　　设置　　浅色</small></div>
+  <div class="gs-crumb">总览　／　曹操　／　五色棒</div>
+  <div class="gs-tools"><span>回看引入</span><button type="button" class="gs-toggle" aria-expanded="true">收起查证</button></div>
+  <div class="gs-layout">
+   <article class="gs-paper">
+    <div class="gs-meta">汉灵帝时 · 洛阳</div><h1>五色棒</h1>
+    <section class="gs-beat" data-beat="0" data-current="true"><div class="gs-prose"><p>曹操刚到任，进了尉的官署，先把四面的门修治了一遍。</p><p>造出五色棒，挂在官署门左右，各十几根。</p><p>有犯禁的人，不避豪强，都用棒打死。</p></div><button type="button" class="gs-ground"><b>◆</b>依据 <span>206</span></button><div class="gs-inline-host"></div></section>
+    <section class="gs-beat" data-beat="1"><div class="gs-prose"><p>过了几个月，灵帝所宠爱的小黄门蹇硕的叔父夜里出行，曹操当即把他杀了。</p><p>京城里的人都收敛形迹，没有敢犯禁的。</p></div><button type="button" class="gs-ground"><b>◆</b>依据 <span>206</span></button><div class="gs-inline-host"></div></section>
+    <section class="gs-beat" data-beat="2"><div class="gs-prose"><p>皇帝身边的宠臣都恨他，可是伤不了他。</p><p>于是一起称扬荐举他，所以他迁为顿丘令。</p></div><button type="button" class="gs-ground"><b>◆</b>依据 <span>206</span></button><div class="gs-inline-host"></div></section>
+   </article>
+   <aside class="gs-note" aria-label="随阅读段落变化的查证">
+    <div class="gs-note-head"><span class="gs-current">五色棒</span><button type="button" class="gs-close">收起</button></div>
+    <div class="gs-tabs"><button type="button" aria-pressed="true">依据</button><button type="button" aria-pressed="false">原文</button><button type="button" aria-pressed="false">背景</button><button type="button" aria-pressed="false">映射</button><button type="button" aria-pressed="false">人物</button></div>
+    <div class="gs-source">裴松之注引《曹瞒传》 · 206</div>
+    <div class="gs-note-copy"><blockquote class="gs-quote">太祖初入尉廨，缮治四门。造五色棒，县门左右各十余枚，有犯禁者，不避豪强，皆棒杀之。</blockquote></div>
+    <div class="gs-mark">◆ 出自注文</div>
+   </aside>
+  </div>
+ </template>
+</div>
+<script>
+(()=>{
+ const root=document.getElementById('gs-reading-review');
+ const labels=['五色棒','蹇硕叔父','荐举迁官'];
+ const quotes=['太祖初入尉廨，缮治四门。造五色棒，县门左右各十余枚，有犯禁者，不避豪强，皆棒杀之。','后数月，灵帝爱幸小黄门蹇硕叔父夜行，即杀之。京师敛迹，莫敢犯者。','近习宠臣咸疾之，然不能伤，于是共称荐之，故迁为顿丘令。'];
+ const full='曹瞒传曰：'+quotes.join('');
+ const saved=window.openai?.widgetState?.privateContent||{},states={},renderers=[];
+ function save(){window.openai?.setWidgetState?.({modelContent:{designReview:'阅读与查证设计',states},privateContent:states})?.catch(()=>{});}
+ root.querySelectorAll('.gs-app').forEach(app=>{
+  app.appendChild(root.querySelector('template').content.cloneNode(true));
+  const kind=app.dataset.kind,prior=saved[kind]||{};
+  const state={open:prior.open!==false,tab:['依据','原文','背景','映射','人物'].includes(prior.tab)?prior.tab:'依据',beat:Math.max(0,Math.min(2,Number(prior.beat)||0)),width:prior.width==='手机'?'手机':'桌面',reduced:!!prior.reduced};states[kind]=state;
+  const pane=app.querySelector('.gs-note'),layout=app.querySelector('.gs-layout'),body=app.querySelector('.gs-note-copy'),beats=[...app.querySelectorAll('.gs-beat')],toggle=app.querySelector('.gs-toggle');
+  const narrow=()=>app.getBoundingClientRect().width<=700;
+  function render(animate=false){
+   app.classList.toggle('gs-closed',!state.open);app.classList.toggle('gs-mobile',state.width==='手机');app.classList.toggle('gs-reduced',state.reduced);
+   toggle.textContent=state.open?'收起查证':'查证与背景';toggle.setAttribute('aria-expanded',String(state.open));pane.querySelector('.gs-current').textContent=labels[state.beat];
+   beats.forEach((el,i)=>el.dataset.current=String(i===state.beat));
+   const host=kind==='inline'||narrow()?beats[state.beat].querySelector('.gs-inline-host'):layout;
+   if(pane.parentElement!==host)host.appendChild(pane);
+   pane.querySelectorAll('.gs-tabs button').forEach(button=>button.setAttribute('aria-pressed',String(button.textContent===state.tab)));
+   const content=state.tab==='依据'?quotes[state.beat]:state.tab==='原文'?full:state.tab==='背景'?'《武帝纪》正文006记曹操任洛阳北部尉、迁顿丘令。五色棒与棒杀蹇硕叔父的细节，来自裴松之注所引《曹瞒传》。':state.tab==='映射'?['修治四门 → 缮治四门；造五色棒、挂在门旁 → 造五色棒，县门左右各十余枚。','夜间出行、曹操杀之 → 蹇硕叔父夜行，即杀之。','宠臣恨他、共同荐举 → 近习宠臣咸疾之……于是共称荐之。'][state.beat]:'曹操：洛阳北部尉。蹇硕叔父：记载中的夜行者。蹇硕：灵帝宠爱的小黄门。';
+   const text=document.createElement(state.tab==='依据'||state.tab==='原文'?'blockquote':'p');if(text.tagName==='BLOCKQUOTE')text.className='gs-quote';text.textContent=content;body.replaceChildren(text);
+   pane.querySelector('.gs-mark').hidden=!['依据','原文'].includes(state.tab);
+   if(animate&&!state.reduced){pane.classList.remove('is-changing');void pane.offsetWidth;pane.classList.add('is-changing');}
+  }
+  pane.querySelectorAll('.gs-tabs button').forEach(button=>button.onclick=()=>{state.tab=button.textContent;render(true);save();});
+  beats.forEach((el,i)=>el.querySelector('.gs-ground').onclick=()=>{state.beat=i;state.open=true;state.tab='依据';render(true);save();});
+  const close=()=>{state.open=false;render();toggle.focus({preventScroll:true});save();};pane.querySelector('.gs-close').onclick=close;
+  toggle.onclick=()=>{state.open=!state.open;render(true);save();};
+  app.addEventListener('keydown',event=>{if(event.key==='Escape'&&state.open)close();});
+  // 桌面跟随真实阅读位置；只更新依据，不把正文自动卷回去。
+  let scheduled=false;
+  window.addEventListener('scroll',()=>{if(scheduled||kind==='inline'||narrow()||app.closest('[data-variant]').hidden)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;const line=150;let at=state.beat;beats.forEach((el,i)=>{if(el.getBoundingClientRect().top<=line)at=i;});if(at!==state.beat){state.beat=at;render(true);}});},{passive:true});
+  render();new ResizeObserver(()=>render()).observe(app);
+  renderers.push(savedState=>{const next=savedState?.[kind];if(next){Object.assign(state,next);render();}});
+  if(globalThis.Tweak){const options={width:state.width,position:labels[state.beat],reduced:state.reduced};const tweak=new Tweak({container:app,onChange:()=>{state.beat=labels.indexOf(options.position);state.width=options.width;state.reduced=options.reduced;render(true);save();}});tweak.addSelect(options,'width',{label:'预览尺寸',options:['桌面','手机']});tweak.addSelect(options,'position',{label:'阅读位置',options:labels});tweak.addToggle(options,'reduced',{label:'减弱动效'});}
+ });
+ window.addEventListener('openai:set_globals',event=>renderers.forEach(render=>render(event.detail?.globals?.widgetState?.privateContent)));
+})();
+</script>

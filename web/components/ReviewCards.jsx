@@ -113,6 +113,7 @@ export default function ReviewCards({ cards, personId, storyId, sourceIds, onJum
                 </div>
               </>
             )}
+            <div className="inline-panel-host" data-panel-host />
           </article>
         )
       })}

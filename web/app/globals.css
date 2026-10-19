@@ -238,9 +238,17 @@ body.light-stage{
 .stage{border-radius:4px}
 .face.dim .stage{filter:brightness(.4) saturate(.65);transform:scale(.988)}
 
-/* 正文随页面连贯滚动；查证时才出现独立滚动的侧栏。 */
+/* 查证参与布局，绝不悬浮覆盖正文。宽屏相邻列，窄屏在当前段落之后。 */
+.reader-panel-dock[hidden],.inline-panel-host:empty,.inline-panel-host:has(> .panel[hidden]){display:none}
+.reader,.reader-after{overflow-anchor:none}
+.reader-panel{height:min(650px,calc(100dvh - var(--nav-h) - 40px));min-height:260px;border:1px solid var(--xuan-4);border-radius:4px;overflow:hidden}
+.reader-panel .panel-face{overscroll-behavior:contain}
+.inline-panel-host{margin-top:16px}
 @media (min-width:1081px){
-  .face .reader-panel{position:fixed;z-index:70;right:24px;top:calc(var(--nav-h) + 14px);width:420px;height:calc(100vh - var(--nav-h) - 28px);min-height:0;border:1px solid var(--xuan-4);border-radius:6px;box-shadow:-12px 8px 50px rgba(0,0,0,.3)}
+  .face.reader.with-panel{max-width:1184px;grid-template-columns:minmax(0,1fr) minmax(330px,38%);gap:0}
+  .reader.with-panel .stage{padding-left:34px;padding-right:34px}
+  .reader-panel-dock{position:sticky;top:calc(var(--nav-h) + 16px);align-self:start;min-width:0}
+  .reader-panel-dock .reader-panel{border-top:0;border-right:0;border-bottom:0;border-radius:0}
 }
 
 /* ── 暗场：场景区 ─────────────────────────── */
@@ -990,8 +998,8 @@ body.light-stage{
   .panel-face{position:relative;inset:auto;max-height:60vh}
   .sheet-body{grid-template-columns:1fr}
   .seed-nav{border-right:none;border-bottom:1px solid var(--xuan-4);max-height:190px}
-  .reader-panel{position:fixed;z-index:70;left:12px;right:12px;bottom:0;height:70vh;min-height:0;max-height:calc(100vh - var(--nav-h) - 20px);border:1px solid var(--xuan-4);border-radius:6px 6px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.2)}
-  .reader-panel .panel-face{position:absolute;inset:0;max-height:none}
+  .reader-panel{position:relative;height:auto;max-height:calc(100dvh - var(--nav-h) - 80px);min-height:0;border:1px solid var(--xuan-4);border-radius:4px}
+  .reader-panel .panel-face{position:relative;inset:auto;max-height:min(460px,calc(100dvh - var(--nav-h) - 220px))}
 }
 @media (max-width:640px){
   .wrap,.wrap-narrow{padding:0 16px}
