@@ -4,7 +4,7 @@ import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import os from 'node:os'
 import { chromium } from 'playwright-core'
-import { plainSourceText } from '../lib/source-layers.mjs'
+import { plainSourceText, sourceExcerptOrigin } from '../lib/source-layers.mjs'
 
 const data = JSON.parse(fs.readFileSync(new URL('../data/content.json', import.meta.url)))
 const person = data.people.find(p => p.id === process.argv[2])
@@ -16,6 +16,10 @@ const norm = v => plainSourceText(v).replace(/\s/g, '')
 const settle = p => p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
 const browser = await chromium.launch({ executablePath: `${os.homedir()}/Library/Caches/ms-playwright/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing` })
 const counts = { stories: 0, beats: 0, backgrounds: 0, cards: 0, answers: 0, citations: 0, library: 0 }
+const sourceText = async node => {
+  const layers = node.locator('.source-layer-text')
+  return await layers.count() ? (await layers.allTextContents()).join('') : await node.innerText()
+}
 
 try {
   for (const width of [390, 1440]) {
@@ -43,7 +47,12 @@ try {
     }
     async function citation(id) {
       await page.waitForSelector(`#src-${id} .quote`)
-      assert.equal(norm(await page.locator(`#src-${id} .quote`).innerText()), norm(person.source[id].text), `引用${id}原文缺损`)
+      const quote = page.locator(`#src-${id} .quote`)
+      assert.equal(norm(await sourceText(quote)), norm(person.source[id].text), `引用${id}原文缺损`)
+      if (person.source[id].parts) {
+        assert.deepEqual(await quote.locator('.source-layer-heading .tag').allTextContents(), person.source[id].parts.map(p => p.origin))
+        assert.deepEqual(await quote.locator('.source-layer').evaluateAll(nodes => nodes.map(n => n.dataset.sourceTier)), person.source[id].parts.map(p => p.tier))
+      }
       counts.citations++
     }
     const entries = person.storyList.filter(s => s.ready)
@@ -76,7 +85,7 @@ try {
           for (const [id, excerpt] of Object.entries(beat.sourceExcerpts)) {
             const lead = page.locator('#source-panel .lead').nth(beat.sources.indexOf(id))
             assert.ok(norm(await lead.innerText()).includes(norm(excerpt)), `${entry.id}/${beat.n}/${id} 摘句缺失`)
-            assert.ok(norm(await lead.innerText()).includes(norm(person.source[id].origin)), `${id} 出处未显示`)
+            assert.ok(norm(await lead.innerText()).includes(norm(sourceExcerptOrigin(person.source[id], excerpt))), `${id} 摘句出处未显示`)
             const details = lead.locator('details.source-context')
             const summary = details.locator('summary')
             // 先像读者一样滚动旁批内部，避免Playwright自动把整个页面滚到折叠项。
@@ -88,7 +97,7 @@ try {
             const pageY = await page.evaluate(() => scrollY)
             await summary.click()
             await settle(page)
-            assert.equal(norm(await details.locator('.source-context-text').innerText()), norm(person.source[id].text))
+            assert.equal(norm(await sourceText(details.locator('.source-context-text'))), norm(person.source[id].text))
             assert.equal(await page.locator('#source-panel [data-beat]').getAttribute('data-beat'), String(beat.n))
             assert.ok(Math.abs(await page.evaluate(() => scrollY) - pageY) < 3, `${width}px ${entry.id}/${beat.n}/${id}: 展开全文移动正文 ${pageY} -> ${await page.evaluate(() => scrollY)}`)
             await summary.click()
@@ -182,8 +191,12 @@ try {
     }
     await page.goto(`${base}/p/${person.id}/source`, { waitUntil: 'networkidle' })
     for (const [id, source] of Object.entries(person.source)) {
-      assert.equal(norm(await page.locator(`#s-${id} .src-text`).innerText()), norm(source.text))
-      assert.equal(norm(await page.locator(`#s-${id} .src-gloss`).innerText()), '白话' + norm(person.gloss[id]))
+      assert.equal(norm((await page.locator(`#s-${id} .src-text`).allTextContents()).join('')), norm(source.text))
+      assert.equal(norm((await page.locator(`#s-${id} .src-gloss`).allTextContents()).map(text => text.replace(/^白话/, '')).join('')), norm(person.gloss[id]))
+      if (source.parts) {
+        assert.deepEqual(await page.locator(`#s-${id} .source-layer-heading .tag`).allTextContents(), source.parts.map(p => p.origin))
+        assert.deepEqual(await page.locator(`#s-${id} .source-layer`).evaluateAll(nodes => nodes.map(n => n.dataset.sourceTier)), source.parts.map(p => p.tier))
+      }
       counts.library++
     }
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)

@@ -749,6 +749,64 @@ check('F11: 背景编号直达完整原文，返回原背景位置与焦点', as
   return ok('两种尺寸：226、跨篇091及014原文完整；背景内滚动、正文位置、焦点及旧复习记录保留，纪年不生成链接')
 })
 
+check('F09: 三篇主线理由与跨年衔接可顺读，旧续读和复习保留', async () => {
+  const ids = ['03-chenliu', '05-yanzhou', '06-qingzhou']
+  const numbers = [3, 7, 1]
+  const settle = p => p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+  for (const width of [390, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
+    try {
+      const p = await context.newPage()
+      await p.goto(BASE)
+      const fixture = {
+        read: Object.fromEntries(ids.map((id, i) => [`caocao/${id}`, { beat: numbers[i], beatCount: [7, 10, 5][i], phase: 'live', done: false, at: 100 + i }])),
+        review: { 'caocao/03-chenliu': { 1: 'known', 9: 'todo' }, 'caocao/05-yanzhou': { 4: 'known' }, 'caocao/06-qingzhou': { 5: 'todo' }, 'yuwentai/01-luanjun': { 2: 'known' } }, last: null,
+      }
+      fixture.read['yuwentai/01-luanjun'] = { beat: 2, beatCount: 3, phase: 'live', done: false, at: 99 }
+      await p.evaluate(value => localStorage.setItem('guanshi.progress.v1', JSON.stringify(value)), fixture)
+      for (const [i, id] of ids.entries()) {
+        await p.goto(`${BASE}/p/caocao/${id}`, { waitUntil: 'networkidle' })
+        await p.waitForSelector('.reader .beat')
+        await p.evaluate(() => document.fonts.ready); await settle(p); await settle(p)
+        if (await p.locator('button.cta').count()) return fail(`${id} 旧续读没有进入正文`)
+        if (numbers[i] > 1) {
+          // 短篇接近文末时滚动会受页面底部限制；仍须回到原段能达到的位置。
+          try { await p.waitForFunction(n => {
+            const y = document.getElementById(`beat-${n}`).getBoundingClientRect().top
+            const expected = Math.max(105, y + scrollY - (document.documentElement.scrollHeight - innerHeight))
+            return Math.abs(y - expected) < 3
+          }, numbers[i], { timeout: 5000 }) } catch {
+            await p.screenshot({ path: `/tmp/guanshi-f09-restore-failed-${width}-${id}.png` })
+            return fail(`${width}px ${id} 旧续读位置不符 ${JSON.stringify(await p.evaluate(n => ({ y: document.getElementById(`beat-${n}`).getBoundingClientRect().top, scroll: scrollY, max: document.documentElement.scrollHeight - innerHeight, saved: JSON.parse(localStorage.getItem('guanshi.progress.v1')).read }), numbers[i]))}`)
+          }
+        }
+        if (id === '03-chenliu') {
+          const text = (await p.locator('.reader .narration').allTextContents()).join('\n')
+          if (text.includes('袁遗') || text.includes('扬州刺史')) return fail('后事小传仍打断陈留主线')
+          if ((text.match(/初平元年/g) || []).length !== 1 || !text.includes('允许他起兵')) return fail('陈留跨年或允许起兵的承接缺失')
+        } else {
+          const text = await p.locator(`#beat-${numbers[i]} .narration`).innerText()
+          const required = id === '05-yanzhou' ? ['没有辎重', '先保存兵力', '占住要害'] : ['裴松之注引《魏书》', '申明赏罚', '投降的出路', '《武帝纪》正文']
+          if (required.some(part => !text.includes(part))) return fail(`${id} 顺读中缺理由或出处归属`)
+        }
+        await p.screenshot({ path: `/tmp/guanshi-f09-reading-${id}-${width}.png` })
+        const n = id === '03-chenliu' ? 7 : numbers[i]
+        const trigger = p.locator(`#beat-${n} .ground`)
+        await trigger.scrollIntoViewIfNeeded(); await settle(p)
+        await trigger.click(); await settle(p)
+        const expected = id === '03-chenliu' ? '同时俱起兵' : id === '05-yanzhou' ? '鲍信谏曰' : '亲巡将士'
+        if (!(await p.locator('.panel-body').innerText()).includes(expected)) return fail(`${id} 当前段旁批缺相应材料`)
+        if (id === '06-qingzhou' && !/裴松之注引《?魏书/.test(await p.locator('.panel-body').innerText())) return fail('226未显示注文归属')
+        await p.keyboard.press('Escape'); await settle(p)
+        const saved = await p.evaluate(() => JSON.parse(localStorage.getItem('guanshi.progress.v1')))
+        if (JSON.stringify(saved.review) !== JSON.stringify(fixture.review)) return fail('旧复习记录发生变化')
+        if (JSON.stringify(saved.read['yuwentai/01-luanjun']) !== JSON.stringify(fixture.read['yuwentai/01-luanjun'])) return fail('另一人物阅读记录发生变化')
+      }
+    } finally { await context.close() }
+  }
+  return ok('三篇两种尺寸：原因和转折接入正文，小传归背景，跨年一次；旧段号续读、复习和另一人物记录保留')
+})
+
 check('R10: 面板页签可以用键盘走到', async () => {
   await page.goto(`${BASE}${routeOf(READY[0])}`, { waitUntil: 'networkidle' })
   await enterStory()
