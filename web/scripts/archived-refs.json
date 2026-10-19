@@ -48,5 +48,15 @@
     "archive": "content/references/gaohuan-zhou-31.txt",
     "sha256": "cd44a45cfa48808dee415ba79a9c981162aafbd66ad12a916e45967441d5f164",
     "min": 1
+  },
+  {
+    "file": "gaohuan-wei-10-expanded.txt",
+    "title": "《魏书》四库本卷十：河阴及永安三年摘录",
+    "url": "https://zh.wikisource.org/w/index.php?title=魏書_(四庫全書本)/卷010&oldid=582252",
+    "about": "https://zh.wikisource.org/wiki/魏書_(四庫全書本)/卷010",
+    "revision": "沿用既存河阴摘录；2026-10-19补读oldid=582252永安三年段",
+    "archive": "content/references/gaohuan-wei-10-expanded.txt",
+    "sha256": "14a5947b596a6fbececdf8b609156ec6dac0aedee3c971ff8008ff61d9c06364",
+    "min": 1
   }
 ]
