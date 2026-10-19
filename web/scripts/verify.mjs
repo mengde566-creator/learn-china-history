@@ -921,6 +921,46 @@ check('高欢查证: 十篇逐段显示具体依据，多书原文不缺失', as
   } finally { await p.close() }
 })
 
+check('复习表格: 出处对读保留真实表头、数据行及复习记录', async () => {
+  const cases = [
+    ['02-cidong', 2, ['来源', '经过'], ['《武帝纪》正文', '裴注引《魏书》', '《三国演义》第四回']],
+    ['02-cidong', 8, ['出处', '经过', '方向'], ['《魏书》', '《世语》', '孙盛《杂记》']],
+    ['09-chibi', 1, ['出处', '说'], [
+      '《周瑜传》正文（113、114）', '《周瑜传》裴注引《江表传》（312）',
+      '《周瑜传》另一处裴注引《江表传》（313）', '《吴主传》正文（外证）',
+      '裴注引《山阳公载记》（265）',
+    ]],
+  ]
+  for (const width of [390, 1440]) {
+    const p = await open('light', { viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
+    try {
+      const review = { 'caocao/02-cidong': { 2: 'known', 8: 'todo' }, 'caocao/09-chibi': { 1: 'known' } }
+      await p.evaluate(({ review, stories }) => {
+        localStorage.setItem('guanshi.progress.v1', JSON.stringify({
+          read: Object.fromEntries(stories.map(({ id, count }) => [`caocao/${id}`, { beat: count, beatCount: count, phase: 'live', done: true }])),
+          review, last: null,
+        }))
+      }, { review, stories: ['02-cidong', '09-chibi'].map((id) => ({ id, count: PEOPLE.find((x) => x.id === 'caocao').stories[id].beats.length })) })
+      for (const [id, n, head, labels] of cases) {
+        await p.goto(`${BASE}/p/caocao/${id}`, { waitUntil: 'networkidle' })
+        const card = p.locator('.cards .card').nth(n - 1)
+        await card.getByRole('button', { name: /点开看答案/ }).click()
+        const table = card.locator('table.mini-table')
+        if (JSON.stringify(await table.locator('thead th').allTextContents()) !== JSON.stringify(head)) return fail(`${width}px ${id} 卡${n} 表头被吞或被数据行替代`)
+        const rows = await table.locator('tbody tr').evaluateAll((rows) => rows.map((r) => [...r.cells].map((c) => c.textContent)))
+        if (JSON.stringify(rows.map((r) => r[0])) !== JSON.stringify(labels) || rows.some((r) => r.length !== head.length)) return fail(`${width}px ${id} 卡${n} 数据行或列数错误`)
+        const expected = PEOPLE.find((x) => x.id === 'caocao').stories[id].cards.find((c) => c.n === n).blocks.find((b) => b.t === 'table')
+        if (JSON.stringify(rows) !== JSON.stringify(expected.rows)) return fail(`${width}px ${id} 卡${n} 表格文字不完整`)
+        const saved = await p.evaluate(() => JSON.parse(localStorage.getItem('guanshi.progress.v1')).review)
+        if (JSON.stringify(saved) !== JSON.stringify(review)) return fail('展开表格改写了复习状态')
+        if (await p.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)) return fail(`${width}px 表格导致整页横向溢出`)
+      }
+      if (p.__errors.length) return fail(p.__errors[0])
+    } finally { await p.close() }
+  }
+  return ok('三张真实对读卡在桌面、手机保留表头、全部单元格与列数；复习状态不变')
+})
+
 check('复习查证: 编号开头、列表和因果图不丢失，跨篇依据可原地查阅', async () => {
   await page.goto(`${BASE}/p/caocao/01-wusebang`, { waitUntil: 'networkidle' })
   await enterStory()

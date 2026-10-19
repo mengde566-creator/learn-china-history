@@ -894,16 +894,41 @@ function parseSeeds(rel) {
 
 /* ── cards/<id>.md ──────────────────────────────── */
 
-function parseCards(rel) {
-  const { lines } = read(rel)
+export function parseCards(rel, lines = read(rel).lines) {
   const META_KEYS = new Set(['依据', '标记', '出处', '考点', '说明', '题型', '来源', '复习节奏'])
   const cards = []
   let card = null
   let blocks = []
   let table = null
+  let tableLines = []
   let code = null
 
-  const pushTable = () => { if (table) { blocks.push(table); table = null } }
+  const pushTable = () => {
+    if (!table) return
+    /* 元数据用独立的两列空表头块。答案表头或数据行即使叫“出处”“来源”，
+       也仍是答案的一部分，不能逐行按第一个格子的字猜测。 */
+    if (table.head.length === 2 && table.head.every((cell) => !cell)) {
+      table.rows.forEach((cells, i) => {
+        const [k, v] = cells
+        if (cells.length !== 2 || (!META_KEYS.has(k) && k !== '内部')) {
+          throw new ParseError(rel, tableLines[i], '复习卡元数据表必须是两列，字段须为依据、标记、出处、考点、说明、题型、来源或复习节奏')
+        }
+        if (k === '内部') return // 审校备注不进入读者答案或元数据。
+        card.meta.push({ k, v })
+        if (k === '标记') {
+          const g = markerOf(v)
+          if (!VALID_MARKERS.has(g)) {
+            throw new ParseError(rel, tableLines[i],
+              `复习卡的「标记」行读不出标记：「${v}」。只能是 ` +
+              `${[...VALID_MARKERS].join(' ')} 里面的一个，后面可以跟小字（像「○ 外训」）`)
+          }
+          card.marker = g
+        }
+      })
+    } else blocks.push(table)
+    table = null
+    tableLines = []
+  }
   const flush = () => {
     if (!card) return
     if (code) throw new ParseError(rel, 0, '复习卡代码块缺少结束围栏')
@@ -939,35 +964,16 @@ function parseCards(rel) {
       return
     }
 
-    const cells = tableRow(line)
+    // 通用 tableRow 会跳过空行和分隔行；卡片的两列空表头有独立含义。
+    const cells = /^\s*\|\s*\|\s*\|\s*$/.test(line) ? ['', ''] : tableRow(line)
     if (cells) {
-      if (META_KEYS.has(clean(cells[0]))) {
-        pushTable()
-        const k = clean(cells[0])
-        const v = clean(cells[1] ?? '')
-        card.meta.push({ k, v })
-        /* 卡片也有标记，而且**从这条路取出来**。
-           原来「标记」只进 meta，`card.marker` 永远是 undefined：
-           界面上没有徽章（读者看到的是一行光秃秃的「标记 ◆ 出自原文」），
-           而且「卡片必须有标记」这条闸门根本无从写起——
-           `cards/06-yishui.md` 的卡 8 整个没有标记行，编译一路全绿。 */
-        if (k === '标记') {
-          const g = markerOf(v)
-          if (!VALID_MARKERS.has(g)) {
-            throw new ParseError(rel, ln,
-              `复习卡的「标记」行读不出标记：「${v}」。只能是 ` +
-              `${[...VALID_MARKERS].join(' ')} 里面的一个，后面可以跟小字（像「○ 外训」）`)
-          }
-          card.marker = g
-        }
-        return
-      }
       if (!table) table = { t: 'table', head: cells.map(clean), rows: [] }
-      else table.rows.push(cells.map(clean))
+      else { table.rows.push(cells.map(clean)); tableLines.push(ln) }
       return
     }
 
     if (line.trim().startsWith('|')) return  // 分隔行
+    if (!line.trim()) { pushTable(); return }
     if (line.trim() && !/^#|^[-*_]{3,}$/.test(line.trim())) {
       pushTable()
       blocks.push({ t: 'p', v: clean(line).replace(/^[-*+]\s+/, '• ') })
@@ -2568,9 +2574,11 @@ function main() {
   console.log(`\n✓ 已写出 web/data/content.json（${kb} KB，${Date.now() - t0}ms）\n`)
 }
 
-try {
-  main()
-} catch (e) {
-  console.error(e instanceof ParseError ? e.message : `\n  ✗ ${e.message}\n`)
-  process.exit(1)
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try {
+    main()
+  } catch (e) {
+    console.error(e instanceof ParseError ? e.message : `\n  ✗ ${e.message}\n`)
+    process.exit(1)
+  }
 }
