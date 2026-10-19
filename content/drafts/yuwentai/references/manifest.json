@@ -1,0 +1,91 @@
+{
+  "preparedAt": "2026-10-19",
+  "references": [
+    {
+      "file": "wei11.txt",
+      "archive": "content/drafts/yuwentai/references/wei11.txt",
+      "url": "https://zh.wikisource.org/wiki/魏書/卷11",
+      "retrievedAt": "2026-10-19",
+      "revision": null,
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "2571a6e3b77a51dda9d2115ea2019d649f1374a6c3d7eeb3d7386f95a4ee4b44"
+    },
+    {
+      "file": "zhou01.txt",
+      "archive": "content/drafts/yuwentai/references/zhou01.txt",
+      "url": "https://zh.wikisource.org/wiki/周書/卷01",
+      "retrievedAt": "2026-10-19",
+      "revision": null,
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "a82c7b7b505d0fc9c69d11887ea5917044188be1aec2bc933196d06dada452fe"
+    },
+    {
+      "file": "zhou02.txt",
+      "archive": "content/drafts/yuwentai/references/zhou02.txt",
+      "url": "https://zh.wikisource.org/wiki/周書/卷02",
+      "retrievedAt": "2026-10-19",
+      "revision": null,
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "6d9d0a87c17e28c4bdedffbf8548ca3b92df0cd0ce20af21a5ee4f9894ade1a7"
+    },
+    {
+      "file": "zhou03.txt",
+      "archive": "content/drafts/yuwentai/references/zhou03.txt",
+      "url": "https://zh.wikisource.org/wiki/周書/卷03",
+      "retrievedAt": "2026-10-19",
+      "revision": null,
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "e336e42d04f5fd50198faa7a39aeae0cb41f2debdf7cbc82a30342c9a63e8a2f"
+    },
+    {
+      "file": "zhou15.txt",
+      "archive": "content/drafts/yuwentai/references/zhou15.txt",
+      "url": "https://zh.wikisource.org/wiki/周書/卷15",
+      "retrievedAt": "2026-10-19",
+      "revision": null,
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "3bde5fe6cb22fc614c91e11f85569d302973437e7ee1ca4a69edc2dadbd75094"
+    },
+    {
+      "file": "zhou16.txt",
+      "archive": "content/drafts/yuwentai/references/zhou16.txt",
+      "url": "https://zh.wikisource.org/wiki/周書/卷16",
+      "retrievedAt": "2026-10-19",
+      "revision": "2432549",
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "c00084b26666f30643ab9401ba007db7e08adc1bdb21f8cd6b287d8255cb204c"
+    },
+    {
+      "file": "zhou23.txt",
+      "archive": "content/drafts/yuwentai/references/zhou23.txt",
+      "url": "https://zh.wikisource.org/wiki/周書/卷23",
+      "retrievedAt": "2026-10-19",
+      "revision": null,
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "bb7324e38430ca631b9db5ba9c5c06ee9ef3cd820d05e339c6aaefb4492ee683"
+    },
+    {
+      "file": "zhou31.txt",
+      "archive": "content/drafts/yuwentai/references/zhou31.txt",
+      "url": "https://zh.wikisource.org/wiki/周書/卷31",
+      "retrievedAt": "2026-10-19",
+      "revision": null,
+      "scope": "网页工具取得的正文片段，保留页面行号；非完整版本保证",
+      "sha256": "153d837384e33f9b866cab13ce1c757fc1dfc0114440c63a5a5db28d55716662"
+    },
+    {
+      "file": "beiqishu-02.txt",
+      "archive": "content/references/beiqishu-02.txt",
+      "url": "https://zh.wikisource.org/w/index.php?title=北齊書/卷2&oldid=2432493",
+      "retrievedAt": null,
+      "reusedAt": "2026-10-19",
+      "revision": "2432493",
+      "scope": "复用项目既有全文固定档案；本轮未重新联网取得",
+      "sha256": "d3c22db60e453f3618908277658edb966474610547fae70ae293f1c4062441fe"
+    }
+  ],
+  "validationScripts": {
+    "build-content.mjs": "ed4768cf7325cf650e2d5ccc636ad6fb4db35497c96f4d5c1b0d3b00a9e3f839",
+    "check-sources.mjs": "c691358bc2b1a6ffaea1ca94a7ba57137e0a3256826f28603f85a244188f59e8"
+  }
+}
