@@ -63,16 +63,37 @@ try {
         // 每条显式摘句必须可见；展开后仍是原来的完整底本。
         if (beat.sourceExcerpts) {
           const trigger = page.locator(`#beat-${beat.n} .ground`)
+          await page.evaluate(n => {
+            const beat = document.getElementById(`beat-${n}`)
+            window.scrollTo({ top: scrollY + beat.getBoundingClientRect().top - 110, behavior: 'instant' })
+          }, beat.n)
           await trigger.click()
+          await page.waitForFunction(n => document.querySelector('#source-panel [data-beat]')?.dataset.beat === String(n), beat.n)
+          await settle(page)
           for (const [id, excerpt] of Object.entries(beat.sourceExcerpts)) {
             const lead = page.locator('#source-panel .lead').nth(beat.sources.indexOf(id))
             assert.ok(norm(await lead.innerText()).includes(norm(excerpt)), `${entry.id}/${beat.n}/${id} 摘句缺失`)
+            assert.ok(norm(await lead.innerText()).includes(norm(person.source[id].origin)), `${id} 出处未显示`)
             const details = lead.locator('details.source-context')
-            await details.locator('summary').click()
+            const summary = details.locator('summary')
+            // 先像读者一样滚动旁批内部，避免Playwright自动把整个页面滚到折叠项。
+            await summary.evaluate(el => {
+              const pane = el.closest('.panel-face')
+              pane.scrollTop += el.getBoundingClientRect().top - pane.getBoundingClientRect().top - 25
+            })
+            await settle(page)
+            const pageY = await page.evaluate(() => scrollY)
+            await summary.click()
+            await settle(page)
             assert.equal(norm(await details.locator('.source-context-text').innerText()), norm(person.source[id].text))
+            assert.equal(await page.locator('#source-panel [data-beat]').getAttribute('data-beat'), String(beat.n))
+            assert.ok(Math.abs(await page.evaluate(() => scrollY) - pageY) < 3, `${width}px ${entry.id}/${beat.n}/${id}: 展开全文移动正文 ${pageY} -> ${await page.evaluate(() => scrollY)}`)
+            await summary.click()
+            await settle(page)
             counts.citations++
           }
           await page.keyboard.press('Escape')
+          await settle(page)
         }
       }
       const prev = page.locator('.next-bar a.prev'), next = page.locator('.next-bar a.next')
@@ -128,6 +149,7 @@ try {
         for (const id of ids.map(v => v.trim()).filter(v => /^\d{3}$/.test(v))) {
           await dialog.locator('.seed-meta').getByRole('button', { name: id, exact: true }).click()
           assert.equal(norm(await dialog.locator('.seed-citation blockquote').innerText()), norm(person.source[id].text))
+          assert.ok(norm(await dialog.locator('.seed-citation p').innerText()).includes(norm(person.source[id].origin)))
           counts.citations++
         }
         counts.answers++

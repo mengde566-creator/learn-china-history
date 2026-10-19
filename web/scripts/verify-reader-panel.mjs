@@ -6,6 +6,9 @@ import os from 'node:os'
 import assert from 'node:assert/strict'
 const base = process.env.BASE_URL || 'http://127.0.0.1:3100'
 const data = JSON.parse(fs.readFileSync(new URL('../data/content.json', import.meta.url)))
+const personId = process.argv.find(arg => arg.startsWith('--person='))?.slice('--person='.length)
+const people = personId ? data.people.filter(person => person.id === personId) : data.people
+assert.ok(people.length, `人物不存在：${personId}`)
 const browser = await chromium.launch({ executablePath: `${os.homedir()}/Library/Caches/ms-playwright/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing` })
 let opens = 0
 function geometry() {
@@ -29,7 +32,7 @@ try {
     const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
     const page = await context.newPage()
     page.on('pageerror', error => { throw error })
-    for (const person of data.people) for (const entry of person.storyList.filter(s => s.ready)) {
+    for (const person of people) for (const entry of person.storyList.filter(s => s.ready)) {
       const story = person.stories[entry.id]
       await page.goto(`${base}/p/${person.id}/${entry.id}`, { waitUntil: 'networkidle' })
       const cta = page.locator('button.cta'); if (await cta.isVisible()) await cta.click()
@@ -70,7 +73,7 @@ try {
     const p = await context.newPage()
     const compact = value => String(value).replace(/\s/g, '')
     let followed = 0
-    for (const person of data.people) for (const entry of person.storyList.filter(s => s.ready)) {
+    for (const person of people) for (const entry of person.storyList.filter(s => s.ready)) {
       if (process.argv.includes('--follow') && !['01-wusebang', '04-xingyang', '01-yanwei', '08-weisheng', '09-yubi'].includes(entry.id)) continue
       const story = person.stories[entry.id]
       await p.goto(`${base}/p/${person.id}/${entry.id}`, { waitUntil: 'networkidle' })
