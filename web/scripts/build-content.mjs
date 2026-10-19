@@ -470,9 +470,7 @@ function parseStoryList(rel) {
 
 /* ── stories/<id>.md：故事内容 ──────────────────── */
 
-function parseStoryContent(rel, source) {
-  const { lines } = read(rel)
-
+export function parseStoryContent(rel, source, lines = read(rel).lines) {
   /* 第一行是篇名。曹操那几篇写成 `# 02-cidong · 曹操刺董`，
      荆轲那几篇写成 `# 燕国危局`——两种都认，去掉可能存在的 id 前缀。
      这个名字以前**没人读**：页面上的篇名一律来自 `stories.md`。
@@ -685,6 +683,8 @@ function parseStoryContent(rel, source) {
         return
       }
       if (!bg) return
+      // 卡间的 Markdown 分隔线由布局表达，不是背景正文。别误吞列表或中文破折号。
+      if (/^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/.test(line)) return
       if (line.startsWith('> ')) {
         const raw = line.slice(2)
         if (/^\*\*依据\*\*/.test(raw)) { bg.basis = clean(raw.replace(/^\*\*依据\*\*：?/, '')); return }
