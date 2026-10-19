@@ -1,8 +1,10 @@
+import { sourceReferences } from './cite-ids.mjs'
+
 /** 查证范围包含正文以及明确列出的补充参照；年份和叙事文字不参与编号识别。 */
 export function supplementaryIds(story, available, declared = new Set()) {
   const ids = new Set()
   const scan = (value) => {
-    for (const match of String(value || '').matchAll(/(?<!\d)(\d{3})(?!\d)(?!\s*年)/g)) {
+    for (const match of sourceReferences(value)) {
       if (available[match[1]] && !declared.has(match[1])) ids.add(match[1])
     }
   }

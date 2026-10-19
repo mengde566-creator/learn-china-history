@@ -21,6 +21,8 @@ import os from 'node:os'
 import path from 'node:path'
 import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import { sourceReferences } from '../lib/cite-ids.mjs'
+import { plainSourceText } from '../lib/source-layers.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3100'
@@ -683,6 +685,68 @@ check('R09: 依据里的编号能跳到原文，并且能返回', async () => {
   if (await notes.getAttribute('open') === null) return fail('返回后没有保留依据展开状态')
   if (!(await page.evaluate(() => document.activeElement?.classList.contains('cite')))) return fail('返回后键盘焦点未回原编号')
   return ok(`默认收起、键盘展开；${cites} 个可点编号；点「${id}」跳转并返回后仍展开`)
+})
+
+check('F11: 背景编号直达完整原文，返回原背景位置与焦点', async () => {
+  const cases = [
+    { person: 'caocao', story: '06-qingzhou', background: '受降之前', id: '226' },
+    { person: 'jingke', story: '01-yanwei', background: '击筑', id: '091' },
+    { person: 'caocao', story: '03-chenliu', background: '中平六年', id: '014' },
+  ]
+  const settle = p => p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+  const compact = text => plainSourceText(text).replace(/\s/g, '')
+  for (const width of [390, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
+    try {
+      const p = await context.newPage()
+      await p.goto(BASE)
+      const oldReview = { 'gaohuan/01-hanshi': { 1: 'known' }, 'yuwentai/01-luanjun': { 2: 'todo' } }
+      await p.evaluate(review => localStorage.setItem('guanshi.progress.v1', JSON.stringify({ read: {}, review, last: null })), oldReview)
+      for (const item of cases) {
+        const person = PEOPLE.find(person => person.id === item.person)
+        const story = person.stories[item.story]
+        await p.goto(`${BASE}/p/${item.person}/${item.story}`, { waitUntil: 'networkidle' })
+        await p.locator('button.cta').click()
+        await p.locator('#beat-1 .ground').click()
+        await p.locator('.panel-tabs').getByRole('button', { name: '背景', exact: true }).click()
+        await settle(p)
+        // 同页所有背景都核对链接，纪年、较长数字和不存在的编号不能变成入口。
+        const backgrounds = p.locator('.panel-face .mark-block')
+        for (const [index, bg] of story.backgrounds.entries()) {
+          const expected = [...sourceReferences(bg.basis)].map(m => m[1]).filter(id => person.source[id])
+          const actual = (await backgrounds.nth(index).locator('button.cite').allTextContents()).map(t => t.trim())
+          if (JSON.stringify(actual) !== JSON.stringify(expected)) return fail(`${width}px ${item.story}/${bg.name}: 背景编号不符 ${JSON.stringify(actual)}`)
+        }
+        const bgIndex = story.backgrounds.findIndex(bg => bg.name === item.background)
+        const citation = backgrounds.nth(bgIndex).getByRole('button', { name: item.id, exact: true }).first()
+        // 滚动旁批本身使编号可见，不能用强制点击或移动整篇正文代替正常操作。
+        await citation.evaluate(el => {
+          const pane = el.closest('.panel-face')
+          pane.scrollTop += el.getBoundingClientRect().top - pane.getBoundingClientRect().top - pane.clientHeight / 2
+        })
+        await settle(p)
+        await citation.scrollIntoViewIfNeeded()
+        await settle(p)
+        const before = await p.evaluate(() => ({ y: scrollY, pane: document.querySelector('.panel-face').scrollTop, progress: localStorage.getItem('guanshi.progress.v1') }))
+        await citation.click()
+        await p.locator(`#src-${item.id}`).waitFor()
+        await settle(p)
+        if (compact(await p.locator(`#src-${item.id} .quote`).innerText()) !== compact(person.source[item.id].text)) return fail(`${width}px ${item.story}: 原文不完整`)
+        if (item.id === '091' && !(await p.locator('#src-091').innerText()).includes('补充参照')) return fail('跨篇091未说明补充性质')
+        if (await p.evaluate(() => scrollY) !== before.y) return fail(`${width}px ${item.story}: 查证带动正文`)
+        await p.locator(`#src-${item.id} button.back`).click()
+        await settle(p)
+        const after = await p.evaluate(() => ({ y: scrollY, pane: document.querySelector('.panel-face').scrollTop, progress: localStorage.getItem('guanshi.progress.v1'), tab: document.querySelector('.panel-tabs [aria-current=true]')?.textContent }))
+        if (after.tab !== '背景' || Math.abs(after.y - before.y) > 2 || Math.abs(after.pane - before.pane) > 2) return fail(`${width}px ${item.story}: 返回位置丢失 ${JSON.stringify({ before, after })}`)
+        if (!(await citation.evaluate(el => document.activeElement === el))) return fail(`${width}px ${item.story}: 焦点没有回到原背景编号`)
+        if (after.progress !== before.progress) return fail(`${width}px ${item.story}: 查证改写了阅读或复习数据 ${before.progress} -> ${after.progress}`)
+        if (JSON.stringify(JSON.parse(after.progress).review) !== JSON.stringify(oldReview)) return fail('已有复习记录被改写')
+        if (item.id === '226') await p.screenshot({ path: `/tmp/guanshi-background-cite-${width}.png` })
+        await p.keyboard.press('Escape'); await settle(p)
+      }
+    } finally { await context.close() }
+  }
+  return ok('两种尺寸：226、跨篇091及014原文完整；背景内滚动、正文位置、焦点及旧复习记录保留，纪年不生成链接')
 })
 
 check('R10: 面板页签可以用键盘走到', async () => {

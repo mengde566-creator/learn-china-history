@@ -118,6 +118,7 @@ export default function StoryClient({ person, story, source }) {
   const [tab, setTab] = useState('evidence')
   /* 引用跳转之前在哪——原文那一段上给一个「返回」 */
   const [cameFrom, setCameFrom] = useState(null)
+  const citingFromOpening = Boolean(cameFrom?.entrance)
   /* 本篇「原文」页签里真的有的编号——依据里的编号只有在这范围内才给跳，
      范围外的点了会落空（那种编号本来也不该出现，编译器另有跨篇提醒）。 */
   const sourceIds = useMemo(() => new Set(Object.keys(source || {})), [source])
@@ -206,9 +207,9 @@ export default function StoryClient({ person, story, source }) {
   }, [progressReady, progress, person.id, story.id, beats.length])
   /* 每推进一步就记一次（只在正文里记，入场页不算「读到第几段」） */
   useEffect(() => {
-    if (!readReady || phase !== 'live' || cameFrom?.entrance) return
+    if (!readReady || phase !== 'live' || citingFromOpening) return
     markRead(person.id, story.id, { beat: revealed, beatCount: beats.length, phase: 'live', done: revealed >= beats.length })
-  }, [readReady, phase, revealed, person.id, story.id, beats.length, cameFrom?.entrance])
+  }, [readReady, phase, revealed, person.id, story.id, beats.length, citingFromOpening])
   const isLast = revealed >= beats.length
   /* 正文里也能从头读（进度存在本机时才有意义） */
   const restart = () => {
@@ -270,6 +271,7 @@ export default function StoryClient({ person, story, source }) {
     setCameFrom((prev) => prev ?? {
       tab, beat: following, entrance: phase !== 'live', scrollY: window.scrollY,
       panelWasOpen: panelOpen,
+      panelScrollTop: document.querySelector('.panel-face')?.scrollTop || 0,
       panelCiteAt: [...document.querySelectorAll('.panel-body button.cite')].indexOf(active),
       citeAt: cites.indexOf(active), focus: active,
     })
@@ -358,6 +360,8 @@ export default function StoryClient({ person, story, source }) {
     setCameFrom(null)
     requestAnimationFrame(() => {
       window.scrollTo({ top: origin.scrollY, behavior: 'instant' })
+      const pane = document.querySelector('.panel-face')
+      if (pane && origin.panelWasOpen) pane.scrollTop = origin.panelScrollTop
       const focus = origin.entrance
         ? document.querySelectorAll('.opening-notes button.cite')[origin.citeAt]
         : origin.focus?.isConnected ? origin.focus : document.querySelectorAll('.panel-body button.cite')[origin.panelCiteAt]
@@ -644,7 +648,7 @@ export default function StoryClient({ person, story, source }) {
                       ))}
                       {bg.basis && (
                         <div className="body" style={{ fontSize: 11.5, color: 'var(--mo-mute)', marginTop: 10, paddingTop: 9, borderTop: '1px solid var(--zhi-3)' }}>
-                          <RichText text={bg.basis} />
+                          <CiteText text={bg.basis} ids={sourceIds} onJump={jumpToSource} />
                         </div>
                       )}
                     </div>
