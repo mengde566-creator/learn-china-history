@@ -8,6 +8,8 @@ import CiteText from '@/components/CiteText'
 import { useProgress, markRead, resetStory, storyKey, resumeBeat } from '@/lib/progress'
 import SeedSheet from '@/components/SeedSheet'
 import ReviewCards from '@/components/ReviewCards'
+import SourceText from '@/components/SourceText'
+import { hasMixedSourceLayers, sourceExcerptOrigin } from '@/lib/source-layers.mjs'
 
 /* 界面上只放短标签。长说明在图例里出现一次就够——
    原来每个标记都重复一遍「出自原文，可逐字核对」，纯属噪音。 */
@@ -535,14 +537,16 @@ export default function StoryClient({ person, story, source }) {
                     const excerpt = evidenceExcerpt(shownBeat, id, full)
                     return (
                       <div key={id} className="lead">
-                        「{excerpt || full}」
+                        {source[id]?.parts
+                          ? <SourceText source={source[id]} excerpt={excerpt || undefined} />
+                          : <>「{excerpt || full}」</>}
                         <div style={{ fontSize: 11, color: 'var(--mo-mute)', marginTop: 6, letterSpacing: '.06em' }}>
-                          {source[id]?.origin || person.sourceBook} {id}
+                          {sourceExcerptOrigin(source[id], excerpt || undefined) || person.sourceBook} {id}
                         </div>
                         {excerpt && (
                           <details className="source-context">
                             <summary>展开完整底本 · {id}</summary>
-                            <div className="source-context-text">{full}</div>
+                            <div className="source-context-text"><SourceText source={source[id]} /></div>
                           </details>
                         )}
                       </div>
@@ -595,7 +599,7 @@ export default function StoryClient({ person, story, source }) {
                       <span className="glyph mk"><Marker ch={FOREIGN_TIERS.has(s.tier) ? '◇' : '◆'} size={11} /></span>
                       {/* 书名在标题里（正史）或者在牌上（注、小说），行尾只留编号，
                           不然会出现「《三国演义》第四回　《三国演义》第四回 201」 */}
-                      {s.tier !== '正史' && <span className="tag">{s.origin}</span>}
+                      {(s.tier !== '正史' || hasMixedSourceLayers(s)) && <span className="tag" style={{ whiteSpace: 'normal', overflowWrap: 'anywhere' }}>{s.origin}</span>}
                       <span className="src">{s.id}</span>
                       {person.supplementalSourceIds?.includes(s.id) && <span className="tag">补充参照</span>}
                       {/* **返回**：从依据点编号跳过来的人，要能一步回到刚才读的地方 */}
@@ -603,7 +607,7 @@ export default function StoryClient({ person, story, source }) {
                         <button type="button" className="cite back" onClick={backFromSource}>← 返回</button>
                       )}
                     </div>
-                    <div className="quote">{s.text}</div>
+                    <div className="quote"><SourceText source={s} /></div>
                   </div>
                 )
                 return (
@@ -612,7 +616,7 @@ export default function StoryClient({ person, story, source }) {
                     {groups.map((b, i) => (
                       <section className="src-group" key={`${b.tier}-${b.book}`}>
                         <h4 className={i === 0 ? 'sub-head first' : 'sub-head'}>
-                          {[b.tier, b.book, SUB_HEAD[b.tier]].filter(Boolean).join(' · ')}
+                          {[b.rows.some(hasMixedSourceLayers) ? '正文及附注' : b.tier, b.book, SUB_HEAD[b.tier]].filter(Boolean).join(' · ')}
                         </h4>
                         {b.rows.map(row)}
                       </section>

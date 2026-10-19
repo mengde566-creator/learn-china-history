@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPerson, listPeople } from '@/lib/content'
 import SealMark from '@/components/SealMark'
+import SourceText from '@/components/SourceText'
+import { hasMixedSourceLayers } from '@/lib/source-layers.mjs'
 
 export function generateStaticParams() {
   return listPeople().map((p) => ({ person: p.id }))
@@ -84,7 +86,7 @@ export default async function SourcePage({ params }) {
       {groups.map((g) => (
         <section key={g.book} style={{ marginTop: 28 }}>
           <h2 style={{ fontSize: 15, letterSpacing: '.08em', margin: '0 0 4px' }}>
-            {g.tier === '注' ? '注' : g.tier === '小说' ? '小说' : g.tier === '野史' ? '野史' : '正文'}
+            {g.ids.some(id => hasMixedSourceLayers(source[id])) ? '正文及附注' : g.tier === '注' ? '注' : g.tier === '小说' ? '小说' : g.tier === '野史' ? '野史' : '正文'}
             <span style={{ fontWeight: 400, opacity: .7 }}>　·　{g.book}</span>
             <span style={{ fontWeight: 400, opacity: .55, fontSize: 13 }}>　{g.ids.length} 段</span>
           </h2>
@@ -99,10 +101,9 @@ export default async function SourcePage({ params }) {
                     直译自动落到第二行第一列，宽度只有编号列那么宽（64px）。
                     见 docs/问题清单与研发整改任务书-2026-10-17.md 的 R01。 */}
                 <div className="src-body">
-                  <p className="src-text">{plain(source[id].text)}</p>
                   {gloss[id]
-                    ? <p className="src-gloss"><span className="lead">白话</span>{plain(gloss[id])}</p>
-                    : null}
+                    ? <SourceText source={source[id]} gloss={gloss[id]} />
+                    : <p className="src-text"><SourceText source={source[id]} /></p>}
                 </div>
               </li>
             ))}

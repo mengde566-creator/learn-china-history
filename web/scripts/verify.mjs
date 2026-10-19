@@ -921,6 +921,36 @@ check('高欢查证: 十篇逐段显示具体依据，多书原文不缺失', as
   } finally { await p.close() }
 })
 
+check('出处分层: 正文、注与合引书目和白话逐片对应', async () => {
+  const compact = value => String(value).replace(/\s|\*|`/g, '')
+  let pieces = 0
+  for (const width of [390, 1440]) {
+    const p = await open('dark', { viewport: { width, height: 950 }, reducedMotion: 'reduce' })
+    try {
+      for (const person of PEOPLE) {
+        const rows = Object.values(person.source).filter(s => s.parts)
+        if (!rows.length) continue
+        await p.goto(`${BASE}/p/${person.id}/source`, { waitUntil: 'networkidle' })
+        for (const row of rows) {
+          const entry = p.locator(`#s-${row.id}`), parts = entry.locator('.source-layer')
+          if (await parts.count() !== row.parts.length) return fail(`${width}px ${row.id} 分层缺失`)
+          const text = (await entry.locator('.src-text').allTextContents()).join('')
+          const gloss = (await entry.locator('.src-gloss').allTextContents()).map(t => t.replace(/^白话/, '')).join('')
+          if (compact(text) !== compact(row.text) || compact(gloss) !== compact(person.gloss[row.id])) return fail(`${width}px ${row.id} 原文或白话丢失、重复或错序`)
+          for (let i = 0; i < row.parts.length; i++) {
+            if (await parts.nth(i).getAttribute('data-source-tier') !== row.parts[i].tier || await parts.nth(i).locator('.source-layer-heading').innerText() !== row.parts[i].origin) return fail(`${width}px ${row.id} 第${i + 1}片的档次或出处错误`)
+            pieces++
+          }
+          await entry.scrollIntoViewIfNeeded()
+          if (await p.evaluate(() => document.documentElement.scrollWidth > innerWidth)) return fail(`${width}px ${row.id} 出处文字撑出屏幕`)
+        }
+      }
+      if (p.__errors.length) return fail(p.__errors.join('；'))
+    } finally { await p.close() }
+  }
+  return pieces ? ok(`桌面手机共${pieces}个分片，原文、白话、档次、引书无损对应`) : fail('未找到真实分层材料，检查没有覆盖对象')
+})
+
 check('复习表格: 出处对读保留真实表头、数据行及复习记录', async () => {
   const cases = [
     ['02-cidong', 2, ['来源', '经过'], ['《武帝纪》正文', '裴注引《魏书》', '《三国演义》第四回']],

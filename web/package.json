@@ -20,7 +20,8 @@
     "renumber": "node scripts/renumber.mjs",
     "test-visible": "node scripts/test-visible-fields.mjs",
     "test:cards": "node --test scripts/test-card-tables.mjs",
-    "refs:verify": "node scripts/fetch-refs.mjs --verify"
+    "refs:verify": "node scripts/fetch-refs.mjs --verify",
+    "test:sources": "node --test scripts/test-source-layers.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

@@ -7,13 +7,15 @@
  *   content/people/<person>/
  *     person.md            人物：时代 / 出处 / 简介 / 关键时点
  *     source.md            原文底本
+ *     source-layers.json   可选：原文与白话的出处分层，须无损拼回总稿
  *     stories.md           故事一览（id 对应 stories/<id>.md）
  *     cast.md              本篇人物的知识边界
  *     stories/<id>.md      故事内容
  *     seeds/<id>.md        对话种子
  *     cards/<id>.md        复习卡
  *
- * 单一数据源原则：content/ 下的 Markdown 是唯一的源，本脚本是唯一的转换出口。
+ * 原文与白话以 content/ 下 Markdown 总稿为准，分层 JSON 只登记经人工核定的边界。
+ * 本脚本是唯一转换出口；分层文字须逐字拼回总稿，不容许另写一份原文。
  * 任何解析失败都会带着行号报错，绝不静默跳过。
  *
  * 用法：
@@ -25,6 +27,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createHash } from 'node:crypto'
+import { attachSourceLayers } from '../lib/source-layers.mjs'
 /* 原文范围的写法，和渲染层共用同一份实现（`lib/content.js` 也引它）。
    两边各写一份正则的话，编译器校验的和页面渲染的迟早不是同一件事。 */
 import { parseRange } from '../lib/range.mjs'
@@ -1041,6 +1044,15 @@ function buildPerson(id) {
      代价是荆轲那一页的「原文」分节标题印着「正史 · 未署名的底本」——
      一句内部占位符，摆在读者面前，一路绿灯。 */
   const source = parseSource(`${dir}/source.md`, `${dir}/source.md`, meta.sourceBook || null)
+  const gloss = readGloss(id)
+  const layersRel = `${dir}/source-layers.json`
+  if (exists(layersRel)) {
+    try {
+      attachSourceLayers(source, gloss, JSON.parse(fs.readFileSync(path.join(CONTENT, layersRel), 'utf8')))
+    } catch (error) {
+      throw new ParseError(layersRel, 0, error.message)
+    }
+  }
   const storyList = parseStoryList(`${dir}/stories.md`)
   const cast = exists(`${dir}/cast.md`) ? parseCast(`${dir}/cast.md`) : { people: [], others: [] }
 
@@ -1098,7 +1110,7 @@ function buildPerson(id) {
     source,
     /* 直译（`gloss.md`）。**只带直译文本**，原文在 `source` 里已经有了——
        两处都带一遍，页面就会把同一段原文发两次。 */
-    gloss: readGloss(id),
+    gloss,
     books,
     storyList: storyList.map((s) => ({ ...s, ready: !!stories[s.id], img: stories[s.id]?.img || null })),
     cast,

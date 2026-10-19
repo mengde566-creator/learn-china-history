@@ -95,7 +95,10 @@ try {
         const full = person.source[beat.sources[0]]?.text || ''
         const match = String(beat.sourceCell || '').match(/^(\d{3})\s+([\s\S]+)$/)
         const expected = match?.[1] === beat.sources[0] && compact(full).includes(compact(match[2])) ? match[2] : full
-        assert.ok(compact(await p.locator('#source-panel .lead').first().innerText()).includes(compact(expected)), `${person.id}/${entry.id}/${beat.n} 旁批未对应当前原文`)
+        const lead = p.locator('#source-panel .lead').first()
+        const layered = lead.locator(':scope > .source-layer .source-layer-text')
+        const displayed = await layered.count() ? (await layered.allTextContents()).join('') : await lead.innerText()
+        assert.ok(compact(displayed).includes(compact(expected)), `${person.id}/${entry.id}/${beat.n} 旁批未对应当前原文`)
         const y = await p.evaluate(() => scrollY)
         await settle(p); assert.equal(await p.evaluate(() => scrollY), y, '更新依据反向拉动正文')
         followed++
