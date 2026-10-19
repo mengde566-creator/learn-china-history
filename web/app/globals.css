@@ -244,11 +244,29 @@ body.light-stage{
 .reader-panel{height:min(650px,calc(100dvh - var(--nav-h) - 40px));min-height:260px;border:1px solid var(--xuan-4);border-radius:4px;overflow:hidden}
 .reader-panel .panel-face{overscroll-behavior:contain}
 .inline-panel-host{margin-top:16px}
+/* 用户确认：书页旁批。书页与留白中的笺分开，不形成一整块工具面板。 */
+.inline-panel-host .reader-panel{--zhi:var(--xuan-3);--mo:var(--su);--mo-dim:var(--su-dim);--mo-mute:var(--su-dim);--zhi-3:var(--xuan-4)}
+.reader-panel .mark-block .body{color:var(--mo-dim)}
+.panel-heading-actions{display:flex;align-items:center;gap:12px}
+.panel-restart{font-size:11px;color:var(--su-dim);padding:8px 0;min-height:44px}
+.reader .beat[data-current="true"] .ground{color:var(--zhu)}
+.reader-panel:not([hidden]){animation:margin-note-in 220ms var(--ease) both}
+.reader-panel .panel-face.anim-fade{animation:margin-note-content 160ms ease-out both}
+@keyframes margin-note-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes margin-note-content{from{opacity:.4;transform:translateY(2px)}to{opacity:1;transform:none}}
 @media (min-width:1081px){
-  .face.reader.with-panel{max-width:1184px;grid-template-columns:minmax(0,1fr) minmax(330px,38%);gap:0}
-  .reader.with-panel .stage{padding-left:34px;padding-right:34px}
-  .reader-panel-dock{position:sticky;top:calc(var(--nav-h) + 16px);align-self:start;min-width:0}
-  .reader-panel-dock .reader-panel{border-top:0;border-right:0;border-bottom:0;border-radius:0}
+  .face.reader.with-panel{max-width:1184px;grid-template-columns:minmax(0,1fr) minmax(290px,.5fr);gap:32px;border-color:transparent}
+  .reader.with-panel .stage{padding:38px 38px 0;border:1px solid var(--xuan-4);border-radius:4px}
+  .reader-panel-dock{position:sticky;top:calc(var(--nav-h) + 24px);margin-top:80px;align-self:start;min-width:0}
+  .reader-panel-dock .reader-panel{--zhi:transparent;--mo:var(--su);--mo-dim:var(--su-dim);--mo-mute:var(--su-dim);--zhi-3:var(--xuan-4);height:min(640px,calc(100dvh - var(--nav-h) - 48px));border:0;border-radius:0;background:transparent}
+  .reader-panel-dock .panel-heading{padding:0 0 6px;font-size:12px;letter-spacing:.12em}
+  .reader-panel-dock .panel-close{font-size:12px;padding:8px 0;color:var(--su-dim)}
+  .reader-panel-dock .panel-tabs{background:transparent;border-bottom:0;gap:8px;padding:8px 0 4px}
+  .reader-panel-dock .panel-tabs button{font-size:12px;padding:8px 0;min-height:44px;flex:1}
+  .reader-panel-dock .panel-face{padding:18px 0 28px}
+  .reader-panel-dock .paper .lead{font-size:16px;line-height:2;border-bottom:0;border-left:2px solid var(--zhu);padding:0 0 0 16px;margin-bottom:20px}
+  .reader-panel-dock .mark-block .body{color:var(--su-dim)}
+  .reader-panel-dock .source-context summary{color:var(--su-dim)}
 }
 
 /* ── 暗场：场景区 ─────────────────────────── */

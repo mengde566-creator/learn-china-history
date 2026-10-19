@@ -845,8 +845,8 @@ check('连续阅读: 查证不遮挡正文，关闭后原位返回', async () =>
       if (!panel || panel.y < 55 || panel.y + panel.height > viewport.height + 2) return fail(`${viewport.width}px 查证栏跑到视口之外`)
       const heading = await p.locator('.panel-heading').boundingBox()
       const close = await p.locator('.panel-close').boundingBox()
-      const restart = await p.locator('#source-panel .cta-ghost').boundingBox()
-      if (close.y < heading.y || close.y + close.height > heading.y + heading.height + 1 || (restart && close.y + close.height > restart.y + 1)) return fail('查证关闭按钮越出标题栏，压到从头读')
+      const restart = await p.locator('#source-panel .panel-restart').boundingBox()
+      if (close.y < heading.y || close.y + close.height > heading.y + heading.height + 1 || (restart && Math.min(close.x + close.width, restart.x + restart.width) > Math.max(close.x, restart.x) + 1 && Math.min(close.y + close.height, restart.y + restart.height) > Math.max(close.y, restart.y) + 1)) return fail('查证关闭按钮越出标题栏，压到从头读')
       // 正文宽度不变不能证明未遮挡；逐个可见文字行检查是否被面板覆盖。
       const obscured = await p.evaluate(findObscuredText)
       if (obscured.length) return fail(`${viewport.width}px 查证栏遮住正文：${obscured[0]}`)

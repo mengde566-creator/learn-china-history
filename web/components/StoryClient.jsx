@@ -104,6 +104,10 @@ export default function StoryClient({ person, story, source }) {
   const panelTrigger = useRef(null)
   const panelReturn = useRef(null)
   const panelDock = useRef(null)
+  const panelPositioning = useRef(false)
+  const panelScrolled = useRef(false)
+  const closePanelRef = useRef(null)
+  const [panelBeat, setPanelBeat] = useState(1)
   const [panelHost, setPanelHost] = useState(null)
   const [widePanel, setWidePanel] = useState(false)
   useEffect(() => {
@@ -129,20 +133,24 @@ export default function StoryClient({ person, story, source }) {
   const [sheet, setSheet] = useState(false)
   const stageRef = useRef(null)
 
-  // 一个面板只挂载一次：宽屏放入相邻列，窄屏放入触发段落/复习卡之后。
+  // 只有一个查证面板。手机挂载位置固定在打开的段落，独立于桌面滚动联动。
   useLayoutEffect(() => {
     if (phase !== 'live') { setPanelHost(null); return }
     const context = panelTrigger.current?.closest('.beat, .card')
-    const inline = context?.querySelector('[data-panel-host]')
-      || document.querySelector(`#beat-${following} [data-panel-host]`)
+    const inline = !widePanel && panelScrolled.current && !context?.matches('.card')
+      ? document.querySelector(`#beat-${following} [data-panel-host]`)
+      : context?.querySelector('[data-panel-host]') || document.querySelector(`#beat-${panelBeat} [data-panel-host]`)
     setPanelHost(widePanel && !context?.matches('.card') ? panelDock.current : inline)
-  }, [phase, panelOpen, following, widePanel])
+  }, [phase, panelOpen, panelBeat, widePanel])
   useLayoutEffect(() => {
     if (!panelOpen || !panelHost) return
     let cancelled = false
+    let userMoved = false
     let frame = 0
+    let releaseFrame = 0
     const align = () => {
-      if (cancelled) return
+      if (cancelled || userMoved) return
+      panelPositioning.current = true
       const anchor = panelReturn.current
       if (panelHost === panelDock.current && anchor?.el?.isConnected) {
         window.scrollBy({ top: anchor.el.getBoundingClientRect().top - anchor.top, behavior: 'instant' })
@@ -150,7 +158,20 @@ export default function StoryClient({ person, story, source }) {
         const panel = document.getElementById('source-panel')
         if (panel) window.scrollBy({ top: panel.getBoundingClientRect().top - 110, behavior: 'instant' })
       }
+      cancelAnimationFrame(releaseFrame)
+      releaseFrame = requestAnimationFrame(() => { releaseFrame = requestAnimationFrame(() => { panelPositioning.current = false }) })
     }
+    const onGesture = (event) => {
+      if (event.target?.closest?.('.panel-face')) return
+      if (event.type === 'keydown' && !['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) return
+      userMoved = true
+      panelPositioning.current = false
+    }
+    const onResize = () => { userMoved = false }
+    window.addEventListener('resize', onResize)
+    window.addEventListener('wheel', onGesture, { passive: true })
+    window.addEventListener('touchmove', onGesture, { passive: true })
+    window.addEventListener('keydown', onGesture)
     align()
     const observer = new ResizeObserver(() => {
       cancelAnimationFrame(frame)
@@ -162,7 +183,14 @@ export default function StoryClient({ person, story, source }) {
     // 从引入页首次挂载正文时，字体加载还会改变前文高度。
     // 字体就绪后再对齐一次，避免查证标题被导航栏挡住。
     document.fonts.ready.then(() => { if (!cancelled) frame = requestAnimationFrame(align) })
-    return () => { cancelled = true; cancelAnimationFrame(frame); observer.disconnect() }
+    return () => {
+      cancelled = true; cancelAnimationFrame(frame); cancelAnimationFrame(releaseFrame)
+      panelPositioning.current = false; observer.disconnect()
+      window.removeEventListener('resize', onResize)
+      window.removeEventListener('wheel', onGesture)
+      window.removeEventListener('touchmove', onGesture)
+      window.removeEventListener('keydown', onGesture)
+    }
   }, [panelOpen, panelHost, widePanel])
 
   const beats = story.beats
@@ -210,10 +238,19 @@ export default function StoryClient({ person, story, source }) {
     panelTrigger.current = trigger || document.activeElement
     const el = panelTrigger.current
     panelReturn.current = el ? { el, top: el.getBoundingClientRect().top } : null
+    setPanelBeat(Number(el?.closest('.beat')?.dataset.n) || following)
+    panelScrolled.current = false
     setPanelOpen(true)
   }
   const closePanel = () => {
     if (cameFrom?.entrance) { backFromSource(); return }
+    // 看过后续正文再关闭，留在当前阅读处，不把人拉回最初打开查证的地方。
+    if (widePanel && panelScrolled.current && !cameFrom) {
+      const anchor = [...document.querySelectorAll('.reader .narration p, .reader .emerge, .reader-after .card')]
+        .find(el => { const r = el.getBoundingClientRect(); return r.bottom > 100 && r.top < innerHeight })
+      if (anchor) panelReturn.current = { el: anchor, top: anchor.getBoundingClientRect().top }
+      panelTrigger.current = document.querySelector(`#beat-${following} .ground`)
+    }
     const focus = cameFrom?.focus?.isConnected ? cameFrom.focus : panelTrigger.current
     restoring.current = true
     setPanelOpen(false)
@@ -225,10 +262,11 @@ export default function StoryClient({ person, story, source }) {
       if (focus?.isConnected) focus.focus({ preventScroll: true })
     })
   }
+  closePanelRef.current = closePanel
   useEffect(() => {
     if (!panelOpen) return
     document.querySelector('.panel-close')?.focus({ preventScroll: true })
-    const escape = (event) => { if (event.key === 'Escape') closePanel() }
+    const escape = (event) => { if (event.key === 'Escape') closePanelRef.current?.() }
     document.addEventListener('keydown', escape)
     return () => document.removeEventListener('keydown', escape)
   }, [panelOpen, panelHost, cameFrom?.entrance])
@@ -245,6 +283,9 @@ export default function StoryClient({ person, story, source }) {
     })
     if (!panelOpen) {
       panelTrigger.current = active
+      setPanelBeat(following)
+      panelScrolled.current = false
+      panelPositioning.current = true
       panelReturn.current = active ? { el: active, top: active.getBoundingClientRect().top } : null
     }
     if (phase !== 'live') setPhase('live')
@@ -333,31 +374,41 @@ export default function StoryClient({ person, story, source }) {
   }, [cameFrom])
 
   useEffect(() => {
-    if (phase !== 'live' || panelOpen || cameFrom) return
+    if (phase !== 'live' || cameFrom || (panelOpen && !widePanel)) return
     const els = [...document.querySelectorAll('.beat[data-n]')]
     if (!els.length) return
     let frame = 0
     const locate = () => {
       frame = 0
-      if (restoring.current) return
+      if (restoring.current || panelPositioning.current) return
       const line = 140
       let current = els[0]
       for (const el of els) if (el.getBoundingClientRect().top <= line) current = el
-      if (els.at(-1).getBoundingClientRect().bottom <= window.innerHeight - 30) current = els.at(-1)
       const n = Number(current.dataset.n)
+      const reachedEnd = els.at(-1).getBoundingClientRect().bottom <= window.innerHeight - 30
       setFollowing(n)
-      setRevealed((previous) => Math.max(previous, n))
+      // 末段进入视口可展示读后内容；旁批仍对应阅读线处的段落，不提前跳到末段。
+      setRevealed((previous) => Math.max(previous, reachedEnd ? Number(els.at(-1).dataset.n) : n))
     }
-    const schedule = () => { if (!frame) frame = requestAnimationFrame(locate) }
+    const schedule = (event) => {
+      if (event?.type === 'resize' && panelOpen) return
+      if (event?.type === 'scroll' && panelOpen && !panelPositioning.current && !restoring.current) {
+        panelScrolled.current = true
+        const anchor = [...document.querySelectorAll('.reader .narration p, .reader .emerge')]
+          .find(el => { const r = el.getBoundingClientRect(); return r.bottom > 100 && r.top < innerHeight })
+        if (anchor) panelReturn.current = { el: anchor, top: anchor.getBoundingClientRect().top }
+      }
+      if (!frame) frame = requestAnimationFrame(locate)
+    }
     window.addEventListener('scroll', schedule, { passive: true })
     window.addEventListener('resize', schedule)
-    schedule()
+    if (!panelOpen) schedule()
     return () => {
       cancelAnimationFrame(frame)
       window.removeEventListener('scroll', schedule)
       window.removeEventListener('resize', schedule)
     }
-  }, [phase, panelOpen, cameFrom])
+  }, [phase, panelOpen, cameFrom, widePanel])
 
   /* 时间地点戳：铺陈代码块的第一行就是它 */
   const stamp = story.intro.lines[0]?.text || story.time || ''
@@ -455,15 +506,12 @@ export default function StoryClient({ person, story, source }) {
   const sourcePanel = (
           <aside className="panel reader-panel" id="source-panel" hidden={!panelOpen} aria-label="史料查阅">
             <div className="panel-heading">
-              <span>史料查阅</span>
-              <button type="button" className="panel-close" onClick={closePanel}>关闭</button>
+              <span>随文查证</span>
+              <div className="panel-heading-actions">
+                {savedRead && <button type="button" className="panel-restart" onClick={restart}>从头读</button>}
+                <button type="button" className="panel-close" onClick={closePanel}>收起</button>
+              </div>
             </div>
-            {/* **从头读**：正文里也给一个（进度存在本机时才有意义）。
-                点它清掉这一篇的进度、回入场页——复习状态不动，那是两件事。 */}
-            {savedRead && (
-              <button type="button" className="cta-ghost in-stage" onClick={restart}>从 头 读</button>
-            )}
-
             <div className="panel-tabs">
               {TABS.map((t) => (
                 <button
@@ -478,7 +526,7 @@ export default function StoryClient({ person, story, source }) {
 
             <div className="panel-body">
               {tab === 'evidence' && shownBeat && (
-                <div className="panel-face paper anim-fade" key={shownBeat.n}>
+                <div className="panel-face paper anim-fade" key={shownBeat.n} data-beat={shownBeat.n}>
                   <h3>这 一 处 的 依 据</h3>
 
                   {/* 每个来源都保留。已逐字匹配的当前摘句先显示，完整上下文按需展开。 */}
@@ -678,7 +726,7 @@ export default function StoryClient({ person, story, source }) {
                 const quotes = b.quotes || []
                 const glossAt = new Set(quotes.map((q) => q.glossAt).filter((x) => x !== null))
                 return (
-                  <article key={b.n} data-n={b.n} id={`beat-${b.n}`} className="beat active">
+                  <article key={b.n} data-n={b.n} id={`beat-${b.n}`} className="beat active" data-current={following === b.n}>
                     <div className="narration anim-emerge">
                       {b.prose.map((p, i) => {
                         const q = quotes.find((x) => x.at === i)

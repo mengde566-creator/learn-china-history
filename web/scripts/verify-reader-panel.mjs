@@ -25,7 +25,7 @@ function geometry() {
 }
 const settle = p => p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
 try {
-  for (const width of (process.argv.includes('--returns') ? [] : [390, 1324])) {
+  for (const width of (process.argv.includes('--returns') || process.argv.includes('--follow') ? [] : [390, 1324])) {
     const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
     const page = await context.newPage()
     page.on('pageerror', error => { throw error })
@@ -64,6 +64,55 @@ try {
     }
     await context.close()
   }
+  // 一直开着旁批读全文：不点击各段依据，正文滚动本身必须驱动对应内容。
+  if (!process.argv.includes('--returns')) {
+    const context = await browser.newContext({ viewport: { width: 1324, height: 900 }, reducedMotion: 'reduce' })
+    const p = await context.newPage()
+    const compact = value => String(value).replace(/\s/g, '')
+    let followed = 0
+    for (const person of data.people) for (const entry of person.storyList.filter(s => s.ready)) {
+      if (process.argv.includes('--follow') && !['01-wusebang', '04-xingyang', '01-yanwei', '08-weisheng', '09-yubi'].includes(entry.id)) continue
+      const story = person.stories[entry.id]
+      await p.goto(`${base}/p/${person.id}/${entry.id}`, { waitUntil: 'networkidle' })
+      await p.locator('button.cta').click()
+      await p.getByRole('button', { name: '查证与背景', exact: true }).click()
+      await p.evaluate(() => document.fonts.ready); await settle(p)
+      const style = await p.locator('.reader-panel').evaluate(el => ({ bg: getComputedStyle(el).backgroundColor, border: getComputedStyle(el).borderLeftWidth, gap: getComputedStyle(el.closest('.reader')).columnGap }))
+      assert.equal(style.bg, 'rgba(0, 0, 0, 0)'); assert.equal(style.border, '0px'); assert.equal(style.gap, '32px')
+      for (const beat of story.beats) {
+        await p.evaluate(n => { const el = document.getElementById(`beat-${n}`); window.scrollTo({ top: scrollY + el.getBoundingClientRect().top - 110, behavior: 'instant' }) }, beat.n)
+        await p.waitForFunction(n => {
+          const el = document.getElementById(`beat-${n}`)
+          // 末尾复习区刚挂载时页面会变长；继续滚至目标，不能把首次触底当成已到该段。
+          if (Math.abs(el.getBoundingClientRect().top - 110) > 2) window.scrollTo({ top: scrollY + el.getBoundingClientRect().top - 110, behavior: 'instant' })
+          return Math.abs(el.getBoundingClientRect().top - 110) < 2 && document.querySelector('#source-panel .panel-face')?.dataset.beat === String(n)
+        }, beat.n, { timeout: 3000 }).catch(async error => {
+          console.error('联动失败', person.id, entry.id, beat.n, await p.evaluate(() => ({ selected: document.querySelector('#source-panel .panel-face')?.dataset.beat, y: scrollY, tops: [...document.querySelectorAll('.beat')].map(el => [el.dataset.n, el.getBoundingClientRect().top]) })))
+          throw error
+        })
+        await settle(p)
+        assert.deepEqual((await p.evaluate(geometry)).overlaps, [])
+        const full = person.source[beat.sources[0]]?.text || ''
+        const match = String(beat.sourceCell || '').match(/^(\d{3})\s+([\s\S]+)$/)
+        const expected = match?.[1] === beat.sources[0] && compact(full).includes(compact(match[2])) ? match[2] : full
+        assert.ok(compact(await p.locator('#source-panel .lead').first().innerText()).includes(compact(expected)), `${person.id}/${entry.id}/${beat.n} 旁批未对应当前原文`)
+        const y = await p.evaluate(() => scrollY)
+        await settle(p); assert.equal(await p.evaluate(() => scrollY), y, '更新依据反向拉动正文')
+        followed++
+      }
+      const returnBeat = Math.ceil(story.beats.length / 2)
+      await p.evaluate(n => window.scrollTo({ top: scrollY + document.getElementById(`beat-${n}`).getBoundingClientRect().top - 110, behavior: 'instant' }), returnBeat)
+      await p.waitForFunction(n => document.querySelector('#source-panel .panel-face')?.dataset.beat === String(n), returnBeat)
+      assert.equal(await p.evaluate(key => JSON.parse(localStorage.getItem('guanshi.progress.v1')).read[key].beat, `${person.id}/${entry.id}`), story.beats.length, '回看正文降低了已读进度')
+      const paragraph = p.locator(`#beat-${returnBeat} .narration > *`).first()
+      const y = (await paragraph.boundingBox()).y
+      await p.keyboard.press('Escape'); await settle(p)
+      assert.ok(Math.abs((await paragraph.boundingBox()).y - y) < 3, '读到后面关闭却回到最初入口')
+      console.log(`滚动联动 ${person.id}/${entry.id}: ${story.beats.length} 段通过`)
+    }
+    console.log(`滚动联动共 ${followed} 段，不依靠逐段点击依据`)
+    await context.close()
+  }
   // 首次从引入脚注挂载正文：等字体排版稳定后标题仍可见，返回不产生阅读进度。
   for (const width of [390, 1440]) {
     const p = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
@@ -74,6 +123,7 @@ try {
     const saved = await p.evaluate(() => localStorage.getItem('guanshi.progress.v1'))
     await cite.click(); await p.locator(`#src-${id}`).waitFor({ state: 'visible' })
     await p.evaluate(() => document.fonts.ready); await settle(p)
+    await p.waitForFunction(() => { const r = document.querySelector('#source-panel')?.getBoundingClientRect(); return r && r.top >= 55 && r.top < 300 }, null, { timeout: 3000 })
     const pane = await p.locator('#source-panel').boundingBox()
     assert.ok(pane.y >= 55 && pane.y < 300, `${width}px 入口查证标题位置 ${pane.y}`)
     await p.locator(`#src-${id} button.back`).click(); await p.locator('.opening').waitFor(); await settle(p)
@@ -118,6 +168,17 @@ try {
     const g = await p.evaluate(geometry)
     assert.deepEqual(g.overlaps, []); assert.equal(g.overflow, false); assert.equal(g.inline, width < 1081)
   }
+  // 已经读到后面再收窄窗口，不能被最初入口的锚点拉回第一页。
+  await p.mouse.move(400, 400); await p.mouse.wheel(0, 1)
+  await p.evaluate(() => window.scrollTo({ top: scrollY + document.getElementById('beat-5').getBoundingClientRect().top - 110, behavior: 'instant' }))
+  await p.waitForFunction(() => document.querySelector('#source-panel .panel-face')?.dataset.beat === '5')
+  const reading = p.locator('#beat-5 .narration > *').first()
+  const at = (await reading.boundingBox()).y
+  await p.setViewportSize({ width: 1081, height: 900 }); await settle(p); await settle(p)
+  assert.ok(Math.abs((await reading.boundingBox()).y - at) < 3, `调整窗口未保留阅读位置：${at} -> ${(await reading.boundingBox()).y}`)
+  await p.setViewportSize({ width: 390, height: 900 }); await settle(p)
+  assert.ok(await p.locator('#beat-5 [data-panel-host] #source-panel').count(), '窄屏旁批没有跟到当前阅读段')
+  await p.setViewportSize({ width: 1440, height: 900 }); await settle(p)
   await p.addStyleTag({content: '.reader .narration{font-size:35px}'}); assert.deepEqual((await p.evaluate(geometry)).overlaps, [])
   await p.close()
   console.log(`通过：${opens}次逐段开关、入口/复习返回、原文内部滚动及断点/字号检查`)
