@@ -58,5 +58,85 @@
     "archive": "content/references/gaohuan-wei-10-expanded.txt",
     "sha256": "14a5947b596a6fbececdf8b609156ec6dac0aedee3c971ff8008ff61d9c06364",
     "min": 1
+  },
+  {
+    "file": "yuwentai-wei11.txt",
+    "title": "《魏书》宇文泰选段参考（wei11.txt）",
+    "url": "https://zh.wikisource.org/wiki/魏書/卷11",
+    "about": "https://zh.wikisource.org/wiki/魏書/卷11",
+    "revision": null,
+    "archive": "content/references/yuwentai-wei11.txt",
+    "sha256": "2571a6e3b77a51dda9d2115ea2019d649f1374a6c3d7eeb3d7386f95a4ee4b44",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou01.txt",
+    "title": "《周书》宇文泰选段参考（zhou01.txt）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷01",
+    "about": "https://zh.wikisource.org/wiki/周書/卷01",
+    "revision": null,
+    "archive": "content/references/yuwentai-zhou01.txt",
+    "sha256": "a82c7b7b505d0fc9c69d11887ea5917044188be1aec2bc933196d06dada452fe",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou02.txt",
+    "title": "《周书》宇文泰选段参考（zhou02.txt）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷02",
+    "about": "https://zh.wikisource.org/wiki/周書/卷02",
+    "revision": null,
+    "archive": "content/references/yuwentai-zhou02.txt",
+    "sha256": "6d9d0a87c17e28c4bdedffbf8548ca3b92df0cd0ce20af21a5ee4f9894ade1a7",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou03.txt",
+    "title": "《周书》宇文泰选段参考（zhou03.txt）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷03",
+    "about": "https://zh.wikisource.org/wiki/周書/卷03",
+    "revision": null,
+    "archive": "content/references/yuwentai-zhou03.txt",
+    "sha256": "e336e42d04f5fd50198faa7a39aeae0cb41f2debdf7cbc82a30342c9a63e8a2f",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou15.txt",
+    "title": "《周书》宇文泰选段参考（zhou15.txt）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷15",
+    "about": "https://zh.wikisource.org/wiki/周書/卷15",
+    "revision": null,
+    "archive": "content/references/yuwentai-zhou15.txt",
+    "sha256": "3bde5fe6cb22fc614c91e11f85569d302973437e7ee1ca4a69edc2dadbd75094",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou16.txt",
+    "title": "《周书》宇文泰选段参考（zhou16.txt）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷16",
+    "about": "https://zh.wikisource.org/wiki/周書/卷16",
+    "revision": "2432549",
+    "archive": "content/references/yuwentai-zhou16.txt",
+    "sha256": "c00084b26666f30643ab9401ba007db7e08adc1bdb21f8cd6b287d8255cb204c",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou23.txt",
+    "title": "《周书》宇文泰选段参考（zhou23.txt）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷23",
+    "about": "https://zh.wikisource.org/wiki/周書/卷23",
+    "revision": null,
+    "archive": "content/references/yuwentai-zhou23.txt",
+    "sha256": "bb7324e38430ca631b9db5ba9c5c06ee9ef3cd820d05e339c6aaefb4492ee683",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou31.txt",
+    "title": "《周书》宇文泰选段参考（zhou31.txt）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷31",
+    "about": "https://zh.wikisource.org/wiki/周書/卷31",
+    "revision": null,
+    "archive": "content/references/yuwentai-zhou31.txt",
+    "sha256": "153d837384e33f9b866cab13ce1c757fc1dfc0114440c63a5a5db28d55716662",
+    "min": 1
   }
 ]

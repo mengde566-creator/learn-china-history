@@ -138,5 +138,70 @@
   "range": "030–032",
   "seeds": "b26318bd86cd8026",
   "cards": "acf610cf99e64ebe"
+ },
+ "yuwentai/01-luanjun": {
+  "range": "001–004",
+  "seeds": "c41a93ba683e9c5d",
+  "cards": "38a0cf984dcfa13d"
+ },
+ "yuwentai/02-guanzhong": {
+  "range": "005–008",
+  "seeds": "265983ee34439fcc",
+  "cards": "7e8036ebac356231"
+ },
+ "yuwentai/03-jiejun": {
+  "range": "009–013、051",
+  "seeds": "1591afe17e3062be",
+  "cards": "1def69a196f61488"
+ },
+ "yuwentai/04-changan": {
+  "range": "014–018、058",
+  "seeds": "348dcc3e987199b4",
+  "cards": "f4da014460d2c903"
+ },
+ "yuwentai/05-doutai": {
+  "range": "019–021、023、059、068–069",
+  "seeds": "26402423bf1d10a9",
+  "cards": "d341f691d7c80382"
+ },
+ "yuwentai/06-shayuan": {
+  "range": "022–025、060",
+  "seeds": "18e29913bc0abe74",
+  "cards": "bfb6a5bde9e9f4cf"
+ },
+ "yuwentai/07-heqiao": {
+  "range": "026–029、061",
+  "seeds": "7ac7a93704b65a61",
+  "cards": "912afb371d518db8"
+ },
+ "yuwentai/08-mangshan": {
+  "range": "030–032、053、062–063、067",
+  "seeds": "e718e4047e8f4983",
+  "cards": "7302c2fcebd50e07"
+ },
+ "yuwentai/09-suchuo": {
+  "range": "033、046–050",
+  "seeds": "c718ee308ee7013c",
+  "cards": "76b86557451a3fdc"
+ },
+ "yuwentai/10-yubi": {
+  "range": "034–035、055–057、064、070",
+  "seeds": "afca217a28873218",
+  "cards": "cfd1deec818d9c18"
+ },
+ "yuwentai/11-houjing": {
+  "range": "035–039、052",
+  "seeds": "f926eb3a79968548",
+  "cards": "cb5c9fdb8a03db72"
+ },
+ "yuwentai/12-jiangling": {
+  "range": "040–042、054",
+  "seeds": "5fe89e0d9cc264d0",
+  "cards": "27ea470deb2ce859"
+ },
+ "yuwentai/13-shenhou": {
+  "range": "043–045、065–066、071–072",
+  "seeds": "e58dcddb0dfbe1a7",
+  "cards": "82f4063f3dd15372"
  }
 }

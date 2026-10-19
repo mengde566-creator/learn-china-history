@@ -203,5 +203,48 @@
     ]
    ]
   }
+ },
+ "yuwentai": {
+  "《周书·文帝纪上》": {
+   "ref": "yuwentai-zhou01.txt",
+   "from": "太祖文皇帝姓宇文氏"
+  },
+  "《周书·文帝纪下》": {
+   "ref": "yuwentai-zhou02.txt",
+   "from": "魏大統元年"
+  },
+  "《周书·苏绰传》": {
+   "ref": "yuwentai-zhou23.txt",
+   "from": "蘇綽字令綽"
+  },
+  "《周书·寇洛传》": {
+   "ref": "yuwentai-zhou15.txt",
+   "from": "寇洛上谷昌平人",
+   "to": "李弼字景和"
+  },
+  "《周书·于谨传》": {
+   "ref": "yuwentai-zhou15.txt",
+   "from": "于謹字思敬"
+  },
+  "《周书·韦孝宽传》": {
+   "ref": "yuwentai-zhou31.txt",
+   "from": "韋叔裕字孝寬"
+  },
+  "《魏书·出帝纪》": {
+   "ref": "yuwentai-wei11.txt",
+   "from": "辛卯詔曰"
+  },
+  "《北齐书·神武帝纪下》": {
+   "ref": "beiqishu-02.txt",
+   "from": "天平元年"
+  },
+  "《周书·孝闵帝纪》": {
+   "ref": "yuwentai-zhou03.txt",
+   "from": "孝閔皇帝諱覺"
+  },
+  "《周书》卷十六": {
+   "ref": "yuwentai-zhou16.txt",
+   "from": "初魏孝莊帝"
+  }
  }
 }
