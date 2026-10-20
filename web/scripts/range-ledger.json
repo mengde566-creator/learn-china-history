@@ -1,42 +1,42 @@
 {
  "caocao/01-wusebang": {
   "range": "004–009、206–209",
-  "seeds": "d00218e931e1ae09",
+  "seeds": "d1521180cef1f632",
   "cards": "80c721b0911599c3"
  },
  "caocao/02-cidong": {
   "range": "011–014、205、211–213、401–404、407、409",
-  "seeds": "ea2ab54c40731da6",
+  "seeds": "71dd3dbf92713809",
   "cards": "48bfeb7675375dd0"
  },
  "caocao/03-chenliu": {
   "range": "014–015、020、214–219",
-  "seeds": "a3c8e0bc9e2983a9",
+  "seeds": "e8269a8ee55bc9d6",
   "cards": "0ee1aac5bf2dd0c0"
  },
  "caocao/04-xingyang": {
   "range": "015–021",
-  "seeds": "c532279c382b00e8",
+  "seeds": "c913f7960395f883",
   "cards": "8a0df676d9f64756"
  },
  "caocao/05-yanzhou": {
   "range": "023–026",
-  "seeds": "6ba012aa412de2cb",
+  "seeds": "1f103a1a87f88f6f",
   "cards": "5e436d79a8eb0fae"
  },
  "caocao/06-qingzhou": {
   "range": "025–029、226",
-  "seeds": "6ebe564789401fb3",
+  "seeds": "017fe009a58b2a15",
   "cards": "24821ba91381d571"
  },
  "caocao/07-fengtianzi": {
   "range": "031–034、234",
-  "seeds": "2296a32c56fba3f0",
+  "seeds": "d217fb9b0c0ee391",
   "cards": "1da1449c11756607"
  },
  "caocao/08-guandu": {
   "range": "040–045、242–244",
-  "seeds": "512bb96b5318366a",
+  "seeds": "9031e0548ec9b2c3",
   "cards": "aa9473eff8461cd2"
  },
  "caocao/09-chibi": {
@@ -46,32 +46,32 @@
  },
  "caocao/10-weiwang": {
   "range": "074–082、095–099、105–112",
-  "seeds": "69cbe26f628cecb5",
+  "seeds": "823e24d1892caff1",
   "cards": "fb38756a2749e200"
  },
  "jingke/01-yanwei": {
   "range": "001–016",
-  "seeds": "ecff9c41f526b0b9",
+  "seeds": "b78fcff2e8f70c16",
   "cards": "7fb180443fc87404"
  },
  "jingke/02-tianguang": {
   "range": "017–025",
-  "seeds": "adf6c82f2dc8cd47",
+  "seeds": "13d6c2c78644a696",
   "cards": "51ac53ef5a523d4a"
  },
  "jingke/03-shouming": {
   "range": "022–035",
-  "seeds": "e4f3bdf0ab98b5f4",
+  "seeds": "21f2bfff2fabc710",
   "cards": "a2571db0e8958328"
  },
  "jingke/04-fanyuqi": {
   "range": "035–047",
-  "seeds": "aa1e9fd176a9137a",
+  "seeds": "e749b6834d39399f",
   "cards": "1009cb506c995699"
  },
  "jingke/05-taizidan": {
   "range": "048–053",
-  "seeds": "cd043740606ab2b0",
+  "seeds": "27fefa875c4f8459",
   "cards": "bd053733b5b634e6"
  },
  "jingke/06-yishui": {
@@ -206,168 +206,168 @@
  },
  "xiangyu/01-qibing": {
   "range": "001–013",
-  "seeds": "fd235516f70cf8c8",
-  "cards": "44859d481871df5d"
+  "seeds": "568e0efadac9e473",
+  "cards": "6627c5272793a39e"
  },
  "xiangyu/02-julu": {
   "range": "014–026",
-  "seeds": "0dbe54d4e1aee5e1",
-  "cards": "64781ede712fb1c3"
+  "seeds": "c7f3b192b8611dea",
+  "cards": "41592a4e09a8355b"
  },
  "xiangyu/03-zhanghan": {
   "range": "027–033",
-  "seeds": "ce18f93b5f3846d9",
-  "cards": "3123f5a27ecc8880"
+  "seeds": "b9537e4c9ca88711",
+  "cards": "e80907c57dda90c8"
  },
  "xiangyu/04-hongmen": {
   "range": "034–048",
-  "seeds": "13cb65447ea62bef",
-  "cards": "c0bae0b91670595b"
+  "seeds": "98a19999756cae05",
+  "cards": "1db4aaa9ca8ac883"
  },
  "xiangyu/05-xianyang": {
   "range": "049–056",
-  "seeds": "fb3197ed4ce8b535",
+  "seeds": "c5d7e30e9af22f84",
   "cards": "d852fd555b6be3dd"
  },
  "xiangyu/06-pengcheng": {
   "range": "057–065",
-  "seeds": "5f0e0eb10db7ae05",
-  "cards": "fda20ea70f92713b"
+  "seeds": "b421354b6360f5e2",
+  "cards": "443db9b84cae73a8"
  },
  "xiangyu/07-xingyang": {
   "range": "066–079",
-  "seeds": "722c31bc6eb729fc",
-  "cards": "c06ae46345411a9e"
+  "seeds": "13bb2a189a5aef15",
+  "cards": "bd42de11b6095ee8"
  },
  "xiangyu/08-gaixia": {
   "range": "080–086",
-  "seeds": "f326f3bca4b98563",
-  "cards": "999826ae178e6853"
+  "seeds": "7adae69541370be5",
+  "cards": "0ccbc5808f1c8955"
  },
  "xiangyu/09-wujiang": {
   "range": "087–093",
-  "seeds": "e617b0bb7d19d6c8",
-  "cards": "1a36932bff063c97"
+  "seeds": "1988ce33eab81104",
+  "cards": "0fe85ab6689c39c9"
  },
  "chenqingzhi/01-yetui": {
   "range": "001–005",
-  "seeds": "06fc22a8d2d22c10",
+  "seeds": "18f4bbdcf8701ac8",
   "cards": "3c60270500fe7e20"
  },
  "chenqingzhi/02-guoyang": {
   "range": "006–015",
-  "seeds": "876a07ecdfdc5db1",
+  "seeds": "1d04a56e5d97aaf8",
   "cards": "caf4aea9d63d9045"
  },
  "chenqingzhi/03-baipao": {
   "range": "016–025",
-  "seeds": "fe42a5e26aa34ccc",
+  "seeds": "a5e4504bc7faaa3e",
   "cards": "722032b50cb10358"
  },
  "chenqingzhi/04-songgao": {
   "range": "026–035",
-  "seeds": "197a62535e532aba",
+  "seeds": "7a7dd4ed22c4b622",
   "cards": "eca51fd4030761ba"
  },
  "chenqingzhi/05-yusheng": {
   "range": "036–043",
-  "seeds": "db5ace07bb4b6612",
+  "seeds": "3f01a0af4dbcd8d5",
   "cards": "9324233b6b8d53c7"
  },
  "hanxin/01-kuaxia": {
   "range": "001–003",
   "seeds": "5b8d0b064439e4f2",
-  "cards": "dacf4745e2bf5575"
+  "cards": "3d9840ba0c371a31"
  },
  "hanxin/02-dengtan": {
   "range": "004–013",
-  "seeds": "a4dcff9df6be4749",
+  "seeds": "b593b8ad617ef8aa",
   "cards": "43ddabba84fc242e"
  },
  "hanxin/03-beishui": {
   "range": "014–029",
-  "seeds": "eef911ed1322ce3a",
+  "seeds": "ba307d5b842e4886",
   "cards": "432bb8278e579f6d"
  },
  "hanxin/04-jiawang": {
   "range": "030–040",
-  "seeds": "9052be79593bef10",
-  "cards": "469f2ef530eabfe5"
+  "seeds": "99c7f57927fc4e25",
+  "cards": "e06eef06e0cffc00"
  },
  "hanxin/05-kuaitong": {
   "range": "041–052",
-  "seeds": "937e2d5cd03be58d",
-  "cards": "ead696fd790da772"
+  "seeds": "90e4625d25cee8c7",
+  "cards": "a21d072651b8bb5b"
  },
  "hanxin/06-zhongshi": {
   "range": "053–065",
-  "seeds": "27928ca04f4a6832",
-  "cards": "a5f45766f7189cf9"
+  "seeds": "c268505fb8d1cc89",
+  "cards": "07b38a553074f944"
  },
  "liuyu/01-jingkou": {
   "range": "001–006",
-  "seeds": "ffa84cc08d1cad1a",
-  "cards": "acfe224a546a3400"
+  "seeds": "77c78c671544a29f",
+  "cards": "ab359f3d714671a5"
  },
  "liuyu/02-fuzhou": {
   "range": "007–014",
-  "seeds": "a002e3d1413d1f64",
-  "cards": "3646d67ad4b51472"
+  "seeds": "69c634b4bfdb3532",
+  "cards": "03105e54c615f4d8"
  },
  "liuyu/03-guanggu": {
   "range": "015–022",
-  "seeds": "82086f5efb8e0218",
-  "cards": "79a4261eeb8f3e95"
+  "seeds": "bf0f652599562ead",
+  "cards": "dc8c3274ac88f862"
  },
  "liuyu/04-leichi": {
   "range": "023–027",
-  "seeds": "85905a4d2f8502e3",
-  "cards": "d8bdf79829206a2f"
+  "seeds": "31d88da5ddfcb61d",
+  "cards": "816aa71d79142d9e"
  },
  "liuyu/05-queyue": {
   "range": "028–032、101–107",
-  "seeds": "ad5a681467d4efd2",
-  "cards": "f7387e74a707f18d"
+  "seeds": "5a1b825963060a5b",
+  "cards": "5bbdf350f88f199e"
  },
  "liuyu/06-shouchan": {
   "range": "033–041",
-  "seeds": "35644d89cd9cac59",
-  "cards": "9fca3fadc09df3fb"
+  "seeds": "f220816eba255825",
+  "cards": "d8ab0623500bf2f8"
  },
  "xinqiji/01-nangui": {
   "range": "001–004",
-  "seeds": "1524b07fa331614f",
-  "cards": "91ae009b8134ee62"
+  "seeds": "357bc17f24234e27",
+  "cards": "f4dfad569c823ea1"
  },
  "xinqiji/02-zhanganguo": {
   "range": "005–007",
-  "seeds": "de4a375938a89bd4",
+  "seeds": "c617b3bd2568c792",
   "cards": "3fdbceb15a91ba42"
  },
  "xinqiji/03-meiqin": {
   "range": "008–011",
-  "seeds": "256b6f485198959b",
-  "cards": "ec3db7f2e168d224"
+  "seeds": "3a75f2194756ecab",
+  "cards": "9dcbcf24be88a864"
  },
  "xinqiji/04-feihu": {
   "range": "012–020",
-  "seeds": "e42c6a390b489576",
-  "cards": "47a1a92e614a157c"
+  "seeds": "6b5c5147ea83360e",
+  "cards": "a191db52a8e70f56"
  },
  "xinqiji/05-huangzheng": {
   "range": "021–022",
-  "seeds": "5eef07b2a80031c2",
-  "cards": "f46bf78786eb7656"
+  "seeds": "ae45384031c2458d",
+  "cards": "12de9c37dad3c3ef"
  },
  "xinqiji/06-fuzhou": {
   "range": "023–026",
-  "seeds": "e81821c63a06b8ba",
-  "cards": "3898d26e3b575f92"
+  "seeds": "1d5e016aeb5063aa",
+  "cards": "eb3728ade5878a09"
  },
  "xinqiji/07-mozhang": {
   "range": "027–037",
-  "seeds": "260b742d2b1d540e",
-  "cards": "c61078b227b24eed"
+  "seeds": "abdc3e1d20028f80",
+  "cards": "d29aa521b6b75b5b"
  },
  "zuti/01-wenji": {
   "range": "001–007",
