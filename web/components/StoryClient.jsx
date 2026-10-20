@@ -91,6 +91,7 @@ function evidenceAdds(beat, source) {
 export default function StoryClient({ person, story, source }) {
   const [phase, setPhase] = useState('opening') // opening | live
   const [revealed, setRevealed] = useState(1)
+  const [afterVisible, setAfterVisible] = useState(false)
   const [openingNotesOpen, setOpeningNotesOpen] = useState(false)
   const [panelOpen, setPanelOpen] = useState(false)
   const panelTrigger = useRef(null)
@@ -210,11 +211,11 @@ export default function StoryClient({ person, story, source }) {
     if (!readReady || phase !== 'live' || citingFromOpening) return
     markRead(person.id, story.id, { beat: revealed, beatCount: beats.length, phase: 'live', done: revealed >= beats.length })
   }, [readReady, phase, revealed, person.id, story.id, beats.length, citingFromOpening])
-  const isLast = revealed >= beats.length
+  const isLast = afterVisible || revealed >= beats.length
   /* 正文里也能从头读（进度存在本机时才有意义） */
   const restart = () => {
     resetStory(person.id, story.id)
-    setRevealed(1); setFollowing(1); setPanelOpen(false); setCameFrom(null)
+    setRevealed(1); setAfterVisible(false); setFollowing(1); setPanelOpen(false); setCameFrom(null)
     restoring.current = true
     setPhase('opening'); window.scrollTo({ top: 0, behavior: 'instant' })
   }
@@ -383,8 +384,9 @@ export default function StoryClient({ person, story, source }) {
       const n = Number(current.dataset.n)
       const reachedEnd = els.at(-1).getBoundingClientRect().bottom <= window.innerHeight - 30
       setFollowing(n)
-      // 末段进入视口可展示读后内容；旁批仍对应阅读线处的段落，不提前跳到末段。
-      setRevealed((previous) => Math.max(previous, reachedEnd ? Number(els.at(-1).dataset.n) : n))
+      // 末段可见时先展示读后内容；持久进度只跟阅读线走，不因文末露出而完读。
+      if (reachedEnd) setAfterVisible(true)
+      setRevealed((previous) => Math.max(previous, n))
     }
     const schedule = (event) => {
       if (event?.type === 'resize' && panelOpen) return
@@ -449,7 +451,7 @@ export default function StoryClient({ person, story, source }) {
           {savedRead && (
             <button
               className="cta-ghost"
-              onClick={() => { resetStory(person.id, story.id); setRevealed(1); setPhase('live') }}
+              onClick={() => { resetStory(person.id, story.id); setRevealed(1); setAfterVisible(false); setPhase('live') }}
             >
               从 头 读
             </button>

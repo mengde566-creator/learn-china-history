@@ -35,6 +35,7 @@ npm run dev     # 打开 http://localhost:3000
 | `npm run start` | `next start` | 跑生产构建（先 `npm run build`） | 发布 |
 | `npm run dev` | `content` ＋ `next dev` | 开发服务器 | 日常 |
 | `npm run verify` | `node scripts/verify.mjs` | 浏览器端验证套件，**需要服务器先跑着**，可筛单项 | 改完界面 |
+| `npm run verify:progress` | `node scripts/verify-reading-progress.mjs` | 隔离浏览器核对尾屏、刷新续读、查证、完读、从头读及旧复习数据 | 改阅读进度或读后内容展示 |
 | `npm run shots` | `node scripts/screenshots.mjs` | 开发用：走一遍流程并截图（默认 `http://127.0.0.1:3100`） | 自查视觉 |
 | `npm run refs` | `node scripts/fetch-refs.mjs` | 把核对用的参考文本取到 `.refs/` + **记 / 校验哈希**（`manifest.json`，不进版本库） | 首次 / 换机器 |
 | `npm run refs:verify` | `node scripts/fetch-refs.mjs --verify` | **只校验不下载**：文件哈希对不上就明确失败，不静默换基准 | 怀疑参考文本变了 |

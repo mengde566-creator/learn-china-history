@@ -993,6 +993,12 @@ check('读后追问: 手机桌面原地查证，键盘关闭与焦点返回', as
       await p.locator('button.cta').click()
       await p.locator('.next-bar').scrollIntoViewIfNeeded()
       await p.locator('.ask-btn').scrollIntoViewIfNeeded()
+      // 浏览器滚动后的阅读线计算在下一帧写入。先等这次真实阅读完成，
+      // 再截取追问操作的基线，避免把尚未落盘的滚动误算成问答改写进度。
+      await p.waitForFunction(() => {
+        const read = JSON.parse(localStorage.getItem('guanshi.progress.v1') || '{}').read?.['gaohuan/01-hanshi']
+        return read?.done && read.beat === document.querySelectorAll('.reader .beat').length
+      })
       const before = await p.evaluate(() => ({ y: scrollY, saved: localStorage.getItem('guanshi.progress.v1') }))
       await p.locator('.ask-btn').click()
       const dialog = p.getByRole('dialog')
