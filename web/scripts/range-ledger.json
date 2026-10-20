@@ -190,9 +190,9 @@
   "cards": "cfd1deec818d9c18"
  },
  "yuwentai/11-houjing": {
-  "range": "035–039、052",
-  "seeds": "f926eb3a79968548",
-  "cards": "cb5c9fdb8a03db72"
+  "range": "035–039、052、073",
+  "seeds": "dfbee08adb133d9d",
+  "cards": "cece75164afc9397"
  },
  "yuwentai/12-jiangling": {
   "range": "040–042、054",
@@ -200,9 +200,9 @@
   "cards": "27ea470deb2ce859"
  },
  "yuwentai/13-shenhou": {
-  "range": "043–045、065–066、071–072",
-  "seeds": "e58dcddb0dfbe1a7",
-  "cards": "82f4063f3dd15372"
+  "range": "043–045、065–066、071–072、074–076",
+  "seeds": "96ed528a67360e60",
+  "cards": "48da49a5796cab9c"
  },
  "xiangyu/01-qibing": {
   "range": "001–013",
