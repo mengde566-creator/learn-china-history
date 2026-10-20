@@ -30,9 +30,9 @@
   "cards": "4383f1ce9542582b"
  },
  "caocao/07-fengtianzi": {
-  "range": "031–034、234",
-  "seeds": "d217fb9b0c0ee391",
-  "cards": "1da1449c11756607"
+  "range": "031–034、119–121、234",
+  "seeds": "c01139c1a9f0db49",
+  "cards": "635cd677077c3427"
  },
  "caocao/08-guandu": {
   "range": "040–045、242–244",
@@ -46,8 +46,8 @@
  },
  "caocao/10-weiwang": {
   "range": "074–082、095–099、105–112",
-  "seeds": "823e24d1892caff1",
-  "cards": "fb38756a2749e200"
+  "seeds": "f3aad7af4ec473a3",
+  "cards": "858b752b4e5adb8c"
  },
  "jingke/01-yanwei": {
   "range": "001–016",
