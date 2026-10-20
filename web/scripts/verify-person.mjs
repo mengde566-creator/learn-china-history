@@ -9,8 +9,8 @@ import { plainSourceText, sourceExcerptOrigin } from '../lib/source-layers.mjs'
 const data = JSON.parse(fs.readFileSync(new URL('../data/content.json', import.meta.url)))
 const person = data.people.find(p => p.id === process.argv[2])
 assert.ok(person, '传入已接入的人物ID，如 yuwentai')
-const storyId = process.argv.find(arg => arg.startsWith('--story='))?.slice('--story='.length)
-assert.ok(!storyId || person.stories[storyId], `故事不存在：${storyId}`)
+const storyIds = process.argv.find(arg => arg.startsWith('--story='))?.slice('--story='.length).split(',')
+for (const id of storyIds || []) assert.ok(person.stories[id], `故事不存在：${id}`)
 const base = process.env.BASE_URL || 'http://127.0.0.1:3100'
 const norm = v => plainSourceText(v).replace(/\s/g, '')
 const settle = p => p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
@@ -57,7 +57,7 @@ try {
     }
     const entries = person.storyList.filter(s => s.ready)
     for (const [index, entry] of entries.entries()) {
-      if (storyId && entry.id !== storyId) continue
+      if (storyIds && !storyIds.includes(entry.id)) continue
       const story = person.stories[entry.id]
       await page.goto(`${base}/p/${person.id}/${entry.id}`, { waitUntil: 'networkidle' })
       const opening = await page.locator('.opening').innerText()
@@ -167,6 +167,7 @@ try {
         await choice.click()
         const text = norm(await dialog.locator('.seed-view').innerText())
         for (const paragraph of seed.answer) assert.ok(text.includes(norm(paragraph)))
+        if (seed.sys) assert.ok(text.includes(norm(seed.sys)), `${entry.id} 追问范围或产品说明缺失：${seed.q}`)
         const cites = dialog.locator('.seed-meta .cite')
         const ids = await cites.allTextContents()
         for (const [ci, value] of ids.entries()) {
