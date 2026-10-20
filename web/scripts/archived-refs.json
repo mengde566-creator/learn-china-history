@@ -223,5 +223,35 @@
     "archive": "content/references/caocao-bao12.txt",
     "sha256": "304a2b28a279c2917af59aa61981ce463e140d242e620d489717855eeb9077a1",
     "min": 1
+  },
+  {
+    "file": "caocao-hong09.txt",
+    "title": "《三国志·魏书·曹洪传》相关摘录",
+    "url": "https://zh.wikisource.org/w/index.php?title=三國志/卷09&oldid=2274283",
+    "about": "https://zh.wikisource.org/w/index.php?title=三國志/卷09&oldid=2274283",
+    "revision": "2274283",
+    "archive": "content/references/caocao-hong09.txt",
+    "sha256": "0b05ef1a2587b54cc4d84e3e4cfec7bc319bacdd712483afc4a9509194736ec7",
+    "min": 1
+  },
+  {
+    "file": "caocao-wei22.txt",
+    "title": "《三国志·魏书·卫臻传》相关摘录",
+    "url": "https://zh.wikisource.org/w/index.php?title=三國志/卷22&oldid=2085105",
+    "about": "https://zh.wikisource.org/w/index.php?title=三國志/卷22&oldid=2085105",
+    "revision": "2085105",
+    "archive": "content/references/caocao-wei22.txt",
+    "sha256": "4b887f822fd207c27353afe5d55a995ac5e47e208a889f500787fcc2080b81f5",
+    "min": 1
+  },
+  {
+    "file": "caocao-dong72.txt",
+    "title": "《后汉书·董卓列传》相关摘录",
+    "url": "https://zh.wikisource.org/w/index.php?title=後漢書/卷72&oldid=2676948",
+    "about": "https://zh.wikisource.org/w/index.php?title=後漢書/卷72&oldid=2676948",
+    "revision": "2676948",
+    "archive": "content/references/caocao-dong72.txt",
+    "sha256": "73a9b822e3cc0efe91288f2d7bb995e87b63ac1c976745d48271bfae59a1eaaf",
+    "min": 1
   }
 ]
