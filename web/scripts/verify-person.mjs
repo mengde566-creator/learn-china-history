@@ -87,6 +87,16 @@ try {
             assert.ok(norm(await lead.innerText()).includes(norm(excerpt)), `${entry.id}/${beat.n}/${id} 摘句缺失`)
             assert.ok(norm(await lead.innerText()).includes(norm(sourceExcerptOrigin(person.source[id], excerpt))), `${id} 摘句出处未显示`)
             const details = lead.locator('details.source-context')
+            if (!await details.count()) {
+              // 短底本可能已全量展示；只在确实等于完整底本时接受没有展开项。
+              assert.equal(norm(excerpt), norm(person.source[id].text), `${id} 部分摘句缺少全文入口`)
+              const layers = lead.locator('.source-layer-text')
+              const visible = await layers.count() ? (await layers.allTextContents()).join('') : await lead.evaluate(el =>
+                [...el.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).map(node => node.textContent).join('').replace(/^「|」$/g, ''))
+              assert.equal(norm(visible), norm(person.source[id].text), `${id} 全文显示不完整`)
+              counts.citations++
+              continue
+            }
             const summary = details.locator('summary')
             // 先像读者一样滚动旁批内部，避免Playwright自动把整个页面滚到折叠项。
             await summary.evaluate(el => {
