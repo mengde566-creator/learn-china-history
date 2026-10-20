@@ -253,5 +253,35 @@
     "archive": "content/references/caocao-dong72.txt",
     "sha256": "73a9b822e3cc0efe91288f2d7bb995e87b63ac1c976745d48271bfae59a1eaaf",
     "min": 1
+  },
+  {
+    "file": "caocao-xun10-ying.txt",
+    "title": "《三国志·魏书·荀彧传》迎奉选段",
+    "url": "https://zh.wikisource.org/w/index.php?title=三國志/卷10&oldid=2274279",
+    "about": "https://zh.wikisource.org/w/index.php?title=三國志/卷10&oldid=2274279",
+    "revision": "2274279",
+    "archive": "content/references/caocao-xun10-ying.txt",
+    "sha256": "86b8b32013320bcf24167507c5d19fd1d93b4c7d9a013d83694b91caac78ea23",
+    "min": 1
+  },
+  {
+    "file": "caocao-dong14-duxu.txt",
+    "title": "《三国志·魏书·董昭传》相关选段",
+    "url": "https://zh.wikisource.org/w/index.php?title=三國志/卷14&oldid=2374427",
+    "about": "https://zh.wikisource.org/w/index.php?title=三國志/卷14&oldid=2374427",
+    "revision": "2374427",
+    "archive": "content/references/caocao-dong14-duxu.txt",
+    "sha256": "67bcecf9d6f5eabdd7651a8f30f1e7f7dcdbf9bac0aef5798ed62cfea28dcdea",
+    "min": 1
+  },
+  {
+    "file": "caocao-dong72-hanxian.txt",
+    "title": "《后汉书·董卓列传》相关选段",
+    "url": "https://zh.wikisource.org/w/index.php?title=後漢書/卷72&oldid=2676948",
+    "about": "https://zh.wikisource.org/w/index.php?title=後漢書/卷72&oldid=2676948",
+    "revision": "2676948",
+    "archive": "content/references/caocao-dong72-hanxian.txt",
+    "sha256": "f44d31a9b8b84fcc234e44805f38320dd5e85469120853fa2dc688b49bb3547e",
+    "min": 1
   }
 ]

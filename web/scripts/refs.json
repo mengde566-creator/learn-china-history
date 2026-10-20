@@ -125,8 +125,18 @@
    "to": null
   },
   "《后汉书·董卓列传》": {
-   "ref": "caocao-dong72.txt",
+   "ref": "caocao-dong72-hanxian.txt",
    "from": "王允聞之",
+   "to": null
+  },
+  "《三国志·魏书·荀彧传》": {
+   "ref": "caocao-xun10-ying.txt",
+   "from": "太祖議奉迎都許，",
+   "to": null
+  },
+  "《三国志·魏书·董昭传》": {
+   "ref": "caocao-dong14-duxu.txt",
+   "from": "太祖朝天子於洛陽",
    "to": null
   }
  },
