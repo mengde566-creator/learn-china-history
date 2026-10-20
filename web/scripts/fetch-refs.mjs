@@ -67,6 +67,16 @@ const REFS = [
     revision: 'Project Gutenberg ebook #23950（电子本编号即固定版）',
     min: 1_500_000,
   },
+  {
+    file: 'shiji.txt',
+    title: '《史記》司馬遷',
+    url: 'https://www.gutenberg.org/ebooks/24226.txt.utf-8',
+    about: 'https://www.gutenberg.org/ebooks/24226',
+    revision: 'Project Gutenberg ebook #24226（电子本编号即固定版）',
+    min: 1_500_000,
+    note: '这一份**整篇缺〈刺客列传〉**（荆轲那 93 段因此换用 GitHub 的转录本）；' +
+      '但〈项羽本纪〉和〈淮阴侯列传〉都在，项羽 001–093、韩信 001–065 以它为准。',
+  },
 ]
 
 const sha256 = (p) => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')

@@ -138,5 +138,60 @@
     "archive": "content/references/yuwentai-zhou31.txt",
     "sha256": "153d837384e33f9b866cab13ce1c757fc1dfc0114440c63a5a5db28d55716662",
     "min": 1
+  },
+  {
+    "file": "jinshu-062.txt",
+    "title": "《晋书》卷六十二（祖逖传）",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷062",
+    "about": "https://zh.wikisource.org/wiki/晉書/卷062",
+    "revision": "2629226",
+    "archive": "content/references/jinshu-062.txt",
+    "sha256": "d4d7f601f2b048ced9bee1e3b544e9828ea026d87589432b6ceebd919b51be7b",
+    "min": 1,
+    "note": "祖逖在同卷「祖逖」一节；卷首另有刘琨传，比对时用起始锚点避开。"
+  },
+  {
+    "file": "liangshu-32.txt",
+    "title": "《梁书》卷三十二（陈庆之传）",
+    "url": "https://zh.wikisource.org/wiki/梁書/卷32",
+    "about": "https://zh.wikisource.org/wiki/梁書/卷32",
+    "revision": "1506956",
+    "archive": "content/references/liangshu-32.txt",
+    "sha256": "95dc95648ac451a27cde300092161707f2b30e28a96530ba353c893e8f9f587d",
+    "min": 1,
+    "note": "维基文库据中华书局一九七三年版录文；本库底本取 ctext 另一份录文，异文见 refs.json 校勘。"
+  },
+  {
+    "file": "songshu-wudi.txt",
+    "title": "《宋书》卷一至卷三（武帝纪上中下，拼接）",
+    "url": "https://zh.wikisource.org/wiki/宋書/卷1",
+    "about": "https://zh.wikisource.org/wiki/宋書/卷1",
+    "revision": "2228879",
+    "archive": "content/references/songshu-wudi.txt",
+    "sha256": "726eac4d82c5b75e2155e6d372c7ffc59474b1571bbc3326082c0db29857ae9a",
+    "min": 1,
+    "note": "三页拼接成一份：卷1 revid 2228879、卷2 revid 2583201、卷3 revid 2358186。"
+  },
+  {
+    "file": "songshu-48.txt",
+    "title": "《宋书》卷四十八（朱龄石传附朱超石）",
+    "url": "https://zh.wikisource.org/wiki/宋書/卷48",
+    "about": "https://zh.wikisource.org/wiki/宋書/卷48",
+    "revision": "1791560",
+    "archive": "content/references/songshu-48.txt",
+    "sha256": "046cb094ea30ab5a2113d1b257b58bb3735336c25a527ab5c0875c85401bc7c8",
+    "min": 1,
+    "note": "朱超石传附在卷48「朱齡石」之后，比对时从「齡石弟超石」起。"
+  },
+  {
+    "file": "songshi-401.txt",
+    "title": "《宋史》卷四百一（辛弃疾等）",
+    "url": "https://zh.wikisource.org/wiki/宋史/卷401",
+    "about": "https://zh.wikisource.org/wiki/宋史/卷401",
+    "revision": "2293949",
+    "archive": "content/references/songshi-401.txt",
+    "sha256": "2ec3a9070401d07c9f9f762c5cd3a9055a0aea54fbca3fd43ea007ad8cdc3444",
+    "min": 1,
+    "note": "卷401 列传第一百六十，辛弃疾在本卷首位；后接何异、刘宰等，用结束锚点「何異」。"
   }
 ]
