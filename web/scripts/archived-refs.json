@@ -213,5 +213,15 @@
     "archive": "content/references/yuwentai-zhou11-succession.txt",
     "sha256": "caa3c004373bf57329102f46d60e9b6588e3111af1366fc6858b743d16c558e6",
     "min": 1
+  },
+  {
+    "file": "caocao-bao12.txt",
+    "title": "《三国志》卷十二裴注引《魏书》鲍信事摘录",
+    "url": "https://zh.wikisource.org/w/index.php?title=三國志/卷12&oldid=2085067",
+    "about": "https://zh.wikisource.org/w/index.php?title=三國志/卷12&oldid=2085067",
+    "revision": "2085067",
+    "archive": "content/references/caocao-bao12.txt",
+    "sha256": "304a2b28a279c2917af59aa61981ce463e140d242e620d489717855eeb9077a1",
+    "min": 1
   }
 ]
