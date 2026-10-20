@@ -193,5 +193,25 @@
     "sha256": "2ec3a9070401d07c9f9f762c5cd3a9055a0aea54fbca3fd43ea007ad8cdc3444",
     "min": 1,
     "note": "卷401 列传第一百六十，辛弃疾在本卷首位；后接何异、刘宰等，用结束锚点「何異」。"
+  },
+  {
+    "file": "yuwentai-zhou18-houjing.txt",
+    "title": "《周书》卷十八王思政传：侯景职任摘录",
+    "url": "https://zh.wikisource.org/w/index.php?title=周書/卷18&oldid=2432566",
+    "about": "https://zh.wikisource.org/w/index.php?title=周書/卷18&oldid=2432566",
+    "revision": "2432566",
+    "archive": "content/references/yuwentai-zhou18-houjing.txt",
+    "sha256": "ed8af2ca4cace22b65dc4e80663a6144cfd2c2bf44c10a3690443398e537677f",
+    "min": 1
+  },
+  {
+    "file": "yuwentai-zhou11-succession.txt",
+    "title": "《周书》卷十一宇文护传：遗托禅代摘录",
+    "url": "https://zh.wikisource.org/w/index.php?title=周書/卷11&oldid=2432574",
+    "about": "https://zh.wikisource.org/w/index.php?title=周書/卷11&oldid=2432574",
+    "revision": "2432574",
+    "archive": "content/references/yuwentai-zhou11-succession.txt",
+    "sha256": "caa3c004373bf57329102f46d60e9b6588e3111af1366fc6858b743d16c558e6",
+    "min": 1
   }
 ]

@@ -245,6 +245,14 @@
   "《周书》卷十六": {
    "ref": "yuwentai-zhou16.txt",
    "from": "初魏孝莊帝"
+  },
+  "《周书·王思政传》": {
+   "ref": "yuwentai-zhou18-houjing.txt",
+   "from": "十三年侯景叛東魏"
+  },
+  "《周书·宇文护传》": {
+   "ref": "yuwentai-zhou11-succession.txt",
+   "from": "太祖西巡至牽屯山"
   }
  },
  "xiangyu": {
