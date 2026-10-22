@@ -37,19 +37,30 @@ export function getStory(personId, storyId) {
   return { person, story }
 }
 
-/** 按时代给人物分组。时代只是一个标签，不做成一级页面。 */
+/** 首页使用常见朝代阶段，人物页继续保留原有的细时代说明。 */
 export function groupByEra(people) {
   const map = new Map()
   for (const p of people) {
-    const era = p.era || '未分期'
+    const original = p.era || '未分期'
+    const era = ERA_GROUPS.find(group => group.match.test(original))?.era || original
     if (!map.has(era)) map.set(era, [])
     map.get(era).push(p)
   }
-  /* **按时代先后排**，不按人物目录的顺序。 */
+  // 同区按已有关键时点的首个明确公元纪年排列，不补造人物生年。
+  const firstYear = (person) => {
+    for (const point of person.timeline || []) {
+      const match = String(point.time).match(/^(?:公元\s*)?(?:约\s*)?(前\s*)?(\d{1,4})(?!\d)/)
+      if (match) return Number(match[2]) * (match[1] ? -1 : 1)
+    }
+    return Infinity
+  }
   const rank = (e) => { const i = ERA_ORDER.indexOf(e); return i < 0 ? ERA_ORDER.length : i }
   return [...map.entries()]
     .sort((a, b) => rank(a[0]) - rank(b[0]) || a[0].localeCompare(b[0], 'zh'))
-    .map(([era, list]) => ({ era, list }))
+    .map(([era, list]) => ({
+      era,
+      list: list.sort((a, b) => firstYear(a) - firstYear(b) || a.name.localeCompare(b.name, 'zh')),
+    }))
 }
 
 /**
@@ -76,6 +87,20 @@ export const PLANNED = [
   { id: 'yuwentai', name: '宇文泰', era: '西魏 · 北周', book: '《周书·文帝纪》' },
 ]
 
-/** 时代的先后。**不能按人物目录的顺序插**——那会先出三国、再出战国末。
-    没列进来的时代排在最后（按名字），不静默丢。 */
-export const ERA_ORDER = ['战国末', '秦', '西汉', '东汉', '三国', '西晋', '东晋 · 南朝宋', '北魏 · 东魏', '北魏 · 西魏', '东魏 · 北齐', '西魏 · 北周', '隋', '唐']
+// 按朝代阶段识别，避免细标签漏表沉底，也不将晋、南北朝或宋、元合并。
+const ERA_GROUPS = [
+  { era: '春秋战国', match: /^(春秋|战国)/ },
+  { era: '秦汉', match: /^(?!.*汉末)(秦|楚汉|西汉|东汉|汉)/ },
+  { era: '汉末三国', match: /汉末|三国/ },
+  { era: '晋', match: /^(?!.*南朝)(西晋|东晋|两晋|晋)/ },
+  { era: '南北朝', match: /南朝|北朝|南北朝|北魏|东魏|西魏|北齐|北周/ },
+  { era: '隋朝', match: /^隋/ },
+  { era: '唐朝', match: /^唐/ },
+  { era: '五代十国', match: /^(五代|十国)/ },
+  { era: '宋朝', match: /^(宋|北宋|南宋)/ },
+  { era: '元朝', match: /^元/ },
+  { era: '明朝', match: /^明/ },
+  { era: '清朝', match: /^清/ },
+  { era: '近现代', match: /^(近代|现代|近现代|民国|当代)/ },
+]
+export const ERA_ORDER = ERA_GROUPS.map(group => group.era)

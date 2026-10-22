@@ -1,0 +1,140 @@
+[
+  {
+    "width": 390,
+    "groups": [
+      {
+        "era": "战国末",
+        "names": [
+          "荆轲"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "三国",
+        "names": [
+          "曹操"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "北魏 · 东魏",
+        "names": [
+          "高欢"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "北魏 · 西魏",
+        "names": [
+          "宇文泰"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "东晋",
+        "names": [
+          "祖逖"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "东晋末 – 南朝宋初",
+        "names": [
+          "刘裕"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "南朝 · 梁",
+        "names": [
+          "陈庆之"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "南宋",
+        "names": [
+          "辛弃疾"
+        ],
+        "cardRight": 422
+      },
+      {
+        "era": "秦末 · 楚汉",
+        "names": [
+          "韩信",
+          "项羽"
+        ],
+        "cardRight": 422
+      }
+    ]
+  },
+  {
+    "width": 1324,
+    "groups": [
+      {
+        "era": "战国末",
+        "names": [
+          "荆轲"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "三国",
+        "names": [
+          "曹操"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "北魏 · 东魏",
+        "names": [
+          "高欢"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "北魏 · 西魏",
+        "names": [
+          "宇文泰"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "东晋",
+        "names": [
+          "祖逖"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "东晋末 – 南朝宋初",
+        "names": [
+          "刘裕"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "南朝 · 梁",
+        "names": [
+          "陈庆之"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "南宋",
+        "names": [
+          "辛弃疾"
+        ],
+        "cardRight": 554
+      },
+      {
+        "era": "秦末 · 楚汉",
+        "names": [
+          "韩信",
+          "项羽"
+        ],
+        "cardRight": 554
+      }
+    ]
+  }
+]

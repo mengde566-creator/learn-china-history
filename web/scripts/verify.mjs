@@ -187,6 +187,55 @@ async function open(mode = 'dark', opts = {}) {
 
 /* ── 检查项 ─────────────────────────────────────── */
 
+check('首页: 时代合并、人物时间顺序与手机卡片边界', async () => {
+  const expected = [
+    { era: '春秋战国', names: ['荆轲'] },
+    { era: '秦汉', names: ['项羽', '韩信'] },
+    { era: '汉末三国', names: ['曹操'] },
+    { era: '晋', names: ['祖逖'] },
+    { era: '南北朝', names: ['刘裕', '陈庆之', '高欢', '宇文泰'] },
+    { era: '宋朝', names: ['辛弃疾'] },
+  ]
+  const saved = { read: { 'caocao/01-wusebang': { beat: 3, beatCount: 7, done: false, phase: 'live', at: 100 } }, review: { 'caocao/01-wusebang': { 1: 'known' } }, last: null }
+  for (const width of [390, 1324]) for (const light of [false, true]) {
+    const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
+    try {
+      await context.addInitScript(({ light, saved }) => {
+        localStorage.setItem('guanshi.settings.v1', JSON.stringify({ lightStage: light }))
+        localStorage.setItem('guanshi.progress.v1', JSON.stringify(saved))
+      }, { light, saved })
+      const p = await context.newPage(), errors = []
+      p.on('pageerror', e => errors.push(e.message))
+      await p.goto(BASE, { waitUntil: 'networkidle' })
+      await p.evaluate(() => document.fonts.ready)
+      await p.waitForFunction(light => document.body.classList.contains('light-stage') === light, light)
+      const actual = await p.locator('.era-row').evaluateAll(rows => rows.map(row => ({
+        era: row.querySelector('.era-name').textContent,
+        names: [...row.querySelectorAll('.person-card .nm')].map(el => el.textContent),
+      })))
+      if (JSON.stringify(actual) !== JSON.stringify(expected)) return fail(`${width}px 时代或顺序错误：${JSON.stringify(actual)}`)
+      const layout = await p.locator('.era-row').evaluateAll(rows => rows.map(row => ({
+        labelBottom: row.querySelector('.era-name').getBoundingClientRect().bottom,
+        cards: [...row.querySelectorAll('a.person-card')].map(el => ({ href: el.getAttribute('href'), left: el.getBoundingClientRect().left, right: el.getBoundingClientRect().right, top: el.getBoundingClientRect().top })),
+      })))
+      const cards = layout.flatMap(row => row.cards)
+      if (cards.length !== 10 || new Set(cards.map(c => c.href)).size !== 10) return fail('首页人物入口缺失或重复')
+      if (cards.some(c => c.left < 0 || c.right > width)) return fail(`${width}px 人物卡越出视口`)
+      if (width === 390 && layout.some(row => row.labelBottom > row.cards[0].top)) return fail('手机时代标签没有排在人物卡上方')
+      if (width === 1324 && Math.abs(layout[4].cards[0].top - layout[4].cards[1].top) > 2) return fail('桌面南北朝人物仍逐张竖排')
+      if (await p.evaluate(() => document.documentElement.scrollWidth > innerWidth)) return fail('首页横向溢出')
+      if (await p.evaluate(() => localStorage.getItem('guanshi.progress.v1')) !== JSON.stringify(saved)) return fail('首页修改了阅读或复习记录')
+      if (errors.length) return fail(errors.join('；'))
+      if (process.env.HOME_VERIFY_EVIDENCE_DIR) {
+        fs.mkdirSync(process.env.HOME_VERIFY_EVIDENCE_DIR, { recursive: true })
+        await p.waitForTimeout(1200)
+        await p.screenshot({ path: path.join(process.env.HOME_VERIFY_EVIDENCE_DIR, `home-${width}-${light ? 'light' : 'dark'}.png`), fullPage: true })
+      }
+    } finally { await context.close() }
+  }
+  return ok('两尺寸明暗四组：春秋战国、秦汉、汉末三国、晋、南北朝、宋朝六区10人，时间顺序、手机完整卡片与旧记录保持')
+})
+
 check('routes: 所有路由可访问且无控制台报错', async () => {
   const bad = []
   for (const r of ROUTES) {

@@ -1,0 +1,22 @@
+[
+  {
+    "width": 320,
+    "maxRight": 304,
+    "cards": 10
+  },
+  {
+    "width": 640,
+    "maxRight": 624,
+    "cards": 10
+  },
+  {
+    "width": 641,
+    "maxRight": 613,
+    "cards": 10
+  },
+  {
+    "width": 768,
+    "maxRight": 740,
+    "cards": 10
+  }
+]
