@@ -1,0 +1,15 @@
+import {chromium} from 'playwright-core';
+import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import assert from 'node:assert/strict';
+const root=path.resolve('..'),data=JSON.parse(fs.readFileSync('data/content.json')),people=data.people.filter(p=>['xiangyu','hanxin','zuti','chenqingzhi','liuyu','xinqiji'].includes(p.id));
+const plain=s=>String(s||'').replace(/[*`\s]/g,'');const result={pages:[],sourceRows:0,backgroundRows:0,mappingRows:0,errors:[]};
+const browser=await chromium.launch({executablePath:path.join(os.homedir(),'Library/Caches/ms-playwright/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing')});
+try{for(const width of [390,1324]){const c=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'}),p=await c.newPage();
+for(const person of people){await p.goto('http://127.0.0.1:3112/p/'+person.id+'/source',{waitUntil:'networkidle'});
+for(const [id,s] of Object.entries(person.source)){const row=p.locator('#s-'+id);await row.scrollIntoViewIfNeeded();assert.ok(plain(await row.locator('.src-text').innerText()).includes(plain(s.text).replace(/[★]/g,'')),person.id+' source '+id);assert.ok(plain(await row.locator('.src-gloss').innerText()).includes(plain(person.gloss[id])),person.id+' gloss '+id);result.sourceRows++;}
+assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+for(const [sid,s] of Object.entries(person.stories)){await p.goto('http://127.0.0.1:3112/p/'+person.id+'/'+sid,{waitUntil:'networkidle'});await p.locator('button.cta').click();await p.locator('#beat-1 .ground').click();
+for(const [label,rows,key] of [['背景',s.backgrounds,'backgroundRows'],['映射',s.groundTable,'mappingRows']]){await p.locator('.panel-tabs').getByRole('button',{name:label,exact:true}).click();const blocks=p.locator('.panel-body .mark-block');assert.equal(await blocks.count(),rows.length);for(let i=0;i<rows.length;i++){await blocks.nth(i).scrollIntoViewIfNeeded();assert.ok((await blocks.nth(i).innerText()).trim());result[key]++;}if(label==='背景'){const cites=p.locator('.panel-body .cite:not(.back)');if(await cites.count()){await cites.first().click();await p.locator('.cite.back').first().click();assert.equal(await p.locator('.panel-tabs [aria-current=true]').innerText(),'背景');}}}
+assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);result.pages.push({width,key:person.id+'/'+sid});
+if(person.id==='hanxin'&&sid==='03-beishui'){await p.keyboard.press('Escape');await p.locator('#beat-1').scrollIntoViewIfNeeded();await p.screenshot({path:path.join(root,'screens/detail-hanxin-'+width+'-dark.png')});await p.locator('button.theme').click();await p.screenshot({path:path.join(root,'screens/detail-hanxin-'+width+'-light.png')});await p.locator('button.theme').click();}
+}
+}await c.close();}}catch(e){result.errors.push(e.stack);}finally{await browser.close();fs.writeFileSync(path.join(root,'detail-results.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));if(result.errors.length)process.exitCode=1;}

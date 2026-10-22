@@ -1,0 +1,32 @@
+[
+  {
+    "width": 390,
+    "target": "intro",
+    "source": "006",
+    "returnFocus": true
+  },
+  {
+    "width": 390,
+    "target": "seed",
+    "sources": [
+      "005",
+      "007"
+    ],
+    "marker": "—"
+  },
+  {
+    "width": 1440,
+    "target": "intro",
+    "source": "006",
+    "returnFocus": true
+  },
+  {
+    "width": 1440,
+    "target": "seed",
+    "sources": [
+      "005",
+      "007"
+    ],
+    "marker": "—"
+  }
+]

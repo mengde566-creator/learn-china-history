@@ -1,0 +1,58 @@
+{
+  "flow": {
+    "cases": 76,
+    "errors": 0,
+    "version": "D"
+  },
+  "R12": {
+    "cases": 4,
+    "exit": 0,
+    "version": "d19f"
+  },
+  "openingReturn": {
+    "cases": 17,
+    "positionDeltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "exit": 0
+  },
+  "panelReturnsExit": 0,
+  "oldProgressExit": 0,
+  "projectVerify": {
+    "cases": 28,
+    "exit": 0,
+    "version": "d19f"
+  },
+  "independentBuild": "CL2Yv9jg49uUVzNFg45V5",
+  "protection": {
+    "head": "53620abe5682e2b30b34007c50e1f712d918c997",
+    "index": "2df4ebbdfea814f19b91ed68c86aa38fa4c67d812f3a946dd62f410273a509e6",
+    "staged_count": 103,
+    "changed_vs_D": {
+      "content_manifest": [
+        "content/people/chenqingzhi/stories/02-guoyang.md",
+        "content/people/chenqingzhi/seeds/01-yetui.md"
+      ],
+      "web_manifest": [
+        "web/components/StoryClient.jsx"
+      ]
+    },
+    "candidate_product_files_equal_root": 409,
+    "new_script_hash": "5c5dd2e33fd4148679e391146d56ed9066dd109e4134f9a4479b1d3247bb80cb",
+    "component_hash": "d19fab7272c16d8e8e98467360fab4c94f1f433312baac2140a42dd7bb40b9cf",
+    "root_BUILD_ID": "FE48C_SoJmCtv2Vhjax1p",
+    "independent_BUILD_ID": "CL2Yv9jg49uUVzNFg45V5",
+    "other_four_content_changed": false
+  }
+}

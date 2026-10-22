@@ -1,0 +1,6 @@
+
+> guanshi@0.1.0 verify:progress
+> node scripts/verify-reading-progress.mjs
+
+1440px: 未到末段不完读，查证不推进；滚到末段、回看、刷新、从头读及旧复习记录通过
+390px: 未到末段不完读，查证不推进；滚到末段、回看、刷新、从头读及旧复习记录通过

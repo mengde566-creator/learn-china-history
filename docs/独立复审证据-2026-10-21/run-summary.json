@@ -1,0 +1,22 @@
+{
+  "auditDate": "2026-10-21",
+  "initialHead": "0196ed4e6fb786316c89f29dcd146aee025b7234",
+  "endObservedHead": "53620abe5682e2b30b34007c50e1f712d918c997",
+  "contentFilesChecked": 140,
+  "contentFilesChanged": [],
+  "panelOpens": 554,
+  "flowCases": 76,
+  "flowErrors": 0,
+  "detailErrors": [],
+  "sourceSegments": 332,
+  "backgroundCards": 214,
+  "mappingRows": 1148,
+  "mainSiteRoutes200": 38,
+  "isolation": "Temporary snapshot on port 3112; independent Chromium contexts; no user Safari storage or database access",
+  "build": "npm run build completed in temporary snapshot; first build.log was empty, not used as proof",
+  "notes": [
+    "Main site was unavailable initially and returned 200 later; first interrupted flow attempt is excluded from product-failure claims",
+    "Other tasks committed changes to earlier figures and docs during audit; six reviewed figures and application code stayed identical; range-ledger changed for earlier figures",
+    "Theme screenshots taken immediately after click were transient; stable 1200ms captures and computed colors passed on both 3112 and 3100"
+  ]
+}

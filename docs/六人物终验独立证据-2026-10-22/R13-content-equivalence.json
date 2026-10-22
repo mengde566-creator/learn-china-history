@@ -1,0 +1,9 @@
+{
+  "result": "all compiled objects unchanged against independently compiled R12",
+  "component": "d19fab7272c16d8e8e98467360fab4c94f1f433312baac2140a42dd7bb40b9cf",
+  "counts": {
+    "people": 10,
+    "stories": 79,
+    "readyStories": 79
+  }
+}

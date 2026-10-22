@@ -119,6 +119,8 @@ export default function StoryClient({ person, story, source }) {
   const [tab, setTab] = useState('evidence')
   /* 引用跳转之前在哪——原文那一段上给一个「返回」 */
   const [cameFrom, setCameFrom] = useState(null)
+  const sourceReturnCleanup = useRef(null)
+  useEffect(() => () => sourceReturnCleanup.current?.(), [])
   const citingFromOpening = Boolean(cameFrom?.entrance)
   /* 本篇「原文」页签里真的有的编号——依据里的编号只有在这范围内才给跳，
      范围外的点了会落空（那种编号本来也不该出现，编译器另有跨篇提醒）。 */
@@ -267,6 +269,7 @@ export default function StoryClient({ person, story, source }) {
 
   // 查证在自己的面板内滚动；正文的位置与尚未读到的进度都不受影响。
   const jumpToSource = useCallback((id) => {
+    sourceReturnCleanup.current?.()
     const active = document.activeElement
     const cites = [...document.querySelectorAll('.opening-notes button.cite')]
     setCameFrom((prev) => prev ?? {
@@ -355,11 +358,12 @@ export default function StoryClient({ person, story, source }) {
 
   const backFromSource = useCallback(() => {
     if (!cameFrom) return
+    sourceReturnCleanup.current?.()
     const origin = cameFrom
     if (origin.entrance) { setPhase('opening'); setPanelOpen(false) }
     else { setTab(origin.tab); setFollowing(origin.beat); setPanelOpen(origin.panelWasOpen) }
     setCameFrom(null)
-    requestAnimationFrame(() => {
+    const restore = () => {
       window.scrollTo({ top: origin.scrollY, behavior: 'instant' })
       const pane = document.querySelector('.panel-face')
       if (pane && origin.panelWasOpen) pane.scrollTop = origin.panelScrollTop
@@ -367,6 +371,39 @@ export default function StoryClient({ person, story, source }) {
         ? document.querySelectorAll('.opening-notes button.cite')[origin.citeAt]
         : origin.focus?.isConnected ? origin.focus : document.querySelectorAll('.panel-body button.cite')[origin.panelCiteAt]
       if (focus?.isConnected) focus.focus({ preventScroll: true })
+    }
+    if (!origin.entrance) {
+      requestAnimationFrame(restore)
+      return
+    }
+    // 引入页与展开的依据重新挂载时，高度可能晚一帧才稳定。
+    // 过早恢复会被浏览器按临时页面高度截断，随后也不会自动补回。
+    let frame = 0, cancelled = false, stable = 0, attempts = 0, previous = null
+    const events = ['wheel', 'touchstart', 'pointerdown', 'keydown']
+    const cancel = () => {
+      cancelled = true
+      cancelAnimationFrame(frame)
+      for (const event of events) window.removeEventListener(event, cancel)
+      if (sourceReturnCleanup.current === cancel) sourceReturnCleanup.current = null
+    }
+    sourceReturnCleanup.current = cancel
+    for (const event of events) window.addEventListener(event, cancel, { passive: true })
+    const settle = () => {
+      if (cancelled) return
+      const focus = document.querySelectorAll('.opening-notes button.cite')[origin.citeAt]
+      if (!focus?.isConnected) { cancel(); return }
+      const layout = { top: scrollY + focus.getBoundingClientRect().top, height: document.documentElement.scrollHeight }
+      stable = previous && Math.abs(layout.top - previous.top) < .5 && layout.height === previous.height ? stable + 1 : 0
+      previous = layout
+      if (stable < 3 && ++attempts < 60) { frame = requestAnimationFrame(settle); return }
+      cancel()
+      restore()
+    }
+    frame = requestAnimationFrame(() => {
+      if (cancelled) return
+      const focus = document.querySelectorAll('.opening-notes button.cite')[origin.citeAt]
+      if (focus?.isConnected) focus.focus({ preventScroll: true })
+      document.fonts.ready.then(() => { if (!cancelled) frame = requestAnimationFrame(settle) })
     })
   }, [cameFrom])
 

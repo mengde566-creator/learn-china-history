@@ -1,0 +1,412 @@
+[
+  {
+    "person": "chenqingzhi",
+    "id": "01-yetui",
+    "name": "斩关夜退",
+    "sourceRange": "001–005",
+    "beats": 5,
+    "cards": 9,
+    "seeds": 42,
+    "changedFields": [
+      "seeds"
+    ]
+  },
+  {
+    "person": "chenqingzhi",
+    "id": "02-guoyang",
+    "name": "涡阳 ★",
+    "sourceRange": "006–015",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 46,
+    "changedFields": [
+      "beats"
+    ]
+  },
+  {
+    "person": "chenqingzhi",
+    "id": "03-baipao",
+    "name": "白袍 ★",
+    "sourceRange": "016–025",
+    "beats": 8,
+    "cards": 10,
+    "seeds": 48,
+    "changedFields": [
+      "beats"
+    ]
+  },
+  {
+    "person": "chenqingzhi",
+    "id": "04-songgao",
+    "name": "嵩高 ★",
+    "sourceRange": "026–035",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 44,
+    "changedFields": []
+  },
+  {
+    "person": "chenqingzhi",
+    "id": "05-yusheng",
+    "name": "余生",
+    "sourceRange": "036–043",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 44,
+    "changedFields": [
+      "groundTable",
+      "present",
+      "seeds"
+    ]
+  },
+  {
+    "person": "hanxin",
+    "id": "01-kuaxia",
+    "name": "胯下",
+    "sourceRange": "001–003",
+    "beats": 6,
+    "cards": 9,
+    "seeds": 59,
+    "changedFields": []
+  },
+  {
+    "person": "hanxin",
+    "id": "02-dengtan",
+    "name": "登坛",
+    "sourceRange": "004–013",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 60,
+    "changedFields": []
+  },
+  {
+    "person": "hanxin",
+    "id": "03-beishui",
+    "name": "背水",
+    "sourceRange": "014–029",
+    "beats": 8,
+    "cards": 10,
+    "seeds": 60,
+    "changedFields": []
+  },
+  {
+    "person": "hanxin",
+    "id": "04-jiawang",
+    "name": "假王",
+    "sourceRange": "030–040",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 54,
+    "changedFields": []
+  },
+  {
+    "person": "hanxin",
+    "id": "05-kuaitong",
+    "name": "相君之背",
+    "sourceRange": "041–052",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 54,
+    "changedFields": []
+  },
+  {
+    "person": "hanxin",
+    "id": "06-zhongshi",
+    "name": "钟室",
+    "sourceRange": "053–065",
+    "beats": 8,
+    "cards": 10,
+    "seeds": 53,
+    "changedFields": []
+  },
+  {
+    "person": "liuyu",
+    "id": "01-jingkou",
+    "name": "京口寒门",
+    "sourceRange": "001–006",
+    "beats": 6,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": [
+      "beats"
+    ]
+  },
+  {
+    "person": "liuyu",
+    "id": "02-fuzhou",
+    "name": "覆舟山",
+    "sourceRange": "007–014",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": []
+  },
+  {
+    "person": "liuyu",
+    "id": "03-guanggu",
+    "name": "广固",
+    "sourceRange": "015–022",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": []
+  },
+  {
+    "person": "liuyu",
+    "id": "04-leichi",
+    "name": "雷池",
+    "sourceRange": "023–027",
+    "beats": 5,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": []
+  },
+  {
+    "person": "liuyu",
+    "id": "05-queyue",
+    "name": "却月阵",
+    "sourceRange": "028–032、101–107",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": [
+      "beats"
+    ]
+  },
+  {
+    "person": "liuyu",
+    "id": "06-shouchan",
+    "name": "受禅",
+    "sourceRange": "033–041",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": [
+      "backgrounds"
+    ]
+  },
+  {
+    "person": "xiangyu",
+    "id": "01-qibing",
+    "name": "万人敌",
+    "sourceRange": "001–013",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 57,
+    "changedFields": []
+  },
+  {
+    "person": "xiangyu",
+    "id": "02-julu",
+    "name": "破釜沉舟",
+    "sourceRange": "014–026",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 57,
+    "changedFields": []
+  },
+  {
+    "person": "xiangyu",
+    "id": "03-zhanghan",
+    "name": "二十万人",
+    "sourceRange": "027–033",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 57,
+    "changedFields": []
+  },
+  {
+    "person": "xiangyu",
+    "id": "04-hongmen",
+    "name": "鸿门",
+    "sourceRange": "034–048",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 57,
+    "changedFields": []
+  },
+  {
+    "person": "xiangyu",
+    "id": "05-xianyang",
+    "name": "火三月不灭",
+    "sourceRange": "049–056",
+    "beats": 7,
+    "cards": 8,
+    "seeds": 51,
+    "changedFields": [
+      "backgrounds"
+    ]
+  },
+  {
+    "person": "xiangyu",
+    "id": "06-pengcheng",
+    "name": "三万对五十六万",
+    "sourceRange": "057–065",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 52,
+    "changedFields": []
+  },
+  {
+    "person": "xiangyu",
+    "id": "07-xingyang",
+    "name": "亚父去",
+    "sourceRange": "066–079",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 54,
+    "changedFields": [
+      "groundTable",
+      "seeds",
+      "cards"
+    ]
+  },
+  {
+    "person": "xiangyu",
+    "id": "08-gaixia",
+    "name": "四面楚歌",
+    "sourceRange": "080–086",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 49,
+    "changedFields": []
+  },
+  {
+    "person": "xiangyu",
+    "id": "09-wujiang",
+    "name": "乌江",
+    "sourceRange": "087–093",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 56,
+    "changedFields": []
+  },
+  {
+    "person": "xinqiji",
+    "id": "01-nangui",
+    "name": "南归",
+    "sourceRange": "001–004",
+    "beats": 6,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": []
+  },
+  {
+    "person": "xinqiji",
+    "id": "02-zhanganguo",
+    "name": "缚张安国",
+    "sourceRange": "005–007",
+    "beats": 6,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": []
+  },
+  {
+    "person": "xinqiji",
+    "id": "03-meiqin",
+    "name": "美芹十论",
+    "sourceRange": "008–011",
+    "beats": 7,
+    "cards": 9,
+    "seeds": 45,
+    "changedFields": [
+      "intro",
+      "backgrounds"
+    ]
+  },
+  {
+    "person": "xinqiji",
+    "id": "04-feihu",
+    "name": "飞虎军",
+    "sourceRange": "012–020",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 49,
+    "changedFields": []
+  },
+  {
+    "person": "xinqiji",
+    "id": "05-huangzheng",
+    "name": "江右荒政",
+    "sourceRange": "021–022",
+    "beats": 6,
+    "cards": 8,
+    "seeds": 40,
+    "changedFields": []
+  },
+  {
+    "person": "xinqiji",
+    "id": "06-fuzhou",
+    "name": "备安库",
+    "sourceRange": "023–026",
+    "beats": 6,
+    "cards": 8,
+    "seeds": 42,
+    "changedFields": []
+  },
+  {
+    "person": "xinqiji",
+    "id": "07-mozhang",
+    "name": "稼轩",
+    "sourceRange": "027–037",
+    "beats": 8,
+    "cards": 9,
+    "seeds": 52,
+    "changedFields": []
+  },
+  {
+    "person": "zuti",
+    "id": "01-wenji",
+    "name": "闻鸡起舞",
+    "sourceRange": "001–007",
+    "beats": 7,
+    "cards": 8,
+    "seeds": 42,
+    "changedFields": [
+      "backgrounds",
+      "present",
+      "seeds",
+      "cards"
+    ]
+  },
+  {
+    "person": "zuti",
+    "id": "02-huaisi",
+    "name": "避地淮泗",
+    "sourceRange": "008–013",
+    "beats": 6,
+    "cards": 8,
+    "seeds": 42,
+    "changedFields": []
+  },
+  {
+    "person": "zuti",
+    "id": "03-zhongliu",
+    "name": "中流击楫",
+    "sourceRange": "014–018",
+    "beats": 5,
+    "cards": 8,
+    "seeds": 42,
+    "changedFields": []
+  },
+  {
+    "person": "zuti",
+    "id": "04-henan",
+    "name": "黄河以南",
+    "sourceRange": "019–039",
+    "beats": 8,
+    "cards": 8,
+    "seeds": 46,
+    "changedFields": []
+  },
+  {
+    "person": "zuti",
+    "id": "05-yangyang",
+    "name": "意甚怏怏",
+    "sourceRange": "040–046",
+    "beats": 7,
+    "cards": 8,
+    "seeds": 42,
+    "changedFields": []
+  }
+]

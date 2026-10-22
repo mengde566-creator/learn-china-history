@@ -1,0 +1,58 @@
+intro return geometry 390 488.109375 488.109375 {
+  scroll: 624,
+  height: 1703,
+  viewport: 1000,
+  fonts: 'loaded',
+  atClick: { scroll: 624, y: 488.109375, height: 1703 },
+  trace: [
+    { scroll: 0, y: 950.828125, height: 1433 },
+    { scroll: 0, y: 1112.109375, height: 1703 },
+    { scroll: 0, y: 1112.109375, height: 1703 },
+    { scroll: 0, y: 1112.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 },
+    { scroll: 624, y: 488.109375, height: 1703 }
+  ]
+}
+intro return geometry 1440 975.03125 975.03125 {
+  scroll: 5,
+  height: 1346,
+  viewport: 1000,
+  fonts: 'loaded',
+  atClick: { scroll: 5, y: 975.03125, height: 1346 },
+  trace: [
+    { scroll: 220, y: 644.03125, height: 1220 },
+    { scroll: 220, y: 644.03125, height: 1220 },
+    { scroll: 220, y: 760.03125, height: 1346 },
+    { scroll: 220, y: 760.03125, height: 1346 },
+    { scroll: 220, y: 760.03125, height: 1346 },
+    { scroll: 5, y: 975.03125, height: 1346 },
+    { scroll: 5, y: 975.03125, height: 1346 },
+    { scroll: 5, y: 975.03125, height: 1346 },
+    { scroll: 5, y: 975.03125, height: 1346 },
+    { scroll: 5, y: 975.03125, height: 1346 },
+    { scroll: 5, y: 975.03125, height: 1346 },
+    { scroll: 5, y: 975.03125, height: 1346 }
+  ]
+}
+PASS [
+  { width: 390, target: 'intro', source: '006', returnFocus: true },
+  {
+    width: 390,
+    target: 'seed',
+    sources: [ '005', '007' ],
+    marker: '—'
+  },
+  { width: 1440, target: 'intro', source: '006', returnFocus: true },
+  {
+    width: 1440,
+    target: 'seed',
+    sources: [ '005', '007' ],
+    marker: '—'
+  }
+]

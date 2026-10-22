@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22",
+  "result": "both automation configs absent after app deletion",
+  "automations": {
+    "automation-2": {
+      "config_exists": false
+    },
+    "automation-4": {
+      "config_exists": false
+    }
+  }
+}

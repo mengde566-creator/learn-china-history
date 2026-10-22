@@ -1,0 +1,390 @@
+[
+  {
+    "width": 390,
+    "rows": [
+      {
+        "name": "刘邦",
+        "ys": [
+          1395
+        ],
+        "width": 68.984375,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "章邯",
+        "ys": [
+          326
+        ],
+        "width": 68.984375,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "司马欣",
+        "ys": [
+          410
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "董翳",
+        "ys": [
+          494
+        ],
+        "width": 68.984375,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "魏豹",
+        "ys": [
+          578
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "申阳",
+        "ys": [
+          662
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "韩王成",
+        "ys": [
+          746
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "司马卬",
+        "ys": [
+          830
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "赵歇",
+        "ys": [
+          914
+        ],
+        "width": 68.984375,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "张耳",
+        "ys": [
+          326
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "黥布",
+        "ys": [
+          410
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "吴芮",
+        "ys": [
+          494
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "共敖",
+        "ys": [
+          578
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "韩广",
+        "ys": [
+          662
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "臧荼",
+        "ys": [
+          746
+        ],
+        "width": 68.984375,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "田市",
+        "ys": [
+          830
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "田都",
+        "ys": [
+          914
+        ],
+        "width": 68.984375,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "田安",
+        "ys": [
+          998
+        ],
+        "width": 82.25,
+        "available": 262,
+        "font": 13,
+        "line": 25.35
+      }
+    ],
+    "sources": [
+      "051",
+      "052",
+      "053",
+      "054",
+      "055"
+    ],
+    "inline": true,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "rows": [
+      {
+        "name": "刘邦",
+        "ys": [
+          1317
+        ],
+        "width": 68.984375,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "章邯",
+        "ys": [
+          459
+        ],
+        "width": 68.984375,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "司马欣",
+        "ys": [
+          518
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "董翳",
+        "ys": [
+          602
+        ],
+        "width": 68.984375,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "魏豹",
+        "ys": [
+          661
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "申阳",
+        "ys": [
+          719
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "韩王成",
+        "ys": [
+          803
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "司马卬",
+        "ys": [
+          862
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "赵歇",
+        "ys": [
+          946
+        ],
+        "width": 68.984375,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "张耳",
+        "ys": [
+          434
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "黥布",
+        "ys": [
+          518
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "吴芮",
+        "ys": [
+          576
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "共敖",
+        "ys": [
+          660
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "韩广",
+        "ys": [
+          744
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "臧荼",
+        "ys": [
+          803
+        ],
+        "width": 68.984375,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "田市",
+        "ys": [
+          887
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "田都",
+        "ys": [
+          946
+        ],
+        "width": 68.984375,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      },
+      {
+        "name": "田安",
+        "ys": [
+          1030
+        ],
+        "width": 82.25,
+        "available": 383,
+        "font": 13,
+        "line": 25.35
+      }
+    ],
+    "sources": [
+      "051",
+      "052",
+      "053",
+      "054",
+      "055"
+    ],
+    "inline": false,
+    "errors": []
+  }
+]

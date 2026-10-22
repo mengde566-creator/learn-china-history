@@ -1,0 +1,5 @@
+
+> guanshi@0.1.0 verify:panel
+> node scripts/verify-reader-panel.mjs --returns
+
+通过：0次逐段开关、入口/复习返回、原文内部滚动及断点/字号检查

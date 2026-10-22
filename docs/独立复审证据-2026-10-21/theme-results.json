@@ -1,0 +1,20 @@
+[
+  {
+    "port": 3112,
+    "bodyClass": "light-stage",
+    "bodyColor": "rgb(43, 40, 35)",
+    "bodyBg": "rgb(231, 226, 215)",
+    "text": "rgb(43, 40, 35)",
+    "quote": "rgb(20, 18, 15)",
+    "gloss": "rgb(95, 89, 79)"
+  },
+  {
+    "port": 3100,
+    "bodyClass": "light-stage",
+    "bodyColor": "rgb(43, 40, 35)",
+    "bodyBg": "rgb(231, 226, 215)",
+    "text": "rgb(43, 40, 35)",
+    "quote": "rgb(20, 18, 15)",
+    "gloss": "rgb(95, 89, 79)"
+  }
+]
