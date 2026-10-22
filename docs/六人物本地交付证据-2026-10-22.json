@@ -1,0 +1,494 @@
+{
+  "date": "2026-10-22",
+  "scope": "six people 38 stories; local commit and port3100 service update",
+  "content_commit": "8b846eb58ac7a89e004ebe49c31c69ec2cdc1427",
+  "server": {
+    "pid": 25880,
+    "port": 3100,
+    "cwd": "/Volumes/myProjects/china-history/web",
+    "command": "npm run start -- -p 3100",
+    "build": "rrNyHlPnVYhUokQPPzdhC",
+    "commit": "8b846eb58ac7a89e004ebe49c31c69ec2cdc1427",
+    "log": "/var/folders/3l/p2nrppf113qbct36332j6f040000gn/T/guanshi-local-release-20261022-hpbc94yp/server.log"
+  },
+  "check_exit": 0,
+  "sources": {
+    "matched": 785,
+    "mismatched": 0,
+    "skipped": 0,
+    "exit": 0
+  },
+  "build_exit": 0,
+  "routes": {
+    "routes": [
+      {
+        "route": "/p/chenqingzhi/01-yetui",
+        "status": 200,
+        "name": "斩关夜退"
+      },
+      {
+        "route": "/p/chenqingzhi/02-guoyang",
+        "status": 200,
+        "name": "涡阳 ★"
+      },
+      {
+        "route": "/p/chenqingzhi/03-baipao",
+        "status": 200,
+        "name": "白袍 ★"
+      },
+      {
+        "route": "/p/chenqingzhi/04-songgao",
+        "status": 200,
+        "name": "嵩高 ★"
+      },
+      {
+        "route": "/p/chenqingzhi/05-yusheng",
+        "status": 200,
+        "name": "余生"
+      },
+      {
+        "route": "/p/hanxin/01-kuaxia",
+        "status": 200,
+        "name": "胯下"
+      },
+      {
+        "route": "/p/hanxin/02-dengtan",
+        "status": 200,
+        "name": "登坛"
+      },
+      {
+        "route": "/p/hanxin/03-beishui",
+        "status": 200,
+        "name": "背水"
+      },
+      {
+        "route": "/p/hanxin/04-jiawang",
+        "status": 200,
+        "name": "假王"
+      },
+      {
+        "route": "/p/hanxin/05-kuaitong",
+        "status": 200,
+        "name": "相君之背"
+      },
+      {
+        "route": "/p/hanxin/06-zhongshi",
+        "status": 200,
+        "name": "钟室"
+      },
+      {
+        "route": "/p/liuyu/01-jingkou",
+        "status": 200,
+        "name": "京口寒门"
+      },
+      {
+        "route": "/p/liuyu/02-fuzhou",
+        "status": 200,
+        "name": "覆舟山"
+      },
+      {
+        "route": "/p/liuyu/03-guanggu",
+        "status": 200,
+        "name": "广固"
+      },
+      {
+        "route": "/p/liuyu/04-leichi",
+        "status": 200,
+        "name": "雷池"
+      },
+      {
+        "route": "/p/liuyu/05-queyue",
+        "status": 200,
+        "name": "却月阵"
+      },
+      {
+        "route": "/p/liuyu/06-shouchan",
+        "status": 200,
+        "name": "受禅"
+      },
+      {
+        "route": "/p/xiangyu/01-qibing",
+        "status": 200,
+        "name": "万人敌"
+      },
+      {
+        "route": "/p/xiangyu/02-julu",
+        "status": 200,
+        "name": "破釜沉舟"
+      },
+      {
+        "route": "/p/xiangyu/03-zhanghan",
+        "status": 200,
+        "name": "二十万人"
+      },
+      {
+        "route": "/p/xiangyu/04-hongmen",
+        "status": 200,
+        "name": "鸿门"
+      },
+      {
+        "route": "/p/xiangyu/05-xianyang",
+        "status": 200,
+        "name": "火三月不灭"
+      },
+      {
+        "route": "/p/xiangyu/06-pengcheng",
+        "status": 200,
+        "name": "三万对五十六万"
+      },
+      {
+        "route": "/p/xiangyu/07-xingyang",
+        "status": 200,
+        "name": "亚父去"
+      },
+      {
+        "route": "/p/xiangyu/08-gaixia",
+        "status": 200,
+        "name": "四面楚歌"
+      },
+      {
+        "route": "/p/xiangyu/09-wujiang",
+        "status": 200,
+        "name": "乌江"
+      },
+      {
+        "route": "/p/xinqiji/01-nangui",
+        "status": 200,
+        "name": "南归"
+      },
+      {
+        "route": "/p/xinqiji/02-zhanganguo",
+        "status": 200,
+        "name": "缚张安国"
+      },
+      {
+        "route": "/p/xinqiji/03-meiqin",
+        "status": 200,
+        "name": "美芹十论"
+      },
+      {
+        "route": "/p/xinqiji/04-feihu",
+        "status": 200,
+        "name": "飞虎军"
+      },
+      {
+        "route": "/p/xinqiji/05-huangzheng",
+        "status": 200,
+        "name": "江右荒政"
+      },
+      {
+        "route": "/p/xinqiji/06-fuzhou",
+        "status": 200,
+        "name": "备安库"
+      },
+      {
+        "route": "/p/xinqiji/07-mozhang",
+        "status": 200,
+        "name": "稼轩"
+      },
+      {
+        "route": "/p/zuti/01-wenji",
+        "status": 200,
+        "name": "闻鸡起舞"
+      },
+      {
+        "route": "/p/zuti/02-huaisi",
+        "status": 200,
+        "name": "避地淮泗"
+      },
+      {
+        "route": "/p/zuti/03-zhongliu",
+        "status": 200,
+        "name": "中流击楫"
+      },
+      {
+        "route": "/p/zuti/04-henan",
+        "status": 200,
+        "name": "黄河以南"
+      },
+      {
+        "route": "/p/zuti/05-yangyang",
+        "status": 200,
+        "name": "意甚怏怏"
+      }
+    ],
+    "route_count": 38,
+    "compiled_content_equals_accepted": true,
+    "R12_intro_visible": true,
+    "current_build_manifest_status": 200,
+    "build": "rrNyHlPnVYhUokQPPzdhC"
+  },
+  "browser_smoke": [
+    {
+      "person": "xiangyu",
+      "width": 390,
+      "entry": "01-qibing",
+      "next": "02-julu",
+      "listedStories": 9,
+      "cards": 9,
+      "preservedOldData": true
+    },
+    {
+      "person": "hanxin",
+      "width": 390,
+      "entry": "01-kuaxia",
+      "next": "02-dengtan",
+      "listedStories": 6,
+      "cards": 9,
+      "preservedOldData": true
+    },
+    {
+      "person": "zuti",
+      "width": 390,
+      "entry": "01-wenji",
+      "next": "02-huaisi",
+      "listedStories": 5,
+      "cards": 8,
+      "preservedOldData": true
+    },
+    {
+      "person": "chenqingzhi",
+      "width": 390,
+      "entry": "01-yetui",
+      "next": "02-guoyang",
+      "listedStories": 5,
+      "cards": 9,
+      "preservedOldData": true
+    },
+    {
+      "person": "liuyu",
+      "width": 390,
+      "entry": "01-jingkou",
+      "next": "02-fuzhou",
+      "listedStories": 6,
+      "cards": 8,
+      "preservedOldData": true
+    },
+    {
+      "person": "xinqiji",
+      "width": 390,
+      "entry": "01-nangui",
+      "next": "02-zhanganguo",
+      "listedStories": 7,
+      "cards": 8,
+      "preservedOldData": true
+    },
+    {
+      "person": "xiangyu",
+      "width": 1324,
+      "entry": "01-qibing",
+      "next": "02-julu",
+      "listedStories": 9,
+      "cards": 9,
+      "preservedOldData": true
+    },
+    {
+      "person": "hanxin",
+      "width": 1324,
+      "entry": "01-kuaxia",
+      "next": "02-dengtan",
+      "listedStories": 6,
+      "cards": 9,
+      "preservedOldData": true
+    },
+    {
+      "person": "zuti",
+      "width": 1324,
+      "entry": "01-wenji",
+      "next": "02-huaisi",
+      "listedStories": 5,
+      "cards": 8,
+      "preservedOldData": true
+    },
+    {
+      "person": "chenqingzhi",
+      "width": 1324,
+      "entry": "01-yetui",
+      "next": "02-guoyang",
+      "listedStories": 5,
+      "cards": 9,
+      "preservedOldData": true
+    },
+    {
+      "person": "liuyu",
+      "width": 1324,
+      "entry": "01-jingkou",
+      "next": "02-fuzhou",
+      "listedStories": 6,
+      "cards": 8,
+      "preservedOldData": true
+    },
+    {
+      "person": "xinqiji",
+      "width": 1324,
+      "entry": "01-nangui",
+      "next": "02-zhanganguo",
+      "listedStories": 7,
+      "cards": 8,
+      "preservedOldData": true
+    }
+  ],
+  "opening_return": [
+    {
+      "width": 390,
+      "p": "chenqingzhi",
+      "s": "02-guoyang",
+      "repeat": 1,
+      "source": "006",
+      "beforeY": 480.109375,
+      "afterY": 480.109375
+    },
+    {
+      "width": 390,
+      "p": "chenqingzhi",
+      "s": "02-guoyang",
+      "repeat": 2,
+      "source": "006",
+      "beforeY": 480.109375,
+      "afterY": 480.109375
+    },
+    {
+      "width": 390,
+      "p": "chenqingzhi",
+      "s": "02-guoyang",
+      "repeat": 3,
+      "source": "006",
+      "beforeY": 480.109375,
+      "afterY": 480.109375
+    },
+    {
+      "width": 390,
+      "p": "caocao",
+      "s": "01-wusebang",
+      "source": "206",
+      "beforeY": 480.03125,
+      "afterY": 480.03125
+    },
+    {
+      "width": 390,
+      "p": "jingke",
+      "s": "01-yanwei",
+      "source": "016",
+      "beforeY": 508.015625,
+      "afterY": 508.015625
+    },
+    {
+      "width": 390,
+      "p": "xiangyu",
+      "s": "05-xianyang",
+      "source": "056",
+      "beforeY": 507.84375,
+      "afterY": 507.84375
+    },
+    {
+      "width": 1440,
+      "p": "chenqingzhi",
+      "s": "02-guoyang",
+      "repeat": 1,
+      "source": "006",
+      "beforeY": 634.03125,
+      "afterY": 634.03125
+    },
+    {
+      "width": 1440,
+      "p": "chenqingzhi",
+      "s": "02-guoyang",
+      "repeat": 2,
+      "source": "006",
+      "beforeY": 634.03125,
+      "afterY": 634.03125
+    },
+    {
+      "width": 1440,
+      "p": "chenqingzhi",
+      "s": "02-guoyang",
+      "repeat": 3,
+      "source": "006",
+      "beforeY": 634.03125,
+      "afterY": 634.03125
+    },
+    {
+      "width": 1440,
+      "p": "caocao",
+      "s": "01-wusebang",
+      "source": "206",
+      "beforeY": 709.34375,
+      "afterY": 709.34375
+    },
+    {
+      "width": 1440,
+      "p": "jingke",
+      "s": "01-yanwei",
+      "source": "016",
+      "beforeY": 710.140625,
+      "afterY": 710.140625
+    },
+    {
+      "width": 1440,
+      "p": "xiangyu",
+      "s": "05-xianyang",
+      "source": "056",
+      "beforeY": 710.125,
+      "afterY": 710.125
+    },
+    {
+      "event": "wheel",
+      "cancelled": true
+    },
+    {
+      "event": "touchstart",
+      "cancelled": true
+    },
+    {
+      "event": "pointerdown",
+      "cancelled": true
+    },
+    {
+      "event": "keydown",
+      "cancelled": true
+    },
+    {
+      "navigation": "settings",
+      "pendingRestoreCancelled": true
+    }
+  ],
+  "ledger": {
+    "changed": [
+      "xiangyu/01-qibing",
+      "xiangyu/04-hongmen",
+      "xiangyu/06-pengcheng",
+      "xiangyu/07-xingyang",
+      "xiangyu/08-gaixia",
+      "xiangyu/09-wujiang",
+      "chenqingzhi/01-yetui",
+      "chenqingzhi/02-guoyang",
+      "chenqingzhi/03-baipao",
+      "chenqingzhi/04-songgao",
+      "chenqingzhi/05-yusheng",
+      "hanxin/01-kuaxia",
+      "hanxin/02-dengtan",
+      "hanxin/03-beishui",
+      "hanxin/05-kuaitong",
+      "hanxin/06-zhongshi",
+      "liuyu/01-jingkou",
+      "liuyu/02-fuzhou",
+      "liuyu/03-guanggu",
+      "liuyu/04-leichi",
+      "liuyu/05-queyue",
+      "liuyu/06-shouchan",
+      "xinqiji/01-nangui",
+      "xinqiji/02-zhanganguo",
+      "xinqiji/03-meiqin",
+      "xinqiji/04-feihu",
+      "xinqiji/06-fuzhou",
+      "xinqiji/07-mozhang",
+      "zuti/01-wenji",
+      "zuti/03-zhongliu",
+      "zuti/05-yangyang"
+    ],
+    "all_ranges_unchanged": true,
+    "normal_build_generated": true
+  },
+  "pushed": false,
+  "user_browser_storage_accessed": false
+}
