@@ -561,7 +561,8 @@ async function logsReply() {
       fs.closeSync(fd);
     }
     text = text.replace(/\u001b\[[0-?]*[ -/]*[@-~]/g, '').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '');
-    text = text.replace(/((?:password|passwd|token|secret|authorization|cookie|api[_-]?key)\s*[:=]\s*)[^\s,;]+/gi, '$1[已隐藏]');
+    text = text.replace(/(^[ \t]*|\b)(authorization|proxy-authorization|cookie|set-cookie)([ \t]*[:=][ \t]*)[^\r\n]*/gim, '$1$2$3[已隐藏]');
+    text = text.replace(/((?:password|passwd|token|secret|api[_-]?key)\s*[:=]\s*)[^\s,;]+/gi, '$1[已隐藏]');
     const lines = text.split('\n');
     if (lines.length > MAX_LOG_LINES) {
       text = lines.slice(-MAX_LOG_LINES).join('\n');
