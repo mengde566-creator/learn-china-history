@@ -8,6 +8,7 @@ node_modules/
 .next/
 .npm-cache/
 web/data/content.json
+.workbench/runtime/
 
 # ── 核对用的参考文本 ──────────────────────────
 # 公版电子本（《三國志》《三國志演義》），3 MB。可再生、可重新下载，

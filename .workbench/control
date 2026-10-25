@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+
+PROJECT_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd -P)
+if [ "$#" -eq 0 ]; then
+  set -- status
+fi
+exec /usr/local/bin/node "$PROJECT_ROOT/web/scripts/workbench-control.mjs" "$@"
