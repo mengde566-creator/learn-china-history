@@ -1,0 +1,218 @@
+{
+  "people": [
+    {
+      "id": "ling-di",
+      "name": "灵帝",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "灵帝是东汉皇帝刘宏。本篇时他在位，宠信宦官；曹操上书为窦武等人申辩，他不能采用。后来他在 189 年去世，少帝即位，董卓带兵进京。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "207"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jian-shuo",
+      "name": "蹇硕",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "蹇硕是灵帝宠信的小黄门。本篇他的叔父夜行犯禁，被曹操棒杀。灵帝死后，蹇硕在何进与宦官的冲突中被收杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "206"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷六十九·何进传、窦武传",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷69"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-qi",
+      "name": "宋奇",
+      "versions": [
+        {
+          "from": 4,
+          "to": 7,
+          "text": "宋奇是曹操的从妹夫，封强侯。本篇他被诛杀，曹操受连坐免官；所据材料没有交代他获罪的缘由。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "207"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-wu",
+      "name": "窦武",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "窦武是东汉大将军，与太傅陈蕃谋诛宦官，事泄反被宦官所害。本篇曹操上书为二人申辩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "207"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷六十九·何进传、窦武传",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷69"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-fan",
+      "name": "陈蕃",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "陈蕃是东汉太傅，与窦武同谋诛宦官，事泄被害。本篇曹操上书称他们正直而被陷害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "207"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷六十六·陈蕃传",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷66"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-zhang",
+      "name": "刘章",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "刘章是汉高祖之孙、齐悼惠王刘肥之子，封朱虚侯，因诛诸吕有功而封城阳王。他的封国为立祠，青州各郡转相仿效，济南最多；本篇曹操到任后尽毁祠屋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "208"
+            },
+            {
+              "kind": "external",
+              "book": "《汉书》",
+              "section": "卷三十八·高五王传",
+              "url": "https://zh.wikisource.org/wiki/漢書/卷38"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiao-xuan",
+      "name": "桥玄",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "桥玄字公祖，梁国人，灵帝时官至太尉，以知人著称。本篇他与何颙都看出少年曹操不凡，说能安定天下的可能是他；该段原话在背景卡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "205"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "he-yong",
+      "name": "何颙",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "何颙是南阳名士，与桥玄同为最早赏识曹操的人。本篇只记他与桥玄「异焉」，未展开他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "ling-di",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "灵帝",
+      "paragraphText": "过了几个月，灵帝所宠爱的小黄门蹇硕的叔父夜里出行，曹操当即把他杀了。"
+    },
+    {
+      "personId": "jian-shuo",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "蹇硕",
+      "paragraphText": "过了几个月，灵帝所宠爱的小黄门蹇硕的叔父夜里出行，曹操当即把他杀了。"
+    },
+    {
+      "personId": "song-qi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "宋奇",
+      "paragraphText": "曹操的从妹夫、强侯宋奇被诛杀，他受牵连而被免官。"
+    },
+    {
+      "personId": "dou-wu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "窦武",
+      "paragraphText": "先前大将军窦武、太傅陈蕃谋划诛除宦官，反而被宦官所害。"
+    },
+    {
+      "personId": "chen-fan",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "陈蕃",
+      "paragraphText": "先前大将军窦武、太傅陈蕃谋划诛除宦官，反而被宦官所害。"
+    },
+    {
+      "personId": "liu-zhang",
+      "beat": 6,
+      "paragraph": 4,
+      "offset": 6,
+      "text": "刘章",
+      "paragraphText": "当初城阳景王刘章有功于汉，所以他的封国给他立祠；青州各郡转相仿效，济南尤其兴盛，到六百多座祠。商人有的借用二千石的车服和导从，作歌舞倡乐；奢侈一天比一天厉害，百姓因此贫穷，历代长吏没有敢禁绝的。"
+    }
+  ]
+}

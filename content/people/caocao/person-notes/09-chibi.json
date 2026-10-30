@@ -1,0 +1,347 @@
+{
+  "people": [
+    {
+      "id": "liu-biao",
+      "name": "刘表",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "刘表是荆州牧，据有荆州近二十年。本篇开头他去世，儿子刘琮接任；他生前未能阻止曹操南征。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·刘表传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-cong",
+      "name": "刘琮",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "刘琮是刘表的儿子。刘表死后他接掌荆州，屯襄阳；曹操到新野时，他举州投降。后来曹操任他为青州刺史、封列侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·刘表传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bei",
+      "name": "刘备",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "刘备是曹操的对手，当时屯樊。刘琮降后他走夏口，与孙权联合抗曹；后来取得荆州江南诸郡和益州，最终称帝，建立蜀汉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷三十二·先主传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷32"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wen-pin",
+      "name": "文聘",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "文聘原是刘表的大将。刘琮降后，曹操任他为江夏太守，仍统旧兵；后来他长期镇守江夏，官至后将军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十八·文聘传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-song",
+      "name": "韩嵩",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "韩嵩是荆州名士。曹操进江陵后引用荆州名士，他与邓义都在其中；所取材料未展开他的具体职任。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deng-yi",
+      "name": "邓义",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "邓义是荆州名士，与韩嵩同被曹操引用；所取材料未展开他的具体职任。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhuge-liang",
+      "name": "诸葛亮",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "诸葛亮是刘备的谋士。本篇刘备退到夏口后派他出使孙权，促成孙刘联合；后来他任蜀汉丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "113"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷三十五·诸葛亮传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-quan",
+      "name": "孙权",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "孙权是江东之主。本篇他遣周瑜、程普与刘备合兵迎曹；后来称帝，建立吴。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "113"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷四十七·吴主传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhou-yu",
+      "name": "周瑜",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "周瑜是孙权派出的主将，与刘备合兵迎曹，赤壁之战由他指挥；后来攻南郡，病卒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "113"
+            },
+            {
+              "kind": "local",
+              "id": "114"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷五十四·周瑜传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷54"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cheng-pu",
+      "name": "程普",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "程普是东吴老将，与周瑜同被派出；后来仍在东吴任将。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "113"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷五十五·程普传、黄盖传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huang-gai",
+      "name": "黄盖",
+      "versions": [
+        {
+          "from": 6,
+          "to": 9,
+          "text": "黄盖是周瑜的部将。本篇他献火攻计并诈降，率船纵火；后来任武陵太守，卒于官。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "113"
+            },
+            {
+              "kind": "local",
+              "id": "114"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷五十五·程普传、黄盖传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷55"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-biao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "刘表",
+      "paragraphText": "秋七月，曹操南征刘表。八月，刘表死了；他的儿子刘琮代立，屯在襄阳，刘备屯在樊。"
+    },
+    {
+      "personId": "liu-cong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "刘琮",
+      "paragraphText": "秋七月，曹操南征刘表。八月，刘表死了；他的儿子刘琮代立，屯在襄阳，刘备屯在樊。"
+    },
+    {
+      "personId": "liu-bei",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 33,
+      "text": "刘备",
+      "paragraphText": "秋七月，曹操南征刘表。八月，刘表死了；他的儿子刘琮代立，屯在襄阳，刘备屯在樊。"
+    },
+    {
+      "personId": "wen-pin",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 58,
+      "text": "文聘",
+      "paragraphText": "曹操进军江陵，给荆州的官吏百姓下了一道令：与之更始，旧的一页翻过去。于是论荆州归服的功劳，封侯的十五人；用刘表的大将文聘做江夏太守，让他统率自己原来的兵；又引用荆州的名士韩嵩、邓义等人。"
+    },
+    {
+      "personId": "han-song",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 85,
+      "text": "韩嵩",
+      "paragraphText": "曹操进军江陵，给荆州的官吏百姓下了一道令：与之更始，旧的一页翻过去。于是论荆州归服的功劳，封侯的十五人；用刘表的大将文聘做江夏太守，让他统率自己原来的兵；又引用荆州的名士韩嵩、邓义等人。"
+    },
+    {
+      "personId": "deng-yi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 88,
+      "text": "邓义",
+      "paragraphText": "曹操进军江陵，给荆州的官吏百姓下了一道令：与之更始，旧的一页翻过去。于是论荆州归服的功劳，封侯的十五人；用刘表的大将文聘做江夏太守，让他统率自己原来的兵；又引用荆州的名士韩嵩、邓义等人。"
+    },
+    {
+      "personId": "zhuge-liang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "诸葛亮",
+      "paragraphText": "刘备退到夏口，派诸葛亮去见孙权。孙权遣周瑜、程普等人，与刘备合兵迎战曹操。"
+    },
+    {
+      "personId": "sun-quan",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "孙权",
+      "paragraphText": "刘备退到夏口，派诸葛亮去见孙权。孙权遣周瑜、程普等人，与刘备合兵迎战曹操。"
+    },
+    {
+      "personId": "zhou-yu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "周瑜",
+      "paragraphText": "刘备退到夏口，派诸葛亮去见孙权。孙权遣周瑜、程普等人，与刘备合兵迎战曹操。"
+    },
+    {
+      "personId": "cheng-pu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 22,
+      "text": "程普",
+      "paragraphText": "刘备退到夏口，派诸葛亮去见孙权。孙权遣周瑜、程普等人，与刘备合兵迎战曹操。"
+    },
+    {
+      "personId": "huang-gai",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "黄盖",
+      "paragraphText": "黄盖对周瑜说，敌众我寡，难以持久；曹军船舰首尾相接，可以用火把他们逼退。"
+    }
+  ]
+}

@@ -1,0 +1,583 @@
+{
+  "people": [
+    {
+      "id": "yuan-si",
+      "name": "袁嗣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "袁嗣是袁术任命的陈相。建安元年正月，曹操军到武平，他举州投降；此后材料未载其经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xun-yu",
+      "name": "荀彧",
+      "versions": [
+        {
+          "from": 2,
+          "to": 9,
+          "text": "荀彧是曹操的谋士，本篇与程昱劝曹操迎天子。后来他长期主持后方，官渡之战时留守许都；再后来因反对曹操进爵魏公，以忧而卒，死因记载有异。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十·荀彧传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cheng-yu",
+      "name": "程昱",
+      "versions": [
+        {
+          "from": 2,
+          "to": 9,
+          "text": "程昱是曹操的谋士，本篇与荀彧劝迎天子。后来在曹操麾下任地方与军职，曹丕时官至卫尉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十四·程昱传、董昭传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-hong",
+      "name": "曹洪",
+      "versions": [
+        {
+          "from": 2,
+          "to": 9,
+          "text": "曹洪是曹操的从弟。本篇奉命西迎天子，被董承、苌奴挡住；后来在官渡留守大营，曹丕时官至骠骑将军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷九·曹洪传、韩浩传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-cheng",
+      "name": "董承",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "董承是献帝的卫将军。本篇他与苌奴守险，阻止曹洪西迎；后来他称受献帝密诏谋诛曹操，事泄被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "041"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chang-nu",
+      "name": "苌奴",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "苌奴是袁术手下的将领。本篇他与董承守住险要，使曹洪不能西进；此后材料未载其经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "he-yi",
+      "name": "何仪",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "何仪是汝南、颍川一带的黄巾首领。本篇他与刘辟、黄邵、何曼各拥数万众，先应袁术、又附孙坚；曹操击破后，他率众投降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-pi",
+      "name": "刘辟",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "刘辟是汝南、颍川黄巾首领之一。本篇与何仪等响应袁术、依附孙坚；曹操讨破时，他被斩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huang-shao",
+      "name": "黄邵",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "黄邵是汝南、颍川黄巾首领之一。本篇与何仪等响应袁术、依附孙坚；曹操讨破时，他被斩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "he-man",
+      "name": "何曼",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "何曼是汝南、颍川黄巾首领之一。本篇与何仪等并称；曹操击破其众，材料未单记他的下落。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-jian",
+      "name": "孙坚",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "孙坚是东汉末的将领，江东孙氏政权的奠基者。本篇黄巾余部曾依附他；他在讨董之战中攻入洛阳，后来在与刘表的战事中身亡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷四十六·孙坚传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷46"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-feng",
+      "name": "杨奉",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "杨奉是护送献帝东归的将领之一。本篇他与韩暹送天子还洛阳，后别屯梁，想拦截东行的车驾未成，南投袁术。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-xian",
+      "name": "韩暹",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "韩暹是护送献帝东归的将领之一。本篇他与杨奉送天子还洛阳；曹操到洛阳后，他逃走，此后材料未载。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xian-di",
+      "name": "献帝",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "献帝是东汉皇帝刘协，董卓所立。本篇他被杨奉、韩暹送回洛阳，又授予曹操节钺、录尚书事；随后车驾东出，定都许。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-zhao",
+      "name": "董昭",
+      "versions": [
+        {
+          "from": 6,
+          "to": 9,
+          "text": "董昭是曹操的谋士。本篇他劝曹操把都城定在许；后来在曹操麾下任要职，魏明帝时官至司徒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十四·程昱传、董昭传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-shao",
+      "name": "袁绍",
+      "versions": [
+        {
+          "from": 8,
+          "to": 9,
+          "text": "袁绍是袁术的从兄、河北的割据者。本篇曹操把大将军让给他，他仍耻于班次；后来他在官渡败于曹操，病逝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·袁绍传、袁术传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zao-zhi",
+      "name": "枣祗",
+      "versions": [
+        {
+          "from": 9,
+          "to": 9,
+          "text": "枣祗是曹操的部属。本篇他与韩浩建议兴办屯田；后来曹操任他为屯田都尉，主持许下屯田。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十六·任峻传附枣祗",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-hao",
+      "name": "韩浩",
+      "versions": [
+        {
+          "from": 9,
+          "to": 9,
+          "text": "韩浩是曹操的部将。本篇他与枣祗建议兴办屯田；后来在曹操麾下任中护军等职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷九·曹洪传、韩浩传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-shu",
+      "name": "袁术",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "袁术是袁绍的从弟，当时据淮南。本篇他任命的陈相袁嗣降曹，部将苌奴守险，后来杨奉也南投他；再后来他在淮南称帝，兵败病死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·袁绍传、袁术传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-si",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "袁嗣",
+      "paragraphText": "建安元年正月，曹操的军队来到武平。袁术任命的陈相袁嗣投降。"
+    },
+    {
+      "personId": "xun-yu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "荀彧",
+      "paragraphText": "曹操打算迎接天子，诸将中有人犹疑；荀彧、程昱劝他去迎。"
+    },
+    {
+      "personId": "cheng-yu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 20,
+      "text": "程昱",
+      "paragraphText": "曹操打算迎接天子，诸将中有人犹疑；荀彧、程昱劝他去迎。"
+    },
+    {
+      "personId": "cao-hong",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "曹洪",
+      "paragraphText": "于是，他派曹洪率兵向西出发。"
+    },
+    {
+      "personId": "dong-cheng",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "董承",
+      "paragraphText": "卫将军董承和袁术手下的将苌奴守住险要，曹洪没能进去。"
+    },
+    {
+      "personId": "chang-nu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "苌奴",
+      "paragraphText": "卫将军董承和袁术手下的将苌奴守住险要，曹洪没能进去。"
+    },
+    {
+      "personId": "he-yi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "何仪",
+      "paragraphText": "汝南、颍川的黄巾何仪、刘辟、黄邵、何曼等人，各有几万之众，起初响应袁术，后来又依附孙坚。"
+    },
+    {
+      "personId": "liu-pi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "刘辟",
+      "paragraphText": "汝南、颍川的黄巾何仪、刘辟、黄邵、何曼等人，各有几万之众，起初响应袁术，后来又依附孙坚。"
+    },
+    {
+      "personId": "huang-shao",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "黄邵",
+      "paragraphText": "汝南、颍川的黄巾何仪、刘辟、黄邵、何曼等人，各有几万之众，起初响应袁术，后来又依附孙坚。"
+    },
+    {
+      "personId": "he-man",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "何曼",
+      "paragraphText": "汝南、颍川的黄巾何仪、刘辟、黄邵、何曼等人，各有几万之众，起初响应袁术，后来又依附孙坚。"
+    },
+    {
+      "personId": "sun-jian",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 41,
+      "text": "孙坚",
+      "paragraphText": "汝南、颍川的黄巾何仪、刘辟、黄邵、何曼等人，各有几万之众，起初响应袁术，后来又依附孙坚。"
+    },
+    {
+      "personId": "yang-feng",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 72,
+      "text": "杨奉",
+      "paragraphText": "二月，太祖进军讨伐并击破他们，斩了刘辟、黄邵等人，何仪和他的部众全都投降。天子拜太祖为建德将军；夏季六月，升为镇东将军，又封作费亭侯。到秋七月，杨奉和韩暹带着天子回到洛阳。"
+    },
+    {
+      "personId": "han-xian",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 75,
+      "text": "韩暹",
+      "paragraphText": "二月，太祖进军讨伐并击破他们，斩了刘辟、黄邵等人，何仪和他的部众全都投降。天子拜太祖为建德将军；夏季六月，升为镇东将军，又封作费亭侯。到秋七月，杨奉和韩暹带着天子回到洛阳。"
+    },
+    {
+      "personId": "xian-di",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 37,
+      "text": "天子",
+      "paragraphText": "二月，太祖进军讨伐并击破他们，斩了刘辟、黄邵等人，何仪和他的部众全都投降。天子拜太祖为建德将军；夏季六月，升为镇东将军，又封作费亭侯。到秋七月，杨奉和韩暹带着天子回到洛阳。"
+    },
+    {
+      "personId": "xian-di",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "献帝",
+      "paragraphText": "献帝授予曹操节钺，并让他录尚书事，参与总领朝廷的尚书事务。"
+    },
+    {
+      "personId": "dong-zhao",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "董昭",
+      "paragraphText": "洛阳残破，董昭等人劝太祖把都城定在许。九月，车驾出了轘辕往东走，让太祖做大将军，封为武平侯。"
+    },
+    {
+      "personId": "yuan-shao",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "袁绍",
+      "paragraphText": "于是任袁绍为太尉。袁绍耻于班次在公之下，不肯接受。公坚决辞让，把大将军让给袁绍。天子拜公为司空，行车骑将军。"
+    },
+    {
+      "personId": "zao-zhi",
+      "beat": 9,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "枣祗",
+      "paragraphText": "这一年，曹操采用枣祗、韩浩等人的建议，开始兴办屯田。"
+    },
+    {
+      "personId": "han-hao",
+      "beat": 9,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "韩浩",
+      "paragraphText": "这一年，曹操采用枣祗、韩浩等人的建议，开始兴办屯田。"
+    },
+    {
+      "personId": "yuan-shu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "袁术",
+      "paragraphText": "建安元年正月，曹操的军队来到武平。袁术任命的陈相袁嗣投降。"
+    }
+  ]
+}

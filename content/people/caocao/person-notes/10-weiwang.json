@@ -1,0 +1,428 @@
+{
+  "people": [
+    {
+      "id": "sun-quan",
+      "name": "孙权",
+      "versions": [
+        {
+          "from": 2,
+          "to": 10,
+          "text": "孙权是江东之主。本篇曹操再征孙权，破其江西营；后来孙权击杀关羽，向曹操称臣，再后来称帝建吴。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "074"
+            },
+            {
+              "kind": "local",
+              "id": "109"
+            },
+            {
+              "kind": "local",
+              "id": "110"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷四十七·吴主传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gongsun-yang",
+      "name": "公孙阳",
+      "versions": [
+        {
+          "from": 2,
+          "to": 10,
+          "text": "公孙阳是孙权在江西营的都督。本篇曹操攻破营垒，将他俘获；材料未载其后续。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "074"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xi-lv",
+      "name": "郗虑",
+      "versions": [
+        {
+          "from": 2,
+          "to": 10,
+          "text": "郗虑是东汉御史大夫。本篇他持节策命曹操为魏公；后来在曹操授意下参与收捕伏皇后。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "074"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷十下·皇后纪·献帝伏皇后",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷10下"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pu-fulu",
+      "name": "普富卢",
+      "versions": [
+        {
+          "from": 6,
+          "to": 10,
+          "text": "普富卢是代郡乌丸行单于。本篇与侯王来朝；材料未载更多经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "099"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu-chuquan",
+      "name": "呼厨泉",
+      "versions": [
+        {
+          "from": 6,
+          "to": 10,
+          "text": "呼厨泉是匈奴南单于。本篇带名王来朝，被留在魏；右贤王去卑受命监领其国。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "099"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu-bei",
+      "name": "去卑",
+      "versions": [
+        {
+          "from": 6,
+          "to": 10,
+          "text": "去卑是匈奴右贤王。本篇受命监领呼厨泉的国；此后材料未载其经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "099"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhong-yao",
+      "name": "锺繇",
+      "versions": [
+        {
+          "from": 6,
+          "to": 10,
+          "text": "锺繇是魏国大理，本篇转任相国；后来因魏讽谋反受牵连免官，曹丕时官至太傅。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "099"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十三·锺繇传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiahou-yuan",
+      "name": "夏侯渊",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "夏侯渊是曹操的将领。本篇他与刘备交战，被刘备军杀死；所据材料未展开战况。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "106"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bei",
+      "name": "刘备",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "刘备是曹操的对手，本篇据险拒曹操；此前已取益州，后来称帝，建立蜀汉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "106"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷三十二·先主传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷32"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-jin",
+      "name": "于禁",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "于禁是曹操的将领。本篇奉命助曹仁，汉水泛滥，军没被关羽俘获；后来孙权擒关羽，于禁归魏，曹丕时惭恚发病而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十七·于禁传、徐晃传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-ren",
+      "name": "曹仁",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "曹仁是曹操的从弟，本篇被关羽围于樊城，徐晃救至解围；后来官至大司马。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷九·曹仁传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guan-yu",
+      "name": "关羽",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "关羽是刘备的将领，本篇围曹仁、俘于禁，后被徐晃击败退走；孙权随后击杀他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "local",
+              "id": "109"
+            },
+            {
+              "kind": "local",
+              "id": "110"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷三十六·关羽传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷36"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-huang",
+      "name": "徐晃",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "徐晃是曹操的将领，本篇救曹仁，击败关羽解围；后来官至右将军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "local",
+              "id": "109"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十七·于禁传、徐晃传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-feng",
+      "name": "魏讽",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "魏讽是魏国的西曹掾。本篇他谋反，事泄；锺繇受牵连免相国。材料未展开其经过。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "107"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "sun-quan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "孙权",
+      "paragraphText": "这一年冬十月，他再次征讨孙权。到了建安十八年春正月，军队进至濡须口，攻破孙权的江西营，俘获公孙阳，随后引军而还。四月，曹操回到邺。"
+    },
+    {
+      "personId": "gongsun-yang",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 45,
+      "text": "公孙阳",
+      "paragraphText": "这一年冬十月，他再次征讨孙权。到了建安十八年春正月，军队进至濡须口，攻破孙权的江西营，俘获公孙阳，随后引军而还。四月，曹操回到邺。"
+    },
+    {
+      "personId": "xi-lv",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "郗虑",
+      "paragraphText": "五月丙申，天子派御史大夫郗虑持节，策命他为魏公。"
+    },
+    {
+      "personId": "pu-fulu",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "普富卢",
+      "paragraphText": "代郡乌丸的行单于普富卢与侯王来朝。天子命魏王之女为公主，给以汤沐邑。"
+    },
+    {
+      "personId": "hu-chuquan",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "呼厨泉",
+      "paragraphText": "秋七月，匈奴南单于呼厨泉带着名王来朝，受到客礼相待，随后留在魏；右贤王去卑受命监领其国。"
+    },
+    {
+      "personId": "qu-bei",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 35,
+      "text": "去卑",
+      "paragraphText": "秋七月，匈奴南单于呼厨泉带着名王来朝，受到客礼相待，随后留在魏；右贤王去卑受命监领其国。"
+    },
+    {
+      "personId": "zhong-yao",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "锺繇",
+      "paragraphText": "八月，锺繇由大理转任相国。这是魏国的相国；曹操仍是汉朝的丞相。"
+    },
+    {
+      "personId": "xiahou-yuan",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "夏侯渊",
+      "paragraphText": "到了建安二十四年，夏侯渊与刘备交战，被杀。三月，曹操进至阳平，刘备据险相拒；五月，曹操引军回长安。"
+    },
+    {
+      "personId": "liu-bei",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "刘备",
+      "paragraphText": "到了建安二十四年，夏侯渊与刘备交战，被杀。三月，曹操进至阳平，刘备据险相拒；五月，曹操引军回长安。"
+    },
+    {
+      "personId": "yu-jin",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "于禁",
+      "paragraphText": "七月，他派于禁帮助曹仁攻打关羽。八月汉水泛滥，于禁的军队被淹没，关羽俘获于禁，接着围住曹仁。曹操派徐晃去救。"
+    },
+    {
+      "personId": "cao-ren",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "曹仁",
+      "paragraphText": "七月，他派于禁帮助曹仁攻打关羽。八月汉水泛滥，于禁的军队被淹没，关羽俘获于禁，接着围住曹仁。曹操派徐晃去救。"
+    },
+    {
+      "personId": "guan-yu",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "关羽",
+      "paragraphText": "七月，他派于禁帮助曹仁攻打关羽。八月汉水泛滥，于禁的军队被淹没，关羽俘获于禁，接着围住曹仁。曹操派徐晃去救。"
+    },
+    {
+      "personId": "xu-huang",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 49,
+      "text": "徐晃",
+      "paragraphText": "七月，他派于禁帮助曹仁攻打关羽。八月汉水泛滥，于禁的军队被淹没，关羽俘获于禁，接着围住曹仁。曹操派徐晃去救。"
+    },
+    {
+      "personId": "wei-feng",
+      "beat": 7,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "魏讽",
+      "paragraphText": "九月，锺繇因西曹掾魏讽谋反受牵连，免去相国。冬十月，曹操的军队回到洛阳。"
+    }
+  ]
+}

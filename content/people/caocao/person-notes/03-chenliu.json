@@ -1,0 +1,196 @@
+{
+  "people": [
+    {
+      "id": "wei-zi",
+      "name": "卫兹",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "卫兹是陈留孝廉，以家财资助曹操起兵，部众五千。后来他在荥阳与董卓军作战时战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "214"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷二十二·卫臻传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiao-mao",
+      "name": "桥瑁",
+      "versions": [
+        {
+          "from": 4,
+          "to": 7,
+          "text": "桥瑁字元伟，桥玄的族子，时任东郡太守。本篇他伪作京师三公移书，列数董卓罪恶，号召州郡起兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "215"
+            },
+            {
+              "kind": "local",
+              "id": "218"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-fu",
+      "name": "韩馥",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "韩馥字文节，颍川人，董卓举他为冀州牧，州中兵粮充足。本篇他接到移书后问从事该帮袁绍还是董卓；后来冀州被袁绍取得，他离开冀州，不久自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "215"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·袁绍传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-shao",
+      "name": "袁绍",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "袁绍当时在勃海，韩馥怕他起兵而派人守着。本篇韩馥得移书后给他写信、允许起兵；初平元年关东诸将推他为盟主。后来他据有冀州，官渡败于曹操，病逝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "215"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·袁绍传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-zihui",
+      "name": "刘子惠",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "刘子惠是冀州治中从事。本篇他把「助袁氏还是助董卓」的问题挡回去，主张兴兵为国、不抢先，等别州发动再响应。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "215"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-zhuo",
+      "name": "董卓",
+      "versions": [
+        {
+          "from": 4,
+          "to": 7,
+          "text": "董卓是入京专权的凉州军阀。本篇关东起兵以讨他为名；后来他被王允、吕布合谋杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷七十二·董卓传",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷72"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "wei-zi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "卫兹",
+      "paragraphText": "陈留人卫兹，也拿了钱出来。"
+    },
+    {
+      "personId": "qiao-mao",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "桥瑁",
+      "paragraphText": "东郡太守桥瑁做了一件事：他伪作京师三公发给各州郡的移书，把董卓的罪恶摊开来讲。"
+    },
+    {
+      "personId": "han-fu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "韩馥",
+      "paragraphText": "冀州牧韩馥接到了这封移书。"
+    },
+    {
+      "personId": "yuan-shao",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "袁绍",
+      "paragraphText": "袁绍那时候在勃海，韩馥本来就怕他兴兵，派过几部从事去守着，不许他动。"
+    },
+    {
+      "personId": "liu-zihui",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "刘子惠",
+      "paragraphText": "治中从事刘子惠把这个问题挡了回去：如今是为国兴兵，哪来的袁氏、董卓。"
+    },
+    {
+      "personId": "dong-zhuo",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 29,
+      "text": "董卓",
+      "paragraphText": "东郡太守桥瑁做了一件事：他伪作京师三公发给各州郡的移书，把董卓的罪恶摊开来讲。"
+    }
+  ]
+}

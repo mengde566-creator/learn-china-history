@@ -1,0 +1,307 @@
+{
+  "people": [
+    {
+      "id": "he-jin",
+      "name": "何进",
+      "versions": [
+        {
+          "from": 1,
+          "to": 12,
+          "text": "何进是大将军，灵帝死后掌握朝政。他召董卓带兵入京，想逼太后同意诛宦官；董卓未到，他已被宦官杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-zhuo",
+      "name": "董卓",
+      "versions": [
+        {
+          "from": 1,
+          "to": 12,
+          "text": "董卓是凉州军阀，带兵入京后废少帝、立献帝，专断朝政，表曹操为骁骑校尉。后来他被王允、吕布合谋杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷七十二·董卓传",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shao-di",
+      "name": "少帝",
+      "versions": [
+        {
+          "from": 3,
+          "to": 12,
+          "text": "少帝刘辩是灵帝之子，即位不久被董卓废为弘农王。后来被董卓杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xian-di",
+      "name": "献帝",
+      "versions": [
+        {
+          "from": 3,
+          "to": 12,
+          "text": "献帝刘协是董卓所立。后来曹操把他迎到许都，借朝廷名义号令。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-yun",
+      "name": "王允",
+      "versions": [
+        {
+          "from": 5,
+          "to": 12,
+          "text": "王允是东汉司徒。本篇借七星刀是《三国演义》的情节，正史不载；后来他与吕布合谋诛杀董卓，不久被董卓部将击败而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "401"
+            },
+            {
+              "kind": "local",
+              "id": "402"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷七十二·董卓传",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-bu",
+      "name": "吕布",
+      "versions": [
+        {
+          "from": 7,
+          "to": 12,
+          "text": "吕布是董卓的部将，演义中认董卓为义父。本篇侍立、牵马是演义情节；后来他与王允合谋诛董卓，又割据徐州，最终被曹操擒杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "407"
+            },
+            {
+              "kind": "local",
+              "id": "409"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷七·吕布传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-ru",
+      "name": "李儒",
+      "versions": [
+        {
+          "from": 8,
+          "to": 12,
+          "text": "李儒是董卓身边的谋士，演义作董卓女婿。本篇献策唤回曹操是演义情节；正史所存材料很少，不补其结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "409"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-boshe",
+      "name": "吕伯奢",
+      "versions": [
+        {
+          "from": 10,
+          "to": 12,
+          "text": "吕伯奢是成皋人，曹操的故人。本篇三种记载都说出事时他本人不在家；曹操杀人的经过与动机，三说不同。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "212"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ting-zhang",
+      "name": "亭长",
+      "versions": [
+        {
+          "from": 11,
+          "to": 12,
+          "text": "亭长是负责地方治安的小吏。本篇他在中牟怀疑曹操是逃亡者，把他执送到县里；后来县中有人认出曹操，替他求情。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "213"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiao-xuan",
+      "name": "桥玄",
+      "versions": [
+        {
+          "from": 1,
+          "to": 12,
+          "text": "桥玄官至太尉，以知人著称。本篇裴注记他见曹操而异之，愿以妻子相托；曹操由此声名益重。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "205"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-zijiang",
+      "name": "许子将",
+      "versions": [
+        {
+          "from": 1,
+          "to": 12,
+          "text": "许子将是汝南名士许劭，以品评人物著称。本篇所引「治世之能臣，乱世之奸雄」出自孙盛《异同杂语》，不是《三国志》正文。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "205"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "he-jin",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "何进",
+      "paragraphText": "何进召董卓入京，想借他的兵势逼太后同意诛宦官。"
+    },
+    {
+      "personId": "dong-zhuo",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "董卓",
+      "paragraphText": "何进召董卓入京，想借他的兵势逼太后同意诛宦官。"
+    },
+    {
+      "personId": "shao-di",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "少帝",
+      "paragraphText": "董卓还没到，何进就被杀了。董卓到了，把少帝废为弘农王，改立献帝。京城大乱。"
+    },
+    {
+      "personId": "xian-di",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 29,
+      "text": "献帝",
+      "paragraphText": "董卓还没到，何进就被杀了。董卓到了，把少帝废为弘农王，改立献帝。京城大乱。"
+    },
+    {
+      "personId": "wang-yun",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 22,
+      "text": "王允",
+      "paragraphText": "《三国演义》第四回里，曹操却已屈身事奉董卓。王允家中，众官哭起来，他在座中拍手大笑："
+    },
+    {
+      "personId": "lv-bu",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "吕布",
+      "paragraphText": "次日，曹操佩着宝刀进了相府。董卓坐在床上，吕布站在旁边。"
+    },
+    {
+      "personId": "li-ru",
+      "beat": 8,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "李儒",
+      "paragraphText": "李儒来了。他说：曹操没有妻小在京，一个人住在寓所。差人去唤他回来——他要是没疑心、肯来，就是献刀；推托不来，就是行刺。"
+    },
+    {
+      "personId": "lv-boshe",
+      "beat": 10,
+      "paragraph": 1,
+      "offset": 22,
+      "text": "吕伯奢",
+      "paragraphText": "《魏书》说：曹操带着几个骑从，经过成皋的故人吕伯奢家。伯奢不在，他的儿子与宾客合伙抢劫，夺马和财物。曹操亲手杀了几个人。"
+    },
+    {
+      "personId": "ting-zhang",
+      "beat": 11,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "亭长",
+      "paragraphText": "《武帝纪》记，曹操出了关，经过中牟，被亭长怀疑，抓到县里。县里有人私下认出他，替他求情，他才得以解脱。"
+    }
+  ]
+}
