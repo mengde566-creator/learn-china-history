@@ -1,0 +1,158 @@
+{
+  "people": [
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "汉王即刘邦，当时都南郑。本篇他从滕公处听说韩信，又听萧何力荐，择日设坛拜他为大将；后来韩信为他定三秦、破楚，汉朝建立后先封齐王、徙楚王，再降淮阴侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-he",
+      "name": "萧何",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "萧何是汉王的丞相。本篇他追回逃亡的韩信，向汉王称其「国士无双」，促成拜将；后来他长期留守关中，汉朝建立后任相国。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十三·萧相国世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teng-gong",
+      "name": "滕公",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "滕公即夏侯婴，汉王之臣。本篇他见韩信临刑喊话，释放并推荐给汉王；后来他任太仆，历事汉高祖、惠帝、文帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十五·樊郦滕灌列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷095"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-yu",
+      "name": "项羽",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "项羽是当时的项王，与汉王争天下。本篇韩信曾在他手下为郎中，不被重用；后来韩信为汉王分析项王之失，楚汉相争以项羽败亡告终。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七·项羽本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷007"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-bang",
+      "beat": 1,
+      "paragraph": 8,
+      "offset": 0,
+      "text": "汉王",
+      "paragraphText": "汉王让他做治粟都尉。管粮的官。汉王还是没有看出他有什么特别。"
+    },
+    {
+      "personId": "xiao-he",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "萧何",
+      "paragraphText": "韩信和萧何谈过几次。萧何觉得他不寻常。这件事，韩信自己也知道。"
+    },
+    {
+      "personId": "teng-gong",
+      "beat": 1,
+      "paragraph": 7,
+      "offset": 0,
+      "text": "滕公",
+      "paragraphText": "滕公觉得这话不寻常，又看他相貌壮伟，没有杀他。谈过之后，很喜欢他，去跟汉王说了。"
+    },
+    {
+      "personId": "xiang-yu",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "项王",
+      "paragraphText": "第一件，项王的勇。"
+    }
+  ]
+}
