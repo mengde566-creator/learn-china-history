@@ -192,8 +192,8 @@ check('首页: 时代合并、人物时间顺序与手机卡片边界', async ()
     { era: '春秋战国', names: ['荆轲'] },
     { era: '秦汉', names: ['项羽', '韩信'] },
     { era: '汉末三国', names: ['曹操'] },
-    { era: '晋', names: ['祖逖'] },
-    { era: '南北朝', names: ['刘裕', '陈庆之', '高欢', '宇文泰'] },
+    { era: '晋', names: ['祖逖', '王猛', '谢玄'] },
+    { era: '南北朝', names: ['刘裕', '檀道济', '陈庆之', '韦孝宽', '高欢', '宇文泰'] },
     { era: '宋朝', names: ['辛弃疾'] },
   ]
   const saved = { read: { 'caocao/01-wusebang': { beat: 3, beatCount: 7, done: false, phase: 'live', at: 100 } }, review: { 'caocao/01-wusebang': { 1: 'known' } }, last: null }
@@ -219,7 +219,7 @@ check('首页: 时代合并、人物时间顺序与手机卡片边界', async ()
         cards: [...row.querySelectorAll('a.person-card')].map(el => ({ href: el.getAttribute('href'), left: el.getBoundingClientRect().left, right: el.getBoundingClientRect().right, top: el.getBoundingClientRect().top })),
       })))
       const cards = layout.flatMap(row => row.cards)
-      if (cards.length !== 10 || new Set(cards.map(c => c.href)).size !== 10) return fail('首页人物入口缺失或重复')
+      if (cards.length !== 14 || new Set(cards.map(c => c.href)).size !== 14) return fail('首页人物入口缺失或重复')
       if (cards.some(c => c.left < 0 || c.right > width)) return fail(`${width}px 人物卡越出视口`)
       if (width === 390 && layout.some(row => row.labelBottom > row.cards[0].top)) return fail('手机时代标签没有排在人物卡上方')
       if (width === 1324 && Math.abs(layout[4].cards[0].top - layout[4].cards[1].top) > 2) return fail('桌面南北朝人物仍逐张竖排')
@@ -233,7 +233,7 @@ check('首页: 时代合并、人物时间顺序与手机卡片边界', async ()
       }
     } finally { await context.close() }
   }
-  return ok('两尺寸明暗四组：春秋战国、秦汉、汉末三国、晋、南北朝、宋朝六区10人，时间顺序、手机完整卡片与旧记录保持')
+  return ok('两尺寸明暗四组：春秋战国、秦汉、汉末三国、晋、南北朝、宋朝六区14人，时间顺序、手机完整卡片与旧记录保持')
 })
 
 check('routes: 所有路由可访问且无控制台报错', async () => {

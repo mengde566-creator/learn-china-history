@@ -393,5 +393,125 @@
   "range": "040–046",
   "seeds": "788585f6396a0cba",
   "cards": "4263e7a619465d87"
+ },
+ "tandaoji/01-jingkou": {
+  "range": "001–008",
+  "seeds": "93477ced2f5f54f7",
+  "cards": "da9d999a585085cc"
+ },
+ "tandaoji/02-shifu": {
+  "range": "017–030",
+  "seeds": "ddaa17ccbb124bd1",
+  "cards": "f5613a7c0898d317"
+ },
+ "tandaoji/03-dongyang": {
+  "range": "036–041",
+  "seeds": "78b63159eb203628",
+  "cards": "985019118981991a"
+ },
+ "tandaoji/04-taoxiehui": {
+  "range": "042–055",
+  "seeds": "cd6ed8787f2da551",
+  "cards": "ba08259d19ec65d3"
+ },
+ "tandaoji/05-huatai": {
+  "range": "056–064",
+  "seeds": "aa658a8c90a294fc",
+  "cards": "f2b77379049b805e"
+ },
+ "tandaoji/06-changcheng": {
+  "range": "065–088",
+  "seeds": "8dea0d2b019593ea",
+  "cards": "b2b33d29694cf7d1"
+ },
+ "wangmeng/01-men-shi-tan": {
+  "range": "002–006",
+  "seeds": "92be0e5d4d644138",
+  "cards": "75d22a777572fe96"
+ },
+ "wangmeng/02-shi-ping-ling": {
+  "range": "008–011",
+  "seeds": "6832b34f9c2890e1",
+  "cards": "8d6d27a0e5072431"
+ },
+ "wangmeng/03-li-zhi": {
+  "range": "012–014",
+  "seeds": "bdeb593f68841090",
+  "cards": "d689a046a2f9a21e"
+ },
+ "wangmeng/04-li-yan": {
+  "range": "015–019",
+  "seeds": "d637249fe5caff12",
+  "cards": "26fb4f6d7e99f5dc"
+ },
+ "wangmeng/05-lu-chuan": {
+  "range": "020–030",
+  "seeds": "7d96ec3f586a268f",
+  "cards": "4d55affae4e4b796"
+ },
+ "wangmeng/06-lin-zhong": {
+  "range": "043–049",
+  "seeds": "38363eedaea891fe",
+  "cards": "07d9993c5f9e9293"
+ },
+ "weixiaokuan/01-yubizhen": {
+  "range": "001–005",
+  "seeds": "560eeb3baa1d504e",
+  "cards": "8fb620461479896a"
+ },
+ "weixiaokuan/02-shoucheng": {
+  "range": "006–010",
+  "seeds": "3cc16a5ef2b2cbc0",
+  "cards": "13ab4e94e66f9286"
+ },
+ "weixiaokuan/03-fanshe": {
+  "range": "011–013",
+  "seeds": "1d497538af2bd136",
+  "cards": "023c03cd6c815f3e"
+ },
+ "weixiaokuan/04-bingtui": {
+  "range": "014–015",
+  "seeds": "5c511ab8e41d4aaa",
+  "cards": "0e8844915e85d8ae"
+ },
+ "weixiaokuan/05-sance": {
+  "range": "024–028",
+  "seeds": "d7d708190010f752",
+  "cards": "aed939e3aaa3c820"
+ },
+ "weixiaokuan/06-weichi": {
+  "range": "034–038",
+  "seeds": "de9ededa41e4898b",
+  "cards": "5e8e7358e55d2f12"
+ },
+ "xiexuan/01-guangling": {
+  "range": "001–006",
+  "seeds": "cd7fec0d4ee213ec",
+  "cards": "e52080ff98bbd7df"
+ },
+ "xiexuan/02-junchuan": {
+  "range": "007–015",
+  "seeds": "7f1ebe24cb75c515",
+  "cards": "16558b80045104a0"
+ },
+ "xiexuan/03-feishui": {
+  "range": "016–027",
+  "seeds": "57b0729d24bf34ec",
+  "cards": "f7d1152eb4d3123b"
+ },
+ "xiexuan/04-beifa": {
+  "range": "028–035",
+  "seeds": "3647b349e2041bbd",
+  "cards": "c62f3adfe3e03b12"
+ },
+ "xiexuan/05-banshi": {
+  "range": "036–040",
+  "seeds": "fe46a7e22f58fe02",
+  "cards": "7b71510eae4d0fec"
+ },
+ "xiexuan/06-shangshu": {
+  "range": "041–049",
+  "seeds": "b83107e54b8edf03",
+  "cards": "f6205cae5858aa33"
  }
 }

@@ -283,5 +283,82 @@
     "archive": "content/references/caocao-dong72-hanxian.txt",
     "sha256": "f44d31a9b8b84fcc234e44805f38320dd5e85469120853fa2dc688b49bb3547e",
     "min": 1
+  },
+  {
+    "file": "jinshu-112.txt",
+    "title": "《晉書》載記第十二（苻洪·苻健·苻生）",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷112",
+    "about": "https://zh.wikisource.org/wiki/晉書/卷112",
+    "revision": "2180614",
+    "archive": "content/references/jinshu-112.txt",
+    "sha256": "dc52f92805826ed8ee9608968ee87dd1122c7b8d886bbb6cc1d8d9068793b04c",
+    "min": 1,
+    "note": "王猛早期事迹（若有）与苻生覆灭在载记十二；王猛核心事迹以一一三、一一四卷为主。"
+  },
+  {
+    "file": "jinshu-113.txt",
+    "title": "《晉書》苻堅載記上（卷一百十三）",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷113",
+    "about": "https://zh.wikisource.org/wiki/晉書/卷113",
+    "revision": "2135052",
+    "archive": "content/references/jinshu-113.txt",
+    "sha256": "b05dbd898528b810ec3b7b21189e182d09186bed980691637f3a4800faaf0f07",
+    "min": 1,
+    "note": "苻坚上台至淝水前（含边战、四府）；王猛的本传叙述嵌在载记里。"
+  },
+  {
+    "file": "jinshu-114.txt",
+    "title": "《晉書》苻堅載記下（卷一百十四）",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷114",
+    "about": "https://zh.wikisource.org/wiki/晉書/卷114",
+    "revision": "2191291",
+    "archive": "content/references/jinshu-114.txt",
+    "sha256": "448ae42386de54886b9deab75168933e894f31e53d60b59c267b40912a5a2ff5",
+    "min": 1,
+    "note": "「捫蝨」王猛与桓温初见在此卷开头；潞川、王猛之死、淝水、苻坚败亡也都在这一卷。"
+  },
+  {
+    "file": "jinshu-079.txt",
+    "title": "《晉書》卷七十九（谢安及附传）",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷079",
+    "about": "https://zh.wikisource.org/wiki/晉書/卷079",
+    "revision": "2645985",
+    "archive": "content/references/jinshu-079.txt",
+    "sha256": "27bfca1cf8497fc61ca929eb66b82ad97776c0a32bdfe22ee390e729c8fadbf7",
+    "min": 1,
+    "note": "谢玄传在谢安传后同卷；文曰「謝玄字幼度」；淝水在卷七十九称「肥水」。"
+  },
+  {
+    "file": "songshu-43.txt",
+    "title": "《宋書》卷四十三（徐羨之·傅亮·檀道濟）",
+    "url": "https://zh.wikisource.org/wiki/宋書/卷43",
+    "about": "https://zh.wikisource.org/wiki/宋書/卷43",
+    "revision": "2256870",
+    "archive": "content/references/songshu-43.txt",
+    "sha256": "e4a3c64f214df96926e75508f0b5e77b3a6f92e828f025d3b03ab62b716f08db",
+    "min": 1,
+    "note": "「乃復壞汝萬里之長城」出自本卷；「唱籌量沙」是《南史》说法，不在这卷。"
+  },
+  {
+    "file": "zhoushu-31.txt",
+    "title": "《周書》卷三十一（韋孝寬傳）",
+    "url": "https://zh.wikisource.org/wiki/周書/卷31",
+    "about": "https://zh.wikisource.org/wiki/周書/卷31",
+    "revision": "2074189",
+    "archive": "content/references/zhoushu-31.txt",
+    "sha256": "2c3ff203855d9ab4427d607bc71db8c525ab41fc1bbea342bf6dd231fb5248df",
+    "min": 1,
+    "note": "韦孝宽传全文；玉壁守城、平尉迟迥都在本卷。"
+  },
+  {
+    "file": "jinshu-zaoki.txt",
+    "title": "《晉書》載記（112+113+114 三卷拼接，供王猛底本 check-sources 用）",
+    "url": "https://zh.wikisource.org/wiki/晉書/卷113",
+    "about": "https://zh.wikisource.org/wiki/晉書/卷113",
+    "revision": "2180614 / 2135052 / 2191291",
+    "archive": "content/references/jinshu-zaoki.txt",
+    "sha256": "f9c57c07f0b8876106aa55f9bbb2cceb858ac93f0c70b5e0a97a17bd7c1201ab",
+    "min": 1,
+    "note": "王猛底本编年跨三卷，check-sources 只能对一份文件做锚点扫描，故拼接。拼接顺序：卷112、卷113、卷114。"
   }
 ]
