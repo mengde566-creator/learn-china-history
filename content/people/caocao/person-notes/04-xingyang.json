@@ -210,6 +210,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "yuan-shu",
+      "name": "袁术",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "袁术是袁绍的从弟，当时任后将军、屯南阳。本篇曹操所说「袁将军率南阳之军」指的就是他；后来他在淮南称帝，兵败病死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·袁术传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷06"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [

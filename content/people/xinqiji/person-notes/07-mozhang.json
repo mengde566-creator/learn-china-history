@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "zhao-kuo",
-      "name": "赵扩",
+      "name": "宁宗",
       "versions": [
         {
           "from": 1,
@@ -108,6 +108,29 @@
               "book": "《宋史》",
               "section": "卷四百二十九·朱熹传",
               "url": "https://zh.wikisource.org/wiki/宋史/卷429"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-fangde",
+      "name": "谢枋得",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "谢枋得是南宋末年的史馆校勘。本篇所据《宋史》记他经过辛弃疾墓旁的僧舍，作文祭奠，并请朝廷加赠；后来宋亡，他不仕元，被强迫北行，绝食而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《宋史》",
+              "section": "卷四百二十五·谢枋得传",
+              "url": "https://zh.wikisource.org/wiki/宋史/卷425"
             }
           ]
         }
