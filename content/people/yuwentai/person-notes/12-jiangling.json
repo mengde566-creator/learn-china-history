@@ -209,6 +209,29 @@
           ]
         }
       ]
+    },
+    {
+      "id": "xiao-ji",
+      "name": "萧纪",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "萧纪是梁武帝之子、武陵王，据有蜀地。本篇降西魏的杨乾运原是他的潼州刺史；萧纪此前在与萧绎争位中失败，蜀地随之归西魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十五·武陵王纪传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷55"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
@@ -291,6 +314,14 @@
       "offset": 37,
       "text": "韦孝宽",
       "paragraphText": "萧绎又与北齐通使，并和西魏交涉疆界。554年，宇文泰派于谨、宇文护、杨忠、韦孝宽等率军去江陵。"
+    },
+    {
+      "personId": "xiao-ji",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "萧纪",
+      "paragraphText": "次年，宇文泰派尉迟迥攻蜀。萧纪部下的潼州刺史杨乾运来降，为西魏军引路，进向成都。553年八月，成都被攻下。"
     }
   ]
 }
