@@ -1,0 +1,250 @@
+{
+  "people": [
+    {
+      "id": "jin-gongdi",
+      "name": "晋恭帝",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "晋恭帝是东晋末代皇帝。本篇禅位于刘裕，被封为零陵王；后来被刘裕派人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷十·恭帝纪",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷010"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chenliu-wang",
+      "name": "陈留王虔嗣",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "陈留王虔嗣是曹魏后裔的封号继承者。本篇他与二百七十人上表劝进。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luo-da",
+      "name": "骆达",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "骆达是太史令。本篇他陈说天文符瑞数十条，劝刘裕受禅。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yifu",
+      "name": "刘义符",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "刘义符是刘裕的太子。本篇受父亲告诫；刘裕死后即位，后被徐羡之等废杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四·少帝纪",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-daoji",
+      "name": "檀道济",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "檀道济是刘裕的护军将军。本篇刘裕评他「有干略而无远志」；后来成为宋文帝时名将，最终被朝廷杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·檀道济传、徐羡之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-xianzhi",
+      "name": "徐羡之",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "徐羡之是尚书令。本篇刘裕说他不会有异图；后来他与傅亮等废少帝，被文帝诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·檀道济传、徐羡之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-liang",
+      "name": "傅亮",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "傅亮是尚书仆射。本篇刘裕信其无异图；后来参与废少帝，被文帝诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·檀道济传、徐羡之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-hui",
+      "name": "谢晦",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "谢晦是领军将军。本篇刘裕料他日后可能有异同；后来他举兵反文帝，兵败被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十四·谢晦传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷44"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "jin-gongdi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 1,
+      "text": "晋帝",
+      "paragraphText": "封晋帝为零陵王，全食一郡。仍载天子旍旗，乘五时副车，行晋的正朔，郊祀天地的礼乐制度都用晋的旧典；上书不称表，答表不称诏。"
+    },
+    {
+      "personId": "chenliu-wang",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "陈留王虔嗣",
+      "paragraphText": "于是陈留王虔嗣等二百七十人，和宋台的群臣，一起上表劝进。他还是不许。"
+    },
+    {
+      "personId": "luo-da",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "骆达",
+      "paragraphText": "太史令骆达陈说天文符瑞几十条，群臣又坚请。他这才听从。"
+    },
+    {
+      "personId": "liu-yifu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "太子",
+      "paragraphText": "永初三年五月，他病重，召太子来告诫："
+    },
+    {
+      "personId": "tan-daoji",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "檀道济",
+      "paragraphText": "檀道济虽有干略，但没有远志，不像他哥哥檀韶那样有难御之气。徐羡之、傅亮不会有别的图谋。谢晦几次从征伐，颇识机变，将来若有异同，必定是这个人。稍作退步，可以把会稽、江州交给他。"
+    },
+    {
+      "personId": "xu-xianzhi",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "徐羡之",
+      "paragraphText": "檀道济虽有干略，但没有远志，不像他哥哥檀韶那样有难御之气。徐羡之、傅亮不会有别的图谋。谢晦几次从征伐，颇识机变，将来若有异同，必定是这个人。稍作退步，可以把会稽、江州交给他。"
+    },
+    {
+      "personId": "fu-liang",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 33,
+      "text": "傅亮",
+      "paragraphText": "檀道济虽有干略，但没有远志，不像他哥哥檀韶那样有难御之气。徐羡之、傅亮不会有别的图谋。谢晦几次从征伐，颇识机变，将来若有异同，必定是这个人。稍作退步，可以把会稽、江州交给他。"
+    },
+    {
+      "personId": "xie-hui",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 43,
+      "text": "谢晦",
+      "paragraphText": "檀道济虽有干略，但没有远志，不像他哥哥檀韶那样有难御之气。徐羡之、傅亮不会有别的图谋。谢晦几次从征伐，颇识机变，将来若有异同，必定是这个人。稍作退步，可以把会稽、江州交给他。"
+    }
+  ]
+}

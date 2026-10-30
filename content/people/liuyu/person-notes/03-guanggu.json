@@ -1,0 +1,228 @@
+{
+  "people": [
+    {
+      "id": "murong-de",
+      "name": "慕容德",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "慕容德是南燕的建立者，据青州称帝；本篇开头他已死，兄子慕容超继位。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-chao",
+      "name": "慕容超",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "慕容超是慕容德之侄，继位为南燕主。本篇他屡为边患，后被刘裕攻破广固，押送建康斩首。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gongsun-wulou",
+      "name": "公孙五楼",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "公孙五楼是南燕大将。本篇他建议守大岘、清野待敌，未被采纳；后在临朐据守。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "he-lailu",
+      "name": "贺赖卢",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "贺赖卢是南燕广宁王，本篇与公孙五楼先据临朐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meng-longfu",
+      "name": "孟龙符",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "孟龙符是刘裕的龙骧将军，本篇争巨蔑水；后来在伐南燕战事中战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十七·刘敬宣传、孟龙符传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-gang",
+      "name": "张纲",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "张纲是慕容超的尚书郎，有巧思。本篇他出使后秦求救，回来被申宣执送；刘裕让他造攻具，城上人见之失色。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-muzhi",
+      "name": "刘穆之",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "刘穆之是刘裕的录事参军、谋主。本篇刘裕北伐，军府大事都问他；后来刘裕还朝，他留守，卒于任。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-xing",
+      "name": "姚兴",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "姚兴是后秦君主。本篇他派使者声援慕容超，实际不敢出兵；后来他去世，子姚泓继位。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "murong-de",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "慕容德",
+      "paragraphText": "起初，伪燕王鲜卑慕容德在青州僭号。德死，兄子慕容超袭位，前后屡次为边患。"
+    },
+    {
+      "personId": "murong-chao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 22,
+      "text": "慕容超",
+      "paragraphText": "起初，伪燕王鲜卑慕容德在青州僭号。德死，兄子慕容超袭位，前后屡次为边患。"
+    },
+    {
+      "personId": "gongsun-wulou",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "公孙五楼",
+      "paragraphText": "慕容超听说王师将至，大将公孙五楼给他出主意：守住大岘，把粟苗割掉，坚壁清野等他。对方是侨军，没有粮，求战不得，十天半月，用鞭子抽他就可以了。"
+    },
+    {
+      "personId": "he-lailu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "贺赖卢",
+      "paragraphText": "六月，慕容超派公孙五楼和广宁王贺赖卢先据临朐城。听说大军到了，就留下羸老守广固，全军出来。"
+    },
+    {
+      "personId": "meng-longfu",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "孟龙符",
+      "paragraphText": "五楼驰进。龙骧将军孟龙符领骑在前，奔往争水，五楼退了。"
+    },
+    {
+      "personId": "zhang-gang",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 17,
+      "text": "张纲",
+      "paragraphText": "他正在治攻具，城上的人说：你得不到张纲，能做什么。"
+    },
+    {
+      "personId": "liu-muzhi",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "刘穆之",
+      "paragraphText": "录事参军刘穆之有经略之才，他用作谋主，一举一动都要问过。"
+    },
+    {
+      "personId": "yao-xing",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "姚兴",
+      "paragraphText": "这时后秦的姚兴派使者来传话：慕容超和我们有邻好，又来告急。我这就派铁骑十万，直取洛阳。晋军若不退，就长驱而进。"
+    }
+  ]
+}

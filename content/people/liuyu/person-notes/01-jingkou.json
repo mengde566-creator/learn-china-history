@@ -1,0 +1,213 @@
+{
+  "people": [
+    {
+      "id": "liu-jiao",
+      "name": "刘交",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "刘交是汉高帝的弟弟，封楚元王。本篇刘裕一支自称出自刘交，谱系一直数到父亲刘翘；这是当时的谱系叙述，不等于已经独立证实。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-en",
+      "name": "孙恩",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "孙恩是东晋末年在会稽起兵的海上武装首领。本篇刘裕因讨他而起家；孙恩屡败后逃回海上，后来投海而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百·孙恩传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-wuzhong",
+      "name": "孙无终",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "孙无终是冠军将军，刘裕早年在他手下任司马。本篇之后材料未再展开他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-laozhi",
+      "name": "刘牢之",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "刘牢之是北府兵的前将军、东讨统帅，把刘裕请到府中参军事。后来他在桓玄入京后失去兵权，自缢而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-jingxuan",
+      "name": "刘敬宣",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "刘敬宣是刘牢之的儿子。本篇他带轻骑接应刘裕；后来归附刘裕，官至江州刺史，最终被部下所杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十七·刘敬宣传、孟龙符传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-mi",
+      "name": "王谧",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "王谧是当时名流。本篇他替刘裕还了刁逵的三万社钱；后来桓玄篡位时他任佐命，刘裕起兵后仍保全他，并让他任录尚书事。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diao-kui",
+      "name": "刁逵",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "刁逵是豫州刺史，也是刘裕的债主。本篇刘裕欠他社钱三万，被他拘禁；他的结局本篇未交代。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-jiao",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "刘交",
+      "paragraphText": "这一支自称楚元王刘交之后——汉高帝的弟弟。谱系从刘交一路数下来二十代，数到他的父亲刘翘，是郡功曹。"
+    },
+    {
+      "personId": "sun-en",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "孙恩",
+      "paragraphText": "孙恩起兵那年，他在北府兵的系统里。孙无终的司马，一个不显眼的位子。"
+    },
+    {
+      "personId": "sun-wuzhong",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "孙无终",
+      "paragraphText": "孙恩起兵那年，他在北府兵的系统里。孙无终的司马，一个不显眼的位子。"
+    },
+    {
+      "personId": "liu-laozhi",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "刘牢之",
+      "paragraphText": "刘牢之东讨，把他请到府中参军事。十二月，牢之到吴，派他带几十个人去探贼的远近。"
+    },
+    {
+      "personId": "liu-jingxuan",
+      "beat": 2,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "刘敬宣",
+      "paragraphText": "牢之的儿子刘敬宣怕他陷在里头，带轻骑来找。援骑一到，贼退，斩获一千多人，一路推到山阴。孙恩逃回海上。"
+    },
+    {
+      "personId": "wang-mi",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "王谧",
+      "paragraphText": "王谧到刁逵那里见到了他，悄悄替他把钱还了，才放出来。王谧是名流里的人。"
+    },
+    {
+      "personId": "diao-kui",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "刁逵",
+      "paragraphText": "他早年欠过刁逵社钱三万，过了期限还不上。刁逵把他拘得很紧。"
+    }
+  ]
+}
