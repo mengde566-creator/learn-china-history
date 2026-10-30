@@ -1,0 +1,411 @@
+{
+  "people": [
+    {
+      "id": "xie-an",
+      "name": "谢安",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "谢安是谢玄的叔父，淝水战后他上奏建议趁前秦战败北进。本篇谢玄受命为前锋，随后经营黄河以南地区。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "苻坚是前秦君主，此前南征东晋，在淝水之战中失利。本篇谢玄等人趁前秦战败北进；苻坚后来被姚苌杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-shiqian",
+      "name": "桓石虔",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "桓石虔是东晋冠军将军，本篇随谢玄向涡水、颍水方向进军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-xi",
+      "name": "刘袭",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "刘袭是谢玄的参军，本篇奉命进攻前秦兖州刺史张崇，后来又夜袭桑据。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-chong",
+      "name": "张崇",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "张崇是前秦兖州刺史，本篇在鄄城遭谢玄部将刘袭攻击而退走。所取谢玄传段落没有在此交代他的后续。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-laozhi",
+      "name": "刘牢之",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "刘牢之是东晋将领，此前参与淝水战事。本篇谢玄命他守鄄城，后来又派他进据碻磝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wenren-shi",
+      "name": "闻人奭",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "闻人奭是谢玄部下的督护，本篇他提出在吕梁筑堰、立埭以利粮运的方案，谢玄予以采用。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-pi",
+      "name": "苻丕",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "苻丕是前秦君主苻坚的儿子。本篇他派桑据驻黎阳，桑据败后曾向谢玄求降；此时苻坚仍在世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sang-ju",
+      "name": "桑据",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "桑据是苻丕的部将，本篇驻黎阳时遭谢玄部将刘袭夜袭，随后退走。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-su",
+      "name": "高素",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "高素是东晋淮陵太守，本篇奉谢玄之命率三千人向广固进军，前秦青州刺史苻朗随后归降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-lang",
+      "name": "苻朗",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "苻朗是前秦青州刺史，本篇谢玄派高素向广固进军，苻朗归降东晋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ding-kuang",
+      "name": "丁匡",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "丁匡是东晋济北太守，本篇受谢玄派遣与刘牢之进据碻磝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guo-man",
+      "name": "郭满",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "郭满是东晋济阳太守，本篇受谢玄派遣进据滑台。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yan-xiong",
+      "name": "颜雄",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "颜雄是东晋奋武将军，本篇受谢玄派遣渡过黄河立营。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teng-tianzhi",
+      "name": "滕恬之",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "滕恬之是东晋晋陵太守，本篇受谢玄派遣渡河守黎阳；后来翟辽据黎阳时将他俘获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xie-an",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "谢安",
+      "paragraphText": "不久谢安上奏：苻坚丧败，应当趁这个衅会。"
+    },
+    {
+      "personId": "fu-jian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "苻坚",
+      "paragraphText": "不久谢安上奏：苻坚丧败，应当趁这个衅会。"
+    },
+    {
+      "personId": "huan-shiqian",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "桓石虔",
+      "paragraphText": "于是以玄为前锋都督，率冠军将军桓石虔直趋涡、颍，经略旧都。"
+    },
+    {
+      "personId": "liu-xi",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 11,
+      "text": "刘袭",
+      "paragraphText": "玄又率众驻彭城，遣参军刘袭攻苻坚的兖州刺史张崇于鄄城，把他赶走，使刘牢之守鄄城。"
+    },
+    {
+      "personId": "zhang-chong",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 21,
+      "text": "张崇",
+      "paragraphText": "玄又率众驻彭城，遣参军刘袭攻苻坚的兖州刺史张崇于鄄城，把他赶走，使刘牢之守鄄城。"
+    },
+    {
+      "personId": "liu-laozhi",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 33,
+      "text": "刘牢之",
+      "paragraphText": "玄又率众驻彭城，遣参军刘袭攻苻坚的兖州刺史张崇于鄄城，把他赶走，使刘牢之守鄄城。"
+    },
+    {
+      "personId": "wenren-shi",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "闻人奭",
+      "paragraphText": "他用了督护闻人奭的谋：在吕梁筑堰，树栅，立七道埭作为派，把两岸的水拦起来，以利漕运。"
+    },
+    {
+      "personId": "fu-pi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "苻丕",
+      "paragraphText": "苻坚的儿子苻丕遣将桑据屯黎阳。玄命刘袭夜袭桑据，把他赶走。"
+    },
+    {
+      "personId": "sang-ju",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "桑据",
+      "paragraphText": "苻坚的儿子苻丕遣将桑据屯黎阳。玄命刘袭夜袭桑据，把他赶走。"
+    },
+    {
+      "personId": "gao-su",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "高素",
+      "paragraphText": "遣淮陵太守高素带三千人向广固，逼降苻坚的青州刺史苻朗。"
+    },
+    {
+      "personId": "fu-lang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "苻朗",
+      "paragraphText": "遣淮陵太守高素带三千人向广固，逼降苻坚的青州刺史苻朗。"
+    },
+    {
+      "personId": "ding-kuang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 19,
+      "text": "丁匡",
+      "paragraphText": "又进伐冀州，遣龙骧将军刘牢之、济北太守丁匡据碻磝，济阳太守郭满据滑台，奋武将军颜雄渡河立营。"
+    },
+    {
+      "personId": "guo-man",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "郭满",
+      "paragraphText": "又进伐冀州，遣龙骧将军刘牢之、济北太守丁匡据碻磝，济阳太守郭满据滑台，奋武将军颜雄渡河立营。"
+    },
+    {
+      "personId": "yan-xiong",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 39,
+      "text": "颜雄",
+      "paragraphText": "又进伐冀州，遣龙骧将军刘牢之、济北太守丁匡据碻磝，济阳太守郭满据滑台，奋武将军颜雄渡河立营。"
+    },
+    {
+      "personId": "teng-tianzhi",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "滕恬之",
+      "paragraphText": "又遣晋陵太守滕恬之渡河守黎阳，三魏都降。"
+    }
+  ]
+}

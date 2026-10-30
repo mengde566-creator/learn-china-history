@@ -1,0 +1,35 @@
+{
+  "people": [
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "“齐神武”指高欢，是死后的追称；玉壁之战时他掌握东魏军政大权。本篇他率军围攻韦孝宽防守的玉壁，久攻未克，退军后不久去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-huan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "齐神武",
+      "paragraphText": "大统十二年，齐神武倾尽山东的兵众，志在西入关中。"
+    }
+  ]
+}

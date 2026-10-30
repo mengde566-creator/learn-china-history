@@ -1,0 +1,70 @@
+{
+  "people": [
+    {
+      "id": "zhu-kui",
+      "name": "竺夔",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "竺夔是刘宋青州刺史，本篇被北魏军围在东阳城，向朝廷告急；檀道济与王仲德奉命前往救援。所取檀道济传段落没有进一步交代他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-zhongde",
+      "name": "王仲德",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "王仲德又名王懿，是刘宋将领。本篇他与檀道济前往救援东阳；后来又与檀道济共同参与北伐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十六·王懿传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷46"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhu-kui",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "竺夔",
+      "paragraphText": "景平元年，北魏的兵把青州刺史竺夔围在东阳城里。"
+    },
+    {
+      "personId": "wang-zhongde",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "王仲德",
+      "paragraphText": "同去的还有王仲德。"
+    }
+  ]
+}

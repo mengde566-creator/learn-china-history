@@ -1,0 +1,438 @@
+{
+  "people": [
+    {
+      "id": "fan-zeng",
+      "name": "范增",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "范增是项羽倚重的谋士，项羽称他亚父。荥阳相持时他主张加紧攻汉；《史记》记项羽中了离间计，对他起疑并削其权，他离去后病死途中。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "local",
+              "id": "067"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "汉王是刘邦。彭城战败后他重整汉军，与项羽在荥阳、成皋一带长期对峙；后来他击败项羽，建立汉朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-ping",
+      "name": "陈平",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "陈平原为项羽部下，后来归汉成为刘邦谋士。荥阳相持时，刘邦采用他的计策离间项羽与范增；陈平后来在汉朝官至丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十六·陈丞相世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ji-xin",
+      "name": "纪信",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "纪信是汉方将领。荥阳被围时，他假扮汉王出城，为刘邦脱身争取机会；项羽发现后烧杀了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "local",
+              "id": "068"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhou-ke",
+      "name": "周苛",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "周苛是汉朝御史大夫，受刘邦命令与枞公、魏豹守荥阳。城破被俘后，他拒绝为项羽效力，被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "069"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cong-gong",
+      "name": "枞公",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "枞公是汉方守荥阳的人，与周苛共同杀了守城的魏豹；楚军攻破荥阳后，他也被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "069"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-bao",
+      "name": "魏豹",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "魏豹曾是项羽所封西魏王，后来反汉被韩信击败俘获。刘邦让他参与守荥阳，周苛、枞公认为他难以共守，将他杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "local",
+              "id": "069"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十·魏豹彭越列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷090"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peng-yue",
+      "name": "彭越",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "彭越是活跃于梁地的将领，此时多次袭扰楚军后方、切断粮道。后来他与刘邦合作，被封梁王，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "local",
+              "id": "072"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十·魏豹彭越列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷090"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-taigong",
+      "name": "刘太公",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "太公是刘邦的父亲。彭城战败后他被楚军带走，项羽曾以杀他威胁刘邦；楚汉订约后，他与刘邦家人被送还。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "local",
+              "id": "072"
+            },
+            {
+              "kind": "local",
+              "id": "079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-bo",
+      "name": "项伯",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "项伯是项羽的叔父，曾在鸿门宴前帮助刘邦。这时他劝项羽不要杀刘邦父亲，项羽听从了他的意见。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "072"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loufan",
+      "name": "楼烦",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "《史记·项羽本纪》称这位汉军善骑射者为“楼烦”，未在本段给出个人姓名。他曾射杀楚方挑战者，随后被亲自出战的项羽喝退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "073"
+            },
+            {
+              "kind": "local",
+              "id": "074"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-jia",
+      "name": "陆贾",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "陆贾是汉方使者，此时奉命向项羽请求送还刘邦的父亲，未被接受。后来他曾两次出使南越。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十七·郦生陆贾列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷097"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-gong",
+      "name": "侯公",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "侯公是汉方辩士，陆贾出使后由他再去说项羽，楚汉订约并放回刘邦家人。刘邦称他为平国君；此段只记其称谓，没有给出名字。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huai-wang",
+      "name": "楚怀王",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "楚怀王名心，是项梁等拥立的楚国君主。刘邦用他与项羽曾共同受命于怀王、约为兄弟的话回应项羽；此前怀王被尊为义帝，随后被项羽暗中命人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "local",
+              "id": "072"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fan-zeng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "范增",
+      "paragraphText": "项羽想听汉的请和。历阳侯范增说："
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "汉王",
+      "paragraphText": "汉王为此发愁，用了陈平的计，去离间项羽。"
+    },
+    {
+      "personId": "chen-ping",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 9,
+      "text": "陈平",
+      "paragraphText": "汉王为此发愁，用了陈平的计，去离间项羽。"
+    },
+    {
+      "personId": "ji-xin",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "纪信",
+      "paragraphText": "汉将纪信对汉王说："
+    },
+    {
+      "personId": "zhou-ke",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "周苛",
+      "paragraphText": "汉王留下御史大夫周苛、枞公、魏豹守荥阳。周苛和枞公商议：反国的王，难和他一起守城。于是一起杀了魏豹。"
+    },
+    {
+      "personId": "cong-gong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "枞公",
+      "paragraphText": "汉王留下御史大夫周苛、枞公、魏豹守荥阳。周苛和枞公商议：反国的王，难和他一起守城。于是一起杀了魏豹。"
+    },
+    {
+      "personId": "wei-bao",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "魏豹",
+      "paragraphText": "汉王留下御史大夫周苛、枞公、魏豹守荥阳。周苛和枞公商议：反国的王，难和他一起守城。于是一起杀了魏豹。"
+    },
+    {
+      "personId": "peng-yue",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "彭越",
+      "paragraphText": "这时候，彭越几次在梁地反，断了楚的粮食，项王为此发愁。"
+    },
+    {
+      "personId": "liu-taigong",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "太公",
+      "paragraphText": "他做了一张高俎，把太公放在上面，告诉汉王："
+    },
+    {
+      "personId": "xiang-bo",
+      "beat": 5,
+      "paragraph": 7,
+      "offset": 10,
+      "text": "项伯",
+      "paragraphText": "项王大怒，想杀太公。项伯说：天下的事还不知道归谁；再说，要争天下的人不顾家，杀了也没有好处，只会添祸。"
+    },
+    {
+      "personId": "loufan",
+      "beat": 6,
+      "paragraph": 6,
+      "offset": 19,
+      "text": "楼烦",
+      "paragraphText": "项王让壮士出去挑战。汉军里有个善骑射的楼烦，楚挑战三次，楼烦每次把他射杀。"
+    },
+    {
+      "personId": "lu-jia",
+      "beat": 8,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "陆贾",
+      "paragraphText": "汉派陆贾去说项王，请把太公放回来，项王不听。汉王又派侯公去说，项王才与汉订约："
+    },
+    {
+      "personId": "hou-gong",
+      "beat": 8,
+      "paragraph": 1,
+      "offset": 26,
+      "text": "侯公",
+      "paragraphText": "汉派陆贾去说项王，请把太公放回来，项王不听。汉王又派侯公去说，项王才与汉订约："
+    },
+    {
+      "personId": "huai-wang",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 15,
+      "text": "怀王",
+      "paragraphText": "汉王说：我和项羽一起北面受命于怀王，说「约为兄弟」——我爹就是你爹。"
+    }
+  ]
+}

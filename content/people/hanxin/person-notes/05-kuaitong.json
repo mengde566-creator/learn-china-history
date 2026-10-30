@@ -1,0 +1,163 @@
+{
+  "people": [
+    {
+      "id": "kuai-tong",
+      "name": "蒯通",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "蒯通是范阳辩士，此前曾劝韩信进攻齐国。此时他又以楚汉局势和韩信的处境为理由，劝韩信自立；韩信最终没有采纳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "local",
+              "id": "052"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-er",
+      "name": "张耳",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "张耳与陈馀曾是知交，后来决裂。井陉之战中他与韩信同属汉方，击败陈馀一方；本段是蒯通借两人的关系变化劝说韩信。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-yu",
+      "name": "陈馀",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "陈馀曾与张耳交好，后来双方争斗；井陉之战时他在赵方领兵，战败后被杀。本段中的往事由蒯通讲述。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wen-zhong",
+      "name": "文种",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "文种是春秋末年越王句践的臣子，与范蠡共同辅佐越国。蒯通借他们的遭遇劝韩信；《史记·越王句践世家》记载，文种后来受赐剑而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十一·越王句践世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷041"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-li",
+      "name": "范蠡",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "范蠡是越王句践的谋臣，曾与文种辅佐越国。越国战胜吴国后，他离开越国；《史记》记他后来到陶地经商，人称陶朱公。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十一·越王句践世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷041"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "kuai-tong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "蒯通",
+      "paragraphText": "蒯通请他单独说。韩信把左右都遣开了。"
+    },
+    {
+      "personId": "zhang-er",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "张耳",
+      "paragraphText": "蒯通拿两个人做例子：常山王张耳和成安君陈余，还是布衣的时候，是刎颈之交；后来为张黡、陈泽的事争执，两个人结了怨。"
+    },
+    {
+      "personId": "chen-yu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "陈余",
+      "paragraphText": "蒯通拿两个人做例子：常山王张耳和成安君陈余，还是布衣的时候，是刎颈之交；后来为张黡、陈泽的事争执，两个人结了怨。"
+    },
+    {
+      "personId": "wen-zhong",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "大夫种",
+      "paragraphText": "他又举两个人：大夫种、范蠡，存了将亡的越，让句践称霸；功立了，名成了，人是死的死、亡的亡。"
+    },
+    {
+      "personId": "fan-li",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "范蠡",
+      "paragraphText": "他又举两个人：大夫种、范蠡，存了将亡的越，让句践称霸；功立了，名成了，人是死的死、亡的亡。"
+    }
+  ]
+}

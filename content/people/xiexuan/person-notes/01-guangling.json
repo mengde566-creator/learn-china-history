@@ -1,0 +1,259 @@
+{
+  "people": [
+    {
+      "id": "xie-lang",
+      "name": "谢朗",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "谢朗是谢玄的堂兄，两人年少时都受叔父谢安器重。《晋书》另记他善于谈论，后来做到东阳太守，任内去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十九·谢朗传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-an",
+      "name": "谢安",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "谢安是谢玄的叔父，东晋朝廷的重要大臣。谢玄年少时受他器重，本篇他又向朝廷举荐谢玄镇守北方；后来前秦南下，谢安在朝中筹划应对，谢玄等军在淝水击败前秦军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十九·谢安传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-xun",
+      "name": "王珣",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "王珣与谢玄都曾受桓温征辟，在桓温府中任职。他是东晋大臣王导的孙子，后来历任尚书仆射等职，参与朝政。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十五·王珣传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷065"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-wen",
+      "name": "桓温",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "桓温是东晋掌握军政大权的将领，曾北伐中原。他征辟谢玄与王珣，并礼重二人；后来桓温去世，他的弟弟桓豁接任征西将军，谢玄又在桓豁府中任职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷九十八·桓温传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷098"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-huo",
+      "name": "桓豁",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "桓豁是桓温的弟弟，曾镇守荆州。桓温死后，他任征西将军，谢玄在他府中担任司马；面对前秦攻势，他也曾派兵声援北方守军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十四·桓豁传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷074"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "苻坚是前秦君主，势力扩展到北方大部，成为东晋的主要对手。谢安举荐谢玄时，前秦的边境攻势已使晋朝忧虑；后来苻坚南下，在淝水之战中失利，前秦也随之陷入动荡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xi-chao",
+      "name": "郗超",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "郗超是东晋官员，曾为桓温谋划军事和政治事务，与谢氏之间也有嫌隙。本篇他虽然与谢玄不和，仍称赞谢安的举荐，并以曾同在桓温府中所见说明自己的判断。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十七·郗超传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷067"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xie-lang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "谢朗",
+      "paragraphText": "玄字幼度。少年聪颖，与从兄谢朗都被叔父谢安器重。"
+    },
+    {
+      "personId": "xie-an",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "谢安",
+      "paragraphText": "玄字幼度。少年聪颖，与从兄谢朗都被叔父谢安器重。"
+    },
+    {
+      "personId": "wang-xun",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "王珣",
+      "paragraphText": "后来与王珣同被桓温辟为掾，桓温待他们都很礼重。转任征西将军桓豁的司马、领南郡相、监北征诸军事。"
+    },
+    {
+      "personId": "huan-wen",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "桓温",
+      "paragraphText": "后来与王珣同被桓温辟为掾，桓温待他们都很礼重。转任征西将军桓豁的司马、领南郡相、监北征诸军事。"
+    },
+    {
+      "personId": "huan-huo",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "桓豁",
+      "paragraphText": "后来与王珣同被桓温辟为掾，桓温待他们都很礼重。转任征西将军桓豁的司马、领南郡相、监北征诸军事。"
+    },
+    {
+      "personId": "fu-jian",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "苻坚",
+      "paragraphText": "那时苻坚强盛，边境屡屡被侵寇。朝廷要找一个能镇御北方的文武良将。"
+    },
+    {
+      "personId": "xi-chao",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "郗超",
+      "paragraphText": "中书郎郗超素来与他不和，听说这件事，叹道："
+    },
+    {
+      "personId": "huan-wen",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "桓公",
+      "paragraphText": "「我曾经和玄同在桓公府里，看他用人的本事，即使是履屐这类小事，也能把人放到合适的位置上。所以我知道。」"
+    }
+  ]
+}

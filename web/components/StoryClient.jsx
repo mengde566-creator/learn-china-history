@@ -11,6 +11,7 @@ import ReviewCards from '@/components/ReviewCards'
 import SourceText from '@/components/SourceText'
 import { hasMixedSourceLayers, sourceExcerptOrigin } from '@/lib/source-layers.mjs'
 import { evidenceExcerpt } from '@/lib/evidence.mjs'
+import { personVersion } from '@/lib/person-notes.mjs'
 
 /* 界面上只放短标签。长说明在图例里出现一次就够——
    原来每个标记都重复一遍「出自原文，可逐字核对」，纯属噪音。 */
@@ -117,6 +118,9 @@ export default function StoryClient({ person, story, source }) {
   }, [])
 
   const [tab, setTab] = useState('evidence')
+  const [personVisit, setPersonVisit] = useState(null)
+  const [personTarget, setPersonTarget] = useState(null)
+  const [personCitationReturn, setPersonCitationReturn] = useState(null)
   /* 引用跳转之前在哪——原文那一段上给一个「返回」 */
   const [cameFrom, setCameFrom] = useState(null)
   const sourceReturnCleanup = useRef(null)
@@ -218,6 +222,7 @@ export default function StoryClient({ person, story, source }) {
   const restart = () => {
     resetStory(person.id, story.id)
     setRevealed(1); setAfterVisible(false); setFollowing(1); setPanelOpen(false); setCameFrom(null)
+    setPersonVisit(null); setPersonTarget(null); setPersonCitationReturn(null)
     restoring.current = true
     setPhase('opening'); window.scrollTo({ top: 0, behavior: 'instant' })
   }
@@ -239,6 +244,8 @@ export default function StoryClient({ person, story, source }) {
     setPanelOpen(true)
   }
   const closePanel = () => {
+    if (personCitationReturn) { returnFromPersonCitation(); return }
+    if (personVisit) { returnFromPerson(); return }
     if (cameFrom?.entrance) { backFromSource(); return }
     // 看过后续正文再关闭，留在当前阅读处，不把人拉回最初打开查证的地方。
     if (widePanel && panelScrolled.current && !cameFrom) {
@@ -258,6 +265,60 @@ export default function StoryClient({ person, story, source }) {
       if (focus?.isConnected) focus.focus({ preventScroll: true })
     })
   }
+  const openPerson = (event, mark) => {
+    const trigger = event.currentTarget
+    if (!personVisit) {
+      setPersonVisit({ tab, panelOpen, panelBeat, trigger: panelTrigger.current, anchor: panelReturn.current,
+        scroll: document.querySelector('.panel-face')?.scrollTop || 0, focus: trigger,
+        focusTop: trigger.getBoundingClientRect().top })
+    }
+    setPersonTarget({ id: mark.personId, beat: mark.beat, paragraph: mark.paragraph })
+    panelTrigger.current = trigger
+    panelReturn.current = { el: trigger, top: trigger.getBoundingClientRect().top }
+    panelScrolled.current = false
+    setPanelBeat(mark.beat)
+    setPanelOpen(true)
+    setTab('present')
+    requestAnimationFrame(() => {
+      const el = document.getElementById(`story-person-${mark.personId}`)
+      const box = el?.closest('.panel-face')
+      if (box && el) box.scrollTop += el.getBoundingClientRect().top - box.getBoundingClientRect().top - 12
+    })
+  }
+  function returnFromPerson() {
+    if (!personVisit) return
+    const saved = personVisit
+    restoring.current = true
+    setPersonVisit(null); setPersonTarget(null); setPersonCitationReturn(null); setTab(saved.tab); setPanelBeat(saved.panelBeat)
+    panelTrigger.current = saved.trigger
+    panelReturn.current = saved.anchor
+    setPanelOpen(saved.panelOpen)
+    requestAnimationFrame(() => {
+      const box = document.querySelector('.panel-face')
+      if (saved.panelOpen && box) box.scrollTop = saved.scroll
+      if (saved.focus?.isConnected) {
+        window.scrollBy({ top: saved.focus.getBoundingClientRect().top - saved.focusTop, behavior: 'instant' })
+        saved.focus.focus({ preventScroll: true })
+      }
+      requestAnimationFrame(() => { restoring.current = false })
+    })
+  }
+  function returnFromPersonCitation() {
+    if (!personCitationReturn) return
+    const saved = personCitationReturn
+    setPersonCitationReturn(null)
+    setTab('present')
+    requestAnimationFrame(() => {
+      const entry = document.getElementById(`story-person-${saved.personId}`)
+      const details = entry?.querySelector('details')
+      if (details) details.open = true
+      const box = entry?.closest('.panel-face')
+      if (box) box.scrollTop = saved.scroll
+      const focus = [...(entry?.querySelectorAll('.person-note-text button.cite') || [])]
+        .find(button => button.textContent.trim() === saved.id)
+      focus?.focus({ preventScroll: true })
+    })
+  }
   closePanelRef.current = closePanel
   useEffect(() => {
     if (!panelOpen) return
@@ -272,7 +333,10 @@ export default function StoryClient({ person, story, source }) {
     sourceReturnCleanup.current?.()
     const active = document.activeElement
     const cites = [...document.querySelectorAll('.opening-notes button.cite')]
-    setCameFrom((prev) => prev ?? {
+    if (personVisit && tab === 'present') {
+      setPersonCitationReturn({ id, personId: active?.closest('[id^="story-person-"]')?.id.slice('story-person-'.length),
+        scroll: document.querySelector('.panel-face')?.scrollTop || 0 })
+    } else setCameFrom((prev) => prev ?? {
       tab, beat: following, entrance: phase !== 'live', scrollY: window.scrollY,
       panelWasOpen: panelOpen,
       panelScrollTop: document.querySelector('.panel-face')?.scrollTop || 0,
@@ -298,7 +362,7 @@ export default function StoryClient({ person, story, source }) {
       el.focus({ preventScroll: true })
       setTimeout(() => el.classList.remove('flash'), 1600)
     })
-  }, [tab, following, phase, panelOpen])
+  }, [tab, following, phase, panelOpen, personVisit])
 
   const scrollToBeat = useCallback((n) => {
     const el = document.getElementById(`beat-${n}`)
@@ -408,7 +472,7 @@ export default function StoryClient({ person, story, source }) {
   }, [cameFrom])
 
   useEffect(() => {
-    if (phase !== 'live' || cameFrom || (panelOpen && !widePanel)) return
+    if (phase !== 'live' || cameFrom || personVisit || (panelOpen && !widePanel)) return
     const els = [...document.querySelectorAll('.beat[data-n]')]
     if (!els.length) return
     let frame = 0
@@ -443,7 +507,7 @@ export default function StoryClient({ person, story, source }) {
       window.removeEventListener('scroll', schedule)
       window.removeEventListener('resize', schedule)
     }
-  }, [phase, panelOpen, cameFrom, widePanel])
+  }, [phase, panelOpen, cameFrom, personVisit, widePanel])
 
   /* 时间地点戳：铺陈代码块的第一行就是它 */
   const stamp = story.intro.lines[0]?.text || story.time || ''
@@ -536,7 +600,29 @@ export default function StoryClient({ person, story, source }) {
   /* 在场人物来自故事文件（`## 在场人物` 一节），不在组件里写死——
      写死的话换个故事就全错了。 */
   const presentHere = story.present.filter((p) => p.here)
-  const presentAway = story.present.filter((p) => !p.here)
+  const presentNames = new Set(story.present.map(p => p.name))
+  const supplementalPeople = (story.personNotes?.people || []).filter(p => !presentNames.has(p.name) &&
+    personVersion(p, personTarget?.beat ?? following, personTarget?.paragraph ?? null))
+    .map(p => ({ name: p.name, state: '相关人物' }))
+  const presentAway = [...story.present.filter((p) => !p.here), ...supplementalPeople]
+  const personEntry = (p, away = false) => {
+    const item = story.personNotes?.people?.find(x => x.name === p.name)
+    const version = personVersion(item, personTarget?.beat ?? following, personTarget?.paragraph ?? null)
+    return (
+      <div key={p.name} id={item ? `story-person-${item.id}` : undefined} data-person-current={item?.id === personTarget?.id}>
+        <div className={`person${away ? ' away' : ''}`}>
+          <span className="dot" /><span className="n">{p.name}</span>
+          <span className="r">{away ? p.state.replace(/^不在场[（(]?/, '').replace(/[）)]$/, '') : p.role}</span>
+        </div>
+        {version && <div className="person-note-text">
+          <p>{version.text}</p>
+          <details><summary>出处</summary>{version.sources.map((ref, i) => ref.kind === 'local'
+            ? <p key={i}><CiteText text={ref.id} ids={sourceIds} onJump={jumpToSource} /></p>
+            : <p key={i}><a href={ref.url} target="_blank" rel="noreferrer">{ref.book}·{ref.section}</a></p>)}</details>
+        </div>}
+      </div>
+    )
+  }
 
   const sourcePanel = (
           <aside className="panel reader-panel" id="source-panel" hidden={!panelOpen} aria-label="史料查阅">
@@ -636,8 +722,8 @@ export default function StoryClient({ person, story, source }) {
                       <span className="src">{s.id}</span>
                       {person.supplementalSourceIds?.includes(s.id) && <span className="tag">补充参照</span>}
                       {/* **返回**：从依据点编号跳过来的人，要能一步回到刚才读的地方 */}
-                      {cameFrom && (
-                        <button type="button" className="cite back" onClick={backFromSource}>← 返回</button>
+                      {(personCitationReturn || cameFrom) && (
+                        <button type="button" className="cite back" onClick={personCitationReturn ? returnFromPersonCitation : backFromSource}>← 返回</button>
                       )}
                     </div>
                     <div className="quote"><SourceText source={s} /></div>
@@ -712,24 +798,16 @@ export default function StoryClient({ person, story, source }) {
 
               {tab === 'present' && (
                 <div className="panel-face anim-fade">
+                  {personVisit && <button type="button" className="person-note-return" onClick={returnFromPerson}>← {personVisit.panelOpen ? `回到刚才的${TABS.find(t => t.k === personVisit.tab)?.label || '查证'}` : '返回正文'}</button>}
                   <h3>此 刻 在 场</h3>
-                  {presentHere.map((p) => (
-                    <div key={p.name} className="person">
-                      <span className="dot" /><span className="n">{p.name}</span><span className="r">{p.role}</span>
-                    </div>
-                  ))}
+                  {presentHere.map((p) => personEntry(p))}
 
                   {presentAway.length > 0 && (
                     <>
                       <h4 style={{ marginTop: 24, fontSize: 11, letterSpacing: '.24em', color: 'var(--su-dim)', fontWeight: 400, marginBottom: 12 }}>
                         其 他 相 关 人 物
                       </h4>
-                      {presentAway.map((p) => (
-                        <div key={p.name} className="person away">
-                          <span className="dot" /><span className="n">{p.name}</span>
-                          <span className="r">{p.state.replace(/^不在场[（(]?/, '').replace(/[）)]$/, '')}</span>
-                        </div>
-                      ))}
+                      {presentAway.map((p) => personEntry(p, true))}
                     </>
                   )}
                 </div>
@@ -779,7 +857,16 @@ export default function StoryClient({ person, story, source }) {
                           )
                         }
                         if (glossAt.has(i)) return null
-                        return <p key={i}>{p}</p>
+                        const marks = (story.personNotes?.occurrences || []).filter(m => m.beat === b.n && m.paragraph === i).sort((a, z) => a.offset - z.offset)
+                        if (!marks.length) return <p key={i}>{p}</p>
+                        const parts = []; let cursor = 0
+                        for (const mark of marks) {
+                          parts.push(p.slice(cursor, mark.offset))
+                          parts.push(<button type="button" key={`${mark.personId}-${mark.offset}`} className="person-name-trigger" aria-controls="source-panel" aria-expanded={Boolean(personVisit && tab === 'present' && personTarget?.id === mark.personId)} onClick={event => openPerson(event, mark)}>{mark.text}</button>)
+                          cursor = mark.offset + mark.text.length
+                        }
+                        parts.push(p.slice(cursor))
+                        return <p key={i}>{parts}</p>
                       })}
                     </div>
 

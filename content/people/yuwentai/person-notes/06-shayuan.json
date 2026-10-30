@@ -1,0 +1,206 @@
+{
+  "people": [
+    {
+      "id": "yu-jin",
+      "name": "于谨",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "于谨是西魏的重要将领，本篇为前锋开路，参与攻弘农和沙苑合战。后来他位至柱国、大司徒，并在 554 年率军攻破江陵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-huibo",
+      "name": "李徽伯",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "李徽伯是东魏的陕州刺史，守弘农。宇文泰冒雨攻城，城破后他被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "高欢是东魏执政者。本篇他率大军渡河西进，在沙苑战败，夜里撤走；《北齐书》记他骑骆驼候船渡河。后来他仍多次西征，546 年攻玉壁不下，次年去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "060"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-pi",
+      "name": "王罴",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "王罴是西魏华州刺史。高欢军逼近华州时，他严守城池，东军知不可攻，转向别处。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-bi",
+      "name": "李弼",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "李弼是西魏将领。沙苑之战前，他建议避开平地、移阵渭曲；战中率右军以铁骑横击，把东魏军截为两部。后来他位至柱国、太师，封赵国公。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gui",
+      "name": "赵贵",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "赵贵是西魏将领，沙苑之战任左军主将。后来他位列八柱国，任大司寇，封南阳郡公。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "071"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·赵贵传及八柱国附记",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yu-jin",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "于谨",
+      "paragraphText": "宇文泰派于谨在前开路，攻下据点。大军来到弘农时，东魏守将仍在城里抵抗。"
+    },
+    {
+      "personId": "li-huibo",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 24,
+      "text": "李徽伯",
+      "paragraphText": "接连下雨，宇文泰命军队冒雨攻城。弘农被攻破，守将李徽伯被杀，另一名将领出逃后被追获。城中的兵马，也落到西军手里。"
+    },
+    {
+      "personId": "gao-huan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高欢",
+      "paragraphText": "高欢率军向西渡河，宇文泰得知消息，带兵回关中。高欢军逼近华州，王罴严守，东军转向别处。"
+    },
+    {
+      "personId": "wang-pi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 31,
+      "text": "王罴",
+      "paragraphText": "高欢率军向西渡河，宇文泰得知消息，带兵回关中。高欢军逼近华州，王罴严守，东军转向别处。"
+    },
+    {
+      "personId": "li-bi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "李弼",
+      "paragraphText": "到沙苑，高欢军已在近处。李弼认为，对方人多，不能选平坦地方硬列阵，建议移到东边十里的渭水弯曲处。"
+    },
+    {
+      "personId": "zhao-gui",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 21,
+      "text": "赵贵",
+      "paragraphText": "宇文泰采纳建议。西军背水列阵，李弼领右军，赵贵领左军。宇文泰命士兵伏在芦苇中，等鼓声再起。"
+    }
+  ]
+}

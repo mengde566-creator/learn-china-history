@@ -1,0 +1,248 @@
+{
+  "people": [
+    {
+      "id": "zhang-han",
+      "name": "章邯",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "章邯是秦朝将领，曾率秦军镇压起兵的诸侯。本篇中他与项羽相持，又因朝廷责难而顾虑重重；后来他与项羽订约，受封雍王，最终在废丘被汉军围困后自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-ershi",
+      "name": "秦二世",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "秦二世名胡亥，是秦始皇之子，继位后的秦朝皇帝。此时各地反秦战争不断，他派人责备章邯；后来赵高迫使他自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷六·秦始皇本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-xin",
+      "name": "司马欣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "长史欣即司马欣，是章邯身边的长史。他前往咸阳请示，因赵高不见而逃回军中；章邯归附项羽后，他被任为上将军，率秦军先行。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gao",
+      "name": "赵高",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "赵高是秦二世朝廷中掌权的官员。章邯派长史欣请示时，他拒而不见并派人追赶；后来他迫使秦二世自杀，另立子婴，随即又被子婴杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷六·秦始皇本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-yu",
+      "name": "陈馀",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "陈馀是反秦的赵方将领，曾与张耳是知交。本篇中他写信劝章邯离秦；后来他与张耳反目，在井陉之战中被韩信、张耳一方击败并被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pu-general",
+      "name": "蒲将军",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "蒲将军是项羽麾下将领。《史记·项羽本纪》记他渡过三户击败秦军，并参与项羽对投降秦军的商议；本段未交代他的姓名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ying-bu",
+      "name": "黥布",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "黥布是项羽麾下将领，曾参与击杀秦降卒的商议。后来项羽分封诸侯，他受封九江王；楚汉战争中他归汉，随后又反汉，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十一·黥布列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷091"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shi-cheng",
+      "name": "始成",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "始成是章邯派往项羽处议约的人；《史记·项羽本纪》在此称他“候始成”，本篇材料没有进一步交代他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhang-han",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "章邯",
+      "paragraphText": "章邯驻在棘原，项籍驻在漳南，两军相持，还没有交战。"
+    },
+    {
+      "personId": "qin-ershi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "二世",
+      "paragraphText": "秦军几次退却，二世派人来责备章邯。章邯害怕，派长史欣去请示。"
+    },
+    {
+      "personId": "sima-xin",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 23,
+      "text": "长史欣",
+      "paragraphText": "秦军几次退却，二世派人来责备章邯。章邯害怕，派长史欣去请示。"
+    },
+    {
+      "personId": "zhao-gao",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "赵高",
+      "paragraphText": "长史欣到了咸阳，在司马门留了三天，赵高不见他。赵高对他有不信之心。"
+    },
+    {
+      "personId": "chen-yu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "陈馀",
+      "paragraphText": "陈馀也送了一封信给章邯："
+    },
+    {
+      "personId": "pu-general",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 32,
+      "text": "蒲将军",
+      "paragraphText": "章邯狐疑不定，暗中派候始成去见项籍，想订约。约还没有订成，项籍派蒲将军日夜引兵渡过三户，驻在漳南，与秦军交战，又破了秦军。"
+    },
+    {
+      "personId": "ying-bu",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "黥布",
+      "paragraphText": "项籍于是召黥布、蒲将军商量："
+    },
+    {
+      "personId": "shi-cheng",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "候始成",
+      "paragraphText": "章邯狐疑不定，暗中派候始成去见项籍，想订约。约还没有订成，项籍派蒲将军日夜引兵渡过三户，驻在漳南，与秦军交战，又破了秦军。"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "people": [
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "这里的“神武”是高欢死后的追称；围攻玉壁时，他掌握东魏军政大权。本篇东魏军撤退，他后来去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-baoju",
+      "name": "元宝炬",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "魏文帝即元宝炬，是当时的西魏皇帝。本篇他派长孙绍远、王悦慰劳守玉壁的韦孝宽，并授官进爵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhangsun-shaoyuan",
+      "name": "长孙绍远",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "长孙绍远是西魏殿中尚书，本篇奉魏文帝之命，与王悦到玉壁慰问韦孝宽。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-yue",
+      "name": "王悦",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "王悦是西魏左丞，本篇与长孙绍远一起奉命到玉壁慰劳韦孝宽。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-huan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "神武",
+      "paragraphText": "神武在玉壁城下苦战六旬。"
+    },
+    {
+      "personId": "yuan-baoju",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "魏文帝",
+      "paragraphText": "魏文帝嘉奖孝宽的功劳。"
+    },
+    {
+      "personId": "zhangsun-shaoyuan",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "长孙绍远",
+      "paragraphText": "派殿中尚书长孙绍远、左丞王悦到玉壁劳问。"
+    },
+    {
+      "personId": "wang-yue",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "王悦",
+      "paragraphText": "派殿中尚书长孙绍远、左丞王悦到玉壁劳问。"
+    }
+  ]
+}

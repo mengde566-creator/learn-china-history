@@ -1,0 +1,228 @@
+{
+  "people": [
+    {
+      "id": "xu-xianzhi",
+      "name": "徐羡之",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "徐羡之是刘宋重臣，参与废黜庐陵王刘义真、废立少帝刘义符。后来刘义隆即位，追究废立之事，徐羡之自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·徐羡之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yizhen",
+      "name": "刘义真",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "刘义真是刘裕的儿子，封庐陵王。本篇徐羡之等准备废黜他，檀道济曾表示反对；刘义真后来被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷六十一·庐陵王义真传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷61"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yifu",
+      "name": "刘义符",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "这里将被废的皇帝是刘义符，即刘宋少帝，刘裕之子。徐羡之、谢晦等废掉他，后来他被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四·少帝纪",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-hui",
+      "name": "谢晦",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "谢晦是刘宋重臣，参与废立少帝，曾与檀道济同处领军府。后来刘义隆追究废立，谢晦在荆州举兵，檀道济奉命讨伐；谢晦兵败后被捕杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十四·谢晦传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷44"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yilong",
+      "name": "刘义隆",
+      "versions": [
+        {
+          "from": 5,
+          "to": 9,
+          "text": "“太祖”是刘裕之子刘义隆死后的庙号。少帝被废后，他从江陵赴京继位；在他到达之前，檀道济入守朝堂。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷五·文帝纪",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dao-yanzhi",
+      "name": "到彦之",
+      "versions": [
+        {
+          "from": 7,
+          "to": 9,
+          "text": "到彦之是刘宋将领，本篇先率军讨谢晦，战败后退守隐圻，檀道济随后到达。后来他又奉命北伐，檀道济也参与救援滑台。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·檀道济传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xu-xianzhi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "徐羡之",
+      "paragraphText": "徐羡之准备废掉庐陵王义真。"
+    },
+    {
+      "personId": "liu-yizhen",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "义真",
+      "paragraphText": "徐羡之准备废掉庐陵王义真。"
+    },
+    {
+      "personId": "liu-yifu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "皇帝",
+      "paragraphText": "要废皇帝的那一夜，他进了领军府，在谢晦那里睡。"
+    },
+    {
+      "personId": "xie-hui",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "谢晦",
+      "paragraphText": "要废皇帝的那一夜，他进了领军府，在谢晦那里睡。"
+    },
+    {
+      "personId": "liu-yilong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太祖",
+      "paragraphText": "太祖还没有到京城。"
+    },
+    {
+      "personId": "dao-yanzhi",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "到彦之",
+      "paragraphText": "到讨谢晦的时候，他带兵接在到彦之后面。"
+    }
+  ]
+}

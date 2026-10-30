@@ -1,0 +1,229 @@
+{
+  "people": [
+    {
+      "id": "liu-yu",
+      "name": "刘裕",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "“高祖”是《宋书》对刘裕的庙号追称。故事发生时，他在京口举兵讨伐桓玄，檀道济随他入京。后来刘裕掌握东晋政权，北伐南燕和后秦，最终代晋建立宋朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷一·武帝纪上",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-xun",
+      "name": "卢循",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "卢循是孙恩的妹夫，孙恩死后被余众推为首领，后来占据广州，获得晋朝授予的广州刺史之职。刘裕北伐南燕期间，他与徐道覆率军北上；败后转攻交州，又被击败，《晋书》记他投水而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百·卢循传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-daogui",
+      "name": "刘道规",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "刘道规是刘裕的弟弟，曾与兄长谋划讨桓玄。此时他主持荆州军政，檀道济随他抵御桓谦、荀林及徐道覆。后来他在病中去世；刘裕建立宋朝后追封他为临川王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷五十一·刘道规传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷51"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-zhen",
+      "name": "桓振",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "桓振是桓玄的侄子，桓玄败死后曾与桓谦重新占据江陵。《宋书·檀道济传》记檀道济曾擒桓振；同书《刘怀肃传》又记桓振后来再袭江陵时，被刘怀肃临阵斩杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十七·刘怀肃传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-qian",
+      "name": "桓谦",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "桓谦是桓玄一方的将领。桓玄败后，他曾与桓振占据江陵；后来又从长安入蜀，联同荀林进攻刘道规所守的江陵。刘道规率军击败他，桓谦逃走时被追杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷五十一·刘道规传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷51"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xun-lin",
+      "name": "荀林",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "荀林是卢循一方的将领。卢循军逼近建康时，荀林击败刘道规派出的援军，随后与桓谦从不同方向逼近江陵。刘道规击败桓谦后，荀林撤退，被刘遵追杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷五十一·刘道规传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷51"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guo-jisheng",
+      "name": "郭寄生",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "郭寄生是在卢循战事期间聚众作唐的人。檀道济受任为天门太守、扬武将军，前去讨平；《宋书·檀道济传》此处没有进一步交代郭寄生的身世和结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-yu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高祖",
+      "paragraphText": "高祖在京口创义，檀道济跟着进了京城。"
+    },
+    {
+      "personId": "lu-xun",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "卢循",
+      "paragraphText": "卢循作乱，各处盗贼一起起来。郭寄生等聚在作唐。"
+    },
+    {
+      "personId": "liu-daogui",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "刘道规",
+      "paragraphText": "他又跟刘道规讨桓谦、荀林这些人。"
+    },
+    {
+      "personId": "huan-zhen",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "桓振",
+      "paragraphText": "又擒了桓振。"
+    },
+    {
+      "personId": "huan-qian",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "桓谦",
+      "paragraphText": "他又跟刘道规讨桓谦、荀林这些人。"
+    },
+    {
+      "personId": "xun-lin",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "荀林",
+      "paragraphText": "他又跟刘道规讨桓谦、荀林这些人。"
+    },
+    {
+      "personId": "guo-jisheng",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "郭寄生",
+      "paragraphText": "卢循作乱，各处盗贼一起起来。郭寄生等聚在作唐。"
+    }
+  ]
+}

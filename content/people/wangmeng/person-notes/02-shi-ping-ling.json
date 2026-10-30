@@ -1,0 +1,303 @@
+{
+  "people": [
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "苻坚是前秦皇族，本篇与吕婆楼等人参与废杀苻生，随后称大秦天王。他启用王猛治理始平，在王猛受控告后亲自询问并赦免；后来王猛成为其重要辅臣，领军平定前燕。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-sheng",
+      "name": "苻生",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "苻生是前秦统治者、苻坚的堂兄。《晋书》记苻坚等人潜入宫中，将他废为越王，不久杀害；本篇的政权更替由此展开。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十二·苻生载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷112"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-polou",
+      "name": "吕婆楼",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "吕婆楼此前奉苻坚之命招引王猛。本篇他随苻坚参与废杀苻生，苻坚即位后任司隶校尉，王猛则与薛赞等人进入朝廷。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liang-pinglao",
+      "name": "梁平老",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "梁平老是前秦官员，本篇他与强汪等人率壮士潜入云龙门，参与废杀苻生。所取载记段落没有在此交代他的后续经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiang-wang",
+      "name": "强汪",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "强汪是前秦官员，本篇与梁平老等人参与废杀苻生；此前他与王猛、吕婆楼等人已处在苻坚周围。所取材料没有在此交代他的后续经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xue-zan",
+      "name": "薛赞",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "薛赞是前秦官员，苻坚称天王后，他与王猛同任中书侍郎，并与权翼共同掌管机密。所取记载在这里没有进一步交代他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quan-yi",
+      "name": "权翼",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "权翼是前秦官员，苻坚即位后与王猛、薛赞一同掌管机密。后来在王猛与樊世发生冲突后，他曾劝苻坚避免用轻慢言语对待臣下。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-long",
+      "name": "董龙",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "董龙即董荣，董龙是他的小字。他曾受苻生宠信；苻坚即位后，他与赵韶等人被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十二·苻生载记附王堕",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷112"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-shao",
+      "name": "赵韶",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "赵韶是苻生的宠臣。本篇苻坚即位后，赵韶与董龙等二十余人被杀；《晋书·苻生载记》还记他与董荣遭雷弱儿当朝斥责，随后诬陷雷弱儿。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十二·苻生载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷112"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fu-jian",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 25,
+      "text": "苻坚",
+      "paragraphText": "于是与特进梁平老、强汪等率壮士数百人，潜入云龙门。苻坚与吕婆楼率麾下三百余人，鼓噪继进。"
+    },
+    {
+      "personId": "fu-sheng",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "苻生",
+      "paragraphText": "苻生还在昏睡，没有醒。"
+    },
+    {
+      "personId": "lv-polou",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 28,
+      "text": "吕婆楼",
+      "paragraphText": "于是与特进梁平老、强汪等率壮士数百人，潜入云龙门。苻坚与吕婆楼率麾下三百余人，鼓噪继进。"
+    },
+    {
+      "personId": "liang-pinglao",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "梁平老",
+      "paragraphText": "于是与特进梁平老、强汪等率壮士数百人，潜入云龙门。苻坚与吕婆楼率麾下三百余人，鼓噪继进。"
+    },
+    {
+      "personId": "qiang-wang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "强汪",
+      "paragraphText": "于是与特进梁平老、强汪等率壮士数百人，潜入云龙门。苻坚与吕婆楼率麾下三百余人，鼓噪继进。"
+    },
+    {
+      "personId": "xue-zan",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 12,
+      "text": "薛赞",
+      "paragraphText": "吕婆楼做司隶校尉；王猛、薛赞做中书侍郎；权翼做给事黄门侍郎，与猛、赞同掌机密。"
+    },
+    {
+      "personId": "quan-yi",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 20,
+      "text": "权翼",
+      "paragraphText": "吕婆楼做司隶校尉；王猛、薛赞做中书侍郎；权翼做给事黄门侍郎，与猛、赞同掌机密。"
+    },
+    {
+      "personId": "dong-long",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "董龙",
+      "paragraphText": "诛苻生的幸臣董龙、赵韶等二十余人，赦境内，改元永兴。"
+    },
+    {
+      "personId": "zhao-shao",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "赵韶",
+      "paragraphText": "诛苻生的幸臣董龙、赵韶等二十余人，赦境内，改元永兴。"
+    }
+  ]
+}

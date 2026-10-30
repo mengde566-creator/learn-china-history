@@ -1,0 +1,149 @@
+{
+  "people": [
+    {
+      "id": "yizhan-juan",
+      "name": "乙旃眷",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "乙旃眷是北魏安平公，本篇在寿张与北伐的檀道济军相遇，所部被王仲德、段宏等击败。所取材料未在此交代他后来的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-zhongde",
+      "name": "王仲德",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "王仲德又名王懿，是刘宋将领，此前与檀道济共同救援东阳。本篇他任宁朔将军，与段宏随檀道济作战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十六·王懿传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷46"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duan-hong",
+      "name": "段宏",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "段宏是刘宋骁骑将军，本篇随檀道济北上，与王仲德交战，又与沈虔之等人在高梁亭击斩悉颊库结。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "local",
+              "id": "060"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xijia-kujie",
+      "name": "悉颊库结",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "悉颊库结是北魏宁南将军、济州刺史，封寿昌公。本篇他在高梁亭前后与檀道济军交战，被段宏、沈虔之等击斩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "060"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shen-qianzhi",
+      "name": "沈虔之",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "沈虔之是刘宋台队主，本篇与段宏等人奉檀道济之命出兵，在高梁亭击斩悉颊库结。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "060"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yizhan-juan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "乙旃眷",
+      "paragraphText": "军到东平寿张县，正遇上虏的安平公乙旃眷。"
+    },
+    {
+      "personId": "wang-zhongde",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "王仲德",
+      "paragraphText": "他带着宁朔将军王仲德、骁骑将军段宏奋力击之，大破其军。"
+    },
+    {
+      "personId": "duan-hong",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "段宏",
+      "paragraphText": "他带着宁朔将军王仲德、骁骑将军段宏奋力击之，大破其军。"
+    },
+    {
+      "personId": "xijia-kujie",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 14,
+      "text": "悉颊库结",
+      "paragraphText": "虏的宁南将军、济州刺史寿昌公悉颊库结前后邀战。"
+    },
+    {
+      "personId": "shen-qianzhi",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "沈虔之",
+      "paragraphText": "他分遣段宏和台队主沈虔之等出奇兵打，当场斩了悉颊库结。"
+    }
+  ]
+}

@@ -1,0 +1,911 @@
+{
+  "people": [
+    {
+      "id": "liu-yan",
+      "name": "刘演",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "刘演是晋朝北中郎将，曾在谯郡一带抵抗石勒。他任命张平、樊雅担任地方官，两人当时都是流人坞主。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-ping",
+      "name": "张平",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "张平是谯地聚众自守的流人坞主，刘演任命他为豫州刺史，董瞻、于武、谢浮等部属归他统辖。后来谢浮受祖逖诱使，约他会面并将他杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-ya",
+      "name": "樊雅",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "樊雅是谯地的流人坞主，刘演任命他为谯郡太守。他与祖逖交战，曾派人夜袭祖逖营垒；祖逖后来攻克谯城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-fu",
+      "name": "谢浮",
+      "versions": [
+        {
+          "from": 1,
+          "to": 2,
+          "text": "谢浮是张平统辖的部众首领之一。祖逖诱使他对付张平，他以会面为由骗来张平，将其杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-chuan",
+      "name": "陈川",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "陈川是蓬陂坞主，自称宁朔将军、陈留太守。起初他派李头帮助祖逖攻取谯城，后来双方关系破裂，陈川率众依附石勒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-tou",
+      "name": "李头",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "李头是陈川的将领，曾率兵援助祖逖、攻取谯城。祖逖将缴获的骏马送给他；他表达愿意追随祖逖后，被陈川杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-xuan",
+      "name": "桓宣",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "桓宣是晋朝将领，曾受王含派遣援助祖逖攻谯，又在石季龙来围时再次驰援。后来他长期镇守襄阳，多次抵御石季龙的进攻。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十一·桓宣传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shi-ji-long",
+      "name": "石季龙",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "石季龙名石虎，是石勒一方的重要将领；本篇中他率兵围谯、援救陈川，与祖逖交战。后来他掌握后赵政权并称帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百六·石季龙载记",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷106"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-zhan",
+      "name": "董瞻",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "董瞻是谯地众多部众的首领之一，当时归张平统辖；他与董昭是本篇出现的不同人物。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-wu",
+      "name": "于武",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "于武是谯地部众的首领之一，当时与董瞻、谢浮等人都受张平统辖。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-zhao",
+      "name": "董昭",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "董昭是祖逖军中的督护。樊雅部众夜袭时，他与来袭者交战，将他们赶出营垒；他与张平一方的董瞻不是同一人。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-han",
+      "name": "王含",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "王含当时是晋朝南中郎将。祖逖请求援助时，他先后两次派桓宣领兵前来，帮助祖逖攻谯与抵御石季龙。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shi-le",
+      "name": "石勒",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "石勒是与晋军争夺北方的军事首领，石季龙是他的从子。本篇里，陈川后来率众依附他，他又派兵与祖逖交战；石勒后来建立后赵政权。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百四·石勒载记",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷104"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百五·石勒载记",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷105"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feng-chong",
+      "name": "冯宠",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "冯宠与李头有亲党关系。陈川杀李头后，他率四百部属投奔祖逖，陈川因此更加愤怒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-shuo",
+      "name": "魏硕",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "魏硕是陈川派出的将领，曾劫掠豫州各郡；祖逖的将领卫策在谷水截回被掠的人。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-ce",
+      "name": "卫策",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "卫策是祖逖的将领，陈川派魏硕掠夺豫州时，他在谷水拦击，截获被掠人口，并令他们返回本家。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tao-bao",
+      "name": "桃豹",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "桃豹是石勒一方的将领。石季龙撤走陈川后，他留守陈川旧城的西台，与驻守东台的祖逖部队对峙，后来退到东燕城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-qian",
+      "name": "韩潜",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "韩潜是祖逖的将领，曾镇守东台，并与冯铁截获送给桃豹的粮食；桃豹退走后，他进屯封丘逼近对方。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yetang",
+      "name": "刘夜堂",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "刘夜堂是石勒的将领，曾用一千头驴为桃豹运粮；这批粮食被祖逖派出的韩潜、冯铁截获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feng-tie",
+      "name": "冯铁",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "冯铁是祖逖的部将，曾与韩潜截获刘夜堂运送的粮食；桃豹退走后，他据守两台。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gu",
+      "name": "赵固",
+      "versions": [
+        {
+          "from": 7,
+          "to": 7,
+          "text": "赵固是当时在中原活动的地方军事人物之一，曾与上官巳、李矩、郭默等互相攻击。祖逖派使者调解后，他们接受祖逖的节度。《晋书·李矩传》还记载，他曾为刘聪镇守洛阳，得知刘聪想杀他后投向李矩，继续守洛阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十三·李矩传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷063"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shangguan-si",
+      "name": "上官巳",
+      "versions": [
+        {
+          "from": 7,
+          "to": 7,
+          "text": "上官巳是当时在中原活动的地方军事人物，与赵固、李矩、郭默等互相攻击，后来接受祖逖调解及节度。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-ju",
+      "name": "李矩",
+      "versions": [
+        {
+          "from": 7,
+          "to": 7,
+          "text": "李矩是当时在中原活动的晋方军事人物。祖逖与石勒对峙期间，他与赵固、上官巳、郭默等互相攻击，后受祖逖节度。 他曾被推为坞主、任荥阳太守，并抵御石勒进攻；后来势力衰弱，南行途中去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十三·李矩传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷063"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guo-mo",
+      "name": "郭默",
+      "versions": [
+        {
+          "from": 7,
+          "to": 7,
+          "text": "郭默是当时在中原活动的晋方军事人物，与赵固、上官巳、李矩等互相攻击，后来接受祖逖调解及节度。 他曾与李矩合力抵御刘、石势力；后来他杀害晋朝官员刘胤，被陶侃率军讨伐，最终被俘杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十三·郭默传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷063"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-kun",
+      "name": "刘琨",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "刘琨是晋朝官员，与祖逖年轻时相识并同任司州主簿；本篇记他给亲友写信，称赞祖逖的威德。 他曾任并州刺史，统军抵抗北方势力，最终被段匹磾杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十二·刘琨传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷062"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-yan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "刘演",
+      "paragraphText": "起初，北中郎将刘演在谯郡抵抗石勒。"
+    },
+    {
+      "personId": "liu-yan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 14,
+      "text": "刘演",
+      "paragraphText": "流人坞主张平、樊雅等都在谯。刘演任命张平做豫州刺史，樊雅做谯郡太守。又有董瞻、于武、谢浮等十多部，每部几百人，都统属张平。"
+    },
+    {
+      "personId": "zhang-ping",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "张平",
+      "paragraphText": "流人坞主张平、樊雅等都在谯。刘演任命张平做豫州刺史，樊雅做谯郡太守。又有董瞻、于武、谢浮等十多部，每部几百人，都统属张平。"
+    },
+    {
+      "personId": "zhang-ping",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "张平",
+      "paragraphText": "祖逖诱使谢浮去取张平。谢浮骗张平来会面，斩了他，献给祖逖。"
+    },
+    {
+      "personId": "zhang-ping",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 31,
+      "text": "张平",
+      "paragraphText": "祖逖命令左右抵御，督护董昭与贼交战，把他们赶走。祖逖率众追讨，张平的余众却帮着樊雅来攻他。"
+    },
+    {
+      "personId": "fan-ya",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "樊雅",
+      "paragraphText": "流人坞主张平、樊雅等都在谯。刘演任命张平做豫州刺史，樊雅做谯郡太守。又有董瞻、于武、谢浮等十多部，每部几百人，都统属张平。"
+    },
+    {
+      "personId": "fan-ya",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "樊雅",
+      "paragraphText": "樊雅派部众夜袭。他们进了营垒，拔出戟大呼，直冲祖逖的帐幕，军中大乱。"
+    },
+    {
+      "personId": "fan-ya",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "樊雅",
+      "paragraphText": "樊雅据谯的时候，祖逖因为力弱，向南中郎将王含求助。王含派桓宣领兵来助。祖逖克谯之后，桓宣等才离去。"
+    },
+    {
+      "personId": "xie-fu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 42,
+      "text": "谢浮",
+      "paragraphText": "流人坞主张平、樊雅等都在谯。刘演任命张平做豫州刺史，樊雅做谯郡太守。又有董瞻、于武、谢浮等十多部，每部几百人，都统属张平。"
+    },
+    {
+      "personId": "xie-fu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "谢浮",
+      "paragraphText": "祖逖诱使谢浮去取张平。谢浮骗张平来会面，斩了他，献给祖逖。"
+    },
+    {
+      "personId": "chen-chuan",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 4,
+      "text": "陈川",
+      "paragraphText": "他派人向陈川求救。陈川派将领李头率众来援，祖逖于是攻克谯城。"
+    },
+    {
+      "personId": "chen-chuan",
+      "beat": 4,
+      "paragraph": 6,
+      "offset": 0,
+      "text": "陈川",
+      "paragraphText": "陈川听说，发怒，杀了李头。"
+    },
+    {
+      "personId": "chen-chuan",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "陈川",
+      "paragraphText": "李头的亲党冯宠率部属四百人归附祖逖。陈川更怒，派魏硕抢掠豫州各郡，掠走大量人口车马。"
+    },
+    {
+      "personId": "chen-chuan",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "陈川",
+      "paragraphText": "陈川大惧，率众依附石勒。"
+    },
+    {
+      "personId": "li-tou",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 14,
+      "text": "李头",
+      "paragraphText": "他派人向陈川求救。陈川派将领李头率众来援，祖逖于是攻克谯城。"
+    },
+    {
+      "personId": "li-tou",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "李头",
+      "paragraphText": "李头讨樊雅时力战有功。祖逖得到樊雅的骏马，李头很喜欢，却不敢说。祖逖知道他的心意，就把马给了他。"
+    },
+    {
+      "personId": "huan-xuan",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 28,
+      "text": "桓宣",
+      "paragraphText": "樊雅据谯的时候，祖逖因为力弱，向南中郎将王含求助。王含派桓宣领兵来助。祖逖克谯之后，桓宣等才离去。"
+    },
+    {
+      "personId": "huan-xuan",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 16,
+      "text": "桓宣",
+      "paragraphText": "石季龙听说，率众来围谯。王含又派桓宣来救，石季龙听说桓宣到了，退走。桓宣于是留下，助祖逖讨伐尚未归附的屯坞。"
+    },
+    {
+      "personId": "shi-ji-long",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "石季龙",
+      "paragraphText": "石季龙听说，率众来围谯。王含又派桓宣来救，石季龙听说桓宣到了，退走。桓宣于是留下，助祖逖讨伐尚未归附的屯坞。"
+    },
+    {
+      "personId": "shi-ji-long",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 9,
+      "text": "石季龙",
+      "paragraphText": "祖逖率众讨伐陈川。石季龙领兵五万来救，祖逖设奇兵击他，石季龙大败，收兵抢掠豫州，把陈川迁回襄国，留桃豹等守陈川旧城，驻在西台。"
+    },
+    {
+      "personId": "dong-zhan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 36,
+      "text": "董瞻",
+      "paragraphText": "流人坞主张平、樊雅等都在谯。刘演任命张平做豫州刺史，樊雅做谯郡太守。又有董瞻、于武、谢浮等十多部，每部几百人，都统属张平。"
+    },
+    {
+      "personId": "yu-wu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 39,
+      "text": "于武",
+      "paragraphText": "流人坞主张平、樊雅等都在谯。刘演任命张平做豫州刺史，樊雅做谯郡太守。又有董瞻、于武、谢浮等十多部，每部几百人，都统属张平。"
+    },
+    {
+      "personId": "dong-zhao",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 11,
+      "text": "董昭",
+      "paragraphText": "祖逖命令左右抵御，督护董昭与贼交战，把他们赶走。祖逖率众追讨，张平的余众却帮着樊雅来攻他。"
+    },
+    {
+      "personId": "wang-han",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 20,
+      "text": "王含",
+      "paragraphText": "樊雅据谯的时候，祖逖因为力弱，向南中郎将王含求助。王含派桓宣领兵来助。祖逖克谯之后，桓宣等才离去。"
+    },
+    {
+      "personId": "shi-le",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "石勒",
+      "paragraphText": "起初，北中郎将刘演在谯郡抵抗石勒。"
+    },
+    {
+      "personId": "shi-le",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "石勒",
+      "paragraphText": "陈川大惧，率众依附石勒。"
+    },
+    {
+      "personId": "shi-le",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 31,
+      "text": "石勒",
+      "paragraphText": "祖逖派韩潜进屯封丘逼近他。冯铁据二台，祖逖镇雍丘，多次派军拦截石勒，石勒的屯戍渐渐窘迫。"
+    },
+    {
+      "personId": "feng-chong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "冯宠",
+      "paragraphText": "李头的亲党冯宠率部属四百人归附祖逖。陈川更怒，派魏硕抢掠豫州各郡，掠走大量人口车马。"
+    },
+    {
+      "personId": "wei-shuo",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "魏硕",
+      "paragraphText": "李头的亲党冯宠率部属四百人归附祖逖。陈川更怒，派魏硕抢掠豫州各郡，掠走大量人口车马。"
+    },
+    {
+      "personId": "wei-ce",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "卫策",
+      "paragraphText": "祖逖派将军卫策在谷水拦击，把被掠的人全部截回，命令归还本家。军中没有人私藏。"
+    },
+    {
+      "personId": "tao-bao",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 49,
+      "text": "桃豹",
+      "paragraphText": "祖逖率众讨伐陈川。石季龙领兵五万来救，祖逖设奇兵击他，石季龙大败，收兵抢掠豫州，把陈川迁回襄国，留桃豹等守陈川旧城，驻在西台。"
+    },
+    {
+      "personId": "tao-bao",
+      "beat": 6,
+      "paragraph": 3,
+      "offset": 17,
+      "text": "桃豹",
+      "paragraphText": "石勒的将领刘夜堂用一千头驴运粮来供桃豹。祖逖派韩潜、冯铁在汴水追击，全部截获。"
+    },
+    {
+      "personId": "tao-bao",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "桃豹",
+      "paragraphText": "桃豹连夜逃走，退据东燕城。"
+    },
+    {
+      "personId": "han-qian",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "韩潜",
+      "paragraphText": "祖逖派韩潜等镇东台。同一座大城，贼从南门出入放牧，祖逖军开东门，相守四十天。"
+    },
+    {
+      "personId": "han-qian",
+      "beat": 6,
+      "paragraph": 3,
+      "offset": 23,
+      "text": "韩潜",
+      "paragraphText": "石勒的将领刘夜堂用一千头驴运粮来供桃豹。祖逖派韩潜、冯铁在汴水追击，全部截获。"
+    },
+    {
+      "personId": "han-qian",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "韩潜",
+      "paragraphText": "祖逖派韩潜进屯封丘逼近他。冯铁据二台，祖逖镇雍丘，多次派军拦截石勒，石勒的屯戍渐渐窘迫。"
+    },
+    {
+      "personId": "liu-yetang",
+      "beat": 6,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "刘夜堂",
+      "paragraphText": "石勒的将领刘夜堂用一千头驴运粮来供桃豹。祖逖派韩潜、冯铁在汴水追击，全部截获。"
+    },
+    {
+      "personId": "feng-tie",
+      "beat": 6,
+      "paragraph": 3,
+      "offset": 26,
+      "text": "冯铁",
+      "paragraphText": "石勒的将领刘夜堂用一千头驴运粮来供桃豹。祖逖派韩潜、冯铁在汴水追击，全部截获。"
+    },
+    {
+      "personId": "feng-tie",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "冯铁",
+      "paragraphText": "祖逖派韩潜进屯封丘逼近他。冯铁据二台，祖逖镇雍丘，多次派军拦截石勒，石勒的屯戍渐渐窘迫。"
+    },
+    {
+      "personId": "zhao-gu",
+      "beat": 7,
+      "paragraph": 3,
+      "offset": 2,
+      "text": "赵固",
+      "paragraphText": "当时赵固、上官巳、李矩、郭默等各以诈力互相攻击，祖逖派使者调停，向他们说明祸福，于是都接受他的节度。"
+    },
+    {
+      "personId": "shangguan-si",
+      "beat": 7,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "上官巳",
+      "paragraphText": "当时赵固、上官巳、李矩、郭默等各以诈力互相攻击，祖逖派使者调停，向他们说明祸福，于是都接受他的节度。"
+    },
+    {
+      "personId": "li-ju",
+      "beat": 7,
+      "paragraph": 3,
+      "offset": 9,
+      "text": "李矩",
+      "paragraphText": "当时赵固、上官巳、李矩、郭默等各以诈力互相攻击，祖逖派使者调停，向他们说明祸福，于是都接受他的节度。"
+    },
+    {
+      "personId": "guo-mo",
+      "beat": 7,
+      "paragraph": 3,
+      "offset": 12,
+      "text": "郭默",
+      "paragraphText": "当时赵固、上官巳、李矩、郭默等各以诈力互相攻击，祖逖派使者调停，向他们说明祸福，于是都接受他的节度。"
+    },
+    {
+      "personId": "liu-kun",
+      "beat": 8,
+      "paragraph": 5,
+      "offset": 7,
+      "text": "刘琨",
+      "paragraphText": "于是唱起歌来。刘琨给亲友写信，盛赞祖逖的威德。诏书进升他为镇西将军。"
+    }
+  ]
+}

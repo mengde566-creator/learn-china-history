@@ -1,0 +1,213 @@
+{
+  "people": [
+    {
+      "id": "fan-shi",
+      "name": "樊世",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "樊世是前秦氐族勋旧，与王猛争执，又因杨璧的婚事在苻坚面前冲突，后来被苻坚下令杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "苻坚是前秦君主，任用王猛，并在王猛与樊世的冲突中下令杀樊世。后来他又重用王猛，王猛领军平定前燕；王猛去世后，苻坚南征东晋，在淝水失利。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-bi",
+      "name": "杨璧",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "杨璧是樊世已议定婚事的女婿。苻坚在樊世面前提到让他娶公主，引出樊世与王猛的争执；所取记载没有交代这场争执后杨璧的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiang-de",
+      "name": "强德",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "强德是前秦君主苻健妻子的弟弟。本篇据《晋书》记载，他因横行为害百姓被王猛捕杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deng-qiang",
+      "name": "邓羌",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "邓羌是前秦官员，本篇任中丞，与王猛共同整治吏治。后来他随王猛出征，参与攻打苻柳以及前燕。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chou-teng",
+      "name": "仇腾",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "仇腾是前秦尚书，本篇与席宝多次向苻坚诋毁王猛，苻坚随后将他降为甘松护军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xi-bao",
+      "name": "席宝",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "席宝是前秦丞相长史，本篇与仇腾多次向苻坚诋毁王猛，苻坚随后让他以白衣领长史。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fan-shi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "樊世",
+      "paragraphText": "特进樊世，氐族豪帅，对苻氏有大功，负气倨傲。当众辱猛："
+    },
+    {
+      "personId": "fu-jian",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "苻坚",
+      "paragraphText": "猛把这话说给苻坚。苻坚大怒：「必须杀这个老氐，然后百僚可整。」"
+    },
+    {
+      "personId": "yang-bi",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 19,
+      "text": "杨璧",
+      "paragraphText": "不久樊世入宫奏事。苻坚对猛说：「我想把杨璧配给公主，杨璧这个人怎样？」"
+    },
+    {
+      "personId": "qiang-de",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "强德",
+      "paragraphText": "特进强德，苻健皇后的弟弟，昏酒豪横，为百姓之患。猛捕而杀之，把尸首摆在市上。"
+    },
+    {
+      "personId": "deng-qiang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "邓羌",
+      "paragraphText": "中丞邓羌性情鲠直不挠，与猛同心协力。几十天里，贵戚豪强被诛死的二十余人。"
+    },
+    {
+      "personId": "chou-teng",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 13,
+      "text": "仇腾",
+      "paragraphText": "宗戚旧臣都忌恨他得宠。尚书仇腾、丞相长史席宝屡次谮毁他。苻坚大怒，把仇腾黜为甘松护军，席宝以白衣领长史。"
+    },
+    {
+      "personId": "xi-bao",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 20,
+      "text": "席宝",
+      "paragraphText": "宗戚旧臣都忌恨他得宠。尚书仇腾、丞相长史席宝屡次谮毁他。苻坚大怒，把仇腾黜为甘松护军，席宝以白衣领长史。"
+    }
+  ]
+}

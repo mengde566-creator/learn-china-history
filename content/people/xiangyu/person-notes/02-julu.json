@@ -1,0 +1,903 @@
+{
+  "people": [
+    {
+      "id": "tian-rong",
+      "name": "田荣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田荣是齐地将领，救东阿后赶走田假，拥立田儋的儿子田市为齐王；后来他反对项羽分封，在齐地起兵，与项羽交战时败死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "local",
+              "id": "060"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-jia",
+      "name": "田假",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田假曾被立为齐王，田荣返回齐地后将他赶走，他逃到楚国。田荣要求项梁杀他，项梁拒绝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "long-ju",
+      "name": "龙且",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "龙且在这里以司马身份与项梁、田荣一起救东阿；后来他成为楚将，在潍水之战中被韩信一方击败并杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "075"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "沛公是刘邦，他从沛县起兵，此时与项羽一同作战。后来他率军进入关中，与项羽争夺天下，并建立汉朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-yi",
+      "name": "宋义",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "宋义曾劝项梁警惕秦军，项梁败死后，他被楚怀王任为救赵的上将军。他在安阳停军，与项羽意见相左，最终被项羽杀死；项羽所称谋反，史书只记其说法。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-ling-jun",
+      "name": "高陵君显",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "高陵君显是齐国使者。宋义曾在路上向他预言项梁军队将败；定陶战后，他向楚王推荐宋义。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-han",
+      "name": "章邯",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "章邯是秦朝将领，率军在定陶击败项梁，随后北上攻赵。后来秦军在钜鹿受挫，章邯率部降项羽，被封雍王；再后来他在与汉军的战事中自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-chen",
+      "name": "吕臣",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "吕臣是楚方将领，项梁死后与项羽、沛公的军队一同东行。怀王到彭城收兵后，以吕臣为司徒，并任其父吕青为令尹。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-xie",
+      "name": "赵歇",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "赵歇是赵王。章邯军北上攻赵时，赵歇与张耳退入钜鹿；后来项羽分封，将他迁为代王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-yu",
+      "name": "陈余",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "陈余是赵方将领，在钜鹿北面率军，并向渡河援赵的楚军请求增兵。后来他与张耳决裂，参与击败张耳、迎回赵歇。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-er",
+      "name": "张耳",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "张耳是赵国的相，秦军攻赵时与赵王退入钜鹿。后来项羽封他为常山王，陈余又击败他；他归汉后受封赵王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-li",
+      "name": "王离",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "王离是秦军将领，奉章邯之命与涉閒围困钜鹿。项羽渡河后与秦军交战，王离被俘。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "she-jian",
+      "name": "涉閒",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "涉閒是围攻钜鹿的秦军将领之一。楚军击败秦军后，他不肯降楚，自焚而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huai-wang",
+      "name": "楚怀王",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "怀王名心，是项梁拥立的楚王。项梁战死后，他收拢项羽与吕臣军队，任宋义为上将军；后来被尊为义帝，又被项羽暗中命人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-zeng",
+      "name": "范增",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "范增曾劝项梁拥立楚王后裔，此时任救赵军的末将。后来他成为项羽倚重的谋士，楚汉相持时离去，病死途中。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "local",
+              "id": "067"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-xiang",
+      "name": "宋襄",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "宋襄是宋义的儿子。宋义派他去齐国担任相，项羽杀宋义之后，又派人追至齐国杀了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-chu",
+      "name": "桓楚",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "桓楚曾被会稽守点为带兵人选。项羽杀宋义后，派他向怀王报命。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dang-yang-jun",
+      "name": "当阳君",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "当阳君是黥布的爵号。此时他归项羽统属，随后与蒲将军先率兵渡河救钜鹿；后来项羽封他为九江王，他又转而归汉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pu-jiangjun",
+      "name": "蒲将军",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "《史记》以蒲将军称呼这位楚将。他曾带兵归项梁，在钜鹿之战中与当阳君先率军渡河；此处不推定他的个人姓名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "su-jiao",
+      "name": "苏角",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "苏角出现在钜鹿之战的记载中。《史记》记楚军击破秦军时杀了他；这一段没有交代他的职务。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-liang",
+      "name": "项梁",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "项梁是项羽的叔父，率军在东阿救田荣后追击秦军；他此前在吴中起兵、拥立楚怀王，后来在定陶与章邯交战时战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-jiao",
+      "name": "田角",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田角是田假的相，田荣赶走田假后，他逃到赵国；田閒是他的弟弟。田荣要求赵国杀掉他们，赵国没有答应。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-xian",
+      "name": "田閒",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田閒是田角的弟弟，曾是齐将，留在赵国不敢归齐。田荣要求赵国杀他与田角，赵国没有答应。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-dan",
+      "name": "田儋",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田儋是田市的父亲、齐王族人。他此前自立为齐王，率兵救魏时被章邯击败，死于临济；田荣随后拥立他的儿子田市。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十四·田儋列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷094"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-shi",
+      "name": "田市",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田市是田儋的儿子，田荣赶走田假后拥立他为齐王。后来项羽改封他为胶东王；他前去就国，被田荣追杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-you",
+      "name": "李由",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "李由是秦丞相李斯的儿子，曾任三川郡守。项梁派沛公、项羽西进，在雍丘击破秦军并杀了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十七·李斯列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷087"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-qing",
+      "name": "吕青",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "吕青是楚将吕臣的父亲。定陶战败后，怀王收拢军队，任命吕臣为司徒、吕青为令尹。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "tian-rong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "田荣",
+      "paragraphText": "过了几个月，项梁引兵攻亢父，又与齐国的田荣、司马龙且合兵救东阿，在东阿大破秦军。"
+    },
+    {
+      "personId": "tian-jia",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "田假",
+      "paragraphText": "田荣随即带兵回去，赶走了他的王田假。田假逃到楚国，田假的相田角逃到赵国；田角之弟田閒本是齐将，留在赵国不敢回去。田荣立田儋的儿子田市为齐王。"
+    },
+    {
+      "personId": "long-ju",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "龙且",
+      "paragraphText": "过了几个月，项梁引兵攻亢父，又与齐国的田荣、司马龙且合兵救东阿，在东阿大破秦军。"
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 1,
+      "paragraph": 9,
+      "offset": 3,
+      "text": "沛公",
+      "paragraphText": "项梁派沛公和项籍另攻城阳，屠了城；向西在濮阳东破秦军，秦兵退入濮阳。沛公、项籍于是攻定陶，定陶攻不下来，走了；向西略地到雝丘，大破秦军，斩了李由；回兵攻外黄，外黄攻不下来。"
+    },
+    {
+      "personId": "song-yi",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "宋义",
+      "paragraphText": "宋义劝他："
+    },
+    {
+      "personId": "gao-ling-jun",
+      "beat": 2,
+      "paragraph": 4,
+      "offset": 26,
+      "text": "高陵君显",
+      "paragraphText": "项梁不听。他派宋义出使齐国。宋义在路上遇到齐国的使者高陵君显，问他是不是要去见武信君，高陵君显说「然」。宋义说："
+    },
+    {
+      "personId": "zhang-han",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "章邯",
+      "paragraphText": "秦军果然倾全部兵力增援章邯，在定陶大破楚军。项梁死了。"
+    },
+    {
+      "personId": "lv-chen",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 3,
+      "text": "吕臣",
+      "paragraphText": "于是和吕臣的兵一起向东。吕臣驻彭城东，项籍驻彭城西，沛公驻砀。"
+    },
+    {
+      "personId": "zhao-xie",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 39,
+      "text": "赵歇",
+      "paragraphText": "章邯破了项梁的军队，认为楚地的兵不值得担心，就渡过黄河去击赵，大破赵军。这时候赵歇为王，陈余为将，张耳为相，都退进钜鹿城。章邯令王离、涉閒围钜鹿，章邯驻在城的南面，筑起甬道运粮。陈余为将，带几万人驻在钜鹿北面——这就是所谓河北之军。"
+    },
+    {
+      "personId": "chen-yu",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 44,
+      "text": "陈余",
+      "paragraphText": "章邯破了项梁的军队，认为楚地的兵不值得担心，就渡过黄河去击赵，大破赵军。这时候赵歇为王，陈余为将，张耳为相，都退进钜鹿城。章邯令王离、涉閒围钜鹿，章邯驻在城的南面，筑起甬道运粮。陈余为将，带几万人驻在钜鹿北面——这就是所谓河北之军。"
+    },
+    {
+      "personId": "zhang-er",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 49,
+      "text": "张耳",
+      "paragraphText": "章邯破了项梁的军队，认为楚地的兵不值得担心，就渡过黄河去击赵，大破赵军。这时候赵歇为王，陈余为将，张耳为相，都退进钜鹿城。章邯令王离、涉閒围钜鹿，章邯驻在城的南面，筑起甬道运粮。陈余为将，带几万人驻在钜鹿北面——这就是所谓河北之军。"
+    },
+    {
+      "personId": "wang-li",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 64,
+      "text": "王离",
+      "paragraphText": "章邯破了项梁的军队，认为楚地的兵不值得担心，就渡过黄河去击赵，大破赵军。这时候赵歇为王，陈余为将，张耳为相，都退进钜鹿城。章邯令王离、涉閒围钜鹿，章邯驻在城的南面，筑起甬道运粮。陈余为将，带几万人驻在钜鹿北面——这就是所谓河北之军。"
+    },
+    {
+      "personId": "she-jian",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 67,
+      "text": "涉閒",
+      "paragraphText": "章邯破了项梁的军队，认为楚地的兵不值得担心，就渡过黄河去击赵，大破赵军。这时候赵歇为王，陈余为将，张耳为相，都退进钜鹿城。章邯令王离、涉閒围钜鹿，章邯驻在城的南面，筑起甬道运粮。陈余为将，带几万人驻在钜鹿北面——这就是所谓河北之军。"
+    },
+    {
+      "personId": "huai-wang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "怀王",
+      "paragraphText": "楚兵在定陶大败之后，怀王害怕了，从盱台到彭城，把项籍、吕臣的兵并过来自己带。以吕臣为司徒，吕臣的父亲吕青为令尹；以沛公为砀郡长，封武安侯，带砀郡的兵。"
+    },
+    {
+      "personId": "fan-zeng",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 33,
+      "text": "范增",
+      "paragraphText": "楚王召宋义来议事，非常高兴，于是任命他为上将军；项籍为鲁公、次将，范增为末将，去救赵。各路别将都归宋义节制，号称卿子冠军。"
+    },
+    {
+      "personId": "song-xiang",
+      "beat": 5,
+      "paragraph": 12,
+      "offset": 4,
+      "text": "宋襄",
+      "paragraphText": "他派儿子宋襄去做齐国的相，亲自送到无盐，饮酒高会。天寒大雨，士卒又冷又饿。"
+    },
+    {
+      "personId": "huan-chu",
+      "beat": 6,
+      "paragraph": 12,
+      "offset": 32,
+      "text": "桓楚",
+      "paragraphText": "于是一起立项籍为假上将军。派人去追宋义的儿子，追到齐国，杀了。派桓楚向怀王报命。怀王就派项籍为上将军，当阳君、蒲将军都归项籍。"
+    },
+    {
+      "personId": "dang-yang-jun",
+      "beat": 6,
+      "paragraph": 12,
+      "offset": 51,
+      "text": "当阳君",
+      "paragraphText": "于是一起立项籍为假上将军。派人去追宋义的儿子，追到齐国，杀了。派桓楚向怀王报命。怀王就派项籍为上将军，当阳君、蒲将军都归项籍。"
+    },
+    {
+      "personId": "pu-jiangjun",
+      "beat": 6,
+      "paragraph": 12,
+      "offset": 55,
+      "text": "蒲将军",
+      "paragraphText": "于是一起立项籍为假上将军。派人去追宋义的儿子，追到齐国，杀了。派桓楚向怀王报命。怀王就派项籍为上将军，当阳君、蒲将军都归项籍。"
+    },
+    {
+      "personId": "su-jiao",
+      "beat": 7,
+      "paragraph": 4,
+      "offset": 34,
+      "text": "苏角",
+      "paragraphText": "到了就围住王离，与秦军接战，打了九仗，断绝秦军的甬道，大破秦军，杀了苏角，俘虏了王离。涉閒不肯降楚，自己烧死了。这时候，楚兵在诸侯之中最强。"
+    },
+    {
+      "personId": "xiang-liang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "项梁",
+      "paragraphText": "过了几个月，项梁引兵攻亢父，又与齐国的田荣、司马龙且合兵救东阿，在东阿大破秦军。"
+    },
+    {
+      "personId": "tian-jiao",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "田角",
+      "paragraphText": "田荣随即带兵回去，赶走了他的王田假。田假逃到楚国，田假的相田角逃到赵国；田角之弟田閒本是齐将，留在赵国不敢回去。田荣立田儋的儿子田市为齐王。"
+    },
+    {
+      "personId": "tian-xian",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 40,
+      "text": "田閒",
+      "paragraphText": "田荣随即带兵回去，赶走了他的王田假。田假逃到楚国，田假的相田角逃到赵国；田角之弟田閒本是齐将，留在赵国不敢回去。田荣立田儋的儿子田市为齐王。"
+    },
+    {
+      "personId": "tian-dan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 59,
+      "text": "田儋",
+      "paragraphText": "田荣随即带兵回去，赶走了他的王田假。田假逃到楚国，田假的相田角逃到赵国；田角之弟田閒本是齐将，留在赵国不敢回去。田荣立田儋的儿子田市为齐王。"
+    },
+    {
+      "personId": "tian-shi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 64,
+      "text": "田市",
+      "paragraphText": "田荣随即带兵回去，赶走了他的王田假。田假逃到楚国，田假的相田角逃到赵国；田角之弟田閒本是齐将，留在赵国不敢回去。田荣立田儋的儿子田市为齐王。"
+    },
+    {
+      "personId": "li-you",
+      "beat": 1,
+      "paragraph": 9,
+      "offset": 70,
+      "text": "李由",
+      "paragraphText": "项梁派沛公和项籍另攻城阳，屠了城；向西在濮阳东破秦军，秦兵退入濮阳。沛公、项籍于是攻定陶，定陶攻不下来，走了；向西略地到雝丘，大破秦军，斩了李由；回兵攻外黄，外黄攻不下来。"
+    },
+    {
+      "personId": "lv-qing",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 50,
+      "text": "吕青",
+      "paragraphText": "楚兵在定陶大败之后，怀王害怕了，从盱台到彭城，把项籍、吕臣的兵并过来自己带。以吕臣为司徒，吕臣的父亲吕青为令尹；以沛公为砀郡长，封武安侯，带砀郡的兵。"
+    },
+    {
+      "personId": "xiang-liang",
+      "beat": 2,
+      "paragraph": 4,
+      "offset": 39,
+      "text": "武信君",
+      "paragraphText": "项梁不听。他派宋义出使齐国。宋义在路上遇到齐国的使者高陵君显，问他是不是要去见武信君，高陵君显说「然」。宋义说："
+    },
+    {
+      "personId": "song-yi",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "卿子冠军",
+      "paragraphText": "项籍杀了卿子冠军之后，威震楚国，名闻诸侯。他派当阳君、蒲将军带两万兵渡河，救钜鹿。战事稍有利，陈余又来请兵。"
+    }
+  ]
+}

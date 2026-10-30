@@ -1,0 +1,271 @@
+{
+  "people": [
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "苻坚是前秦君主，曾派军南侵荆州、淮泗。本篇他亲率大军南下，在淝水战事中中箭、军队溃败；此后前秦陷入动荡，他最终被姚苌杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-rong",
+      "name": "苻融",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "苻融是苻坚的弟弟，曾协助前秦处理军政事务。《晋书》记他曾反对南下伐晋；本篇他先至颍口，后来在淝水战场指挥退军时阵亡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻融传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-shi",
+      "name": "谢石",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "谢石是谢玄的叔父，此前曾奉命率水军应对彭超等人的进攻。本篇朝廷任命他为征讨大都督，他与谢玄、谢琰等共同抵御苻坚军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十九·谢石传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-yan",
+      "name": "谢琰",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "谢琰是谢安的儿子、谢玄的堂弟。本篇他与谢玄渡过淝水参战；后来他在东晋任职，又参与讨孙恩，在战事中遇害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十九·谢琰传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-yi",
+      "name": "桓伊",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "桓伊是东晋将领。本篇他以西中郎将身份与谢玄等人抵御前秦，后来参与率军渡过淝水作战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-laozhi",
+      "name": "刘牢之",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "刘牢之是谢玄招募的将领，此前曾参加君川追击。本篇他率五千人进攻洛涧，击败前秦军并斩梁成；多年后他卷入桓玄与朝廷的权力斗争，最终自缢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十四·刘牢之传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷084"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liang-cheng",
+      "name": "梁成",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "梁成是前秦将领，本篇与王显等人屯守洛涧。谢玄派刘牢之率军来攻，梁成与弟弟梁云在战斗中被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fu-jian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 1,
+      "text": "苻坚",
+      "paragraphText": "到苻坚亲自率兵进驻项城，众号百万。凉州的军队才到咸阳，蜀汉的兵顺流而下，幽、并的兵陆续开来。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "苻融",
+      "paragraphText": "先遣苻融、慕容暐、张蚝、苻方等到颍口，梁成、王显等屯洛涧。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 40,
+      "text": "谢石",
+      "paragraphText": "朝廷以玄为前锋，都督徐、兖、青三州及扬州之晋陵、幽州之燕国诸军事，与叔父征虏将军谢石、从弟辅国将军谢琰、西中郎将桓伊、龙骧将军檀玄、建威将军戴熙、扬武将军陶隐等拒之——众共八万。"
+    },
+    {
+      "personId": "xie-yan",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 49,
+      "text": "谢琰",
+      "paragraphText": "朝廷以玄为前锋，都督徐、兖、青三州及扬州之晋陵、幽州之燕国诸军事，与叔父征虏将军谢石、从弟辅国将军谢琰、西中郎将桓伊、龙骧将军檀玄、建威将军戴熙、扬武将军陶隐等拒之——众共八万。"
+    },
+    {
+      "personId": "huan-yi",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 56,
+      "text": "桓伊",
+      "paragraphText": "朝廷以玄为前锋，都督徐、兖、青三州及扬州之晋陵、幽州之燕国诸军事，与叔父征虏将军谢石、从弟辅国将军谢琰、西中郎将桓伊、龙骧将军檀玄、建威将军戴熙、扬武将军陶隐等拒之——众共八万。"
+    },
+    {
+      "personId": "liu-laozhi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "刘牢之",
+      "paragraphText": "玄先遣广陵相刘牢之带五千人直指洛涧。"
+    },
+    {
+      "personId": "liang-cheng",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "梁成",
+      "paragraphText": "一战斩了梁成和他的弟弟梁云，敌方步骑崩溃，争着往淮水里跳。"
+    }
+  ]
+}

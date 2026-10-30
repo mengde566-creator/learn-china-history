@@ -1,0 +1,139 @@
+{
+  "people": [
+    {
+      "id": "xie-wan",
+      "name": "谢玩",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "谢玩是谢玄兄长的儿子。本篇谢玄请求把自己先封的东兴侯赐给他，朝廷准许后改封他为豫宁伯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-xu",
+      "name": "朱序",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "朱序是东晋将领，当时任豫州刺史。谢玄希望他镇守梁国，朝廷先命他镇寿阳，后来又命他代镇彭城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "di-liao",
+      "name": "翟辽",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "翟辽是当时据黎阳举兵的首领，本篇他占据黎阳并俘虏滕恬之，引发河北局势动荡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teng-tianzhi",
+      "name": "滕恬之",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "滕恬之是东晋官员，此前受谢玄派遣渡河守黎阳；本篇翟辽据黎阳时，他被俘获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-yuan",
+      "name": "张愿",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "张愿是泰山太守，本篇举郡反叛，促使谢玄上疏请求解职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xie-wan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "谢玩",
+      "paragraphText": "玄请求把自己先封的东兴侯赐给兄子谢玩。朝廷准了，改封谢玩为豫宁伯。"
+    },
+    {
+      "personId": "zhu-xu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "朱序",
+      "paragraphText": "玄想让豫州刺史朱序镇梁国，自己住彭城——北面巩固河上，西面援救洛阳，对内屏障朝廷。"
+    },
+    {
+      "personId": "di-liao",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "翟辽",
+      "paragraphText": "碰上翟辽据黎阳反，执了滕恬之；又泰山太守张愿举郡叛，河北骚动。"
+    },
+    {
+      "personId": "teng-tianzhi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "滕恬之",
+      "paragraphText": "碰上翟辽据黎阳反，执了滕恬之；又泰山太守张愿举郡叛，河北骚动。"
+    },
+    {
+      "personId": "zhang-yuan",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 20,
+      "text": "张愿",
+      "paragraphText": "碰上翟辽据黎阳反，执了滕恬之；又泰山太守张愿举郡叛，河北骚动。"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "people": [
+    {
+      "id": "shi-le",
+      "name": "石勒",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "石勒是与祖逖争夺河南的北方军事首领，后来建立后赵政权。此时他一面派人修葺祖逖母亲的墓，一面请求通使互市；祖逖没有回信，但允许交易。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百五·石勒载记",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷105"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dai-yuans",
+      "name": "戴若思",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "戴若思即戴渊，是东晋朝廷官员。“若思”是他的字，因避晋元帝司马睿的名讳，史书常以字称他。朝廷派他督军引起祖逖不满；后来王敦起兵，戴渊回援建康，兵败后被害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十九·戴若思传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷069"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-dun",
+      "name": "王敦",
+      "versions": [
+        {
+          "from": 3,
+          "to": 7,
+          "text": "王敦是东晋掌握军权的大臣，与朝廷倚重的刘隗等人有矛盾。祖逖担心双方冲突酿成内乱；祖逖去世后，王敦果然起兵进攻建康。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷九十八·王敦传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷098"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-wei",
+      "name": "刘隗",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "刘隗是晋元帝倚重的官员，与手握军权的王敦关系紧张。后来王敦以讨伐他为名起兵，刘隗兵败后投奔石勒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六·元帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷006"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十九·刘隗传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷069"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zu-ji",
+      "name": "祖济",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "祖济是祖逖的从侄，当时担任汝南太守。祖逖担心武牢南面防御薄弱，派他与张敞、周闳率众修筑营垒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zu-yue",
+      "name": "祖约",
+      "versions": [
+        {
+          "from": 7,
+          "to": 7,
+          "text": "祖约是祖逖的弟弟。祖逖病逝后，朝廷让祖约接替统领他的部众。 后来他与苏峻一同反抗东晋朝廷，兵败后投奔石勒，最终被石勒杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百·祖约传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-chang",
+      "name": "张敞",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "张敞当时任汝阳太守，祖逖派他与祖济、周闳率众，在武牢南面修筑营垒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhou-hong",
+      "name": "周闳",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "周闳当时任新蔡内史，祖逖派他与祖济、张敞率众修筑营垒，以防守武牢南面。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hua-tan",
+      "name": "华谭",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "华谭是晋朝官员。本篇据《晋书》记他与庾阐询问术士戴洋，戴洋预言祖逖将死；这是史书记下的占候之说。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷五十二·华谭传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷052"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-chan",
+      "name": "庾阐",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "庾阐是晋朝官员和文人。本篇据《晋书》记他与华谭询问戴洋；后来他曾担任著作官，也有作品传世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷九十二·庾阐传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷092"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dai-yang",
+      "name": "戴洋",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "戴洋是以占候闻名的术士，华谭与庾阐向他询问时，他预言祖逖将死。这是《晋书》保存的说法，不必把它当成可以验证的预知。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷九十五·戴洋传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷095"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-xun",
+      "name": "陈训",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "陈训是历阳人，以占候之术为人所知。本篇引《晋书》所记，他根据星象预言西北将领将死；这属于当时的占候说法。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷九十五·陈训传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷095"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "shi-le",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "石勒",
+      "paragraphText": "石勒不敢再窥伺河南。他让成皋县修葺祖逖母亲的墓，又给祖逖写信，请求互通使者、交易买卖。"
+    },
+    {
+      "personId": "dai-yuans",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "戴若思",
+      "paragraphText": "恰在这时，朝廷将派戴若思来做都督。"
+    },
+    {
+      "personId": "dai-yuans",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "戴若思",
+      "paragraphText": "祖逖认为戴若思是吴人，虽有才望，却没有宏大的志向和远见。而且自己已经剪除荆棘、收得河南之地，戴若思却要从容来统辖他。"
+    },
+    {
+      "personId": "wang-dun",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "王敦",
+      "paragraphText": "他又听说王敦与刘隗等人结怨，担心发生内难，大功不能完成。"
+    },
+    {
+      "personId": "wang-dun",
+      "beat": 7,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "王敦",
+      "paragraphText": "王敦长久心怀逆乱，畏惧祖逖，不敢发动；到这时才得以肆意。"
+    },
+    {
+      "personId": "liu-wei",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "刘隗",
+      "paragraphText": "他又听说王敦与刘隗等人结怨，担心发生内难，大功不能完成。"
+    },
+    {
+      "personId": "zu-ji",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 30,
+      "text": "祖济",
+      "paragraphText": "他担心南面没有坚固的营垒，必定被贼袭击，于是派侄子、汝南太守祖济率汝阳太守张敞、新蔡内史周闳领众修筑营垒。"
+    },
+    {
+      "personId": "zu-yue",
+      "beat": 7,
+      "paragraph": 3,
+      "offset": 9,
+      "text": "祖约",
+      "paragraphText": "不久，用祖逖的弟弟祖约代替统领他的部众。"
+    },
+    {
+      "personId": "zhang-chang",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 37,
+      "text": "张敞",
+      "paragraphText": "他担心南面没有坚固的营垒，必定被贼袭击，于是派侄子、汝南太守祖济率汝阳太守张敞、新蔡内史周闳领众修筑营垒。"
+    },
+    {
+      "personId": "zhou-hong",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 44,
+      "text": "周闳",
+      "paragraphText": "他担心南面没有坚固的营垒，必定被贼袭击，于是派侄子、汝南太守祖济率汝阳太守张敞、新蔡内史周闳领众修筑营垒。"
+    },
+    {
+      "personId": "hua-tan",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "华谭",
+      "paragraphText": "先前，华谭、庾阐问术士戴洋。戴洋说：「祖豫州九月當死。」"
+    },
+    {
+      "personId": "yu-chan",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "庾阐",
+      "paragraphText": "先前，华谭、庾阐问术士戴洋。戴洋说：「祖豫州九月當死。」"
+    },
+    {
+      "personId": "dai-yang",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "戴洋",
+      "paragraphText": "先前，华谭、庾阐问术士戴洋。戴洋说：「祖豫州九月當死。」"
+    },
+    {
+      "personId": "chen-xun",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 16,
+      "text": "陈训",
+      "paragraphText": "起初有妖星出现在豫州的分野。历阳陈训又对人说：「今年西北大將當死。」"
+    }
+  ]
+}

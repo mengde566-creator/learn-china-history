@@ -1,0 +1,246 @@
+{
+  "people": [
+    {
+      "id": "heba-yue",
+      "name": "贺拔岳",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "贺拔岳是关西这支军队的统帅。永熙三年他在河曲被侯莫陈悦杀害，部众散归平凉；本篇的推举与迎请都发生在他死后，不另补临终遗命。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gui",
+      "name": "赵贵",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "赵贵是贺拔岳部下。岳遇害后，他率部曲收回遗体，又在诸将推举寇洛之后提议迎宇文泰，并派人到夏州。后来他位列八柱国，任大司寇，封南阳郡公。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "071"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·赵贵传及八柱国附记",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kou-luo",
+      "name": "寇洛",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "寇洛是贺拔岳军中的旧将，上谷昌平人。岳死后，他收集将士、保全部众退到原州，被诸将推为盟主，随即辞让，与赵贵等商议迎宇文泰。后来他任右大都督、泾州刺史，大统五年在镇上去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·寇洛传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "houmo-chen-yue",
+      "name": "侯莫陈悦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "侯莫陈悦是秦州刺史。他与贺拔岳一同去讨曹泥，在河曲害死贺拔岳，想兼并其众；宇文泰进军后，他退保略阳、上邽，部众离散，兵败逃走，被宇文导追及斩杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "侯景是高欢的长史，奉命来招引贺拔岳旧部。宇文泰在安定当面拦问，他自比随人发射的箭，随即返回。后来他归附梁朝，又起兵攻建康，最终兵败被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十六·侯景传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "高欢是东方的执政者，击败尔朱氏后掌握朝政；他派侯景来争贺拔岳旧部，想把这支军队纳入自己一方。后来他与宇文泰长期对峙，互有胜负。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-xiu",
+      "name": "元修",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "元修是北魏皇帝，即孝武帝（《魏书》称出帝）。他当时正设法摆脱高欢，召贺拔岳的军队东下洛阳；宇文泰以部众不愿离乡为由请求暂缓。后来元修与高欢决裂，西入关中。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-bi",
+      "name": "李弼",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "李弼字景和，辽东襄平人，先在侯莫陈悦军中任大都督。悦害贺拔岳后，他劝悦解兵谢罪，不被采纳；宇文泰进军时，他秘密遣使请降，夜间鼓动部众散走，拥众归宇文泰。后来他在沙苑率右军横击东魏军，位至柱国、太师，封赵国公。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·寇洛传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "heba-yue",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "贺拔岳",
+      "paragraphText": "贺拔岳死后，赵贵带人收回遗体，军队却没有了共同的统帅。将领们先推举年长的寇洛。"
+    },
+    {
+      "personId": "zhao-gui",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "赵贵",
+      "paragraphText": "贺拔岳死后，赵贵带人收回遗体，军队却没有了共同的统帅。将领们先推举年长的寇洛。"
+    },
+    {
+      "personId": "kou-luo",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 36,
+      "text": "寇洛",
+      "paragraphText": "贺拔岳死后，赵贵带人收回遗体，军队却没有了共同的统帅。将领们先推举年长的寇洛。"
+    },
+    {
+      "personId": "houmo-chen-yue",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 18,
+      "text": "侯莫陈悦",
+      "paragraphText": "夏州有人劝他再看看局势。宇文泰判断，侯莫陈悦杀了统帅，却没能随即占住平凉，还在水洛迟疑，正可抢先行动。他带上帐下轻骑，立刻动身。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "侯景",
+      "paragraphText": "宇文泰赶往平凉时，在安定遇上了侯景。高欢也在争这支军队，派侯景来招引贺拔岳旧部。"
+    },
+    {
+      "personId": "gao-huan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "高欢",
+      "paragraphText": "宇文泰赶往平凉时，在安定遇上了侯景。高欢也在争这支军队，派侯景来招引贺拔岳旧部。"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "元修",
+      "paragraphText": "元修正在设法摆脱高欢，召贺拔岳的军队到洛阳。使者到时，诸将已经推了宇文泰；皇帝随后也承认他统领这批人。"
+    },
+    {
+      "personId": "li-bi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 22,
+      "text": "李弼",
+      "paragraphText": "到春末，宇文泰向陇右推进。侯莫陈悦退却，部将李弼又秘密遣使，愿意从内部接应宇文泰。"
+    }
+  ]
+}

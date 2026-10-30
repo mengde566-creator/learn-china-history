@@ -1,0 +1,219 @@
+{
+  "people": [
+    {
+      "id": "erzhu-zhao",
+      "name": "尔朱兆",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "尔朱兆是北魏将领，尔朱荣的侄辈。尔朱荣被杀后，他掌握并州兵力，与高欢有盟约。面对并、肆流民和旧部的反抗，他向高欢问计。 后来高欢与尔朱氏交战，尔朱兆接连失利，最终在秀容自缢；高欢为他收葬。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "text": "尔朱兆是北魏将领，尔朱荣的侄辈。此前他同意高欢统领并、肆的部众；此时高欢又请求让他们到山东就食。长史慕容绍宗劝他不要放行，他相信与高欢的盟誓，最终同意出发。 后来高欢与尔朱氏交战，尔朱兆接连失利，最终在秀容自缢；高欢为他收葬。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heba-yun",
+      "name": "贺拔允",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "贺拔允出现在尔朱兆与高欢商议安置部众的场合。他向尔朱兆推荐高欢，随即被高欢挥拳打落一颗牙；这次举荐之后，尔朱兆将统领部众的任务交给了高欢。 贺拔允是贺拔岳、贺拔胜的兄长，早年曾归尔朱荣。后来他随高欢在信都起兵，官至太尉；北魏朝局分裂时，他受到猜疑，最终被赐死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十九·贺拔允传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-gui",
+      "name": "刘贵",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "刘贵是高欢早年结交的朋友，曾为高欢引见尔朱荣。此时他受高欢派遣，以并、肆连年灾荒、降户饥饿为由，请尔朱兆允许他们到山东就食。 后来刘贵在高欢起兵后归附，历任刺史、御史中尉，并参与征战。《北齐书》也记载他任地方官时用刑严酷，不能只用官职概括他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十九·刘贵传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-shaozong",
+      "name": "慕容绍宗",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "慕容绍宗当时是尔朱兆的长史，是他身边参与谋议的官员。他担心高欢握有兵力后难以控制，因此劝尔朱兆不要让高欢带兵东行。 后来尔朱兆兵败，慕容绍宗归附高欢。高欢死后，他统军击败反叛的侯景，随后又参与围攻颍川。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十·慕容绍宗传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "erzhu-zhao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆面对的，是被俘、流散而来的大群旧部。记载称他们多次反抗，镇压已经杀死许多人，局面仍未安定。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 37,
+      "text": "尔朱兆",
+      "paragraphText": "在座的贺拔允推荐高欢。高欢没有顺势谢受，反而挥拳，打掉他一颗牙，又责骂他对尔朱兆不敬。"
+    },
+    {
+      "personId": "heba-yun",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "贺拔允",
+      "paragraphText": "在座的贺拔允推荐高欢。高欢没有顺势谢受，反而挥拳，打掉他一颗牙，又责骂他对尔朱兆不敬。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆因此以为高欢诚恳，真将军队交给他。这个场面的结果，是高欢获得了此前还没有的统领权。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆还醉着，高欢担心他酒醒变卦，立即出营宣布受命，召州镇兵到汾东听令，随后在阳曲川部署。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "尔朱兆",
+      "paragraphText": "兵士原本就厌恶尔朱兆、乐于跟随高欢，陆续来到。他得到的已经不止是口头许可，而是开始聚拢的部队。"
+    },
+    {
+      "personId": "liu-gui",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "刘贵",
+      "paragraphText": "接下来，高欢让刘贵再去请求：并、肆连续霜旱，降户挖黄鼠吃，脸上没有粮食养出的颜色；不如让他们到山东找粮，饱暖之后再安排。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆答应了。这批人既是需要吃饭的流民，也是将要离开旧控制范围的军事力量。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "尔朱兆",
+      "paragraphText": "慕容绍宗劝尔朱兆不要放行。他说高欢有雄略，握住大兵后便难以控制。"
+    },
+    {
+      "personId": "murong-shaozong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "慕容绍宗",
+      "paragraphText": "慕容绍宗劝尔朱兆不要放行。他说高欢有雄略，握住大兵后便难以控制。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆信两人的盟誓。身边受了高欢钱财的人，又说绍宗只是与高欢有旧怨。最终，被关起来的是进谏的人，得到催促出发的却是高欢。"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "people": [
+    {
+      "id": "geng-jing",
+      "name": "耿京",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "耿京在山东聚兵，辛弃疾曾为他的掌书记。本篇他派辛弃疾奉表归宋；辛弃疾返回途中，耿京被张安国、邵进杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gou",
+      "name": "赵构",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "高宗是宋高宗赵构的庙号；本篇他在建康召见奉表归宋的辛弃疾，并授予官职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-anguo",
+      "name": "张安国",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "张安国与邵进杀害耿京后降金。本篇辛弃疾与王世隆、马全福等人到金营擒获他，押归后张安国被处死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shao-jin",
+      "name": "邵进",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "邵进与张安国杀害耿京，随后带部众降金。所取《宋史》辛弃疾传这一段没有进一步交代他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-shilong",
+      "name": "王世隆",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "王世隆是统制，本篇与辛弃疾、马全福等人前往金营，擒获张安国。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ma-quanfu",
+      "name": "马全福",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "马全福是《宋史》所称的忠义人，本篇与辛弃疾、王世隆等人一起前往金营。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "geng-jing",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "耿京",
+      "paragraphText": "耿京派他奉表归宋。表是这支山东人马递到朝廷的一份正式表态。"
+    },
+    {
+      "personId": "zhao-gou",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "高宗",
+      "paragraphText": "高宗在建康劳军，召见了他，把表收下，授他承务郎、天平节度掌书记。"
+    },
+    {
+      "personId": "zhang-anguo",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "张安国",
+      "paragraphText": "张安国、邵进杀了耿京，带着部众降了金。"
+    },
+    {
+      "personId": "shao-jin",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "邵进",
+      "paragraphText": "张安国、邵进杀了耿京，带着部众降了金。"
+    },
+    {
+      "personId": "wang-shilong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "王世隆",
+      "paragraphText": "他约了统制王世隆，和忠义人马全福等，直趋金营。"
+    },
+    {
+      "personId": "ma-quanfu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "马全福",
+      "paragraphText": "他约了统制王世隆，和忠义人马全福等，直趋金营。"
+    }
+  ]
+}

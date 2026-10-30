@@ -1,0 +1,305 @@
+{
+  "people": [
+    {
+      "id": "zhang-miao",
+      "name": "张邈",
+      "versions": [
+        {
+          "from": 3,
+          "to": 7,
+          "text": "张邈是陈留太守，也是曹操早年的朋友。曹操西进时，他派卫兹率兵相助。后来他参与迎接吕布、与曹操决裂，向袁术求救途中被自己的士兵所杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷七·吕布传附张邈",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-rong",
+      "name": "徐荣",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "徐荣是董卓的部将，在荥阳汴水与西进的曹操交战，使曹操部队遭到重创。交战后，他认为酸枣不易攻取，也率兵撤回。 后来董卓被杀，王允派他与胡轸在新丰迎击李傕等人，他在战斗中身亡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷七十二·董卓传附李傕",
+              "url": "https://zh.wikisource.org/zh-hans/後漢書/卷72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-hong",
+      "name": "曹洪",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "曹洪是曹操的从弟。荥阳战败时，他把自己的马让给曹操，帮助曹操脱险。后来他继续随曹操征战，曹丕即位后官至骠骑将军；曹魏明帝时又恢复官爵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "115"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷九·曹洪传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-zhuo",
+      "name": "董卓",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "董卓是东汉末年掌控朝廷的军阀。关东各地起兵后，他胁迫汉献帝迁都长安。后来司徒王允与吕布等人谋杀了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《后汉书》",
+              "section": "卷七十二·董卓传",
+              "url": "https://zh.wikisource.org/zh-hans/後漢書/卷72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-shao",
+      "name": "袁绍",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "袁绍当时是关东起兵讨董诸军推举的盟主。后来他控制河北，与曹操争夺北方，在官渡战败；败后不久病逝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·袁绍传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-zi",
+      "name": "卫兹",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "卫兹是陈留人，曾与曹操商议大事。张邈派他带兵随曹操西进；据《三国志·卫臻传》，他在荥阳讨董之战中战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷二十二·卫臻传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiahou-dun",
+      "name": "夏侯惇",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "夏侯惇是曹操早年的部将，曾陪他到扬州募集兵马。后来他长期随曹操征战，也曾为曹操守濮阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷九·夏侯惇传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-wen",
+      "name": "陈温",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "陈温当时任扬州刺史，曹操兵败后到扬州募兵，他提供了兵力。《资治通鉴》记他后来去世，其后的扬州局势仍不安定。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《资治通鉴》",
+              "section": "卷六十·汉纪五十二",
+              "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷060"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhou-xin",
+      "name": "周昕",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "周昕当时是丹杨太守，与扬州刺史陈温一起向曹操提供兵马。后来袁术任命吴景领丹杨太守，吴景出兵讨伐周昕并占据该郡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷五十·吴夫人传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷50"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhang-miao",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "张邈",
+      "paragraphText": "张邈拨了一支兵给他：派将卫兹，分兵跟着他。"
+    },
+    {
+      "personId": "zhang-miao",
+      "beat": 7,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "张邈",
+      "paragraphText": "张邈等没能采用这套建议。"
+    },
+    {
+      "personId": "xu-rong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "徐荣",
+      "paragraphText": "到荥阳汴水，碰上董卓的将徐荣。"
+    },
+    {
+      "personId": "xu-rong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "徐荣",
+      "paragraphText": "徐荣看见曹操带的兵虽少，却能整日力战。"
+    },
+    {
+      "personId": "cao-hong",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 8,
+      "text": "洪",
+      "paragraphText": "本纪记，他的从弟洪把马让给他。《曹洪传》另记曹操辞让，曹洪说："
+    },
+    {
+      "personId": "dong-zhuo",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "董卓",
+      "paragraphText": "二月，董卓听说关东起兵，把天子迁往长安。"
+    },
+    {
+      "personId": "yuan-shao",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 17,
+      "text": "袁绍",
+      "paragraphText": "联军分驻河内、酸枣等处。董卓兵强，袁绍等人不敢先向前进。"
+    },
+    {
+      "personId": "wei-zi",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 12,
+      "text": "卫兹",
+      "paragraphText": "张邈拨了一支兵给他：派将卫兹，分兵跟着他。"
+    },
+    {
+      "personId": "xiahou-dun",
+      "beat": 8,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "夏侯惇",
+      "paragraphText": "他和夏侯惇等人到扬州去募兵。"
+    },
+    {
+      "personId": "chen-wen",
+      "beat": 8,
+      "paragraph": 2,
+      "offset": 2,
+      "text": "陈温",
+      "paragraphText": "刺史陈温、丹杨太守周昕，给了他四千多人。"
+    },
+    {
+      "personId": "zhou-xin",
+      "beat": 8,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "周昕",
+      "paragraphText": "刺史陈温、丹杨太守周昕，给了他四千多人。"
+    }
+  ]
+}

@@ -1,0 +1,742 @@
+{
+  "people": [
+    {
+      "id": "tian-du",
+      "name": "田都",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田都是项羽所封的齐王。田荣不服分封，起兵迎击，他逃往楚地。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-shi",
+      "name": "田市",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田市是齐王田儋之子，此前为齐王，项羽将他迁为胶东王。他前去就国后，被反对分封的田荣追杀于即墨。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十四·田儋列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷094"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-rong",
+      "name": "田荣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田荣是齐地势力领袖，反对项羽分封，击走田都、杀田市与田安，自立为齐王；后来与项羽交战败走，在平原被当地人杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "local",
+              "id": "060"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peng-yue",
+      "name": "彭越",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "彭越是活跃于梁地的将领，此时接受田荣所给的将军印，在梁地反楚。后来他与刘邦合作，被封梁王，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十·魏豹彭越列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷090"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-yu",
+      "name": "陈馀",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "陈馀是赵方将领，分封时未获王号。此时他向田荣借兵进攻常山，迎回赵王歇；后来在井陉被韩信、张耳一方击败并杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-heng",
+      "name": "田横",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "田横是田荣的弟弟。田荣战死后，他收集齐地散兵继续反楚；后来刘邦建立汉朝，他拒绝入朝，自杀身亡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "060"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十四·田儋列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷094"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zheng-chang",
+      "name": "郑昌",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "郑昌曾任吴县县令。项羽得知汉军东进后立他为韩王，意在抵挡汉军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "059"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-gongjiao",
+      "name": "萧公角",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "萧公角是项羽派去攻打彭越的将领，在梁地被彭越击败。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "059"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-liang",
+      "name": "张良",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "张良是汉王刘邦的谋士，此时奉命经营韩地并向项羽送信；后来他受封留侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十五·留侯世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷055"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ying-bu",
+      "name": "黥布",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "黥布此前是项羽部将，受封九江王。项羽征兵攻齐时他托病不亲往；后来他归汉，随后又反汉，被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "060"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十一·黥布列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷091"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-ying",
+      "name": "刘盈",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "孝惠即刘盈，是刘邦与吕后的儿子。彭城战败时他与姐姐鲁元随刘邦逃走；后来他继位，史称汉惠帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-yuan",
+      "name": "鲁元公主",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "鲁元是刘邦与吕后的女儿，也是刘盈的姐姐；彭城战败时，她与刘盈随刘邦逃走。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiahou-ying",
+      "name": "夏侯婴",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "滕公是夏侯婴，沛人，早年便追随刘邦。逃离彭城时，他驾车并多次将被推下车的刘盈、鲁元抱回车上；后来他继续随汉军征战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十五·樊郦滕灌列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷095"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-taigong",
+      "name": "刘太公",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "太公是刘邦的父亲。彭城战败后，他与吕后等人在寻找刘邦时被楚军带走，后来才被送还。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-hou",
+      "name": "吕后",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "吕后是刘邦的妻子、刘盈与鲁元的母亲。彭城战败后，她与刘邦父亲等被楚军带走；刘邦死后，她以皇太后身份掌握朝政。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九·吕太后本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷009"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shen-shiqi",
+      "name": "审食其",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "审食其是刘邦一方的人，彭城战败后与刘邦父亲、吕后同行，被楚军带走。后来他受封辟阳侯，吕后执政时曾任左丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十六·陈丞相世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-ze",
+      "name": "周吕侯",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "周吕侯是吕后的哥哥，当时率汉军驻下邑，刘邦战败后前去会合。《史记集解》引徐广说他名泽，即吕泽。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《史记集解》",
+              "section": "卷七·项羽本纪，徐广注",
+              "url": "https://zh.wikisource.org/wiki/史記三家註/卷007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-he",
+      "name": "萧何",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "萧何是刘邦的重要辅佐者，留在关中筹措军需。彭城战败后，他把关中兵员送到荥阳，使汉军重新集结；后来在汉朝任丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十三·萧相国世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-an",
+      "name": "田安",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田安是项羽所封的济北王，原是齐王田建的孙子。田荣反对分封，攻杀田安并合并三齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-tong",
+      "name": "张同",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "张同是陈馀派往齐地游说田荣的人之一。他与夏说传达陈馀借兵攻常山、迎回赵王的请求。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xia-yue",
+      "name": "夏说",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "夏说是陈馀派往齐地游说田荣的人之一。他与张同一起为陈馀争取齐地援兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-xie",
+      "name": "赵王歇",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "赵王歇此前被项羽改封代王，原来的赵地则封给张耳。陈馀借田荣的兵打败张耳后，将赵王歇迎回赵地。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "汉王是刘邦的称号。项羽分封时将他立为汉王；此时他已平定三秦并准备东进，随后在彭城被项羽击败，退守荥阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "local",
+              "id": "061"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-guang",
+      "name": "田广",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "田广是田荣之子。田荣死后，他的叔父田横收复齐地，立他为齐王；后来汉军东进，田广请求楚军支援，齐楚联军败于韩信。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十二·淮阴侯列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷092"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "tian-du",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "田都",
+      "paragraphText": "田都跑到楚那边去。齐王市怕项羽，自己逃到胶东就国。田荣更怒，追到即墨，把他杀了。"
+    },
+    {
+      "personId": "tian-shi",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "齐王市",
+      "paragraphText": "田都跑到楚那边去。齐王市怕项羽，自己逃到胶东就国。田荣更怒，追到即墨，把他杀了。"
+    },
+    {
+      "personId": "tian-rong",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 25,
+      "text": "田荣",
+      "paragraphText": "田都跑到楚那边去。齐王市怕项羽，自己逃到胶东就国。田荣更怒，追到即墨，把他杀了。"
+    },
+    {
+      "personId": "peng-yue",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 35,
+      "text": "彭越",
+      "paragraphText": "田荣于是自立为齐王，又往西打济北王田安，把三齐并成一块。他把将军印给了彭越，让他在梁地反。"
+    },
+    {
+      "personId": "chen-yu",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "陈余",
+      "paragraphText": "陈余也暗中派张同、夏说去劝齐王：项羽做天下的主宰，分得不公平——旧王都被封到坏地方，他的臣子诸将都得了好地方；又把原来的赵王赶到北边的代去。愿大王借我兵，让我去打常山，把赵王迎回来。齐王答应了，派兵去赵。"
+    },
+    {
+      "personId": "tian-heng",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 5,
+      "text": "田横",
+      "paragraphText": "田荣的弟弟田横收拢齐的散兵，得到几万人，在城阳反楚。"
+    },
+    {
+      "personId": "zheng-chang",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "郑昌",
+      "paragraphText": "他让故吴令郑昌做韩王，用来挡住汉；让萧公角去打彭越，彭越把萧公角打败了。"
+    },
+    {
+      "personId": "xiao-gongjiao",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 18,
+      "text": "萧公角",
+      "paragraphText": "他让故吴令郑昌做韩王，用来挡住汉；让萧公角去打彭越，彭越把萧公角打败了。"
+    },
+    {
+      "personId": "zhang-liang",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "张良",
+      "paragraphText": "汉王派张良去徇韩地。张良给项王送来一封信："
+    },
+    {
+      "personId": "ying-bu",
+      "beat": 2,
+      "paragraph": 8,
+      "offset": 5,
+      "text": "黥布",
+      "paragraphText": "他向九江王黥布征兵。"
+    },
+    {
+      "personId": "liu-ying",
+      "beat": 5,
+      "paragraph": 7,
+      "offset": 7,
+      "text": "孝惠",
+      "paragraphText": "汉王在路上遇到孝惠、鲁元，把他们带上车一起走。"
+    },
+    {
+      "personId": "lu-yuan",
+      "beat": 5,
+      "paragraph": 7,
+      "offset": 10,
+      "text": "鲁元",
+      "paragraphText": "汉王在路上遇到孝惠、鲁元，把他们带上车一起走。"
+    },
+    {
+      "personId": "xiahou-ying",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "滕公",
+      "paragraphText": "楚的骑兵追汉王。汉王急了，把孝惠、鲁元推下车去。滕公每次都下车把他们收上来载着。这样推了三次。"
+    },
+    {
+      "personId": "liu-taigong",
+      "beat": 6,
+      "paragraph": 4,
+      "offset": 10,
+      "text": "太公",
+      "paragraphText": "于是脱了身。汉王去找太公、吕后，没有遇到。审食其跟着太公、吕后从小路走，找汉王，反而遇上楚军。楚军把他们带了回去，报给项王。项王就把他们常常留在军中。"
+    },
+    {
+      "personId": "lv-hou",
+      "beat": 6,
+      "paragraph": 4,
+      "offset": 13,
+      "text": "吕后",
+      "paragraphText": "于是脱了身。汉王去找太公、吕后，没有遇到。审食其跟着太公、吕后从小路走，找汉王，反而遇上楚军。楚军把他们带了回去，报给项王。项王就把他们常常留在军中。"
+    },
+    {
+      "personId": "shen-shiqi",
+      "beat": 6,
+      "paragraph": 4,
+      "offset": 21,
+      "text": "审食其",
+      "paragraphText": "于是脱了身。汉王去找太公、吕后，没有遇到。审食其跟着太公、吕后从小路走，找汉王，反而遇上楚军。楚军把他们带了回去，报给项王。项王就把他们常常留在军中。"
+    },
+    {
+      "personId": "lv-ze",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "周吕侯",
+      "paragraphText": "这时候，吕后的哥哥周吕侯带着汉的兵驻在下邑。汉王从小路去投他，慢慢收拢逃散的士卒。"
+    },
+    {
+      "personId": "xiao-he",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 14,
+      "text": "萧何",
+      "paragraphText": "到荥阳，各路的败军都来会合。萧何把关中还没有服役的老弱全都发来荥阳，汉军又振作起来。"
+    },
+    {
+      "personId": "tian-an",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 17,
+      "text": "田安",
+      "paragraphText": "田荣于是自立为齐王，又往西打济北王田安，把三齐并成一块。他把将军印给了彭越，让他在梁地反。"
+    },
+    {
+      "personId": "zhang-tong",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 6,
+      "text": "张同",
+      "paragraphText": "陈余也暗中派张同、夏说去劝齐王：项羽做天下的主宰，分得不公平——旧王都被封到坏地方，他的臣子诸将都得了好地方；又把原来的赵王赶到北边的代去。愿大王借我兵，让我去打常山，把赵王迎回来。齐王答应了，派兵去赵。"
+    },
+    {
+      "personId": "xia-yue",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 9,
+      "text": "夏说",
+      "paragraphText": "陈余也暗中派张同、夏说去劝齐王：项羽做天下的主宰，分得不公平——旧王都被封到坏地方，他的臣子诸将都得了好地方；又把原来的赵王赶到北边的代去。愿大王借我兵，让我去打常山，把赵王迎回来。齐王答应了，派兵去赵。"
+    },
+    {
+      "personId": "zhao-xie",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 60,
+      "text": "赵王",
+      "paragraphText": "陈余也暗中派张同、夏说去劝齐王：项羽做天下的主宰，分得不公平——旧王都被封到坏地方，他的臣子诸将都得了好地方；又把原来的赵王赶到北边的代去。愿大王借我兵，让我去打常山，把赵王迎回来。齐王答应了，派兵去赵。"
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "汉王",
+      "paragraphText": "汉那边已经还定了三秦。项羽听说汉王把关中都并了、还要往东，齐、赵又都反了，大怒。"
+    },
+    {
+      "personId": "tian-guang",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 29,
+      "text": "田广",
+      "paragraphText": "项羽救彭城，追汉王追到荥阳。田横趁机收回齐地，立田荣的儿子田广为齐王。"
+    }
+  ]
+}

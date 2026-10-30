@@ -1,0 +1,423 @@
+{
+  "people": [
+    {
+      "id": "seng-qiang",
+      "name": "僧强",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "僧强是《梁书·陈庆之传》记载的一位僧人，起兵自称皇帝，蔡伯龙响应他；陈庆之奉命讨伐，僧强后来被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cai-bolong",
+      "name": "蔡伯龙",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "蔡伯龙是当地起兵者，响应自称皇帝的僧强。梁朝派陈庆之讨伐，蔡伯龙后来被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-teng",
+      "name": "孙腾",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "孙腾是高欢早年的交游与幕僚，此时作为魏方行台与陈庆之作战。后来他在东魏任尚书左仆射、司徒等职，武定六年去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十八·孙腾传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "侯景是高欢麾下的将领，此时率魏军进攻梁朝，遭陈庆之击败。后来他转而归梁，又在梁起兵攻陷建康，最终兵败被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十六·侯景传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiahou-kui",
+      "name": "夏侯夔",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "夏侯夔是梁朝将领。这时朝廷派他等人赴援对抗侯景；他们行至黎浆时，陈庆之已经击退侯景。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-qiwen",
+      "name": "杨起文",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "杨起文时任梁朝济阴太守。僧强等攻陷北徐州时，他弃城离开；本篇这一处主要交代当时梁方守地的处境。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shan-xibao",
+      "name": "单希宝",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "单希宝时任梁朝钟离太守。僧强等起兵、攻陷北徐州时，他被害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lou-qi",
+      "name": "娄起",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "娄起是北魏颍州刺史，与扬州刺史是云宝同在魏方。《梁书·陈庆之传》记载，陈庆之在溱水击败了他们。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shi-yunbao",
+      "name": "是云宝",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "是云宝是魏方扬州刺史，曾在溱水与陈庆之交战。后来据《北齐书·尧雄传》，他转而归附西魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十·尧雄传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jin",
+      "name": "侯进",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "侯进是魏方大都督。本篇中他与孙腾、尧雄、司马恭等在楚城同陈庆之交战；此处只根据《梁书·陈庆之传》交代其当时职务。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-xiong",
+      "name": "尧雄",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "尧雄是魏方豫州刺史。《梁书》记他曾在楚城与陈庆之交战；《北齐书·尧雄传》还记他后来多次与梁军交战，长期在豫州一带任职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十·尧雄传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-gong",
+      "name": "司马恭",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "司马恭时任魏方梁州刺史，与孙腾、侯进、尧雄等在楚城同陈庆之交战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-yan",
+      "name": "萧衍",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "高祖是梁武帝萧衍，陈庆之早年便随从他。本篇中，梁武帝多次嘉奖陈庆之在地方的作为。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-he",
+      "name": "桓和",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "桓和是梁朝楚州刺史。侯景率军进攻楚州时，他陷落于战事；《梁书·陈庆之传》在此只简略记作“陷没”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-tui",
+      "name": "萧退",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "湘潭侯退名萧退，是梁武帝弟弟鄱阳王萧恢的儿子。朝廷命他与夏侯夔等赴援；后来建康陷落，他入东魏，并在北齐去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷三十三·萧退传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷33"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "seng-qiang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "僧强",
+      "paragraphText": "赶上妖贼沙门僧强自称皇帝，土豪蔡伯龙起兵响应他。"
+    },
+    {
+      "personId": "cai-bolong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "蔡伯龙",
+      "paragraphText": "赶上妖贼沙门僧强自称皇帝，土豪蔡伯龙起兵响应他。"
+    },
+    {
+      "personId": "sun-teng",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 8,
+      "text": "孙腾",
+      "paragraphText": "又在楚城破了行台孙腾、大都督侯进、豫州刺史尧雄、梁州刺史司马恭。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "侯景",
+      "paragraphText": "大同二年，魏派侯景率七万兵寇楚州。"
+    },
+    {
+      "personId": "xiahou-kui",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 10,
+      "text": "夏侯夔",
+      "paragraphText": "朝廷命湘潭侯退与右卫夏侯夔等赴援。"
+    },
+    {
+      "personId": "yang-qiwen",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 4,
+      "text": "杨起文",
+      "paragraphText": "济阴太守杨起文弃城走了，钟离太守单希宝被害。"
+    },
+    {
+      "personId": "shan-xibao",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 16,
+      "text": "单希宝",
+      "paragraphText": "济阴太守杨起文弃城走了，钟离太守单希宝被害。"
+    },
+    {
+      "personId": "lou-qi",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 11,
+      "text": "娄起",
+      "paragraphText": "在溱水破了魏的颍州刺史娄起、扬州刺史是云宝。"
+    },
+    {
+      "personId": "shi-yunbao",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 18,
+      "text": "是云宝",
+      "paragraphText": "在溱水破了魏的颍州刺史娄起、扬州刺史是云宝。"
+    },
+    {
+      "personId": "hou-jin",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 14,
+      "text": "侯进",
+      "paragraphText": "又在楚城破了行台孙腾、大都督侯进、豫州刺史尧雄、梁州刺史司马恭。"
+    },
+    {
+      "personId": "yao-xiong",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 21,
+      "text": "尧雄",
+      "paragraphText": "又在楚城破了行台孙腾、大都督侯进、豫州刺史尧雄、梁州刺史司马恭。"
+    },
+    {
+      "personId": "sima-gong",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 28,
+      "text": "司马恭",
+      "paragraphText": "又在楚城破了行台孙腾、大都督侯进、豫州刺史尧雄、梁州刺史司马恭。"
+    },
+    {
+      "personId": "xiao-yan",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "高祖",
+      "paragraphText": "高祖常常嘉奖慰劳他。"
+    },
+    {
+      "personId": "huan-he",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "桓和",
+      "paragraphText": "刺史桓和陷没。侯景继续进军淮上，还写了一封信给陈庆之，劝他投降。"
+    },
+    {
+      "personId": "xiao-tui",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "湘潭侯退",
+      "paragraphText": "朝廷命湘潭侯退与右卫夏侯夔等赴援。"
+    }
+  ]
+}

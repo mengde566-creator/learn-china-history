@@ -1,0 +1,420 @@
+{
+  "people": [
+    {
+      "id": "yao-hong",
+      "name": "姚泓",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "姚泓是后秦君主姚兴的儿子。姚兴死后，他继位，兄弟之间发生争斗；刘裕趁关中局势动荡北伐。后来王镇恶攻克长安，姚泓被俘，送到建康后被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-daoji",
+      "name": "檀道济",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "檀道济从刘裕起兵时便随军作战，曾与刘道规抵御徐道覆。这次北伐中，他与王镇恶先行向许昌、洛阳进军。《宋书》记他后来继续统军作战，北魏攻陷滑台后，他率军从历城撤回。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·檀道济传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-zhene",
+      "name": "王镇恶",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "王镇恶是前秦王猛的孙子，前秦灭亡后随家人归晋，后来受到刘裕重用，曾参与攻取江陵。这次北伐中他与檀道济先行，后来攻克长安、俘虏姚泓；刘裕东归后，王镇恶留在关中，被沈田子杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十五·王镇恶传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-chaoshi",
+      "name": "朱超石",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "朱超石是朱龄石的弟弟，曾在徐道覆击败何无忌后被俘，后来逃归刘裕。这次北伐时他为前锋，在却月阵援军中与北魏军交战。后来关中失守，他前往接应兄长，兄弟二人均被夏军所杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "101"
+            },
+            {
+              "kind": "local",
+              "id": "104"
+            },
+            {
+              "kind": "local",
+              "id": "106"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十八·朱超石传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷48"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-zhongde",
+      "name": "王仲德",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "王仲德本名王懿，因避晋朝帝王名讳而以字行世。此前他随刘裕北伐南燕，又在建康抵御卢循；这次率水军入河并进取滑台。后来他在刘宋时期随军北伐，又与檀道济救援滑台。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十六·王懿传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷46"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ding-wu",
+      "name": "丁旿",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "丁旿是刘裕部下的白直队主。此次北伐，他奉命率七百人将车拉上河北岸，摆成却月阵，竖起信号等待朱超石带兵来援；此前他曾奉刘裕之命，在幕中杀死诸葛长民。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "103"
+            },
+            {
+              "kind": "local",
+              "id": "104"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十五·诸葛长民传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷085"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shen-tianzi",
+      "name": "沈田子",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "沈田子是刘裕部将，此前曾参与北伐南燕和追击卢循。这次他率偏师入武关，击败姚泓军；刘裕东归后，他留在关中。《宋书·自序》记他后来假传刘裕命令杀王镇恶，随后被长史王修所杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷一百·自序·沈田子",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-muzhi",
+      "name": "刘穆之",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "刘穆之是刘裕长期倚重的幕僚，曾随其平定京邑、参与谋划，刘裕出征时又多次留在后方处理事务。此次北伐，他留守建康，在刘裕攻克长安后病逝；徐羡之接替留守，刘裕随后东归。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十二·刘穆之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷42"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-xianzhi",
+      "name": "徐羡之",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "徐羡之早年与刘裕同府，刘裕起兵后成为其参军。此次北伐，他留在后方协助刘穆之，穆之病逝后接掌留守事务。后来刘裕去世，他与傅亮、谢晦等受托辅政，参与废黜并杀害少帝和刘义真。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·徐羡之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yizhen",
+      "name": "刘义真",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "刘义真是刘裕的儿子，此时受封桂阳公；刘裕东归时让他留镇长安，由多名将佐辅佐。后来关中将佐互相攻杀，他被召回，途中遭夏军追击大败。刘裕去世后，他又被徐羡之等废黜、杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·徐羡之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-hua",
+      "name": "韦华",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "韦华曾在后秦任职，姚兴派他册封蜀地主帅谯纵为蜀王。本篇刘裕北伐时，他据守仓垣，随后向晋军归降。现取的记载没有交代他归降后的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十八·姚兴载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷118"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-guang",
+      "name": "姚洸",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "姚洸是后秦君主姚泓的弟弟。姚兴病重、宗室发生争执时，他曾在洛阳起兵声援姚泓；本篇晋军到洛阳后，他请降并被送往建康。所用材料没有交代他此后的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十八·姚兴载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷118"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yao-hong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 22,
+      "text": "姚泓",
+      "paragraphText": "荆、雍平定，才又谋外略。正好羌主姚兴死，儿子姚泓立，兄弟相杀，关中扰乱。他于是戒严北讨，加领征西将军、司豫二州刺史；以世子为徐、兖二州刺史。"
+    },
+    {
+      "personId": "tan-daoji",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "檀道济",
+      "paragraphText": "先前已派冠军将军檀道济、龙骧将军王镇恶步向许、洛。羌人沿路的屯守，都望风降服。伪兖州刺史韦华先据仓垣，也率众归顺。"
+    },
+    {
+      "personId": "wang-zhene",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "王镇恶",
+      "paragraphText": "先前已派冠军将军檀道济、龙骧将军王镇恶步向许、洛。羌人沿路的屯守，都望风降服。伪兖州刺史韦华先据仓垣，也率众归顺。"
+    },
+    {
+      "personId": "zhu-chaoshi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "朱超石",
+      "paragraphText": "义熙十二年北伐，朱超石为前锋入河。"
+    },
+    {
+      "personId": "wang-zhongde",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "王仲德",
+      "paragraphText": "他又派北兖州刺史王仲德先带水军入河。仲德在东郡凉城破了索虏，进平滑台。"
+    },
+    {
+      "personId": "ding-wu",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "丁旿",
+      "paragraphText": "他先前派白直队主丁旿，率七百人、车一百乘，在河北岸上去水百余步，摆成却月阵，两头抱着河；每车配七个持仗的兵。摆完，竖起一根白毦。"
+    },
+    {
+      "personId": "shen-tianzi",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 32,
+      "text": "沈田子",
+      "paragraphText": "七月，他到陕城。龙骧将军王镇恶伐木为舟，从河浮渭。八月，扶风太守沈田子在蓝田大破姚泓；王镇恶克长安，生擒姚泓。"
+    },
+    {
+      "personId": "liu-muzhi",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "刘穆之",
+      "paragraphText": "十一月，前将军刘穆之卒，以左司马徐羡之代掌留任。从前决于穆之的大事，都改为咨问。"
+    },
+    {
+      "personId": "xu-xianzhi",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "徐羡之",
+      "paragraphText": "十一月，前将军刘穆之卒，以左司马徐羡之代掌留任。从前决于穆之的大事，都改为咨问。"
+    },
+    {
+      "personId": "liu-yizhen",
+      "beat": 8,
+      "paragraph": 1,
+      "offset": 40,
+      "text": "义真",
+      "paragraphText": "他想息驾长安，经略赵、魏；碰上穆之卒，就回去了。十二月庚子，从长安出发，以桂阳公义真为安西将军、雍州刺史，留腹心将佐辅佐他。闰月，他从洛入河，开汴渠而归。"
+    },
+    {
+      "personId": "wei-hua",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 44,
+      "text": "韦华",
+      "paragraphText": "先前已派冠军将军檀道济、龙骧将军王镇恶步向许、洛。羌人沿路的屯守，都望风降服。伪兖州刺史韦华先据仓垣，也率众归顺。"
+    },
+    {
+      "personId": "yao-guang",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 24,
+      "text": "姚洸",
+      "paragraphText": "十月，众军到洛阳，围金墉。姚泓的弟弟、伪平南将军姚洸请降，被送到京师。于是修复晋室五陵，设置守卫。"
+    }
+  ]
+}

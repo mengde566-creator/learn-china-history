@@ -1,0 +1,380 @@
+{
+  "people": [
+    {
+      "id": "yu-du",
+      "name": "于毒",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "于毒是东汉末黑山军的首领之一，曾与白绕、眭固等人攻掠魏郡和东郡；曹操攻打他的本屯时，他从东武阳回兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bai-rao",
+      "name": "白绕",
+      "versions": [
+        {
+          "from": 1,
+          "to": 2,
+          "text": "白绕是东汉末黑山军的首领之一，参与攻掠魏郡、东郡。曹操进入东郡后，在濮阳击败了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sui-gu",
+      "name": "眭固",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "眭固是东汉末黑山军首领之一，曾在这一阶段遭曹操截击。后来他掌握张杨旧部并依附袁绍，在犬城与曹操部将曹仁、史涣交战时被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-gong",
+      "name": "王肱",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "王肱此前由兖州刺史刘岱安排领东郡太守；面对黑山军进攻，他未能抵挡，曹操随后进入东郡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-shao",
+      "name": "袁绍",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "袁绍是关东讨董军推举的盟主，此时控制冀州。他在曹操击败白绕后上表荐举曹操为东郡太守；后来双方争夺北方，袁绍在官渡战败。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷六·袁绍传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zheng-sui",
+      "name": "郑遂",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "郑遂当时担任任城相。青州黄巾进入兖州时，他被杀；本篇依据记下了他的官职和遭遇。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-dai",
+      "name": "刘岱",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "刘岱是当时的兖州刺史，曾参与关东讨董。面对进入兖州的青州黄巾，鲍信建议先守，他仍出兵迎战，结果被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷四十九·刘繇传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷49"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bao-xin",
+      "name": "鲍信",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "鲍信是济北相，曾与曹操共同参与关东起兵。刘岱战死后，他和州吏迎曹操领兖州；后来在寿张东与黄巾交战时战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十二·鲍勋传及裴注引《魏书》",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wan-qian",
+      "name": "万潜",
+      "versions": [
+        {
+          "from": 9,
+          "to": 9,
+          "text": "万潜是兖州的州吏，刘岱战死后，与鲍信等人到东郡迎请曹操领兖州。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-fuluo",
+      "name": "于夫罗",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "于夫罗是东汉末南匈奴单于，史书也写作于扶罗。此时他的部众在内黄被曹操击败；后来他去世，由弟弟呼厨泉继立。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《通鉴纪事本末》",
+              "section": "卷十三·刘渊据平阳",
+              "url": "https://zh.wikisource.org/zh-hans/通鑑紀事本末/第十三卷"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yu-du",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "于毒",
+      "paragraphText": "黑山军于毒、白绕、眭固等率十余万人，攻掠魏郡、东郡。"
+    },
+    {
+      "personId": "yu-du",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "于毒",
+      "paragraphText": "第二年春天，太祖驻军顿丘；于毒等人来攻东武阳。"
+    },
+    {
+      "personId": "yu-du",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 15,
+      "text": "于毒",
+      "paragraphText": "太祖于是带兵往西进入山里，攻打于毒等人的本屯。"
+    },
+    {
+      "personId": "yu-du",
+      "beat": 4,
+      "paragraph": 6,
+      "offset": 0,
+      "text": "于毒",
+      "paragraphText": "于毒听说这件事，丢下东武阳，回兵去了。"
+    },
+    {
+      "personId": "bai-rao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "白绕",
+      "paragraphText": "黑山军于毒、白绕、眭固等率十余万人，攻掠魏郡、东郡。"
+    },
+    {
+      "personId": "bai-rao",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "白绕",
+      "paragraphText": "曹操带兵进入东郡，在濮阳攻打白绕，击破了他的军队。"
+    },
+    {
+      "personId": "sui-gu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "眭固",
+      "paragraphText": "黑山军于毒、白绕、眭固等率十余万人，攻掠魏郡、东郡。"
+    },
+    {
+      "personId": "sui-gu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "眭固",
+      "paragraphText": "太祖半路截击眭固，又在内黄攻打匈奴的于夫罗，两仗都把对方打得大败。"
+    },
+    {
+      "personId": "wang-gong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "王肱",
+      "paragraphText": "东郡太守王肱抵挡不住。"
+    },
+    {
+      "personId": "yuan-shao",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "袁绍",
+      "paragraphText": "袁绍于是上表，举太祖做东郡太守；东郡的治所设在东武阳。"
+    },
+    {
+      "personId": "zheng-sui",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "郑遂",
+      "paragraphText": "青州黄巾一百万人进入兖州，杀了任城相郑遂，转往东平。"
+    },
+    {
+      "personId": "liu-dai",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "刘岱",
+      "paragraphText": "刘岱要出兵去打这支黄巾。"
+    },
+    {
+      "personId": "liu-dai",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "刘岱",
+      "paragraphText": "刘岱没有听他的，出去和这支黄巾交战，果然被杀。"
+    },
+    {
+      "personId": "bao-xin",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "鲍信",
+      "paragraphText": "鲍信劝阻。他说黄巾人数众多，百姓惊恐，士卒没有斗志，此时不能迎战。"
+    },
+    {
+      "personId": "bao-xin",
+      "beat": 9,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "鲍信",
+      "paragraphText": "鲍信于是和州吏万潜等人到东郡，迎太祖来领兖州牧。"
+    },
+    {
+      "personId": "bao-xin",
+      "beat": 10,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "鲍信",
+      "paragraphText": "拼力死战的是鲍信；这一仗，赢得勉强。"
+    },
+    {
+      "personId": "wan-qian",
+      "beat": 9,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "万潜",
+      "paragraphText": "鲍信于是和州吏万潜等人到东郡，迎太祖来领兖州牧。"
+    },
+    {
+      "personId": "yu-fuluo",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "于夫罗",
+      "paragraphText": "太祖半路截击眭固，又在内黄攻打匈奴的于夫罗，两仗都把对方打得大败。"
+    }
+  ]
+}

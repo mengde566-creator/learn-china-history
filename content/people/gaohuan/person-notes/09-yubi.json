@@ -1,0 +1,101 @@
+{
+  "people": [
+    {
+      "id": "wei-xiaokuan",
+      "name": "韦孝宽",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "韦孝宽是西魏晋州刺史，守卫玉壁。《周书》记载他加高城楼、截击地道，又用悬布、铁钩和木栅应对攻城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "035"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-cheng",
+      "name": "高澄",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "高澄是高欢的儿子。玉壁围攻失利、高欢带病回师后，他被召到晋阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hulu-jin",
+      "name": "斛律金",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "斛律金是高欢身边的将领。玉壁撤军后，高欢为回应西魏传出的中弩消息，召见众人，让斛律金作《敕勒歌》，自己跟着和唱。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "wei-xiaokuan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "韦孝宽",
+      "paragraphText": "东魏军在城南筑土山，想登高入城。韦孝宽把原有的城楼再接高，堆上守城器具。"
+    },
+    {
+      "personId": "wei-xiaokuan",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "韦孝宽",
+      "paragraphText": "攻车到来，韦孝宽张起悬布抵挡；东魏军绑松枝、浇油点火，想烧布和城楼，守军又用长钩割落竿上的松麻。"
+    },
+    {
+      "personId": "wei-xiaokuan",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "韦孝宽",
+      "paragraphText": "韦孝宽随塌随立木栅，堵住缺口。墙坏了，攻方仍没能入城。"
+    },
+    {
+      "personId": "gao-cheng",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "高澄",
+      "paragraphText": "高欢病了。十一月，他被抬着撤军，又召高澄到晋阳，请解统军职事。"
+    },
+    {
+      "personId": "hulu-jin",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 24,
+      "text": "斛律金",
+      "paragraphText": "传来西魏说他中弩的消息，他勉强坐起，见诸贵人，让斛律金作《敕勒歌》，自己跟着和唱，感伤流泪。"
+    }
+  ]
+}

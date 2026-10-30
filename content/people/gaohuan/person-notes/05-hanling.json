@@ -1,0 +1,536 @@
+{
+  "people": [
+    {
+      "id": "erzhu-zhao",
+      "name": "尔朱兆",
+      "versions": [
+        {
+          "from": 1,
+          "to": 2,
+          "text": "尔朱兆是北魏并州刺史，尔朱荣的侄辈。尔朱荣被孝庄帝杀死后，他率兵入洛并拘杀孝庄帝；他曾与高欢盟誓，如今双方已经兵戎相见。战前他责问高欢背盟，并称自己是为尔朱荣报仇。 韩陵战败后他退守秀容，后来在高欢派兵突袭中败走自缢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            }
+          ]
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "text": "尔朱兆是尔朱荣的侄辈，韩陵之战中与高欢交战后退回并州。高欢北进夺取晋阳，他转而退守秀容；两人原有的盟约已经被战争取代。 后来高欢派窦泰突袭，他败走自缢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尔朱兆是尔朱荣的侄辈，曾与高欢盟誓，后来双方反目交战。退守秀容后，他在高欢派出的窦泰突袭中败走自缢；高欢随后亲临其葬事，并厚葬了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-rong",
+      "name": "尔朱荣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "尔朱荣是北魏末年握有兵权的将领，高欢曾投到他门下，参与军谋。孝庄帝后来杀死尔朱荣；他的侄辈尔朱兆以报仇为由出兵，拘杀了孝庄帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尔朱荣是高欢早年投靠并参与其军谋的北魏将领，已被孝庄帝杀死。尔朱兆败亡后，慕容绍宗带着尔朱荣的妻子和余众归降高欢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-lang",
+      "name": "元朗",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "元朗是北魏宗室。高欢在信都起兵后拥立他为帝，以取得政治名义；韩陵战后，高欢进入洛阳，将他废去，另立元修。 废位后他被封为安定王，后来死于门下外省；《魏书》说他“以罪殂”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·后废帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-gong",
+      "name": "元恭",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "元恭即北魏节闵帝，是洛阳朝廷的皇帝。他与高欢先前拥立的元朗是两位不同的皇帝；韩陵战后，高欢废去他们，改立元修。 废位后不久，他死于门下外省；《魏书》前废帝纪没有在这一段写明死因。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·前废帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-xiu",
+      "name": "元修",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "元修即北魏孝武帝。韩陵战后，高欢废去元朗与节闵帝，另立元修；新皇帝授高欢大丞相等官号，离京时又执手相送。 后来他与高欢决裂，西入关中；《魏书》记他随后被宇文泰所害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·出帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷11"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·出帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷11"
+            }
+          ]
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "text": "元修即北魏孝武帝，是韩陵战后由高欢拥立的皇帝。此时高乾密告皇帝有异心，高欢将密信交给元修；高乾被杀，君臣之间的裂痕显露出来。 后来他与高欢决裂，西入关中；《魏书》记他随后被宇文泰所害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·出帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷11"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·出帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-tai",
+      "name": "窦泰",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "窦泰是高欢麾下的将领。此前高欢曾采用他的反间之策；追击尔朱兆时，高欢又派他率精骑趁岁首宴会突袭秀容。 后来他参与高欢西征，在小关遭宇文泰袭击，兵败自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十五·窦泰传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-shaozong",
+      "name": "慕容绍宗",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "慕容绍宗曾任尔朱兆的长史，先前劝尔朱兆不要放高欢带兵东行，却遭禁押。尔朱兆败亡后，他带尔朱荣妻子和余众归降，高欢厚待了他。 高欢去世后，他又率军击败侯景；后来围攻颍川时，船遇大风飘向敌城，他投水而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十·慕容绍宗传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-qian",
+      "name": "高乾",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "高乾是支持高欢的河北人物，曾与李元忠攻下殷州。此时他任司空，向高欢密告说皇帝有异心。 高欢将密信交给皇帝后，高乾被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-ang",
+      "name": "高昂",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "高昂是高乾的弟弟。高乾被杀后，皇帝又密令杀高昂；高昂截获命令，逃来投奔高欢。 后来他继续为高欢作战，官至司徒；邙阴之战后，他在撤退途中被西军杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十一·高昂传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-shen",
+      "name": "高慎",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "高慎是高乾的次弟，与高昂同为高乾的弟弟。高乾遇害时，他在光州任职；听到变故后，他也逃来投奔高欢。 后来他担任御史中尉、北豫州刺史，最终据武牢归西魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十一·高慎传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷21"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "erzhu-zhao",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "尔朱兆",
+      "paragraphText": "战前，尔朱兆责他背弃盟约。高欢反问：起初说共同辅佐王室，如今那位皇帝在哪里？尔朱兆说自己是在为尔朱荣报仇，高欢则否认臣子向皇帝复仇的正当性。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 38,
+      "text": "尔朱兆",
+      "paragraphText": "战前，尔朱兆责他背弃盟约。高欢反问：起初说共同辅佐王室，如今那位皇帝在哪里？尔朱兆说自己是在为尔朱荣报仇，高欢则否认臣子向皇帝复仇的正当性。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 47,
+      "text": "尔朱荣",
+      "paragraphText": "战前，尔朱兆责他背弃盟约。高欢反问：起初说共同辅佐王室，如今那位皇帝在哪里？尔朱兆说自己是在为尔朱荣报仇，高欢则否认臣子向皇帝复仇的正当性。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆责问的盟约，已经挡不住双方交战。高欢赢得韩陵，尔朱氏原来的控制网随之破裂。"
+    },
+    {
+      "personId": "yuan-lang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "元朗",
+      "paragraphText": "高欢到了洛阳，却没有保留自己先前拥立的元朗。他废去元朗，也废去洛阳的节闵帝元恭，改立元修，即孝武帝。"
+    },
+    {
+      "personId": "yuan-lang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 25,
+      "text": "元朗",
+      "paragraphText": "高欢到了洛阳，却没有保留自己先前拥立的元朗。他废去元朗，也废去洛阳的节闵帝元恭，改立元修，即孝武帝。"
+    },
+    {
+      "personId": "yuan-gong",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 37,
+      "text": "元恭",
+      "paragraphText": "高欢到了洛阳，却没有保留自己先前拥立的元朗。他废去元朗，也废去洛阳的节闵帝元恭，改立元修，即孝武帝。"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 42,
+      "text": "元修",
+      "paragraphText": "高欢到了洛阳，却没有保留自己先前拥立的元朗。他废去元朗，也废去洛阳的节闵帝元恭，改立元修，即孝武帝。"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "元修",
+      "paragraphText": "元修授他大丞相等官号。高欢辞去天柱之号，减少封户；离京时，皇帝执手相送。位号的辞让，与决定皇帝人选的权力，同时出现在这段记事里。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "尔朱兆",
+      "paragraphText": "高欢继续北攻尔朱兆，拿下晋阳。看中它四面险固，他在这里建立大丞相府，定居下来。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆退守秀容。高欢数次扬言进攻又停下，直到对方松懈，才令窦泰趁岁首宴会疾驰突袭。次年正月，尔朱兆败走自缢。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 46,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆退守秀容。高欢数次扬言进攻又停下，直到对方松懈，才令窦泰趁岁首宴会疾驰突袭。次年正月，尔朱兆败走自缢。"
+    },
+    {
+      "personId": "dou-tai",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "窦泰",
+      "paragraphText": "尔朱兆退守秀容。高欢数次扬言进攻又停下，直到对方松懈，才令窦泰趁岁首宴会疾驰突袭。次年正月，尔朱兆败走自缢。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "尔朱兆",
+      "paragraphText": "高欢亲临尔朱兆的葬事，厚加安葬；慕容绍宗带尔朱荣妻子和余众投降，他也厚待。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "尔朱荣",
+      "paragraphText": "高欢亲临尔朱兆的葬事，厚加安葬；慕容绍宗带尔朱荣妻子和余众投降，他也厚待。"
+    },
+    {
+      "personId": "murong-shaozong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "慕容绍宗",
+      "paragraphText": "高欢亲临尔朱兆的葬事，厚加安葬；慕容绍宗带尔朱荣妻子和余众投降，他也厚待。"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 33,
+      "text": "元修",
+      "paragraphText": "高乾密告高欢，说皇帝已有异心。高欢没有只留作私下情报，而将密信封呈元修。高乾被杀。"
+    },
+    {
+      "personId": "gao-qian",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高乾",
+      "paragraphText": "高乾密告高欢，说皇帝已有异心。高欢没有只留作私下情报，而将密信封呈元修。高乾被杀。"
+    },
+    {
+      "personId": "gao-qian",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 36,
+      "text": "高乾",
+      "paragraphText": "高乾密告高欢，说皇帝已有异心。高欢没有只留作私下情报，而将密信封呈元修。高乾被杀。"
+    },
+    {
+      "personId": "gao-ang",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "高昂",
+      "paragraphText": "高昂截得皇帝欲杀自己的命令，逃来见高欢；高慎也来奔。韩陵之后新建的君臣关系，开始承受同一件事的追问：究竟谁能决定谁的生死？"
+    },
+    {
+      "personId": "gao-shen",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 20,
+      "text": "高慎",
+      "paragraphText": "高昂截得皇帝欲杀自己的命令，逃来见高欢；高慎也来奔。韩陵之后新建的君臣关系，开始承受同一件事的追问：究竟谁能决定谁的生死？"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "people": [
+    {
+      "id": "zhang-er",
+      "name": "张耳",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "张耳曾与陈馀交好，后来两人因赵国的权力争夺决裂。此时他归汉，与韩信一同攻赵；井陉之战后，汉王立他为赵王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/zh-hans/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-yu",
+      "name": "陈馀",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "陈馀封成安君，曾与张耳是好友，后来双方反目。井陉之战时，他在赵军中掌握重要兵权，未采纳李左车断粮守营的建议；赵军败后，他在泜水边被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/zh-hans/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-zuoche",
+      "name": "李左车",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "李左车是赵军谋臣，号广武君。他建议切断汉军粮道并坚守营垒，陈馀没有采纳。赵军战败后，韩信解开他的绑缚，向他请教；他建议休兵安赵、派使者说服燕国，韩信采纳了这一建议。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十二·淮阴侯列传",
+              "url": "https://zh.wikisource.org/zh-hans/史記/卷092"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-xie",
+      "name": "赵王歇",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "赵王歇是秦末赵国的君主。井陉一战中，他与成安君陈馀一方对抗韩信、张耳；赵军战败后，赵王歇被汉军俘获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhang-er",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "张耳",
+      "paragraphText": "韩信带着张耳往东，要下井陉口去打赵。"
+    },
+    {
+      "personId": "chen-yu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "陈馀",
+      "paragraphText": "赵王和成安君陈馀听说汉军要来偷袭，把兵聚在井陉口。"
+    },
+    {
+      "personId": "li-zuoche",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "广武君李左车",
+      "paragraphText": "广武君李左车对成安君说：韩信这一路，是先胜之后离了本国、远道来斗的，锋不可当。远道运粮的人，脸上有饿色。"
+    },
+    {
+      "personId": "zhao-xie",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "赵王",
+      "paragraphText": "赵王和成安君陈馀听说汉军要来偷袭，把兵聚在井陉口。"
+    }
+  ]
+}

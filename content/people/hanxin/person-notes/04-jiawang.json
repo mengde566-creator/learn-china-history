@@ -1,0 +1,248 @@
+{
+  "people": [
+    {
+      "id": "li-shiqi",
+      "name": "郦食其",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "郦食其是汉王刘邦派出的说客，曾奉命游说齐国。他说服齐国后，韩信仍按蒯通的建议进兵；齐王田广以为他欺骗自己，将他烹杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kuai-tong",
+      "name": "蒯通",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "蒯通是范阳辩士，曾劝韩信继续进攻齐国。后来他又劝韩信在楚汉之间独立，韩信没有采纳；韩信死后，刘邦曾命人捕他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-guang",
+      "name": "田广",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "田广是当时的齐王，原已听从汉使郦食其的劝说。韩信袭齐后，他杀了郦食其，逃往高密并向楚求救；其后齐楚联军在潍水战败，他再次逃走。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "035"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "long-ju",
+      "name": "龙且",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "龙且是楚方将领，率军救援齐王田广。他与田广合军对抗韩信，在潍水之战中被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "035"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-er",
+      "name": "张耳",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "张耳曾与陈馀交好，后来决裂并归汉。他与韩信在井陉击败赵军，汉王随后立他为赵王；本篇中他留守赵地。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-liang",
+      "name": "张良",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "张良是汉王刘邦的重要谋士。他与陈平提醒汉王，眼下不宜阻止韩信称王；后来受封留侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十五·留侯世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷055"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-ping",
+      "name": "陈平",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "陈平先后追随项羽与刘邦，是汉王身边的谋士。本篇中他与张良共同劝汉王顺势立韩信为王；后来在汉朝官至丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十六·陈丞相世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wu-she",
+      "name": "武涉",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "武涉是盱眙人，这时受项羽派遣，前往齐地劝说韩信背汉联楚。韩信听完后拒绝了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "li-shiqi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "酈食其",
+      "paragraphText": "韩信引兵往东，还没有渡平原，听说汉王派酈食其去说齐，齐已经说下来了。他想停。"
+    },
+    {
+      "personId": "kuai-tong",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "蒯通",
+      "paragraphText": "范阳的辩士蒯通来劝他："
+    },
+    {
+      "personId": "tian-guang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "田广",
+      "paragraphText": "齐王田广以为酈生把自己卖了："
+    },
+    {
+      "personId": "long-ju",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 24,
+      "text": "龙且",
+      "paragraphText": "韩信平定了临菑，往东追田广，追到高密以西。楚也派龙且将兵，号称二十万，来救齐。"
+    },
+    {
+      "personId": "zhang-er",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "张耳",
+      "paragraphText": "天刚亮，张耳、韩信还没有起身："
+    },
+    {
+      "personId": "zhang-liang",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "张良",
+      "paragraphText": "张良、陈平踩了汉王的脚，凑在耳边说："
+    },
+    {
+      "personId": "chen-ping",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "陈平",
+      "paragraphText": "张良、陈平踩了汉王的脚，凑在耳边说："
+    },
+    {
+      "personId": "wu-she",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "武涉",
+      "paragraphText": "楚折了龙且，项王害怕了，派盱眙人武涉去说齐王韩信。"
+    }
+  ]
+}

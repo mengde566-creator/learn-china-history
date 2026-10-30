@@ -1,0 +1,180 @@
+{
+  "people": [
+    {
+      "id": "houmo-chen-yue",
+      "name": "侯莫陈悦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "侯莫陈悦是秦州刺史，当时受尔朱天光召率众东下。宇文泰游说他的部众，使他留住不走，随后与贺拔岳一同袭取长安；后来他在河曲杀害贺拔岳，宇文泰举兵讨伐，他兵败逃走，被宇文导追及斩杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-tianguang",
+      "name": "尔朱天光",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "尔朱天光是尔朱荣一系的将领，曾率贺拔岳等平定关陇。普泰二年他率军东拒高欢，留弟弟尔朱显寿镇守长安；西面这支军队随后脱离了他留下的控制。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-xianshou",
+      "name": "尔朱显寿",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "尔朱显寿是尔朱天光之弟，奉命留守长安。宇文泰料他怯懦，率轻骑倍道追击，在华山将他擒获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heba-yue",
+      "name": "贺拔岳",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "贺拔岳是关西这支军队的首领，任关西大行台，把军政事务交给宇文泰。后来他不听宇文泰先图侯莫陈悦的劝告，与悦一同去讨曹泥，在河曲被悦杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "高欢是东方崛起的军事首领，此时已击败尔朱氏、掌握朝政。后来他与宇文泰长期对峙，546 年攻玉壁不下，次年去世；其子高洋后来代东魏称帝，建立北齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-ni",
+      "name": "曹泥",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "曹泥是灵州刺史，恃地处偏远，仍与东方的高欢通使。宇文泰经营关陇时，他是西边尚未归附的地方势力之一。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "houmo-chen-yue",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "侯莫陈悦",
+      "paragraphText": "宇文泰没有建议先把夺城计划告诉侯莫陈悦。他担心，对方尚未背离尔朱天光，贸然提议反而会惊动他。"
+    },
+    {
+      "personId": "erzhu-tianguang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 30,
+      "text": "尔朱天光",
+      "paragraphText": "宇文泰没有建议先把夺城计划告诉侯莫陈悦。他担心，对方尚未背离尔朱天光，贸然提议反而会惊动他。"
+    },
+    {
+      "personId": "erzhu-xianshou",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 29,
+      "text": "尔朱显寿",
+      "paragraphText": "贺拔岳与侯莫陈悦转而袭击长安，宇文泰带轻骑走在前面。留守的尔朱显寿向东逃走，宇文泰追至华山，将他擒获。"
+    },
+    {
+      "personId": "heba-yue",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 32,
+      "text": "贺拔岳",
+      "paragraphText": "高欢在东方打败尔朱氏；西面这批军队，也脱离了尔朱天光留下的控制。贺拔岳成为关西大行台，把军政事务交给宇文泰处理。"
+    },
+    {
+      "personId": "gao-huan",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "高欢",
+      "paragraphText": "宇文泰请求去并州见高欢。高欢问起贺拔岳军中的事，对他的应答很在意，还想把他留下。"
+    },
+    {
+      "personId": "cao-ni",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 27,
+      "text": "曹泥",
+      "paragraphText": "宇文泰被派往夏州任刺史。有的地方力量向他归附，灵州刺史曹泥却仍与高欢通信。"
+    }
+  ]
+}

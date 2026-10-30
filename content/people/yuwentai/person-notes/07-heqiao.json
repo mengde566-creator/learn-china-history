@@ -1,0 +1,325 @@
+{
+  "people": [
+    {
+      "id": "yuan-baoju",
+      "name": "元宝炬",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "元宝炬是西魏文帝。本篇他随军到洛阳一带，后来停驻阌乡，派宇文泰回关中讨平叛乱；关中安定后才回到长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "侯景是东魏将领，本篇围洛阳，夜里撤围，北依河桥、南接邙山列阵。后来他归附梁朝，又起兵攻建康，最终兵败被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十六·侯景传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-mu",
+      "name": "李穆",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "李穆是西军都督。宇文泰的马中流箭惊逸、军心动摇时，他下马把自己的坐骑交给宇文泰，军势才恢复。后来他在北周、隋任重臣。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《隋书》",
+              "section": "卷三十七·李穆传",
+              "url": "https://zh.wikisource.org/wiki/隋書/卷37"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-ang",
+      "name": "高昂",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "高昂字敖曹，是东魏大将。本篇河桥之战中，他与西军交战被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "061"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dugu-xin",
+      "name": "独孤信",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "独孤信是西军右军主将。河桥之战中右军不利，又找不到皇帝与宇文泰所在，他与李远等先退。后来他位列八柱国，任大司马，最终被宇文护逼死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "071"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·独孤信传、赵贵传及八柱国附记",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-yuan",
+      "name": "李远",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "李远是西军右军将领，与独孤信同列。河桥之战右军不利，他随独孤信先退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gui",
+      "name": "赵贵",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "赵贵是西军左军主将。河桥之战左军作战不利，他率部退走。后来他位列八柱国，任大司寇。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "071"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·独孤信传、赵贵传及八柱国附记",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-qingque",
+      "name": "赵青雀",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "赵青雀是沙苑之战所俘的东魏军士，散在关中。西军主力东征时，他占据长安子城起事，后被宇文泰攻破。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-dao",
+      "name": "宇文导",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "宇文导是宇文泰的侄子。本篇他先攻咸阳，斩慕容思庆、擒于伏德，再渡渭水与宇文泰会合，攻破赵青雀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-siqing",
+      "name": "慕容思庆",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "慕容思庆是咸阳太守。关中乱起时，他与于伏德收拢降卒据守咸阳，被宇文导攻斩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-fude",
+      "name": "于伏德",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "于伏德是雍州民。关中乱起时，他据咸阳，与慕容思庆收降卒抗拒西军，后被宇文导擒获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-baoju",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 28,
+      "text": "元宝炬",
+      "paragraphText": "宇文泰赶到洛阳西面，先击败前来阻拦的东魏部队，继续向前。元宝炬也到了他的营中。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "侯景",
+      "paragraphText": "侯景等在夜里撤围。天亮后，宇文泰带轻骑追赶，到黄河边与东军接战。对方北面依着河桥，南面接向邙山，战线铺开。"
+    },
+    {
+      "personId": "li-mu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "李穆",
+      "paragraphText": "都督李穆下马，把坐骑交给宇文泰。统帅重新得到坐骑，军势才恢复。"
+    },
+    {
+      "personId": "gao-ang",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "高昂",
+      "paragraphText": "西军在交战中杀死了高昂等东魏将领，取得俘虏。但整片战场很大，从早到午后，交手数十次，烟尘雾气遮蔽，各部难以知道别处发生了什么。"
+    },
+    {
+      "personId": "dugu-xin",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "独孤信",
+      "paragraphText": "独孤信、李远所在的右边，以及赵贵等所在的左边，作战都不利，又找不到皇帝和宇文泰的所在，先后退走；后军遇上他们，也一起向西。"
+    },
+    {
+      "personId": "li-yuan",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "李远",
+      "paragraphText": "独孤信、李远所在的右边，以及赵贵等所在的左边，作战都不利，又找不到皇帝和宇文泰的所在，先后退走；后军遇上他们，也一起向西。"
+    },
+    {
+      "personId": "zhao-gui",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 14,
+      "text": "赵贵",
+      "paragraphText": "独孤信、李远所在的右边，以及赵贵等所在的左边，作战都不利，又找不到皇帝和宇文泰的所在，先后退走；后军遇上他们，也一起向西。"
+    },
+    {
+      "personId": "zhao-qingque",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "赵青雀",
+      "paragraphText": "赵青雀占住长安子城，于伏德等控制咸阳。留在关中的官员与皇太子已经离开长安，到渭北避难。"
+    },
+    {
+      "personId": "yuwen-dao",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "宇文导",
+      "paragraphText": "元宝炬停在阌乡，派宇文泰回去讨叛。宇文泰的侄子宇文导先攻咸阳，杀慕容思庆、擒于伏德，再过渭水与宇文泰会合，攻破赵青雀。"
+    },
+    {
+      "personId": "murong-siqing",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 32,
+      "text": "慕容思庆",
+      "paragraphText": "元宝炬停在阌乡，派宇文泰回去讨叛。宇文泰的侄子宇文导先攻咸阳，杀慕容思庆、擒于伏德，再过渭水与宇文泰会合，攻破赵青雀。"
+    },
+    {
+      "personId": "yu-fude",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 38,
+      "text": "于伏德",
+      "paragraphText": "元宝炬停在阌乡，派宇文泰回去讨叛。宇文泰的侄子宇文导先攻咸阳，杀慕容思庆、擒于伏德，再过渭水与宇文泰会合，攻破赵青雀。"
+    }
+  ]
+}

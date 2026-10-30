@@ -29,6 +29,7 @@ import { fileURLToPath } from 'node:url'
 import { createHash } from 'node:crypto'
 import { attachSourceLayers } from '../lib/source-layers.mjs'
 import { validateEvidenceExcerpts } from '../lib/evidence.mjs'
+import { preparePersonNotes } from '../lib/person-notes.mjs'
 /* 原文范围的写法，和渲染层共用同一份实现（`lib/content.js` 也引它）。
    两边各写一份正则的话，编译器校验的和页面渲染的迟早不是同一件事。 */
 import { parseRange } from '../lib/range.mjs'
@@ -1083,6 +1084,15 @@ function buildPerson(id) {
       cards: exists(cardsRel) ? (checkOwnNumber(cardsRel, s.id), parseCards(cardsRel)) : [],
     }
 
+    const notesRel = `${dir}/person-notes/${s.id}.json`
+    if (exists(notesRel)) {
+      try {
+        st.personNotes = preparePersonNotes(st, JSON.parse(fs.readFileSync(path.join(CONTENT, notesRel), 'utf8')), source)
+      } catch (error) {
+        throw new ParseError(notesRel, 0, error.message)
+      }
+    }
+
     // 图片：内容里只写文件名，这里解析成 URL。缺图只警告，不阻断编译。
     st.img = resolveImg(st.imgFile, assets, warn, `${s.id} 封面`)
     for (const b of st.beats) {
@@ -1703,6 +1713,10 @@ const MIXED = /(?<![一二三四五六七八九十两\d]\s{0,2}[段篇])原文[^
           ['在场人物 · 人物', x.name],
           ['在场人物 · 身份', x.role],
           ['在场人物 · 状态', x.state],
+        ]),
+        ...(st.personNotes?.people || []).flatMap((x) => [
+          ['人物介绍 · 姓名', x.name],
+          ...x.versions.map((v) => ['人物介绍 · 正文', v.text]),
         ]),
         ...(st.beats || []).flatMap((b) => [
           [`第 ${b.n} 段 · 小标题`, b.title],

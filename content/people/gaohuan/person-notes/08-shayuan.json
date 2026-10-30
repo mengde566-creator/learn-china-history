@@ -1,0 +1,465 @@
+{
+  "people": [
+    {
+      "id": "gao-ang",
+      "name": "高昂",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "高昂是高乾的弟弟，高乾被杀后投奔高欢。此次出兵，他与其他将领进攻上洛，与由潼关出兵的窦泰分属不同方向。 后来他参加河桥之战，败退中被西军杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十一·高昂传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷21"
+            }
+          ]
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "text": "高昂是高欢一方的将领，曾在上洛方向取得胜利。河桥战事中，他与侯景围攻西魏守将所在的金墉。 这场战事中，他的部众失利，败退时被西军杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十一·高昂传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-tai",
+      "name": "窦泰",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "窦泰是高欢的将领，曾提出反间之策，也曾率骑兵突袭尔朱兆。此次由潼关入军，后来兵败自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-tai",
+      "name": "宇文泰",
+      "versions": [
+        {
+          "from": 2,
+          "to": 3,
+          "text": "宇文泰是关中一方的军事首领。元修西去后，东西两方形成对立；沙苑之战中，他率西军迎战高欢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "text": "宇文泰是关中一方的军事首领。河桥战事中，他率军救援金墉；邙山时又出兵援助转投西魏的高慎。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-bi",
+      "name": "李弼",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "李弼是宇文泰一方的将领。《周书》记他建议先据渭曲，以利于兵少一方布阵；交战时他又率铁骑横击。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "侯景是高欢早年在怀朔结交的人，此时为高欢一方的行台。河桥战事中，他与高昂围攻西魏将领独孤信所在的金墉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-meng",
+      "name": "李猛",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "李猛是高欢一方的将领。《北齐书》在记述河桥战事时，将他与高昂、宋显列为战死者。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-xian",
+      "name": "宋显",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "宋显是高欢一方的将领。《北齐书》在记述河桥战事时，将他与高昂、李猛列为战死者。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-shen",
+      "name": "高慎",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "高慎是高乾的次弟，曾投奔高欢。武定元年，他据武牢转投西魏，宇文泰率军前来援助。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "helian-yangshun",
+      "name": "赫连阳顺",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "赫连阳顺是高欢一方的人。邙山战事中，高欢失去坐骑，他下马让出自己的马，帮助高欢脱身。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feng-wenluo",
+      "name": "冯文洛",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "冯文洛在帝纪中被称为高欢的苍头。邙山战事中，赫连阳顺让马后，他与人扶高欢上马逃走。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-xingqing",
+      "name": "尉兴庆",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尉兴庆是高欢的亲信都督。邙山败退时，他留下阻击追兵，箭用尽后战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heba-sheng",
+      "name": "贺拔胜",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "贺拔胜是西魏太师。邙山战事中，他率少数骑兵追赶高欢，段孝先射倒他的坐骑，高欢因此脱险。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duan-xiaoxian",
+      "name": "段孝先",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "段孝先是高欢一方的人。贺拔胜追近时，他射倒对方的马，为高欢脱险争取了机会。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-ang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "高昂",
+      "paragraphText": "上年十二月，高欢从晋阳向西出兵：高昂等奔上洛，窦泰由潼关进入。"
+    },
+    {
+      "personId": "dou-tai",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "窦泰",
+      "paragraphText": "上年十二月，高欢从晋阳向西出兵：高昂等奔上洛，窦泰由潼关进入。"
+    },
+    {
+      "personId": "dou-tai",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "窦泰",
+      "paragraphText": "次年正月，窦泰兵败自杀。按《北齐书》的记述，高欢驻在蒲津，因冰薄未能赴救，随后撤军。"
+    },
+    {
+      "personId": "gao-ang",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "高昂",
+      "paragraphText": "高昂在另一路攻克上洛，却补不回窦泰的死。一次多路出兵，留下的是不同方向并不相同的结果。"
+    },
+    {
+      "personId": "dou-tai",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 15,
+      "text": "窦泰",
+      "paragraphText": "高昂在另一路攻克上洛，却补不回窦泰的死。一次多路出兵，留下的是不同方向并不相同的结果。"
+    },
+    {
+      "personId": "yuwen-tai",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "宇文泰",
+      "paragraphText": "同年十月，高欢由蒲津渡河再向西进。宇文泰驻沙苑。"
+    },
+    {
+      "personId": "yuwen-tai",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "宇文泰",
+      "paragraphText": "《周书》记下了另一边的布阵。李弼建议先占渭曲；宇文泰移军到那里，背水列阵，命士兵伏在芦苇里，听鼓声起身。"
+    },
+    {
+      "personId": "li-bi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "李弼",
+      "paragraphText": "《周书》记下了另一边的布阵。李弼建议先占渭曲；宇文泰移军到那里，背水列阵，命士兵伏在芦苇里，听鼓声起身。"
+    },
+    {
+      "personId": "gao-ang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "高昂",
+      "paragraphText": "到下一年，侯景、高昂围金墉，宇文泰来救，高欢也率后军赶来。"
+    },
+    {
+      "personId": "yuwen-tai",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "宇文泰",
+      "paragraphText": "到下一年，侯景、高昂围金墉，宇文泰来救，高欢也率后军赶来。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "侯景",
+      "paragraphText": "到下一年，侯景、高昂围金墉，宇文泰来救，高欢也率后军赶来。"
+    },
+    {
+      "personId": "gao-ang",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "高昂",
+      "paragraphText": "帝纪称高欢一方击败西军，随即记高昂、李猛、宋显战死；又补说高欢到孟津尚未渡河时，前线已经互有胜负。"
+    },
+    {
+      "personId": "li-meng",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 18,
+      "text": "李猛",
+      "paragraphText": "帝纪称高欢一方击败西军，随即记高昂、李猛、宋显战死；又补说高欢到孟津尚未渡河时，前线已经互有胜负。"
+    },
+    {
+      "personId": "song-xian",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 21,
+      "text": "宋显",
+      "paragraphText": "帝纪称高欢一方击败西军，随即记高昂、李猛、宋显战死；又补说高欢到孟津尚未渡河时，前线已经互有胜负。"
+    },
+    {
+      "personId": "yuwen-tai",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "宇文泰",
+      "paragraphText": "到武定元年，即543年，高慎据武牢投西魏，宇文泰来援。高欢在邙山击败西军。"
+    },
+    {
+      "personId": "gao-shen",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "高慎",
+      "paragraphText": "到武定元年，即543年，高慎据武牢投西魏，宇文泰来援。高欢在邙山击败西军。"
+    },
+    {
+      "personId": "helian-yangshun",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 6,
+      "text": "赫连阳顺",
+      "paragraphText": "他失去坐骑，赫连阳顺让出自己的马，冯文洛扶他上去，身边只余几人。"
+    },
+    {
+      "personId": "feng-wenluo",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 17,
+      "text": "冯文洛",
+      "paragraphText": "他失去坐骑，赫连阳顺让出自己的马，冯文洛扶他上去，身边只余几人。"
+    },
+    {
+      "personId": "yu-xingqing",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "尉兴庆",
+      "paragraphText": "尉兴庆留下断后，箭尽而死；贺拔胜又追近，段孝先射倒其马，高欢才逃过。这次战役可以记作胜，高欢本人却仍是在别人救护下活着离开的。"
+    },
+    {
+      "personId": "heba-sheng",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 13,
+      "text": "贺拔胜",
+      "paragraphText": "尉兴庆留下断后，箭尽而死；贺拔胜又追近，段孝先射倒其马，高欢才逃过。这次战役可以记作胜，高欢本人却仍是在别人救护下活着离开的。"
+    },
+    {
+      "personId": "duan-xiaoxian",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 20,
+      "text": "段孝先",
+      "paragraphText": "尉兴庆留下断后，箭尽而死；贺拔胜又追近，段孝先射倒其马，高欢才逃过。这次战役可以记作胜，高欢本人却仍是在别人救护下活着离开的。"
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "people": [
+    {
+      "id": "gao-qian",
+      "name": "高乾",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "高乾是支持高欢的河北人物，曾向高欢密告皇帝有异心。高欢将密信封呈皇帝后，高乾被杀；他的弟弟高昂、高慎随后投奔高欢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-ang",
+      "name": "高昂",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "高昂是高乾的弟弟。高乾被杀后，皇帝又下密令杀他；高昂截获命令，逃来投奔高欢。 后来他继续为高欢作战，官至司徒；邙阴之战后，他在撤退途中被西军杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十一·高昂传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-shen",
+      "name": "高慎",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "高慎是高乾的次弟。高乾遇害时他在光州，听到变故后也来到高欢一方。 后来他担任御史中尉、北豫州刺史，最终据武牢归西魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十一·高慎传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-xiu",
+      "name": "元修",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "元修是北魏孝武帝，韩陵战后由高欢拥立。高乾遇害后，元修与高欢的关系日渐紧张；这里的诏书呈现的是皇帝对高欢用兵的质疑。 他后来入关，《魏书》记他随后被宇文泰所害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·出帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heba-sheng",
+      "name": "贺拔胜",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "贺拔胜是当时可以向南投奔的将领。元修面对高欢南进时，群臣提出投奔他、入关中或留在洛口等不同意见。 他是贺拔岳的兄长，当时任荆州刺史。后来他在与高欢一方的交战中失利，先南奔梁，随后进入关中，继续在西魏任职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷八十·贺拔胜传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-binzhi",
+      "name": "元斌之",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "元斌之是元修身边的左卫将军，参与当时的军事行动。帝纪记他与斛斯椿争权不和，弃下斛斯椿返回，并向皇帝谎报高欢的军队已经到来。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷一·文帝纪上",
+              "url": "https://zh.wikisource.org/wiki/周書/卷01"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·出帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "husi-chun",
+      "name": "斛斯椿",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "斛斯椿是当时参与朝廷军事事务的人物。帝纪称他与元斌之争权不和；元斌之弃下他返回，并向皇帝谎报军情。 他曾参与韩陵战后拘捕尔朱氏将领；后来随元修西入关中。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷八十·斛斯椿传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luoyang-official-0",
+      "name": "叱列延庆",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "叱列延庆曾随尔朱荣征战，与尔朱世隆有姻亲关系，韩陵战败后归附高欢；元修任他为中军大都督。元修西去后，高欢召集百官，将包括他在内的六人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷八十·叱列延庆传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luoyang-official-1",
+      "name": "辛雄",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "辛雄是北魏官员，曾在尚书省处理政务，也曾为遭贬的御史中尉元匡上奏辩护。元修西去后，高欢召集百官，将包括他在内的六人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十七·辛雄传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷77"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luoyang-official-2",
+      "name": "崔孝芬",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "崔孝芬是北魏官员，曾率军在彭城一带抵御梁军，也曾兼任吏部尚书。元修西去后，高欢召集百官，将包括他在内的六人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷五十七·崔孝芬传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷57"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luoyang-official-3",
+      "name": "刘廞",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "刘廞是北魏都官尚书。元修西去后，高欢召集百官，将包括他在内的六人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luoyang-official-4",
+      "name": "杨机",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "杨机是北魏官员，此前曾任洛阳令、廷尉卿，永熙年间任度支尚书。元修西去后，高欢召集百官，将包括他在内的六人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十七·杨机传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷77"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luoyang-official-5",
+      "name": "元士弼",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "元士弼是北魏散骑常侍。元修西去后，高欢召集百官，将包括他在内的六人杀害；其家口被籍没。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-qian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高乾",
+      "paragraphText": "高乾被杀之后，高昂、高慎逃到高欢处。那些在尔朱氏败后重新组合的关系，又开始分裂。"
+    },
+    {
+      "personId": "gao-ang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "高昂",
+      "paragraphText": "高乾被杀之后，高昂、高慎逃到高欢处。那些在尔朱氏败后重新组合的关系，又开始分裂。"
+    },
+    {
+      "personId": "gao-shen",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "高慎",
+      "paragraphText": "高乾被杀之后，高昂、高慎逃到高欢处。那些在尔朱氏败后重新组合的关系，又开始分裂。"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "元修",
+      "paragraphText": "元修在诏书中质问高欢：说要向西出兵，为何多路同时行动，有的朝洛阳，有的向江左？"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "元修",
+      "paragraphText": "七月，元修亲率军队屯河桥。高欢来到河北，口头申说诚意，没有得到答复，随后渡河。"
+    },
+    {
+      "personId": "heba-sheng",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "贺拔胜",
+      "paragraphText": "皇帝问群臣怎么办。向南投贺拔胜、向西入关中、留在洛口死战，几种意见同时摆在面前。"
+    },
+    {
+      "personId": "yuan-binzhi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "元斌之",
+      "paragraphText": "元斌之与斛斯椿争权不和，弃下斛斯椿返回，又向皇帝谎报高欢军已经到来。"
+    },
+    {
+      "personId": "husi-chun",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "斛斯椿",
+      "paragraphText": "元斌之与斛斯椿争权不和，弃下斛斯椿返回，又向皇帝谎报高欢军已经到来。"
+    },
+    {
+      "personId": "husi-chun",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "斛斯椿",
+      "paragraphText": "元斌之与斛斯椿争权不和，弃下斛斯椿返回，又向皇帝谎报高欢军已经到来。"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "元修",
+      "paragraphText": "这一天，元修西往长安。高欢进入洛阳，停在永宁寺。先前由他拥立的皇帝，已经离开了他能够直接控制的京城。"
+    },
+    {
+      "personId": "luoyang-official-0",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "叱列延庆",
+      "paragraphText": "随后，他杀了叱列延庆、辛雄、崔孝芬、刘廞、杨机、元士弼六人，称为惩治二心；元士弼家口还被籍没。"
+    },
+    {
+      "personId": "luoyang-official-1",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "辛雄",
+      "paragraphText": "随后，他杀了叱列延庆、辛雄、崔孝芬、刘廞、杨机、元士弼六人，称为惩治二心；元士弼家口还被籍没。"
+    },
+    {
+      "personId": "luoyang-official-2",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 14,
+      "text": "崔孝芬",
+      "paragraphText": "随后，他杀了叱列延庆、辛雄、崔孝芬、刘廞、杨机、元士弼六人，称为惩治二心；元士弼家口还被籍没。"
+    },
+    {
+      "personId": "luoyang-official-3",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 18,
+      "text": "刘廞",
+      "paragraphText": "随后，他杀了叱列延庆、辛雄、崔孝芬、刘廞、杨机、元士弼六人，称为惩治二心；元士弼家口还被籍没。"
+    },
+    {
+      "personId": "luoyang-official-4",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 21,
+      "text": "杨机",
+      "paragraphText": "随后，他杀了叱列延庆、辛雄、崔孝芬、刘廞、杨机、元士弼六人，称为惩治二心；元士弼家口还被籍没。"
+    },
+    {
+      "personId": "luoyang-official-5",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 24,
+      "text": "元士弼",
+      "paragraphText": "随后，他杀了叱列延庆、辛雄、崔孝芬、刘廞、杨机、元士弼六人，称为惩治二心；元士弼家口还被籍没。"
+    },
+    {
+      "personId": "luoyang-official-5",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 37,
+      "text": "元士弼",
+      "paragraphText": "随后，他杀了叱列延庆、辛雄、崔孝芬、刘廞、杨机、元士弼六人，称为惩治二心；元士弼家口还被籍没。"
+    }
+  ]
+}

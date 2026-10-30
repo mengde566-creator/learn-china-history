@@ -1,0 +1,200 @@
+{
+  "people": [
+    {
+      "id": "yao-tan",
+      "name": "姚坦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "姚坦是后秦的颍川太守，本篇檀道济进攻许昌时，他与杨业被俘。《宋书》本传写作姚坦；其校勘记指出《资治通鉴》此处作姚垣，名字有异文。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·檀道济传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-ye",
+      "name": "杨业",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "杨业是后秦方面的将领，本篇檀道济进攻许昌时，他与颍川太守姚坦一同被俘。这里所依据的《宋书·檀道济传》没有继续交代他的结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·檀道济传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-hua",
+      "name": "韦华",
+      "versions": [
+        {
+          "from": 2,
+          "to": 9,
+          "text": "韦华曾在后秦任职，姚兴派他册封谯纵为蜀王。本篇檀道济北进至成皋时，他向晋军归降；所用材料没有交代归降后的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十八·姚兴载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷118"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-guang",
+      "name": "姚洸",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "姚洸是后秦君主姚泓的弟弟。姚兴病重、宗室争执时，他曾在洛阳起兵声援姚泓；本篇檀道济进至洛阳时，他归顺晋军。所用材料没有交代他归降后的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十八·姚兴载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷118"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-shao",
+      "name": "姚绍",
+      "versions": [
+        {
+          "from": 8,
+          "to": 9,
+          "text": "姚绍是后秦宗室，姚泓继位后仍委以兵权。本篇檀道济与诸军进据潼关，合力击败他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十九·姚泓载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷119"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yifu",
+      "name": "刘义符",
+      "versions": [
+        {
+          "from": 9,
+          "to": 9,
+          "text": "这里的世子是刘裕长子刘义符；檀道济曾在他的府中任职。后来刘裕建立宋朝，刘义符继位，史称宋少帝；随后徐羡之等废黜并杀害他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四·少帝纪",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yao-tan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "姚坦",
+      "paragraphText": "守许昌的是伪宁朔将军、颍川太守姚坦，还有大将杨业。"
+    },
+    {
+      "personId": "yang-ye",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 22,
+      "text": "杨业",
+      "paragraphText": "守许昌的是伪宁朔将军、颍川太守姚坦，还有大将杨业。"
+    },
+    {
+      "personId": "wei-hua",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "韦华",
+      "paragraphText": "到成皋，伪兖州刺史韦华降了。"
+    },
+    {
+      "personId": "yao-guang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "姚洸",
+      "paragraphText": "伪平南将军、陈留公姚洸归顺。"
+    },
+    {
+      "personId": "yao-shao",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "姚绍",
+      "paragraphText": "再往前，进据潼关，与诸军一起破了姚绍。"
+    },
+    {
+      "personId": "liu-yifu",
+      "beat": 9,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "世子",
+      "paragraphText": "世子要镇守江陵，又让他做西中郎司马、持节、南蛮校尉。"
+    }
+  ]
+}

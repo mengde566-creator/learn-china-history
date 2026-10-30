@@ -1,0 +1,188 @@
+{
+  "people": [
+    {
+      "id": "sima-ziru",
+      "name": "司马子如",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "司马子如是东魏将领。西魏建立之初，他率军来攻潼关；宇文泰出军霸上，他又转攻华州，被王罴击退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "068"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-pi",
+      "name": "王罴",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "王罴是西魏的华州刺史。东魏军来攻时，他严守城池，东军知道难以攻下，转往别处。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "068"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moqi-puba",
+      "name": "万俟普拨",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "万俟普拨原是西方将领，任秦州刺史、建中王。大统二年他率所部投向东魏；宇文泰轻骑追赶千余里，没有追上。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "高欢是东魏的执政者。本篇他在蒲坂造浮桥、分兵三路西进，想牵住西军；窦泰败后，他撤军。后来他多次西征，546 年攻玉壁不下，次年去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-tai",
+      "name": "窦泰",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "窦泰是高欢的骁将，常为先锋，屡胜而骄。本篇他率军向潼关，在小关被宇文泰突袭而败。死法两书记载不同：《周书》记斩泰、传首长安，《北齐书》记其军败自杀，人物条保留两说。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-ang",
+      "name": "高昂",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "高昂字敖曹，是东魏大将。本篇率一路进攻洛州，《北齐书》又记他攻剋上洛；后来在河桥之战中战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "local",
+              "id": "061"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "sima-ziru",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "司马子如",
+      "paragraphText": "西魏刚建立时，东魏将领司马子如便来攻潼关。宇文泰出军霸上，对方又转到华州，被王罴击退。"
+    },
+    {
+      "personId": "wang-pi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 38,
+      "text": "王罴",
+      "paragraphText": "西魏刚建立时，东魏将领司马子如便来攻潼关。宇文泰出军霸上，对方又转到华州，被王罴击退。"
+    },
+    {
+      "personId": "moqi-puba",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "万俟普拨",
+      "paragraphText": "万俟普拨投向东魏时，带走了自己统领的人马。宇文泰带轻骑追赶，远到黄河以北，仍没追上，只得返回。"
+    },
+    {
+      "personId": "gao-huan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高欢",
+      "paragraphText": "高欢在蒲坂一带搭起浮桥，窦泰则向潼关推进，另一路高昂进攻洛州。"
+    },
+    {
+      "personId": "dou-tai",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "窦泰",
+      "paragraphText": "高欢在蒲坂一带搭起浮桥，窦泰则向潼关推进，另一路高昂进攻洛州。"
+    },
+    {
+      "personId": "gao-ang",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "高昂",
+      "paragraphText": "高欢在蒲坂一带搭起浮桥，窦泰则向潼关推进，另一路高昂进攻洛州。"
+    }
+  ]
+}

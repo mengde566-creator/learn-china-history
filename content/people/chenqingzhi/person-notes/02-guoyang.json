@@ -1,0 +1,242 @@
+{
+  "people": [
+    {
+      "id": "yuan-shu",
+      "name": "元树",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "元树是北魏宗室，后来归梁，出征寿春时任梁朝安西将军。《梁书》记载，他后来率军攻魏谯城，城破被俘，死于魏境。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷三十九·元树传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷39"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-xian",
+      "name": "李宪",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "李宪是北魏豫州刺史。梁军攻寿春时，他派儿子长钧筑城抵抗；《梁书·陈庆之传》记载，他后来力量不支而降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-changjun",
+      "name": "李长钧",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "长钧是魏豫州刺史李宪的儿子。梁军攻寿春时，他奉父命另筑两座城抵御梁军；本篇称他“长钧”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-zhongzong",
+      "name": "曹仲宗",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "曹仲宗是梁朝将领。涡阳之战中，陈庆之隶属他率领的一路军队；军队疲惫时，他曾与诸将商议退兵，后来听从陈庆之的意见继续作战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-zhao",
+      "name": "元昭",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "元昭是北魏常山王，在涡阳战事中率魏军援救守军。《梁书·陈庆之传》和《韦放传》对援军人数的记载不同，不能将其中一数视为确数。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷二十八·韦放传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-fang",
+      "name": "韦放",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "韦放是梁朝将领，韦睿的儿子。涡阳之战时，他与陈庆之对是否迎击魏军前锋有不同判断；他后来任北徐州刺史，死于任上。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷二十八·韦放传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-wei",
+      "name": "王纬",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "王纬是涡阳守将。梁军攻陷部分魏军营垒后，他以涡阳城请求投降；《梁书·韦放传》记他后来被送往梁都。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷二十八·韦放传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-yan",
+      "name": "萧衍",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "高祖是梁武帝萧衍，陈庆之早年便随从他。这段使用的是史书对梁武帝的追称；涡阳战事后，他以手诏嘉奖陈庆之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-shu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "元树",
+      "paragraphText": "普通七年，安西将军元树出征寿春。"
+    },
+    {
+      "personId": "li-xian",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 5,
+      "text": "李宪",
+      "paragraphText": "魏豫州刺史李宪派儿子长钧另筑两座城，抵御梁军。"
+    },
+    {
+      "personId": "li-changjun",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 10,
+      "text": "长钧",
+      "paragraphText": "魏豫州刺史李宪派儿子长钧另筑两座城，抵御梁军。"
+    },
+    {
+      "personId": "cao-zhongzong",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "曹仲宗",
+      "paragraphText": "大通元年。他是领军曹仲宗部下的一路，去伐涡阳。"
+    },
+    {
+      "personId": "yuan-zhao",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "元昭",
+      "paragraphText": "魏人派了征南将军、常山王元昭，率马步十五万来救。"
+    },
+    {
+      "personId": "wei-fang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "韦放",
+      "paragraphText": "韦放不同意。他说：敌人的前锋一定是轻装精锐。打赢了，算不得功；打输了，伤我军的势。"
+    },
+    {
+      "personId": "wang-wei",
+      "beat": 7,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "王纬",
+      "paragraphText": "涡阳城主王纬请降。"
+    },
+    {
+      "personId": "xiao-yan",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高祖",
+      "paragraphText": "高祖看到战报，很高兴。"
+    }
+  ]
+}

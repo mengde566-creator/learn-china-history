@@ -1,0 +1,296 @@
+{
+  "people": [
+    {
+      "id": "daxi-wu",
+      "name": "达奚武",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "达奚武是西魏将领。本篇他围攻南郑一个多月，梁州刺史萧循举州投降，被带往长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-xun",
+      "name": "萧循",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "萧循是梁州刺史、宜丰侯，守南郑。被达奚武围攻一个多月后，他举州投降，被带往长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuchi-jiong",
+      "name": "尉迟迥",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "尉迟迥是西魏大将军、魏安公。本篇奉命伐蜀，成都被攻下；后来他任北周相州总管，580 年起兵反对杨坚，兵败自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷二十一·尉迟迥传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-qianyun",
+      "name": "杨乾运",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "杨乾运是萧纪部下的潼州刺史。本篇他归降西魏，为西魏军引路，进向成都。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "041"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-yi",
+      "name": "萧绎",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "萧绎是梁元帝。侯景被平定后，他在江陵即位；又与北齐通使、与西魏交涉疆界。554 年江陵被攻破，他被俘后遭杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-cha",
+      "name": "萧詧",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "萧詧是萧绎的侄子，与萧绎不和，向西魏求援。江陵攻破后，他被西魏立为梁主，留在江陵，成为附庸。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-jin",
+      "name": "于谨",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "于谨是西魏重臣，本篇江陵之战的主帅，到城下围攻。还师后宇文泰到他家中宴饮，赏赐梁的宝物和一千名奴婢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-hu",
+      "name": "宇文护",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "宇文护是宇文泰的侄子。本篇与杨忠先率骑兵占住江津，截断江陵的逃路；后来他受遗辅政，推动禅代，北周建立后长期执政，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十一·宇文护传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-zhong",
+      "name": "杨忠",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "杨忠是西魏将领。本篇与宇文护先率骑兵占住江津；后来他成为北周重臣，其子杨坚建立隋朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十九·杨忠传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷19"
+            },
+            {
+              "kind": "external",
+              "book": "《隋书》",
+              "section": "卷一·高祖纪",
+              "url": "https://zh.wikisource.org/wiki/隋書/卷01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-xiaokuan",
+      "name": "韦孝宽",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "韦孝宽是西魏将领，本篇参与江陵之役。后来他参与北周与北齐的战事，580 年率军平定尉迟迥。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷三十一·韦孝宽传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷31"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "daxi-wu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "达奚武",
+      "paragraphText": "达奚武围攻南郑。一个多月后，梁州刺史萧循举州投降，被带往长安。西魏在关中以南又取得一处立足点。"
+    },
+    {
+      "personId": "xiao-xun",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "萧循",
+      "paragraphText": "达奚武围攻南郑。一个多月后，梁州刺史萧循举州投降，被带往长安。西魏在关中以南又取得一处立足点。"
+    },
+    {
+      "personId": "yuchi-jiong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "尉迟迥",
+      "paragraphText": "次年，宇文泰派尉迟迥攻蜀。萧纪部下的潼州刺史杨乾运来降，为西魏军引路，进向成都。553年八月，成都被攻下。"
+    },
+    {
+      "personId": "yang-qianyun",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 22,
+      "text": "杨乾运",
+      "paragraphText": "次年，宇文泰派尉迟迥攻蜀。萧纪部下的潼州刺史杨乾运来降，为西魏军引路，进向成都。553年八月，成都被攻下。"
+    },
+    {
+      "personId": "xiao-yi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "萧绎",
+      "paragraphText": "侯景被平定后，萧绎在江陵做了梁的皇帝。与他不和的侄子萧詧，已经向西魏寻求支持。"
+    },
+    {
+      "personId": "xiao-cha",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 26,
+      "text": "萧詧",
+      "paragraphText": "侯景被平定后，萧绎在江陵做了梁的皇帝。与他不和的侄子萧詧，已经向西魏寻求支持。"
+    },
+    {
+      "personId": "yu-jin",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 27,
+      "text": "于谨",
+      "paragraphText": "萧绎又与北齐通使，并和西魏交涉疆界。554年，宇文泰派于谨、宇文护、杨忠、韦孝宽等率军去江陵。"
+    },
+    {
+      "personId": "yuwen-hu",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 30,
+      "text": "宇文护",
+      "paragraphText": "萧绎又与北齐通使，并和西魏交涉疆界。554年，宇文泰派于谨、宇文护、杨忠、韦孝宽等率军去江陵。"
+    },
+    {
+      "personId": "yang-zhong",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 34,
+      "text": "杨忠",
+      "paragraphText": "萧绎又与北齐通使，并和西魏交涉疆界。554年，宇文泰派于谨、宇文护、杨忠、韦孝宽等率军去江陵。"
+    },
+    {
+      "personId": "wei-xiaokuan",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 37,
+      "text": "韦孝宽",
+      "paragraphText": "萧绎又与北齐通使，并和西魏交涉疆界。554年，宇文泰派于谨、宇文护、杨忠、韦孝宽等率军去江陵。"
+    }
+  ]
+}

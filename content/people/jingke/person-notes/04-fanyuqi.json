@@ -1,0 +1,150 @@
+{
+  "people": [
+    {
+      "id": "tai-zi-dan",
+      "name": "燕太子丹",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "燕太子丹曾在秦为人质，逃回燕后接纳樊於期，又礼待荆轲，希望他谋秦。刺秦失败、秦军攻燕后，丹逃往辽东，最终被燕王喜派人杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-jian",
+      "name": "王翦",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "王翦是秦将，此时攻破赵国，率军逼近燕国。后来秦王又派他攻燕；《史记·王翦列传》还记他日后率军灭楚。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "078"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七十三·王翦列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷073"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-yuqi",
+      "name": "樊於期",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "樊於期原是秦将，得罪秦王后逃到燕国，受到太子丹收留。荆轲私下见他，提出以他的首级取信秦王；《史记》记他随后自刎。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "046"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-wang-qian",
+      "name": "赵王迁",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "赵王迁是赵国君主。《史记·赵世家》记王翦攻赵时，赵王迁归降；《刺客列传》则写秦军俘虏赵王。赵国覆亡，使秦军逼近燕国。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十三·赵世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷043"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "tai-zi-dan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太子",
+      "paragraphText": "太子尊荆轲为上卿，给他上等馆舍；每天登门，供太牢，送来奇珍异物，车骑、美女也任他所欲。"
+    },
+    {
+      "personId": "wang-jian",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "王翦",
+      "paragraphText": "秦将王翦攻破了赵国，俘虏了赵王，把赵国的土地全部收归秦国。"
+    },
+    {
+      "personId": "fan-yuqi",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "樊於期",
+      "paragraphText": "于是他自己去见了樊於期。"
+    },
+    {
+      "personId": "zhao-wang-qian",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "赵王",
+      "paragraphText": "秦将王翦攻破了赵国，俘虏了赵王，把赵国的土地全部收归秦国。"
+    }
+  ]
+}

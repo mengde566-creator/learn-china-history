@@ -1,0 +1,235 @@
+{
+  "people": [
+    {
+      "id": "zhongli-mo",
+      "name": "钟离眛",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "钟离眛曾是项羽的将领，与韩信相善。项羽死后，他逃到韩信处；《史记》记载，后来韩信与他商议，他自刎，韩信携首级去见汉高祖。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-kuai",
+      "name": "樊哙",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "樊哙是刘邦早年的追随者和汉朝将领。《史记》记载韩信曾拜访他，樊哙恭敬相迎，韩信出门后却对与他同列表示不满；樊哙此前曾随刘邦征战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十五·樊郦滕灌列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷095"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-xi",
+      "name": "陈豨",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "陈豨是汉朝官员，受任钜鹿守时向韩信辞行。《史记·淮阴侯列传》记载两人曾议起兵；后来陈豨举兵反汉，刘邦亲自出征。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "060"
+            },
+            {
+              "kind": "local",
+              "id": "061"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十三·韩信卢绾列传附陈豨",
+              "url": "https://zh.wikisource.org/wiki/史記/卷093"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-hou",
+      "name": "吕后",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "吕后是刘邦的妻子、汉朝皇后。依《史记·淮阴侯列传》，她与萧何设计召韩信入宫并杀之；刘邦死后，她以皇太后身份掌握朝政。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九·吕太后本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷009"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-he",
+      "name": "萧何",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "萧相国即萧何，是刘邦的重要辅佐者。此前他曾向刘邦推荐韩信；《史记》记载，韩信遇害时，萧何参与了召他入宫的安排。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十三·萧相国世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-ping",
+      "name": "陈平",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "陈平是刘邦身边的谋士，此前曾与张良建议刘邦立韩信为齐王。《史记》记载，后来他献计借巡狩召韩信会面，刘邦趁机将韩信擒下；陈平在汉朝官至丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十六·陈丞相世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kuai-tong",
+      "name": "蒯通",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "蒯通是曾劝韩信在楚汉之间自立的辩士，韩信没有采纳。韩信死后，刘邦召捕蒯通；据《史记》，蒯通辩解后获释。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "local",
+              "id": "064"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhongli-mo",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "钟离眛",
+      "paragraphText": "项羽的亡将钟离眛，家在伊庐，一向和韩信相善。项羽死后，他逃到韩信这里。"
+    },
+    {
+      "personId": "fan-kuai",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "樊哙",
+      "paragraphText": "他曾经去看樊哙。樊哙跪拜送迎，口称臣，说：大王竟肯来看臣！"
+    },
+    {
+      "personId": "chen-xi",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "陈豨",
+      "paragraphText": "陈豨拜为钜鹿守，来向淮阴侯辞行。"
+    },
+    {
+      "personId": "lv-hou",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "吕后",
+      "paragraphText": "吕后想召他，怕他的党羽不肯就范，就和萧相国谋：诈令人从上的地方来，说豨已经拿到、死了，列侯群臣都来贺。"
+    },
+    {
+      "personId": "xiao-he",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "萧相国",
+      "paragraphText": "吕后想召他，怕他的党羽不肯就范，就和萧相国谋：诈令人从上的地方来，说豨已经拿到、死了，列侯群臣都来贺。"
+    },
+    {
+      "personId": "chen-ping",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 17,
+      "text": "陈平",
+      "paragraphText": "汉六年，有人上书告楚王信反。高帝用陈平的计：天子巡狩、会诸侯，南方有云梦，就派使者告诸侯会于陈，说要去游云梦——其实是想袭信。信不知道。"
+    },
+    {
+      "personId": "kuai-tong",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 46,
+      "text": "蒯通",
+      "paragraphText": "高祖从陈豨的军中回来，到了，见信死了，且喜且怜之。问：信死的时候说了什么？吕后说：信说恨不用蒯通的计。高祖说：那是齐的辩士。就下诏齐地捕蒯通。"
+    }
+  ]
+}

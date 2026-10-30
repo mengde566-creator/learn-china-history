@@ -1,0 +1,54 @@
+{
+  "people": [
+    {
+      "id": "xie-yuanming",
+      "name": "谢源明",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "谢源明是信州知州。本篇江西饥荒时，他向辛弃疾请求粮食救助；辛弃疾不顾幕属反对，把米船的三成拨给信州。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-shen",
+      "name": "孝宗",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "孝宗是宋孝宗赵昚的庙号，本篇时在位。荒政办成后「帝嘉之，进一秩」的皇帝就是他；紧接着辛弃疾便因言者落职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "external",
+              "book": "《宋史》",
+              "section": "卷三十三至三十五·孝宗纪",
+              "url": "https://zh.wikisource.org/wiki/宋史/卷33"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xie-yuanming",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "谢源明",
+      "paragraphText": "这时信州知州谢源明来讨米救助。幕属不答应——这是隆兴的米。"
+    }
+  ]
+}

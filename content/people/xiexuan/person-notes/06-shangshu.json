@@ -1,0 +1,176 @@
+{
+  "people": [
+    {
+      "id": "xie-an",
+      "name": "谢安",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "谢安是谢玄的叔父，此前曾举荐谢玄，并在淝水之战期间参与朝廷筹划。本篇谢玄病重上疏，追念已去世的谢安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-daozi",
+      "name": "司马道子",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "司马道子是东晋司徒，本篇谢玄回顾此前他询问自己进退事宜。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十四·会稽文孝王道子传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷064"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-ji",
+      "name": "刘济",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "刘济是谢玄的兼长史，本篇谢玄病重时派他送还节、盖、章、传等信物。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-xuanzhi",
+      "name": "张玄之",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "张玄之是东晋官员，本篇与谢玄同年赴郡任职，时人并称二人为“南北二玄”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-huan",
+      "name": "谢瑍",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "谢瑍是谢玄的儿子，本篇谢玄去世后他继承爵位，任秘书郎，后来早逝；他的儿子是谢灵运。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-lingyun",
+      "name": "谢灵运",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "谢灵运是谢瑍的儿子、谢玄的孙子。本篇谢瑍早逝后他继承爵位；后来他以诗文知名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "049"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷六十七·谢灵运传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷67"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xie-an",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 27,
+      "text": "谢安",
+      "paragraphText": "疏中又说：天助大晋，王威屡举，实在是陛下神武英断；亡叔谢安协同赞画，以成天工。而雾气还遮着，六合未朗，遗民涂炭，敌人的巢穴应当扫除。"
+    },
+    {
+      "personId": "sima-daozi",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "道子",
+      "paragraphText": "「去冬奉司徒道子告问，问臣进止之宜。臣进不能达事机，把疆土日蹙当作耻辱；退又不自量，所以想顺其宿心。"
+    },
+    {
+      "personId": "liu-ji",
+      "beat": 2,
+      "paragraph": 6,
+      "offset": 7,
+      "text": "刘济",
+      "paragraphText": "于是谨遣兼长史刘济，重奉送节盖章传。"
+    },
+    {
+      "personId": "zhang-xuanzhi",
+      "beat": 4,
+      "paragraph": 5,
+      "offset": 6,
+      "text": "张玄之",
+      "paragraphText": "当时吴兴太守张玄之也以才学显，从吏部尚书与他同年到郡；而张玄之名亚于他，时人称为「南北二玄」，论者美之。"
+    },
+    {
+      "personId": "xie-huan",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 2,
+      "text": "谢瑍",
+      "paragraphText": "儿子谢瑍嗣爵，做秘书郎，早卒。谢瑍的儿子谢灵运嗣爵。"
+    },
+    {
+      "personId": "xie-lingyun",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 20,
+      "text": "谢灵运",
+      "paragraphText": "儿子谢瑍嗣爵，做秘书郎，早卒。谢瑍的儿子谢灵运嗣爵。"
+    }
+  ]
+}

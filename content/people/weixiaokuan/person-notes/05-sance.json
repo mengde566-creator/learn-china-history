@@ -1,0 +1,192 @@
+{
+  "people": [
+    {
+      "id": "yuwen-yong",
+      "name": "宇文邕",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "这里的“武帝”是北周武帝宇文邕。本篇韦孝宽向他提出对北齐的三策；后来他出兵，北周灭北齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷五·武帝纪",
+              "url": "https://zh.wikisource.org/wiki/周書/卷05"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-tai",
+      "name": "宇文泰",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "韦孝宽疏中所称“太祖”是宇文泰，是他死后的庙号；他此前掌握西魏军政大权，也是北周建立者宇文觉的父亲。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷一·文帝纪",
+              "url": "https://zh.wikisource.org/wiki/周書/卷01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-wei",
+      "name": "元伟",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "元伟是北周小司寇、淮南公。本篇韦孝宽上疏后，他与伊娄谦等奉武帝之命出使北齐。所用《周书》录文原作“元卫”，校勘改作“元伟”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yilou-qian",
+      "name": "伊娄谦",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "伊娄谦是北周官员，本篇与元伟等奉武帝之命携礼出使北齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gou-jian",
+      "name": "勾践",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "勾践是春秋时期的越王，曾被吴国打败，后来灭吴。韦孝宽在疏中借这一往事说明等待时机的策略。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十一·越王勾践世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷041"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhou-wuwang",
+      "name": "周武王",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "武王是周武王姬发，率周军灭商。韦孝宽在疏中引用周武王伐商的往事，说明审时而动的必要。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四·周本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷004"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuwen-yong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "武帝",
+      "paragraphText": "建德年间以后，武帝志在平齐。"
+    },
+    {
+      "personId": "yuwen-tai",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "太祖",
+      "paragraphText": "太祖受天命，与物更新，二十年里大功克举：南清江、汉，西取巴、蜀，塞表无虞，河右底定。"
+    },
+    {
+      "personId": "yuan-wei",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "元伟",
+      "paragraphText": "疏递上去，武帝派小司寇淮南公元伟、开府伊娄谦等，带着厚礼去齐国聘问。"
+    },
+    {
+      "personId": "yilou-qian",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "伊娄谦",
+      "paragraphText": "疏递上去，武帝派小司寇淮南公元伟、开府伊娄谦等，带着厚礼去齐国聘问。"
+    },
+    {
+      "personId": "gou-jian",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 2,
+      "text": "勾践",
+      "paragraphText": "从前勾践亡吴，尚期十年；武王取乱，还要再举。"
+    },
+    {
+      "personId": "zhou-wuwang",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 12,
+      "text": "武王",
+      "paragraphText": "从前勾践亡吴，尚期十年；武王取乱，还要再举。"
+    }
+  ]
+}

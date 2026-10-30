@@ -1,0 +1,520 @@
+{
+  "people": [
+    {
+      "id": "murong-chui",
+      "name": "慕容垂",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "慕容垂是前燕宗室，此前避祸投奔苻坚，王猛建议苻坚除去他，苻坚没有采纳。淝水之战后，他脱离前秦，后来建立后燕。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百二十三·慕容垂载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "苻坚是前秦君主，此时接纳前燕宗室慕容垂，并派王猛领兵攻前燕；后来前燕灭亡。王猛死后，他南征东晋，在淝水失利。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-an",
+      "name": "杨安",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "杨安是前秦将领，此前曾与王猛讨李俨。本篇他随王猛伐前燕，攻晋阳时派张蚝从地道入城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-hao",
+      "name": "张蚝",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "张蚝是前秦将领，本篇随王猛伐前燕，先率军从地道入晋阳，后又与邓羌等冲击慕容评的军队。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deng-qiang",
+      "name": "邓羌",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "邓羌是前秦将领，此前与王猛共同整治吏治、攻打苻柳。本篇他随王猛伐前燕，并与张蚝等人在战场上冲击燕军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-ping",
+      "name": "慕容评",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "慕容评是前燕太傅，本篇受慕容暐命率军抵御王猛，兵败后逃往高句丽；后来高句丽将他送给前秦。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-wei",
+      "name": "慕容暐",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "慕容暐是前燕君主，本篇派慕容评抵御王猛。后来邺城失守，他出奔途中被郭庆擒获，前燕灭亡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guo-qing",
+      "name": "郭庆",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "郭庆是前秦将领，本篇绕至慕容评营后焚烧辎重；后来擒获慕容暐，又追击慕容评。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-yue",
+      "name": "慕容越",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "慕容越是前燕上党太守，本篇王猛攻壶关时将他擒获。所取记载没有在此进一步交代他的结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gou-chang",
+      "name": "苟苌",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "苟苌是前秦屯骑校尉，本篇受王猛之命守壶关。后来苻坚遣他等人攻前凉，张天锡向秦军投降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十六·张天锡传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷086"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-zhuang",
+      "name": "慕容庄",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "慕容庄是前燕并州刺史，本篇王猛与杨安攻入晋阳时将他擒获。所取记载没有在此进一步交代他的结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mao-dang",
+      "name": "毛当",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "毛当是前秦将领，本篇被王猛留在晋阳驻守。王猛去世后，他曾参加前秦南征，又奉命驻守洛阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记下及苻融传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-cheng",
+      "name": "徐成",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "徐成是前秦将领，本篇与邓羌、张蚝等冲击慕容评的军队。所取载记段落没有在此进一步交代他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-wei",
+      "name": "李威",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "李威是前秦官员，本篇苻坚出兵邺城时，留下他辅佐太子苻宏守长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-hong",
+      "name": "苻宏",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "苻宏是苻坚的儿子、前秦太子，本篇苻坚出征邺城时由他留守长安，李威辅佐。后来慕容冲进逼长安，他率家属逃出。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记下及苻融传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-rong",
+      "name": "苻融",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "苻融是苻坚的弟弟，本篇苻坚出征邺城时命他镇守洛阳。后来他反对攻晋，淝水之战中战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记下及苻融传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "murong-chui",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "慕容垂",
+      "paragraphText": "那时慕容垂避害来投苻坚。王猛对苻坚说："
+    },
+    {
+      "personId": "fu-jian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "苻坚",
+      "paragraphText": "那时慕容垂避害来投苻坚。王猛对苻坚说："
+    },
+    {
+      "personId": "yang-an",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "杨安",
+      "paragraphText": "太和五年，朝廷又遣猛率杨安、张蚝、邓羌等十将，步骑六万伐燕。"
+    },
+    {
+      "personId": "zhang-hao",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "张蚝",
+      "paragraphText": "太和五年，朝廷又遣猛率杨安、张蚝、邓羌等十将，步骑六万伐燕。"
+    },
+    {
+      "personId": "deng-qiang",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "邓羌",
+      "paragraphText": "太和五年，朝廷又遣猛率杨安、张蚝、邓羌等十将，步骑六万伐燕。"
+    },
+    {
+      "personId": "murong-ping",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "慕容评",
+      "paragraphText": "燕遣太傅慕容评率众四十余万来救二城。评怕猛，不敢进，屯在潞川。"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "慕容暐",
+      "paragraphText": "慕容暐害怕，派使者责备慕容评，催他速战。"
+    },
+    {
+      "personId": "guo-qing",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "郭庆",
+      "paragraphText": "遣游击郭庆带锐卒五千，夜里从间道绕到评营后面，靠山放火，烧他的辎重。火光一直照到邺城。"
+    },
+    {
+      "personId": "murong-yue",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "慕容越",
+      "paragraphText": "杨安攻晋阳。猛攻壶关，擒了燕的上党太守慕容越。所经郡县都降于猛，猛留屯骑校尉苟苌守壶关。"
+    },
+    {
+      "personId": "gou-chang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 38,
+      "text": "苟苌",
+      "paragraphText": "杨安攻晋阳。猛攻壶关，擒了燕的上党太守慕容越。所经郡县都降于猛，猛留屯骑校尉苟苌守壶关。"
+    },
+    {
+      "personId": "murong-zhuang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 47,
+      "text": "慕容庄",
+      "paragraphText": "碰上杨安攻晋阳，挖了地道，遣张蚝率壮士数百人入城，大呼斩关，猛、安于是入晋阳，擒了燕的并州刺史慕容庄。"
+    },
+    {
+      "personId": "mao-dang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "毛当",
+      "paragraphText": "猛留将军毛当守晋阳，进师与评相持。"
+    },
+    {
+      "personId": "xu-cheng",
+      "beat": 5,
+      "paragraph": 6,
+      "offset": 24,
+      "text": "徐成",
+      "paragraphText": "猛驰马过去答应了他。邓羌于是在帐中大饮，与张蚝、徐成等跨马运矛，驰入评军，出入四次，旁若无人，搴旗斩将，杀伤甚众。"
+    },
+    {
+      "personId": "li-wei",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "李威",
+      "paragraphText": "苻坚听说，留李威辅太子宏守长安，以苻融镇洛阳，亲自率精锐十万向邺。"
+    },
+    {
+      "personId": "fu-hong",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "宏",
+      "paragraphText": "苻坚听说，留李威辅太子宏守长安，以苻融镇洛阳，亲自率精锐十万向邺。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "苻融",
+      "paragraphText": "苻坚听说，留李威辅太子宏守长安，以苻融镇洛阳，亲自率精锐十万向邺。"
+    }
+  ]
+}

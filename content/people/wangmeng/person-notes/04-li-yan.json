@@ -1,0 +1,559 @@
+{
+  "people": [
+    {
+      "id": "yang-an",
+      "name": "杨安",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "杨安是前秦将领，此前与王猛攻荆州北部。本篇他又参与攻打陕城，后来随王猛伐前燕。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lian-qi",
+      "name": "敛岐",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "敛岐是羌人，曾依附苻坚；本篇他率部西去，依附李俨，随后被邵羌擒送长安。所取材料没有进一步交代其结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-tianxi",
+      "name": "张天锡",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "张天锡是前凉统治者，李俨原为其部将，后来与他对立。本篇张天锡率军攻李俨，王猛救李俨后将其俘获；前秦后来灭前凉，张天锡降秦。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十六·张天锡传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷086"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-yan",
+      "name": "李俨",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "李俨原为前凉张天锡部将，本篇与张天锡对立，敛岐西投于他。他受到张天锡进攻后曾向苻坚求援；王猛解围后又将他俘获，苻坚随后授其光禄勋、归安侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jiang-heng",
+      "name": "姜衡",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "姜衡是前秦陇西太守，本篇与王猛、邵羌一同出兵讨伐敛岐。所取材料没有进一步交代其结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shao-qiang",
+      "name": "邵羌",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "邵羌是前秦南安太守，本篇随王猛讨敛岐，在白马擒获敛岐并送往长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "苻坚是前秦君主，本篇先派王猛等人讨敛岐，之后又派兵对付苻双、苻柳等人。后来王猛为他领兵攻灭前燕；王猛死后，苻坚南征东晋，在淝水失利。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-shuang",
+      "name": "苻双",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "苻双是苻坚的弟弟，本篇与苻柳等人举兵反苻坚；后来其军败退上邽，城破后被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-liu",
+      "name": "苻柳",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "苻柳是苻坚的从兄，本篇据蒲阪起兵。他出兵攻长安时被邓羌、王猛击败，后来蒲阪城破，与妻子一同被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-yu",
+      "name": "苻庾",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "苻庾是前秦宗室，本篇据陕城响应苻双、苻柳。后来邓羌、王鉴等攻陷陕城，把他送到长安杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-wu",
+      "name": "苻武",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "苻武本篇据安定响应苻双、苻柳；后来与苻双退守上邽，城破后被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deng-qiang",
+      "name": "邓羌",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "邓羌是前秦将领，此前与王猛一起整治吏治。本篇他随王猛攻苻柳，率骑兵夜袭取胜；后来又协助攻陷陕城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-hao",
+      "name": "张蚝",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "张蚝是前秦将领，本篇与杨安奉命攻陕城；后来随王猛伐前燕，在晋阳作战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-liang",
+      "name": "苻良",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "苻良是苻柳的世子。本篇苻柳进攻长安时，留他守蒲阪；所取记载说蒲阪失守后苻柳的妻子被杀，未在此另叙苻良经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-jian",
+      "name": "王鉴",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "王鉴是前秦将领，此前参与攻打苻双、苻武；本篇与邓羌攻陕城，将苻庾送往长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-chengshi",
+      "name": "杨成世",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "杨成世是前秦将领，本篇与毛嵩奉命讨伐苻双、苻武。所取载记记他们曾失利，随后苻坚另遣援军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mao-song",
+      "name": "毛嵩",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "毛嵩是前秦左将军，本篇与杨成世奉命讨伐苻双、苻武；所取载记记二人曾失利。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yang-an",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "杨安",
+      "paragraphText": "先是猛与杨安等率二万众，攻荆州北鄙诸郡，掠汉阳万余户而还。"
+    },
+    {
+      "personId": "lian-qi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "敛岐",
+      "paragraphText": "羌人敛岐叛苻坚，自称益州刺史，带着部落四千余家西去，依附张天锡的叛将李俨。"
+    },
+    {
+      "personId": "zhang-tianxi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 28,
+      "text": "张天锡",
+      "paragraphText": "羌人敛岐叛苻坚，自称益州刺史，带着部落四千余家西去，依附张天锡的叛将李俨。"
+    },
+    {
+      "personId": "li-yan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 34,
+      "text": "李俨",
+      "paragraphText": "羌人敛岐叛苻坚，自称益州刺史，带着部落四千余家西去，依附张天锡的叛将李俨。"
+    },
+    {
+      "personId": "jiang-heng",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "姜衡",
+      "paragraphText": "苻坚遣猛与陇西太守姜衡、南安太守邵羌，讨敛岐于略阳。"
+    },
+    {
+      "personId": "shao-qiang",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 16,
+      "text": "邵羌",
+      "paragraphText": "苻坚遣猛与陇西太守姜衡、南安太守邵羌，讨敛岐于略阳。"
+    },
+    {
+      "personId": "fu-jian",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "苻坚",
+      "paragraphText": "羌人敛岐叛苻坚，自称益州刺史，带着部落四千余家西去，依附张天锡的叛将李俨。"
+    },
+    {
+      "personId": "fu-shuang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "苻双",
+      "paragraphText": "这一年，苻双据上邽、苻柳据蒲阪叛于苻坚；苻庾据陕城、苻武据安定，都响应他们，要共伐长安。"
+    },
+    {
+      "personId": "fu-liu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "苻柳",
+      "paragraphText": "这一年，苻双据上邽、苻柳据蒲阪叛于苻坚；苻庾据陕城、苻武据安定，都响应他们，要共伐长安。"
+    },
+    {
+      "personId": "fu-yu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 20,
+      "text": "苻庾",
+      "paragraphText": "这一年，苻双据上邽、苻柳据蒲阪叛于苻坚；苻庾据陕城、苻武据安定，都响应他们，要共伐长安。"
+    },
+    {
+      "personId": "fu-wu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 26,
+      "text": "苻武",
+      "paragraphText": "这一年，苻双据上邽、苻柳据蒲阪叛于苻坚；苻庾据陕城、苻武据安定，都响应他们，要共伐长安。"
+    },
+    {
+      "personId": "deng-qiang",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 27,
+      "text": "邓羌",
+      "paragraphText": "苻坚遣后禁将军杨成世、左将军毛嵩等讨苻双、苻武；王猛、邓羌攻蒲阪；杨安、张蚝攻陕城。"
+    },
+    {
+      "personId": "zhang-hao",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 36,
+      "text": "张蚝",
+      "paragraphText": "苻坚遣后禁将军杨成世、左将军毛嵩等讨苻双、苻武；王猛、邓羌攻蒲阪；杨安、张蚝攻陕城。"
+    },
+    {
+      "personId": "fu-liang",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 10,
+      "text": "苻良",
+      "paragraphText": "柳以为猛怕他，留世子苻良守蒲阪，自率二万众将攻长安。"
+    },
+    {
+      "personId": "wang-jian",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "王鉴",
+      "paragraphText": "猛屯蒲阪，派邓羌与王鉴等攻陷陕城，克之，把苻庾送到长安，杀了。"
+    },
+    {
+      "personId": "yang-chengshi",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 7,
+      "text": "杨成世",
+      "paragraphText": "苻坚遣后禁将军杨成世、左将军毛嵩等讨苻双、苻武；王猛、邓羌攻蒲阪；杨安、张蚝攻陕城。"
+    },
+    {
+      "personId": "mao-song",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 14,
+      "text": "毛嵩",
+      "paragraphText": "苻坚遣后禁将军杨成世、左将军毛嵩等讨苻双、苻武；王猛、邓羌攻蒲阪；杨安、张蚝攻陕城。"
+    }
+  ]
+}

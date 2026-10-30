@@ -1,0 +1,485 @@
+{
+  "people": [
+    {
+      "id": "yuan-hao",
+      "name": "元颢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "元颢是北魏北海王。北魏局势动荡时，他投奔梁朝并请求支持，想回北方争取魏帝位；梁武帝派陈庆之送他北上，他在途中称帝，后来进入洛阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiu-daqian",
+      "name": "丘大千",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "丘大千是北魏将领，此前曾受元延明派遣筑垒抵御梁军。此次他驻守睢阳抵御陈庆之，战败后投降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-huiye",
+      "name": "元晖业",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "元晖业是北魏济阴王、征东将军，在陈庆之北进时率军救援梁、宋，屯驻考城。陈庆之攻克该城后将他生擒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-yu",
+      "name": "杨昱",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "杨昱是北魏左仆射。此时他与元庆、元显恭等驻守荥阳，抵御元颢和陈庆之北进的军队。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-qing",
+      "name": "元庆",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "元庆是北魏西阿王。此时他与杨昱、元显恭等共同驻守荥阳，抵御元颢与陈庆之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-xiangong",
+      "name": "元显恭",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "元显恭是北魏抚军将军，此时与杨昱、元庆等守荥阳，抵御北上的梁军和元颢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-tianmu",
+      "name": "元天穆",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "元天穆是北魏将领，与尔朱荣共同支持魏主元子攸。他率军援救荥阳，城破后曾败退；后来又率军攻大梁。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-tumor",
+      "name": "尔朱吐没儿",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "尔朱吐没儿是北魏骠骑将军，奉元天穆之命率骑兵援救荥阳。荥阳之战后，他与元天穆各自骑马逃脱。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-shilong",
+      "name": "尔朱世隆",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "尔朱世隆是尔朱荣的堂弟，属尔朱家势力。陈庆之北上时，他弃虎牢而走；后来参与废立北魏皇帝，尔朱家韩陵战败后被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱彦伯传附世隆",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-ziyou",
+      "name": "元子攸",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "元子攸是北魏皇帝，史称孝庄帝。这时他面对元颢军队离开洛阳；后来在尔朱荣支持下返回，之后又杀尔朱荣，最终被尔朱兆杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十·孝庄帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷10"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-yu",
+      "name": "元彧",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "元彧是北魏临淮王，此前曾与元延明率魏军抵御陈庆之。此时他与元延明带领百官迎元颢入洛阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-yanming",
+      "name": "元延明",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "元延明是北魏安丰王，此前曾率军抵御陈庆之；此时他与元彧等迎接元颢进入洛阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-yan",
+      "name": "萧衍",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "高祖是梁武帝萧衍。元颢投梁求援后，他派陈庆之护送元颢北上；“高祖”是史书对他的追称。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-an",
+      "name": "鲁安",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "鲁安是北魏骑将。元天穆遣他率夏州兵马援救荥阳；陈庆之攻城后，鲁安在阵前请求投降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-pi",
+      "name": "王罴",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "王罴是北魏西荆州刺史。元天穆派他与尔朱世隆率骑兵据守虎牢，阻挡元颢与陈庆之北进。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-jingxiu",
+      "name": "宋景休",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "宋景休是东阳人，《梁书·陈庆之传》记他在攻荥阳时与鱼天愍先登城墙。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-tianmin",
+      "name": "鱼天愍",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "鱼天愍是义兴人，《梁书·陈庆之传》记他与宋景休在攻荥阳时先登城墙。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-hao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "元颢",
+      "paragraphText": "大通初年，魏的北海王元颢来了。"
+    },
+    {
+      "personId": "qiu-daqian",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "丘大千",
+      "paragraphText": "睢阳的守将是丘大千。"
+    },
+    {
+      "personId": "yuan-huiye",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "元晖业",
+      "paragraphText": "征东将军、济阴王元晖业率羽林与宗室子弟两万人，救梁、宋，进屯考城。"
+    },
+    {
+      "personId": "yang-yu",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "杨昱",
+      "paragraphText": "魏的左仆射杨昱、西阿王元庆、抚军将军元显恭，率御仗羽林与宗室子弟，共七万人，据荥阳拒元颢。"
+    },
+    {
+      "personId": "yuan-qing",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "元庆",
+      "paragraphText": "魏的左仆射杨昱、西阿王元庆、抚军将军元显恭，率御仗羽林与宗室子弟，共七万人，据荥阳拒元颢。"
+    },
+    {
+      "personId": "yuan-xiangong",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 18,
+      "text": "元显恭",
+      "paragraphText": "魏的左仆射杨昱、西阿王元庆、抚军将军元显恭，率御仗羽林与宗室子弟，共七万人，据荥阳拒元颢。"
+    },
+    {
+      "personId": "yuan-tianmu",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 1,
+      "text": "元天穆",
+      "paragraphText": "而元天穆的大军又要到了。"
+    },
+    {
+      "personId": "erzhu-tumor",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 7,
+      "text": "尔朱吐没儿",
+      "paragraphText": "他先遣骠骑将军尔朱吐没儿领胡骑五千，骑将鲁安领夏州步骑九千，来援杨昱。"
+    },
+    {
+      "personId": "erzhu-shilong",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "尔朱世隆",
+      "paragraphText": "他继续向虎牢去。尔朱世隆弃城走了。"
+    },
+    {
+      "personId": "yuan-ziyou",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "元子攸",
+      "paragraphText": "魏主元子攸怕了，奔并州。"
+    },
+    {
+      "personId": "yuan-yu",
+      "beat": 7,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "元彧",
+      "paragraphText": "临淮王元彧、安丰王元延明带着百官，封了府库，备了法驾，把元颢迎进洛阳宫，登御前殿，改元大赦。"
+    },
+    {
+      "personId": "yuan-yanming",
+      "beat": 7,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "元延明",
+      "paragraphText": "临淮王元彧、安丰王元延明带着百官，封了府库，备了法驾，把元颢迎进洛阳宫，登御前殿，改元大赦。"
+    },
+    {
+      "personId": "xiao-yan",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "高祖",
+      "paragraphText": "高祖收下了这个人，也收下了这件事。以陈庆之为假节、飙勇将军，送元颢北还。"
+    },
+    {
+      "personId": "lu-an",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 20,
+      "text": "鲁安",
+      "paragraphText": "他先遣骠骑将军尔朱吐没儿领胡骑五千，骑将鲁安领夏州步骑九千，来援杨昱。"
+    },
+    {
+      "personId": "wang-pi",
+      "beat": 4,
+      "paragraph": 5,
+      "offset": 15,
+      "text": "王罴",
+      "paragraphText": "又遣右仆射尔朱世隆、西荆州刺史王罴，率骑一万，据虎牢。"
+    },
+    {
+      "personId": "song-jingxiu",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "宋景休",
+      "paragraphText": "壮士东阳宋景休、义兴鱼天愍越过城墙的垛口，先上去了。"
+    },
+    {
+      "personId": "yu-tianmin",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 10,
+      "text": "鱼天愍",
+      "paragraphText": "壮士东阳宋景休、义兴鱼天愍越过城墙的垛口，先上去了。"
+    }
+  ]
+}

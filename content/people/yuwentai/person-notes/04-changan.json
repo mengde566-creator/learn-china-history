@@ -1,0 +1,126 @@
+{
+  "people": [
+    {
+      "id": "yuan-xiu",
+      "name": "元修",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "元修是北魏皇帝，即孝武帝（《魏书》称出帝）。他与高欢决裂后从洛阳西入关中，投靠宇文泰；到长安后军国大事由宇文泰决断，同年闰十二月被宇文泰害死，年二十五。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "高欢是东魏的执政者。元修西走后，他另立元善见为帝，迁都邺城；此后与宇文泰长期交战，547 年去世，其子高洋后来代东魏建北齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-shanjian",
+      "name": "元善见",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "元善见是北魏宗室。元修西走后，高欢立他为帝，迁都邺城，即东魏孝静帝；后来高洋废他自立，东魏结束。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-baoju",
+      "name": "元宝炬",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "元宝炬是北魏宗室。元修死后，宇文泰与诸公拥立他为帝，即西魏文帝；535 年起长安以他的朝廷继续，与东魏并立。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-xiu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "元修",
+      "paragraphText": "元修却没能等到局势转好。洛阳一方的将领争权，有人弃守回报，谎称高欢军已到。元修离开洛阳，带轻骑向西入关。"
+    },
+    {
+      "personId": "gao-huan",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "高欢",
+      "paragraphText": "高欢没能让元修返回，另拥立元善见，在邺城安置朝廷。两边的皇帝都姓元，也都沿用魏的国号。东西两边争的，既有城池，也有谁能代表这个王朝。"
+    },
+    {
+      "personId": "yuan-shanjian",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "元善见",
+      "paragraphText": "高欢没能让元修返回，另拥立元善见，在邺城安置朝廷。两边的皇帝都姓元，也都沿用魏的国号。东西两边争的，既有城池，也有谁能代表这个王朝。"
+    },
+    {
+      "personId": "yuan-baoju",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 11,
+      "text": "元宝炬",
+      "paragraphText": "接着，宇文泰与诸公拥立元宝炬。535年开始，长安以新的皇帝继续建立自己的魏朝廷，后来称作西魏。"
+    }
+  ]
+}

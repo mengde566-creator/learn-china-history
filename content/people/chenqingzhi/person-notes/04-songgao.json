@@ -1,0 +1,409 @@
+{
+  "people": [
+    {
+      "id": "yuan-hao",
+      "name": "元颢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "元颢是北魏北海王，曾投梁请求援助。陈庆之护送他北上后，他入洛阳称帝；在本篇中他与支持魏主元子攸的尔朱荣等军队对抗。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-yanming",
+      "name": "元延明",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "元延明是北魏安丰王，此前与元彧迎元颢入洛阳。本篇中，他劝元颢不要再引梁兵入境，担心权柄落入梁方之手。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ma-fonian",
+      "name": "马佛念",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "马佛念是陈庆之的军副。元颢在洛阳时，他曾劝陈庆之杀元颢、据洛阳；《梁书》记陈庆之没有听从。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-rong",
+      "name": "尔朱荣",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "尔朱荣是北魏权臣和将领，也是尔朱世隆的堂兄。此时他支持魏主元子攸，与元颢争夺洛阳；后来被孝庄帝元子攸召入宫中杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十四·尔朱荣传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷74"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-shilong",
+      "name": "尔朱世隆",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "尔朱世隆是尔朱荣的堂弟，此时与尔朱荣同在魏主元子攸一方。后来他参与废立皇帝，尔朱家在韩陵战败后被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱彦伯传附世隆",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-tianmu",
+      "name": "元天穆",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "元天穆是北魏将领，此前与陈庆之争夺荥阳；本篇他与尔朱荣等军合力攻打元颢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "高欢此时是尔朱荣的长史，随军参与反击元颢。后来他成为东魏的实际掌权者；他死后，其子高洋建立北齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷一·神武帝纪上",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-ziyou",
+      "name": "元子攸",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "元子攸是北魏孝庄帝。元颢入洛阳后，他在尔朱荣等支持下反攻；后来他杀尔朱荣，最终又被尔朱兆杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十·孝庄帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷10"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-zhu",
+      "name": "刘助",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "刘助是《梁书·陈庆之传》所记善于观察天象的人。河桥战前，他向尔朱荣提出十日内可平定河南的判断；这属于史书所记的占候说法。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-yu",
+      "name": "元彧",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "临淮王即北魏元彧。此前他与安丰王元延明一同迎元颢入洛阳；《梁书·陈庆之传》记他在本篇中与元颢、元延明共同谋划。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-yan",
+      "name": "萧衍",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "高祖是梁武帝萧衍，是支持元颢北上的梁朝皇帝。元颢上表表示不需增兵后，他下令各军停在界首。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-tumor",
+      "name": "尔朱吐没儿",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "尔朱吐没儿是北魏将领，此前曾随元天穆援救荥阳。本篇中他与尔朱荣、元天穆等共同反攻元颢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cheng-daoyong",
+      "name": "程道雍",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "程道雍是《梁书·陈庆之传》记载的豫州人。陈庆之在嵩高山遇洪水、改装南返时，他与其他人暗中帮助陈庆之经过汝阴。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "035"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-hao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "元颢",
+      "paragraphText": "元颢得志了。"
+    },
+    {
+      "personId": "yuan-yanming",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "元延明",
+      "paragraphText": "元延明对他说了几句话。"
+    },
+    {
+      "personId": "ma-fonian",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "马佛念",
+      "paragraphText": "军副马佛念对陈庆之说："
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "尔朱荣",
+      "paragraphText": "魏的天柱将军尔朱荣、右仆射尔朱世隆、大都督元天穆、骠骑将军尔朱吐没儿，以及尔朱荣的长史高欢，会合鲜卑、芮芮的兵，勒众号称百万，挟着魏主元子攸，来攻元颢。"
+    },
+    {
+      "personId": "erzhu-shilong",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "尔朱世隆",
+      "paragraphText": "魏的天柱将军尔朱荣、右仆射尔朱世隆、大都督元天穆、骠骑将军尔朱吐没儿，以及尔朱荣的长史高欢，会合鲜卑、芮芮的兵，勒众号称百万，挟着魏主元子攸，来攻元颢。"
+    },
+    {
+      "personId": "yuan-tianmu",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "元天穆",
+      "paragraphText": "魏的天柱将军尔朱荣、右仆射尔朱世隆、大都督元天穆、骠骑将军尔朱吐没儿，以及尔朱荣的长史高欢，会合鲜卑、芮芮的兵，勒众号称百万，挟着魏主元子攸，来攻元颢。"
+    },
+    {
+      "personId": "gao-huan",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 43,
+      "text": "高欢",
+      "paragraphText": "魏的天柱将军尔朱荣、右仆射尔朱世隆、大都督元天穆、骠骑将军尔朱吐没儿，以及尔朱荣的长史高欢，会合鲜卑、芮芮的兵，勒众号称百万，挟着魏主元子攸，来攻元颢。"
+    },
+    {
+      "personId": "yuan-ziyou",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 67,
+      "text": "元子攸",
+      "paragraphText": "魏的天柱将军尔朱荣、右仆射尔朱世隆、大都督元天穆、骠骑将军尔朱吐没儿，以及尔朱荣的长史高欢，会合鲜卑、芮芮的兵，勒众号称百万，挟着魏主元子攸，来攻元颢。"
+    },
+    {
+      "personId": "liu-zhu",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "刘助",
+      "paragraphText": "有个叫刘助的人，善看天象。他对尔朱荣说：不出十天，河南就能大定。"
+    },
+    {
+      "personId": "yuan-yu",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 6,
+      "text": "临淮王",
+      "paragraphText": "他和安丰王、临淮王一起定下了别的打算：要背弃梁朝的恩，断掉宾贡之礼。"
+    },
+    {
+      "personId": "xiao-yan",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 22,
+      "text": "高祖",
+      "paragraphText": "元颢怕陈庆之自己向梁朝密奏，就先上了一道表给高祖，说河北、河南一时已定，只剩尔朱荣还敢跋扈，臣与陈庆之自能擒讨；州郡刚刚归服，正该安抚，不宜再加兵，摇动百姓。"
+    },
+    {
+      "personId": "erzhu-tumor",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 29,
+      "text": "尔朱吐没儿",
+      "paragraphText": "魏的天柱将军尔朱荣、右仆射尔朱世隆、大都督元天穆、骠骑将军尔朱吐没儿，以及尔朱荣的长史高欢，会合鲜卑、芮芮的兵，勒众号称百万，挟着魏主元子攸，来攻元颢。"
+    },
+    {
+      "personId": "cheng-daoyong",
+      "beat": 8,
+      "paragraph": 5,
+      "offset": 25,
+      "text": "程道雍",
+      "paragraphText": "他把胡须头发剃了，做僧人打扮，走小路到豫州。豫州人程道雍等把他悄悄送过汝阴。"
+    },
+    {
+      "personId": "yuan-yanming",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 2,
+      "text": "安丰王",
+      "paragraphText": "他和安丰王、临淮王一起定下了别的打算：要背弃梁朝的恩，断掉宾贡之礼。"
+    }
+  ]
+}

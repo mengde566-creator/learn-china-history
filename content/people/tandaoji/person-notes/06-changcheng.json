@@ -1,0 +1,518 @@
+{
+  "people": [
+    {
+      "id": "liu-yilong",
+      "name": "刘义隆",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "“太祖”是刘宋文帝刘义隆死后的庙号。他是刘裕的儿子，本篇因病召檀道济入朝，随后下诏收捕、杀害檀道济。诏书所列罪名是朝廷指控，不能直接视为已经证实的事实。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "local",
+              "id": "067"
+            },
+            {
+              "kind": "local",
+              "id": "069"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷五·文帝纪",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yikang",
+      "name": "刘义康",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "刘义康是刘裕的儿子，封彭城王，是刘义隆的弟弟。《宋书》记他担心刘义隆病重后无法控制檀道济；后来他与刘义隆之间生出嫌隙，遭免官外徙。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷六十八·彭城王义康传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xue-tong",
+      "name": "薛彤",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "薛彤是檀道济的司空参军，《宋书》称他是檀道济的腹心。本篇檀道济被捕后，薛彤也在建康被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "084"
+            },
+            {
+              "kind": "local",
+              "id": "086"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-jinzhi",
+      "name": "高进之",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "高进之是檀道济的司空参军，《宋书》称他是檀道济的腹心。本篇他在寻阳与檀道济诸子一同被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "local",
+              "id": "086"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gu-zhongwen",
+      "name": "顾仲文",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "顾仲文是刘宋尚书库部郎，本篇与茅亨奉命到寻阳收捕檀道济诸子及高进之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mao-heng",
+      "name": "茅亨",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "茅亨是刘宋建武将军，本篇与顾仲文奉命到寻阳收捕檀道济诸子及高进之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-yong",
+      "name": "檀邕",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "檀邕是檀道济的儿子，本篇在寻阳被捕杀；他的儿子檀孺获宽宥，后来在世祖朝任奉朝请。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "local",
+              "id": "088"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-ru",
+      "name": "檀孺",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "檀孺是檀道济之子檀邕的儿子，即檀道济的孙子。本篇其父被杀后，他获宽宥；后来在世祖朝任奉朝请。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "local",
+              "id": "088"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-zhi",
+      "name": "檀植",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "檀植是檀道济的儿子，本篇被捕时任给事黄门侍郎，后来与父亲等人一同被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "083"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-can",
+      "name": "檀粲",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "檀粲是檀道济的儿子，本篇被捕时任司徒从事中郎，后来与父亲等人一同被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "083"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-xi",
+      "name": "檀隰",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "檀隰是檀道济的儿子，本篇被捕时任太子舍人，后来与父亲等人一同被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "083"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-chengbo",
+      "name": "檀承伯",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "檀承伯是檀道济的儿子，本篇被捕时任征北主簿，后来与父亲等人一同被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "083"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-zun",
+      "name": "檀遵",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "檀遵是檀道济的儿子，本篇被捕时任秘书郎，后来与父亲等人一同被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "083"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-yi",
+      "name": "檀夷",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "檀夷是檀道济的儿子，本篇顾仲文、茅亨奉命赴寻阳，将他与檀邕、檀演及高进之一同收捕杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-yan",
+      "name": "檀演",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "檀演是檀道济的儿子，本篇在寻阳与檀夷、檀邕及高进之一同被收捕杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-jun",
+      "name": "刘骏",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "“世祖”指刘宋孝武帝刘骏，是刘义隆的儿子；这是他死后的庙号。檀孺被宽宥后，后来在刘骏统治时任奉朝请。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "088"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷六·孝武帝纪",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-fei",
+      "name": "张飞",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "张飞是三国时蜀汉将领。《宋书》说当时人把薛彤与高进之比作张飞、关羽，是对二人勇力的类比，并未说明哪一人对应哪位将领。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "086"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷三十六·张飞传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷36"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guan-yu",
+      "name": "关羽",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "关羽是三国时蜀汉将领。《宋书》说当时人把薛彤与高进之比作张飞、关羽，是对二人勇力的类比，并未说明哪一人对应哪位将领。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "086"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷三十六·关羽传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷36"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-yilong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太祖",
+      "paragraphText": "太祖卧病多年，几次濒危。"
+    },
+    {
+      "personId": "liu-yikang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "义康",
+      "paragraphText": "彭城王义康担心的是：宫车一旦晏驾，檀道济就再没有人压得住。"
+    },
+    {
+      "personId": "xue-tong",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "薛彤",
+      "paragraphText": "又收司空参军薛彤，在建康伏法。"
+    },
+    {
+      "personId": "gao-jinzhi",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 38,
+      "text": "高进之",
+      "paragraphText": "又派尚书库部郎顾仲文、建武将军茅亨到寻阳，收他的儿子夷、邕、演，以及司空参军高进之，一并诛杀。"
+    },
+    {
+      "personId": "gu-zhongwen",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "顾仲文",
+      "paragraphText": "又派尚书库部郎顾仲文、建武将军茅亨到寻阳，收他的儿子夷、邕、演，以及司空参军高进之，一并诛杀。"
+    },
+    {
+      "personId": "mao-heng",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "茅亨",
+      "paragraphText": "又派尚书库部郎顾仲文、建武将军茅亨到寻阳，收他的儿子夷、邕、演，以及司空参军高进之，一并诛杀。"
+    },
+    {
+      "personId": "tan-yong",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 28,
+      "text": "邕",
+      "paragraphText": "又派尚书库部郎顾仲文、建武将军茅亨到寻阳，收他的儿子夷、邕、演，以及司空参军高进之，一并诛杀。"
+    },
+    {
+      "personId": "tan-ru",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "孺",
+      "paragraphText": "邕的儿子孺被宽宥了。"
+    },
+    {
+      "personId": "tan-zhi",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 19,
+      "text": "植",
+      "paragraphText": "一起被收的还有他的儿子们：给事黄门侍郎植、司徒从事中郎粲、太子舍人隰，以及征北主簿承伯、秘书郎遵。"
+    },
+    {
+      "personId": "tan-can",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 27,
+      "text": "粲",
+      "paragraphText": "一起被收的还有他的儿子们：给事黄门侍郎植、司徒从事中郎粲、太子舍人隰，以及征北主簿承伯、秘书郎遵。"
+    },
+    {
+      "personId": "tan-xi",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 33,
+      "text": "隰",
+      "paragraphText": "一起被收的还有他的儿子们：给事黄门侍郎植、司徒从事中郎粲、太子舍人隰，以及征北主簿承伯、秘书郎遵。"
+    },
+    {
+      "personId": "tan-chengbo",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 41,
+      "text": "承伯",
+      "paragraphText": "一起被收的还有他的儿子们：给事黄门侍郎植、司徒从事中郎粲、太子舍人隰，以及征北主簿承伯、秘书郎遵。"
+    },
+    {
+      "personId": "tan-zun",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 47,
+      "text": "遵",
+      "paragraphText": "一起被收的还有他的儿子们：给事黄门侍郎植、司徒从事中郎粲、太子舍人隰，以及征北主簿承伯、秘书郎遵。"
+    },
+    {
+      "personId": "tan-yi",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 26,
+      "text": "夷",
+      "paragraphText": "又派尚书库部郎顾仲文、建武将军茅亨到寻阳，收他的儿子夷、邕、演，以及司空参军高进之，一并诛杀。"
+    },
+    {
+      "personId": "tan-yan",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 30,
+      "text": "演",
+      "paragraphText": "又派尚书库部郎顾仲文、建武将军茅亨到寻阳，收他的儿子夷、邕、演，以及司空参军高进之，一并诛杀。"
+    },
+    {
+      "personId": "liu-jun",
+      "beat": 8,
+      "paragraph": 1,
+      "offset": 1,
+      "text": "世祖",
+      "paragraphText": "到世祖朝，做奉朝请。"
+    },
+    {
+      "personId": "zhang-fei",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 23,
+      "text": "张飞",
+      "paragraphText": "薛彤和高进之都是他的腹心，有勇力，当时被人比作张飞、关羽。"
+    },
+    {
+      "personId": "guan-yu",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 26,
+      "text": "关羽",
+      "paragraphText": "薛彤和高进之都是他的腹心，有勇力，当时被人比作张飞、关羽。"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "people": [
+    {
+      "id": "yuan-dan",
+      "name": "元亶",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "元亶是北魏清河王，也是元善见的父亲。高欢与百官议立其子后，他说即使儿子即位而自己不再被当作天子的父亲，也不惜余生。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-shanjian",
+      "name": "元善见",
+      "versions": [
+        {
+          "from": 1,
+          "to": 2,
+          "text": "元善见是清河王元亶的儿子，被高欢与百官拥立为帝，即北魏孝静帝。他在东边即位时，先前的皇帝元修已西去。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-xiu",
+      "name": "元修",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "元修即北魏孝武帝，先前由高欢拥立。双方关系破裂后，他离开洛阳西往长安；此时元善见又在东边即位。 《魏书》记他入关后被宇文泰所害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十一·出帝纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zu-ying",
+      "name": "祖莹",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "祖莹当时担任护军。高欢考虑把都城从洛阳迁到邺城时，祖莹表示赞同。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-dan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "元亶",
+      "paragraphText": "高欢与百官、耆老议定，立清河王元亶的儿子元善见为帝，即孝静帝。"
+    },
+    {
+      "personId": "yuan-shanjian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 20,
+      "text": "元善见",
+      "paragraphText": "高欢与百官、耆老议定，立清河王元亶的儿子元善见为帝，即孝静帝。"
+    },
+    {
+      "personId": "yuan-dan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "元亶",
+      "paragraphText": "元亶得知后，说天子无父，只要儿子即位，自己不惜余生。父亲与儿子的关系，也得让位于皇位的礼法。"
+    },
+    {
+      "personId": "yuan-shanjian",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "元善见",
+      "paragraphText": "元修已在西边，元善见又在东边即位。《北齐书》把这一刻记作魏开始分为二。"
+    },
+    {
+      "personId": "yuan-xiu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "元修",
+      "paragraphText": "元修已在西边，元善见又在东边即位。《北齐书》把这一刻记作魏开始分为二。"
+    },
+    {
+      "personId": "zu-ying",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 37,
+      "text": "祖莹",
+      "paragraphText": "高欢决定迁都邺城：洛阳的位置，既难同晋阳衔接，又使他担心西边与南边的压力。祖莹赞同。"
+    }
+  ]
+}

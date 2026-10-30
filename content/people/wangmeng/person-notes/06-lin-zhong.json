@@ -1,0 +1,142 @@
+{
+  "people": [
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "苻坚是前秦君主，与王猛有长期君臣关系。本篇王猛病重时他亲自探望，王猛死后他仍决定进攻东晋，后来淝水战败，又遭慕容冲进逼长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-hong",
+      "name": "苻宏",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "苻宏是苻坚的儿子、前秦太子。本篇王猛去世后，苻坚在入殓前向他说起王猛；后来慕容冲进逼长安，他率家属逃出。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记下及苻融传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-rong",
+      "name": "苻融",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "苻融是苻坚的弟弟，封阳平公。王猛死后，苻融引用王猛遗言劝苻坚不要伐晋；苻坚没有听从，苻融后来在淝水之战中战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记下及苻融传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-chong",
+      "name": "慕容冲",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "慕容冲是前燕宗室。前燕灭亡后，他在前秦；本篇所述王猛去世多年后，他起兵进逼长安，苻坚因此提起王猛和苻融的话。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fu-jian",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "苻坚",
+      "paragraphText": "苻坚亲自到南北郊、宗庙、社稷祈祷，又分遣侍臣去祷告河岳诸神，没有一处不周备。"
+    },
+    {
+      "personId": "fu-hong",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "苻宏",
+      "paragraphText": "到入殓，来了三次，对太子苻宏说："
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "苻融",
+      "paragraphText": "太元七年，朝议伐晋。苻融哭着进谏，说："
+    },
+    {
+      "personId": "murong-chong",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 2,
+      "text": "慕容冲",
+      "paragraphText": "后来慕容冲逼长安，苻坚大怒说："
+    }
+  ]
+}

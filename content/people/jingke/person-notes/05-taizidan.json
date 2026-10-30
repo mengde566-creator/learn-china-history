@@ -1,0 +1,105 @@
+{
+  "people": [
+    {
+      "id": "tai-zi-dan",
+      "name": "燕太子丹",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "丹是燕国太子，曾在赵国与秦王政相识，后来在秦为人质，又逃回燕国。他请荆轲谋秦；刺秦失败、秦军攻燕后，他逃往辽东，最终被燕王喜派人杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-furen",
+      "name": "徐夫人",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "《史记》称这位匕首的原主为赵人徐夫人，太子丹花百金取得匕首。“夫人”是记载中的称谓，所查正文没有说明其性别或生平。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "048"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-wuyang",
+      "name": "秦舞阳",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "秦舞阳是燕国勇士，被太子丹选为荆轲的副使。《史记》说他十三岁杀过人；后来入秦宫时，他奉地图上殿，脸色因恐惧而改变。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "049"
+            },
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "tai-zi-dan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太子丹",
+      "paragraphText": "太子丹在天下访求锋利的匕首，花一百金买下赵国人徐夫人的那一把。"
+    },
+    {
+      "personId": "xu-furen",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "徐夫人",
+      "paragraphText": "太子丹在天下访求锋利的匕首，花一百金买下赵国人徐夫人的那一把。"
+    },
+    {
+      "personId": "qin-wuyang",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "秦舞阳",
+      "paragraphText": "燕国有个勇士叫秦舞阳，十三岁上杀过人，旁人不敢正眼看他。"
+    }
+  ]
+}

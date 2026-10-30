@@ -1,0 +1,59 @@
+{
+  "people": [
+    {
+      "id": "sima-rui",
+      "name": "司马睿",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "司马睿是晋室宗亲，曾以琅邪王身份在江南主持政事。祖逖向他请求北伐，称他为“大王”；史书在这里以他后来登基后的称号“元帝”叙述。后来他在建康称帝，成为东晋开国皇帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六·元帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷006"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十二·祖逖传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷062"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "sima-rui",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "元帝",
+      "paragraphText": "元帝正在开拓平定江南，来不及北伐。"
+    },
+    {
+      "personId": "sima-rui",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "元帝",
+      "paragraphText": "元帝任命他为奋威将军、豫州刺史。"
+    }
+  ]
+}

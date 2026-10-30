@@ -1,0 +1,237 @@
+{
+  "people": [
+    {
+      "id": "ma-xiang",
+      "name": "麻祥",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "麻祥是洛阳的令史，高欢作函使往返京城时须听他差遣。一次吃肉时，高欢坐下进食，麻祥认为这是怠慢，杖责了他。后来高欢围攻邺城时，麻祥任汤阴令，高欢叫住他，麻祥惭愧逃走。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-yi",
+      "name": "张彝",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "张彝是北魏官员，曾参与迁都事务，也曾任秦州刺史。高欢向亲友讲述的洛阳变故中，羽林宿卫烧了他的宅第；《魏书》记张彝在这场变故中受伤，后来去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷六十四·张彝传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷64"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-ziru",
+      "name": "司马子如",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "司马子如曾在怀朔任省事，是高欢早年结交的朋友。后来他辗转仕于尔朱荣和高欢，东魏初年任尚书左仆射，与孙腾、高隆之等人共管朝政；《北齐书》也批评他倚仗旧交得宠，不能只把他写成贤臣。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十八·司马子如传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-gui",
+      "name": "刘贵",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "刘贵是秀容人，是高欢早年结交的朋友。后来他先在尔朱荣门下任职，又归附高欢，担任刺史和御史中尉等职；《北齐书》记他办事严断，也记他治下严酷、滥杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十九·刘贵传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jia-xianzhi",
+      "name": "贾显智",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "贾显智是中山人，高欢早年结交的朋友。《北史》称他本名贾智，字显智。后来他随尔朱氏在韩陵战败，与兄长贾显度、斛斯椿谋诛尔朱世隆等人；此后仕途几经转折，最终因事被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《北史》",
+              "section": "卷四十九·贾显度附贾智传",
+              "url": "https://zh.wikisource.org/zh-hans/北史/卷049"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-teng",
+      "name": "孙腾",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "孙腾曾任怀朔户曹史，是高欢早年结交的朋友。后来他担任高欢的长史，参与信都起兵的谋划，并劝高欢拥立元朗；东魏初年任尚书左仆射等职，成为高欢倚重的朝廷官员。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十八·孙腾传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "侯景曾任怀朔外兵史，是高欢早年结交的人。后来他掌握河南兵权，与高澄不和，转而投梁；随后在梁起兵，围攻建康，史称侯景之乱，给梁朝和江南带来严重破坏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十六·侯景传",
+              "url": "https://zh.wikisource.org/zh-hans/梁書/卷56"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "ma-xiang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "麻祥",
+      "paragraphText": "高欢到了洛阳，要听令史麻祥差遣。一次麻祥给他肉吃，他不习惯站着吃，坐了下来。麻祥认为这是怠慢，打了他四十下。"
+    },
+    {
+      "personId": "ma-xiang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "麻祥",
+      "paragraphText": "高欢到了洛阳，要听令史麻祥差遣。一次麻祥给他肉吃，他不习惯站着吃，坐了下来。麻祥认为这是怠慢，打了他四十下。"
+    },
+    {
+      "personId": "ma-xiang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 38,
+      "text": "麻祥",
+      "paragraphText": "高欢到了洛阳，要听令史麻祥差遣。一次麻祥给他肉吃，他不习惯站着吃，坐了下来。麻祥认为这是怠慢，打了他四十下。"
+    },
+    {
+      "personId": "zhang-yi",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 20,
+      "text": "张彝",
+      "paragraphText": "他讲起洛阳的一场火：羽林宿卫结伙烧了领军张彝的宅第，朝廷怕再生乱子，竟不追究。"
+    },
+    {
+      "personId": "sima-ziru",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "司马子如",
+      "paragraphText": "司马子如、刘贵、贾显智与他结交，孙腾、侯景也在这些交游中。"
+    },
+    {
+      "personId": "liu-gui",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "刘贵",
+      "paragraphText": "司马子如、刘贵、贾显智与他结交，孙腾、侯景也在这些交游中。"
+    },
+    {
+      "personId": "jia-xianzhi",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "贾显智",
+      "paragraphText": "司马子如、刘贵、贾显智与他结交，孙腾、侯景也在这些交游中。"
+    },
+    {
+      "personId": "sun-teng",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "孙腾",
+      "paragraphText": "司马子如、刘贵、贾显智与他结交，孙腾、侯景也在这些交游中。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "侯景",
+      "paragraphText": "司马子如、刘贵、贾显智与他结交，孙腾、侯景也在这些交游中。"
+    }
+  ]
+}

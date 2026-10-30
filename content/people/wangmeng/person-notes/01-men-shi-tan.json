@@ -1,0 +1,160 @@
+{
+  "people": [
+    {
+      "id": "xu-tong",
+      "name": "徐统",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "徐统在王猛年轻游历邺城时赏识他，召他担任功曹，王猛没有接受。《晋书·王猛传》这一段没有进一步交代徐统的身份和经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-wen",
+      "name": "桓温",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "桓温是东晋将领，此次率军入关，王猛向他直陈关中形势。桓温邀请王猛一同南归，但王猛最终留下；桓温后来继续掌握东晋重要军政大权。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷九十八·桓温传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷098"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "苻坚是前秦皇族，此时听闻王猛之名，派吕婆楼前去招引。后来他废杀苻生、称大秦天王，重用王猛，平定前燕；王猛死后，苻坚南征东晋，在淝水失利。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记下",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-polou",
+      "name": "吕婆楼",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "吕婆楼是苻坚身边的谋士，此时奉命招引王猛。后来他参与苻坚废杀苻生，苻坚即位后任司隶校尉；王猛也进入朝廷，逐渐受到重用。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十三·苻坚载记上",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷113"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xu-tong",
+      "beat": 2,
+      "paragraph": 4,
+      "offset": 2,
+      "text": "徐统",
+      "paragraphText": "只有徐统见了他觉得奇，召他做功曹。他逃了，不应。"
+    },
+    {
+      "personId": "huan-wen",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "桓温",
+      "paragraphText": "桓温入关。"
+    },
+    {
+      "personId": "fu-jian",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "苻坚",
+      "paragraphText": "苻坚将有大志，听说猛的名，派吕婆楼去招他。"
+    },
+    {
+      "personId": "lv-polou",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "吕婆楼",
+      "paragraphText": "苻坚将有大志，听说猛的名，派吕婆楼去招他。"
+    }
+  ]
+}

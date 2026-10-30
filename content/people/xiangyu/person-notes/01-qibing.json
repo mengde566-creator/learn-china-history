@@ -1,0 +1,635 @@
+{
+  "people": [
+    {
+      "id": "xiang-liang",
+      "name": "项梁",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "项梁是项羽的叔父、楚将项燕之子。他教项羽兵法，与侄子避仇吴中，后来在会稽起兵，拥立楚怀王；再后来在定陶与秦军交战时战死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-jiu",
+      "name": "曹咎",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "曹咎当时是蕲县狱掾，曾替项梁写信给司马欣，使项梁摆脱一次追捕。后来他成为项羽方面的将领，在成皋战败后自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "075"
+            },
+            {
+              "kind": "local",
+              "id": "078"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-xin",
+      "name": "司马欣",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "司马欣当时是栎阳狱掾，曾因曹咎的信帮助项梁。后来他跟随秦将章邯，章邯降楚后，项羽封他为塞王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "052"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-shihuang",
+      "name": "秦始皇",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "秦始皇是统一六国的秦朝皇帝。项梁和项羽看见他巡游会稽，项羽当时说出了“彼可取而代也”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-she",
+      "name": "陈胜",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "陈涉即陈胜，他与吴广在大泽乡起兵，随后自立为张楚王；后来兵败，在撤退途中被部下杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十八·陈涉世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷048"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shou-tong",
+      "name": "会稽守通",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "通是秦朝会稽郡的郡守。各地起兵后，他想让项梁、桓楚带兵，随后被项梁与项羽设计杀死；本篇底本只称他为“通”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huan-chu",
+      "name": "桓楚",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "桓楚当时逃亡在泽中，会稽守想让他带兵。后来项羽杀宋义、被推为代理上将军后，派桓楚向怀王报命。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-ping",
+      "name": "召平",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "召平是广陵人，曾替陈王进攻广陵。听说陈王兵败后，他渡江假传陈王命令，任命项梁为楚王上柱国。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-ying",
+      "name": "陈婴",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "陈婴原是东阳县令的属吏，被当地起事者推为首领。他听从母亲建议，把队伍归属项梁；拥立怀王后，他担任楚上柱国。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qing-jia",
+      "name": "秦嘉",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "秦嘉是秦末起兵者，拥立景驹为楚王，与项梁对抗；在胡陵一带再战时战死，部众投降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jing-ju",
+      "name": "景驹",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "景驹被秦嘉拥立为楚王。项梁击败秦嘉后，景驹逃往梁地，死在那里。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-zeng",
+      "name": "范增",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "范增是居鄛人，劝项梁拥立楚王后裔。后来他成为项羽倚重的谋士，项羽称他亚父；楚汉相持时离去，病死途中。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "local",
+              "id": "067"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chu-huai-wang",
+      "name": "楚怀王",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "心是旧楚怀王的孙子，被项梁拥立后也称楚怀王；后来被尊为义帝，又被项羽暗中命人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ying-bu",
+      "name": "黥布",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "黥布带兵归附项梁，后来成为项羽部将。钜鹿之战时他以当阳君的身份先行渡河；项羽分封时封他为九江王，后来他又归附刘邦。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pu-jiangjun",
+      "name": "蒲将军",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "《史记》称他为蒲将军。他带兵归附项梁，后来随项羽救赵，与当阳君先率兵渡河；这段记载未写出他的个人姓名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-han",
+      "name": "章邯",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "章邯是秦朝将领，此时军队抵达栗，项梁派人迎战。后来他在定陶击败项梁，又在钜鹿战事后向项羽投降，被封雍王；此后在汉军进攻中自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-jishi",
+      "name": "朱鸡石",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "朱鸡石是项梁派去迎战章邯的别将。他战败逃回胡陵后，项梁进入薛地，将他杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-fan-jun",
+      "name": "余樊君",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "余樊君是项梁派去迎战章邯的人，与朱鸡石一同出战，并在这一战中死去。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "沛公是刘邦，此时也已在沛县起兵，到薛地参加议事。后来他率军进入关中，与项羽争夺天下，并建立汉朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xiang-liang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "项梁",
+      "paragraphText": "项梁对他发怒。项籍回答："
+    },
+    {
+      "personId": "cao-jiu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "曹咎",
+      "paragraphText": "项梁在栎阳被追捕，托蕲县狱掾曹咎写了一封信给栎阳狱掾司马欣，靠这层关系才了结。"
+    },
+    {
+      "personId": "sima-xin",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 26,
+      "text": "司马欣",
+      "paragraphText": "项梁在栎阳被追捕，托蕲县狱掾曹咎写了一封信给栎阳狱掾司马欣，靠这层关系才了结。"
+    },
+    {
+      "personId": "qin-shihuang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "秦始皇帝",
+      "paragraphText": "秦始皇帝巡游会稽，渡浙江。项梁和项籍一起去看。"
+    },
+    {
+      "personId": "chen-she",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "陈涉",
+      "paragraphText": "秦二世元年七月，陈涉等在大泽乡起兵。九月，会稽守通对项梁说："
+    },
+    {
+      "personId": "shou-tong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "会稽守通",
+      "paragraphText": "秦二世元年七月，陈涉等在大泽乡起兵。九月，会稽守通对项梁说："
+    },
+    {
+      "personId": "huan-chu",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 37,
+      "text": "桓楚",
+      "paragraphText": "「江西皆反，此亦天亡秦之时也。吾闻先即制人，后则为人所制。吾欲发兵，使公及桓楚将。」"
+    },
+    {
+      "personId": "zhao-ping",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "召平",
+      "paragraphText": "广陵人召平替陈王去攻广陵，攻不下来。听说陈王兵败逃走，秦兵又快要到，于是渡江，假传陈王的命令，拜项梁为楚王上柱国，说江东已经平定，要他赶紧领兵向西击秦。"
+    },
+    {
+      "personId": "chen-ying",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "陈婴",
+      "paragraphText": "项梁就带着八千人渡江向西。听说陈婴已经拿下东阳，派使者去，想和他联合一起西进。"
+    },
+    {
+      "personId": "qing-jia",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "秦嘉",
+      "paragraphText": "秦嘉已经立景驹为楚王，驻军彭城东，要抵挡项梁。项梁对军吏说："
+    },
+    {
+      "personId": "jing-ju",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "景驹",
+      "paragraphText": "秦嘉已经立景驹为楚王，驻军彭城东，要抵挡项梁。项梁对军吏说："
+    },
+    {
+      "personId": "fan-zeng",
+      "beat": 8,
+      "paragraph": 9,
+      "offset": 3,
+      "text": "范增",
+      "paragraphText": "居鄛人范增，七十岁，一向在家闲居，好出奇计，去劝项梁："
+    },
+    {
+      "personId": "chu-huai-wang",
+      "beat": 8,
+      "paragraph": 12,
+      "offset": 16,
+      "text": "楚怀王的孙子心",
+      "paragraphText": "项梁认为他说得对。于是在民间找到楚怀王的孙子心——他正在给人放羊——立为楚怀王，顺从楚人的愿望。陈婴做楚上柱国，封五县，和怀王都盱台。项梁自号武信君。"
+    },
+    {
+      "personId": "ying-bu",
+      "beat": 7,
+      "paragraph": 9,
+      "offset": 22,
+      "text": "黥布",
+      "paragraphText": "众人听了他的话，把兵交给项梁。项梁渡过淮河，黥布、蒲将军也带兵来归属。一共六七万人，驻在下邳。"
+    },
+    {
+      "personId": "pu-jiangjun",
+      "beat": 7,
+      "paragraph": 9,
+      "offset": 25,
+      "text": "蒲将军",
+      "paragraphText": "众人听了他的话，把兵交给项梁。项梁渡过淮河，黥布、蒲将军也带兵来归属。一共六七万人，驻在下邳。"
+    },
+    {
+      "personId": "zhang-han",
+      "beat": 8,
+      "paragraph": 4,
+      "offset": 19,
+      "text": "章邯",
+      "paragraphText": "项梁并了秦嘉的兵，驻在胡陵，准备向西。章邯的军队到了栗，项梁派别将朱鸡石、余樊君去接战；余樊君战死，朱鸡石兵败，逃到胡陵。项梁引兵入薛，杀了朱鸡石。"
+    },
+    {
+      "personId": "zhu-jishi",
+      "beat": 8,
+      "paragraph": 4,
+      "offset": 33,
+      "text": "朱鸡石",
+      "paragraphText": "项梁并了秦嘉的兵，驻在胡陵，准备向西。章邯的军队到了栗，项梁派别将朱鸡石、余樊君去接战；余樊君战死，朱鸡石兵败，逃到胡陵。项梁引兵入薛，杀了朱鸡石。"
+    },
+    {
+      "personId": "yu-fan-jun",
+      "beat": 8,
+      "paragraph": 4,
+      "offset": 37,
+      "text": "余樊君",
+      "paragraphText": "项梁并了秦嘉的兵，驻在胡陵，准备向西。章邯的军队到了栗，项梁派别将朱鸡石、余樊君去接战；余樊君战死，朱鸡石兵败，逃到胡陵。项梁引兵入薛，杀了朱鸡石。"
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 8,
+      "paragraph": 8,
+      "offset": 25,
+      "text": "沛公",
+      "paragraphText": "项梁听到陈王确实死了，在薛召集各路别将议事。这时候沛公也在沛起兵，到薛来了。"
+    },
+    {
+      "personId": "chen-she",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "陈王",
+      "paragraphText": "广陵人召平替陈王去攻广陵，攻不下来。听说陈王兵败逃走，秦兵又快要到，于是渡江，假传陈王的命令，拜项梁为楚王上柱国，说江东已经平定，要他赶紧领兵向西击秦。"
+    }
+  ]
+}

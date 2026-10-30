@@ -1,0 +1,660 @@
+{
+  "people": [
+    {
+      "id": "huai-wang",
+      "name": "楚怀王",
+      "versions": [
+        {
+          "from": 3,
+          "to": 7,
+          "text": "楚怀王名心，是旧楚王室后裔，项梁起兵后拥立他为王。项羽入关后尊他为义帝，后来又将他迁往郴县并暗中命人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-zeng",
+      "name": "范增",
+      "versions": [
+        {
+          "from": 4,
+          "to": 7,
+          "text": "范增是项羽倚重的谋士。入关后他与项羽商议将沛公封在巴蜀、汉中；楚汉战争中他后来离开项羽，途中病逝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七·项羽本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 4,
+          "to": 7,
+          "text": "沛公是刘邦当时的称号。项羽分封时立他为汉王，辖巴、蜀、汉中；刘邦后来与项羽争夺天下，建立汉朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-xin",
+      "name": "司马欣",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "司马欣此前是章邯的长史，曾在栎阳任狱吏并对项梁有恩。项羽分封时立他为塞王，统治咸阳以东到黄河一带。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "052"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dong-yi",
+      "name": "董翳",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "董翳是秦军都尉，曾劝章邯向项羽投降。项羽分封时立他为翟王，统治上郡，都高奴。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "052"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-rong",
+      "name": "田荣",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "田荣是齐地的重要势力人物。项羽分封齐地时没有封他；后来他联合齐地力量反抗项羽的分封。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七·项羽本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-yu",
+      "name": "陈馀",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "陈馀是赵方将领，曾与张耳交好。项羽分封时没有给他王号；后来他向齐借兵攻张耳，最终在井陉之战被韩信、张耳一方击败并杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-han",
+      "name": "章邯",
+      "versions": [
+        {
+          "from": 4,
+          "to": 7,
+          "text": "章邯是秦朝降将，曾与项羽作战，后来订约归附。项羽分封时立他为雍王，辖咸阳以西、都废丘；他最终在废丘被汉军围困后自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shen-yang",
+      "name": "申阳",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "申阳是张耳的亲信，曾攻取河南并在河上迎接楚军。项羽据此立他为河南王，都洛阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "052"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-ang",
+      "name": "司马卬",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "司马卬是赵方将领，曾平定河内并立战功。项羽分封时立他为殷王，辖河内、都朝歌。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-er",
+      "name": "张耳",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "张耳原是赵相，曾与陈馀交好，后双方决裂。项羽立他为常山王；后来他投汉，与韩信在井陉击败陈馀，被汉王立为赵王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十九·张耳陈馀列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wu-rui",
+      "name": "吴芮",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "吴芮是番君，率百越之众援助诸侯并随项羽入关。项羽据此立他为衡山王，都邾。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gong-ao",
+      "name": "共敖",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "共敖是义帝的柱国，曾率兵进攻南郡。项羽分封时以其功劳立他为临江王，都江陵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-bao",
+      "name": "魏王豹",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "魏王豹名豹，此前为魏王；项羽把他改封为西魏王，领河东、都平阳。后来他反汉，被韩信击败俘获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十·魏豹彭越列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷090"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-xie",
+      "name": "赵王歇",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "赵王歇是此前的赵王，项羽将他改封代王，而立赵相张耳为常山王。后来陈馀击败张耳，迎他回赵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-liang",
+      "name": "项梁",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "项梁是项羽的叔父，早年与项羽一同起兵反秦。司马欣做栎阳狱吏时曾对他有恩；分封诸侯前项梁已在定陶之战中去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七·项羽本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-guang",
+      "name": "韩广",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "韩广原是燕王，项羽分封时将他迁为辽东王。后来他不肯前往辽东，燕王臧荼在无终将他杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zang-tu",
+      "name": "臧荼",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "臧荼原是燕将，随楚军救赵、入关，被项羽立为燕王。他后来杀原燕王韩广并占有其地；汉朝建立后他起兵反汉，被刘邦击败俘获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-shi",
+      "name": "田市",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "田市是齐王田儋之子，此前为齐王。项羽将他改封胶东王；后来他去胶东就国，被反对分封的田荣杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十四·田儋列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷094"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-du",
+      "name": "田都",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "田都是齐地将领，因随楚军救赵并入关，被项羽立为齐王，都临淄。后来田荣起兵反对分封，田都逃往楚地。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-an",
+      "name": "田安",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "田安是秦灭齐之前齐王田建的孙子，曾攻下济北数城并归附项羽，受封济北王。后来田荣攻杀田安，合并三齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mei-xuan",
+      "name": "梅鋗",
+      "versions": [
+        {
+          "from": 6,
+          "to": 7,
+          "text": "梅鋗是番君吴芮的部将。项羽分封时，以他有功封其为十万户侯；本篇侧重他与吴芮所属的阵营。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "055"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "huai-wang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "怀王",
+      "paragraphText": "项羽派人去向怀王复命。怀王只回了一句话：如约。"
+    },
+    {
+      "personId": "fan-zeng",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "范增",
+      "paragraphText": "项羽和范增怕沛公会得了天下。双方已经讲和，又不愿意背上负约的名；怕诸侯因此背叛。两人私下商议："
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "沛公",
+      "paragraphText": "项羽和范增怕沛公会得了天下。双方已经讲和，又不愿意背上负约的名；怕诸侯因此背叛。两人私下商议："
+    },
+    {
+      "personId": "sima-xin",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "司马欣",
+      "paragraphText": "司马欣的理由是一笔旧德：他从前做栎阳狱掾，对项梁有恩。董翳的理由不是旧德，是劝降：他本是劝章邯降楚的人。两个人两笔账，底本分开写，不并成一句。"
+    },
+    {
+      "personId": "dong-yi",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 27,
+      "text": "董翳",
+      "paragraphText": "司马欣的理由是一笔旧德：他从前做栎阳狱掾，对项梁有恩。董翳的理由不是旧德，是劝降：他本是劝章邯降楚的人。两个人两笔账，底本分开写，不并成一句。"
+    },
+    {
+      "personId": "tian-rong",
+      "beat": 6,
+      "paragraph": 4,
+      "offset": 15,
+      "text": "田荣",
+      "paragraphText": "三齐分给三个人，真正据着齐地的田荣一个也没有。"
+    },
+    {
+      "personId": "chen-yu",
+      "beat": 6,
+      "paragraph": 5,
+      "offset": 25,
+      "text": "陈余",
+      "paragraphText": "赵地也一样：赵王歇被徙到代，赵相张耳做了常山王，而陈余——丢了将印走、没有跟着入关——只得到环着南皮的三县。「然素聞其賢，有功於趙」，底本把不封的理由和不封的例外都写下来了。"
+    },
+    {
+      "personId": "zhang-han",
+      "beat": 4,
+      "paragraph": 7,
+      "offset": 0,
+      "text": "章邯",
+      "paragraphText": "章邯为雍王，领咸阳以西，都废丘。"
+    },
+    {
+      "personId": "shen-yang",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 8,
+      "text": "申阳",
+      "paragraphText": "往下都是这一种：申阳先打下河南、在河上迎接楚军；赵将司马卬平定河内，几次有功；张耳素有贤名，又跟着入关；吴芮带百越的兵助诸侯，也从入关；共敖领兵攻南郡，功多。"
+    },
+    {
+      "personId": "sima-ang",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 26,
+      "text": "司马卬",
+      "paragraphText": "往下都是这一种：申阳先打下河南、在河上迎接楚军；赵将司马卬平定河内，几次有功；张耳素有贤名，又跟着入关；吴芮带百越的兵助诸侯，也从入关；共敖领兵攻南郡，功多。"
+    },
+    {
+      "personId": "zhang-er",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 39,
+      "text": "张耳",
+      "paragraphText": "往下都是这一种：申阳先打下河南、在河上迎接楚军；赵将司马卬平定河内，几次有功；张耳素有贤名，又跟着入关；吴芮带百越的兵助诸侯，也从入关；共敖领兵攻南郡，功多。"
+    },
+    {
+      "personId": "wu-rui",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 52,
+      "text": "吴芮",
+      "paragraphText": "往下都是这一种：申阳先打下河南、在河上迎接楚军；赵将司马卬平定河内，几次有功；张耳素有贤名，又跟着入关；吴芮带百越的兵助诸侯，也从入关；共敖领兵攻南郡，功多。"
+    },
+    {
+      "personId": "gong-ao",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 68,
+      "text": "共敖",
+      "paragraphText": "往下都是这一种：申阳先打下河南、在河上迎接楚军；赵将司马卬平定河内，几次有功；张耳素有贤名，又跟着入关；吴芮带百越的兵助诸侯，也从入关；共敖领兵攻南郡，功多。"
+    },
+    {
+      "personId": "wei-bao",
+      "beat": 5,
+      "paragraph": 7,
+      "offset": 9,
+      "text": "魏王豹",
+      "paragraphText": "另一半是原来的王。魏王豹被徙为西魏王，领河东，都平阳；赵王歇被徙为代王，赵相张耳反做了常山王。地换到边上，王号还留着。"
+    },
+    {
+      "personId": "zhao-xie",
+      "beat": 5,
+      "paragraph": 7,
+      "offset": 27,
+      "text": "赵王歇",
+      "paragraphText": "另一半是原来的王。魏王豹被徙为西魏王，领河东，都平阳；赵王歇被徙为代王，赵相张耳反做了常山王。地换到边上，王号还留着。"
+    },
+    {
+      "personId": "xiang-liang",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 22,
+      "text": "项梁",
+      "paragraphText": "司马欣的理由是一笔旧德：他从前做栎阳狱掾，对项梁有恩。董翳的理由不是旧德，是劝降：他本是劝章邯降楚的人。两个人两笔账，底本分开写，不并成一句。"
+    },
+    {
+      "personId": "han-guang",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "韩广",
+      "paragraphText": "燕王韩广被徙为辽东王；燕将臧荼跟楚军救过赵，又跟着入关，立为燕王，都蓟。"
+    },
+    {
+      "personId": "zang-tu",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "臧荼",
+      "paragraphText": "燕王韩广被徙为辽东王；燕将臧荼跟楚军救过赵，又跟着入关，立为燕王，都蓟。"
+    },
+    {
+      "personId": "tian-shi",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "田市",
+      "paragraphText": "齐地拆得最碎。齐王田市被徙为胶东王；齐将田都跟着救过赵、又跟着入关，立为齐王，都临菑；故齐王建的孙子田安，在项羽渡河救赵时打下济北几座城，带兵降了项羽，立为济北王，都博阳。"
+    },
+    {
+      "personId": "tian-du",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 20,
+      "text": "田都",
+      "paragraphText": "齐地拆得最碎。齐王田市被徙为胶东王；齐将田都跟着救过赵、又跟着入关，立为齐王，都临菑；故齐王建的孙子田安，在项羽渡河救赵时打下济北几座城，带兵降了项羽，立为济北王，都博阳。"
+    },
+    {
+      "personId": "tian-an",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 50,
+      "text": "田安",
+      "paragraphText": "齐地拆得最碎。齐王田市被徙为胶东王；齐将田都跟着救过赵、又跟着入关，立为齐王，都临菑；故齐王建的孙子田安，在项羽渡河救赵时打下济北几座城，带兵降了项羽，立为济北王，都博阳。"
+    },
+    {
+      "personId": "mei-xuan",
+      "beat": 6,
+      "paragraph": 6,
+      "offset": 4,
+      "text": "梅鋗",
+      "paragraphText": "番君的将梅鋗功多，封十万户侯。最后一行是他自己："
+    }
+  ]
+}

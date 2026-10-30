@@ -1,0 +1,256 @@
+{
+  "people": [
+    {
+      "id": "gao-cheng",
+      "name": "高澄",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "高澄是高欢的长子。高欢死后，他继掌东魏，派将领围攻颍川的侯景；后来他被刺杀，弟弟高洋接掌权力。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷三·文襄帝纪",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "侯景原是东魏的河南军事首领，先向西魏求援。宇文泰召还先前配给他的将士后，他脱离西魏；后来他归附梁朝，起兵攻建康，兵败被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十六·侯景传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-bi",
+      "name": "李弼",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "李弼是西魏将领。本篇奉命带兵接应侯景，围攻者退去；侯景转驻豫州后，李弼带军回来。后来他位至柱国、太师。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-jin",
+      "name": "于谨",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "于谨是西魏重臣。本篇他劝宇文泰先给侯景优厚名位、观察变化，不要马上派兵，宇文泰没有采纳。后来他位至柱国、大司徒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-sizheng",
+      "name": "王思政",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "王思政是西魏将领，本篇奉命据守颍川。东魏高岳等筑堰引洧水灌城，西魏救军到不了城下，549 年六月颍川陷落。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十八·王思政传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gui",
+      "name": "赵贵",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "赵贵是西魏将领。549 年他奉命领军、督集东南各州兵救援颍川，救兵最终没能到城下。后来他位列八柱国。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·赵贵传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-yue",
+      "name": "高岳",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "高岳是东魏将领，不是高欢。本篇他围攻颍川，筑堰引洧水灌城，使颍川以北成为积水，西魏救军无法接近。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-yang",
+      "name": "高洋",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "高洋是高欢的次子。550 年他废掉东魏皇帝、自立为帝，国号改为齐（北齐）；宇文泰当年东征，遇连雨而退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷四·文宣帝纪",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-cheng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高澄",
+      "paragraphText": "高澄派将领围攻颍川的侯景。侯景求援，宇文泰准备派李弼带兵接应。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "侯景",
+      "paragraphText": "高澄派将领围攻颍川的侯景。侯景求援，宇文泰准备派李弼带兵接应。"
+    },
+    {
+      "personId": "li-bi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "李弼",
+      "paragraphText": "高澄派将领围攻颍川的侯景。侯景求援，宇文泰准备派李弼带兵接应。"
+    },
+    {
+      "personId": "yu-jin",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "于谨",
+      "paragraphText": "于谨劝他先给侯景优厚的名位，观察变化，不要马上派兵。他认为侯景久掌军权，实情难以判断。"
+    },
+    {
+      "personId": "wang-sizheng",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 44,
+      "text": "王思政",
+      "paragraphText": "宇文泰没有采纳。李弼领军前往，围攻者退去。侯景请求留在河南收集部众，转驻豫州；宇文泰另派王思政据守颍川，李弼带军回来。"
+    },
+    {
+      "personId": "zhao-gui",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "赵贵",
+      "paragraphText": "东魏又来围攻颍川。549年，宇文泰派赵贵领军，督集东南各州兵救王思政。"
+    },
+    {
+      "personId": "gao-yue",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "高岳",
+      "paragraphText": "东魏将领高岳筑堰，引洧水灌城，颍川以北化成大片积水。西魏救军到不了城下，六月，颍川陷落。"
+    },
+    {
+      "personId": "gao-yang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "高洋",
+      "paragraphText": "550年，高澄已遭刺杀，高洋代东魏自立，东边的国号改为齐。宇文泰仍向东出军。"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "people": [
+    {
+      "id": "yuan-qin",
+      "name": "元钦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "元钦是西魏废帝，元宝炬之子。本篇宇文泰与公卿议定废掉他，另立元廓。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-kuo",
+      "name": "元廓",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "元廓是西魏宗室。元钦被废后，他由宇文泰拥立为帝，即恭帝；后来禅位给宇文觉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "065"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-qiu",
+      "name": "柳虬",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "柳虬是西魏史官。新皇帝宴请群臣时，他在朝中执简写下批评，质问废黜先帝继承人的责任。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-baoju",
+      "name": "元宝炬",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "元宝炬是西魏文帝，元钦之父。他曾把儿子托付给宇文泰，又以宇文泰之女为皇后；本篇柳虬的批评正引此事。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-bian",
+      "name": "卢辩",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "卢辩是西魏的文书与礼制官员。本篇他奉命作诰，代宇文泰承认未能教导先帝之子；六官之制也有他参与筹划。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-hu",
+      "name": "宇文护",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "宇文护是宇文泰的侄子。本篇宇文泰病中召他，托付辅佐宇文觉；宇文泰死后，他主持内外，推动禅代，北周建立后长期执政。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "075"
+            },
+            {
+              "kind": "local",
+              "id": "076"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十一·宇文护传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-jue",
+      "name": "宇文觉",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "宇文觉是宇文泰之子。宇文泰死后他接任太师、大冢宰；557 年受西魏让位，即天王位，周代替魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "local",
+              "id": "066"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-jin",
+      "name": "于谨",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "于谨是西魏重臣。宇文泰死后诸公争权，宇文护私下求助于他；次日议事，他主张军国事务归宇文护，并率先再拜，众议才定。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "074"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuan-qin",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "元钦",
+      "paragraphText": "宇文泰与公卿议定，废掉元钦，另立元廓。"
+    },
+    {
+      "personId": "yuan-kuo",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "元廓",
+      "paragraphText": "宇文泰与公卿议定，废掉元钦，另立元廓。"
+    },
+    {
+      "personId": "liu-qiu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "柳虬",
+      "paragraphText": "新皇帝宴请群臣时，史官柳虬在朝中执简写下批评：元宝炬曾把儿子托付给宇文泰，他又以女儿为皇后，如今先帝的继承人却被废了，责任还能归谁？"
+    },
+    {
+      "personId": "yuan-baoju",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 23,
+      "text": "元宝炬",
+      "paragraphText": "新皇帝宴请群臣时，史官柳虬在朝中执简写下批评：元宝炬曾把儿子托付给宇文泰，他又以女儿为皇后，如今先帝的继承人却被废了，责任还能归谁？"
+    },
+    {
+      "personId": "lu-bian",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "卢辩",
+      "paragraphText": "宇文泰让卢辩作诰，承认未能教导好先帝之子，也承认此事可能成为后世议论自己的把柄。皇帝换了，责任并没有因一份诰书就消失。"
+    },
+    {
+      "personId": "yuwen-hu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "宇文护",
+      "paragraphText": "这一年，宇文泰北巡途中患病，召来侄子宇文护，托他辅佐自己的继承人宇文觉。《宇文护传》把这次受命记在泾州；行程最后到了云阳。"
+    },
+    {
+      "personId": "yuwen-jue",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 32,
+      "text": "宇文觉",
+      "paragraphText": "这一年，宇文泰北巡途中患病，召来侄子宇文护，托他辅佐自己的继承人宇文觉。《宇文护传》把这次受命记在泾州；行程最后到了云阳。"
+    },
+    {
+      "personId": "yu-jin",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 1,
+      "text": "于谨",
+      "paragraphText": "《于谨传》记，诸公都想执政，彼此不服。宇文护私下求助于谨；次日议事，于谨主张军国事务归他，又先向他再拜，诸公才跟着拜，议论终于定下。"
+    }
+  ]
+}

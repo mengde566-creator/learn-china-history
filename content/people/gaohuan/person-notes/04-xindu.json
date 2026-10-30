@@ -1,0 +1,429 @@
+{
+  "people": [
+    {
+      "id": "erzhu-zhao",
+      "name": "尔朱兆",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "尔朱兆是尔朱荣的侄辈，此前同意高欢统领并、肆部众并东行。这里声称他要分配六镇人的书信，是高欢伪造的，不能当成尔朱兆真的下令。 后来他在韩陵等战役中失利，退回秀容后自缢，高欢为他收葬。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尔朱兆是尔朱氏的将领，此前与高欢有盟约。高欢起兵后，双方兵锋相对；广阿一战中，他的军队被高欢击败。 后来他在韩陵等战役中失利，退回秀容后自缢，高欢为他收葬。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-teng",
+      "name": "孙腾",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "孙腾是高欢早年在怀朔结交的朋友，后来担任高欢的长史。在这次动员中，他与尉景两次请求让出发的兵士暂留。 后来他参与拥立元朗，官至司徒，是高欢身边重要的谋臣。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十八·孙腾传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-jing",
+      "name": "尉景",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "尉景是高欢的姊夫，高欢幼时曾养于他家。他是高欢早年的同伴，在这次动员中与孙腾一再请求缓行。 后来他随高欢攻入洛阳，留镇邺城，历任太保、太傅。《北齐书》还记他在冀州任上受贿，遭到高欢责备。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十五·尉景传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-yuanzhong",
+      "name": "李元忠",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "李元忠是支持高欢的将领。他与高乾攻下殷州，带尔朱羽生的首级来见高欢；高欢随后任他为殷州刺史。 后来李元忠任光州刺史，遇灾荒时请求赈济，最终动用粮食救济百姓。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十二·李元忠传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-qian",
+      "name": "高乾",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "高乾是支持高欢的河北人物。他与李元忠攻下殷州，带着尔朱羽生的首级来见高欢，这使高欢公开认定反抗已成定局。 他与弟弟高昂都参与反抗尔朱氏，后来官至司空。北魏孝武帝与高欢关系紧张时，他因泄露双方密议被赐死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十一·高干传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-yusheng",
+      "name": "尔朱羽生",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "尔朱羽生是尔朱氏一方的人物。李元忠与高乾攻下殷州后，将他的首级带来见高欢；帝纪把这件事与高欢公开反尔朱相连。 他当时是殷州刺史，控制当地州城；《北齐书·李元忠传》也记载李元忠等人擒斩了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二十二·李元忠传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-lang",
+      "name": "元朗",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "元朗是北魏宗室、章武王元融之子，原任渤海太守。高欢在信都起兵后拥立他为帝，年号中兴，以此取得与洛阳朝廷对抗的政治名义。 后来高欢进入洛阳，改立元修；元朗被废为安定王，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《北史》",
+              "section": "卷五·废帝朗纪、孝武帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/北史/卷005"
+            }
+          ]
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "text": "元朗是高欢起兵后拥立的北魏宗室皇帝，年号中兴。高欢攻克邺城后，他授高欢大丞相等官号。 后来高欢进入洛阳，改立元修；元朗被废为安定王，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《北史》",
+              "section": "卷五·废帝朗纪、孝武帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/北史/卷005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-tai",
+      "name": "窦泰",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "窦泰是高欢的将领。面对尔朱诸军，他提出反间之策；高欢采用后，尔朱度律、尔朱仲远的军队不战而退。 后来窦泰率军西进，在小关遭宇文泰军袭击，兵败后自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十五·窦泰传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-dulv",
+      "name": "尔朱度律",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尔朱度律是尔朱氏一方的将领，与尔朱仲远等人出兵对抗高欢。本段简称他为“度律”；高欢使用反间计后，他与仲远退兵。 尔朱度律是尔朱荣的堂弟，曾留镇洛阳。后来他在韩陵战败后被擒，送往洛阳处死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱度律传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-zhongyuan",
+      "name": "尔朱仲远",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尔朱仲远是尔朱氏一方的将领，与尔朱度律等人出兵对抗高欢。本段简称他为“仲远”；遭到反间后，他与度律退兵。 尔朱仲远是尔朱荣族人、尔朱世隆的兄长。后来韩陵战败，他南逃投奔梁朝，死于江南。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱彦伯传附仲远",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-dan",
+      "name": "刘诞",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "刘诞是相州刺史，守卫邺城。高欢围攻时，他据城坚守；帝纪随后记下高欢掘地道、焚柱攻城的经过。 此前高欢曾向他求粮，他没有答应。后来高欢进攻邺城，他继续据城防守。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《资治通鉴》",
+              "section": "卷一百五十五·梁纪十一",
+              "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷155"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "erzhu-zhao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "尔朱兆",
+      "paragraphText": "高欢伪造了一封信，宣称尔朱兆要把六镇人配给契胡做部曲。人群为此愁怨。"
+    },
+    {
+      "personId": "sun-teng",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "孙腾",
+      "paragraphText": "一万人被编入将要出发的队伍，孙腾、尉景一再请求缓行。到送兵那天，高欢在郊外流泪执别。"
+    },
+    {
+      "personId": "yu-jing",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "尉景",
+      "paragraphText": "一万人被编入将要出发的队伍，孙腾、尉景一再请求缓行。到送兵那天，高欢在郊外流泪执别。"
+    },
+    {
+      "personId": "li-yuanzhong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "李元忠",
+      "paragraphText": "六月，高欢在信都起兵，起初还未公开与尔朱氏决裂。李元忠、高乾攻下殷州，带着尔朱羽生首级来见，他才说反抗已经定了。"
+    },
+    {
+      "personId": "gao-qian",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 28,
+      "text": "高乾",
+      "paragraphText": "六月，高欢在信都起兵，起初还未公开与尔朱氏决裂。李元忠、高乾攻下殷州，带着尔朱羽生首级来见，他才说反抗已经定了。"
+    },
+    {
+      "personId": "erzhu-yusheng",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 37,
+      "text": "尔朱羽生",
+      "paragraphText": "六月，高欢在信都起兵，起初还未公开与尔朱氏决裂。李元忠、高乾攻下殷州，带着尔朱羽生首级来见，他才说反抗已经定了。"
+    },
+    {
+      "personId": "yuan-lang",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 31,
+      "text": "元朗",
+      "paragraphText": "高欢上表列尔朱氏罪状，表章却被挡住。八月殷州失守，十月他又拥立元朗为帝，以新帝的名义与洛阳的朝廷相对。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 37,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱诸军前来，高欢采用窦泰的反间之策，使度律、仲远不战而回，随后在广阿击败尔朱兆。"
+    },
+    {
+      "personId": "dou-tai",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "窦泰",
+      "paragraphText": "尔朱诸军前来，高欢采用窦泰的反间之策，使度律、仲远不战而回，随后在广阿击败尔朱兆。"
+    },
+    {
+      "personId": "erzhu-dulv",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 20,
+      "text": "度律",
+      "paragraphText": "尔朱诸军前来，高欢采用窦泰的反间之策，使度律、仲远不战而回，随后在广阿击败尔朱兆。"
+    },
+    {
+      "personId": "erzhu-zhongyuan",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "仲远",
+      "paragraphText": "尔朱诸军前来，高欢采用窦泰的反间之策，使度律、仲远不战而回，随后在广阿击败尔朱兆。"
+    },
+    {
+      "personId": "liu-dan",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "刘诞",
+      "paragraphText": "邺城刺史刘诞坚守。高欢筑土山、挖地道，在地下立柱，再同时烧毁支柱，让城墙陷下去。"
+    },
+    {
+      "personId": "yuan-lang",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "元朗",
+      "paragraphText": "到下一年正月，邺城被攻克。元朗授他大丞相等官号。信都起兵的队伍，已经占住了邺城。"
+    }
+  ]
+}

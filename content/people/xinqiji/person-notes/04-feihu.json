@@ -1,0 +1,60 @@
+{
+  "people": [
+    {
+      "id": "ma-yin",
+      "name": "马殷",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "马殷是五代时期据有湖南的统治者，曾受封楚王。本篇辛弃疾规划飞虎军营垒时，使用了马殷旧营的基址。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《旧五代史》",
+              "section": "卷一百三十三·马殷传",
+              "url": "https://zh.wikisource.org/wiki/舊五代史/卷133"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-shen",
+      "name": "孝宗",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "孝宗是宋孝宗赵昚的庙号，本篇时在位。飞虎营栅建成、本末绘图缴进之后「上遂释然」的皇帝就是他；此事发生在淳熙年间。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《宋史》",
+              "section": "卷三十三至三十五·孝宗纪",
+              "url": "https://zh.wikisource.org/wiki/宋史/卷33"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "ma-yin",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "马殷",
+      "paragraphText": "诏书委他规划。他量了马殷营垒的旧基，起盖砦栅，招步军二千人、马军五百人，随从的傔人在外，战马铁甲都齐备。"
+    }
+  ]
+}

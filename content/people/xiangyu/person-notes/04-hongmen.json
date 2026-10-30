@@ -1,0 +1,396 @@
+{
+  "people": [
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "沛公是刘邦当时的称号。他先入关中，随后在鸿门与项羽见面；后来他在楚汉战争中击败项羽，建立汉朝，史称汉高祖。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-wushang",
+      "name": "曹无伤",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "曹无伤是沛公军中的左司马。他派人向项羽告发沛公，成为鸿门宴前双方紧张的原因；宴后沛公回军，立即杀了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "048"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-bo",
+      "name": "项伯",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "项伯是项羽的叔父，任楚左尹，与张良交好。鸿门宴前他夜赴沛公军中通报消息，并在宴中为沛公斡旋；汉朝建立后获赐刘姓、封射阳侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-liang",
+      "name": "张良",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "张良是跟随沛公的谋士，与项伯交好。此时他代表韩王护送沛公；“留侯”是他后来在汉朝所受封号。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十五·留侯世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷055"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-zeng",
+      "name": "范增",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "范增是项羽倚重的谋士，项羽称他亚父。鸿门宴上他主张除掉沛公，指使项庄舞剑；楚汉战争中他后来离开项羽，途中病逝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七·项羽本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-zhuang",
+      "name": "项庄",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "项庄是项氏一方的将领。鸿门宴上他受范增嘱托，以舞剑为由试图袭击沛公；项伯也起身舞剑，为沛公遮挡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-kuai",
+      "name": "樊哙",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "樊哙是沛公刘邦的部下，鸿门宴时任参乘，闯入宴席为沛公解围。后来他随刘邦征战，受封舞阳侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十五·樊郦滕灌列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷095"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-ping",
+      "name": "陈平",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "陈平此时是项羽部下的都尉，奉命召已离席的沛公。后来他离楚归汉，成为刘邦的重要谋士，并在汉朝官至丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十六·陈丞相世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ying-bu",
+      "name": "黥布",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "当阳君是项羽一方的将领黥布，项羽派他等人进攻函谷关。《史记》后来记他受封九江王，在楚汉战争中归汉，随后又反汉而被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十一·黥布列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷091"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiahou-ying",
+      "name": "夏侯婴",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "夏侯婴是沛人，早年便与刘邦交好，随刘邦起兵并负责车马。鸿门宴后他与樊哙等护送刘邦离去；后来他继续随刘邦征战，获封侯爵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十五·樊郦滕灌列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷095"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jin-qiang",
+      "name": "靳彊",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "靳彊是鸿门宴后随沛公离开的四人之一；《史记·项羽本纪》在这里只记其名字及同行的行动。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ji-xin",
+      "name": "纪信",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "纪信是鸿门宴后护送沛公离去的随从之一。据《史记·高祖本纪》，后来荥阳被楚军包围时，他假扮汉王出城，被项羽烧死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八·高祖本纪",
+              "url": "https://zh.wikisource.org/wiki/史記/卷008"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-bang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "沛公",
+      "paragraphText": "项籍一路略定秦地。函谷关有兵守关，进不去。又听说沛公已经破了咸阳，项籍大怒，派当阳君等攻关。项籍于是入关，到了戏西。"
+    },
+    {
+      "personId": "cao-wushang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 23,
+      "text": "曹无伤",
+      "paragraphText": "沛公驻军在霸上，还没有和项籍见面。沛公的左司马曹无伤派人来对项籍说："
+    },
+    {
+      "personId": "xiang-bo",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "项伯",
+      "paragraphText": "楚左尹项伯，是项籍的季父，一向和留侯张良交好。张良这时候跟着沛公。"
+    },
+    {
+      "personId": "zhang-liang",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "张良",
+      "paragraphText": "楚左尹项伯，是项籍的季父，一向和留侯张良交好。张良这时候跟着沛公。"
+    },
+    {
+      "personId": "fan-zeng",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "范增",
+      "paragraphText": "范增起身，出去叫项庄，对他说："
+    },
+    {
+      "personId": "xiang-zhuang",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "项庄",
+      "paragraphText": "范增起身，出去叫项庄，对他说："
+    },
+    {
+      "personId": "fan-kuai",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "樊哙",
+      "paragraphText": "交戟的卫士想拦住他，不放进去。樊哙侧过盾一撞，卫士倒在地上，樊哙就进去了。"
+    },
+    {
+      "personId": "chen-ping",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "陈平",
+      "paragraphText": "沛公已经出去了。项籍派都尉陈平去叫沛公。"
+    },
+    {
+      "personId": "fan-zeng",
+      "beat": 1,
+      "paragraph": 8,
+      "offset": 0,
+      "text": "范增",
+      "paragraphText": "范增劝项籍："
+    },
+    {
+      "personId": "fan-kuai",
+      "beat": 5,
+      "paragraph": 8,
+      "offset": 10,
+      "text": "樊哙",
+      "paragraphText": "于是张良到军门，找到樊哙。樊哙问：「今日之事何如？」"
+    },
+    {
+      "personId": "ying-bu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 39,
+      "text": "当阳君",
+      "paragraphText": "项籍一路略定秦地。函谷关有兵守关，进不去。又听说沛公已经破了咸阳，项籍大怒，派当阳君等攻关。项籍于是入关，到了戏西。"
+    },
+    {
+      "personId": "xiahou-ying",
+      "beat": 7,
+      "paragraph": 11,
+      "offset": 44,
+      "text": "夏侯婴",
+      "paragraphText": "当时项籍的军队在鸿门下，沛公的军队在霸上，相距四十里。沛公留下车骑，独自骑马脱身；樊哙、夏侯婴、靳彊、纪信四人持剑盾步行跟着。一行人从郦山下，取道芷阳走小路。"
+    },
+    {
+      "personId": "jin-qiang",
+      "beat": 7,
+      "paragraph": 11,
+      "offset": 48,
+      "text": "靳彊",
+      "paragraphText": "当时项籍的军队在鸿门下，沛公的军队在霸上，相距四十里。沛公留下车骑，独自骑马脱身；樊哙、夏侯婴、靳彊、纪信四人持剑盾步行跟着。一行人从郦山下，取道芷阳走小路。"
+    },
+    {
+      "personId": "ji-xin",
+      "beat": 7,
+      "paragraph": 11,
+      "offset": 51,
+      "text": "纪信",
+      "paragraphText": "当时项籍的军队在鸿门下，沛公的军队在霸上，相距四十里。沛公留下车骑，独自骑马脱身；樊哙、夏侯婴、靳彊、纪信四人持剑盾步行跟着。一行人从郦山下，取道芷阳走小路。"
+    }
+  ]
+}

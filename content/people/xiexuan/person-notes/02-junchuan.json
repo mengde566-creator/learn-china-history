@@ -1,0 +1,631 @@
+{
+  "people": [
+    {
+      "id": "huan-chong",
+      "name": "桓冲",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "桓冲是桓温的弟弟，曾镇守荆州。本篇前秦军围襄阳，他率军抵御；谢玄奉命派游军在淮泗一带声援。后来桓冲又派兵对抗前秦，去世后由桓石民接掌荆州军务。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十四·桓冲传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷074"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "he-qian",
+      "name": "何谦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "何谦是跟随谢玄征战的将领。本篇他先率游军声援襄阳，后来趁彭超回护辎重解彭城之围，又在三阿、君川一线参战。《晋书》将他与戴逯的简传附在谢玄传后。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十九·谢玄传附何谦、戴逯",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dai-lu",
+      "name": "戴逯",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "戴逯是东晋将领，隐士戴逵的弟弟。本篇他驻守彭城，受到前秦将领彭超围攻，何谦后来解围；他又随谢玄追击至君川。此后他因军功受封，官至大司农。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十九·谢玄传附何谦、戴逯",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peng-chao",
+      "name": "彭超",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "彭超是前秦苻坚麾下的将领。本篇他围攻彭城，因谢玄扬言进攻留城辎重而回兵，随后又进围三阿，最终在谢玄等军追击下北退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-hong",
+      "name": "田泓",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "田泓是谢玄军中的小将。彭城被围时，他请求潜水传递援军将至的消息，途中被俘；面对敌军诱使他谎报败讯，他仍向守城者报告实情，随后被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-heng",
+      "name": "高衡",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "高衡是东晋将领，曾响应谢玄招募勇士。本篇他以东莞太守身份，随谢玄赴泗口救援被围的彭城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十四·刘牢之传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷084"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ju-nan",
+      "name": "句难",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "句难是前秦将领。本篇他与毛当从襄阳南下，会合彭超围攻三阿；谢玄军解围并追击，句难与彭超最终北退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-luo",
+      "name": "田洛",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "田洛是东晋将领，曾应谢玄招募。本篇他任幽州刺史，在三阿被彭超围困，何谦解围后，他又随谢玄追击至君川。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十四·刘牢之传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷084"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-shi",
+      "name": "谢石",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "谢石是谢玄的叔父。此次彭超等军南侵时，朝廷命他率水军进驻涂中；后来前秦大举南下，他担任征讨大都督，与谢玄等人在淝水击退前秦军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷七十九·谢石传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-laozhi",
+      "name": "刘牢之",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "刘牢之是谢玄招募的将领，本篇任参军，在君川追击中攻破浮桥与敌船。后来他参与淝水之战，在洛涧击败前秦军；再后来卷入桓玄与朝廷的权力斗争，最终自缢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十四·刘牢之传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷084"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian",
+      "name": "苻坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "苻坚是前秦君主。本篇他派军围攻襄阳，彭超、句难等将领又在淮泗一带与谢玄军交战；后来他亲率大军南下，在淝水之战中失利。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mao-dang",
+      "name": "毛当",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "毛当是前秦将领，本篇他与句难自襄阳出发，会合彭超南侵；所用谢玄传此处没有单独记述他的结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mao-anzhi",
+      "name": "毛安之",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "毛安之是东晋右卫将军，此次受命与几位守将进驻堂邑。后来盱眙失守，他所领部队与其他晋军因惊扰而散退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tan-zhi",
+      "name": "昙之",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "昙之是河间王，本篇以游击将军身份与毛安之等人屯驻堂邑，面对前秦军南侵。所用谢玄传此处没有进一步交代他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-guang",
+      "name": "杨广",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "杨广是当时的淮南太守，朝廷派他与毛安之等人屯驻堂邑，以应对前秦军南侵。本篇所据材料没有进一步说明他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiu-zhun",
+      "name": "丘准",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "丘准是当时的宣城内史，随朝廷调遣与毛安之等人屯驻堂邑。前秦军攻陷盱眙后，晋军出现惊乱、散退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mao-zao",
+      "name": "毛藻",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "毛藻是高密内史。本篇前秦军南侵、攻陷盱眙时，他战没；所据谢玄传没有在此详述其生平。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhuge-kan",
+      "name": "诸葛侃",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "诸葛侃是谢玄军中的督护，曾响应谢玄招募。本篇他与李都在君川追击前秦军时，攻破对方运送物资的船只。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十四·刘牢之传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷084"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-du",
+      "name": "李都",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "李都是当时的单父县令。本篇君川追击中，他与督护诸葛侃攻破前秦军的运船；所据谢玄传此处没有进一步记载他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "huan-chong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "桓冲",
+      "paragraphText": "那时苻坚派军围襄阳，车骑将军桓冲去抵御。朝廷诏玄发三州人丁，遣彭城内史何谦带游军出入淮泗，做出声援的样子。"
+    },
+    {
+      "personId": "he-qian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 35,
+      "text": "何谦",
+      "paragraphText": "那时苻坚派军围襄阳，车骑将军桓冲去抵御。朝廷诏玄发三州人丁，遣彭城内史何谦带游军出入淮泗，做出声援的样子。"
+    },
+    {
+      "personId": "dai-lu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 19,
+      "text": "戴逯",
+      "paragraphText": "襄阳陷没之后，苻坚的将领彭超攻龙骧将军戴逯于彭城。"
+    },
+    {
+      "personId": "peng-chao",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "彭超",
+      "paragraphText": "襄阳陷没之后，苻坚的将领彭超攻龙骧将军戴逯于彭城。"
+    },
+    {
+      "personId": "tian-hong",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "田泓",
+      "paragraphText": "小将田泓请求去。"
+    },
+    {
+      "personId": "gao-heng",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 6,
+      "text": "高衡",
+      "paragraphText": "玄率东莞太守高衡、后军将军何谦驻在泗口。他想派一个间使进城报戴逯，让城里知道救兵到了——可没有路可进。"
+    },
+    {
+      "personId": "ju-nan",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "句难",
+      "paragraphText": "彭超又进军南侵，苻坚的将领句难、毛当从襄阳来会。彭超围幽州刺史田洛于三阿，有众六万。"
+    },
+    {
+      "personId": "tian-luo",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 31,
+      "text": "田洛",
+      "paragraphText": "彭超又进军南侵，苻坚的将领句难、毛当从襄阳来会。彭超围幽州刺史田洛于三阿，有众六万。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "谢石",
+      "paragraphText": "朝廷诏征虏将军谢石率水军进驻涂中；右卫将军毛安之、游击将军河间王昙之、淮南太守杨广、宣城内史丘准进屯堂邑。"
+    },
+    {
+      "personId": "liu-laozhi",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 4,
+      "text": "刘牢之",
+      "paragraphText": "玄的参军刘牢之攻破浮航与白船，督护诸葛侃、单父令李都又破其运舰。"
+    },
+    {
+      "personId": "fu-jian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "苻坚",
+      "paragraphText": "那时苻坚派军围襄阳，车骑将军桓冲去抵御。朝廷诏玄发三州人丁，遣彭城内史何谦带游军出入淮泗，做出声援的样子。"
+    },
+    {
+      "personId": "mao-dang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "毛当",
+      "paragraphText": "彭超又进军南侵，苻坚的将领句难、毛当从襄阳来会。彭超围幽州刺史田洛于三阿，有众六万。"
+    },
+    {
+      "personId": "mao-anzhi",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 21,
+      "text": "毛安之",
+      "paragraphText": "朝廷诏征虏将军谢石率水军进驻涂中；右卫将军毛安之、游击将军河间王昙之、淮南太守杨广、宣城内史丘准进屯堂邑。"
+    },
+    {
+      "personId": "tan-zhi",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 32,
+      "text": "昙之",
+      "paragraphText": "朝廷诏征虏将军谢石率水军进驻涂中；右卫将军毛安之、游击将军河间王昙之、淮南太守杨广、宣城内史丘准进屯堂邑。"
+    },
+    {
+      "personId": "yang-guang",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 39,
+      "text": "杨广",
+      "paragraphText": "朝廷诏征虏将军谢石率水军进驻涂中；右卫将军毛安之、游击将军河间王昙之、淮南太守杨广、宣城内史丘准进屯堂邑。"
+    },
+    {
+      "personId": "qiu-zhun",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 46,
+      "text": "丘准",
+      "paragraphText": "朝廷诏征虏将军谢石率水军进驻涂中；右卫将军毛安之、游击将军河间王昙之、淮南太守杨广、宣城内史丘准进屯堂邑。"
+    },
+    {
+      "personId": "mao-zao",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 11,
+      "text": "毛藻",
+      "paragraphText": "不久盱眙城陷，高密内史毛藻战没。毛安之等军中互相惊扰，各自散退。朝廷震动。"
+    },
+    {
+      "personId": "zhuge-kan",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 17,
+      "text": "诸葛侃",
+      "paragraphText": "玄的参军刘牢之攻破浮航与白船，督护诸葛侃、单父令李都又破其运舰。"
+    },
+    {
+      "personId": "li-du",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 24,
+      "text": "李都",
+      "paragraphText": "玄的参军刘牢之攻破浮航与白船，督护诸葛侃、单父令李都又破其运舰。"
+    }
+  ]
+}

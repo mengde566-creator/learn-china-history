@@ -1,0 +1,258 @@
+{
+  "people": [
+    {
+      "id": "xiao-yan",
+      "name": "萧衍",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "高祖就是萧衍，后来建立梁朝，史称梁武帝。陈庆之年少时便跟随他；这段以“高祖”称他，是史书使用的追称。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷一·武帝纪上",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-faseng",
+      "name": "元法僧",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "元法僧是北魏宗室，时任徐州刺史，镇守彭城。他曾据城称帝，后来向梁求援归附；《梁书》记载，他到梁后受到优待，官至太尉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷三十九·元法僧传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷39"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-yanming",
+      "name": "元延明",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "元延明是北魏安丰王。梁军接应彭城后，他与临淮王元彧率魏军前来争夺，后来萧综从梁军投奔到他处。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十五·豫章王综传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-yu",
+      "name": "元彧",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "元彧是北魏临淮王，与安丰王元延明共同率军抵御梁军。两人同属魏方，本篇对峙时并非梁军将领。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷九·肃宗纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-zong",
+      "name": "萧综",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "萧综是梁武帝萧衍的儿子，受封豫章王。此时他被派到彭城坐镇；后来他夜里离开梁军投魏，梁军因而溃散。《梁书》记其投魏后改名萧缵，后来被魏人杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十五·豫章王综传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu-longya",
+      "name": "胡龙牙",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "胡龙牙是梁朝将领，此时与陈庆之、成景俊同奉命接应彭城的元法僧。《梁书·韦放传》还记他曾与韦放会合曹仲宗出征。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷二十八·韦放传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cheng-jingjun",
+      "name": "成景俊",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "成景俊是梁朝将领，此时与陈庆之、胡龙牙一同率军接应元法僧。所用《梁书·陈庆之传》记其名作“成景儁”。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiu-daqian",
+      "name": "丘大千",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "丘大千是北魏将领，此时受元延明派遣筑垒抵御梁军，所筑营垒被陈庆之攻破。后来他在睢阳抵御陈庆之，战败后投降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xiao-yan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高祖",
+      "paragraphText": "高祖爱下棋。"
+    },
+    {
+      "personId": "yuan-faseng",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "元法僧",
+      "paragraphText": "普通年间，北魏的徐州刺史元法僧守在彭城。"
+    },
+    {
+      "personId": "yuan-yanming",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "元延明",
+      "paragraphText": "安丰王元延明、临淮王元彧，率两万人来拒。"
+    },
+    {
+      "personId": "yuan-yu",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 10,
+      "text": "元彧",
+      "paragraphText": "安丰王元延明、临淮王元彧，率两万人来拒。"
+    },
+    {
+      "personId": "xiao-zong",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 17,
+      "text": "萧综",
+      "paragraphText": "差事没有完：他还带两千人，送豫章王萧综去徐州坐镇。"
+    },
+    {
+      "personId": "xiao-yan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "萧衍",
+      "paragraphText": "萧衍后来东下，平定了建邺。"
+    },
+    {
+      "personId": "hu-longya",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 15,
+      "text": "胡龙牙",
+      "paragraphText": "朝廷以陈庆之为武威将军，命他与胡龙牙、成景俊一起，率各军前去接应。"
+    },
+    {
+      "personId": "cheng-jingjun",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 19,
+      "text": "成景俊",
+      "paragraphText": "朝廷以陈庆之为武威将军，命他与胡龙牙、成景俊一起，率各军前去接应。"
+    },
+    {
+      "personId": "qiu-daqian",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "丘大千",
+      "paragraphText": "元延明先派他的别将丘大千，在浔梁筑了一座垒，把军队摆到近处。"
+    }
+  ]
+}

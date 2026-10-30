@@ -1,0 +1,208 @@
+{
+  "people": [
+    {
+      "id": "jin-huidi",
+      "name": "晋惠帝",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "晋惠帝司马衷是晋武帝的儿子、西晋皇帝。祖逖随他北行时，宗室势力正彼此争夺权力；此役晋军在荡阴败退，皇帝后来被带往长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷四·惠帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷004"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-xiao",
+      "name": "范阳王虓",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "范阳王虓是晋朝宗室，名司马虓。惠帝西去长安后，他与其他关东诸侯争着征召祖逖，祖逖没有赴任。后来，他与司马越率军迎还惠帝，官至司徒，不久病逝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "高密王泰传附略、模及范阳王绥传附虓",
+              "url": "https://www.shidianguji.com/book/HY2914/chapter/1lyppzavofcbq"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-lue",
+      "name": "高密王略",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "高密王略是晋朝宗室，名司马略，东海王越的弟弟。他与范阳王虓、平昌公模都曾征召祖逖，但祖逖没有赴任。后来他出任都督荆州、征南大将军，永嘉三年去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷五十九·东海王越传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷059"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "高密王泰传附略、模及范阳王绥传附虓",
+              "url": "https://www.shidianguji.com/book/HY2914/chapter/1lyppzavofcbq"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-mo",
+      "name": "平昌公模",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "平昌公模是晋朝宗室，名司马模，东海王越的弟弟。他和另外两位关东诸侯征召祖逖，祖逖都没有前去。后来他封南阳王，镇守关中，降刘粲后被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷五十九·东海王越传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷059"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "高密王泰传附略、模及范阳王绥传附虓",
+              "url": "https://www.shidianguji.com/book/HY2914/chapter/1lyppzavofcbq"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-yue",
+      "name": "东海王越",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "东海王越名司马越，是西晋宗室，也是参与当时权力争夺的重要人物。他任用祖逖为典兵参军、济阴太守，但祖逖因母亲去世未到任。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷五十九·东海王越传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷059"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-rui",
+      "name": "司马睿",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "司马睿是晋室宗亲，祖逖到泗口后，他拟用祖逖为徐州刺史，后来又征他为军谘祭酒。此时他尚未登基；本篇沿用史书对他的追称“元帝”。他后来在建康称帝，成为东晋开国皇帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六·元帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷006"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "jin-huidi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "惠帝",
+      "paragraphText": "祖逖跟着惠帝北伐。朝廷的军队在荡阴大败，退回洛阳。"
+    },
+    {
+      "personId": "sima-xiao",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "范阳王虓",
+      "paragraphText": "皇帝的车驾西行到长安。关东的诸侯——范阳王虓、高密王略、平昌公模——争着召他，他都不去。"
+    },
+    {
+      "personId": "sima-lue",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "高密王略",
+      "paragraphText": "皇帝的车驾西行到长安。关东的诸侯——范阳王虓、高密王略、平昌公模——争着召他，他都不去。"
+    },
+    {
+      "personId": "sima-mo",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 28,
+      "text": "平昌公模",
+      "paragraphText": "皇帝的车驾西行到长安。关东的诸侯——范阳王虓、高密王略、平昌公模——争着召他，他都不去。"
+    },
+    {
+      "personId": "sima-yue",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "东海王越",
+      "paragraphText": "东海王越用他做典兵参军、济阴太守。他没有到任，因为母亲去世了。"
+    },
+    {
+      "personId": "sima-rui",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "元帝",
+      "paragraphText": "到了泗口。元帝打算用他做徐州刺史，不久又征他做军谘祭酒。"
+    }
+  ]
+}

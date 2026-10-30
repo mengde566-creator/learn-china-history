@@ -1,0 +1,159 @@
+{
+  "people": [
+    {
+      "id": "zhao-kuo",
+      "name": "赵扩",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "宁宗是宋宁宗赵扩的庙号；《宋史》本纪记其讳扩，为光宗第二子。本篇召见辛弃疾、询问盐法并加授官职的是他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《宋史》",
+              "section": "卷三十七·宁宗纪一",
+              "url": "https://zh.wikisource.org/wiki/宋史/卷37"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-ding-kaosheng",
+      "name": "赵鼎",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "这里的赵鼎是《宋史》所记长沙考试中的应试者，与南宋初年宰相赵鼎同名。辛弃疾所说的「忠简」正是那位宰相的谥号，他因此以为又见到同名之人，掷卷于地；不能把应试者当成那位宰相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《宋史》",
+              "section": "卷三百六十·赵鼎传",
+              "url": "https://zh.wikisource.org/wiki/宋史/卷360"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-fang",
+      "name": "赵方",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "赵方是《宋史》所记长沙考试中的应试者。据其本传，他字彦直，衡山人，后来在淳熙八年中进士，历任地方官，并在京湖一带招兵择将、拔擢土豪孟宗政等；本篇所记只是他应举时被辛弃疾识拔的一件事。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《宋史》",
+              "section": "卷四百三·赵方传",
+              "url": "https://zh.wikisource.org/wiki/宋史/卷403"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wu-jiaoru",
+      "name": "吴交如",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "吴交如是辛弃疾任大理卿时的同僚。本篇他去世后没有棺木收殓，辛弃疾厚加赙赠，又向执政说明，朝廷下诏赐银绢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-xi",
+      "name": "朱熹",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "朱熹是南宋道学（理学）的代表人物，徽州婺源人，《宋史》将他列入《道学传》。本篇所记同游武夷、题字，以及他死后辛弃疾为文往哭，都是辛弃疾晚年的事；朱熹去世时正值庆元党禁，门生故旧多不敢送葬。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《宋史》",
+              "section": "卷四百二十九·朱熹传",
+              "url": "https://zh.wikisource.org/wiki/宋史/卷429"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhao-kuo",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 26,
+      "text": "宁宗",
+      "paragraphText": "过了些时候，起知绍兴府兼浙东安抚使。再一个「四年」，宁宗召见他，问盐法，加宝谟阁待制、提举佑神观，奉朝请。"
+    },
+    {
+      "personId": "zhao-ding-kaosheng",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "赵鼎",
+      "paragraphText": "拆开名字，是赵鼎。"
+    },
+    {
+      "personId": "zhao-fang",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 27,
+      "text": "赵方",
+      "paragraphText": "再看《礼记》卷，他说：观其议论，必是豪杰之士。拆开，是赵方。"
+    },
+    {
+      "personId": "wu-jiaoru",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "吴交如",
+      "paragraphText": "做大理卿的时候，同僚吴交如死了，没有棺木收殓。"
+    },
+    {
+      "personId": "zhu-xi",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "朱熹",
+      "paragraphText": "他曾同朱熹游武夷山，赋《九曲櫂歌》。朱熹写了「克己复礼」「夙兴夜寐」八个字，题在他的两间斋室上。"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "people": [
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "高欢是东魏执政者。本篇他围攻玉壁六旬不能下，士卒死伤甚多，因而发病撤军；西魏传言他中弩，他勉强坐起见诸贵，命斛律金作《敕勒歌》。次年正月死于晋阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-xiaokuan",
+      "name": "韦孝宽",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "韦孝宽是西魏晋州刺史、玉壁守将。本篇他逐项破解东魏的土山、地道、攻车、火竿与崩城之法，拒绝招降；后来他参与北周与北齐的战事，580 年率军平定尉迟迥。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷三十一·韦孝宽传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zu-xiaozheng",
+      "name": "祖孝征",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "祖孝征即祖珽，东魏时为仓曹参军，本篇奉命入城劝降，并传话动摇守军。后来他在北齐任官；《周书》另记他日后参与构陷斛律光。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷三十九·祖珽传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷39"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu-lv-jin",
+      "name": "斛律金",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "斛律金是高欢部下的老将，敕勒人。本篇高欢玉壁退军后命他作《敕勒歌》，自己跟着和唱。后来他在北齐任左丞相，封咸阳王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十七·斛律金传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-ziqian",
+      "name": "韦子迁",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "韦子迁是韦孝宽的弟弟，原在东魏境内。本篇东魏把他锁着押到玉壁城下，以利刃相逼，要他劝降；韦孝宽没有因此退让。所取材料未交代他此后的结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "057"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-huan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高欢",
+      "paragraphText": "高欢在城外筑土山，想让攻城的人从高处进入。韦孝宽把城上原有的高楼继续接高，堆放防守器具。"
+    },
+    {
+      "personId": "wei-xiaokuan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "韦孝宽",
+      "paragraphText": "高欢在城外筑土山，想让攻城的人从高处进入。韦孝宽把城上原有的高楼继续接高，堆放防守器具。"
+    },
+    {
+      "personId": "zu-xiaozheng",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "祖孝征",
+      "paragraphText": "高欢派仓曹参军祖孝征劝降，问没有援兵，为什么还守。韦孝宽答：城池坚固，兵粮有余，攻者劳苦、守者安逸；眼下还不需要救援。他又表明自己不做降将。"
+    },
+    {
+      "personId": "hu-lv-jin",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 31,
+      "text": "斛律金",
+      "paragraphText": "西魏方面传出他中了弩箭的说法。高欢听到后，勉强坐起接见贵人，让斛律金作《敕勒歌》，自己跟着唱，感伤落泪。"
+    },
+    {
+      "personId": "wei-ziqian",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 4,
+      "text": "子迁",
+      "paragraphText": "他的弟弟子迁，原在东魏境内，也被锁着押到城下，以利刃相逼，威胁不早降便杀。韦孝宽没有退让；传文记守军受激励，愿意死战。城门仍没有打开。"
+    }
+  ]
+}

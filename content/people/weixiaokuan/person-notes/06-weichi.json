@@ -1,0 +1,273 @@
+{
+  "people": [
+    {
+      "id": "yuwen-yun",
+      "name": "宇文赟",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "“宣帝”指北周宣帝宇文赟。本篇从他去世后开始，杨坚辅政，韦孝宽奉命接替尉迟迥。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷八·宣帝纪",
+              "url": "https://zh.wikisource.org/wiki/周書/卷08"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-jian",
+      "name": "杨坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "“隋文帝”是杨坚后来的称号。北周宣帝去世后，他以辅政大臣身份掌权；本篇韦孝宽奉命平定尉迟迥。后来杨坚建立隋朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《隋书》",
+              "section": "卷一·高祖纪上",
+              "url": "https://zh.wikisource.org/wiki/隋書/卷01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuchi-jiong",
+      "name": "尉迟迥",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "尉迟迥是北周相州总管，封蜀国公。本篇朝廷命韦孝宽接替他，他举兵反对杨坚，后来兵败自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷二十一·尉迟迥传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chilie-changyi",
+      "name": "叱列长义",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "叱列长义是北周小司徒，本篇被任命为相州刺史，先赴邺城，后来返回途中与韦孝宽相遇。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "helan-gui",
+      "name": "贺兰贵",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "贺兰贵是尉迟迥派往韦孝宽处的都督，本篇带书信迎接韦孝宽，并被留谈。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-yi",
+      "name": "韦艺",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "韦艺是韦孝宽兄长的儿子，当时任魏郡守。本篇他弃郡南归，与韦孝宽相遇。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liang-zikang",
+      "name": "梁子康",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "梁子康是尉迟迥派出的仪同，本篇带数百骑追韦孝宽，途中停留，未能追上。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xue-gongli",
+      "name": "薛公礼",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "薛公礼是尉迟迥任命的仪同，本篇与其他人围逼怀州，韦孝宽派兵击破其军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuchi-dun",
+      "name": "尉迟惇",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "尉迟惇是尉迟迥的儿子，本篇在武陟被韦孝宽击败，轻骑逃往邺城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuwen-yun",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "宣帝",
+      "paragraphText": "宣帝崩，隋文帝辅政。"
+    },
+    {
+      "personId": "yang-jian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "隋文帝",
+      "paragraphText": "宣帝崩，隋文帝辅政。"
+    },
+    {
+      "personId": "yuchi-jiong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尉迟迥",
+      "paragraphText": "尉迟迥本是相州总管，朝廷下诏让孝宽去替他。又派小司徒叱列长义做相州刺史，先让他赶去邺城。"
+    },
+    {
+      "personId": "chilie-changyi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 26,
+      "text": "叱列长义",
+      "paragraphText": "尉迟迥本是相州总管，朝廷下诏让孝宽去替他。又派小司徒叱列长义做相州刺史，先让他赶去邺城。"
+    },
+    {
+      "personId": "helan-gui",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 16,
+      "text": "贺兰贵",
+      "paragraphText": "孝宽随后进发，到朝歌，迥派大都督贺兰贵带着书信来迎他。"
+    },
+    {
+      "personId": "wei-yi",
+      "beat": 1,
+      "paragraph": 5,
+      "offset": 22,
+      "text": "韦艺",
+      "paragraphText": "到汤阴，遇上长义逃回来。他哥哥的儿子、魏郡守韦艺，也弃了郡往南跑。"
+    },
+    {
+      "personId": "liang-zikang",
+      "beat": 2,
+      "paragraph": 3,
+      "offset": 8,
+      "text": "梁子康",
+      "paragraphText": "尉迟迥果然派仪同梁子康带数百骑追来。"
+    },
+    {
+      "personId": "xue-gongli",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 16,
+      "text": "薛公礼",
+      "paragraphText": "七月，军驻河阳。尉迟迥所署的仪同薛公礼等围逼怀州，孝宽派兵击破。"
+    },
+    {
+      "personId": "yuchi-dun",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "尉迟惇",
+      "paragraphText": "于是引军驻武陟，大破尉迟迥的儿子尉迟惇。惇轻骑奔邺。"
+    },
+    {
+      "personId": "yuchi-jiong",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 8,
+      "text": "蜀公",
+      "paragraphText": "又约束驿将说：「蜀公要到了，多备酒菜和草料等他。」"
+    },
+    {
+      "personId": "chilie-changyi",
+      "beat": 1,
+      "paragraph": 5,
+      "offset": 6,
+      "text": "长义",
+      "paragraphText": "到汤阴，遇上长义逃回来。他哥哥的儿子、魏郡守韦艺，也弃了郡往南跑。"
+    }
+  ]
+}

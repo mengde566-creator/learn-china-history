@@ -1,0 +1,214 @@
+{
+  "people": [
+    {
+      "id": "gao-cheng",
+      "name": "高澄",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "高澄是高欢的儿子，在父亲病重时参与处理军政事务。他替高欢写信召侯景，又向父亲坦承自己担忧侯景反叛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "侯景是高欢早年结交的人，此时长期掌握河南兵权。他与高欢约定，来信背面有微点才应召；这次信上没有记号，他没有前来。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-shaozong",
+      "name": "慕容绍宗",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "慕容绍宗曾是尔朱兆的长史，尔朱兆败亡后归附高欢。此时高欢向高澄称赞他的军事能力，并嘱咐儿子厚待他，把对付侯景的筹划交给他。关于为何从前没有抬高他，帝纪记的是高欢自己的说法。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiaojing",
+      "name": "孝静帝",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "孝静帝元善见是高欢与百官拥立的北魏皇帝，后来随朝廷迁到邺城。高欢死后，他在东堂举哀，并参加送葬。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-cheng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高澄",
+      "paragraphText": "高澄替父亲写信，召侯景回来。信到了，侯景没有来。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "侯景",
+      "paragraphText": "高澄替父亲写信，召侯景回来。信到了，侯景没有来。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "侯景",
+      "paragraphText": "高澄替父亲写信，召侯景回来。信到了，侯景没有来。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 33,
+      "text": "侯景",
+      "paragraphText": "他先前与高欢约定，来信背面须有一个微小的点，才肯应召。这一封没有。侯景又听说高欢病重，便拥兵自固。"
+    },
+    {
+      "personId": "gao-cheng",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "高澄",
+      "paragraphText": "高欢看见高澄面上还有忧虑，追问是不是怕侯景反叛。高澄承认。"
+    },
+    {
+      "personId": "gao-cheng",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "高澄",
+      "paragraphText": "高欢看见高澄面上还有忧虑，追问是不是怕侯景反叛。高澄承认。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "侯景",
+      "paragraphText": "高欢看见高澄面上还有忧虑，追问是不是怕侯景反叛。高澄承认。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "侯景",
+      "paragraphText": "高欢说，侯景在河南掌兵多年，本有跋扈之志，只是自己能容养、压住；换成儿子，未必驾驭得了。"
+    },
+    {
+      "personId": "gao-cheng",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "高澄",
+      "paragraphText": "谈到慕容绍宗，他尤其要高澄厚加礼遇，把对付侯景的军事筹划交给此人。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 21,
+      "text": "侯景",
+      "paragraphText": "谈到慕容绍宗，他尤其要高澄厚加礼遇，把对付侯景的军事筹划交给此人。"
+    },
+    {
+      "personId": "murong-shaozong",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "慕容绍宗",
+      "paragraphText": "谈到慕容绍宗，他尤其要高澄厚加礼遇，把对付侯景的军事筹划交给此人。"
+    },
+    {
+      "personId": "murong-shaozong",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 17,
+      "text": "慕容绍宗",
+      "paragraphText": "按高欢自己的说法，他从前有意不抬高慕容绍宗的地位，是要把礼遇、任用此人的机会留给儿子。"
+    },
+    {
+      "personId": "gao-cheng",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 39,
+      "text": "高澄",
+      "paragraphText": "一个人的死亡即将成为军政消息，何时让外面知道，也被纳入接班的安排。侯景的兵权与高澄的忧色，使这项嘱咐有了具体的缘由。"
+    },
+    {
+      "personId": "hou-jing",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 33,
+      "text": "侯景",
+      "paragraphText": "一个人的死亡即将成为军政消息，何时让外面知道，也被纳入接班的安排。侯景的兵权与高澄的忧色，使这项嘱咐有了具体的缘由。"
+    },
+    {
+      "personId": "xiaojing",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 27,
+      "text": "孝静帝",
+      "paragraphText": "武定五年正月，高欢死在晋阳，五十二岁，秘不发丧。六月，孝静帝在东堂举哀；八月，他被葬在邺西北漳水之西。"
+    }
+  ]
+}

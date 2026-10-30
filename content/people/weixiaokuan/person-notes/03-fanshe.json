@@ -1,0 +1,103 @@
+{
+  "people": [
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "这里的“神武”指高欢，是死后的追称；当时他掌握东魏军政大权，正率军围攻韦孝宽防守的玉壁。后来东魏军撤退，高欢不久去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zu-xiaozheng",
+      "name": "祖孝徵",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "祖孝徵名珽，是东魏军中的仓曹参军，本篇受高欢派遣劝降，并向玉壁城中射入悬赏韦孝宽的文书。后来他在北齐任官；《周书》记他润色韦孝宽方面传入的谣言，斛律光最终因此被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷三十九·祖珽传",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷39"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-ziqian",
+      "name": "韦子迁",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "韦子迁是韦孝宽的弟弟，此前在山东。本篇高欢的军队将他押到玉壁城下，以杀他威胁守军；所取记载没有在此交代他后来的去向。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "gao-huan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "神武",
+      "paragraphText": "神武拿这座城没办法，派仓曹参军祖孝徵到城下。"
+    },
+    {
+      "personId": "zu-xiaozheng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "祖孝徵",
+      "paragraphText": "神武拿这座城没办法，派仓曹参军祖孝徵到城下。"
+    },
+    {
+      "personId": "wei-ziqian",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "韦子迁",
+      "paragraphText": "孝宽的弟弟韦子迁，早先在山东。"
+    }
+  ]
+}

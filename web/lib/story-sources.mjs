@@ -12,6 +12,13 @@ export function supplementaryIds(story, available, declared = new Set()) {
   for (const beat of story.beats || []) { scan(beat.ground); scan(beat.sourceCell) }
   for (const row of story.groundTable || []) scan(row.basis)
   for (const bg of story.backgrounds || []) scan(bg.basis)
+  for (const person of story.personNotes?.people || []) {
+    for (const version of person.versions || []) {
+      for (const ref of version.sources || []) {
+        if (ref.kind === 'local' && available[ref.id] && !declared.has(ref.id)) ids.add(ref.id)
+      }
+    }
+  }
   for (const item of [...(story.seeds || []), ...(story.cards || [])]) {
     for (const row of item.meta || []) if (row.k === '依据') scan(row.v)
     scan(item.ground)

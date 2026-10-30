@@ -706,6 +706,15 @@ body.light-stage{
 .reader-panel .panel-close{position:static;flex:none}
 .reader-actions button:focus-visible,.panel-close:focus-visible,.ground:focus-visible{outline:2px solid var(--cang);outline-offset:3px}
 .person.away .n{color:var(--su-dim)}
+.person-name-trigger{display:inline;font:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;border:0;border-bottom:1px dotted var(--su-mute);padding:0 0 1px;white-space:nowrap}
+.person-name-trigger:hover{color:var(--accent);border-color:var(--accent)}
+.person-name-trigger:focus-visible,.person-note-return:focus-visible{outline:2px solid var(--cang);outline-offset:3px}
+.person-note-text{padding:4px 0 14px 15px;font:15px/1.9 var(--f-song);color:var(--su-dim)}
+[data-person-current="true"] > .person .n{color:var(--accent)}
+.person-note-text details{font:12px/1.8 var(--f-hei);margin-top:8px}
+.person-note-text summary{cursor:pointer;padding:8px 0;width:fit-content}
+.person-note-text a{color:var(--accent);border-bottom:1px dotted currentColor}
+.person-note-return{min-height:44px;color:var(--accent);font-size:12px;padding:6px 0}
 .opening-notes{max-width:720px;margin:0 auto;color:var(--su-dim)}
 .opening-notes summary{cursor:pointer;width:fit-content;margin:0 auto;padding:12px 8px;font-size:12px;letter-spacing:.08em}
 .opening-notes summary:hover{color:var(--su)}

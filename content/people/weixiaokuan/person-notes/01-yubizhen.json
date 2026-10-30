@@ -1,0 +1,428 @@
+{
+  "people": [
+    {
+      "id": "wei-xu",
+      "name": "韦旭",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "韦旭是韦孝宽的父亲，曾任武威郡守，后任雍州大中正，并在刺史任上去世。《周书》此处州名录文原作“南幽州”，校勘改作“南豳州”，故事中的“幽州”应结合这一版本差异理解。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiao-baoyin",
+      "name": "萧宝夤",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "萧宝夤原是南齐皇族，南齐灭亡后投北魏。本篇韦孝宽年轻时，萧宝夤在关右起兵，韦孝宽请求充当前锋，随军西征。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷五十九·萧宝夤传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷59"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhangsun-chengye",
+      "name": "长孙承业",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "长孙承业是北魏馮翊公，本篇率军西征萧宝夤，韦孝宽随他出战。所取韦孝宽传段落没有在此详述他的其他经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-kan",
+      "name": "杨侃",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "杨侃是北魏侍中，出镇潼关时请韦孝宽担任司马，又把女儿嫁给他，因此是韦孝宽的岳父。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-zigong",
+      "name": "源子恭",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "源子恭是北魏荆州刺史，韦孝宽以都督身份随他镇守襄城，后来因功任析阳郡守。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dugu-xin",
+      "name": "独孤信",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "独孤信当时任新野郡守，与同在荆州的韦孝宽交好。后来他参与西魏军事行动，北周初因赵贵案受牵连，被宇文护逼迫自尽。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·独孤信传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-tai",
+      "name": "宇文泰",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "这里的“文帝”指宇文泰，是他死后的追称；他当时率军赴雍州，命韦孝宽随行，后来成为西魏的实际掌权者。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-tai",
+      "name": "窦泰",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "窦泰是东魏将领。本篇宇文泰率军与他交战，韦孝宽随军；《北齐书》记窦泰战败后自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷二·神武帝纪下",
+              "url": "https://zh.wikisource.org/wiki/北齊書/卷2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-gui",
+      "name": "宇文贵",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "宇文贵是西魏将领，本篇与韦孝宽、怡峰接应颍州的部众，并在颍川与东魏军交战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yi-feng",
+      "name": "怡峰",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "怡峰是西魏将领，本篇与韦孝宽、宇文贵一同作战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ren-xiang",
+      "name": "任祥",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "任祥是东魏将领，本篇与尧雄在颍川遭韦孝宽等人击败。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-xiong",
+      "name": "尧雄",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "尧雄是东魏将领，本篇与任祥在颍川遭韦孝宽等人击败。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feng-yong",
+      "name": "冯邕",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "冯邕是东魏豫州刺史，本篇韦孝宽进兵豫州时将他擒获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duan-chen",
+      "name": "段琛",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "段琛是东魏将领，本篇据宜阳，与尧杰派牛道恒招诱边民。韦孝宽伪造牛道恒书信使他生疑，后来擒获段琛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-jie",
+      "name": "尧杰",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "尧杰是东魏将领，本篇与段琛据宜阳，并派牛道恒招诱边民。所取传记段落没有在此交代他的后续。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "niu-daoheng",
+      "name": "牛道恒",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "牛道恒是东魏阳州刺史，本篇受段琛、尧杰派遣招诱边民；韦孝宽伪造其归顺书信离间他与段琛，后来将他擒获。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "wei-xu",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 25,
+      "text": "韦旭",
+      "paragraphText": "祖上在三辅是著姓。祖父做过冯翊、扶风两郡太守；父亲韦旭做过武威郡守，也做过雍州大中正、幽州刺史。幽州那任上，氐人屡次来抢，他随手招抚，都归附了。"
+    },
+    {
+      "personId": "xiao-baoyin",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "萧宝夤",
+      "paragraphText": "二十岁上下，碰上萧宝夤在关右作乱。"
+    },
+    {
+      "personId": "zhangsun-chengye",
+      "beat": 2,
+      "paragraph": 4,
+      "offset": 5,
+      "text": "长孙承业",
+      "paragraphText": "跟着冯翊公长孙承业西征，每一战都有功。"
+    },
+    {
+      "personId": "yang-kan",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "杨侃",
+      "paragraphText": "侍中杨侃做大都督，出镇潼关，把他请去做司马。"
+    },
+    {
+      "personId": "yuan-zigong",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 14,
+      "text": "源子恭",
+      "paragraphText": "普泰年间，以都督跟随荆州刺史源子恭镇守襄城，因功授析阳郡守。"
+    },
+    {
+      "personId": "dugu-xin",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 2,
+      "text": "独孤信",
+      "paragraphText": "那时独孤信做新野郡守，同属荆州。两人情好款密，政绩都好，荆州的吏人百姓把他们叫作「联璧」。"
+    },
+    {
+      "personId": "yuwen-tai",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "文帝",
+      "paragraphText": "文帝从原州赶赴雍州，命孝宽随军。"
+    },
+    {
+      "personId": "dou-tai",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 4,
+      "text": "窦泰",
+      "paragraphText": "跟着擒了窦泰，兼左丞，节度宜阳兵马。"
+    },
+    {
+      "personId": "yuwen-gui",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 13,
+      "text": "宇文贵",
+      "paragraphText": "又和独孤信进洛阳城守。再与宇文贵、怡峰接应颍州的义徒，在颍川破了东魏的任祥、尧雄。"
+    },
+    {
+      "personId": "yi-feng",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 17,
+      "text": "怡峰",
+      "paragraphText": "又和独孤信进洛阳城守。再与宇文贵、怡峰接应颍州的义徒，在颍川破了东魏的任祥、尧雄。"
+    },
+    {
+      "personId": "ren-xiang",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 35,
+      "text": "任祥",
+      "paragraphText": "又和独孤信进洛阳城守。再与宇文贵、怡峰接应颍州的义徒，在颍川破了东魏的任祥、尧雄。"
+    },
+    {
+      "personId": "yao-xiong",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 38,
+      "text": "尧雄",
+      "paragraphText": "又和独孤信进洛阳城守。再与宇文贵、怡峰接应颍州的义徒，在颍川破了东魏的任祥、尧雄。"
+    },
+    {
+      "personId": "feng-yong",
+      "beat": 4,
+      "paragraph": 5,
+      "offset": 15,
+      "text": "冯邕",
+      "paragraphText": "又进平乐口，取下豫州，擒了刺史冯邕。"
+    },
+    {
+      "personId": "duan-chen",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "段琛",
+      "paragraphText": "这一年，东魏将段琛、尧杰又据宜阳，派他们的阳州刺史牛道恒去煽诱边民。"
+    },
+    {
+      "personId": "yao-jie",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "尧杰",
+      "paragraphText": "这一年，东魏将段琛、尧杰又据宜阳，派他们的阳州刺史牛道恒去煽诱边民。"
+    },
+    {
+      "personId": "niu-daoheng",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 25,
+      "text": "牛道恒",
+      "paragraphText": "这一年，东魏将段琛、尧杰又据宜阳，派他们的阳州刺史牛道恒去煽诱边民。"
+    }
+  ]
+}

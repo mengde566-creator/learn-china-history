@@ -1,0 +1,150 @@
+{
+  "people": [
+    {
+      "id": "zu-wu",
+      "name": "祖武",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "祖武是祖逖的父亲，曾做晋王掾、上谷太守。祖逖年幼时父亲就已去世，家中兄长对他成长十分关切。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zu-gai",
+      "name": "祖该",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "祖该是祖逖的兄长。《祖逖传》说他和祖纳等兄弟开爽、有才干；祖逖年少时，几位兄长曾担心他不读书。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zu-na",
+      "name": "祖纳",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "祖纳是祖逖的兄长，与祖该等人一同在《祖逖传》中出现。后来他到江南任职，曾向司马睿建议设史官，并推荐史学家王隐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十二·祖逖传附祖纳",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷062"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-kun",
+      "name": "刘琨",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "刘琨是祖逖年轻时的朋友，两人同任司州主簿。《晋书》记他们夜闻鸡鸣后起舞，也记他们常谈世事。后来刘琨任并州刺史，抵抗北方势力，最终被段匹磾杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷六十二·刘琨传",
+              "url": "https://zh.wikisource.org/zh-hans/晉書/卷062"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zu-wu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 20,
+      "text": "祖武",
+      "paragraphText": "祖上世代做二千石的官，是北州的旧姓。父亲祖武，做过晋王掾、上谷太守。"
+    },
+    {
+      "personId": "zu-gai",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "祖该",
+      "paragraphText": "兄弟六人里，兄长祖该、祖纳等人都开明爽直，有才干。"
+    },
+    {
+      "personId": "zu-na",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "祖纳",
+      "paragraphText": "兄弟六人里，兄长祖该、祖纳等人都开明爽直，有才干。"
+    },
+    {
+      "personId": "liu-kun",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "刘琨",
+      "paragraphText": "二十四岁前后，祖逖和刘琨一同做了司州主簿。"
+    },
+    {
+      "personId": "liu-kun",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "刘琨",
+      "paragraphText": "祖逖把刘琨踢醒，说："
+    },
+    {
+      "personId": "liu-kun",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "刘琨",
+      "paragraphText": "祖逖和刘琨都有英武之气。"
+    }
+  ]
+}

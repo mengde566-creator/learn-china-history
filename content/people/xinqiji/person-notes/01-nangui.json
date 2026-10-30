@@ -1,0 +1,159 @@
+{
+  "people": [
+    {
+      "id": "cai-bojian",
+      "name": "蔡伯坚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "蔡伯坚是辛弃疾少年时的老师；辛弃疾与党怀英同从他学习。《宋史》辛弃疾传这一段没有进一步交代他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dang-huaiying",
+      "name": "党怀英",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "党怀英曾与辛弃疾同学。按《宋史》的记述，两人占卦后选择不同道路，他留在金朝；后来他中进士，入翰林并参与修史。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "external",
+              "book": "《金史》",
+              "section": "卷一百二十五·党怀英传",
+              "url": "https://zh.wikisource.org/wiki/金史/卷125"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wan-yan-liang",
+      "name": "完颜亮",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "完颜亮即金海陵王，《金史》本纪记其名亮、本讳迪古乃；1161 年他南侵宋朝，本篇从他死后山东等地起兵写起。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《金史》",
+              "section": "卷五·海陵纪",
+              "url": "https://zh.wikisource.org/wiki/金史/卷5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geng-jing",
+      "name": "耿京",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "耿京在山东聚兵，自称天平节度使，辛弃疾担任他的掌书记并劝其南向。后来耿京派辛弃疾奉表归宋，自己却被张安国、邵进杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yi-duan",
+      "name": "义端",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "义端是与辛弃疾有来往的僧人，曾聚众并归入耿京部下。《宋史》记他盗印逃走后，被辛弃疾追获杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "local",
+              "id": "004"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "cai-bojian",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 6,
+      "text": "蔡伯坚",
+      "paragraphText": "少年时他师从蔡伯坚，与一个叫党怀英的人同学，两人并称「辛党」。"
+    },
+    {
+      "personId": "dang-huaiying",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 14,
+      "text": "党怀英",
+      "paragraphText": "少年时他师从蔡伯坚，与一个叫党怀英的人同学，两人并称「辛党」。"
+    },
+    {
+      "personId": "wan-yan-liang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "完颜亮",
+      "paragraphText": "金主完颜亮一死，中原的豪杰都动了起来。耿京在山东聚兵，自称天平节度使，节制山东、河北的忠义军马。"
+    },
+    {
+      "personId": "geng-jing",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "耿京",
+      "paragraphText": "金主完颜亮一死，中原的豪杰都动了起来。耿京在山东聚兵，自称天平节度使，节制山东、河北的忠义军马。"
+    },
+    {
+      "personId": "yi-duan",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "义端",
+      "paragraphText": "军中来了个和尚，叫义端，好谈兵，辛弃疾平时与他有来往。"
+    }
+  ]
+}

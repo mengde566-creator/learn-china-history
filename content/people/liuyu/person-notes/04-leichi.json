@@ -1,0 +1,390 @@
+{
+  "people": [
+    {
+      "id": "xu-daofu",
+      "name": "徐道覆",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "徐道覆是卢循的姊夫，也是其部众中的将领，曾受卢循任命为始兴太守。刘裕北伐南燕时，他劝卢循北上；两人到建康附近后，又对是否立即进攻意见不一。后来卢循战败，徐道覆退守始兴。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百·卢循传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-xun",
+      "name": "卢循",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "卢循是孙恩的妹夫，孙恩死后被余众推为首领，后来占据广州，获晋廷任为广州刺史。本篇他听从徐道覆建议北上，与回师的刘裕交战。败后他撤回广州，转攻交州，又被击败；《晋书》记他投水而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百·卢循传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-yi",
+      "name": "刘毅",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "刘毅与刘裕都是起兵讨桓玄的将领。本篇他抵御卢循、徐道覆时战败，随后仍与刘裕共同守卫建康。后来两人反目，刘裕派王镇恶袭取江陵；《宋书》记刘毅败逃后自缢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十五·王镇恶传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meng-chang",
+      "name": "孟昶",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "孟昶曾参与刘裕一方的起事。本篇建康受到威胁时，他与诸葛长民主张拥晋帝渡江；刘裕拒绝后，他上表承担北伐的责任，服药而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhuge-changmin",
+      "name": "诸葛长民",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "诸葛长民曾与刘裕共同谋划讨伐桓玄，也曾率兵入卫建康。本篇他与孟昶主张暂时拥晋帝渡江，刘裕没有采纳。后来刘裕讨刘毅时，他留守后方；刘裕归来后，设伏将他杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷八十五·诸葛长民传",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷085"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-zhongde",
+      "name": "王仲德",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "王仲德本名王懿，因避晋朝帝王名讳而以字行世。他曾为刘裕北伐南燕的前锋；本篇守越城，又奉命追击卢循军。后来他参加刘裕北伐后秦，并在刘宋时期随军北伐、与檀道济救援滑台。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十六·王懿传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷46"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-jingxuan",
+      "name": "刘敬宣",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "刘敬宣是北府将领刘牢之的儿子，曾与刘裕共同抵御孙恩，也曾受命伐蜀，但因粮尽、疫病而撤军。本篇他在建康北郊防守卢循军。后来他随刘裕南讨，又在北青州任上被部下杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十七·孟怀玉、刘敬宣传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meng-huaiyu",
+      "name": "孟怀玉",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "孟怀玉曾随刘裕讨孙恩、参加起兵，本篇在丹阳一带防守卢循军。他的弟弟孟龙符在此前攻南燕时战死。后来孟怀玉追击卢循、攻破徐道覆据守的始兴，出任江州刺史，任内病逝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十七·孟怀玉、刘敬宣传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-huaimo",
+      "name": "刘怀默",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "刘怀默是刘怀慎的弟弟，本篇在建康保卫战中率军屯守建阳门外。《宋书》在刘怀慎传中附记他后来任冠军将军、江夏内史及太中大夫；这些并非本场战事时的职务。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十五·刘怀慎传附刘怀默",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suo-miao",
+      "name": "索邈",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "索邈是刘裕部将，此前参加过北伐南燕时的临朐之战。本篇他以宁朔将军身份率领装备精良的骑兵到新亭，卢循军聚观而生畏。所用两段材料没有交代他后来的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-chite",
+      "name": "徐赤特",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "徐赤特是刘裕的参军。建康保卫战中，他奉命守南岸；卢循军登陆后，他战败弃众渡淮，刘裕以他违背部署为由将其斩杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-lesheng",
+      "name": "庾乐生",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "庾乐生是刘裕军中的右军参军。本篇雷池水战时，他乘舰没有进军，刘裕将他斩杀示众。现取材料只记下了他在这场战事中的处境。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xu-daofu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "徐道覆",
+      "paragraphText": "他北伐的时候，徐道覆还有窥窬之心，劝卢循乘虚而出。卢循不从。"
+    },
+    {
+      "personId": "lu-xun",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "卢循",
+      "paragraphText": "他北伐的时候，徐道覆还有窥窬之心，劝卢循乘虚而出。卢循不从。"
+    },
+    {
+      "personId": "liu-yi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "刘毅",
+      "paragraphText": "刘毅败报到了，内外汹扰。那时北方的兵刚回来，多带伤带病，京城的战士不满几千。"
+    },
+    {
+      "personId": "meng-chang",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "孟昶",
+      "paragraphText": "孟昶、诸葛长民怕贼渐渐逼近，要拥着天子过江。他不听。孟昶固请不止。"
+    },
+    {
+      "personId": "zhuge-changmin",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "诸葛长民",
+      "paragraphText": "孟昶、诸葛长民怕贼渐渐逼近，要拥着天子过江。他不听。孟昶固请不止。"
+    },
+    {
+      "personId": "wang-zhongde",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 47,
+      "text": "王仲德",
+      "paragraphText": "从此众军渐集，修治越城，筑查浦、药园、廷尉三垒，都派实兵把守。刘敬宣屯北郊，孟怀玉屯丹阳郡西，王仲德屯越城，刘怀默屯建阳门外。又使索邈领鲜卑具装虎班突骑千余匹，都披着五彩的练，从淮北到新亭。贼都聚着看，畏惮他们。"
+    },
+    {
+      "personId": "liu-jingxuan",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 31,
+      "text": "刘敬宣",
+      "paragraphText": "从此众军渐集，修治越城，筑查浦、药园、廷尉三垒，都派实兵把守。刘敬宣屯北郊，孟怀玉屯丹阳郡西，王仲德屯越城，刘怀默屯建阳门外。又使索邈领鲜卑具装虎班突骑千余匹，都披着五彩的练，从淮北到新亭。贼都聚着看，畏惮他们。"
+    },
+    {
+      "personId": "meng-huaiyu",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 38,
+      "text": "孟怀玉",
+      "paragraphText": "从此众军渐集，修治越城，筑查浦、药园、廷尉三垒，都派实兵把守。刘敬宣屯北郊，孟怀玉屯丹阳郡西，王仲德屯越城，刘怀默屯建阳门外。又使索邈领鲜卑具装虎班突骑千余匹，都披着五彩的练，从淮北到新亭。贼都聚着看，畏惮他们。"
+    },
+    {
+      "personId": "liu-huaimo",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 54,
+      "text": "刘怀默",
+      "paragraphText": "从此众军渐集，修治越城，筑查浦、药园、廷尉三垒，都派实兵把守。刘敬宣屯北郊，孟怀玉屯丹阳郡西，王仲德屯越城，刘怀默屯建阳门外。又使索邈领鲜卑具装虎班突骑千余匹，都披着五彩的练，从淮北到新亭。贼都聚着看，畏惮他们。"
+    },
+    {
+      "personId": "suo-miao",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 65,
+      "text": "索邈",
+      "paragraphText": "从此众军渐集，修治越城，筑查浦、药园、廷尉三垒，都派实兵把守。刘敬宣屯北郊，孟怀玉屯丹阳郡西，王仲德屯越城，刘怀默屯建阳门外。又使索邈领鲜卑具装虎班突骑千余匹，都披着五彩的练，从淮北到新亭。贼都聚着看，畏惮他们。"
+    },
+    {
+      "personId": "xu-chite",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 46,
+      "text": "徐赤特",
+      "paragraphText": "贼在南岸设伏兵，让羸老都乘舟舰向白石。他怕他们从白石步上，就率刘毅、诸葛长民北出拒之，留参军徐赤特戍南岸，命坚守勿动。他走后，贼焚查浦步上，赤特军战败，死没百余人，赤特丢下余众，单舸渡淮。贼于是率数万屯丹阳郡。他率诸军驰归，众人担心贼已过去，都说该径直还击。他先分军还石头，众人都不明白。解甲息士，让他们洗浴饮食，然后出列阵于南塘。以赤特违处分，斩之。"
+    },
+    {
+      "personId": "yu-lesheng",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 70,
+      "text": "庾乐生",
+      "paragraphText": "十二月，循、道覆率众数万，方舰而下，前后相抗，看不见舳舻的头尾。他把轻利斗舰全放出去，亲自提着幡鼓，命众军齐力击之。又让步骑上西岸。右军参军庾乐生乘舰不进，斩了示众。于是众军踊跃争先。"
+    }
+  ]
+}

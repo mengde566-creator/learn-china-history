@@ -1,0 +1,178 @@
+{
+  "people": [
+    {
+      "id": "yuwen-gong",
+      "name": "宇文肱",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "宇文肱是宇文泰的父亲，武川军人。北魏末年北边动乱，他纠合乡里抵抗卫可孤；后来举家避地中山，又落入鲜于修礼军中，仍统领自己的部众，最终被定州军击败，战死阵中。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge-rong",
+      "name": "葛荣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "葛荣是北魏末年河北起事者的首领。鲜于修礼死后，宇文泰一家所在的部众归他掌握；后来尔朱荣击败葛荣、平定河北，这批人又被迁往晋阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-rong",
+      "name": "尔朱荣",
+      "versions": [
+        {
+          "from": 2,
+          "to": 3,
+          "text": "尔朱荣是北魏末年的军事首领，世居秀容川。他击败葛荣后控制河北，把宇文泰等迁到晋阳，又因忌惮宇文家兄弟而杀了宇文洛生。后来他在洛阳被孝庄帝杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十四·尔朱荣传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷74"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuwen-luosheng",
+      "name": "宇文洛生",
+      "versions": [
+        {
+          "from": 2,
+          "to": 3,
+          "text": "宇文洛生是宇文泰的第三兄。尔朱荣把宇文家迁到晋阳后，借口其他罪名将他诛杀；宇文泰为家里的冤屈申辩，才获赦免。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heba-yue",
+      "name": "贺拔岳",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "贺拔岳是北魏将领，与宇文泰早有交往。他率军西入关中、讨平万俟丑奴，宇文泰作为别将随行；后来他任关西大行台，把军政事务交给宇文泰，最终在河曲被侯莫陈悦杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moqi-chounu",
+      "name": "万俟丑奴",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "万俟丑奴是北魏末年关陇一带的起事首领。北魏派尔朱天光、贺拔岳等西讨，宇文泰随军入关；丑奴被讨平，关陇战事告一段落。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuwen-gong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "宇文肱",
+      "paragraphText": "定州军击败了宇文肱所在的部队，他战死阵中。"
+    },
+    {
+      "personId": "ge-rong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 43,
+      "text": "葛荣",
+      "paragraphText": "父亲没能为宇文泰留下一块安稳的领地。父亲死后，他仍在军队里；接着，掌握这批人的又换成了葛荣。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "尔朱荣",
+      "paragraphText": "宇文泰后来在葛荣的队伍里。尔朱荣击败葛荣，控制河北，宇文泰也随着被迁徙的人到了晋阳。"
+    },
+    {
+      "personId": "yuwen-luosheng",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "宇文洛生",
+      "paragraphText": "他躲过了这次军队的覆灭，却仍在胜者手中。尔朱荣杀了他的三哥宇文洛生，还打算杀他。宇文泰为家中的冤屈申辩，言辞激切，最终得到赦免。"
+    },
+    {
+      "personId": "heba-yue",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "贺拔岳",
+      "paragraphText": "宇文泰与贺拔岳原有交往。后来，他作为别将跟随贺拔岳作战，又随他向西进入关中。"
+    },
+    {
+      "personId": "moqi-chounu",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 19,
+      "text": "万俟丑奴",
+      "paragraphText": "这支军队奉北魏朝廷之命，讨伐占据关陇的万俟丑奴。战事结束，宇文泰得到升迁，还代理原州事务。早先是胜者决定把他迁往何处，如今，他开始在地方上承担军政职任。"
+    }
+  ]
+}

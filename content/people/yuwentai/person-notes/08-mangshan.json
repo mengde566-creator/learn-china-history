@@ -1,0 +1,357 @@
+{
+  "people": [
+    {
+      "id": "hou-jing",
+      "name": "侯景",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "侯景是东魏将领。大统六年他从三鸦方向来侵，宇文泰派李弼、独孤信出武关，他才退回。后来他归附梁朝，起兵攻建康，兵败被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "067"
+            },
+            {
+              "kind": "external",
+              "book": "《梁书》",
+              "section": "卷五十六·侯景传",
+              "url": "https://zh.wikisource.org/wiki/梁書/卷56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-bi",
+      "name": "李弼",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "李弼是西魏将领。本篇奉命与独孤信出武关，逼退侯景。后来他位至柱国、太师，封赵国公。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "067"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dugu-xin",
+      "name": "独孤信",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "独孤信是西魏将领，与李弼同出武关。后来他位列八柱国，任大司马，最终被宇文护逼死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "067"
+            },
+            {
+              "kind": "local",
+              "id": "071"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·独孤信传、赵贵传及八柱国附记",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-huan",
+      "name": "高欢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "高欢是东魏执政者。542 年他围攻玉壁不克，遇大雪退军；次年邙山之战一度失马，靠部下让马救护才脱险。后来他 546 年再攻玉壁不下，次年去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "local",
+              "id": "070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-sizheng",
+      "name": "王思政",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "王思政是西魏玉壁守将，守住了城，高欢没能越过这个据点。后来他镇守颍川，东魏大军围攻，颍川最终陷落。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-shen",
+      "name": "高慎",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "高慎即高仲密，东魏北豫州刺史。本篇他以武牢所在的州投向西魏，宇文泰出兵接应；此前他曾任御史中尉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-yuan",
+      "name": "李远",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "李远是西军将领，本篇随宇文泰接应高慎，走在前面。河桥之战时，他曾与独孤信同列右军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu-jin",
+      "name": "于谨",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "于谨是西军将领，本篇攻下洛阳附近的柏谷坞；西军退走时，他带部下装作投降，待追骑过后从背后攻击，掩护大军。后来他位至柱国、大司徒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十五·于谨传、李弼传",
+              "url": "https://zh.wikisource.org/wiki/周書/卷15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ruogan-hui",
+      "name": "若干惠",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "若干惠是西军将领。邙山之战中，他随宇文泰率右军进攻，打败了对面的东魏军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heba-sheng",
+      "name": "贺拔胜",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "贺拔胜是西军将领。邙山之战中他追击高欢，几乎追及，高欢险些不能脱身。此前他任荆州刺史，兵败后先赴梁、再入关。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷八十·贺拔胜传",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-gui",
+      "name": "赵贵",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "赵贵是西军左军主将。邙山之战左军作战不利，东魏军重新集合反击，西军夜里退回关中。后来他位列八柱国，任大司寇。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "071"
+            },
+            {
+              "kind": "external",
+              "book": "《周书》",
+              "section": "卷十六·独孤信传、赵贵传及八柱国附记",
+              "url": "https://zh.wikisource.org/wiki/周書/卷16"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "hou-jing",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "侯景",
+      "paragraphText": "河桥之后，两边仍在出兵。540年，侯景从三鸦方向来侵，宇文泰派李弼、独孤信出武关，迫使他退回。"
+    },
+    {
+      "personId": "li-bi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 31,
+      "text": "李弼",
+      "paragraphText": "河桥之后，两边仍在出兵。540年，侯景从三鸦方向来侵，宇文泰派李弼、独孤信出武关，迫使他退回。"
+    },
+    {
+      "personId": "dugu-xin",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 34,
+      "text": "独孤信",
+      "paragraphText": "河桥之后，两边仍在出兵。540年，侯景从三鸦方向来侵，宇文泰派李弼、独孤信出武关，迫使他退回。"
+    },
+    {
+      "personId": "gao-huan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 4,
+      "text": "高欢",
+      "paragraphText": "两年后，高欢围攻玉壁，没能拿下，随后撤退。《北齐书》说大雪中士卒多死，因此班师；《周书》则把叙事重心放在宇文泰出军，到皂荚后高欢退去，西军渡汾水追赶。"
+    },
+    {
+      "personId": "wang-sizheng",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "王思政",
+      "paragraphText": "王思政守住了城。高欢这一次没有把军队带过这个据点，宇文泰也没有就此取得能消灭东魏主力的决战。"
+    },
+    {
+      "personId": "gao-shen",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "高慎",
+      "paragraphText": "次年春，东魏北豫州刺史高慎，以武牢所在州投向西魏。宇文泰出兵接应，李远走在前面，于谨攻下洛阳附近的柏谷坞。"
+    },
+    {
+      "personId": "li-yuan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 33,
+      "text": "李远",
+      "paragraphText": "次年春，东魏北豫州刺史高慎，以武牢所在州投向西魏。宇文泰出兵接应，李远走在前面，于谨攻下洛阳附近的柏谷坞。"
+    },
+    {
+      "personId": "yu-jin",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 40,
+      "text": "于谨",
+      "paragraphText": "次年春，东魏北豫州刺史高慎，以武牢所在州投向西魏。宇文泰出兵接应，李远走在前面，于谨攻下洛阳附近的柏谷坞。"
+    },
+    {
+      "personId": "ruogan-hui",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "若干惠",
+      "paragraphText": "西军右边由宇文泰带着若干惠等进攻，打败了对面的军队。贺拔胜还追到高欢近旁，高欢险些不能脱身。"
+    },
+    {
+      "personId": "heba-sheng",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 26,
+      "text": "贺拔胜",
+      "paragraphText": "西军右边由宇文泰带着若干惠等进攻，打败了对面的军队。贺拔胜还追到高欢近旁，高欢险些不能脱身。"
+    },
+    {
+      "personId": "zhao-gui",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "赵贵",
+      "paragraphText": "但西军左边的赵贵等作战不利，东魏军重新集合，又反击宇文泰。夜里，宇文泰撤回关中。"
+    }
+  ]
+}

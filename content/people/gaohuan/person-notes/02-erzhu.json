@@ -1,0 +1,701 @@
+{
+  "people": [
+    {
+      "id": "du-luozhou",
+      "name": "杜洛周",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "杜洛周是柔玄镇人，在上谷起兵。高欢曾与同伴投奔他，后来又离开他的队伍，逃亡时遭到追赶。 后来葛荣击杀杜洛周，收并了他的部众。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《资治通鉴》",
+              "section": "卷一百五十二·梁纪八",
+              "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷152"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-cheng",
+      "name": "高澄",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "高澄是高欢的儿子，此时年幼。逃离杜洛周时，他屡次从牛背跌下；高欢曾张弓欲射，段荣将他救起。 后来他参与东魏朝政，高欢死后继承其军政地位；北齐建立后被追尊为文襄帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷三·文襄帝纪",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duan-rong",
+      "name": "段荣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "段荣是高欢的同伴，曾参与谋划对付杜洛周。逃亡途中，高欢的妻子呼唤他救孩子，他下去抱起高澄。 后来他支持高欢在山东起兵，曾留守信都、转运攻邺所需的军资，又担任定州刺史等职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十六·段荣传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge-rong",
+      "name": "葛荣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "葛荣是当时拥有部众的起兵者。高欢一行逃离杜洛周后曾投奔他，之后又离开，转往秀容依附尔朱荣。 后来葛荣并吞杜洛周的部众，势力扩张；尔朱荣在邺城附近击败并俘获他，将他押往洛阳。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十四·尔朱荣传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷74"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-rong",
+      "name": "尔朱荣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 2,
+          "text": "尔朱荣是握有兵马的北魏将领，驻在秀容一带。高欢离开葛荣后前来依附，刘贵为两人的相见出力。 后来他拥立孝庄帝，在河阴杀戮朝臣，掌握朝政；最终被孝庄帝杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            }
+          ]
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "text": "尔朱荣是高欢先前投靠的北魏将领。孝明帝曾密令他率兵入京，皇帝去世后，他仍带兵进入洛阳。 后来孝庄帝杀了尔朱荣。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            }
+          ]
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "text": "尔朱荣是高欢先前投靠的北魏将领。入洛后，《魏书·孝庄纪》记他杀害灵太后、幼主及大批宗室公卿，并以骑兵监视新帝。 后来孝庄帝杀了尔朱荣。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            }
+          ]
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尔朱荣是高欢依附的北魏将领，高欢曾参与他的军谋。高欢任晋州刺史后，借刘贵向尔朱荣身边的要人行贿；后来孝庄帝杀了尔朱荣。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-gui",
+      "name": "刘贵",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "刘贵是高欢早年结交的秀容人，先在尔朱荣门下做事。他多次向尔朱荣称赞高欢，并帮助高欢得到再次相见的机会。 后来刘贵归附高欢，担任刺史、御史中尉等职；《北齐书》既记他办事严断，也记他治下严酷、滥杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十九·刘贵传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷19"
+            }
+          ]
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "text": "刘贵是高欢早年的朋友，也曾在尔朱荣门下做事。高欢任晋州刺史后，通过他向尔朱荣身边的要人行贿。 后来刘贵归附高欢，担任刺史、御史中尉等职；《北齐书》既记他办事严断，也记他治下严酷、滥杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十九·刘贵传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiaoming",
+      "name": "孝明帝",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "孝明帝名元诩，是北魏皇帝，母亲是灵太后。他曾密令尔朱荣率兵向京城进发，又下诏让他停军。皇帝突然去世后，尔朱荣仍然入洛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷九·肃宗纪",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiaozhuang",
+      "name": "孝庄帝",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "孝庄帝是尔朱荣进洛后即位的北魏皇帝。高欢因参与谋划而受封；《魏书》也记载尔朱荣以骑兵监视这位新皇帝。 后来尔朱兆入洛，将他拘送晋阳；他死于晋阳的佛寺。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "text": "孝庄帝是尔朱荣进洛后即位的北魏皇帝。此前尔朱荣握有兵权，孝庄帝后来将他杀死。 后来尔朱兆入洛，将他拘送晋阳；他死于晋阳的佛寺。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "text": "孝庄帝是尔朱荣进洛后即位的北魏皇帝，后来杀了尔朱荣。尔朱兆等人推立元晔时，他仍在洛阳。 尔朱兆进入洛阳后拘住并北送他，他最终死于晋阳的佛寺。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ling-taihou",
+      "name": "灵太后",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "灵太后胡氏是孝明帝之母，曾临朝处理北魏朝政。孝明帝去世后，尔朱荣率兵进入洛阳；《魏书·孝庄纪》记他杀害了灵太后与幼主。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十三·灵皇后传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-shilong",
+      "name": "尔朱世隆",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "尔朱世隆是尔朱荣的族弟，也是尔朱仲远的弟弟。尔朱荣死后，他与尔朱兆等人推立元晔。后来他又参与废元晔、立元恭，掌握朝政；韩陵战败后，他与兄长尔朱彦伯被捕杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱彦伯附世隆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erzhu-zhao",
+      "name": "尔朱兆",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "尔朱兆是尔朱荣的侄辈。尔朱荣死后，他准备从晋阳进兵洛阳，并曾召高欢同行；高欢派孙腾以地方不安为由推辞。 后来他曾与高欢结盟，双方又在韩陵交战；战败后他退守秀容，最终败走自缢，高欢收葬了他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷七十五·尔朱兆传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yuan-ye",
+      "name": "元晔",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "元晔是北魏宗室，原为长广王。永安三年十月，尔朱世隆与尔朱兆等人推立他为主、改元建明；此时孝庄帝仍在洛阳。 后来尔朱世隆等人废去元晔，改立元恭；元晔被封为东海王，又在元修即位后被赐死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷十九下·东海王晔传",
+              "url": "https://zh.wikisource.org/zh-hans/魏書/卷19下"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-teng",
+      "name": "孙腾",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "孙腾是高欢早年结交的朋友，此时担任高欢的长史。高欢让他向尔朱兆推辞同行，又派他探察被拘的孝庄帝所在。 后来他参与信都起兵的谋划，劝高欢拥立元朗；东魏初年担任尚书左仆射，是高欢倚重的朝廷官员。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《北齐书》",
+              "section": "卷十八·孙腾传",
+              "url": "https://zh.wikisource.org/zh-hans/北齊書/卷18"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "du-luozhou",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "杜洛周",
+      "paragraphText": "逃离杜洛周时，幼年的高澄屡次从牛背跌下。高欢竟张弓，要射杀孩子以便脱身；妻子呼段荣救人，段荣下去抱起，孩子才活下来。"
+    },
+    {
+      "personId": "gao-cheng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "高澄",
+      "paragraphText": "逃离杜洛周时，幼年的高澄屡次从牛背跌下。高欢竟张弓，要射杀孩子以便脱身；妻子呼段荣救人，段荣下去抱起，孩子才活下来。"
+    },
+    {
+      "personId": "duan-rong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 39,
+      "text": "段荣",
+      "paragraphText": "逃离杜洛周时，幼年的高澄屡次从牛背跌下。高欢竟张弓，要射杀孩子以便脱身；妻子呼段荣救人，段荣下去抱起，孩子才活下来。"
+    },
+    {
+      "personId": "duan-rong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 44,
+      "text": "段荣",
+      "paragraphText": "逃离杜洛周时，幼年的高澄屡次从牛背跌下。高欢竟张弓，要射杀孩子以便脱身；妻子呼段荣救人，段荣下去抱起，孩子才活下来。"
+    },
+    {
+      "personId": "du-luozhou",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "杜洛周",
+      "paragraphText": "逃离杜洛周后，他们先投葛荣，又从葛荣处逃走，转往秀容，依附尔朱荣。"
+    },
+    {
+      "personId": "ge-rong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "葛荣",
+      "paragraphText": "逃离杜洛周后，他们先投葛荣，又从葛荣处逃走，转往秀容，依附尔朱荣。"
+    },
+    {
+      "personId": "ge-rong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 16,
+      "text": "葛荣",
+      "paragraphText": "逃离杜洛周后，他们先投葛荣，又从葛荣处逃走，转往秀容，依附尔朱荣。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "尔朱荣",
+      "paragraphText": "逃离杜洛周后，他们先投葛荣，又从葛荣处逃走，转往秀容，依附尔朱荣。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "尔朱荣",
+      "paragraphText": "刘贵帮助引见高欢。见到尔朱荣后，高欢问起他成群的马：养着这么多，究竟要拿来做什么？"
+    },
+    {
+      "personId": "liu-gui",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "刘贵",
+      "paragraphText": "刘贵帮助引见高欢。见到尔朱荣后，高欢问起他成群的马：养着这么多，究竟要拿来做什么？"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尔朱荣",
+      "paragraphText": "尔朱荣让他说下去。高欢把话引向朝廷，指斥皇帝、太后与近臣，劝尔朱荣乘乱起兵、清君侧，成就霸业。两人谈到半夜，此后高欢参与军谋。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 30,
+      "text": "尔朱荣",
+      "paragraphText": "尔朱荣让他说下去。高欢把话引向朝廷，指斥皇帝、太后与近臣，劝尔朱荣乘乱起兵、清君侧，成就霸业。两人谈到半夜，此后高欢参与军谋。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "尔朱荣",
+      "paragraphText": "孝明帝曾密令尔朱荣入京，后来又让他停下。皇帝突然去世，尔朱荣仍带兵进入洛阳。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 27,
+      "text": "尔朱荣",
+      "paragraphText": "孝明帝曾密令尔朱荣入京，后来又让他停下。皇帝突然去世，尔朱荣仍带兵进入洛阳。"
+    },
+    {
+      "personId": "xiaoming",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "孝明帝",
+      "paragraphText": "孝明帝曾密令尔朱荣入京，后来又让他停下。皇帝突然去世，尔朱荣仍带兵进入洛阳。"
+    },
+    {
+      "personId": "xiaozhuang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "孝庄帝",
+      "paragraphText": "帝纪接着写高欢劝止篡位、孝庄帝即位，高欢受封。进入朝廷之后，原先的献策者也开始取得封爵。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 23,
+      "text": "尔朱荣",
+      "paragraphText": "同一次入洛，还有河阴的杀戮。《魏书·孝庄纪》记尔朱荣害灵太后、幼主，杀宗室公卿以下二千余人，又以骑兵监视新帝。"
+    },
+    {
+      "personId": "ling-taihou",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 27,
+      "text": "灵太后",
+      "paragraphText": "同一次入洛，还有河阴的杀戮。《魏书·孝庄纪》记尔朱荣害灵太后、幼主，杀宗室公卿以下二千余人，又以骑兵监视新帝。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 25,
+      "text": "尔朱荣",
+      "paragraphText": "后来高欢得到晋州刺史的职位。他聚敛财物，借刘贵贿赂尔朱荣身边的要人，让这些人满意。"
+    },
+    {
+      "personId": "liu-gui",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "刘贵",
+      "paragraphText": "后来高欢得到晋州刺史的职位。他聚敛财物，借刘贵贿赂尔朱荣身边的要人，让这些人满意。"
+    },
+    {
+      "personId": "erzhu-rong",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "尔朱荣",
+      "paragraphText": "到永安年间，孝庄帝杀了尔朱荣。先前凭依的强人一死，高欢面对的便不再只是怎样在其门下升迁。"
+    },
+    {
+      "personId": "xiaozhuang",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "孝庄帝",
+      "paragraphText": "到永安年间，孝庄帝杀了尔朱荣。先前凭依的强人一死，高欢面对的便不再只是怎样在其门下升迁。"
+    },
+    {
+      "personId": "xiaozhuang",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 27,
+      "text": "孝庄帝",
+      "paragraphText": "永安三年十月，尔朱世隆与尔朱兆已推元晔为主，改元建明。孝庄帝仍在洛阳。"
+    },
+    {
+      "personId": "erzhu-shilong",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "尔朱世隆",
+      "paragraphText": "永安三年十月，尔朱世隆与尔朱兆已推元晔为主，改元建明。孝庄帝仍在洛阳。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "尔朱兆",
+      "paragraphText": "永安三年十月，尔朱世隆与尔朱兆已推元晔为主，改元建明。孝庄帝仍在洛阳。"
+    },
+    {
+      "personId": "yuan-ye",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "元晔",
+      "paragraphText": "永安三年十月，尔朱世隆与尔朱兆已推元晔为主，改元建明。孝庄帝仍在洛阳。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "尔朱兆",
+      "paragraphText": "尔朱兆准备从晋阳出兵赴洛时，曾召高欢同行。高欢让孙腾以地方不安为由推辞。"
+    },
+    {
+      "personId": "sun-teng",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 24,
+      "text": "孙腾",
+      "paragraphText": "尔朱兆准备从晋阳出兵赴洛时，曾召高欢同行。高欢让孙腾以地方不安为由推辞。"
+    },
+    {
+      "personId": "xiaozhuang",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 14,
+      "text": "孝庄帝",
+      "paragraphText": "十二月，尔朱兆进入洛阳，拘住孝庄帝北返。按《北齐书》的记载，高欢派孙腾探明皇帝所在，想救人而未成，又写信劝他不要因拘执天子而背负天下恶名。尔朱兆没有听从。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "尔朱兆",
+      "paragraphText": "十二月，尔朱兆进入洛阳，拘住孝庄帝北返。按《北齐书》的记载，高欢派孙腾探明皇帝所在，想救人而未成，又写信劝他不要因拘执天子而背负天下恶名。尔朱兆没有听从。"
+    },
+    {
+      "personId": "erzhu-zhao",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 69,
+      "text": "尔朱兆",
+      "paragraphText": "十二月，尔朱兆进入洛阳，拘住孝庄帝北返。按《北齐书》的记载，高欢派孙腾探明皇帝所在，想救人而未成，又写信劝他不要因拘执天子而背负天下恶名。尔朱兆没有听从。"
+    },
+    {
+      "personId": "sun-teng",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 33,
+      "text": "孙腾",
+      "paragraphText": "十二月，尔朱兆进入洛阳，拘住孝庄帝北返。按《北齐书》的记载，高欢派孙腾探明皇帝所在，想救人而未成，又写信劝他不要因拘执天子而背负天下恶名。尔朱兆没有听从。"
+    },
+    {
+      "personId": "xiaozhuang",
+      "beat": 6,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "孝庄帝",
+      "paragraphText": "孝庄帝最终死在晋阳的佛寺。皇帝与权臣相杀之后，谁能调动军队，成了下一轮争夺的关键。"
+    }
+  ]
+}

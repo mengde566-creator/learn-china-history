@@ -1,0 +1,344 @@
+{
+  "people": [
+    {
+      "id": "bao-xin",
+      "name": "鲍信",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "鲍信是济北相，曾与州吏万潜等人迎曹操领兖州，随后在寿张东与黄巾作战时战死。曹操军中寻找他的遗体未得，刻木为像祭哭。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tao-qian",
+      "name": "陶谦",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "陶谦是东汉末年的徐州牧。曹操两次攻打徐州时，他是徐州一方的主事者；曹军在第二次进攻中沿途杀戮，这并非只是一场将领之间的争斗。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-bao",
+      "name": "曹豹",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "曹豹是徐州一方的将领，在郯县附近与刘备共同抵抗曹操，被曹操击败。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bei",
+      "name": "刘备",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "刘备当时在徐州一方抵抗曹操，曾与曹豹一同交战。后来他占据益州，建立蜀汉政权，与曹魏、孙吴对立。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷三十二·先主传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷32"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-miao",
+      "name": "张邈",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "张邈原是陈留太守和曹操早年的朋友，曾派卫兹帮助曹操西进。此时他与陈宫迎吕布进入兖州，与曹操决裂。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷七·吕布传附张邈",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-gong",
+      "name": "陈宫",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "裴注引《世语》记载，陈宫曾游说州中官吏支持曹操领兖州。曹操出征徐州时，他与张邈迎吕布入兖州；后来他随吕布败于下邳，与吕布一同被处死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "225"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷七·吕布传附陈宫",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-bu",
+      "name": "吕布",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "吕布是东汉末年的将领，曾参与诛杀董卓。此时张邈、陈宫迎他入兖州，与曹操争夺地盘；后来他在下邳被曹操击败并处死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷七·吕布传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xun-yu",
+      "name": "荀彧",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "荀彧是曹操的谋臣。曹操出征时，他与程昱守住鄄城；后来继续参与曹操的政务和军事谋划，曾任尚书令。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十·荀彧传",
+              "url": "https://zh.wikisource.org/zh-hans/三國志/卷10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cheng-yu",
+      "name": "程昱",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "程昱是曹操的谋臣。曹操出征徐州时，他与荀彧守住鄄城，保住曹操在兖州的重要落脚处。 后来曹操失利、袁绍提出连和时，程昱劝他不要答应；迎接汉献帝时，他也与荀彧一同提出支持。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "external",
+              "book": "《三国志》",
+              "section": "卷十四·程昱传",
+              "url": "https://zh.wikisource.org/wiki/三國志/卷14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lou-yi",
+      "name": "楼异",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "楼异是曹操军中的司马。濮阳之战曹操坠马后，楼异扶他上马，使他得以退走。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "bao-xin",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 15,
+      "text": "鲍信",
+      "paragraphText": "《武帝纪》正文接着记，悬赏寻找鲍信的遗体，没有找到。众人刻木为像，祭奠哭泣。"
+    },
+    {
+      "personId": "tao-qian",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "陶谦",
+      "paragraphText": "受降后的第二年，曹操出兵攻陶谦。到兴平元年，也就是公元194年，他又一次进攻徐州，攻下五城，推进到东海。"
+    },
+    {
+      "personId": "cao-bao",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 10,
+      "text": "曹豹",
+      "paragraphText": "回军经过郯县，他击败曹豹、刘备，接着攻下襄贲。沿途多有残害杀戮——这也是《武帝纪》记下的曹操。"
+    },
+    {
+      "personId": "liu-bei",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "刘备",
+      "paragraphText": "回军经过郯县，他击败曹豹、刘备，接着攻下襄贲。沿途多有残害杀戮——这也是《武帝纪》记下的曹操。"
+    },
+    {
+      "personId": "zhang-miao",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "张邈",
+      "paragraphText": "就在这次出征期间，张邈和陈宫反叛，迎来吕布。兖州的郡县纷纷响应。"
+    },
+    {
+      "personId": "chen-gong",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 12,
+      "text": "陈宫",
+      "paragraphText": "就在这次出征期间，张邈和陈宫反叛，迎来吕布。兖州的郡县纷纷响应。"
+    },
+    {
+      "personId": "lv-bu",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 19,
+      "text": "吕布",
+      "paragraphText": "就在这次出征期间，张邈和陈宫反叛，迎来吕布。兖州的郡县纷纷响应。"
+    },
+    {
+      "personId": "lv-bu",
+      "beat": 4,
+      "paragraph": 5,
+      "offset": 0,
+      "text": "吕布",
+      "paragraphText": "吕布到了，攻鄄城攻不下，往西屯在濮阳。"
+    },
+    {
+      "personId": "lv-bu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "吕布",
+      "paragraphText": "吕布出兵来战，先用骑兵冲这支青州兵。青州兵一冲就散，四散奔逃；曹操的阵跟着乱了，他冲出火里，从马上摔下来，左手掌被烧伤。司马楼异把他扶上马，这才退走。"
+    },
+    {
+      "personId": "xun-yu",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "荀彧",
+      "paragraphText": "荀彧、程昱守住鄄城；范县和东阿两个县，也守住了。"
+    },
+    {
+      "personId": "cheng-yu",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 3,
+      "text": "程昱",
+      "paragraphText": "荀彧、程昱守住鄄城；范县和东阿两个县，也守住了。"
+    },
+    {
+      "personId": "lou-yi",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 62,
+      "text": "楼异",
+      "paragraphText": "吕布出兵来战，先用骑兵冲这支青州兵。青州兵一冲就散，四散奔逃；曹操的阵跟着乱了，他冲出火里，从马上摔下来，左手掌被烧伤。司马楼异把他扶上马，这才退走。"
+    }
+  ]
+}

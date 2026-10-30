@@ -1,0 +1,322 @@
+{
+  "people": [
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "汉王是刘邦。楚汉以鸿沟为界订约后，他听从张良、陈平的建议追击项羽，最终在垓下会合诸侯军队。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "082"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-liang",
+      "name": "张良",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "张良是刘邦的重要谋士。楚汉订约后，他与陈平劝刘邦继续追击，又建议以土地约请韩信、彭越会军；后来受封留侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十五·留侯世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷055"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-ping",
+      "name": "陈平",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "陈平是刘邦的谋士，此前曾属项羽，后来归汉。他在楚汉订约后与张良劝刘邦继续追击，后来在汉朝官至丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷五十六·陈丞相世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷056"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-xin",
+      "name": "韩信",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "韩信是汉方将领，此时称齐王。刘邦约他与彭越会军击楚，后依张良建议许以土地，韩信率军到垓下；他后来被贬为淮阴侯，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            },
+            {
+              "kind": "local",
+              "id": "082"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十二·淮阴侯列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷092"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peng-yue",
+      "name": "彭越",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "彭越是汉方将领，曾在梁地袭扰楚军。刘邦许以土地后，他与韩信等会军垓下；后来封梁王，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "072"
+            },
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "082"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十·魏豹彭越列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷090"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhou-yin",
+      "name": "周殷",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "周殷原是楚方大司马。垓下决战前，他背楚并带兵与刘贾、彭越会合；本段没有交代他的后事。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "082"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-jia",
+      "name": "刘贾",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "刘贾是汉方将领，此时率军从寿春方向进军，与韩信等会合于垓下。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "082"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yu",
+      "name": "虞",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "虞是《史记·项羽本纪》所记常随项羽的美人。垓下围困时，她与项羽唱和；本段没有交代她此后的下落。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "083"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guan-ying",
+      "name": "灌婴",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "灌婴是汉军骑将。项羽突围后，汉军派他率骑兵追击；后来他在汉朝官至丞相。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "084"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十五·樊郦滕灌列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷095"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-xi",
+      "name": "杨喜",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "赤泉侯是杨喜的后封爵号。《史记》在东城追击处用这个称号；项羽死后，杨喜因参与取得遗体而受封赤泉侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "086"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "liu-bang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "汉王",
+      "paragraphText": "汉王本来要往西回去。张良、陈平劝他："
+    },
+    {
+      "personId": "zhang-liang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "张良",
+      "paragraphText": "汉王本来要往西回去。张良、陈平劝他："
+    },
+    {
+      "personId": "chen-ping",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "陈平",
+      "paragraphText": "汉王本来要往西回去。张良、陈平劝他："
+    },
+    {
+      "personId": "han-xin",
+      "beat": 1,
+      "paragraph": 6,
+      "offset": 28,
+      "text": "韩信",
+      "paragraphText": "汉王听了。汉五年，汉王追项王到阳夏南边，停下军队，与齐王韩信、建成侯彭越约期会合击楚。"
+    },
+    {
+      "personId": "peng-yue",
+      "beat": 1,
+      "paragraph": 6,
+      "offset": 34,
+      "text": "彭越",
+      "paragraphText": "汉王听了。汉五年，汉王追项王到阳夏南边，停下军队，与齐王韩信、建成侯彭越约期会合击楚。"
+    },
+    {
+      "personId": "zhou-yin",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 3,
+      "text": "周殷",
+      "paragraphText": "大司马周殷叛楚，带着舒地的兵屠了六，把九江的兵都举起来，跟着刘贾、彭越一起到垓下，去见项王。"
+    },
+    {
+      "personId": "liu-jia",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 30,
+      "text": "刘贾",
+      "paragraphText": "大司马周殷叛楚，带着舒地的兵屠了六，把九江的兵都举起来，跟着刘贾、彭越一起到垓下，去见项王。"
+    },
+    {
+      "personId": "yu",
+      "beat": 5,
+      "paragraph": 6,
+      "offset": 5,
+      "text": "美人",
+      "paragraphText": "歌了几遍，美人和着他唱。项王的泪一行行落下来，左右的人都在哭，没有谁能抬起头来看他。"
+    },
+    {
+      "personId": "guan-ying",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "灌婴",
+      "paragraphText": "天亮时汉军才发觉，令骑将灌婴带五千骑追他。"
+    },
+    {
+      "personId": "yang-xi",
+      "beat": 8,
+      "paragraph": 3,
+      "offset": 2,
+      "text": "赤泉侯",
+      "paragraphText": "这时赤泉侯做骑将，追项王。项王瞪眼叱他，赤泉侯人马都惊了，退避了好几里。他的骑兵分三处会合了。汉军不知道项王在哪一处，就把兵分成三支，又围上来。"
+    }
+  ]
+}

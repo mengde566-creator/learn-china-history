@@ -1,0 +1,267 @@
+{
+  "people": [
+    {
+      "id": "lv-matong",
+      "name": "吕马童",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "吕马童是汉军骑司马。乌江一战中，项羽称他是故人；项羽死后，吕马童参与取得其遗体，后来受封中水侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "088"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-yi",
+      "name": "王翳",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "王翳是汉军骑兵中的一员。乌江之战中吕马童向他指出项羽；项羽死后，王翳取得项羽首级，后来受封杜衍侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "088"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-xi",
+      "name": "杨喜",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "杨喜是汉军郎中骑，曾参与追击项羽。《史记》记他在项羽死后取得其遗体一部分，后来受封赤泉侯；此前追击段落中的“赤泉侯”是后来的爵号。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "086"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-sheng",
+      "name": "吕胜",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "吕胜是汉军郎中。项羽死后，他与其他数人各得遗体一部分，后来受封涅阳侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-wu",
+      "name": "杨武",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "杨武是汉军中参与取得项羽遗体的人之一。项羽死后，他与其他数人各得遗体一部分，后来受封吴防侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "089"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huai-wang",
+      "name": "楚怀王",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "楚怀王名心，是旧楚王室后裔，曾被项梁等拥立为王，并封项羽为鲁公。后来他被尊为义帝，又遭项羽暗中派人杀害。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "local",
+              "id": "090"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-bo",
+      "name": "项伯",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "项伯是项羽的叔父，曾在鸿门宴前帮助刘邦。项羽死后，刘邦未杀项氏枝属，封项伯为射阳侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "091"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-qian",
+      "name": "司马迁",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "太史公是《史记》作者司马迁在书中的自称。此处是他对项羽一生的评论，与前面的事件记述有所区别。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "092"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷一百三十·太史公自序",
+              "url": "https://zh.wikisource.org/wiki/史記/卷130"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-she",
+      "name": "陈胜",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "陈涉即陈胜，秦末与吴广发动起兵，自立为张楚王。他的起事早于项羽的崛起；后来陈胜在败退中被部下杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "092"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十八·陈涉世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷048"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "lv-matong",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "吕马童",
+      "paragraphText": "他回头看见汉骑司马吕马童，说：你不是我的故人吗？"
+    },
+    {
+      "personId": "wang-yi",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 10,
+      "text": "王翳",
+      "paragraphText": "吕马童面对着他，指给王翳看：这就是项王。"
+    },
+    {
+      "personId": "yang-xi",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "杨喜",
+      "paragraphText": "最后，郎中骑杨喜、骑司马吕马童、郎中吕胜、杨武各得了他身体的一部分。五个人把各自拿到的一块凑在一起，都能对上，所以是真的。"
+    },
+    {
+      "personId": "lv-sheng",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 18,
+      "text": "吕胜",
+      "paragraphText": "最后，郎中骑杨喜、骑司马吕马童、郎中吕胜、杨武各得了他身体的一部分。五个人把各自拿到的一块凑在一起，都能对上，所以是真的。"
+    },
+    {
+      "personId": "yang-wu",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 21,
+      "text": "杨武",
+      "paragraphText": "最后，郎中骑杨喜、骑司马吕马童、郎中吕胜、杨武各得了他身体的一部分。五个人把各自拿到的一块凑在一起，都能对上，所以是真的。"
+    },
+    {
+      "personId": "huai-wang",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "楚怀王",
+      "paragraphText": "当初楚怀王封项籍为鲁公；到他死，鲁最后降，所以用鲁公的礼把项王葬在穀城。"
+    },
+    {
+      "personId": "xiang-bo",
+      "beat": 6,
+      "paragraph": 4,
+      "offset": 13,
+      "text": "项伯",
+      "paragraphText": "项氏的枝属，汉王都不杀。封项伯为射阳侯。桃侯、平皋侯、玄武侯都是项氏，赐姓刘。"
+    },
+    {
+      "personId": "sima-qian",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太史公",
+      "paragraphText": "太史公说："
+    },
+    {
+      "personId": "chen-she",
+      "beat": 7,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "陈涉",
+      "paragraphText": "秦失了政，陈涉首先发难，豪杰蜂起，互相并争，数也数不清。可是项羽没有尺寸的凭藉，从陇亩之中起兵，三年，带着五诸侯灭了秦："
+    }
+  ]
+}
