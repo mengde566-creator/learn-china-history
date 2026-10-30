@@ -317,6 +317,139 @@
           ]
         }
       ]
+    },
+    {
+      "id": "yao-xing",
+      "name": "姚兴",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "姚兴是后秦君主。本篇开头他已死，子姚泓继位，兄弟相争，关中扰乱；刘裕因此北伐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "101"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tuoba-si",
+      "name": "托跋嗣",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "托跋嗣即北魏明元帝拓跋嗣，是姚兴的女婿。本篇他派兵屯黄河北岸，尾随刘裕大军；后来继续在位，至 423 年去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "101"
+            },
+            {
+              "kind": "external",
+              "book": "《魏书》",
+              "section": "卷三·太宗纪",
+              "url": "https://zh.wikisource.org/wiki/魏書/卷3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-qing",
+      "name": "鹅青",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "鹅青是托跋嗣之弟、黄门郎。本篇他率一路兵屯河北；此后材料未载其经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "101"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tuoba-song",
+      "name": "托跋嵩",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "托跋嵩是北魏南平公。本篇率三万骑攻却月阵，被晋军弩、矟击退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "105"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a-bogan",
+      "name": "阿薄干",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "阿薄干是北魏青州刺史。本篇率兵屯河北，被朱超石临阵斩首。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "101"
+            },
+            {
+              "kind": "local",
+              "id": "106"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu-fan",
+      "name": "胡藩",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "胡藩是刘裕部将。本篇与朱超石追击北魏军；后来在刘裕麾下任郡守等职。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "106"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-rongzu",
+      "name": "刘荣祖",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "刘荣祖是刘裕部将。本篇与朱超石、胡藩一同追击北魏军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "106"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
@@ -415,6 +548,62 @@
       "offset": 24,
       "text": "姚洸",
       "paragraphText": "十月，众军到洛阳，围金墉。姚泓的弟弟、伪平南将军姚洸请降，被送到京师。于是修复晋室五陵，设置守卫。"
+    },
+    {
+      "personId": "yao-xing",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 16,
+      "text": "姚兴",
+      "paragraphText": "荆、雍平定，才又谋外略。正好羌主姚兴死，儿子姚泓立，兄弟相杀，关中扰乱。他于是戒严北讨，加领征西将军、司豫二州刺史；以世子为徐、兖二州刺史。"
+    },
+    {
+      "personId": "tuoba-si",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "托跋嗣",
+      "paragraphText": "北魏这一边，托跋嗣是姚兴的女婿。他派出几路兵：弟弟黄门郎鹅青，以及冀州、襄州、青州三处的刺史，共步骑十万，屯在黄河北岸。常有数千名骑兵沿着河岸尾随大军，大军进他们就进，大军停他们就停。"
+    },
+    {
+      "personId": "e-qing",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 28,
+      "text": "鹅青",
+      "paragraphText": "北魏这一边，托跋嗣是姚兴的女婿。他派出几路兵：弟弟黄门郎鹅青，以及冀州、襄州、青州三处的刺史，共步骑十万，屯在黄河北岸。常有数千名骑兵沿着河岸尾随大军，大军进他们就进，大军停他们就停。"
+    },
+    {
+      "personId": "tuoba-song",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 51,
+      "text": "托跋嵩",
+      "paragraphText": "虏见营阵已经立起来，就进围营。超石先用软弓小箭射他们。虏以为这边人少兵弱，四面都到了。托跋嗣又派南平公托跋嵩带三万骑来，于是肉薄攻营。"
+    },
+    {
+      "personId": "a-bogan",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "阿薄干",
+      "paragraphText": "虏众挡不住，一时奔溃，临阵斩了阿薄干的首级，虏退还半城。"
+    },
+    {
+      "personId": "hu-fan",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 3,
+      "text": "胡藩",
+      "paragraphText": "超石率胡藩、刘荣祖等人追，又被虏围住，奋力打了一整天，杀虏以千计，虏才退走。"
+    },
+    {
+      "personId": "liu-rongzu",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 6,
+      "text": "刘荣祖",
+      "paragraphText": "超石率胡藩、刘荣祖等人追，又被虏围住，奋力打了一整天，杀虏以千计，虏才退走。"
     }
   ]
 }
