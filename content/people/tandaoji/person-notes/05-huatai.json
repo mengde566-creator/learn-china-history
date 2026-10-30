@@ -102,6 +102,29 @@
           ]
         }
       ]
+    },
+    {
+      "id": "dao-yanzhi",
+      "name": "到彦之",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "到彦之是宋文帝时的将领。本篇只记他先取河南、后又失守，未在正文出名；后来元嘉七年北伐，他先胜后败，弃军而退。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十六·到彦之传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷46"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [

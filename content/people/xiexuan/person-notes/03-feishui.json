@@ -208,6 +208,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "zhang-hao",
+      "name": "张蚝",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "张蚝是前秦猛将，本篇随苻融等南下，又在淝水前线抵住谢石军。淝水战后前秦瓦解，所取材料未展开他的结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷一百十四·苻坚载记",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷114"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
@@ -266,6 +293,14 @@
       "offset": 4,
       "text": "梁成",
       "paragraphText": "一战斩了梁成和他的弟弟梁云，敌方步骑崩溃，争着往淮水里跳。"
+    },
+    {
+      "personId": "zhang-hao",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "张蚝",
+      "paragraphText": "先遣苻融、慕容暐、张蚝、苻方等到颍口，梁成、王显等屯洛涧。"
     }
   ]
 }

@@ -173,6 +173,29 @@
           ]
         }
       ]
+    },
+    {
+      "id": "fu-liang",
+      "name": "傅亮",
+      "versions": [
+        {
+          "from": 4,
+          "to": 9,
+          "text": "傅亮是宋初尚书仆射，与徐羡之同预废立。本篇正文只以「等」带过，未出其名；后来他参与废少帝，被文帝诛杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "external",
+              "book": "《宋书》",
+              "section": "卷四十三·傅亮传",
+              "url": "https://zh.wikisource.org/wiki/宋書/卷43"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [

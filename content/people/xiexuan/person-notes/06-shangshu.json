@@ -121,6 +121,25 @@
           ]
         }
       ]
+    },
+    {
+      "id": "xiao-wudi",
+      "name": "孝武帝",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "孝武帝是东晋皇帝司马曜，本篇谢玄上疏时在位。后来他在 396 年被宫中之人杀害，朝局随之变动。",
+          "sources": [
+            {
+              "kind": "external",
+              "book": "《晋书》",
+              "section": "卷九·孝武帝纪",
+              "url": "https://zh.wikisource.org/wiki/晉書/卷009"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
