@@ -1,0 +1,113 @@
+{
+  "people": [
+    {
+      "id": "qin-wang-zheng",
+      "name": "秦王政",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "秦王政即后来的秦始皇。本篇他在咸阳宫以九宾之礼接见燕使，被荆轲追击、绕柱而走，后拔剑砍伤荆轲；后来他灭六国称帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "061"
+            },
+            {
+              "kind": "local",
+              "id": "073"
+            },
+            {
+              "kind": "local",
+              "id": "074"
+            },
+            {
+              "kind": "local",
+              "id": "075"
+            },
+            {
+              "kind": "local",
+              "id": "076"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-wuwang",
+      "name": "秦舞阳",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "秦舞阳是燕国勇士，荆轲的副手。本篇他捧地图匣上殿，到台阶下色变振恐，由荆轲代为谢罪；此后材料未载其结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "local",
+              "id": "063"
+            },
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "local",
+              "id": "065"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xia-wuqie",
+      "name": "夏无且",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "夏无且是秦王的侍医。本篇他用药囊砸向荆轲，为秦王争取拔剑的时间；后来秦王论功，赐他黄金二百溢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "072"
+            },
+            {
+              "kind": "local",
+              "id": "077"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "qin-wang-zheng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "秦王",
+      "paragraphText": "秦王穿着朝服，在咸阳宫设九宾之礼接见燕使。"
+    },
+    {
+      "personId": "qin-wuwang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "秦舞阳",
+      "paragraphText": "荆轲捧头函，秦舞阳捧地图匣，按次序向前。刚到台阶下，秦舞阳就变了脸色，浑身发抖；殿上的群臣看着，觉得奇怪。"
+    },
+    {
+      "personId": "xia-wuqie",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "夏无且",
+      "paragraphText": "这时，侍医夏无且把手里捧着的药囊砸向荆轲。"
+    }
+  ]
+}

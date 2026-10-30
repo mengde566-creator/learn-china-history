@@ -1,0 +1,88 @@
+{
+  "people": [
+    {
+      "id": "tian-guang",
+      "name": "田光",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "田光是燕国处士。本篇太子丹迎他求计，他自陈年老，举荐荆轲；因太子叮嘱勿泄、疑其不能守密，他以自刎表明心迹。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "024"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taizi-dan",
+      "name": "太子丹",
+      "versions": [
+        {
+          "from": 2,
+          "to": 9,
+          "text": "太子丹是燕国太子。本篇他迎田光、避席求教，又叮嘱勿泄；田光死后，他膝行流涕，随后尊荆轲为上卿。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "tian-guang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "田光",
+      "paragraphText": "田光应下了这场相见，说：「敬奉教。」随后动身去拜访太子。"
+    },
+    {
+      "personId": "taizi-dan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太子丹",
+      "paragraphText": "太子丹迎了出来。"
+    }
+  ]
+}

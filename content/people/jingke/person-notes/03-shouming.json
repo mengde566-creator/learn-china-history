@@ -1,0 +1,227 @@
+{
+  "people": [
+    {
+      "id": "tian-guang",
+      "name": "田光",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "田光已在本篇之前自刎。荆轲把他的死讯和遗言转达太子丹，说明他没有泄露秘密。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taizi-dan",
+      "name": "太子丹",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "太子丹是燕国太子。本篇他听荆轲转达田光遗言，随后陈述刺秦计划：劫持秦王归还侵地，不成则刺杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-jian",
+      "name": "王翦",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "王翦是秦国名将。本篇太子丹说秦已虏韩王，王翦率数十万众抵漳、邺；后来他攻破赵国、燕国，又率军灭楚。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七十三·王翦列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷073"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-xin",
+      "name": "李信",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "李信是秦国将领。本篇太子丹说李信从太原、云中出兵；后来他攻楚失败，又与王翦灭燕、齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七十三·王翦列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷073"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-wang",
+      "name": "韩王",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "韩王指韩王安，韩国末代君主。本篇太子丹说秦已虏韩王、尽收其地；韩在此时已亡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十五·韩世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷045"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-mo",
+      "name": "曹沫",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "曹沫是鲁国将领，曾在与齐桓公会盟时持匕首劫持桓公，逼他归还鲁国侵地。太子丹以此作为劫持秦王的先例。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十六·刺客列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷086"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qi-huangong",
+      "name": "齐桓公",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "齐桓公是春秋时齐国君主，曾与鲁会盟，被曹沫劫持而许诺归还鲁地。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷三十二·齐太公世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷032"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "tian-guang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "田光",
+      "paragraphText": "荆轲来到太子面前，将田光的死讯与临终的话一并转达：田光以死表明，他没有泄露秘密。"
+    },
+    {
+      "personId": "taizi-dan",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太子",
+      "paragraphText": "太子拜了两拜，跪下来，用膝盖往前走。"
+    },
+    {
+      "personId": "wang-jian",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 30,
+      "text": "王翦",
+      "paragraphText": "「韩王已经被虏，地全部归了秦。秦又举兵南伐楚，北面压着赵——王翦带几十万人抵在漳、邺，李信从太原、云中出来。」"
+    },
+    {
+      "personId": "li-xin",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 43,
+      "text": "李信",
+      "paragraphText": "「韩王已经被虏，地全部归了秦。秦又举兵南伐楚，北面压着赵——王翦带几十万人抵在漳、邺，李信从太原、云中出来。」"
+    },
+    {
+      "personId": "han-wang",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 1,
+      "text": "韩王",
+      "paragraphText": "「韩王已经被虏，地全部归了秦。秦又举兵南伐楚，北面压着赵——王翦带几十万人抵在漳、邺，李信从太原、云中出来。」"
+    },
+    {
+      "personId": "cao-mo",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 30,
+      "text": "曹沫",
+      "paragraphText": "「最好的结果是：劫住秦王，逼他把侵占诸侯的地全部还回来。就像曹沫对齐桓公那样。」"
+    },
+    {
+      "personId": "qi-huangong",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 33,
+      "text": "齐桓公",
+      "paragraphText": "「最好的结果是：劫住秦王，逼他把侵占诸侯的地全部还回来。就像曹沫对齐桓公那样。」"
+    }
+  ]
+}

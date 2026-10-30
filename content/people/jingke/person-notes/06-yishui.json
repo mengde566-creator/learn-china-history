@@ -1,0 +1,105 @@
+{
+  "people": [
+    {
+      "id": "taizi-dan",
+      "name": "太子丹",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "太子丹是燕国太子。本篇他与知情的宾客穿白衣冠送荆轲至易水；后来荆轲刺秦失败，秦攻燕，他被燕王喜斩杀献秦。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-jianli",
+      "name": "高渐离",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "高渐离是燕人，善击筑。本篇他在易水边为荆轲击筑送行；后来荆轲死后，他变名姓藏于宋子，被秦始皇召见，以铅筑扑击始皇未中而被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "local",
+              "id": "084"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            },
+            {
+              "kind": "local",
+              "id": "090"
+            },
+            {
+              "kind": "local",
+              "id": "091"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-wuwang",
+      "name": "秦舞阳",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "秦舞阳是燕国勇士，本篇作为荆轲副手同行。所取材料未记他在易水送行时的表现。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "local",
+              "id": "062"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "taizi-dan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太子",
+      "paragraphText": "太子和知道此事的宾客前来相送。他们都穿着白衣，戴着白冠。"
+    },
+    {
+      "personId": "gao-jianli",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "高渐离",
+      "paragraphText": "高渐离击筑。"
+    }
+  ]
+}

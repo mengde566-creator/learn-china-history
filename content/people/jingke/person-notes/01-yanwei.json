@@ -1,0 +1,352 @@
+{
+  "people": [
+    {
+      "id": "wei-yuanjun",
+      "name": "卫元君",
+      "versions": [
+        {
+          "from": 2,
+          "to": 10,
+          "text": "卫元君是战国时卫国的君主。荆轲曾以主张游说他，没有被采用；后来秦伐魏、置东郡，把他的旁支亲属迁到野王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷三十七·卫康叔世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷037"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gai-nie",
+      "name": "盖聂",
+      "versions": [
+        {
+          "from": 3,
+          "to": 10,
+          "text": "盖聂是榆次的剑客。本篇荆轲与他论剑，话不投机，盖聂怒目相视；荆轲随即离开榆次。此后材料未载他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-goujian",
+      "name": "鲁勾践",
+      "versions": [
+        {
+          "from": 4,
+          "to": 10,
+          "text": "鲁勾践是邯郸的博戏者。本篇他与荆轲博戏争执，怒斥荆轲；后来他听说荆轲刺秦失败，私下感叹荆轲不讲刺剑之术。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十六·刺客列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷086"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gou-tu",
+      "name": "狗屠",
+      "versions": [
+        {
+          "from": 5,
+          "to": 10,
+          "text": "狗屠是燕国市上的屠狗者，与荆轲、高渐离一同饮酒。材料未载其姓名和后来的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-jianli",
+      "name": "高渐离",
+      "versions": [
+        {
+          "from": 5,
+          "to": 10,
+          "text": "高渐离是燕人，善击筑，与荆轲在燕市饮酒和歌。荆轲死后，他变名姓为人佣保，后被秦始皇赦免令其击筑；他把铅藏在筑中扑击始皇，未中，被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "084"
+            },
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "local",
+              "id": "086"
+            },
+            {
+              "kind": "local",
+              "id": "087"
+            },
+            {
+              "kind": "local",
+              "id": "088"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            },
+            {
+              "kind": "local",
+              "id": "090"
+            },
+            {
+              "kind": "local",
+              "id": "091"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-guang",
+      "name": "田光",
+      "versions": [
+        {
+          "from": 6,
+          "to": 10,
+          "text": "田光是燕国的处士，为人智深勇沉。本篇他看出荆轲不是平庸之人；后来向太子丹举荐荆轲，并以自刎表明没有泄露国事。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taizi-dan",
+      "name": "太子丹",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "太子丹是燕国太子，曾在赵国为质，与少年秦王政相善；后在秦国为质受冷遇，逃回燕国，谋刺秦王。后来荆轲刺秦失败，秦攻燕，燕王喜斩丹以献秦。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-wang-zheng",
+      "name": "秦王政",
+      "versions": [
+        {
+          "from": 7,
+          "to": 10,
+          "text": "秦王政即后来的秦始皇。他生于赵国，少年时与太子丹相善；本篇时已为秦王，正蚕食山东诸侯。后来他统一六国，称皇帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ju-wu",
+      "name": "鞠武",
+      "versions": [
+        {
+          "from": 8,
+          "to": 10,
+          "text": "鞠武是太子丹的太傅。本篇他劝太子不要因受秦之怨去碰秦的逆鳞，后来又劝不要收留樊於期，并推荐田光。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-wuqi",
+      "name": "樊於期",
+      "versions": [
+        {
+          "from": 9,
+          "to": 10,
+          "text": "樊於期是秦国将领，得罪秦王后逃到燕国，太子丹接纳了他。后来荆轲请求以他的首级取信秦王，他自刭而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "046"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "wei-yuanjun",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "卫元君",
+      "paragraphText": "他曾经拿自己的主张去游说卫元君。卫元君没有用他。"
+    },
+    {
+      "personId": "gai-nie",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "盖聂",
+      "paragraphText": "荆轲游历到榆次，和盖聂论剑。"
+    },
+    {
+      "personId": "lu-goujian",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "鲁勾践",
+      "paragraphText": "鲁勾践和他博戏，争起路数来。鲁勾践发怒，呵斥他。"
+    },
+    {
+      "personId": "gou-tu",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "狗屠",
+      "paragraphText": "荆轲嗜酒。天天和狗屠、高渐离在燕国的市上喝酒。"
+    },
+    {
+      "personId": "gao-jianli",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 33,
+      "text": "高渐离",
+      "paragraphText": "荆轲到了燕国之后，喜欢燕国的一个杀狗的屠夫，和一个善于击筑的人——高渐离。"
+    },
+    {
+      "personId": "tian-guang",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 10,
+      "text": "田光",
+      "paragraphText": "他到燕国，燕国的处士田光先生也待他很好——知道他不是一个平庸的人。"
+    },
+    {
+      "personId": "taizi-dan",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "太子丹",
+      "paragraphText": "过了一阵，燕太子丹从秦国逃回来了。"
+    },
+    {
+      "personId": "qin-wang-zheng",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "秦王政",
+      "paragraphText": "太子丹从前在赵国做过人质。秦王政生在赵国，小时候和丹很要好。"
+    },
+    {
+      "personId": "ju-wu",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "鞠武",
+      "paragraphText": "太子丹忧虑这件事，去问他的太傅鞠武。"
+    },
+    {
+      "personId": "fan-wuqi",
+      "beat": 9,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "樊於期",
+      "paragraphText": "又过了一阵。秦将樊於期得罪了秦王，逃到燕国。"
+    }
+  ]
+}

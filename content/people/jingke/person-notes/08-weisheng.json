@@ -1,0 +1,294 @@
+{
+  "people": [
+    {
+      "id": "xia-wuqie",
+      "name": "夏无且",
+      "versions": [
+        {
+          "from": 1,
+          "to": 9,
+          "text": "夏无且是秦王侍医。本篇秦王论功，因他用药囊砸荆轲，赐黄金二百溢。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-jian",
+      "name": "王翦",
+      "versions": [
+        {
+          "from": 2,
+          "to": 9,
+          "text": "王翦是秦将。本篇秦王增兵赵地，诏王翦军伐燕，十月拔蓟城；后来他率军灭楚。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "078"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七十三·王翦列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷073"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yan-wang-xi",
+      "name": "燕王喜",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "燕王喜是燕国末代君主。本篇他退保辽东，听代王嘉之信斩杀太子丹献秦，秦仍进兵；后五年燕亡，他被俘。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            },
+            {
+              "kind": "local",
+              "id": "082"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taizi-dan",
+      "name": "太子丹",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "太子丹是燕国太子。本篇秦攻燕，他退到辽东、藏于衍水，被父亲燕王喜派使者斩杀献秦。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-xin",
+      "name": "李信",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "李信是秦将。本篇他追击燕王喜、太子丹；后来与王翦灭燕、齐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "081"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷七十三·王翦列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷073"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dai-wang-jia",
+      "name": "代王嘉",
+      "versions": [
+        {
+          "from": 3,
+          "to": 9,
+          "text": "代王嘉是赵国残余势力的代王。本篇他派人送信给燕王喜，劝其杀太子丹献秦。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十三·赵世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷043"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-jianli",
+      "name": "高渐离",
+      "versions": [
+        {
+          "from": 6,
+          "to": 9,
+          "text": "高渐离是燕人，善击筑。本篇他变名姓藏于宋子，后被秦始皇召见；他把铅藏筑中扑击始皇，未中，被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "084"
+            },
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "local",
+              "id": "086"
+            },
+            {
+              "kind": "local",
+              "id": "087"
+            },
+            {
+              "kind": "local",
+              "id": "088"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            },
+            {
+              "kind": "local",
+              "id": "090"
+            },
+            {
+              "kind": "local",
+              "id": "091"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷八十六·刺客列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷086"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-shihuang",
+      "name": "秦始皇",
+      "versions": [
+        {
+          "from": 8,
+          "to": 9,
+          "text": "秦始皇即秦王政。本篇他灭燕后称帝，追捕太子丹、荆轲的门客；后来召高渐离击筑，险被其刺杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "077"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            },
+            {
+              "kind": "local",
+              "id": "090"
+            },
+            {
+              "kind": "local",
+              "id": "091"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xia-wuqie",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "夏无且",
+      "paragraphText": "夏无且得了黄金二百溢。秦王说明赏赐的缘由："
+    },
+    {
+      "personId": "wang-jian",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 11,
+      "text": "王翦",
+      "paragraphText": "他增派军队到赵地，下令王翦的部队伐燕。"
+    },
+    {
+      "personId": "yan-wang-xi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "燕王喜",
+      "paragraphText": "燕王喜、太子丹带着全部精兵往东退，退到辽东。"
+    },
+    {
+      "personId": "taizi-dan",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "太子丹",
+      "paragraphText": "燕王喜、太子丹带着全部精兵往东退，退到辽东。"
+    },
+    {
+      "personId": "li-xin",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "李信",
+      "paragraphText": "秦将李信追燕王追得急。"
+    },
+    {
+      "personId": "dai-wang-jia",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "代王嘉",
+      "paragraphText": "代王嘉派人给燕王喜送去一封信。信里说："
+    },
+    {
+      "personId": "gao-jianli",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "高渐离",
+      "paragraphText": "高渐离改了姓名，做了别人的佣工。"
+    },
+    {
+      "personId": "qin-shihuang",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "秦始皇",
+      "paragraphText": "这件事传到了秦始皇那里。秦始皇召见他。"
+    }
+  ]
+}
