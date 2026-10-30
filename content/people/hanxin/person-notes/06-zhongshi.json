@@ -172,6 +172,103 @@
           ]
         }
       ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "汉王",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "汉王即刘邦，后为汉高祖。本篇他袭夺韩信军、徙为楚王，又用陈平计擒韩信，降为淮阴侯；后来平定陈豨，韩信已被吕后所杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "local",
+              "id": "062"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-yu",
+      "name": "项羽",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "项羽是西楚霸王。本篇开头他已败亡；其亡将钟离眛逃归韩信，成为刘邦追捕韩信的一个由头。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "055"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piao-mu",
+      "name": "漂母",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "漂母是韩信早年寄食时供饭的城下老妇。本篇韩信封楚王后找到她，赐千金。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ting-zhang",
+      "name": "南昌亭长",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "南昌亭长是韩信早年寄食的亭长。本篇韩信封楚王后赐他百钱，说他「为德不卒」。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kua-xia-shaonian",
+      "name": "胯下少年",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "胯下少年是当年羞辱韩信的淮阴屠中少年。本篇韩信封楚王后召见他，任为楚中尉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "054"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
@@ -230,6 +327,46 @@
       "offset": 46,
       "text": "蒯通",
       "paragraphText": "高祖从陈豨的军中回来，到了，见信死了，且喜且怜之。问：信死的时候说了什么？吕后说：信说恨不用蒯通的计。高祖说：那是齐的辩士。就下诏齐地捕蒯通。"
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "汉王",
+      "paragraphText": "汉王随即把齐王的军拿走："
+    },
+    {
+      "personId": "xiang-yu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "项羽",
+      "paragraphText": "项羽破了。"
+    },
+    {
+      "personId": "piao-mu",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "漂母",
+      "paragraphText": "那个漂母，他找到了，赐她千金。"
+    },
+    {
+      "personId": "ting-zhang",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 2,
+      "text": "南昌亭长",
+      "paragraphText": "下乡南昌亭长，赐百钱，说："
+    },
+    {
+      "personId": "kua-xia-shaonian",
+      "beat": 2,
+      "paragraph": 5,
+      "offset": 13,
+      "text": "少年",
+      "paragraphText": "那个当年让他从胯下爬过去的少年，他召来，做楚中尉。"
     }
   ]
 }

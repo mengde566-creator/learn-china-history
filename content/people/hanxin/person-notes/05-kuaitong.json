@@ -116,6 +116,54 @@
           ]
         }
       ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "汉王",
+      "versions": [
+        {
+          "from": 2,
+          "to": 8,
+          "text": "汉王即刘邦。本篇蒯通反复以汉王与韩信的交情立论，劝韩信自立；后来韩信被徙楚王、降淮阴侯，最终被杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gou-jian",
+      "name": "句践",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "句践是越王。本篇蒯通举大夫种、范蠡辅佐句践称霸、功成后或死或亡为例，劝韩信考虑功高之后的处境。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷四十一·越王句践世家",
+              "url": "https://zh.wikisource.org/wiki/史記/卷041"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
@@ -157,6 +205,22 @@
       "paragraph": 0,
       "offset": 11,
       "text": "范蠡",
+      "paragraphText": "他又举两个人：大夫种、范蠡，存了将亡的越，让句践称霸；功立了，名成了，人是死的死、亡的亡。"
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 2,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "汉王",
+      "paragraphText": "汉王带几十万人，守在巩、雒，靠着山河的险，一天打好几仗，没有尺寸之功；败了救不回来，荥阳失守，成皋伤了，跑到宛、叶之间。这就是所谓智勇俱困。"
+    },
+    {
+      "personId": "gou-jian",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 22,
+      "text": "句践",
       "paragraphText": "他又举两个人：大夫种、范蠡，存了将亡的越，让句践称霸；功立了，名成了，人是死的死、亡的亡。"
     }
   ]

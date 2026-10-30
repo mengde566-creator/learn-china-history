@@ -89,6 +89,31 @@
           ]
         }
       ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "汉王",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "汉王即刘邦。本篇韩信破赵后请他立张耳为赵王，汉王答应；后来韩信被徙为楚王、再降淮阴侯，都在刘邦称帝前后。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
@@ -123,6 +148,14 @@
       "offset": 0,
       "text": "赵王",
       "paragraphText": "赵王和成安君陈馀听说汉军要来偷袭，把兵聚在井陉口。"
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 8,
+      "paragraph": 21,
+      "offset": 21,
+      "text": "汉王",
+      "paragraphText": "然后他派人报汉，请立张耳为赵王，镇抚赵地。汉王答应了。"
     }
   ]
 }

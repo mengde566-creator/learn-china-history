@@ -177,6 +177,87 @@
           ]
         }
       ]
+    },
+    {
+      "id": "liu-bang",
+      "name": "汉王",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "汉王即刘邦。本篇他夺韩信、张耳军，令张耳守赵、韩信击齐；后来韩信请为假齐王，他听从张良、陈平之计封其为齐王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiang-yu",
+      "name": "项王",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "项羽是西楚霸王。本篇楚将龙且败死后，项羽恐惧，派武涉游说韩信；后来项羽败亡，韩信被徙为楚王。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "053"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teng-gong",
+      "name": "滕公",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "滕公即夏侯婴，汉王近臣。本篇他随汉王到修武、取韩信军；后来任太仆，历事高祖、惠帝、文帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "external",
+              "book": "《史记》",
+              "section": "卷九十五·樊郦滕灌列传",
+              "url": "https://zh.wikisource.org/wiki/史記/卷095"
+            }
+          ]
+        }
+      ]
     }
   ],
   "occurrences": [
@@ -242,6 +323,22 @@
       "paragraph": 0,
       "offset": 16,
       "text": "武涉",
+      "paragraphText": "楚折了龙且，项王害怕了，派盱眙人武涉去说齐王韩信。"
+    },
+    {
+      "personId": "liu-bang",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "汉王",
+      "paragraphText": "汉王夺了两个人的军，即令张耳备守赵地；拜韩信为相国，收赵兵还没有发遣的，去击齐。"
+    },
+    {
+      "personId": "xiang-yu",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "项王",
       "paragraphText": "楚折了龙且，项王害怕了，派盱眙人武涉去说齐王韩信。"
     }
   ]
