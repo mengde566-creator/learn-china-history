@@ -1,0 +1,158 @@
+{
+  "people": [
+    {
+      "id": "zhao-xiaocheng",
+      "name": "趙孝成王",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "趙孝成王是趙國之君。本篇他感激公子矯奪晉鄙兵而存趙，與平原君計，以五城封公子；後因公子辭讓，五城未獻，只以鄗為湯沐邑。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "local",
+              "id": "057"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pingyuan-jun",
+      "name": "平原君",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "平原君是趙公子、公子姊夫。本篇他聽說公子與博徒、賣漿者交遊，譏公子為「妄人」；公子要離開，他才免冠謝罪，但門下士已半去歸公子。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "060"
+            },
+            {
+              "kind": "local",
+              "id": "062"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mao-gong",
+      "name": "毛公",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "毛公是趙國處士，藏身博徒之中。本篇公子閒步往訪，與他交遊甚歡；後來秦攻魏，他與薛公勸公子歸救魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xue-gong",
+      "name": "薛公",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "薛公是趙國處士，藏身賣漿之家。本篇公子往訪，與他交遊；後來他與毛公以「公子所以重於趙，徒以有魏」勸公子歸救魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhao-xiaocheng",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "趙孝成王",
+      "paragraphText": "趙孝成王感激公子假奪晉鄙之兵而存趙，於是與平原君商議，拿五城封公子。公子聽說，意氣驕矜，臉上露出自以為有功的神色。"
+    },
+    {
+      "personId": "pingyuan-jun",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "平原君",
+      "paragraphText": "平原君聽說這件事，對他的夫人說："
+    },
+    {
+      "personId": "mao-gong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "毛公",
+      "paragraphText": "公子聽說趙國有處士毛公藏在博徒之中，薛公藏在賣漿的人家。公子想見兩人，兩人躲著不肯見。"
+    },
+    {
+      "personId": "xue-gong",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "薛公",
+      "paragraphText": "公子聽說趙國有處士毛公藏在博徒之中，薛公藏在賣漿的人家。公子想見兩人，兩人躲著不肯見。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "people": [
+    {
+      "id": "wei-anxi",
+      "name": "魏安釐王",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "魏安釐王是魏國之君。本篇秦行反間，他日聞毀言，不能不信，使人代公子將；這一年他也去世。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "071"
+            },
+            {
+              "kind": "local",
+              "id": "072"
+            },
+            {
+              "kind": "local",
+              "id": "073"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meng-ao",
+      "name": "蒙驁",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "蒙驁是秦將。本篇秦聞公子死，派他攻魏，拔二十城，初置東郡。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "074"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sima-qian",
+      "name": "太史公",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "太史公即司馬遷。本篇篇末記他經過大梁廢墟，尋問夷門，並評價信陵君「不恥下交」「名冠諸侯，不虛耳」。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "075"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-gaozu",
+      "name": "漢高祖",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "漢高祖劉邦。本篇篇末追記他每次經過大梁，都令百姓奉祠信陵君不絕。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "075"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "wei-anxi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "魏王",
+      "paragraphText": "魏王天天聽到毀謗，不能不信，後來果然派人代替公子統兵。"
+    },
+    {
+      "personId": "meng-ao",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "蒙驁",
+      "paragraphText": "秦聽說公子死了，派蒙驁攻魏，拔二十城，開始設置東郡。此後秦逐漸蠶食魏國，十八年後俘虜魏王，屠大梁。"
+    },
+    {
+      "personId": "sima-qian",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "太史公",
+      "paragraphText": "太史公說：我經過大梁的廢墟，尋問所謂夷門。夷門，就是城的東門。天下諸公子也有好士的，但信陵君接近巖穴隱者，不以向下交結為恥，是有緣故的。名冠諸侯，不是虛言。高祖每次經過，都令百姓奉祠不絕。"
+    },
+    {
+      "personId": "han-gaozu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 78,
+      "text": "高祖",
+      "paragraphText": "太史公說：我經過大梁的廢墟，尋問所謂夷門。夷門，就是城的東門。天下諸公子也有好士的，但信陵君接近巖穴隱者，不以向下交結為恥，是有緣故的。名冠諸侯，不是虛言。高祖每次經過，都令百姓奉祠不絕。"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "people": [
+    {
+      "id": "jin-bi",
+      "name": "晉鄙",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "晉鄙是魏將，擁十萬眾屯於境上。本篇公子至鄴，矯令代之；晉鄙合符而疑，欲不聽，被朱亥以鐵椎殺死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-hai",
+      "name": "朱亥",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "朱亥是市屠者。本篇他在晉鄙疑而不受代時，袖四十斤鐵椎椎殺晉鄙，公子遂將晉鄙軍。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pingyuan-jun",
+      "name": "平原君",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "平原君是趙公子、公子姊夫。本篇邯鄲解圍後，他親自到邊界迎接，背著箭袋為公子前導；史書說「當此之時，平原君不敢自比於人」。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-ying",
+      "name": "侯嬴",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "侯嬴是夷門監者。本篇公子與他訣別，到了軍中；他果然北鄉自剄，兌現先前「以死送公子」的話。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "jin-bi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "晉鄙",
+      "paragraphText": "到了鄴，公子假傳魏王的命令，代替晉鄙。"
+    },
+    {
+      "personId": "zhu-hai",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "朱亥",
+      "paragraphText": "朱亥袖裡藏著四十斤重的鐵椎，一椎打死晉鄙。公子於是統領了晉鄙的軍隊。"
+    },
+    {
+      "personId": "pingyuan-jun",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "平原君",
+      "paragraphText": "趙王與平原君親自到邊界迎接公子。平原君背著箭袋，為公子前導。趙王再拜，說："
+    },
+    {
+      "personId": "hou-ying",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "侯生",
+      "paragraphText": "公子與侯生訣別，到了軍中；侯生果然面向北方自刎。"
+    }
+  ]
+}

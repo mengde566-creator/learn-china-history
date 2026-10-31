@@ -1,0 +1,142 @@
+{
+  "people": [
+    {
+      "id": "mao-gong",
+      "name": "毛公",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "毛公是趙國處士。本篇秦攻魏，他與薛公對公子說：公子重於趙、名聞諸侯，只因為有魏；魏亡，公子有何面目立於天下。公子因此歸救魏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xue-gong",
+      "name": "薛公",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "薛公是趙國處士。本篇與毛公同勸公子歸救魏；話未說完，公子已變色備車。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-anxi",
+      "name": "魏安釐王",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "魏安釐王是魏國之君。本篇公子歸魏，他與公子相對而泣，授上將軍印；公子率五國兵破秦於河外。後來秦行反間，他使人代公子將。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "067"
+            },
+            {
+              "kind": "local",
+              "id": "072"
+            },
+            {
+              "kind": "local",
+              "id": "073"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meng-ao",
+      "name": "蒙驁",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "蒙驁是秦將。本篇五國聯軍破秦於河外，蒙驁被擊退；公子死後，他又率秦軍攻魏，拔二十城。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "068"
+            },
+            {
+              "kind": "local",
+              "id": "074"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "mao-gong",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "毛公",
+      "paragraphText": "毛公、薛公兩人去見公子，說："
+    },
+    {
+      "personId": "xue-gong",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "薛公",
+      "paragraphText": "毛公、薛公兩人去見公子，說："
+    },
+    {
+      "personId": "wei-anxi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "魏王",
+      "paragraphText": "魏王見到公子，兩人相對而泣，把上將軍印授給他。公子於是為將。"
+    },
+    {
+      "personId": "meng-ao",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 17,
+      "text": "蒙驁",
+      "paragraphText": "公子率五國之兵，在河外破秦軍，趕走蒙驁。於是乘勝追秦軍到函谷關，壓住秦兵，秦兵不敢出。"
+    }
+  ]
+}

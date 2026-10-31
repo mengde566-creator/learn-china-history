@@ -1,0 +1,143 @@
+{
+  "people": [
+    {
+      "id": "hou-ying",
+      "name": "侯嬴",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "侯嬴是大梁夷門的看門人，年七十，家貧。本篇公子虛左親迎，他在市中久立以觀公子，最後成為上客。後來秦圍邯鄲，他獻竊符之計，並在公子至軍之日北鄉自剄。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-hai",
+      "name": "朱亥",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "朱亥是市中的屠者，侯嬴稱他為賢者。本篇公子數請，他故意不謝；後來公子奪軍，他以四十斤鐵椎椎殺晉鄙。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-anxi",
+      "name": "魏安釐王",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "魏安釐王是魏國之君、公子的異母兄。本篇博局上他聽公子說趙王田獵，由此畏公子賢能，不敢任以國政。後來邯鄲之圍，他留軍壁鄴；河外之後又奪公子兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "072"
+            },
+            {
+              "kind": "local",
+              "id": "073"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "hou-ying",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "侯嬴",
+      "paragraphText": "魏國有位隱士叫侯嬴，七十歲，家裡窮，做大梁夷門的看門人。"
+    },
+    {
+      "personId": "zhu-hai",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 18,
+      "text": "朱亥",
+      "paragraphText": "公子把車趕進市裡。侯生下車見他的客人朱亥，斜著眼，故意站了很久，和客人說話，暗中觀察公子。"
+    },
+    {
+      "personId": "wei-anxi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "魏王",
+      "paragraphText": "公子與魏王博戲。北境傳來烽火，說趙寇到了，將入魏界。"
+    }
+  ]
+}

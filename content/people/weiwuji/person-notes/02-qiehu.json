@@ -1,0 +1,201 @@
+{
+  "people": [
+    {
+      "id": "pingyuan-jun",
+      "name": "平原君",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "平原君是趙惠文王之弟、公子姊夫。本篇邯鄲被圍，他派使者責公子「安在公子能急人之困」；後來公子救趙，他負韊矢為前導。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jin-bi",
+      "name": "晉鄙",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "晉鄙是魏將，奉命率十萬眾救趙。魏王懼秦，令他留軍壁鄴；公子持符來代，他合符而疑，說「今單車來代之，何如哉」，欲不聽，終被朱亥椎殺。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ru-ji",
+      "name": "如姬",
+      "versions": [
+        {
+          "from": 5,
+          "to": 8,
+          "text": "如姬是魏王最寵幸的姬妾，能出入王臥內。公子曾為她報父仇，她願為公子死；本篇她應公子之請，盜出晉鄙兵符。盜符之後的處境，所取材料未載。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hou-ying",
+      "name": "侯嬴",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "侯嬴是夷門監者。本篇公子赴秦軍前向他辭行，他只說「勉之」；公子復返，他才獻竊符之計，並約以公子至軍之日自剄。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-hai",
+      "name": "朱亥",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "朱亥是市屠者、力士。本篇侯生建議帶他同行，以備晉鄙不聽；他說「今公子有急，此乃臣效命之秋也」，遂與公子俱。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷七十七·魏公子列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷077"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "pingyuan-jun",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "平原君",
+      "paragraphText": "公子的姊姊是趙惠文王之弟平原君的夫人，屢次寫信給魏王和公子，請救於魏。魏王派將軍晉鄙率十萬眾救趙。"
+    },
+    {
+      "personId": "jin-bi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 40,
+      "text": "晉鄙",
+      "paragraphText": "公子的姊姊是趙惠文王之弟平原君的夫人，屢次寫信給魏王和公子，請救於魏。魏王派將軍晉鄙率十萬眾救趙。"
+    },
+    {
+      "personId": "ru-ji",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "如姬",
+      "paragraphText": "公子聽從他的計策，去請如姬。如姬果然盜了晉鄙的兵符給公子。"
+    },
+    {
+      "personId": "hou-ying",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "侯生",
+      "paragraphText": "路過夷門，見到侯生，公子把要去赴秦軍的情況全告訴他。告辭而行，侯生只說："
+    },
+    {
+      "personId": "zhu-hai",
+      "beat": 7,
+      "paragraph": 5,
+      "offset": 5,
+      "text": "朱亥",
+      "paragraphText": "於是公子請朱亥。朱亥笑說：我是市井鼓刀的屠者，公子卻多次親自存問我；我所以不回謝，是認為小禮沒有用。如今公子有急，這是我效命的時候。於是與公子同行。"
+    }
+  ]
+}
