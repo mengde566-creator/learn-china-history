@@ -513,5 +513,35 @@
   "range": "041–049",
   "seeds": "b83107e54b8edf03",
   "cards": "f6205cae5858aa33"
+ },
+ "weiwuji/01-gongzi": {
+  "range": "001–023",
+  "seeds": "4dd9bc6723e70871",
+  "cards": "52b32b491d25694b"
+ },
+ "weiwuji/02-qiehu": {
+  "range": "024–043",
+  "seeds": "bab761b05cf92805",
+  "cards": "975cd47c700f8228"
+ },
+ "weiwuji/03-duojun": {
+  "range": "044–050",
+  "seeds": "3515b992ccf1497e",
+  "cards": "739e465549f458f4"
+ },
+ "weiwuji/04-wucheng": {
+  "range": "051–062",
+  "seeds": "5eac6a09aee05bec",
+  "cards": "5ed599c3c0514e59"
+ },
+ "weiwuji/05-hewai": {
+  "range": "063–070",
+  "seeds": "2d1eb158c925d68e",
+  "cards": "50cb5b96e5b46abf"
+ },
+ "weiwuji/06-chunjiu": {
+  "range": "071–075",
+  "seeds": "6970146d6844c0ba",
+  "cards": "d473ad715bdd642a"
  }
 }
