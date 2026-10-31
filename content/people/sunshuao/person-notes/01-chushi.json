@@ -1,0 +1,76 @@
+{
+  "people": [
+    {
+      "id": "yuqiu",
+      "name": "虞丘相",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "虞丘是楚国的相（令尹），他推荐孙叔敖接替自己。底本只记「进之于楚庄王，以自代」；《说苑》另有一说，细节与《史记》有出入。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百一十九·循吏列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chu-zhuangwang",
+      "name": "楚莊王",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "楚庄王是春秋五霸之一。他任用孙叔敖为相，孙叔敖死后又因优孟之谏封其子寝丘。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百一十九·循吏列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "yuqiu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "虞丘相",
+      "paragraphText": "虞丘相把他进荐给楚庄王，以自代。他任楚相三个月，施教导民，上下和合，世俗盛美，政缓禁止，吏无奸邪，盗贼不起。"
+    },
+    {
+      "personId": "chu-zhuangwang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "楚庄王",
+      "paragraphText": "虞丘相把他进荐给楚庄王，以自代。他任楚相三个月，施教导民，上下和合，世俗盛美，政缓禁止，吏无奸邪，盗贼不起。"
+    }
+  ]
+}

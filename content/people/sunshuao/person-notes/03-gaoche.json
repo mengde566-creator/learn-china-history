@@ -1,0 +1,80 @@
+{
+  "people": [
+    {
+      "id": "chu-zhuangwang",
+      "name": "楚莊王",
+      "versions": [
+        {
+          "from": 1,
+          "to": 2,
+          "text": "楚庄王以为低车不便马，想下令让车变高；孙叔敖劝他不要发令，改教闾里加高车梱，他许之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "013"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百一十九·循吏列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lüli",
+      "name": "閭里",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "闾里是里巷居民。孙叔敖请「教闾里使高其梱」，即让里中把车梱加高；半年后民自高其车。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百一十九·循吏列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "chu-zhuangwang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "庄王以为低车",
+      "paragraphText": "楚国民俗喜欢低车，庄王以为低车不便马，想下令让车变高。"
+    },
+    {
+      "personId": "lüli",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 28,
+      "text": "闾里",
+      "paragraphText": "相对王说：「令数下，民不知所从，不可。王必欲高车，臣请教闾里使高其梱。乘车者皆君子，君子不能数下车。」"
+    }
+  ]
+}

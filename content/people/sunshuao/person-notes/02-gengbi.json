@@ -1,0 +1,80 @@
+{
+  "people": [
+    {
+      "id": "chu-zhuangwang",
+      "name": "楚莊王",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "楚庄王以为币轻，改小币为大币；百姓不便，市乱三月。孙叔敖请复旧币，他许之，三日而市复。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百一十九·循吏列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shiling",
+      "name": "市令",
+      "versions": [
+        {
+          "from": 2,
+          "to": 3,
+          "text": "市令是管理市场的官吏。他发现市乱，向相报告「市乱，民莫安其处，次行不定」，并说已乱三个月。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百一十九·循吏列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "chu-zhuangwang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "庄王以为币轻",
+      "paragraphText": "庄王以为币轻，改小币为大币。百姓不便，都弃业而去。"
+    },
+    {
+      "personId": "shiling",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "市令对相说",
+      "paragraphText": "市令对相说：「市乱，民莫安其处，次行不定。」"
+    }
+  ]
+}

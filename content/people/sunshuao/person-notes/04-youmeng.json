@@ -1,0 +1,131 @@
+{
+  "people": [
+    {
+      "id": "you-meng",
+      "name": "優孟",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "优孟是楚国乐人，长八尺，多辩，常以谈笑讽谏。孙叔敖善待他；孙叔敖死后，他为孙叔敖衣冠谏庄王，使其子得封寝丘四百户。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百二十六·滑稽列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_6e1ea79ada87.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sunshuao-zi",
+      "name": "孫叔敖之子",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "孙叔敖之子在父亲死后穷困负薪，依遗命去见优孟。优孟为孙叔敖衣冠，岁余像极，庄王欲以为相；优孟借妇言讽谏，庄王遂封其子寝丘四百户。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百二十六·滑稽列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_6e1ea79ada87.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chu-zhuangwang",
+      "name": "楚莊王",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "楚庄王见优孟像孙叔敖，以为复生，欲用为相；优孟请归与妇计，三日后借妇言讽谏，庄王谢之，封孙叔敖之子寝丘四百户。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷一百二十六·滑稽列傳",
+              "url": "https://www.gushiwen.cn/guwen/bookv_6e1ea79ada87.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "you-meng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "优孟，是从前楚国的乐人",
+      "paragraphText": "优孟，是从前楚国的乐人。身长八尺，多辩，常以谈笑讽谏。楚相孙叔敖知道他贤，善待他。"
+    },
+    {
+      "personId": "sunshuao-zi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "其子穷困负薪",
+      "paragraphText": "过了几年，其子穷困负薪，路遇优孟，与他说：「我是孙叔敖之子。父亲将死时，嘱咐我贫困时去見优孟。」"
+    },
+    {
+      "personId": "chu-zhuangwang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 23,
+      "text": "庄王许之",
+      "paragraphText": "优孟说：「请让我回去与妻子商量，三日后为相。」庄王许之。"
+    }
+  ]
+}

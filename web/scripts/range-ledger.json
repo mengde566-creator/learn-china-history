@@ -628,5 +628,25 @@
   "range": "087–118",
   "seeds": "8b703a56dd6dff4f",
   "cards": "1c8267dc6e33504c"
+ },
+ "sunshuao/01-chushi": {
+  "range": "001–006",
+  "seeds": "9b5fdb28857bc6bd",
+  "cards": "01b81596851568f2"
+ },
+ "sunshuao/02-gengbi": {
+  "range": "007–012",
+  "seeds": "e2c50b7fce020ee4",
+  "cards": "51cfc811fb37ad02"
+ },
+ "sunshuao/03-gaoche": {
+  "range": "013–015",
+  "seeds": "6838e49c1894d793",
+  "cards": "e763e04e83493a7d"
+ },
+ "sunshuao/04-youmeng": {
+  "range": "016–026",
+  "seeds": "153dd33775bde3a0",
+  "cards": "4643ffc6dd138678"
  }
 }
