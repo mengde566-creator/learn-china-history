@@ -1,0 +1,158 @@
+{
+  "people": [
+    {
+      "id": "xu-li",
+      "name": "許歷",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "許歷是趙軍軍士。本篇他兩次進諫：先勸厚集陣勢，再勸先據北山；自知犯「以軍事諫者死」之令，請就鈇質之誅。戰後趙王以他為國尉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-huiwen",
+      "name": "趙惠文王",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "趙惠文王是趙國之君。本篇閼與戰後，他賜趙奢號馬服君，以許歷為國尉；趙奢由此與廉頗、藺相如同位。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lian-po",
+      "name": "廉頗",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "廉頗是趙國名將。本篇結尾說趙奢與他、藺相如同位；後來長平之戰，他固壁不戰，被趙括代替。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lin-xiangru",
+      "name": "藺相如",
+      "versions": [
+        {
+          "from": 6,
+          "to": 6,
+          "text": "藺相如是趙國上卿。本篇結尾說趙奢與他、廉頗同位；後來長平之戰前，他病重，仍諫趙王勿以趙括為將。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "xu-li",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "许历",
+      "paragraphText": "军士许历请求以军事进谏。赵奢说：「让他进来。」"
+    },
+    {
+      "personId": "zhao-huiwen",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "赵惠文王",
+      "paragraphText": "赵惠文王赐赵奢号马服君，以许历为国尉。"
+    },
+    {
+      "personId": "lian-po",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 5,
+      "text": "廉颇",
+      "paragraphText": "赵奢于是与廉颇、蔺相如同位。"
+    },
+    {
+      "personId": "lin-xiangru",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "蔺相如",
+      "paragraphText": "赵奢于是与廉颇、蔺相如同位。"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "people": [
+    {
+      "id": "zhao-kuo",
+      "name": "趙括",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "趙括是趙奢之子。本篇秦反間稱「獨畏馬服君趙奢之子趙括」，趙王以他代廉頗；他悉更約束、易置軍吏，被白起斷糧分軍，四十餘日後戰死，趙軍降秦被坑。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            },
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "local",
+              "id": "052"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kuo-mu",
+      "name": "括母",
+      "versions": [
+        {
+          "from": 3,
+          "to": 7,
+          "text": "括母是趙括之母。本篇趙括將行，她上書說「括不可使將」，比較趙奢與趙括為將的做派，求趙王勿遣；趙王不聽，她退求不隨坐。趙括敗後，趙王以她先言，竟不誅。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lin-xiangru",
+      "name": "藺相如",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "藺相如是趙國上卿。本篇趙王以趙括代廉頗，他病中進諫「王以名使括，若膠柱而鼓瑟」，說趙括只讀父書、不知合變；趙王不聽。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lian-po",
+      "name": "廉頗",
+      "versions": [
+        {
+          "from": 1,
+          "to": 7,
+          "text": "廉頗是趙國名將。本篇長平相拒，他固壁不戰；趙王信秦反間，以趙括代他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bai-qi",
+      "name": "白起",
+      "versions": [
+        {
+          "from": 5,
+          "to": 7,
+          "text": "白起是秦國名將。本篇趙括代廉頗後，他縱奇兵、佯敗走、絕趙糧道、分斷趙軍，四十餘日後射殺趙括。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-xiaocheng",
+      "name": "趙孝成王",
+      "versions": [
+        {
+          "from": 2,
+          "to": 7,
+          "text": "趙孝成王是趙國之君。本篇他信秦反間，以趙括代廉頗；藺相如、括母先後進諫，他都不聽，只說「已決」。長平敗後，他因括母先言而不誅她。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhao-kuo",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "赵括",
+      "paragraphText": "赵王于是以赵括为将，代替廉颇。"
+    },
+    {
+      "personId": "kuo-mu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "母亲",
+      "paragraphText": "等到赵括将要出发，他的母亲上书对赵王说：「括不可使将。」"
+    },
+    {
+      "personId": "lin-xiangru",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "蔺相如",
+      "paragraphText": "蔺相如说："
+    },
+    {
+      "personId": "lian-po",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 12,
+      "text": "廉颇",
+      "paragraphText": "赵王于是以赵括为将，代替廉颇。"
+    },
+    {
+      "personId": "bai-qi",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "白起",
+      "paragraphText": "秦将白起听说，纵奇兵，假装败走，断绝赵军粮道，把赵军分断为二，士卒离心。"
+    },
+    {
+      "personId": "zhao-xiaocheng",
+      "beat": 2,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "赵王",
+      "paragraphText": "赵王不听，终于用他为将。"
+    }
+  ]
+}

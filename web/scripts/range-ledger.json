@@ -543,5 +543,30 @@
   "range": "071–075",
   "seeds": "6970146d6844c0ba",
   "cards": "d473ad715bdd642a"
+ },
+ "zhaoshe/01-tianbuli": {
+  "range": "001–006",
+  "seeds": "b40a150c0903a0f0",
+  "cards": "cfd866de1fd050e7"
+ },
+ "zhaoshe/02-eyu": {
+  "range": "007–017",
+  "seeds": "61c4c7f95d3082a3",
+  "cards": "08405796af354631"
+ },
+ "zhaoshe/03-eyu-xia": {
+  "range": "018–030",
+  "seeds": "059a8572e5fbcdca",
+  "cards": "f318f1e844538ba1"
+ },
+ "zhaoshe/04-zhizi": {
+  "range": "031–032、039–042",
+  "seeds": "ab90a32350203d06",
+  "cards": "5780c38401296cce"
+ },
+ "zhaoshe/05-changping": {
+  "range": "034–056",
+  "seeds": "79433d9b84f0b09d",
+  "cards": "a97be40c358c92f3"
  }
 }

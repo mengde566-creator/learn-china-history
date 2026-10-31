@@ -1,0 +1,127 @@
+{
+  "people": [
+    {
+      "id": "zhao-kuo",
+      "name": "趙括",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "趙括是趙奢之子，自少學兵法，言兵事，以為天下莫能當。本篇他與父親談兵，趙奢難不住他，卻不認為他好；趙奢說「兵，死地也，而括易言之」，並預言破趙軍者必括。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kuo-mu",
+      "name": "括母",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "括母是趙括之母。本篇她問趙奢為何不認可兒子，得到「兵，死地也，而括易言之」的答覆；後來趙括將行，她上書諫阻，並求不隨坐。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "048"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lin-xiangru",
+      "name": "藺相如",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "藺相如是趙國上卿。本篇長平相拒時他已病重；後來趙王以趙括代廉頗，他仍上諫「王以名使括，若膠柱而鼓瑟」，趙王不聽。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhao-kuo",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "赵括",
+      "paragraphText": "赵括自小学习兵法，谈论兵事，认为天下没有人能抵得上他。"
+    },
+    {
+      "personId": "kuo-mu",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "赵括的母亲",
+      "paragraphText": "赵括的母亲问赵奢其中的缘故。赵奢说："
+    },
+    {
+      "personId": "lin-xiangru",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 38,
+      "text": "蔺相如",
+      "paragraphText": "赵惠文王去世后四年，孝成王即位。七年，秦与赵兵在长平相拒；这时赵奢已经死了，蔺相如病重。"
+    }
+  ]
+}

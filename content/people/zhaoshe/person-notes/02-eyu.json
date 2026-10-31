@@ -1,0 +1,111 @@
+{
+  "people": [
+    {
+      "id": "lian-po",
+      "name": "廉頗",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "廉頗是趙國名將。本篇趙王問閼與可救否，他答「道遠險狹，難救」；後來長平之戰，他固壁不戰，被趙括代替。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yue-cheng",
+      "name": "樂乘",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "樂乘是趙將。本篇趙王問救閼與，他的回答與廉頗相同；後來趙悼襄王以樂乘代廉頗，廉頗怒而攻之，樂乘走。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "009"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-jiang",
+      "name": "秦將",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "秦將是圍閼與的秦軍主將。本篇秦間回報趙軍堅壁增壘，他大喜，判斷「閼與非趙地也」；這個判斷正中趙奢之計。底本未記其姓名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《史記》",
+              "section": "卷八十一·廉頗藺相如列傳",
+              "url": "https://zh.wikisource.org/wiki/史記/卷081"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "lian-po",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "廉颇",
+      "paragraphText": "秦伐韩，军队驻在阏与。赵王召廉颇问：「可救不？」廉颇答：「道远险狭，难救。」"
+    },
+    {
+      "personId": "yue-cheng",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "乐乘",
+      "paragraphText": "又召乐乘问，乐乘的回答和廉颇一样。"
+    },
+    {
+      "personId": "qin-jiang",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "秦将",
+      "paragraphText": "间谍把情况报告秦将。秦将大喜，说："
+    }
+  ]
+}
