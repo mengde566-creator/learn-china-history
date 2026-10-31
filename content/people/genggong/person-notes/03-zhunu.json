@@ -1,0 +1,208 @@
+{
+  "people": [
+    {
+      "id": "chen-mu",
+      "name": "陳睦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "陈睦是西域都护。永平十八年焉耆、龟兹攻杀陈睦，西域都护府随之瓦解；耿恭、关宠两支成为孤军。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guan-chong",
+      "name": "關寵",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "关宠是戊己校尉，屯柳中城。本篇被北匈奴围困；他上书求救，救兵未至而殁。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xianzong",
+      "name": "顯宗",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "显宗是汉明帝的庙号。永平十八年八月明帝崩，章帝即位，救兵因此不至；耿恭守城跨过这两朝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷二·顯宗孝明帝紀",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷002"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "houwang-furen",
+      "name": "後王夫人",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "后王夫人是先世汉人的车师后王夫人。她常把匈奴军情私下告知耿恭，又供给粮饷；底本不记其名与结局。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "028"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chanyu",
+      "name": "單于",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "此单于是北匈奴单于。他知耿恭已困，许以白屋王、妻以女子招降；使者被杀后增兵围城，仍不能下。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shizhe",
+      "name": "匈奴使者",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "招降使者奉单于之命入城，被耿恭诱上城亲手击杀、炙于城上；底本不记其名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "chen-mu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 11,
+      "text": "陈睦",
+      "paragraphText": "当时焉耆、龟兹攻杀都护陈睦，北匈奴也把关宠围在柳中。"
+    },
+    {
+      "personId": "guan-chong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "关宠",
+      "paragraphText": "当时焉耆、龟兹攻杀都护陈睦，北匈奴也把关宠围在柳中。"
+    },
+    {
+      "personId": "xianzong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "显宗",
+      "paragraphText": "恰逢显宗（明帝）崩，救兵不至，车师复叛，与匈奴共攻耿恭。耿恭率士众击走他们。"
+    },
+    {
+      "personId": "houwang-furen",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "后王的夫人",
+      "paragraphText": "车师后王的夫人，先世是汉人，常私下把匈奴的军情告知耿恭，又供给他粮饷。"
+    },
+    {
+      "personId": "chanyu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "单于知道",
+      "paragraphText": "单于知道耿恭已困，一定要他投降，又派使者招降说："
+    },
+    {
+      "personId": "shizhe",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 18,
+      "text": "使者",
+      "paragraphText": "单于知道耿恭已困，一定要他投降，又派使者招降说："
+    }
+  ]
+}

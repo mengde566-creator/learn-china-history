@@ -1,0 +1,281 @@
+{
+  "people": [
+    {
+      "id": "guan-chong",
+      "name": "關寵",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "关宠是戊己校尉，屯柳中。他上书求救，朝廷因此发七千兵；救兵会柳中时，他已殁。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suzong",
+      "name": "肅宗",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "肃宗是汉章帝的庙号。他新即位便下诏公卿会议，采鲍昱之议发兵；耿恭回朝后，又诏释服起用。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷三·肅宗孝章帝紀",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diwulun",
+      "name": "第五倫",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "第五伦是司空，朝议中主张不救。底本只记「不宜救」一句，未载理由；他的本传在《后汉书》卷四十一。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "037"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷四十一·第五倫傳",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷041"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baoyu",
+      "name": "鮑昱",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "鲍昱是司徒，主张发兵救耿恭，并以「弃之则伤死难之臣」立论。耿恭到洛阳后，他又奏其节过苏武。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "038"
+            },
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷二十九·鮑永傳附鮑昱",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geng-bing",
+      "name": "耿秉",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "耿秉是耿恭从弟、征西将军。建初元年救兵，他屯酒泉行太守事，为西路后援。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qin-peng",
+      "name": "秦彭",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "秦彭是建初元年救援的领兵官之一，与谒者王蒙、皇甫援同发三郡及鄯善兵七千余人。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-meng",
+      "name": "王蒙",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "王蒙是谒者，建初元年与秦彭、皇甫援领兵会柳中；关宠死后欲引兵还，分兵二千给范羌往迎耿恭。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huangfu-yuan",
+      "name": "皇甫援",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "皇甫援是谒者，与秦彭、王蒙同发张掖、酒泉、敦煌三郡及鄯善兵救西域。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-qiang",
+      "name": "范羌",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "范羌是耿恭的军吏，奉命到敦煌迎兵士寒服，随王蒙军出塞。诸将不敢前，他固请迎耿恭，分得二千人从山北入，大雪中至城下，遥呼自报姓名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "044"
+            },
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿恭傳附范羌等",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "guan-chong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "关宠",
+      "paragraphText": "起初，关宠上书求救。当时肃宗（章帝）新即位，诏公卿会议。"
+    },
+    {
+      "personId": "suzong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "肃宗",
+      "paragraphText": "起初，关宠上书求救。当时肃宗（章帝）新即位，诏公卿会议。"
+    },
+    {
+      "personId": "diwulun",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "第五伦",
+      "paragraphText": "司空第五伦认为不宜救。"
+    },
+    {
+      "personId": "baoyu",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 2,
+      "text": "鲍昱",
+      "paragraphText": "司徒鲍昱说："
+    },
+    {
+      "personId": "fan-qiang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "范羌",
+      "paragraphText": "此前耿恭派军吏范羌到敦煌迎兵士寒服，范羌因而随王蒙军出塞。范羌坚决请求去迎耿恭，诸将不敢前，于是分兵二千人给他，从山北迎耿恭。"
+    }
+  ]
+}

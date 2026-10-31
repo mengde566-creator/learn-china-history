@@ -532,41 +532,66 @@
  "weiwuji/04-wucheng": {
   "range": "051–062",
   "seeds": "5eac6a09aee05bec",
-  "cards": "5ed599c3c0514e59"
+  "cards": "06bb644f5fc84057"
  },
  "weiwuji/05-hewai": {
   "range": "063–070",
   "seeds": "2d1eb158c925d68e",
-  "cards": "50cb5b96e5b46abf"
+  "cards": "446e411c1f27aa37"
  },
  "weiwuji/06-chunjiu": {
   "range": "071–075",
   "seeds": "6970146d6844c0ba",
-  "cards": "d473ad715bdd642a"
+  "cards": "adf6cfff25abbdc2"
  },
  "zhaoshe/01-tianbuli": {
   "range": "001–006",
   "seeds": "b40a150c0903a0f0",
-  "cards": "cfd866de1fd050e7"
+  "cards": "b0e7a538e48a7b59"
  },
  "zhaoshe/02-eyu": {
   "range": "007–017",
   "seeds": "61c4c7f95d3082a3",
-  "cards": "08405796af354631"
+  "cards": "a5fb47f53b29e78b"
  },
  "zhaoshe/03-eyu-xia": {
   "range": "018–030",
   "seeds": "059a8572e5fbcdca",
-  "cards": "f318f1e844538ba1"
+  "cards": "3c6e3e00b3007f08"
  },
  "zhaoshe/04-zhizi": {
   "range": "031–032、039–042",
   "seeds": "ab90a32350203d06",
-  "cards": "5780c38401296cce"
+  "cards": "823bd38ebbd6c445"
  },
  "zhaoshe/05-changping": {
   "range": "034–056",
   "seeds": "79433d9b84f0b09d",
-  "cards": "a97be40c358c92f3"
+  "cards": "9ae4b51a91b5958e"
+ },
+ "genggong/01-jinpu": {
+  "range": "001–016",
+  "seeds": "1a1ab25dc7a5e2f5",
+  "cards": "8da81ec9b5457e1e"
+ },
+ "genggong/02-shule": {
+  "range": "017–024",
+  "seeds": "410211212348826b",
+  "cards": "4785a3475b2aec66"
+ },
+ "genggong/03-zhunu": {
+  "range": "025–035",
+  "seeds": "a13fff3cdfb84ec7",
+  "cards": "ebfbdb04d82d1ff7"
+ },
+ "genggong/04-yinggui": {
+  "range": "036–052",
+  "seeds": "8cb8ec6dd417a0d4",
+  "cards": "5b25f5584f905479"
+ },
+ "genggong/05-yumen": {
+  "range": "053–070",
+  "seeds": "6c8347549c969967",
+  "cards": "3e54bdb2f72931c5"
  }
 }

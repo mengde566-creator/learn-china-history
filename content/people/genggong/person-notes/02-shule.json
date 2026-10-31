@@ -1,0 +1,28 @@
+{
+  "people": [
+    {
+      "id": "ershi-jiangjun",
+      "name": "貳師將軍",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "贰师将军是李广利，武帝时伐大宛，期至贰师城，因以为号。传说他拔佩刀刺山，飞泉涌出；耿恭在井边引此事自励。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": []
+}

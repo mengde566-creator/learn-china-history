@@ -1,0 +1,367 @@
+{
+  "people": [
+    {
+      "id": "zheng-zhong",
+      "name": "鄭眾",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "郑众是中郎将，在玉门关为耿恭以下洗沐易衣冠，并上疏称其节义古今未有、宜蒙显爵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "053"
+            },
+            {
+              "kind": "local",
+              "id": "054"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baoyu",
+      "name": "鮑昱",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "鲍昱是司徒。耿恭到洛阳后，他奏其节过苏武，宜蒙爵赏；此语与郑众上疏并见于本传。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷二十九·鮑永傳附鮑昱",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shi-xiu",
+      "name": "石修",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "石修是耿恭的司马，随守疏勒。回朝后授雒阳市丞。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-feng",
+      "name": "張封",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "张封是耿恭部属，回朝后授雍营司马；底本未记其此前的具体职任。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-qiang",
+      "name": "范羌",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "范羌是耿恭军吏，迎归的执行者。回朝后授共丞，为十三人中受职者之一。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿恭傳附范羌等",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ma-fang",
+      "name": "馬防",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "马防是马援之子、车骑将军，建初二年讨西羌的主将，耿恭为其副。耿恭上言荐窦固、请马防屯汉阳，大忤其意；马防还京后，李谭承旨奏劾耿恭。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "061"
+            },
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "local",
+              "id": "065"
+            },
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-gu",
+      "name": "竇固",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "窦固是大鸿胪、窦融之孙。耿恭上言称其前击白山功冠三军，宜奉大使镇抚凉部；此荐忤马防，成为耿恭免官的起因。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-tan",
+      "name": "李譚",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "李谭是监营谒者，承旨奏耿恭不忧军事、被诏怨望，耿恭因此下狱免官。底本只言「承旨」，不写承谁之旨。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "066"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geng-pu",
+      "name": "耿溥",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "耿溥是耿恭之子，官京兆虎牙都尉。元初二年击叛羌于丁奚城，军败战殁。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "068"
+            },
+            {
+              "kind": "local",
+              "id": "069"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geng-hong",
+      "name": "耿宏",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "耿宏是耿溥之子。父亲战殁后，诏拜他与弟耿晔并为郎。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "070"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geng-ye",
+      "name": "耿嘩",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "耿晔（底本作嘩）是耿溥之子，与兄耿宏同为郎。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "070"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zheng-zhong",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "郑众",
+      "paragraphText": "中郎将郑众为耿恭以下洗沐易衣冠，上疏说："
+    },
+    {
+      "personId": "baoyu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "鲍昱",
+      "paragraphText": "等耿恭到洛阳，鲍昱奏耿恭的节操超过苏武，应蒙爵赏。"
+    },
+    {
+      "personId": "shi-xiu",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 14,
+      "text": "石修",
+      "paragraphText": "于是拜为骑都尉；以耿恭的司马石修为雒阳市丞，张封为雍营司马，军吏范羌为共丞，余九人都补羽林。"
+    },
+    {
+      "personId": "zhang-feng",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 22,
+      "text": "张封",
+      "paragraphText": "于是拜为骑都尉；以耿恭的司马石修为雒阳市丞，张封为雍营司马，军吏范羌为共丞，余九人都补羽林。"
+    },
+    {
+      "personId": "fan-qiang",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 32,
+      "text": "范羌",
+      "paragraphText": "于是拜为骑都尉；以耿恭的司马石修为雒阳市丞，张封为雍营司马，军吏范羌为共丞，余九人都补羽林。"
+    },
+    {
+      "personId": "ma-fang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 18,
+      "text": "马防",
+      "paragraphText": "于是遣耿恭率五校士三千人，副车骑将军马防讨西羌。耿恭屯枹罕，数与羌接战。"
+    },
+    {
+      "personId": "dou-gu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 35,
+      "text": "窦固",
+      "paragraphText": "起初，耿恭出陇西时上言：故安丰侯窦融从前在西州，很得羌胡腹心；今大鸿胪窦固就是他的子孙，前击白山功冠三军，宜奉大使、镇抚凉部；又请令车骑将军马防屯军汉阳，以为威重。"
+    },
+    {
+      "personId": "li-tan",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "李谭",
+      "paragraphText": "等马防还京，监营谒者李谭承旨奏耿恭不忧军事、被诏怨望。耿恭坐征下狱，免官归本郡，卒于家。"
+    },
+    {
+      "personId": "geng-pu",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "耿溥",
+      "paragraphText": "其子耿溥为京兆虎牙都尉。元初二年，击畔羌于丁奚城，军败，遂殁。诏拜耿溥之子耿宏、耿晔并为郎。"
+    },
+    {
+      "personId": "geng-hong",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 37,
+      "text": "耿宏",
+      "paragraphText": "其子耿溥为京兆虎牙都尉。元初二年，击畔羌于丁奚城，军败，遂殁。诏拜耿溥之子耿宏、耿晔并为郎。"
+    },
+    {
+      "personId": "geng-ye",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 40,
+      "text": "耿晔",
+      "paragraphText": "其子耿溥为京兆虎牙都尉。元初二年，击畔羌于丁奚城，军败，遂殁。诏拜耿溥之子耿宏、耿晔并为郎。"
+    }
+  ]
+}

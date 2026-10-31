@@ -1,0 +1,270 @@
+{
+  "people": [
+    {
+      "id": "geng-guang",
+      "name": "耿廣",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "耿广是耿国的弟弟、耿恭的父亲。底本只记他是耿恭之父，未载官职与事迹；耿恭「少孤」，父亲应早卒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "002"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-zhang",
+      "name": "劉張",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "刘张是骑都尉，永平十七年冬出击车师的主将，请耿恭为司马。底本此后不再记他的经历。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-gu",
+      "name": "竇固",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "窦固是奉车都尉，明帝时两次出塞击匈奴、通西域的主将。本篇与刘张、耿秉同破车师；后来耿恭上言荐其子窦固镇抚凉部。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geng-bing",
+      "name": "耿秉",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "耿秉是耿恭的从弟、驸马都尉，与窦固同破车师。后来官至征西将军、度辽将军，章和二年副窦宪击北匈奴，封美阳侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guan-chong",
+      "name": "關寵",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "关宠是谒者、戊己校尉，屯车师前王柳中城。匈奴围柳中，他上书求救；建初元年救兵到时，他已死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "005"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "036"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "da-kunmi",
+      "name": "大昆彌",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "大昆弥是乌孙的君长。本篇耿恭移檄乌孙，大昆弥以下皆欢喜，遣使献名马，愿遣子入侍。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zuo-luli-wang",
+      "name": "左鹿蠡王",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "左鹿蠡王是北单于派出的将领，永平十八年三月率二万骑击车师。底本不记其名。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "008"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "houwang-ande",
+      "name": "後王安得",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "安得是车师后王。匈奴破车师，杀安得，再攻金蒲城；车师后部因此无主。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《後漢書》",
+              "section": "卷十九·耿弇列傳附耿恭",
+              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "geng-guang",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "耿广",
+      "paragraphText": "耿恭，字伯宗，是耿国之弟耿广的儿子。少年丧父。慷慨多大略，有将帅之才。"
+    },
+    {
+      "personId": "liu-zhang",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 10,
+      "text": "刘张",
+      "paragraphText": "永平十七年冬，骑都尉刘张出击车师，请耿恭为司马，与奉车都尉窦固、从弟驸马都尉耿秉一道破降车师。"
+    },
+    {
+      "personId": "dou-gu",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "窦固",
+      "paragraphText": "永平十七年冬，骑都尉刘张出击车师，请耿恭为司马，与奉车都尉窦固、从弟驸马都尉耿秉一道破降车师。"
+    },
+    {
+      "personId": "geng-bing",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 38,
+      "text": "耿秉",
+      "paragraphText": "永平十七年冬，骑都尉刘张出击车师，请耿恭为司马，与奉车都尉窦固、从弟驸马都尉耿秉一道破降车师。"
+    },
+    {
+      "personId": "guan-chong",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 37,
+      "text": "关宠",
+      "paragraphText": "朝廷开始设置西域都护、戊己校尉，任耿恭为戊己校尉，屯车师后王部金蒲城；谒者关宠为戊己校尉，屯前王柳中城，两处各置数百人。"
+    },
+    {
+      "personId": "da-kunmi",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "大昆弥",
+      "paragraphText": "耿恭到部，移檄乌孙，示汉威德。乌孙大昆弥以下皆欢喜，遣使献名马，并奉上宣帝时赐公主的博具，愿遣子入侍。"
+    },
+    {
+      "personId": "houwang-ande",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 8,
+      "text": "后王安得",
+      "paragraphText": "匈奴于是破杀车师后王安得，进攻金蒲城。"
+    }
+  ]
+}
