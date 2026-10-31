@@ -1,0 +1,232 @@
+{
+  "people": [
+    {
+      "id": "fan-mingyou",
+      "name": "范明友",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "范明友是霍光女婿，封平陵侯，官度辽将军、未央卫尉。宣帝先徙其为光禄勋、收其将军印绶；霍氏谋反事觉，自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "087"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deng-guanghan",
+      "name": "鄧廣漢",
+      "versions": [
+        {
+          "from": 1,
+          "to": 8,
+          "text": "邓广汉是霍光长女婿，官长乐卫尉。宣帝徙为少府；霍氏谋反时参与，事觉被捕。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "088"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-zhang",
+      "name": "張章",
+      "versions": [
+        {
+          "from": 4,
+          "to": 8,
+          "text": "张章是长安男子，先告发霍氏谋反，事下廷尉。后以功封博成侯。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "100"
+            },
+            {
+              "kind": "local",
+              "id": "109"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-fu",
+      "name": "徐福",
+      "versions": [
+        {
+          "from": 7,
+          "to": 8,
+          "text": "徐福是茂陵徐生，屡上书言霍氏将变、宜以时抑制，书三上辄报闻。霍氏诛灭后，人为之鸣不平，宣帝赐帛十匹、后以为郎。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "110"
+            },
+            {
+              "kind": "local",
+              "id": "111"
+            },
+            {
+              "kind": "local",
+              "id": "112"
+            },
+            {
+              "kind": "local",
+              "id": "113"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ban-gu",
+      "name": "班固",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "班固是《汉书》作者。侍中奉车都尉班固撰《汉书》，此传末赞语「不学亡术，暗于大理」，是全书对霍光的定评。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "116"
+            },
+            {
+              "kind": "local",
+              "id": "117"
+            },
+            {
+              "kind": "local",
+              "id": "118"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huo-xian",
+      "name": "霍顯",
+      "versions": [
+        {
+          "from": 6,
+          "to": 8,
+          "text": "霍显是霍光夫人。霍光死后骄奢，毒杀许后事泄，与子禹等谋反；事觉，与诸女昆弟皆弃市。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "077"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fan-mingyou",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 49,
+      "text": "范明友",
+      "paragraphText": "霍光死后，毒杀许后的话渐渐泄露；宣帝开始听到，但未深察。于是外调霍光女婿度辽将军、未央卫尉、平陵侯范明友为光禄勋；次婿诸吏中郎将、羽林监任胜出为安定太守。"
+    },
+    {
+      "personId": "deng-guanghan",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 52,
+      "text": "邓广汉",
+      "paragraphText": "数月，又出霍光姊婿给事中光禄大夫张朔为蜀郡太守，群孙婿中郎将王汉为武威太守；不久，又徙霍光长女婿长乐卫尉邓广汉为少府。"
+    },
+    {
+      "personId": "zhang-zhang",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "张章",
+      "paragraphText": "长安男子张章告发此事，事下廷尉；执金吾捕张赦、石夏等，后有诏止勿捕。霍山等愈恐，相谓说：这是县官看重太后，所以不追究到底；但恶端已见，又有弑许后事，陛下虽宽仁，恐左右不听，久之犹发，发即族矣，不如先动手。遂令诸女各归报其夫，都说：安所相避？"
+    },
+    {
+      "personId": "xu-fu",
+      "beat": 7,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "徐生",
+      "paragraphText": "起初霍氏奢侈，茂陵徐生说：「霍氏必亡。夫奢则不逊，不逊必侮上；侮上者，逆道也。在人之右，众必害之。」乃上疏请以时抑制，书三上，辄报闻。"
+    },
+    {
+      "personId": "ban-gu",
+      "beat": 8,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "班固赞曰",
+      "paragraphText": "班固赞曰：霍光以结发内侍，起于阶闼之间，确然秉志，谊形于主。受襁褓之托，任汉室之寄，当庙堂，拥幼君，摧燕王，仆上官，因权制敌，以成其忠。处废置之际，临大节而不可夺，遂匡国家，安社稷。拥昭立宣，光为师保，虽周公、阿衡，何以加此！然光不学亡术，暗于大理，阴妻邪谋，立女为后，湛溺淫溢之欲，以增颠覆之祸，死财三年，宗族诛夷，哀哉！"
+    },
+    {
+      "personId": "huo-xian",
+      "beat": 6,
+      "paragraph": 2,
+      "offset": 21,
+      "text": "霍显",
+      "paragraphText": "书报闻，恰逢事觉：霍云、霍山、范明友自杀，霍显、霍禹、邓广汉等捕得。霍禹要斩，霍显及诸女昆弟皆弃市；唯独霍后废处昭台宫。与霍氏相连坐诛灭者数千家。"
+    }
+  ]
+}

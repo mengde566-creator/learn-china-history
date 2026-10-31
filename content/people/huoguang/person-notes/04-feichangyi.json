@@ -1,0 +1,267 @@
+{
+  "people": [
+    {
+      "id": "changyi-wang",
+      "name": "昌邑王賀",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "刘贺是武帝之孙、昌邑哀王之子。昭帝崩，霍光迎立，在位二十七日以行淫乱被废，归昌邑；本传不记其封海昏侯事。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "040"
+            },
+            {
+              "kind": "local",
+              "id": "055"
+            },
+            {
+              "kind": "local",
+              "id": "059"
+            },
+            {
+              "kind": "local",
+              "id": "061"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tian-yannian",
+      "name": "田延年",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "田延年是大司农，霍光亲信故吏。他举伊尹废太甲之事，劝霍光废昌邑王；朝议时离席按剑，逼群臣表态。后坐罪自杀，事见《汉书》本传。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "041"
+            },
+            {
+              "kind": "local",
+              "id": "042"
+            },
+            {
+              "kind": "local",
+              "id": "045"
+            },
+            {
+              "kind": "local",
+              "id": "046"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-anshi",
+      "name": "張安世",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "张安世是车骑将军，霍光与之暗中图计废立；收缚昌邑群臣时，他率羽林骑执行。后与霍光同辅宣帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "043"
+            },
+            {
+              "kind": "local",
+              "id": "049"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huang-taihou",
+      "name": "皇太后",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "此皇太后是昭帝皇后上官氏，霍光外孙女。废昌邑时她下诏毋纳昌邑群臣、诏可废立；宣帝时尊为太皇太后。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "047"
+            },
+            {
+              "kind": "local",
+              "id": "050"
+            },
+            {
+              "kind": "local",
+              "id": "058"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-chang",
+      "name": "楊敞",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "杨敞是丞相，霍光以郎书示之，遂与联名奏废昌邑王。后与霍光同奏立宣帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "039"
+            },
+            {
+              "kind": "local",
+              "id": "051"
+            },
+            {
+              "kind": "local",
+              "id": "064"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiahou-sheng",
+      "name": "夏侯勝",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "夏侯胜是光禄大夫、经学名家，曾进谏昌邑王过失，反被簿责；宣帝时以《尚书》授帝，官至太子太傅。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jia",
+      "name": "傅嘉",
+      "versions": [
+        {
+          "from": 5,
+          "to": 6,
+          "text": "傅嘉是侍中，与夏侯胜等进谏昌邑王，被系狱。底本只记其名与事，未载后续。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "056"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "changyi-wang",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "贺是武帝之孙",
+      "paragraphText": "贺是武帝之孙、昌邑哀王之子。既至，即位，行淫乱。"
+    },
+    {
+      "personId": "tian-yannian",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 14,
+      "text": "田延年",
+      "paragraphText": "霍光忧懑，独问所亲故吏大司农田延年。延年说：「将军为国柱石，审此人不可，何不建白太后，更选贤而立之？」"
+    },
+    {
+      "personId": "zhang-anshi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 17,
+      "text": "张安世",
+      "paragraphText": "霍光引田延年给事中，暗中与车骑将军张安世图计，遂召丞相、御史、将军、列侯、中二千石、大夫、博士会议未央宫。"
+    },
+    {
+      "personId": "huang-taihou",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 27,
+      "text": "皇太后",
+      "paragraphText": "霍光即与群臣俱见，白太后，具陈昌邑王不可以承宗庙之状。皇太后车驾幸未央承明殿，诏诸禁门毋内昌邑群臣。"
+    },
+    {
+      "personId": "yang-chang",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 8,
+      "text": "杨敞",
+      "paragraphText": "霍光把此书给丞相杨敞等看，擢郎为九江太守，即日承皇太后诏，遣行大鸿胪事少府乐成、宗正德、光禄大夫吉、中郎将利汉迎昌邑王贺。"
+    },
+    {
+      "personId": "xiahou-sheng",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 71,
+      "text": "夏侯胜",
+      "paragraphText": "然后历数：服斩縗无悲哀之心；居道上不素食，使从官略女子载衣车；受玺就次发玺不封；与昭帝宫人淫乱；受玺二十七日，使者旁午，征发一千一百二十七事；夏侯胜、傅嘉进谏，反被簿责、系狱。"
+    },
+    {
+      "personId": "fu-jia",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 75,
+      "text": "傅嘉",
+      "paragraphText": "然后历数：服斩縗无悲哀之心；居道上不素食，使从官略女子载衣车；受玺就次发玺不封；与昭帝宫人淫乱；受玺二十七日，使者旁午，征发一千一百二十七事；夏侯胜、傅嘉进谏，反被簿责、系狱。"
+    }
+  ]
+}

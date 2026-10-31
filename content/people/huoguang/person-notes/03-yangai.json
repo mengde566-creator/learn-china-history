@@ -1,0 +1,291 @@
+{
+  "people": [
+    {
+      "id": "shangguan-jie",
+      "name": "上官桀",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "上官桀是左将军，与霍光联姻，其孙安女为昭帝皇后。因求封丁外人不得而与霍光争权，与燕王、桑弘羊通谋；事觉，宗族被诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "025"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shangguan-an",
+      "name": "上官安",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "上官安是上官桀之子、霍光长女婿，官骠骑将军，封桑乐侯。安女为皇后，父子与霍光争权，同谋被诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "021"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eyi-gaizhu",
+      "name": "鄂邑蓋主",
+      "versions": [
+        {
+          "from": 1,
+          "to": 6,
+          "text": "鄂邑盖主是昭帝之姊，因供养昭帝得尊；她近幸丁外人，为桀、安所结。后与燕王通谋，事觉自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ding-wairen",
+      "name": "丁外人",
+      "versions": [
+        {
+          "from": 2,
+          "to": 6,
+          "text": "丁外人是河间人，为鄂邑盖主所近幸。桀、安为他求封、求光禄大夫，霍光不许；后以谋反宗族被诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "022"
+            },
+            {
+              "kind": "local",
+              "id": "023"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yanwang-dan",
+      "name": "燕王旦",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "燕王旦是武帝之子、昭帝之兄，自以当立，常怀怨望。与盖主、上官桀、桑弘羊通谋，诈为上书、谋废帝；事觉自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "027"
+            },
+            {
+              "kind": "local",
+              "id": "033"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sang-hongyang",
+      "name": "桑弘羊",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "桑弘羊是御史大夫，建酒榷、盐铁，自伐其功，为子弟求官不得而怨霍光；与燕王等通谋，事觉被诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhaodi",
+      "name": "昭帝",
+      "versions": [
+        {
+          "from": 4,
+          "to": 6,
+          "text": "昭帝是武帝少子，八岁即位，霍光辅政。燕王书奏上时他年十四，当廷辨其诈；后尽委任霍光，在位十三年崩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "local",
+              "id": "029"
+            },
+            {
+              "kind": "local",
+              "id": "031"
+            },
+            {
+              "kind": "local",
+              "id": "035"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "shangguan-jie",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 6,
+      "text": "上官桀",
+      "paragraphText": "霍光与左将军上官桀结姻亲，光长女为桀子上官安之妻。安女年与帝相配，桀通过帝姊鄂邑盖主把安女纳入后宫为婕妤，数月立为皇后。"
+    },
+    {
+      "personId": "shangguan-an",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 19,
+      "text": "上官安",
+      "paragraphText": "霍光与左将军上官桀结姻亲，光长女为桀子上官安之妻。安女年与帝相配，桀通过帝姊鄂邑盖主把安女纳入后宫为婕妤，数月立为皇后。"
+    },
+    {
+      "personId": "eyi-gaizhu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 38,
+      "text": "鄂邑盖主",
+      "paragraphText": "霍光与左将军上官桀结姻亲，光长女为桀子上官安之妻。安女年与帝相配，桀通过帝姊鄂邑盖主把安女纳入后宫为婕妤，数月立为皇后。"
+    },
+    {
+      "personId": "ding-wairen",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 30,
+      "text": "丁外人",
+      "paragraphText": "上官桀父子既尊盛，又感念长公主之德。长公主内行不修，近幸河间丁外人。"
+    },
+    {
+      "personId": "yanwang-dan",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "燕王旦",
+      "paragraphText": "燕王旦自以为是昭帝之兄，常怀怨望。御史大夫桑弘羊建酒榷、盐铁，为国兴利，自伐其功，想为子弟得官，也怨恨霍光。"
+    },
+    {
+      "personId": "sang-hongyang",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 21,
+      "text": "桑弘羊",
+      "paragraphText": "燕王旦自以为是昭帝之兄，常怀怨望。御史大夫桑弘羊建酒榷、盐铁，为国兴利，自伐其功，想为子弟得官，也怨恨霍光。"
+    },
+    {
+      "personId": "zhaodi",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 37,
+      "text": "昭帝不肯下",
+      "paragraphText": "候霍光出沐之日奏上。上官桀想从中把事交下，桑弘羊当与诸大臣共执退光。书奏，昭帝不肯下。"
+    }
+  ]
+}

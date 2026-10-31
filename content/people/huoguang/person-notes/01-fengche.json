@@ -1,0 +1,189 @@
+{
+  "people": [
+    {
+      "id": "huo-zhongru",
+      "name": "霍中孺",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "霍中孺是河东平阳人，以县吏在平阳侯家做事，与侍者卫少皃私通生霍去病；归家娶妻后生霍光，两家绝不相闻。霍去病显贵后迎父相见，为他买田宅奴婢，又把霍光带入长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-shaoer",
+      "name": "衛少皃",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "卫少皃是平阳侯家的侍者，与霍中孺私通生霍去病；她的妹妹卫子夫后为武帝皇后。底本作「少皃」，即卫少儿。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huo-qubing",
+      "name": "霍去病",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "霍去病是卫少儿之子、霍光异母兄，官至骠骑将军。元狩六年卒；本传只记他出征过河东迎父、带霍光入长安，不及其他战功。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            },
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "local",
+              "id": "004"
+            },
+            {
+              "kind": "local",
+              "id": "006"
+            },
+            {
+              "kind": "local",
+              "id": "007"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-zifu",
+      "name": "衛子夫",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "卫子夫是卫少儿之妹，得幸武帝，立为皇后；霍去病以皇后姊子贵幸。巫蛊之祸中自杀，事见《汉书·外戚传》。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "003"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷九十七·外戚傳",
+              "url": "https://zh.wikisource.org/wiki/漢書/卷097"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shangfu-xilang",
+      "name": "尚符璽郎",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "尚符玺郎是掌皇帝符玺的郎官。殿中夜惊，霍光召他取玺，他按剑不给，说「臣头可得，玺不可得」；霍光称许，请增其秩二等。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "010"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "huo-zhongru",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "霍中孺",
+      "paragraphText": "霍光，字子孟，是骠骑将军霍去病的弟弟。父亲霍中孺是河东平阳人，以县吏在平阳侯家做事，与侍者卫少儿私通，生下霍去病。"
+    },
+    {
+      "personId": "wei-shaoer",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 45,
+      "text": "卫少儿",
+      "paragraphText": "霍光，字子孟，是骠骑将军霍去病的弟弟。父亲霍中孺是河东平阳人，以县吏在平阳侯家做事，与侍者卫少儿私通，生下霍去病。"
+    },
+    {
+      "personId": "huo-qubing",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "霍去病",
+      "paragraphText": "霍光，字子孟，是骠骑将军霍去病的弟弟。父亲霍中孺是河东平阳人，以县吏在平阳侯家做事，与侍者卫少儿私通，生下霍去病。"
+    },
+    {
+      "personId": "wei-zifu",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "子夫",
+      "paragraphText": "后来，卫少儿的妹妹子夫得幸于武帝，立为皇后；霍去病以皇后姊子的身份贵幸。"
+    },
+    {
+      "personId": "shangfu-xilang",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 17,
+      "text": "尚符玺郎",
+      "paragraphText": "殿中曾有怪事，一夜群臣相惊；霍光召尚符玺郎，郎不肯把玺交给他。霍光要夺，郎按剑说：「臣头可得，玺不可得也！」"
+    }
+  ]
+}

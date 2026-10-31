@@ -1,0 +1,236 @@
+{
+  "people": [
+    {
+      "id": "han-wudi",
+      "name": "漢武帝",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "汉武帝是霍光辅政的托付者。征和二年卫太子败后，他属意钩弋子，赐霍光周公负成王图；后元二年病笃，以霍光为大司马大将军，与金日磾等四人受遗诏辅少主。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            },
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "017"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gouyi",
+      "name": "鉤弋趙婕妤",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "钩弋赵婕妤是武帝晚年宠姬，生昭帝刘弗陵。本传只写「有男」「立少子」，未记其结局；《外戚传》载其被谴责而死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "012"
+            },
+            {
+              "kind": "local",
+              "id": "014"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷九十七·外戚傳",
+              "url": "https://zh.wikisource.org/wiki/漢書/卷097"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jin-ridi",
+      "name": "金日磾",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "金日磾是匈奴休屠王之子，入汉为侍中，与霍光同受遗诏，为车骑将军。霍光让位于他，他以「外国人」推辞；后封秺侯，早卒。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "015"
+            },
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·金日磾",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shangguan-jie",
+      "name": "上官桀",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "上官桀是太仆、左将军，与霍光同受遗诏。后其子上官安之女为皇后，父子与霍光争权，谋反事觉，宗族被诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "018"
+            },
+            {
+              "kind": "local",
+              "id": "020"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sang-hongyang",
+      "name": "桑弘羊",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "桑弘羊是搜粟都尉、御史大夫，以酒榷、盐铁为国兴利。与上官桀、燕王通谋，事觉被诛。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "016"
+            },
+            {
+              "kind": "local",
+              "id": "026"
+            },
+            {
+              "kind": "local",
+              "id": "034"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-hu",
+      "name": "王忽",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "王忽是卫尉王莽之子，侍中。他扬言遗诏封三侯是「群儿自相贵」，霍光切责王莽，王莽鸩杀王忽。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "019"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "han-wudi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "武帝年老",
+      "paragraphText": "当时武帝年老，宠姬钩弋赵婕妤有男，武帝想立为嗣，命大臣辅之。他看群臣中只有霍光可当重任、可属社稷，便使黄门画者画周公负成王朝诸侯，赐给霍光。"
+    },
+    {
+      "personId": "gouyi",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 9,
+      "text": "钩弋赵婕妤",
+      "paragraphText": "当时武帝年老，宠姬钩弋赵婕妤有男，武帝想立为嗣，命大臣辅之。他看群臣中只有霍光可当重任、可属社稷，便使黄门画者画周公负成王朝诸侯，赐给霍光。"
+    },
+    {
+      "personId": "jin-ridi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "金日磾",
+      "paragraphText": "霍光顿首推让说：「臣不如金日磾。」金日磾也说：「臣外国人，不如光。」"
+    },
+    {
+      "personId": "shangguan-jie",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 22,
+      "text": "上官桀",
+      "paragraphText": "武帝以霍光为大司马大将军，金日磾为车骑将军，上官桀为左将军，桑弘羊为御史大夫，皆拜卧内床下，受遗诏辅少主。"
+    },
+    {
+      "personId": "sang-hongyang",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 30,
+      "text": "桑弘羊",
+      "paragraphText": "武帝以霍光为大司马大将军，金日磾为车骑将军，上官桀为左将军，桑弘羊为御史大夫，皆拜卧内床下，受遗诏辅少主。"
+    },
+    {
+      "personId": "wang-hu",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "王忽",
+      "paragraphText": "当时卫尉王莽之子王忽侍中，扬言说：「帝崩，忽常在左右，安得遗诏封三子事！群儿自相贵耳。」霍光听说，切责王莽，王莽鸩杀王忽。"
+    }
+  ]
+}

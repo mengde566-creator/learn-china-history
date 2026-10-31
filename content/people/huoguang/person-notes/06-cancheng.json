@@ -1,0 +1,306 @@
+{
+  "people": [
+    {
+      "id": "huo-xian",
+      "name": "霍顯",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "霍显是霍光夫人，宣成侯夫人。霍光死后改茔制、治第室，与冯子都私通；使淳于衍毒杀许皇后，后与诸女昆弟皆弃市。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "077"
+            },
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huo-yu",
+      "name": "霍禹",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "霍禹是霍光之子，嗣博陆侯。霍光死后为大司马而无印绶，怨望日深；后参与谋反，被要斩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "077"
+            },
+            {
+              "kind": "local",
+              "id": "089"
+            },
+            {
+              "kind": "local",
+              "id": "090"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huo-yun",
+      "name": "霍雲",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "霍云是霍光兄孙，封冠阳侯，官中郎将。当朝请而称病私出、围猎黄山；后坐谋反自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "080"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huo-shan",
+      "name": "霍山",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "霍山是霍光兄孙，乐平侯，领尚书。封事不关尚书后，霍氏甚恶之；后坐谋反自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "084"
+            },
+            {
+              "kind": "local",
+              "id": "107"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feng-zidu",
+      "name": "馮子都",
+      "versions": [
+        {
+          "from": 1,
+          "to": 5,
+          "text": "冯子都是霍光爱幸的监奴，常与计事；霍显寡居后与他私通。后数次犯法，宣帝一并责让霍氏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "079"
+            },
+            {
+              "kind": "local",
+              "id": "102"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-xiang",
+      "name": "魏相",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "魏相是御史大夫、后为丞相，宣帝亲信。他数燕见言事，助宣帝收霍氏兵权；霍氏家奴曾欲踢其门。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "081"
+            },
+            {
+              "kind": "local",
+              "id": "083"
+            },
+            {
+              "kind": "local",
+              "id": "084"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-huanghou",
+      "name": "許皇后",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "许皇后是宣帝微时之妃，即位后立为皇后。霍显使淳于衍毒杀她，事见《外戚传》；其子即元帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷九十七·外戚傳",
+              "url": "https://zh.wikisource.org/wiki/漢書/卷097"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chunyu-yan",
+      "name": "淳于衍",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "淳于衍是乳医，受霍显指使毒杀许皇后。事发下狱，霍光署「勿论」，遂得不究。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "085"
+            },
+            {
+              "kind": "local",
+              "id": "086"
+            },
+            {
+              "kind": "external",
+              "book": "《漢書》",
+              "section": "卷六十八·霍光",
+              "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "huo-xian",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "霍显",
+      "paragraphText": "霍禹既嗣为博陆侯，太夫人霍显改霍光时所自造的茔制，加以扩大：起三出阙，筑神道，北临昭灵，南出承恩，盛饰祠室，辇阁通属永巷，而幽良人婢妾守之。"
+    },
+    {
+      "personId": "huo-yu",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 31,
+      "text": "霍禹",
+      "paragraphText": "当初霍光爱幸监奴冯子都，常与他计事；霍显寡居后，与冯子都私通。霍禹、霍山也并缮治第宅，走马驰逐平乐馆。"
+    },
+    {
+      "personId": "huo-yun",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "霍云",
+      "paragraphText": "霍云当朝请，数次称病私出，多从宾客，张围猎于黄山苑中，使苍头奴上朝谒，莫敢谴责。"
+    },
+    {
+      "personId": "huo-shan",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "霍山",
+      "paragraphText": "当时霍山仍领尚书，宣帝令吏民得奏封事，不关尚书；群臣进见可以独往来。于是霍氏甚恶之。"
+    },
+    {
+      "personId": "feng-zidu",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 8,
+      "text": "冯子都",
+      "paragraphText": "当初霍光爱幸监奴冯子都，常与他计事；霍显寡居后，与冯子都私通。霍禹、霍山也并缮治第宅，走马驰逐平乐馆。"
+    },
+    {
+      "personId": "wei-xiang",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 42,
+      "text": "魏相",
+      "paragraphText": "宣帝自在民间，就知道霍氏尊盛日久，内心不能善之。霍光薨后，宣帝开始躬亲朝政，御史大夫魏相给事中。"
+    },
+    {
+      "personId": "xu-huanghou",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "许妃",
+      "paragraphText": "宣帝初立，立微时许妃为皇后。霍显爱小女成君，想把她送进宫，私下使乳医淳于衍用毒药杀许后，因劝霍光纳成君，代立为后；语在《外戚传》。"
+    },
+    {
+      "personId": "chunyu-yan",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 13,
+      "text": "淳于衍",
+      "paragraphText": "起初许后暴崩，吏捕诸医，劾淳于衍侍疾无状不道，下狱。吏簿问急，霍显恐事败，就把实情全告诉霍光。霍光大惊，想自己举发，又不忍，犹豫未决；恰逢奏上，就署衍勿论。"
+    }
+  ]
+}

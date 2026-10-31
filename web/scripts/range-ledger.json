@@ -593,5 +593,40 @@
   "range": "053–070",
   "seeds": "6c8347549c969967",
   "cards": "3e54bdb2f72931c5"
+ },
+ "huoguang/01-fengche": {
+  "range": "001–010",
+  "seeds": "4fd251864e49cab2",
+  "cards": "8eeb82757c8268d6"
+ },
+ "huoguang/02-guming": {
+  "range": "011–019",
+  "seeds": "b6b520db3f8ac60b",
+  "cards": "bc840c6dd5ee1fa3"
+ },
+ "huoguang/03-yangai": {
+  "range": "020–035",
+  "seeds": "a28e49aa7ef61d82",
+  "cards": "b2be5d8a9625db2e"
+ },
+ "huoguang/04-feichangyi": {
+  "range": "036–062",
+  "seeds": "4024c6105301cdaa",
+  "cards": "7e832cddc0ab7e70"
+ },
+ "huoguang/05-lixuan": {
+  "range": "063–076",
+  "seeds": "501f7914a0373e50",
+  "cards": "f801c372d842c3bf"
+ },
+ "huoguang/06-cancheng": {
+  "range": "077–086",
+  "seeds": "2fdf820c53b9ff06",
+  "cards": "c177108ca109d502"
+ },
+ "huoguang/07-zumie": {
+  "range": "087–118",
+  "seeds": "8b703a56dd6dff4f",
+  "cards": "1c8267dc6e33504c"
  }
 }
