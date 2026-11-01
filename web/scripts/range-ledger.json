@@ -537,11 +537,11 @@
  "weiwuji/05-hewai": {
   "range": "063–070",
   "seeds": "2d1eb158c925d68e",
-  "cards": "446e411c1f27aa37"
+  "cards": "64319314cf49e30e"
  },
  "weiwuji/06-chunjiu": {
   "range": "071–075",
-  "seeds": "6970146d6844c0ba",
+  "seeds": "16867a8931d4aee5",
   "cards": "adf6cfff25abbdc2"
  },
  "zhaoshe/01-tianbuli": {
@@ -565,9 +565,9 @@
   "cards": "823bd38ebbd6c445"
  },
  "zhaoshe/05-changping": {
-  "range": "034–056",
-  "seeds": "79433d9b84f0b09d",
-  "cards": "9ae4b51a91b5958e"
+  "range": "032–056",
+  "seeds": "89f18fb3a0e81ecd",
+  "cards": "b7e8bdb6ec75dbf3"
  },
  "genggong/01-jinpu": {
   "range": "001–016",
