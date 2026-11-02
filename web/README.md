@@ -36,6 +36,7 @@ npm run dev     # 打开 http://localhost:3000
 | `npm run dev` | `content` ＋ `next dev` | 开发服务器 | 日常 |
 | `npm run verify` | `node scripts/verify.mjs` | 浏览器端验证套件，**需要服务器先跑着**，可筛单项 | 改完界面 |
 | `npm run verify:progress` | `node scripts/verify-reading-progress.mjs` | 隔离浏览器核对尾屏、刷新续读、查证、完读、从头读及旧复习数据 | 改阅读进度或读后内容展示 |
+| `npm run test:store` | `node --test scripts/test-store.mjs` | 本机存储基座的单测（迁移、读合并写、坏数据、导入导出） | 动 `lib/store.js` 或任何存储键 |
 | `npm run shots` | `node scripts/screenshots.mjs` | 开发用：走一遍流程并截图（默认 `http://127.0.0.1:3100`） | 自查视觉 |
 | `npm run refs` | `node scripts/fetch-refs.mjs` | 把核对用的参考文本取到 `.refs/` + **记 / 校验哈希**（`manifest.json`，不进版本库） | 首次 / 换机器 |
 | `npm run refs:verify` | `node scripts/fetch-refs.mjs --verify` | **只校验不下载**：文件哈希对不上就明确失败，不静默换基准 | 怀疑参考文本变了 |
@@ -69,7 +70,8 @@ npm run verify contrast     # 只跑名字里含 contrast 的
 | `/p/<person>` | `app/p/[person]/page.jsx` | 人物页：他是谁 / 为什么读他 / 故事列表 / 关键时点 / 最近阅读（本机数据） |
 | `/p/<person>/<story>` | `app/p/[person]/[story]/page.jsx` | 故事页：情境铺陈 → 情节点 → 原文 / 背景卡 / 依据映射表 → 复习卡 → 提问 |
 | `/p/<person>/source` | `app/p/[person]/source/page.jsx` | **完整资料页**：全篇底本 ＋ 逐段直译，按号段分档 |
-| `/settings` | `app/settings/page.jsx` | 设置页 |
+| `/shelf` | `app/shelf/page.jsx` | **书架**：我的（接着读／收藏／读过）与全部篇章两面互切 |
+| `/settings` | `app/settings/page.jsx` | 设置页（含本机记录导出／导入与清除） |
 
 **没有 `app/api/`。** 这一版没有任何服务端接口：内容在构建期就编译进 `data/content.json`，
 页面按 id 静态生成（`generateStaticParams`）。
@@ -102,7 +104,11 @@ npm run verify contrast     # 只跑名字里含 contrast 的
 | 原文 / 背景卡 / 依据映射表 | 侧栏三个全景视图 |
 | **预置问答** | 按分组排列，全部经人工审校，带依据标注 |
 | 复习卡 | 默认折叠，点开才看答案；可标「待复习／已掌握」 |
-| 阅读进度 | 每篇记到第几段，**只存在本机**（localStorage），可接着读、也可从头读 |
+| 阅读进度 | 每篇记到第几段，**只存在本机**（localStorage），可接着读、也可从头读；首页有「接着读」 |
+| **收藏** | 篇级一键收藏，人物页卡片、正文顶栏、开篇页都能收；书架可查可取消 |
+| **批注（朱批）** | 侧面板第六页签：给某一段写一句自己的话，带锚点，内容改版后能找回原位 |
+| **书架** | `/shelf`：我的（接着读／收藏／读过）与全部篇章两面互切 |
+| **本机记录导出** | 进度与收藏导成一个文件；导入是合并，不是替换 |
 | **完整资料页** | `/p/<person>/source`：全篇底本 ＋ 直译 |
 | 设置页 | 本地设置（场景区浅色）＋ 清除本机阅读数据；**不上传任何东西** |
 
@@ -169,6 +175,7 @@ web/
     p/[person]/page.jsx           人物页
     p/[person]/[story]/page.jsx   故事页（服务端：读内容；交互在 StoryClient）
     p/[person]/source/page.jsx    完整资料页（底本 ＋ 直译）
+    shelf/page.jsx                书架（我的／全部篇章）
     settings/page.jsx             设置
     globals.css           设计系统（从 design/style-tile.html 移植）
     icon.svg
@@ -181,13 +188,21 @@ web/
     CiteText.jsx          依据里的编号与引文
     SealMark.jsx          印章字
     RecentRead.jsx        人物页的「最近阅读」（本机数据）
+    ContinueRead.jsx      首页的「接着读」（无进度时整块不渲染）
+    StarButton.jsx        篇级收藏按钮（链接的兄弟，不嵌在 <a> 里）
+    ShelfClient.jsx       书架两视图
     SettingsClient.jsx    设置（客户端）
   lib/
     content.js            读编译产物
     range.mjs             「原文范围」的唯一实现（编译器和渲染层共用）
     cite.mjs              「拼出处」的唯一实现（编译器和骨架生成器共用）
+    store.js              本机存储基座（版本迁移／读合并写／坏数据留证／降级状态）
+    use-store.js          React 绑定（useSyncExternalStore + selector）
+    keys.js               `人物/篇` 的唯一拼法
     settings.js           本地设置存取（localStorage）
-    progress.js           阅读进度与复习状态（localStorage，模块级状态 + 订阅）
+    progress.js           阅读进度与复习状态
+    library.js            收藏与批注
+    backup.js             本机记录的导出／导入
   scripts/                见上面的命令表
   data/content.json       编译产物（自动生成，不进版本库）
 ```
