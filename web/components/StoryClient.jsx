@@ -531,12 +531,14 @@ export default function StoryClient({ person, story, source }) {
          但要排除「恢复位置本来就在页底」——那不是读完了，是这篇短。 */
       const movedDown = entryScrollY.current != null && window.scrollY > entryScrollY.current + 40
       const atBottom = movedDown && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
-      const n = atBottom ? els.length : Number(current.dataset.n)
+      const n = Number(current.dataset.n)
       const reachedEnd = atBottom || els.at(-1).getBoundingClientRect().bottom <= window.innerHeight - 30
+      /* 页底只改变「读到哪」，**不改变「当前是哪段」**：
+         面板跟着阅读线走，把当前段也推到末段会让旁批跳过整整一段。 */
       setFollowing(n)
       // 末段可见时先展示读后内容；持久进度只跟阅读线走，不因文末露出而完读。
       if (reachedEnd) setAfterVisible(true)
-      setRevealed((previous) => Math.max(previous, n))
+      setRevealed((previous) => Math.max(previous, atBottom ? els.length : n))
     }
     const schedule = (event) => {
       if (event?.type === 'resize' && panelOpen) return
