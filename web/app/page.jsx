@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { listPeople, groupByEra, PLANNED } from '@/lib/content'
 import SealMark from '@/components/SealMark'
+import ContinueRead from '@/components/ContinueRead'
 
 export default function Home() {
   const people = listPeople()
@@ -16,11 +17,30 @@ export default function Home() {
   ]
   const groups = groupByEra(all)
 
+  /* 「接着读」只认已实现的篇：给客户端一个 130 条的轻量索引，
+     不把整份内容（9.5 MB）塞进首页。 */
+  const readIndex = {}
+  for (const p of people) {
+    for (const s of p.storyList) {
+      if (!s.ready) continue
+      readIndex[`${p.id}/${s.id}`] = {
+        personId: p.id,
+        personName: p.name,
+        storyId: s.id,
+        storyName: s.name,
+        beats: p.stories[s.id]?.beats.length || 1,
+      }
+    }
+  }
+
   return (
     <main className="wrap">
       <header className="page-head">
         <h1>观 史</h1>
       </header>
+
+      {/* 有进度才出现；没有进度时这一块整个不渲染（不给新读者画假进度）。 */}
+      <ContinueRead index={readIndex} />
 
       {groups.map(({ era, list }) => (
         <section key={era} className="era-row">
