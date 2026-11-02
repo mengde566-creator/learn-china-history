@@ -51,20 +51,25 @@ export default async function PersonPage({ params }) {
         </section>
       )}
 
-      {person.why.length > 0 && (
-        <section className="sec">
-      {/* 最近读到哪一篇（本机数据，服务端渲染时为空） */}
-      <RecentRead personId={person.id} stories={person.storyList.map((story) => ({
-        ...story, beatTotal: person.stories[story.id]?.beats.length || 1,
-      }))} />
+      {/* 最近阅读与完整资料。**不挂在「引子」里**——它们和引子没有关系；
+          原来的位置只要哪个人物没有 why，这两块就一起消失。
+          两块共用一层 `.sec`：有进度时是 58 / 26 的节奏；没有进度时
+          26 与 58 折叠成 58，和其他分节一致。 */}
+      <section className="sec">
+        <RecentRead personId={person.id} stories={person.storyList.map((story) => ({
+          ...story, beatTotal: person.stories[story.id]?.beats.length || 1,
+        }))} />
 
-      <section style={{ marginTop: 26 }}>
-        <Link href={`/p/${person.id}/source`} className="entry-card">
-          <b>完整资料</b>
-          <span>{person.sourceCount} 段原文，附逐段白话</span>
-        </Link>
+        <section style={{ marginTop: 26 }}>
+          <Link href={`/p/${person.id}/source`} className="entry-card">
+            <b>完整资料</b>
+            <span>{person.sourceCount} 段原文，附逐段白话</span>
+          </Link>
+        </section>
       </section>
 
+      {person.why.length > 0 && (
+        <section className="sec">
           <h2 className="sec-title">引子</h2>
           <div className="prose-block why">
             {person.why.map((p, i) => <p key={i}>{p}</p>)}

@@ -804,6 +804,19 @@ body.light-stage{
   padding:1px 5px;border-radius:2px;
 }
 .set-row .ctrl{flex:none;padding-top:2px}
+.set-row .ctrl-actions{display:flex;gap:8px}
+/* 设置行里的**文字**按钮。`.switch` 是开关（46×26 带圆钮），
+   拿它装四个字会把字折成两行、被圆钮压住——原来那个「清 除」就是坏的，
+   只是没人盯着看过。确认态要让人决定要不要销毁数据，主按钮必须能读。 */
+.set-btn{
+  font-family:var(--f-hei);font-size:12px;letter-spacing:.12em;white-space:nowrap;
+  padding:6px 14px;border-radius:2px;border:1px solid var(--xuan-4);
+  color:var(--su-dim);background:none;cursor:pointer;
+  transition:color .25s var(--ease),border-color .25s var(--ease);
+}
+.set-btn:hover{color:var(--su);border-color:var(--su-mute)}
+.set-btn.danger{color:var(--zhu);border-color:rgba(184,64,47,.45)}
+.set-btn.danger:hover{color:#d1503c;border-color:var(--zhu)}
 
 .switch{
   position:relative;width:46px;height:26px;border-radius:14px;

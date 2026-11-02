@@ -14,12 +14,16 @@ import { useEffect, useState } from 'react'
  *   {
  *     read:    { "caocao/09-chibi": { beat: 5, done: true, at: 1697… } },
  *     review:  { "caocao/09-chibi": { "3": "known" | "todo" } },
- *     last:    { person: "caocao", story: "09-chibi", at: 1697… },
  *   }
+ *
+ * **没有 `last` 了。** 它原来记「最后打开的一篇」，但全仓没有一个读者
+ * （「最近阅读」用的是 `read` 里的 `at`），而且 `resetStory` 只比篇 id、
+ * 不比人物——`01-jingkou` 在 liuyu 与 tandaoji 各有一份，复位一个会误清另一个。
+ * 死字段 + 会误伤，不如删掉：谁要「最近」，从 `read` 排 `at`。
  */
 
 const KEY = 'guanshi.progress.v1'
-const EMPTY = { read: {}, review: {}, last: null }
+const EMPTY = { read: {}, review: {} }
 
 let state = EMPTY
 const subs = new Set()
@@ -33,7 +37,6 @@ export function loadProgress() {
     return {
       read: raw.read && typeof raw.read === 'object' ? raw.read : {},
       review: raw.review && typeof raw.review === 'object' ? raw.review : {},
-      last: raw.last && typeof raw.last === 'object' ? raw.last : null,
     }
   } catch {
     return EMPTY
@@ -78,7 +81,6 @@ export function markRead(personId, storyId, patch) {
   state = {
     ...state,
     read: { ...state.read, [k]: { ...prev, ...patch, at: Date.now() } },
-    last: { person: personId, story: storyId, at: Date.now() },
   }
   persist(); emit()
 }
@@ -97,7 +99,7 @@ export function markReview(personId, storyId, cardNo, status) {
 export function resetStory(personId, storyId) {
   const k = storyKey(personId, storyId)
   const read = { ...state.read }; delete read[k]
-  state = { ...state, read, last: state.last?.story === storyId ? null : state.last }
+  state = { ...state, read }
   persist(); emit()
 }
 
