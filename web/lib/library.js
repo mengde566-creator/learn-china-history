@@ -68,10 +68,6 @@ export const libraryStore = createPersistentStore({
   sanitize: sanitizeLibrary,
 })
 
-export function isStarred(personId, storyId) {
-  return Boolean(libraryStore.get().stars[storyKey(personId, storyId)])
-}
-
 /** 一键收藏 / 取消。**不弹窗、不问道理**——读者按下的每一次都是有意的。 */
 export function toggleStar(personId, storyId) {
   const key = storyKey(personId, storyId)
@@ -84,26 +80,12 @@ export function toggleStar(personId, storyId) {
   })
 }
 
-/** 读者亲手留下的一切，按时间倒序。书架与导出都从这里取。 */
-export function starList() {
-  return Object.entries(libraryStore.get().stars)
-    .map(([key, value]) => {
-      const [personId, storyId] = key.split('/')
-      return { key, personId, storyId, at: value.at || 0 }
-    })
-    .sort((a, b) => b.at - a.at)
-}
-
 export function useStars() {
   return useStoreSelector(libraryStore, (state) => state.stars)
 }
 
 export function useNotes() {
   return useStoreSelector(libraryStore, (state) => state.notes)
-}
-
-export function noteFor(personId, storyId, beat) {
-  return libraryStore.get().notes[noteKey(personId, storyId, beat)] || null
 }
 
 /**
