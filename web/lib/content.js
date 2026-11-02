@@ -42,7 +42,7 @@ export function groupByEra(people) {
   const map = new Map()
   for (const p of people) {
     const original = p.era || '未分期'
-    const era = ERA_GROUPS.find(group => group.match.test(original))?.era || original
+    const era = ERA_GROUPS.find(group => group.match.test(simplifyEra(original)))?.era || original
     if (!map.has(era)) map.set(era, [])
     map.get(era).push(p)
   }
@@ -86,6 +86,13 @@ export const PLANNED = [
   { id: 'gaohuan', name: '高欢', era: '东魏 · 北齐', book: '《北齐书·神武帝纪》' },
   { id: 'yuwentai', name: '宇文泰', era: '西魏 · 北周', book: '《周书·文帝纪》' },
 ]
+
+/* 时代串是**内容**给的，有的人写成繁体（`東漢 · 明帝、章帝`、`戰國 · 魏`）。
+   分组只认简体的话，这五个人会掉到列表最后、各自占一个「朝代」。
+   这里只做**匹配用**的简化，显示仍用原文——内容要不要统一写法是内容那边的事，
+   界面不该因此把人物分错组。 */
+const TRAD = { 東: '东', 漢: '汉', 戰: '战', 國: '国', 晉: '晋', 趙: '赵', 齊: '齐', 後: '后' }
+export const simplifyEra = (s) => String(s || '').replace(/[東漢戰國晉趙齊後]/g, (ch) => TRAD[ch])
 
 // 按朝代阶段识别，避免细标签漏表沉底，也不将晋、南北朝或宋、元合并。
 const ERA_GROUPS = [

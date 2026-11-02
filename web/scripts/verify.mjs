@@ -188,14 +188,12 @@ async function open(mode = 'dark', opts = {}) {
 /* ── 检查项 ─────────────────────────────────────── */
 
 check('首页: 时代合并、人物时间顺序与手机卡片边界', async () => {
-  const expected = [
-    { era: '春秋战国', names: ['荆轲'] },
-    { era: '秦汉', names: ['项羽', '韩信'] },
-    { era: '汉末三国', names: ['曹操'] },
-    { era: '晋', names: ['祖逖', '王猛', '谢玄'] },
-    { era: '南北朝', names: ['刘裕', '檀道济', '陈庆之', '韦孝宽', '高欢', '宇文泰'] },
-    { era: '宋朝', names: ['辛弃疾'] },
-  ]
+  /* 人数与姓名**从内容库推导**，不写死：这条检查的意图是「分组与排序正确」，
+     不是「人数不变」。写死人数的话，每次加人都红，只会训练出「改测试让它绿」。
+     针对性断言留在下面——那几句才是这条检查真正的信号。 */
+  const content = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'content.json'), 'utf8'))
+  const KNOWN_ERAS = ['春秋战国', '秦汉', '汉末三国', '晋', '南北朝', '宋朝']
+  const mustBe = { 耿恭: '秦汉', 霍光: '秦汉', 魏無忌: '春秋战国', 趙奢: '春秋战国', 曹操: '汉末三国' }
   const saved = { read: { 'caocao/01-wusebang': { beat: 3, beatCount: 7, done: false, phase: 'live', at: 100 } }, review: { 'caocao/01-wusebang': { 1: 'known' } }, last: null }
   for (const width of [390, 1324]) for (const light of [false, true]) {
     const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
@@ -213,16 +211,29 @@ check('首页: 时代合并、人物时间顺序与手机卡片边界', async ()
         era: row.querySelector('.era-name').textContent,
         names: [...row.querySelectorAll('.person-card .nm')].map(el => el.textContent),
       })))
-      if (JSON.stringify(actual) !== JSON.stringify(expected)) return fail(`${width}px 时代或顺序错误：${JSON.stringify(actual)}`)
+      /* ① 每个人恰好出现一次 ② 没有落到「原样显示繁体时代」的兜底组 */
+      const seen = actual.flatMap(row => row.names)
+      if (seen.length !== content.people.length) return fail(`${width}px 首页人数 ${seen.length} ≠ 内容库 ${content.people.length}`)
+      if (new Set(seen).size !== seen.length) return fail(`${width}px 首页有人重复出现`)
+      const stray = actual.filter(row => !KNOWN_ERAS.includes(row.era))
+      if (stray.length) return fail(`${width}px 有人没并进已知时代：${JSON.stringify(stray)}`)
+      if (actual.map(row => row.era).join() !== KNOWN_ERAS.filter(e => actual.some(r => r.era === e)).join())
+        return fail(`${width}px 时代顺序错误：${JSON.stringify(actual.map(r => r.era))}`)
+      /* ③ 繁体「时代」串（11-01 那批五个人）必须仍按简体分组 */
+      for (const [name, era] of Object.entries(mustBe)) {
+        const row = actual.find(r => r.names.includes(name))
+        if (!row || row.era !== era) return fail(`${width}px ${name} 应在「${era}」，实际「${row?.era || '缺失'}」`)
+      }
       const layout = await p.locator('.era-row').evaluateAll(rows => rows.map(row => ({
         labelBottom: row.querySelector('.era-name').getBoundingClientRect().bottom,
         cards: [...row.querySelectorAll('a.person-card')].map(el => ({ href: el.getAttribute('href'), left: el.getBoundingClientRect().left, right: el.getBoundingClientRect().right, top: el.getBoundingClientRect().top })),
       })))
       const cards = layout.flatMap(row => row.cards)
-      if (cards.length !== 14 || new Set(cards.map(c => c.href)).size !== 14) return fail('首页人物入口缺失或重复')
+      if (cards.length !== content.people.length || new Set(cards.map(c => c.href)).size !== cards.length) return fail('首页人物入口缺失或重复')
       if (cards.some(c => c.left < 0 || c.right > width)) return fail(`${width}px 人物卡越出视口`)
       if (width === 390 && layout.some(row => row.labelBottom > row.cards[0].top)) return fail('手机时代标签没有排在人物卡上方')
-      if (width === 1324 && Math.abs(layout[4].cards[0].top - layout[4].cards[1].top) > 2) return fail('桌面南北朝人物仍逐张竖排')
+      const nanbei = layout[actual.findIndex(row => row.era === '南北朝')]
+      if (width === 1324 && nanbei && nanbei.cards.length > 1 && Math.abs(nanbei.cards[0].top - nanbei.cards[1].top) > 2) return fail('桌面南北朝人物仍逐张竖排')
       if (await p.evaluate(() => document.documentElement.scrollWidth > innerWidth)) return fail('首页横向溢出')
       if (await p.evaluate(() => localStorage.getItem('guanshi.progress.v1')) !== JSON.stringify(saved)) return fail('首页修改了阅读或复习记录')
       if (errors.length) return fail(errors.join('；'))
@@ -233,7 +244,7 @@ check('首页: 时代合并、人物时间顺序与手机卡片边界', async ()
       }
     } finally { await context.close() }
   }
-  return ok('两尺寸明暗四组：春秋战国、秦汉、汉末三国、晋、南北朝、宋朝六区14人，时间顺序、手机完整卡片与旧记录保持')
+  return ok(`两尺寸明暗四组：六区 ${content.people.length} 人各自分组正确（含繁体时代串）、手机完整卡片与旧记录保持`)
 })
 
 check('routes: 所有路由可访问且无控制台报错', async () => {
@@ -557,18 +568,71 @@ check('routes: 每篇读完都有通往下一篇的出口', async () => {
     : ok(`${byPerson.size} 个人物 · ${visited} 篇，读完都能接着往下走`)
 })
 
-check('geometry: 朱批印不与文字重叠', async () => {  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
+check('geometry: 朱批印与收藏按钮都不压文字', async () => {  await page.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
   await page.evaluate(() => document.fonts.ready)
   const r = await page.evaluate(() => {
     const card = document.querySelector('.story-card.ready')
-    const seal = card.querySelector('.seal')
-    const q = card.querySelector('.q')
-    const sr = seal.getBoundingClientRect(), qr = q.getBoundingClientRect()
-    return { 文字右: Math.round(qr.right), 印左: Math.round(sr.left), 印右: Math.round(sr.right), 卡右: Math.round(card.getBoundingClientRect().right) }
+    const box = (el) => el && el.getBoundingClientRect()
+    const hit = (a, b) => a && b && Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1
+      && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1
+    const c = box(card), seal = box(card.querySelector('.seal')), star = box(card.querySelector('.sc-star'))
+    const q = box(card.querySelector('.q')), mt = box(card.querySelector('.mt'))
+    return {
+      卡右: Math.round(c.right), 卡高: Math.round(c.height),
+      星: star && { 左: Math.round(star.left), 上: Math.round(star.top), 宽: Math.round(star.width), 高: Math.round(star.height) },
+      印: seal && { 左: Math.round(seal.left), 右: Math.round(seal.right), 下: Math.round(seal.bottom) },
+      印压标题: hit(seal, q), 印压元信息: hit(seal, mt),
+      星压标题: hit(star, q), 星压元信息: hit(star, mt), 星印相交: hit(star, seal),
+      星位置: star ? getComputedStyle(card.querySelector('.sc-star')).position : null,
+      星在右上: star ? (c.right - star.right) <= 24 && (star.top - c.top) <= 16 : false,
+      触控: star ? [Math.round(star.width), Math.round(star.height)] : null,
+    }
   })
-  if (r.印左 < r.文字右) return fail(`印左缘 ${r.印左} 压住了文字右缘 ${r.文字右}`)
-  if (r.印右 > r.卡右) return fail(`印右缘 ${r.印右} 超出卡片 ${r.卡右}`)
-  return ok(`文字右 ${r.文字右} < 印左 ${r.印左}；印右 ${r.印右} ≤ 卡右 ${r.卡右}`)
+  if (!r.星) return fail('人物页卡片上没有收藏按钮')
+  if (r.星位置 !== 'absolute') return fail(`收藏按钮的 position 是 ${r.星位置}——被更高特异度的规则压回了普通流`)
+  if (!r.星在右上) return fail(`收藏按钮不在卡片右上角：${JSON.stringify(r.星)}`)
+  if (r.星压标题 || r.星压元信息) return fail('收藏按钮压到了文字')
+  if (r.印压标题 || r.印压元信息) return fail('朱批印压到了文字')
+  if (r.星印相交) return fail('收藏按钮与朱批印相交')
+  if (r.印.右 > r.卡右) return fail(`印右缘 ${r.印.右} 超出卡片 ${r.卡右}`)
+  if (r.触控[0] < 40 || r.触控[1] < 40) return fail(`收藏按钮触控目标只有 ${r.触控}`)
+  return ok(`星标在右上 ${JSON.stringify(r.星)}；印在右下，两者与标题/元信息都不相交；卡高 ${r.卡高}`)
+})
+
+check('收藏: 一键收藏不跳转，整卡仍可点，刷新保留', async () => {
+  for (const width of [390, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
+    try {
+      const p = await context.newPage(), errors = []
+      p.on('pageerror', (e) => errors.push(e.message))
+      await p.goto(`${BASE}/p/${SAMPLE.person.id}`, { waitUntil: 'networkidle' })
+      await p.evaluate(() => document.fonts.ready)
+      const star = p.locator('.story-card .sc-star').first()
+      if (await star.count() !== 1) return fail(`${width}px 卡片上没有收藏按钮`)
+      const before = new URL(p.url()).pathname
+      await star.click()
+      await p.waitForFunction(() => document.querySelector('.sc-star')?.getAttribute('aria-pressed') === 'true', null, { timeout: 4000 })
+        .catch(() => {})
+      if (new URL(p.url()).pathname !== before) return fail(`${width}px 点收藏跳进了故事`)
+      const saved = await p.evaluate(() => JSON.parse(localStorage.getItem('guanshi.library.v1') || 'null'))
+      if (!saved?.stars?.[`${SAMPLE.person.id}/${SAMPLE.story.id}`]) {
+        /* 第一篇未必是 SAMPLE.story.id，退一步只要求有且只有一条 */
+        if (Object.keys(saved?.stars || {}).length !== 1) return fail(`${width}px 收藏没有写进本机`)
+      }
+      await p.reload({ waitUntil: 'networkidle' })
+      await p.waitForFunction(() => document.querySelector('.sc-star')?.getAttribute('aria-pressed') === 'true', null, { timeout: 4000 })
+        .catch(() => {})
+      if (await p.locator('.story-card .sc-star').first().getAttribute('aria-pressed') !== 'true') return fail(`${width}px 刷新后收藏丢了`)
+
+      /* 整卡仍可点：点卡片右侧留白（避开星标与印章）应当进入故事 */
+      const box = await p.locator('.story-card.ready').first().boundingBox()
+      await p.mouse.click(box.x + box.width - 40, box.y + box.height - 24)
+      await p.waitForURL(/\/p\/[^/]+\/[^/]+$/, { timeout: 4000 }).catch(() => {})
+      if (!/\/p\/[^/]+\/[^/]+$/.test(new URL(p.url()).pathname)) return fail(`${width}px 点卡片留白没有进入故事`)
+      if (errors.length) return fail(`${width}px 控制台报错：${errors.join('｜')}`)
+    } finally { await context.close() }
+  }
+  return ok('两尺寸：收藏不跳转、写进本机、刷新保留；点卡片右侧留白仍能进入故事')
 })
 
 check('animation: 朱批笔圈确实在扫（不是瞬间出现）', async () => {

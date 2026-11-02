@@ -144,7 +144,9 @@ await shot(page, '15-设置', { full: true })
 /* 16+. 八篇弧线：每篇的门口各拍一张。
    篇目从人物页现取，不写死——以后再加故事，这一段自动跟着长。 */
 await page.goto(`${BASE}/p/${PERSON.id}`, { waitUntil: 'networkidle' })
-const arcIds = await page.$$eval('a.story-card.ready', (as) =>
+/* 卡片在收藏功能落地后从 <a> 变成了 <div>（收藏按钮不能嵌在链接里），
+   篇目链接在 .sc-body 上。 */
+const arcIds = await page.$$eval('.story-card.ready .sc-body', (as) =>
   as.map((a) => a.getAttribute('href').split('/').pop())
 )
 if (!arcIds.length) throw new Error('人物页上一个 .story-card.ready 都没有')
