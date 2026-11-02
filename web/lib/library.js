@@ -127,6 +127,34 @@ export function deleteNote(personId, storyId, beat) {
 }
 
 /**
+ * 改一条**已经存在**的批注——哪怕它被锚点挪到了别的段。
+ *
+ * 为什么必须按键改：内容改版后 `#3` 那条可能显示在第 6 段。
+ * 若按显示位置再写一次，就会生成 `#6` 而 `#3` 还在，读者看到两条一样的批注。
+ */
+export function updateNote(key, text, anchor) {
+  const clean = String(text || '').trim().slice(0, NOTE_LIMIT)
+  if (!isNoteKey(key)) return
+  if (!clean) { removeNote(key); return }
+  const now = Date.now()
+  libraryStore.set((state) => {
+    const prev = state.notes[key]
+    if (!prev) return state
+    const notes = { ...state.notes, [key]: { text: clean, at: now, ...(anchor || prev.anchor ? { anchor: anchor || prev.anchor } : {}) } }
+    return { ...state, notes }
+  })
+}
+
+export function removeNote(key) {
+  if (!isNoteKey(key)) return
+  libraryStore.set((state) => {
+    const notes = { ...state.notes }
+    delete notes[key]
+    return { ...state, notes }
+  })
+}
+
+/**
  * 这一篇的批注，按段号排。
  *
  * 内容改版后段号会漂：有锚点的先用锚点找同一段（找不到就留在原段号、标 `moved`），
@@ -149,7 +177,7 @@ export function notesFor(personId, storyId, beats) {
       place = beats.length
       moved = true
     }
-    out.push({ beat: place, text: note.text, at: note.at, moved })
+    out.push({ key, beat: place, text: note.text, at: note.at, moved })
   }
   return out.sort((a, b) => a.beat - b.beat)
 }

@@ -13,7 +13,7 @@ import SourceText from '@/components/SourceText'
 import { hasMixedSourceLayers, sourceExcerptOrigin } from '@/lib/source-layers.mjs'
 import { evidenceExcerpt } from '@/lib/evidence.mjs'
 import { personVersion } from '@/lib/person-notes.mjs'
-import { noteFor, notesFor, setNote, deleteNote, NOTE_LIMIT, useNotes } from '@/lib/library'
+import { notesFor, setNote, updateNote, removeNote, NOTE_LIMIT, useNotes } from '@/lib/library'
 
 /* 界面上只放短标签。长说明在图例里出现一次就够——
    原来每个标记都重复一遍「出自原文，可逐字核对」，纯属噪音。 */
@@ -115,6 +115,8 @@ export default function StoryClient({ person, story, source }) {
     return () => query.removeEventListener('change', update)
   }, [])
   const restoring = useRef(true)
+  /* 进正文时读者落在哪里。用来区分「他自己滚到页底」和「这篇短、恢复位置本来就在页底」。 */
+  const entryScrollY = useRef(null)
   useEffect(() => {
     const previous = window.history.scrollRestoration
     window.history.scrollRestoration = 'manual'
@@ -150,7 +152,11 @@ export default function StoryClient({ person, story, source }) {
   const noteHas = (n) => Boolean(notes[`${person.id}/${story.id}#${n}`])
   const saveNote = () => {
     if (!editing) return
-    setNote(person.id, story.id, editing.beat, editing.draft, beatAnchor(beats[editing.beat - 1]))
+    const anchor = beatAnchor(beats[editing.beat - 1])
+    /* 改已有批注按**原来的键**写：它可能因为内容改版被锚点挪到了别的段，
+       按新段号再写一次会变成两条。 */
+    if (editing.key) updateNote(editing.key, editing.draft, anchor)
+    else setNote(person.id, story.id, editing.beat, editing.draft, anchor)
     setEditing(null)
   }
   const cancelNote = () => setEditing(null)
@@ -412,6 +418,7 @@ export default function StoryClient({ person, story, source }) {
     if (revealed <= 1) {
       window.scrollTo({ top: 0, behavior: 'instant' })
       restoring.current = false
+      entryScrollY.current = window.scrollY
       return
     }
     restoring.current = true
@@ -433,6 +440,7 @@ export default function StoryClient({ person, story, source }) {
       else window.scrollTo({ top: 0, behavior: 'instant' })
       frame = requestAnimationFrame(() => {
         restoring.current = false
+        entryScrollY.current = window.scrollY
         window.dispatchEvent(new Event('scroll'))
       })
     }
@@ -518,8 +526,13 @@ export default function StoryClient({ person, story, source }) {
       const line = 140
       let current = els[0]
       for (const el of els) if (el.getBoundingClientRect().top <= line) current = el
-      const n = Number(current.dataset.n)
-      const reachedEnd = els.at(-1).getBoundingClientRect().bottom <= window.innerHeight - 30
+      /* **自己滚到页底就是读到末段。** 只认「段落顶部越过阅读线」的话，
+         矮篇 + 高屏时读者把页面滚到底也到不了 140，会永远停在倒数第二段。
+         但要排除「恢复位置本来就在页底」——那不是读完了，是这篇短。 */
+      const movedDown = entryScrollY.current != null && window.scrollY > entryScrollY.current + 40
+      const atBottom = movedDown && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
+      const n = atBottom ? els.length : Number(current.dataset.n)
+      const reachedEnd = atBottom || els.at(-1).getBoundingClientRect().bottom <= window.innerHeight - 30
       setFollowing(n)
       // 末段可见时先展示读后内容；持久进度只跟阅读线走，不因文末露出而完读。
       if (reachedEnd) setAfterVisible(true)
@@ -861,7 +874,7 @@ export default function StoryClient({ person, story, source }) {
                 const list = notesFor(person.id, story.id, beats)
                 const beatNo = editing?.beat ?? noteBeat ?? shownBeat?.n ?? following
                 const current = list.find((note) => note.beat === beatNo) || null
-                const start = () => setEditing({ beat: beatNo, draft: current?.text || '' })
+                const start = () => setEditing({ key: current?.key || null, beat: beatNo, draft: current?.text || '' })
                 return (
                   <div className="panel-face paper anim-fade" key={`notes-${beatNo}`}>
                     <h3>第 {beatNo} 段 的 批 注</h3>
@@ -888,7 +901,7 @@ export default function StoryClient({ person, story, source }) {
                           <button type="button" onClick={saveNote}>存</button>
                           <button type="button" onClick={cancelNote}>取消</button>
                           {current && (
-                            <button type="button" className="danger" onClick={() => { deleteNote(person.id, story.id, beatNo); cancelNote() }}>删</button>
+                            <button type="button" className="danger" onClick={() => { removeNote(current.key); cancelNote() }}>删</button>
                           )}
                           <span className="note-count">{editing.draft.length} / {NOTE_LIMIT}</span>
                         </div>
@@ -898,7 +911,7 @@ export default function StoryClient({ person, story, source }) {
                         <p className="note-text">{current.text}</p>
                         <div className="note-actions">
                           <button type="button" onClick={start}>改</button>
-                          <button type="button" className="danger" onClick={() => deleteNote(person.id, story.id, beatNo)}>删</button>
+                          <button type="button" className="danger" onClick={() => removeNote(current.key)}>删</button>
                         </div>
                       </div>
                     ) : (

@@ -1196,6 +1196,9 @@ check('读后追问: 手机桌面原地查证，键盘关闭与焦点返回', as
     try {
       await p.goto(`${BASE}/p/gaohuan/01-hanshi`, { waitUntil: 'networkidle' })
       await p.locator('button.cta').click()
+      /* 进正文后有一段「等布局稳定再把读者送到上次那段」的恢复滚动；
+         在它结束前滚页，会被它拉回去（这不是缺陷，是恢复逻辑在收尾）。 */
+      await p.waitForTimeout(1500)
       await p.locator('.next-bar').scrollIntoViewIfNeeded()
       await p.locator('.ask-btn').scrollIntoViewIfNeeded()
       // 浏览器滚动后的阅读线计算在下一帧写入。先等这次真实阅读完成，
