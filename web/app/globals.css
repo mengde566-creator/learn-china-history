@@ -912,7 +912,7 @@ body.light-stage{
 .seal.on b{opacity:1}
 
 /* 卡片右下角的印 */
-.story-card .seal{position:absolute;right:26px;top:50%;transform:translateY(-50%);--seal:52px}
+.story-card .seal{position:absolute;right:26px;bottom:10px;--seal:52px}
 .person-card .seal{position:absolute;right:22px;bottom:18px;--seal:56px}
 
 /* .seal 要排除掉——它必须能绝对定位到角落，
@@ -986,11 +986,15 @@ body.light-stage{
   box-shadow:0 1px 0 var(--paper-edge), 0 14px 34px -18px rgba(0,0,0,.55);
 }
 .story-card{
-  position:relative;display:block;padding:22px 90px 22px 26px;
+  position:relative;display:block;padding:0;
   transition:background-color .3s var(--ease);
   overflow:hidden;
   border-bottom:1px solid rgba(0,0,0,.07);
 }
+/* 内边距挪到链接上：链接的盒子才是整张卡，**整卡都可点**（含右侧留白），
+   文字仍然可选。之前只给 display:block，右侧留白是死的。 */
+.story-card.ready > .sc-body{display:block;padding:22px 90px 22px 26px}
+.story-card.locked{padding:22px 90px 22px 26px}
 .story-card:last-child{border-bottom:none}
 /* 卡片内容压在墨痕之上 */
 .story-card > *:not(.seal){position:relative;z-index:1}
@@ -1015,6 +1019,37 @@ body.light-stage{
 }
 /* 「进入」默认不显示，悬停才浮现——列表才安静 */
 .story-card .badge-todo{color:var(--paper-ink-3)}
+
+/* 印章是装饰（aria-hidden），不该挡住整卡的点击：它压在链接上面，
+   否则卡片右下会有一块点了没反应的死角。 */
+.seal{pointer-events:none}
+
+/* 收藏按钮（篇级）。用「收」一个字，不用 ★——★ 已经是内容里的标记。
+   **它是链接的兄弟节点，不是子节点**：<a> 里放 <button> 是非法嵌套，
+   键盘 Tab 会跳过、读屏会读出两个角色。
+   位置落在卡片右侧预留的空白里（padding-right:90px），不压正文。 */
+/* 注意特异度：`.story-card > *:not(.seal)` 是 0,2,0，会把这里的 absolute 压回
+   relative，星标就掉到卡片左下、卡片还长高 44px。所以选择器写到同样深度。 */
+.story-card > .sc-star,
+.sc-star{
+  position:absolute;right:14px;top:8px;z-index:3;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-hei);font-size:12px;letter-spacing:.1em;
+  color:var(--paper-ink-3);background:none;border:1px solid transparent;border-radius:50%;
+  cursor:pointer;transition:color .25s var(--ease),border-color .25s var(--ease);
+}
+.sc-star:hover{color:var(--paper-ink);border-color:var(--paper-edge)}
+.sc-star.on{color:var(--zhu);border-color:rgba(184,64,47,.35)}
+.sc-star:focus-visible{outline:2px solid var(--cang);outline-offset:2px}
+/* 卡片里的内容仍然整块可点：链接铺满卡片，收藏按钮压在上面。 */
+.story-card .sc-body{display:block;color:inherit}
+/* 正文页顶栏里的收藏：跟「回看引入」「查证与背景」同一套细字按钮。 */
+.reader-actions .sc-star{position:static;width:auto;height:auto;padding:8px 10px;border-radius:0;min-height:44px;min-width:44px;font-size:12px;letter-spacing:0}
+.reader-actions .sc-star.on{color:var(--zhu);border-color:transparent;border-bottom:1px solid var(--zhu)}
+/* 开篇页的收藏：读者第一次看到篇名的屏幕上也要能收。 */
+.opening .sc-star{position:static;width:auto;height:auto;min-width:44px;min-height:44px;margin-top:18px;padding:9px 14px;border-radius:2px;border:1px solid rgba(236,231,221,.28);color:var(--su-dim);font-size:12px}
+.opening .sc-star:hover{color:var(--su);border-color:var(--su-mute)}
+.opening .sc-star.on{color:var(--zhu);border-color:rgba(184,64,47,.5)}
 
 .timeline{border-left:1px solid var(--xuan-4);padding-left:22px;margin-left:6px}
 .tl-row{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:16px;padding:9px 0;align-items:baseline}

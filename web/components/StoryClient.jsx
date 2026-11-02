@@ -7,6 +7,7 @@ import RichText, { Marker, Legend } from '@/components/RichText'
 import CiteText from '@/components/CiteText'
 import { useProgress, markRead, resetStory, storyKey, resolveResume, beatAnchor } from '@/lib/progress'
 import SeedSheet from '@/components/SeedSheet'
+import StarButton from '@/components/StarButton'
 import ReviewCards from '@/components/ReviewCards'
 import SourceText from '@/components/SourceText'
 import { hasMixedSourceLayers, sourceExcerptOrigin } from '@/lib/source-layers.mjs'
@@ -568,6 +569,8 @@ export default function StoryClient({ person, story, source }) {
               这一篇的内容更新过，接着读的位置按原段附近对齐。
             </p>
           )}
+          {/* 开篇这一屏也要能收藏：读者第一次看到篇名就在这里。 */}
+          <StarButton personId={person.id} storyId={story.id} storyName={story.name} />
           {/* **从头读**：有进度的时候才出现。清进度、回第一段。 */}
           {savedRead && (
             <button
@@ -843,6 +846,7 @@ export default function StoryClient({ person, story, source }) {
           <Crumbs person={person} story={story} />
         </div>
         <div className="reader-actions">
+          <StarButton personId={person.id} storyId={story.id} storyName={story.name} />
           <button type="button" onClick={() => { setPanelOpen(false); setPhase('opening'); window.scrollTo({ top: 0, behavior: 'instant' }) }}>回看引入</button>
           <button type="button" aria-expanded={panelOpen} aria-controls="source-panel" onClick={(event) => panelOpen ? closePanel() : showPanel(event.currentTarget)}>查证与背景</button>
         </div>

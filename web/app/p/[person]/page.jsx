@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getPerson, listPeople } from '@/lib/content'
 import { formatRanges } from '@/lib/range'
 import SealMark from '@/components/SealMark'
+import StarButton from '@/components/StarButton'
 import RecentRead from '@/components/RecentRead'
 
 export function generateStaticParams() {
@@ -108,13 +109,18 @@ export default async function PersonPage({ params }) {
                     </>
                   )
                   return s.ready ? (
-                    <Link key={s.id} href={`/p/${person.id}/${s.id}`} className="story-card ready">
-                      <div style={{ display: 'flex', gap: 18, alignItems: 'flex-start' }}>
-                        {s.img && <img className="thumb" src={s.img} alt="" aria-hidden="true" />}
-                        <div style={{ minWidth: 0, flex: 1 }}>{inner}</div>
-                      </div>
+                    /* 收藏按钮是链接的**兄弟**，不是子节点：<a> 里放 <button>
+                       是非法嵌套，键盘与读屏都会出问题。整卡仍可点（链接铺满）。 */
+                    <div key={s.id} className="story-card ready">
+                      <Link href={`/p/${person.id}/${s.id}`} className="sc-body">
+                        <div style={{ display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+                          {s.img && <img className="thumb" src={s.img} alt="" aria-hidden="true" />}
+                          <div style={{ minWidth: 0, flex: 1 }}>{inner}</div>
+                        </div>
+                      </Link>
+                      <StarButton personId={person.id} storyId={s.id} storyName={s.name} />
                       <SealMark />
-                    </Link>
+                    </div>
                   ) : (
                     <div key={s.id} className="story-card locked">
                       {inner}
