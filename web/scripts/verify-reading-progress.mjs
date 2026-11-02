@@ -14,11 +14,13 @@ try {
     const errors = []
     page.on('pageerror', error => errors.push(error.message))
     await page.goto(base)
-    const other = { beat: 2, beatCount: 3, phase: 'live', done: false, at: 101 }
+    /* 种进去的是**旧格式**（beatCount）；读出来会是迁移后的 v2 形状（beats）。 */
+    const otherSeed = { beat: 2, beatCount: 3, phase: 'live', done: false, at: 101 }
+    const other = { beat: 2, at: 101, done: false, beats: 3, phase: 'live' }
     const review = { [key]: { 1: 'known', 9: 'todo' }, 'yuwentai/01-luanjun': { 2: 'known' } }
-    await page.evaluate(({ key, other, review }) => localStorage.setItem('guanshi.progress.v1', JSON.stringify({
-      read: { [key]: { beat: 6, beatCount: 7, phase: 'live', done: false, at: 100 }, 'yuwentai/01-luanjun': other }, review, last: null,
-    })), { key, other, review })
+    await page.evaluate(({ key, otherSeed, review }) => localStorage.setItem('guanshi.progress.v1', JSON.stringify({
+      read: { [key]: { beat: 6, beatCount: 7, phase: 'live', done: false, at: 100 }, 'yuwentai/01-luanjun': otherSeed }, review, last: null,
+    })), { key, otherSeed, review })
     await page.goto(`${base}/p/caocao/03-chenliu`, { waitUntil: 'networkidle' })
     await page.evaluate(() => document.fonts.ready); await settle(page); await settle(page)
     // 复习区已经可以显示，保存的阅读段仍须保持第6段，而非被改成第7段完成。

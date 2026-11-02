@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import RichText, { Marker, Legend } from '@/components/RichText'
 import CiteText from '@/components/CiteText'
-import { useProgress, markRead, resetStory, storyKey, resumeBeat } from '@/lib/progress'
+import { useProgress, markRead, resetStory, storyKey, resolveResume, beatAnchor } from '@/lib/progress'
 import SeedSheet from '@/components/SeedSheet'
 import ReviewCards from '@/components/ReviewCards'
 import SourceText from '@/components/SourceText'
@@ -199,6 +199,8 @@ export default function StoryClient({ person, story, source }) {
      只用 localStorage；存坏了读不了就照常从头读（见 lib/progress.js）。 */
   const { progress, ready: progressReady } = useProgress()
   const [readReady, setReadReady] = useState(false)
+  /* 内容改版之后接着读的位置被挪过：入口要说一声，不能静默跳。 */
+  const [resumeAdjusted, setResumeAdjusted] = useState(false)
   const savedRead = progress.read[storyKey(person.id, story.id)]
   const restoredRef = useRef(false)
   useEffect(() => {
@@ -206,8 +208,9 @@ export default function StoryClient({ person, story, source }) {
     restoredRef.current = true
     const saved = progress.read[storyKey(person.id, story.id)]
     if (saved) {
-      const n = resumeBeat(person.id, story.id, saved, beats.length)
+      const { beat: n, adjusted } = resolveResume(person.id, story.id, saved, beats.length, beats)
       setRevealed(n)
+      setResumeAdjusted(adjusted)
       if (saved.phase === 'live') setPhase('live')
     }
     setReadReady(true)
@@ -215,12 +218,22 @@ export default function StoryClient({ person, story, source }) {
   /* 每推进一步就记一次（只在正文里记，入场页不算「读到第几段」） */
   useEffect(() => {
     if (!readReady || phase !== 'live' || citingFromOpening) return
-    markRead(person.id, story.id, { beat: revealed, beatCount: beats.length, phase: 'live', done: revealed >= beats.length })
+    const finished = revealed >= beats.length
+    markRead(person.id, story.id, {
+      beat: revealed,
+      beats: beats.length,
+      /* 锚点 = 读到那一段的开头。内容改版后靠它找回同一段，不再靠硬编码的段数表。 */
+      anchor: beatAnchor(beats[revealed - 1]),
+      phase: 'live',
+      done: finished,
+      ...(finished && !savedRead?.done ? { doneAt: Date.now() } : {}),
+    })
   }, [readReady, phase, revealed, person.id, story.id, beats.length, citingFromOpening])
   const isLast = afterVisible || revealed >= beats.length
   /* 正文里也能从头读（进度存在本机时才有意义） */
   const restart = () => {
     resetStory(person.id, story.id)
+    setResumeAdjusted(false)
     setRevealed(1); setAfterVisible(false); setFollowing(1); setPanelOpen(false); setCameFrom(null)
     setPersonVisit(null); setPersonTarget(null); setPersonCitationReturn(null)
     restoring.current = true
@@ -546,8 +559,15 @@ export default function StoryClient({ person, story, source }) {
             ))}
           </div>
           <button className="cta" onClick={() => setPhase('live')}>
-            {savedRead && !savedRead.done ? `继续阅读 · 第 ${resumeBeat(person.id, story.id, savedRead, beats.length)} 段` : '进入故事'}
+            {savedRead && !savedRead.done
+              ? `继续阅读 · 第 ${resolveResume(person.id, story.id, savedRead, beats.length, beats).beat} 段`
+              : '进入故事'}
           </button>
+          {resumeAdjusted && (
+            <p style={{ marginTop: 13, fontSize: 12.5, letterSpacing: '.04em', color: 'var(--su-mute)' }}>
+              这一篇的内容更新过，接着读的位置按原段附近对齐。
+            </p>
+          )}
           {/* **从头读**：有进度的时候才出现。清进度、回第一段。 */}
           {savedRead && (
             <button

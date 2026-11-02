@@ -849,7 +849,9 @@ check('F09: 三篇主线理由与跨年衔接可顺读，旧续读和复习保�
         await p.keyboard.press('Escape'); await settle(p)
         const saved = await p.evaluate(() => JSON.parse(localStorage.getItem('guanshi.progress.v1')))
         if (JSON.stringify(saved.review) !== JSON.stringify(fixture.review)) return fail('旧复习记录发生变化')
-        if (JSON.stringify(saved.read['yuwentai/01-luanjun']) !== JSON.stringify(fixture.read['yuwentai/01-luanjun'])) return fail('另一人物阅读记录发生变化')
+        /* 迁移会把旧格式的 `beatCount` 改名成 `beats`，所以比字段语义，不比字符串。 */
+        const other = saved.read['yuwentai/01-luanjun'] || {}
+        if (other.beat !== 2 || other.beats !== 3 || other.at !== 99 || other.done !== false) return fail('另一人物阅读记录发生变化')
       }
     } finally { await context.close() }
   }
@@ -955,7 +957,7 @@ check('铺陈衔接: 改段后的旧进度继续阅读且保留复习记录', as
     await page.goto(`${BASE}/p/${person}/${story}`, { waitUntil: 'networkidle' })
     await page.waitForFunction(({ key, expected }) => {
       const saved = JSON.parse(localStorage.getItem('guanshi.progress.v1'))?.read?.[key]
-      return saved?.beat === expected && saved?.beatCount > 0
+      return saved?.beat === expected && saved?.beats > 0
     }, { key, expected })
     const position = await page.locator(`#beat-${expected}`).boundingBox()
     if (!position || Math.abs(position.y - 105) > 30) return fail(`${key} 应恢复到 ${expected} 段，实际顶部 ${position?.y}`)

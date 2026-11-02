@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useProgress, resumeBeat } from '@/lib/progress'
+import { useProgress, resolveResume } from '@/lib/progress'
 
 /**
  * 「最近阅读」——上次读到哪一篇、第几段（R12）。
@@ -19,7 +19,7 @@ export default function RecentRead({ personId, stories }) {
       const [pid, sid] = k.split('/')
       if (pid !== personId) return null
       const meta = stories.find((s) => s.id === sid)
-      return meta ? { ...meta, ...v, beat: resumeBeat(pid, sid, v, meta.beatTotal) } : null
+      return meta ? { ...meta, ...v, beat: resolveResume(pid, sid, v, meta.beatTotal).beat } : null
     })
     .filter(Boolean)
     .sort((a, b) => (b.at || 0) - (a.at || 0))
