@@ -141,14 +141,57 @@ test('写之前先读盘合并：别的标签页刚写进来的记录不能被�
   assert.ok(disk.read['c/d'])
 })
 
-test('同一条记录取较新的一方', () => {
+test('拉取盘上记录时，别的篇的较新值不会被本机旧状态顶掉', () => {
   const s = fakeStorage({
     'guanshi.progress.v2': JSON.stringify({ v: 2, read: { 'a/b': { beat: 9, at: 50 } }, review: {} }),
   })
   const store = make(s)
   store.get()
-  store.set((state) => ({ ...state, read: { ...state.read, 'a/b': { beat: 2, at: 10 } } }))
-  assert.equal(JSON.parse(s.getItem('guanshi.progress.v2')).read['a/b'].beat, 9)
+  store.set((state) => ({ ...state, read: { ...state.read, 'c/d': { beat: 1, at: 5 } } }))
+  const disk = JSON.parse(s.getItem('guanshi.progress.v2'))
+  assert.equal(disk.read['a/b'].beat, 9, '盘上较新的 a/b 被顶掉了')
+  assert.equal(disk.read['c/d'].beat, 1)
+})
+
+test('本机删除的记录不会被盘上旧值复活', () => {
+  const s = fakeStorage({
+    'guanshi.progress.v2': JSON.stringify({
+      v: 2,
+      read: { 'a/b': { beat: 3, at: 10 }, 'c/d': { beat: 1, at: 5 } },
+      review: {},
+    }),
+  })
+  const store = make(s)
+  store.get()
+  store.set((state) => {
+    const read = { ...state.read }
+    delete read['a/b']
+    return { ...state, read }
+  })
+  assert.deepEqual(Object.keys(store.get().read), ['c/d'], '删除被内存状态忽略了')
+  assert.deepEqual(Object.keys(JSON.parse(s.getItem('guanshi.progress.v2')).read), ['c/d'],
+    '删除的记录被盘上旧值合并回来了')
+})
+
+test('写失败期间删除的记录，恢复写入后不会被复活', () => {
+  const map = new Map([['guanshi.progress.v2', JSON.stringify({
+    v: 2, read: { 'a/b': { beat: 3, at: 10 }, 'c/d': { beat: 1, at: 5 } }, review: {},
+  })]])
+  let broken = true
+  const storage = {
+    getItem: (k) => (map.has(k) ? map.get(k) : null),
+    setItem: (k, v) => { if (broken) throw new Error('quota'); map.set(k, String(v)) },
+    removeItem: (k) => map.delete(k),
+  }
+  const store = make(storage)
+  store.get()
+  store.set((state) => { const read = { ...state.read }; delete read['a/b']; return { ...state, read } })
+  assert.equal(store.getStatus(), 'degraded')
+  broken = false
+  store.set((state) => ({ ...state, read: { ...state.read, 'e/f': { beat: 1, at: 1 } } }))
+  const disk = JSON.parse(map.get('guanshi.progress.v2')).read
+  assert.equal(disk['a/b'], undefined, '写失败期间删掉的 a/b 被盘上旧值复活了')
+  assert.ok(disk['e/f'], '恢复写入后的新记录没写进去')
 })
 
 test('updater 返回同一个引用时不写盘、不广播', () => {

@@ -154,10 +154,13 @@ export function createPersistentStore({
   }
 
   /**
-   * 落盘。`merge: false` 用于覆写（reset）。
-   * 坏数据先备份原文，再覆盖——覆盖是对的，销毁证据不是。
+   * 落盘：**直接写当前状态**，不在这里合并。
+   *
+   * 合并挪到了 `set()` 里「先拉取、再改」。反过来做（先改、再与盘合并）
+   * 会把读者刚删掉的记录又合并回来——取消收藏永远取消不掉。
+   * 单测 `本机删除的记录不会被盘上旧值复活` 钉这一条。
    */
-  function persist({ merge = true } = {}) {
+  function persist() {
     const b = backend()
     if (!b) { status = 'unavailable'; return false }
     let backedUp = false
@@ -167,8 +170,6 @@ export function createPersistentStore({
       backedUp = true
     }
     try {
-      // 备份过就说明盘上那份已经坏了：**不要再拿它来合并**，否则会把空状态写回去。
-      if (merge && !backedUp) state = mergeByAt(state, read())
       const payload = JSON.stringify({ ...state, v: version })
       // `v` 放在最后：导入的旧数据里如果带 `v`，不能让它盖掉版本号。
       b.setItem(key, payload)
@@ -193,6 +194,10 @@ export function createPersistentStore({
     /** 改状态。`updater` 拿到当前状态，返回新状态；返回同一个引用则什么都不做。 */
     set(updater) {
       ensure()
+      /* 先拉取盘上变更（别的标签页可能刚写过），再应用本机改动。
+         顺序反了会让本机的删除被盘上旧值复活。
+         写不进去（degraded）时**不要**拉：盘上那份是旧的，一拉就把刚删的记录搬回来。 */
+      if (!corrupt && status !== 'degraded') state = mergeByAt(state, read())
       const next = updater(state)
       if (next === state) return state
       if (!PLAIN(next)) {
@@ -217,7 +222,7 @@ export function createPersistentStore({
       lastRaw = null
       corrupt = null
       state = clone(defaults)
-      persist({ merge: false })
+      persist()
       emit()
     },
 
