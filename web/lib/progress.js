@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createPersistentStore } from '@/lib/store'
 import { useStoreSelector } from '@/lib/use-store'
+import { storyKey } from '@/lib/keys'
 
 /**
  * 本地阅读进度与复习状态。**只用 localStorage**，不做登录、云同步、提醒或记忆算法。
@@ -31,7 +32,9 @@ import { useStoreSelector } from '@/lib/use-store'
 const KEY = 'guanshi.progress.v1'
 const EMPTY = { read: {}, review: {} }
 
-export const storyKey = (personId, storyId) => `${personId}/${storyId}`
+/* 键的拼法住在 `lib/keys.js`（收藏也要用同一份）。这里转出去，
+   既有调用方（StoryClient / RecentRead）不用改。 */
+export { storyKey }
 
 /* 2026-10-18：三篇把开头的前情移入铺陈与背景，正文段号随之提前。
    这张表只服务**写锚点之前**的旧记录（saved.beats 为空时）；
