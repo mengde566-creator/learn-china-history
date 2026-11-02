@@ -9,6 +9,7 @@ import { useSettings } from '@/lib/settings'
    等于假设它永远是唯一那篇。 */
 const LINKS = [
   { href: '/', label: '总览' },
+  { href: '/shelf', label: '书架' },
   { href: '/settings', label: '设置' },
 ]
 

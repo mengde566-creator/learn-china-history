@@ -13,6 +13,7 @@ import SourceText from '@/components/SourceText'
 import { hasMixedSourceLayers, sourceExcerptOrigin } from '@/lib/source-layers.mjs'
 import { evidenceExcerpt } from '@/lib/evidence.mjs'
 import { personVersion } from '@/lib/person-notes.mjs'
+import { noteFor, notesFor, setNote, deleteNote, NOTE_LIMIT, useNotes } from '@/lib/library'
 
 /* 界面上只放短标签。长说明在图例里出现一次就够——
    原来每个标记都重复一遍「出自原文，可逐字核对」，纯属噪音。 */
@@ -60,6 +61,8 @@ const TABS = [
   { k: 'backgrounds', label: '背景' },
   { k: 'ground',      label: '映射' },
   { k: 'present',     label: '人物' },
+  /* 第六签：读者自己的批注。**不进正文**——批注一多，读者读的就是自己写的话。 */
+  { k: 'notes',       label: '批注' },
 ]
 
 /** 面包屑：导航只放全局入口，层级靠这里走 */
@@ -132,6 +135,25 @@ export default function StoryClient({ person, story, source }) {
   const sourceIds = useMemo(() => new Set(Object.keys(source || {})), [source])
   const [following, setFollowing] = useState(1)  // 读到第几段（依据面板跟着它走）
   const [sheet, setSheet] = useState(false)
+
+  /* 朱批：{ beat, draft }。`beat` 在编辑期间**锁住**——滚正文换了段也不跟着换，
+     否则写着第 5 段、抬头变成第 9 段。 */
+  const [editing, setEditing] = useState(null)
+  /* 批注页停在「你点开它的那一段」，**不跟着滚动走**：
+     批注是定点动作，不是随文查阅；写完一句就被滚动带走到别的段，是最糟的体验。 */
+  const [noteBeat, setNoteBeat] = useState(null)
+  /* 从批注列表跳到某一段时，**不要**让面板的对齐逻辑把这一段顶出屏幕：
+     面板跟着段走，对齐面板等于把正文推上去。这一段由我们自己滚。 */
+  const skipAlign = useRef(false)
+  const composing = useRef(false)
+  const notes = useNotes()
+  const noteHas = (n) => Boolean(notes[`${person.id}/${story.id}#${n}`])
+  const saveNote = () => {
+    if (!editing) return
+    setNote(person.id, story.id, editing.beat, editing.draft, beatAnchor(beats[editing.beat - 1]))
+    setEditing(null)
+  }
+  const cancelNote = () => setEditing(null)
   const stageRef = useRef(null)
 
   // 只有一个查证面板。手机挂载位置固定在打开的段落，独立于桌面滚动联动。
@@ -150,7 +172,7 @@ export default function StoryClient({ person, story, source }) {
     let frame = 0
     let releaseFrame = 0
     const align = () => {
-      if (cancelled || userMoved) return
+      if (cancelled || userMoved || skipAlign.current) return
       panelPositioning.current = true
       const anchor = panelReturn.current
       if (panelHost === panelDock.current && anchor?.el?.isConnected) {
@@ -661,7 +683,7 @@ export default function StoryClient({ person, story, source }) {
                 <button
                   key={t.k}
                   aria-current={tab === t.k}
-                  onClick={() => setTab(t.k)}
+                  onClick={() => { setTab(t.k); if (t.k !== 'notes') { setEditing(null); setNoteBeat(null) } }}
                 >
                   {t.label}
                 </button>
@@ -835,6 +857,86 @@ export default function StoryClient({ person, story, source }) {
                   )}
                 </div>
               )}
+              {tab === 'notes' && (() => {
+                const list = notesFor(person.id, story.id, beats)
+                const beatNo = editing?.beat ?? noteBeat ?? shownBeat?.n ?? following
+                const current = list.find((note) => note.beat === beatNo) || null
+                const start = () => setEditing({ beat: beatNo, draft: current?.text || '' })
+                return (
+                  <div className="panel-face paper anim-fade" key={`notes-${beatNo}`}>
+                    <h3>第 {beatNo} 段 的 批 注</h3>
+                    {editing && editing.beat === beatNo ? (
+                      <div className="note-editor">
+                        <textarea
+                          className="note-input"
+                          value={editing.draft}
+                          rows={2}
+                          maxLength={NOTE_LIMIT}
+                          placeholder="写一句"
+                          autoFocus
+                          onChange={(event) => setEditing({ ...editing, draft: event.target.value })}
+                          onCompositionStart={() => { composing.current = true }}
+                          onCompositionEnd={() => { composing.current = false }}
+                          onBlur={() => { if (!composing.current) saveNote() }}
+                          onKeyDown={(event) => {
+                            /* Esc 只退出编辑，不关面板；面板自己的 Esc 在别处。 */
+                            if (event.key === 'Escape') { event.stopPropagation(); cancelNote() }
+                            if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { event.preventDefault(); saveNote() }
+                          }}
+                        />
+                        <div className="note-actions">
+                          <button type="button" onClick={saveNote}>存</button>
+                          <button type="button" onClick={cancelNote}>取消</button>
+                          {current && (
+                            <button type="button" className="danger" onClick={() => { deleteNote(person.id, story.id, beatNo); cancelNote() }}>删</button>
+                          )}
+                          <span className="note-count">{editing.draft.length} / {NOTE_LIMIT}</span>
+                        </div>
+                      </div>
+                    ) : current ? (
+                      <div className="note-view">
+                        <p className="note-text">{current.text}</p>
+                        <div className="note-actions">
+                          <button type="button" onClick={start}>改</button>
+                          <button type="button" className="danger" onClick={() => deleteNote(person.id, story.id, beatNo)}>删</button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="note-view">
+                        <p className="note-empty">这一段还没有批注</p>
+                        <div className="note-actions"><button type="button" onClick={start}>写一句</button></div>
+                      </div>
+                    )}
+                    {list.length > 0 && (
+                      <>
+                        <h4 className="note-list-title">本 篇 · {list.length} 条</h4>
+                        {list.map((note) => (
+                          <button
+                            type="button"
+                            key={note.beat}
+                            className={`note-item${note.beat === beatNo ? ' current' : ''}`}
+                            onClick={() => {
+                              setEditing(null); setNoteBeat(note.beat); setFollowing(note.beat)
+                              /* 手机上面板是插在这一段之后的：先让面板落位，
+                                 再把这一段滚到阅读线上——否则读者跳过去只看到面板，
+                                 正文那一段被顶到屏幕外。 */
+                              skipAlign.current = true
+                              requestAnimationFrame(() => requestAnimationFrame(() => {
+                                scrollToBeat(note.beat)
+                                requestAnimationFrame(() => { skipAlign.current = false })
+                              }))
+                            }}
+                          >
+                            <span className="no">第 {note.beat} 段</span>
+                            <span className="tx">{note.text}</span>
+                            {note.moved && <span className="mv">位置可能已变</span>}
+                          </button>
+                        ))}
+                      </>
+                    )}
+                  </div>
+                )
+              })()}
             </div>
           </aside>
   )
@@ -902,17 +1004,28 @@ export default function StoryClient({ person, story, source }) {
                       </figure>
                     )}
 
-                    <button
-                      className="ground anim-fade d3"
-                      onClick={(event) => { setTab('evidence'); setFollowing(b.n); showPanel(event.currentTarget) }}
-                      aria-controls="source-panel"
-                      title={titleOf(b.marker, person, b, source)}
-                    >
-                      <b className={MARK_CLASS[b.marker] || 'g-silent'}>{b.marker || '—'}</b>
-                      <span className="sep">·</span>
-                      依据
-                      {b.source && <span className="src-id">{b.source}</span>}
-                    </button>
+                    <div className="beat-actions">
+                      <button
+                        className="ground anim-fade d3"
+                        onClick={(event) => { setTab('evidence'); setFollowing(b.n); showPanel(event.currentTarget) }}
+                        aria-controls="source-panel"
+                        title={titleOf(b.marker, person, b, source)}
+                      >
+                        <b className={MARK_CLASS[b.marker] || 'g-silent'}>{b.marker || '—'}</b>
+                        <span className="sep">·</span>
+                        依据
+                        {b.source && <span className="src-id">{b.source}</span>}
+                      </button>
+                      <button
+                        type="button"
+                        className={`ground-note anim-fade d3${noteHas(b.n) ? ' on' : ''}`}
+                        onClick={(event) => { setEditing(null); setNoteBeat(b.n); setTab('notes'); setFollowing(b.n); showPanel(event.currentTarget) }}
+                        aria-controls="source-panel"
+                        title={noteHas(b.n) ? '看这一段的批注' : '给这一段写一句'}
+                      >
+                        批注
+                      </button>
+                    </div>
                     <div className="inline-panel-host" data-panel-host />
                   </article>
                 )

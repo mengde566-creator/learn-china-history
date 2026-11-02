@@ -351,6 +351,52 @@ body.light-stage{
 .ground .g-infer {color:var(--cang)}
 .ground .g-doubt {color:var(--zhe)}
 .ground .g-silent{color:var(--su-mute)}
+
+/* 段末两个动作：依据、批注。批注是读者自己的字，有就染朱。 */
+.beat-actions{display:flex;align-items:center;gap:6px;margin-top:15px}
+.beat-actions .ground{margin-top:0}
+.ground-note{
+  font-family:var(--f-hei);font-size:11px;letter-spacing:.14em;
+  color:var(--su-mute);padding:5px 10px;border-radius:3px;min-height:32px;
+  transition:color .25s var(--ease),background-color .25s var(--ease);
+}
+.ground-note:hover{color:var(--su);background:rgba(128,128,128,.1)}
+.ground-note.on{color:var(--zhu)}
+.reader .ground-note{padding:9px 8px;min-height:44px}
+
+/* 批注面板（第六签）。朱批是朱色的楷体，不是正文。 */
+.note-editor{margin-top:14px}
+.note-input{
+  width:100%;font-family:var(--f-kai);font-size:14.5px;line-height:1.9;
+  padding:10px 12px;border:1px solid var(--zhi-3);border-radius:2px;
+  background:#fffdf7;color:var(--mo);resize:vertical;
+}
+.note-input:focus-visible{outline:2px solid var(--cang);outline-offset:1px}
+.note-actions{display:flex;align-items:center;gap:10px;margin-top:9px}
+.note-actions button{
+  font-family:var(--f-hei);font-size:11.5px;letter-spacing:.08em;
+  min-height:36px;padding:4px 12px;border:1px solid var(--zhi-3);border-radius:2px;color:var(--mo-dim);
+}
+.note-actions button:hover{color:var(--mo);border-color:var(--mo-mute)}
+.note-actions .danger{color:var(--zhu);border-color:rgba(184,64,47,.4)}
+.note-count{margin-left:auto;font-size:11px;color:var(--mo-mute);font-variant-numeric:tabular-nums}
+.note-view{margin-top:14px}
+.note-text{
+  font-family:var(--f-kai);font-size:14.5px;line-height:1.95;color:var(--zhu);
+  border-left:2px solid rgba(184,64,47,.35);padding-left:12px;
+}
+.note-empty{font-family:var(--f-hei);font-size:13px;color:var(--mo-mute)}
+.note-list-title{margin-top:26px;margin-bottom:6px;font-family:var(--f-hei);font-size:11px;letter-spacing:.24em;color:var(--mo-mute);font-weight:400}
+.note-item{
+  display:flex;align-items:baseline;gap:10px;width:100%;text-align:left;
+  padding:10px 6px;border-bottom:1px solid var(--zhi-3);cursor:pointer;
+  transition:background-color .2s var(--ease);
+}
+.note-item:hover{background:rgba(0,0,0,.03)}
+.note-item.current{background:rgba(184,64,47,.06)}
+.note-item .no{flex:none;font-family:var(--f-hei);font-size:11px;color:var(--mo-mute)}
+.note-item .tx{font-family:var(--f-kai);font-size:13px;color:var(--mo-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.note-item .mv{flex:none;font-size:10px;color:var(--zhe)}
 .ground .g-info{color:var(--su-dim)}
 .ground .sep{opacity:.25;margin:0 1px}
 /* 依据入口直接标出对应哪段原文，不用点开就知道 */
@@ -1063,6 +1109,46 @@ body.light-stage{
   color:var(--su-mute);letter-spacing:.02em;max-width:46em;
 }
 .footnote b{color:var(--su-dim);font-weight:500}
+
+/* ── 书架 ───────────────────────────────
+   与人物页同一套暗场：宋体篇名、细线分隔、朱色只留给收藏。 */
+.shelf-switch{display:flex;gap:4px;margin-top:16px}
+.shelf-switch button{
+  font-family:var(--f-hei);font-size:12px;letter-spacing:.14em;
+  padding:9px 15px;min-height:44px;border-radius:2px;
+  color:var(--su-dim);border:1px solid transparent;
+  transition:color .25s var(--ease),background-color .25s var(--ease),border-color .25s var(--ease);
+}
+.shelf-switch button:hover{color:var(--su)}
+.shelf-switch button[aria-current="true"]{color:var(--su);background:var(--xuan-3);border-color:var(--xuan-4)}
+.shelf-switch button:focus-visible{outline:2px solid var(--cang);outline-offset:2px}
+.shelf-group{margin-top:4px}
+.shelf-group + .shelf-group{margin-top:18px}
+.shelf-person{
+  display:flex;align-items:baseline;gap:12px;
+  font-family:var(--f-hei);font-size:11.5px;letter-spacing:.22em;color:var(--su-mute);
+  padding:10px 0 8px;border-bottom:1px solid var(--xuan-4);
+}
+.shelf-person a{color:var(--su-dim)}
+.shelf-person a:hover{color:var(--su)}
+.shelf-person .era{letter-spacing:.06em;font-size:11px;color:var(--su-mute)}
+.shelf-row{display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.04)}
+.shelf-row:last-child{border-bottom:none}
+.shelf-hit{
+  flex:1;min-width:0;display:flex;align-items:baseline;gap:14px;
+  padding:13px 0;min-height:44px;color:var(--su-dim);
+}
+.shelf-hit:hover{color:var(--su)}
+.shelf-hit .nm{font-family:var(--f-song);font-size:16px;letter-spacing:.06em;color:inherit}
+.shelf-hit .mt{font-size:11.5px;letter-spacing:.04em;color:var(--su-mute);margin-left:auto;white-space:nowrap}
+.shelf-row .sc-star{position:static;width:auto;height:auto;min-width:44px;min-height:44px;border-radius:2px;
+  border:1px solid transparent;color:var(--su-mute);font-size:12px;letter-spacing:.1em}
+.shelf-row .sc-star:hover{color:var(--su);border-color:var(--xuan-4)}
+.shelf-row .sc-star.on{color:var(--zhu);border-color:rgba(184,64,47,.4)}
+.shelf-empty{margin-top:40px;padding:26px;border:1px solid var(--xuan-4);border-radius:3px}
+.shelf-empty p{font-family:var(--f-song);font-size:16px;line-height:1.95;color:var(--su-dim)}
+.shelf-empty .mt{margin-top:10px;font-family:var(--f-hei);font-size:12px;line-height:1.9;color:var(--su-mute);max-width:34em}
+.shelf-empty a{color:var(--accent)}
 
 /* ══════════════════════════════════════════════
    响应式

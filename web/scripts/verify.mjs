@@ -922,6 +922,96 @@ check('F09: 三篇主线理由与跨年衔接可顺读，旧续读和复习保�
   return ok('三篇两种尺寸：原因和转折接入正文，小传归背景，跨年一次；旧段号续读、复习和另一人物记录保留')
 })
 
+check('书架: 两视图互切、全书目录与收藏', async () => {
+  for (const width of [390, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
+    try {
+      const p = await context.newPage(), errors = []
+      p.on('pageerror', (e) => errors.push(e.message))
+      await p.goto(`${BASE}/shelf`, { waitUntil: 'networkidle' })
+      await p.evaluate(() => document.fonts.ready)
+      if (!(await p.getByText('这里还是空的').count())) return fail(`${width}px 没有数据时书架没有空态`)
+
+      await p.evaluate(() => {
+        localStorage.setItem('guanshi.progress.v1', JSON.stringify({
+          v: 2,
+          read: {
+            'caocao/09-chibi': { beat: 6, beats: 9, phase: 'live', done: false, at: 300 },
+            'jingke/06-yishui': { beat: 9, beats: 9, phase: 'live', done: true, at: 200, doneAt: 210 },
+          },
+          review: {},
+        }))
+        localStorage.setItem('guanshi.library.v1', JSON.stringify({ v: 1, stars: { 'caocao/09-chibi': { at: 400 } }, notes: {} }))
+      })
+      await p.reload({ waitUntil: 'networkidle' })
+      const mine = await p.locator('main').innerText()
+      if (!mine.includes('接着读') || !mine.includes('收藏 · 1 篇') || !mine.includes('读过 · 2 篇')) {
+        return fail(`${width}px「我的」三块不全：${mine.slice(0, 120)}`)
+      }
+
+      await p.getByRole('tab', { name: '全部篇章' }).click()
+      const rows = await p.locator('.shelf-row').count()
+      const people = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'content.json'), 'utf8')).people
+      const expectedRows = people.reduce((n, person) => n + person.storyList.filter((story) => story.ready).length, 0)
+      if (rows !== expectedRows) return fail(`${width}px 全书目录 ${rows} 行，应为 ${expectedRows}`)
+      if (await p.evaluate(() => document.documentElement.scrollWidth > innerWidth)) return fail(`${width}px 书架横向溢出`)
+      if (!(await p.locator('.shelf-row .sc-star.on').count())) return fail(`${width}px 书架上看不到已收藏状态`)
+
+      /* 书架里取消收藏，切回「我的」不再是收藏 */
+      await p.locator('.shelf-row .sc-star.on').first().click()
+      await p.waitForFunction(() => Object.keys(JSON.parse(localStorage.getItem('guanshi.library.v1')).stars).length === 0, null, { timeout: 4000 })
+        .catch(() => {})
+      if (Object.keys(await p.evaluate(() => JSON.parse(localStorage.getItem('guanshi.library.v1')).stars)).length !== 0) {
+        return fail(`${width}px 书架取消收藏没有生效`)
+      }
+      await p.getByRole('tab', { name: '我的' }).click()
+      if (await p.getByText(/^收藏 ·/).count()) return fail(`${width}px 取消后「我的」还挂着收藏组`)
+      if (errors.length) return fail(`${width}px 控制台报错：${errors.join('｜')}`)
+    } finally { await context.close() }
+  }
+  return ok('两尺寸：空态、我的三块、全书目录行数与内容库一致、书架内取消收藏、无横向溢出')
+})
+
+check('批注: 段末入口、第六页签、写入与删除', async () => {
+  for (const width of [390, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
+    try {
+      const p = await context.newPage(), errors = []
+      p.on('pageerror', (e) => errors.push(e.message))
+      await p.goto(`${BASE}/p/caocao/09-chibi`, { waitUntil: 'networkidle' })
+      await p.evaluate(() => document.fonts.ready)
+      const cta = await p.$('button.cta')
+      if (cta) { await cta.click(); await p.waitForTimeout(500) }
+      const entry = p.locator('#beat-3 .ground-note')
+      if (await entry.count() !== 1) return fail(`${width}px 段末没有批注入口`)
+      await entry.click()
+      const panel = p.locator('#source-panel')
+      await panel.waitFor({ state: 'visible' })
+      const tab = await panel.locator('.panel-tabs [aria-current=true]').innerText()
+      if (tab !== '批注') return fail(`${width}px 点批注没有切到第六页签（当前 ${tab}）`)
+      if (!(await panel.getByText('这一段还没有批注').count())) return fail(`${width}px 空批注态不对`)
+
+      await panel.getByRole('button', { name: '写一句' }).click()
+      await panel.locator('.note-input').fill('这一段的地理想查一下')
+      await p.locator('.panel-heading').click()   // 失焦即存
+      await p.waitForFunction(() => !!JSON.parse(localStorage.getItem('guanshi.library.v1') || '{}').notes?.['caocao/09-chibi#3'], null, { timeout: 4000 })
+        .catch(() => {})
+      const saved = await p.evaluate(() => JSON.parse(localStorage.getItem('guanshi.library.v1') || '{}').notes?.['caocao/09-chibi#3'])
+      if (!saved || saved.text !== '这一段的地理想查一下') return fail(`${width}px 批注没有存下来`)
+      if (!saved.anchor || saved.anchor.length < 4) return fail(`${width}px 批注没有存锚点（内容改版后就找不回来）`)
+      if (!(await p.locator('#beat-3 .ground-note.on').count())) return fail(`${width}px 有批注的段入口没有染朱`)
+      if (!(await panel.locator('.note-item').count())) return fail(`${width}px 本篇批注列表是空的`)
+
+      await panel.getByRole('button', { name: '删' }).first().click()
+      await p.waitForFunction(() => !JSON.parse(localStorage.getItem('guanshi.library.v1')).notes?.['caocao/09-chibi#3'], null, { timeout: 4000 })
+        .catch(() => {})
+      if (await p.locator('#beat-3 .ground-note.on').count()) return fail(`${width}px 删除后入口还是朱色`)
+      if (errors.length) return fail(`${width}px 控制台报错：${errors.join('｜')}`)
+    } finally { await context.close() }
+  }
+  return ok('两尺寸：段末入口→第六页签→写一句→失焦保存（带锚点）→入口染朱→删除')
+})
+
 check('R10: 面板页签可以用键盘走到', async () => {
   await page.goto(`${BASE}${routeOf(READY[0])}`, { waitUntil: 'networkidle' })
   await enterStory()

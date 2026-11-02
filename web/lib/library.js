@@ -15,15 +15,30 @@ import { storyKey, isStoryKey } from '@/lib/keys'
  * 只按篇 id 存会把两篇合成一条。
  *
  * 数据结构：
- *   { v: 1, stars: { "caocao/09-chibi": { at: 1762… } } }
- * 将来加朱批：`notes: { "caocao/09-chibi#5": { text, at, anchor } }`——平表，不嵌套。
+ *   {
+ *     v: 1,
+ *     stars: { "caocao/09-chibi": { at: 1762… } },
+ *     notes: { "caocao/09-chibi#5": { text, at, anchor } },
+ *   }
+ *
+ * **朱批是平表**（`人物/篇#段号`），不嵌套：嵌套会让合并规则变成猜谜，
+ * 而这一层已经有一套「按 at 合并」的规则要守。
  */
 
 const KEY = 'guanshi.library.v1'
+const NOTE_LIMIT = 120
+
+/** `人物/篇#段号`。段号是数字；`#` 不参与篇名与人物 id。 */
+const noteKey = (personId, storyId, beat) => `${storyKey(personId, storyId)}#${beat}`
+const isNoteKey = (key) => /^[^/]+\/[^#]+#\d+$/.test(String(key || ''))
+const splitNoteKey = (key) => {
+  const at = key.lastIndexOf('#')
+  return [key.slice(0, at), Number(key.slice(at + 1))]
+}
 
 export { storyKey }
 
-/** 形状校验：只认 `人物/篇` 且时间戳是数字的记录。 */
+/** 形状校验：只认合法的键与有限的时间戳；批注的文字要真的是一句话。 */
 function sanitizeLibrary(raw, defaults) {
   const stars = {}
   for (const [key, value] of Object.entries(raw?.stars || {})) {
@@ -32,13 +47,24 @@ function sanitizeLibrary(raw, defaults) {
     const at = Number(value.at)
     stars[key] = { at: Number.isFinite(at) ? at : 0 }
   }
-  return { ...defaults, stars }
+  const notes = {}
+  for (const [key, value] of Object.entries(raw?.notes || {})) {
+    if (!isNoteKey(key)) continue
+    if (!value || typeof value !== 'object') continue
+    const text = typeof value.text === 'string' ? value.text.trim().slice(0, NOTE_LIMIT) : ''
+    if (!text) continue
+    const at = Number(value.at)
+    const note = { text, at: Number.isFinite(at) ? at : 0 }
+    if (typeof value.anchor === 'string' && value.anchor) note.anchor = value.anchor.slice(0, 40)
+    notes[key] = note
+  }
+  return { ...defaults, stars, notes }
 }
 
 export const libraryStore = createPersistentStore({
   key: KEY,
   version: 1,
-  defaults: { stars: {} },
+  defaults: { stars: {}, notes: {} },
   sanitize: sanitizeLibrary,
 })
 
@@ -71,3 +97,61 @@ export function starList() {
 export function useStars() {
   return useStoreSelector(libraryStore, (state) => state.stars)
 }
+
+export function useNotes() {
+  return useStoreSelector(libraryStore, (state) => state.notes)
+}
+
+export function noteFor(personId, storyId, beat) {
+  return libraryStore.get().notes[noteKey(personId, storyId, beat)] || null
+}
+
+/**
+ * 写一句批注。空串 = 删除。
+ * `anchor` 是这一段开头的字，内容改版后靠它把批注找回同一段。
+ */
+export function setNote(personId, storyId, beat, text, anchor) {
+  const key = noteKey(personId, storyId, beat)
+  const clean = String(text || '').trim().slice(0, NOTE_LIMIT)
+  const now = Date.now()
+  libraryStore.set((state) => {
+    const notes = { ...state.notes }
+    if (!clean) delete notes[key]
+    else notes[key] = { text: clean, at: now, ...(anchor ? { anchor } : {}) }
+    return { ...state, notes }
+  })
+}
+
+export function deleteNote(personId, storyId, beat) {
+  setNote(personId, storyId, beat, '')
+}
+
+/**
+ * 这一篇的批注，按段号排。
+ *
+ * 内容改版后段号会漂：有锚点的先用锚点找同一段（找不到就留在原段号、标 `moved`），
+ * 让读者看得见「这条可能不在原处」，而不是悄悄挂到别人身上。
+ */
+export function notesFor(personId, storyId, beats) {
+  const prefix = `${storyKey(personId, storyId)}#`
+  const out = []
+  for (const [key, note] of Object.entries(libraryStore.get().notes)) {
+    if (!key.startsWith(prefix)) continue
+    const [, beat] = splitNoteKey(key)
+    let place = beat
+    let moved = false
+    if (note.anchor && Array.isArray(beats) && beats.length) {
+      const strip = (s) => String(s || '').replace(/[\s，。、；：！？「」『』《》（）()·—…“”‘’"'!?,.;:]/g, '')
+      const hit = beats.findIndex((b) => strip((b?.prose || [])[0]).includes(strip(note.anchor)))
+      if (hit >= 0 && hit + 1 !== beat) { place = hit + 1; moved = true }
+      else if (hit < 0 && beat > beats.length) { place = beats.length; moved = true }
+    } else if (Array.isArray(beats) && beats.length && beat > beats.length) {
+      place = beats.length
+      moved = true
+    }
+    out.push({ beat: place, text: note.text, at: note.at, moved })
+  }
+  return out.sort((a, b) => a.beat - b.beat)
+}
+
+export { NOTE_LIMIT }

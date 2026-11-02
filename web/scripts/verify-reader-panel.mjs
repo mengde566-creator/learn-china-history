@@ -48,7 +48,8 @@ try {
         if (width < 1081) assert.ok(await page.locator(`#beat-${beat.n} [data-panel-host] #source-panel`).count())
         assert.equal(await page.evaluate(() => localStorage.getItem('guanshi.progress.v1')), saved, '打开查证推进阅读记录')
         if (beat.n === 1) {
-          for (const label of ['原文', '背景', '映射', '人物', '依据']) {
+          /* 第六签「批注」也要开一次：它依赖当前段，内容和别的页签不一样。 */
+          for (const label of ['原文', '背景', '映射', '人物', '依据', '批注']) {
             await page.locator('.panel-tabs').getByRole('button', { name: label, exact: true }).click()
             await page.waitForFunction(label => document.querySelector('.panel-tabs [aria-current=true]')?.textContent === label, label)
             await settle(page)
