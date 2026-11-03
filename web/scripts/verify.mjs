@@ -922,6 +922,59 @@ check('F09: 三篇主线理由与跨年衔接可顺读，旧续读和复习保�
   return ok('三篇两种尺寸：原因和转折接入正文，小传归背景，跨年一次；旧段号续读、复习和另一人物记录保留')
 })
 
+check('批注: 划线选句→评→引文→朱线', async () => {
+  const selectText = (p, beat, para, from, to) => p.evaluate(({ beat, para, from, to }) => {
+    const el = document.querySelector(`#beat-${beat} [data-para="${para}"]`)
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT)
+    let node, acc = 0
+    while (walker.nextNode()) {
+      const len = walker.currentNode.textContent.length
+      if (acc + len >= to) { node = walker.currentNode; break }
+      acc += len
+    }
+    const range = document.createRange()
+    range.setStart(node, Math.max(0, from - acc))
+    range.setEnd(node, Math.min(node.textContent.length, to - acc))
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range)
+    document.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }))
+    return sel.toString()
+  }, { beat, para, from, to })
+
+  for (const width of [390, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
+    try {
+      const p = await context.newPage(), errors = []
+      p.on('pageerror', (e) => errors.push(e.message))
+      await p.goto(`${BASE}/p/caocao/09-chibi`, { waitUntil: 'networkidle' })
+      await p.evaluate(() => document.fonts.ready)
+      const cta = await p.$('button.cta'); if (cta) { await cta.click(); await p.waitForTimeout(500) }
+      const picked = await selectText(p, 3, 0, 4, 16)
+      if (picked.length < 4) return fail(`${width}px 选不到文字`)
+      if (await p.locator('.zhupi-pick').count() !== 1) return fail(`${width}px 选中后没有浮出「评」`)
+      await p.locator('.zhupi-pick').click()
+      const panel = p.locator('#source-panel')
+      await panel.waitFor({ state: 'visible' })
+      if (await panel.locator('.note-quote').count() !== 1) return fail(`${width}px 批注页没有带上选中的引文`)
+      const quote = (await panel.locator('.note-quote').innerText()).replace(/[「」]/g, '')
+      if (quote !== picked) return fail(`${width}px 引文与选区不一致`)
+      await panel.locator('.note-input').fill('这一句值得记')
+      await p.locator('.panel-heading').click()
+      await p.waitForFunction(() => Object.values(JSON.parse(localStorage.getItem('guanshi.library.v1') || '{}').notes || {}).some((n) => n.quote), null, { timeout: 4000 })
+        .catch(() => {})
+      const notes = await p.evaluate(() => Object.entries(JSON.parse(localStorage.getItem('guanshi.library.v1') || '{}').notes || {}))
+      const hit = notes.find(([, n]) => n.quote === picked)
+      if (!hit) return fail(`${width}px 划线批注没有存下来`)
+      if (!Number.isInteger(hit[1].para)) return fail(`${width}px 没有记段落序号（刷新后找不回位置）`)
+      if (await p.locator(`mark.zhupi[data-note="${hit[0]}"]`).count() !== 1) return fail(`${width}px 正文里没有朱线`)
+
+      await p.reload({ waitUntil: 'networkidle' }); await p.waitForTimeout(700)
+      if (await p.locator('mark.zhupi').count() !== 1) return fail(`${width}px 刷新后朱线丢了`)
+      if (errors.length) return fail(`${width}px 控制台报错：${errors.join('｜')}`)
+    } finally { await context.close() }
+  }
+  return ok('两尺寸：选句浮出「评」、引文一致、带段落序号保存、正文朱线、刷新保留')
+})
+
 check('书架: 两视图互切、全书目录与收藏', async () => {
   for (const width of [390, 1440]) {
     const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })

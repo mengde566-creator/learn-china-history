@@ -397,6 +397,28 @@ body.light-stage{
 .note-item .no{flex:none;font-family:var(--f-hei);font-size:11px;color:var(--mo-mute)}
 .note-item .tx{font-family:var(--f-kai);font-size:13px;color:var(--mo-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .note-item .mv{flex:none;font-size:10px;color:var(--zhe)}
+
+/* 划线批注：正文里选中的那一句画淡朱底 + 朱线，像用朱笔在书上划了一道。 */
+.zhupi{
+  background:rgba(184,64,47,.13);
+  box-shadow:inset 0 -1px 0 rgba(184,64,47,.45);
+  color:inherit;padding:0 .06em;border-radius:1px;
+}
+/* 选句后浮出来的「评」：跟着选区，不挡字。 */
+.zhupi-pick{
+  position:fixed;z-index:60;transform:translate(-50%,-140%);
+  width:44px;height:44px;border-radius:50%;
+  font-family:var(--f-kai);font-size:15px;color:var(--zhu);
+  background:var(--zhi);border:1px solid rgba(184,64,47,.5);
+  box-shadow:0 6px 18px -8px rgba(0,0,0,.6);cursor:pointer;
+}
+.zhupi-pick:hover{background:#fffdf7}
+/* 编辑器里先摆出你选中的那句。 */
+.note-quote{
+  margin:0 0 9px;padding:8px 12px;border-left:2px solid rgba(184,64,47,.45);
+  font-family:var(--f-kai);font-size:13.5px;line-height:1.85;color:var(--mo-dim);
+  background:rgba(184,64,47,.05);
+}
 .ground .g-info{color:var(--su-dim)}
 .ground .sep{opacity:.25;margin:0 1px}
 /* 依据入口直接标出对应哪段原文，不用点开就知道 */

@@ -28,13 +28,21 @@ import { storyKey, isStoryKey } from '@/lib/keys'
 const KEY = 'guanshi.library.v1'
 const NOTE_LIMIT = 120
 
-/** `人物/篇#段号`。段号是数字；`#` 不参与篇名与人物 id。 */
-const noteKey = (personId, storyId, beat) => `${storyKey(personId, storyId)}#${beat}`
-const isNoteKey = (key) => /^[^/]+\/[^#]+#\d+$/.test(String(key || ''))
+/**
+ * 批注的键：`人物/篇#段号`，或 `人物/篇#段号~序号`。
+ *
+ * **同一段可以有多条**（划线批注）：带上 `~序号` 才互不覆盖。
+ * 没有后缀的那一种是「整段一条」的旧格式，继续读得出来，不必迁移。
+ */
+const noteKey = (personId, storyId, beat, id) =>
+  `${storyKey(personId, storyId)}#${beat}${id ? `~${id}` : ''}`
+const isNoteKey = (key) => /^[^/]+\/[^#]+#\d+(~[a-z0-9]+)?$/.test(String(key || ''))
 const splitNoteKey = (key) => {
-  const at = key.lastIndexOf('#')
-  return [key.slice(0, at), Number(key.slice(at + 1))]
+  const hash = key.lastIndexOf('#')
+  const [beatPart, id] = key.slice(hash + 1).split('~')
+  return { story: key.slice(0, hash), beat: Number(beatPart), id: id || null }
 }
+const newNoteId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6)
 
 export { storyKey }
 
@@ -56,6 +64,9 @@ function sanitizeLibrary(raw, defaults) {
     const at = Number(value.at)
     const note = { text, at: Number.isFinite(at) ? at : 0 }
     if (typeof value.anchor === 'string' && value.anchor) note.anchor = value.anchor.slice(0, 40)
+    /* 划线批注：引的是哪一句、在第几个自然段。 */
+    if (typeof value.quote === 'string' && value.quote.trim()) note.quote = value.quote.trim().slice(0, 120)
+    if (Number.isInteger(value.para) && value.para >= 0) note.para = value.para
     notes[key] = note
   }
   return { ...defaults, stars, notes }
@@ -109,6 +120,30 @@ export function deleteNote(personId, storyId, beat) {
 }
 
 /**
+ * 划线批注：给选中的一句写一条，**同一段可以有多条**。
+ * `quote` 是选中的原文（用来在正文里找回位置并画朱线），`para` 是第几个自然段。
+ */
+export function addSelectionNote(personId, storyId, beat, { text, quote, para, anchor }) {
+  const clean = String(text || '').trim().slice(0, NOTE_LIMIT)
+  if (!clean) return null
+  const key = noteKey(personId, storyId, beat, newNoteId())
+  const now = Date.now()
+  libraryStore.set((state) => ({
+    ...state,
+    notes: {
+      ...state.notes,
+      [key]: {
+        text: clean, at: now,
+        ...(quote ? { quote: String(quote).trim().slice(0, 120) } : {}),
+        ...(Number.isInteger(para) ? { para } : {}),
+        ...(anchor ? { anchor } : {}),
+      },
+    },
+  }))
+  return key
+}
+
+/**
  * 改一条**已经存在**的批注——哪怕它被锚点挪到了别的段。
  *
  * 为什么必须按键改：内容改版后 `#3` 那条可能显示在第 6 段。
@@ -147,7 +182,7 @@ export function notesFor(personId, storyId, beats) {
   const out = []
   for (const [key, note] of Object.entries(libraryStore.get().notes)) {
     if (!key.startsWith(prefix)) continue
-    const [, beat] = splitNoteKey(key)
+    const { beat } = splitNoteKey(key)
     let place = beat
     let moved = false
     if (note.anchor && Array.isArray(beats) && beats.length) {
@@ -159,7 +194,8 @@ export function notesFor(personId, storyId, beats) {
       place = beats.length
       moved = true
     }
-    out.push({ key, beat: place, text: note.text, at: note.at, moved })
+    out.push({ key, beat: place, text: note.text, at: note.at, moved,
+      quote: note.quote || null, para: Number.isInteger(note.para) ? note.para : null })
   }
   return out.sort((a, b) => a.beat - b.beat)
 }

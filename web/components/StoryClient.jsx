@@ -13,7 +13,7 @@ import SourceText from '@/components/SourceText'
 import { hasMixedSourceLayers, sourceExcerptOrigin } from '@/lib/source-layers.mjs'
 import { evidenceExcerpt } from '@/lib/evidence.mjs'
 import { personVersion } from '@/lib/person-notes.mjs'
-import { notesFor, setNote, updateNote, removeNote, NOTE_LIMIT, useNotes } from '@/lib/library'
+import { notesFor, setNote, addSelectionNote, updateNote, removeNote, NOTE_LIMIT, useNotes } from '@/lib/library'
 
 /* 界面上只放短标签。长说明在图例里出现一次就够——
    原来每个标记都重复一遍「出自原文，可逐字核对」，纯属噪音。 */
@@ -148,14 +148,66 @@ export default function StoryClient({ person, story, source }) {
      面板跟着段走，对齐面板等于把正文推上去。这一段由我们自己滚。 */
   const skipAlign = useRef(false)
   const composing = useRef(false)
+  /* 选中一句后浮出来的「评」按钮。null = 没有选中的句子。 */
+  const [pendingQuote, setPendingQuote] = useState(null)
+  /* 「评」按钮点下去时读这个 ref，而不是读 state：mouseup 可能先把 state 清掉，
+     闭包里拿到的就是 null，于是点了没反应。 */
+  const pendingQuoteRef = useRef(null)
   const notes = useNotes()
-  const noteHas = (n) => Boolean(notes[`${person.id}/${story.id}#${n}`])
+  /* 这一段有没有批注：**任何一条都算**（整段一条、或某句一条）。 */
+  /* 这里还不能用 `beats` 常量（下面才声明），直接取 story.beats。 */
+  const noteList = notesFor(person.id, story.id, story.beats)
+  const noteHas = (n) => noteList.some((note) => note.beat === n)
+  const quoteNotes = noteList.filter((note) => note.quote && Number.isInteger(note.para))
+  /* 选中正文里的一句话：在选区上方浮出一个「评」。
+     只在正文段落里生效，不跨段；选中的字就是引文。 */
+  useEffect(() => {
+    if (phase !== 'live') return
+    const onPick = () => {
+      const sel = window.getSelection()
+      const text = sel?.toString().trim() || ''
+      if (!text || text.length < 2) { setPendingQuote(null); return }
+      const range = sel.getRangeAt(0)
+      const node = range.commonAncestorContainer
+      const el = node.nodeType === 1 ? node : node.parentElement
+      const paraEl = el?.closest?.('[data-para]')
+      const beatEl = el?.closest?.('.beat[data-n]')
+      if (!paraEl || !beatEl || !el.closest('.reader')) { pendingQuoteRef.current = null; setPendingQuote(null); return }
+      const rect = range.getBoundingClientRect()
+      const picked = {
+        beat: Number(beatEl.dataset.n),
+        para: Number(paraEl.dataset.para),
+        text: text.slice(0, 120),
+        x: rect.left + rect.width / 2,
+        y: rect.top,
+      }
+      pendingQuoteRef.current = picked
+      setPendingQuote(picked)
+    }
+    const onDown = (event) => {
+      if (event.target.closest?.('.zhupi-pick')) return
+      pendingQuoteRef.current = null
+      setPendingQuote(null)
+    }
+    document.addEventListener('mouseup', onPick)
+    document.addEventListener('touchend', onPick)
+    document.addEventListener('mousedown', onDown)
+    return () => {
+      document.removeEventListener('mouseup', onPick)
+      document.removeEventListener('touchend', onPick)
+      document.removeEventListener('mousedown', onDown)
+    }
+  }, [phase])
+
   const saveNote = () => {
     if (!editing) return
     const anchor = beatAnchor(beats[editing.beat - 1])
     /* 改已有批注按**原来的键**写：它可能因为内容改版被锚点挪到了别的段，
        按新段号再写一次会变成两条。 */
     if (editing.key) updateNote(editing.key, editing.draft, anchor)
+    else if (editing.quote) addSelectionNote(person.id, story.id, editing.beat, {
+      text: editing.draft, quote: editing.quote, para: editing.para, anchor,
+    })
     else setNote(person.id, story.id, editing.beat, editing.draft, anchor)
     setEditing(null)
   }
@@ -364,11 +416,13 @@ export default function StoryClient({ person, story, source }) {
   closePanelRef.current = closePanel
   useEffect(() => {
     if (!panelOpen) return
-    document.querySelector('.panel-close')?.focus({ preventScroll: true })
+    /* 正在写批注时**不要**把焦点抢到「收起」：输入框一挂载就被 blur，
+       空内容会被当成「保存」直接把编辑器关掉。 */
+    if (!editing) document.querySelector('.panel-close')?.focus({ preventScroll: true })
     const escape = (event) => { if (event.key === 'Escape') closePanelRef.current?.() }
     document.addEventListener('keydown', escape)
     return () => document.removeEventListener('keydown', escape)
-  }, [panelOpen, panelHost, cameFrom?.entrance])
+  }, [panelOpen, panelHost, cameFrom?.entrance, editing])
 
   // 查证在自己的面板内滚动；正文的位置与尚未读到的进度都不受影响。
   const jumpToSource = useCallback((id) => {
@@ -873,15 +927,19 @@ export default function StoryClient({ person, story, source }) {
                 </div>
               )}
               {tab === 'notes' && (() => {
-                const list = notesFor(person.id, story.id, beats)
+                const list = noteList
                 const beatNo = editing?.beat ?? noteBeat ?? shownBeat?.n ?? following
                 const current = list.find((note) => note.beat === beatNo) || null
-                const start = () => setEditing({ key: current?.key || null, beat: beatNo, draft: current?.text || '' })
+                const start = () => setEditing({
+                  key: current?.key || null, beat: beatNo, draft: current?.text || '',
+                  quote: current?.quote || null, para: current?.para ?? null,
+                })
                 return (
                   <div className="panel-face paper anim-fade" key={`notes-${beatNo}`}>
                     <h3>第 {beatNo} 段 的 批 注</h3>
                     {editing && editing.beat === beatNo ? (
                       <div className="note-editor">
+                        {editing.quote && <blockquote className="note-quote">「{editing.quote}」</blockquote>}
                         <textarea
                           className="note-input"
                           value={editing.draft}
@@ -943,7 +1001,7 @@ export default function StoryClient({ person, story, source }) {
                             }}
                           >
                             <span className="no">第 {note.beat} 段</span>
-                            <span className="tx">{note.text}</span>
+                            <span className="tx">{note.quote ? `「${note.quote}」 ` : ''}{note.text}</span>
                             {note.moved && <span className="mv">位置可能已变</span>}
                           </button>
                         ))}
@@ -959,6 +1017,28 @@ export default function StoryClient({ person, story, source }) {
   return (
     <>
       <main className="wrap" style={{ paddingBottom: 80 }}>
+        {pendingQuote && (
+          <button
+            type="button"
+            className="zhupi-pick"
+            style={{ left: pendingQuote.x, top: pendingQuote.y }}
+            onMouseDown={(event) => event.preventDefault()}
+            onClick={(event) => {
+              const picked = pendingQuoteRef.current || pendingQuote
+              if (!picked) return
+              pendingQuoteRef.current = null
+              setPendingQuote(null)
+              window.getSelection()?.removeAllRanges()
+              setEditing({ key: null, beat: picked.beat, draft: '', quote: picked.text, para: picked.para })
+              setNoteBeat(picked.beat)
+              setFollowing(picked.beat)
+              setTab('notes')
+              showPanel(event.currentTarget)
+            }}
+          >
+            评
+          </button>
+        )}
         <div style={{ paddingTop: 24 }}>
           <Crumbs person={person} story={story} />
         </div>
@@ -999,15 +1079,29 @@ export default function StoryClient({ person, story, source }) {
                         }
                         if (glossAt.has(i)) return null
                         const marks = (story.personNotes?.occurrences || []).filter(m => m.beat === b.n && m.paragraph === i).sort((a, z) => a.offset - z.offset)
-                        if (!marks.length) return <p key={i}>{p}</p>
+                        /* 划线批注：把选中的那一句也切出来，包一层朱线。 */
+                        const noted = quoteNotes
+                          .filter((note) => note.beat === b.n && note.para === i)
+                          .map((note) => ({ note, start: p.indexOf(note.quote), end: p.indexOf(note.quote) + note.quote.length }))
+                          .filter((span) => span.start >= 0)
+                        if (!marks.length && !noted.length) return <p key={i} data-para={i}>{p}</p>
+                        const spans = [
+                          ...marks.map((mark) => ({ kind: 'person', start: mark.offset, end: mark.offset + mark.text.length, mark })),
+                          ...noted.map((span) => ({ kind: 'note', ...span })),
+                        ].sort((a, z) => a.start - z.start)
                         const parts = []; let cursor = 0
-                        for (const mark of marks) {
-                          parts.push(p.slice(cursor, mark.offset))
-                          parts.push(<button type="button" key={`${mark.personId}-${mark.offset}`} className="person-name-trigger" aria-controls="source-panel" aria-expanded={Boolean(personVisit && tab === 'present' && personTarget?.id === mark.personId)} onClick={event => openPerson(event, mark)}>{mark.text}</button>)
-                          cursor = mark.offset + mark.text.length
+                        for (const span of spans) {
+                          if (span.start < cursor) continue        // 重叠就不画第二遍
+                          parts.push(p.slice(cursor, span.start))
+                          if (span.kind === 'person') {
+                            parts.push(<button type="button" key={`${span.mark.personId}-${span.start}`} className="person-name-trigger" aria-controls="source-panel" aria-expanded={Boolean(personVisit && tab === 'present' && personTarget?.id === span.mark.personId)} onClick={event => openPerson(event, span.mark)}>{span.mark.text}</button>)
+                          } else {
+                            parts.push(<mark key={span.note.key} className="zhupi" data-note={span.note.key}>{p.slice(span.start, span.end)}</mark>)
+                          }
+                          cursor = span.end
                         }
                         parts.push(p.slice(cursor))
-                        return <p key={i}>{parts}</p>
+                        return <p key={i} data-para={i}>{parts}</p>
                       })}
                     </div>
 
