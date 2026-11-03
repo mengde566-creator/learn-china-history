@@ -193,7 +193,7 @@ check('首页: 时代合并、人物时间顺序与手机卡片边界', async ()
      针对性断言留在下面——那几句才是这条检查真正的信号。 */
   const content = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'content.json'), 'utf8'))
   const KNOWN_ERAS = ['春秋战国', '秦汉', '汉末三国', '晋', '南北朝', '宋朝']
-  const mustBe = { 耿恭: '秦汉', 霍光: '秦汉', 魏無忌: '春秋战国', 趙奢: '春秋战国', 曹操: '汉末三国' }
+  const mustBe = { 耿恭: '秦汉', 霍光: '秦汉', 魏无忌: '春秋战国', 赵奢: '春秋战国', 曹操: '汉末三国' }
   const saved = { read: { 'caocao/01-wusebang': { beat: 3, beatCount: 7, done: false, phase: 'live', at: 100 } }, review: { 'caocao/01-wusebang': { 1: 'known' } }, last: null }
   for (const width of [390, 1324]) for (const light of [false, true]) {
     const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
