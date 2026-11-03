@@ -1,0 +1,391 @@
+{
+  "people": [
+    {
+      "id": "fu-rong",
+      "name": "苻融",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "苻坚之弟，封阳平公。淝水之战为前锋主帅，马倒被杀；苻坚入城前先哭他。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-chui",
+      "name": "慕容垂",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "前燕宗室，避害奔秦。淝水后一军独全，苻坚许其巡抚燕岱，遂据关东起兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-wei",
+      "name": "慕容暐",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "前燕末帝。灭燕后被迁长安、封授有差；败后苻坚复其位，他却密使劝慕容泓起兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhu-xu",
+      "name": "朱序",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "前秦尚书，本晋将。淝水战前奉命说降谢石，反把秦军虚实告知晋军，劝其速战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-shi",
+      "name": "谢石",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "东晋都督，淝水之战晋军统帅。先惮梁成不进，后从朱序之言请战。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xie-xuan",
+      "name": "谢玄",
+      "versions": [
+        {
+          "from": 4,
+          "to": 5,
+          "text": "东晋徐州刺史，淝水之战晋军主将之一，率数万列阵逼淝水。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-laozhi",
+      "name": "刘牢之",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "东晋龙骧将军。夜袭梁成营垒，斩梁成等十将，为淝水之战的前奏。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dao-an",
+      "name": "道安",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "当时名僧，苻坚敬信之。议伐晋时称太子之言为是，劝苻坚纳之，苻坚不听。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-hong-crown",
+      "name": "苻宏",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "苻坚的太子。议伐晋时进谏，陈吴地得岁、晋主无罪、谢安桓冲皆俊才；苻坚不听。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "026"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fu-rong",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 3,
+      "text": "苻融",
+      "paragraphText": "遣征南苻融、骠骑张蚝、抚军苻方、卫军梁成、平南慕容暐、冠军慕容垂率步骑二十五万为前锋。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "苻融",
+      "paragraphText": "苻融等攻陷寿春，擒晋平虏将军徐元喜、安丰太守王先。慕容垂攻陷郧城，害晋将军王太丘。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 64,
+      "text": "苻融",
+      "paragraphText": "龙骧将军胡彬先保硖石，被融所逼，粮尽，诈扬沙以示融军，暗中遣使告谢石等：「如今贼盛粮尽，恐怕见不到大军了。」融军士截获使者，送到苻融处。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 4,
+      "paragraph": 7,
+      "offset": 3,
+      "text": "苻融",
+      "paragraphText": "苻坚与苻融登城而望王师，见部阵齐整，将士精锐；又北望八公山上草木，都像人形，回头对苻融说：「这也是劲敌啊，怎么说少呢！」憮然有惧色。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 4,
+      "paragraph": 7,
+      "offset": 41,
+      "text": "苻融",
+      "paragraphText": "苻坚与苻融登城而望王师，见部阵齐整，将士精锐；又北望八公山上草木，都像人形，回头对苻融说：「这也是劲敌啊，怎么说少呢！」憮然有惧色。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 44,
+      "text": "苻融",
+      "paragraphText": "当时张蚝在肥南败谢石，谢玄、谢琰勒卒数万列阵以待。张蚝退，列阵逼淝水。王师不得渡，遣使对苻融说："
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 5,
+      "paragraph": 5,
+      "offset": 0,
+      "text": "苻融",
+      "paragraphText": "苻融于是麾军却阵，想趁他们渡水时覆而取之。军一退便奔，制之不可止。苻融驰骑略阵，马倒被杀，军于是大败。王师乘胜追击，直到青冈，死者相枕。"
+    },
+    {
+      "personId": "fu-rong",
+      "beat": 5,
+      "paragraph": 5,
+      "offset": 33,
+      "text": "苻融",
+      "paragraphText": "苻融于是麾军却阵，想趁他们渡水时覆而取之。军一退便奔，制之不可止。苻融驰骑略阵，马倒被杀，军于是大败。王师乘胜追击，直到青冈，死者相枕。"
+    },
+    {
+      "personId": "murong-chui",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 4,
+      "text": "慕容垂",
+      "paragraphText": "冠军将军慕容垂对苻坚说："
+    },
+    {
+      "personId": "murong-chui",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 29,
+      "text": "慕容垂",
+      "paragraphText": "遣征南苻融、骠骑张蚝、抚军苻方、卫军梁成、平南慕容暐、冠军慕容垂率步骑二十五万为前锋。"
+    },
+    {
+      "personId": "murong-chui",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 25,
+      "text": "慕容垂",
+      "paragraphText": "苻融等攻陷寿春，擒晋平虏将军徐元喜、安丰太守王先。慕容垂攻陷郧城，害晋将军王太丘。"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 23,
+      "text": "慕容暐",
+      "paragraphText": "遣征南苻融、骠骑张蚝、抚军苻方、卫军梁成、平南慕容暐、冠军慕容垂率步骑二十五万为前锋。"
+    },
+    {
+      "personId": "zhu-xu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "朱序",
+      "paragraphText": "苻坚派尚书朱序去劝谢石等，说秦兵之众，想胁降他们。朱序却骗谢石说："
+    },
+    {
+      "personId": "zhu-xu",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 25,
+      "text": "朱序",
+      "paragraphText": "苻坚派尚书朱序去劝谢石等，说秦兵之众，想胁降他们。朱序却骗谢石说："
+    },
+    {
+      "personId": "zhu-xu",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 25,
+      "text": "朱序",
+      "paragraphText": "谢石听说苻坚在寿春，恐惧，商议不战以疲之。谢琰劝从朱序之言，遣使请战，苻坚答应了。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "谢石",
+      "paragraphText": "晋遣都督谢石、徐州刺史谢玄、豫州刺史桓伊、辅国谢琰等水陆七万，相继拒融，离洛涧二十五里，惮成不敢进。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 32,
+      "text": "谢石",
+      "paragraphText": "龙骧将军胡彬先保硖石，被融所逼，粮尽，诈扬沙以示融军，暗中遣使告谢石等：「如今贼盛粮尽，恐怕见不到大军了。」融军士截获使者，送到苻融处。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 4,
+      "paragraph": 5,
+      "offset": 6,
+      "text": "谢石",
+      "paragraphText": "苻坚大悦，怕谢石等逃走，把大军留在项城，率轻骑八千兼道赶去，下令军中：「敢说朕到了寿春的，拔舌。」所以谢石等不知道。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 4,
+      "paragraph": 5,
+      "offset": 51,
+      "text": "谢石",
+      "paragraphText": "苻坚大悦，怕谢石等逃走，把大军留在项城，率轻骑八千兼道赶去，下令军中：「敢说朕到了寿春的，拔舌。」所以谢石等不知道。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 4,
+      "paragraph": 6,
+      "offset": 46,
+      "text": "谢石",
+      "paragraphText": "晋龙骧将军刘牢之率劲卒五千，夜袭梁成营垒，攻克，斩梁成及王显、王咏等十将，士卒死者一万五千。谢石等既败梁成，水陆继进。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "谢石",
+      "paragraphText": "苻坚派尚书朱序去劝谢石等，说秦兵之众，想胁降他们。朱序却骗谢石说："
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 29,
+      "text": "谢石",
+      "paragraphText": "苻坚派尚书朱序去劝谢石等，说秦兵之众，想胁降他们。朱序却骗谢石说："
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "谢石",
+      "paragraphText": "谢石听说苻坚在寿春，恐惧，商议不战以疲之。谢琰劝从朱序之言，遣使请战，苻坚答应了。"
+    },
+    {
+      "personId": "xie-shi",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 8,
+      "text": "谢石",
+      "paragraphText": "当时张蚝在肥南败谢石，谢玄、谢琰勒卒数万列阵以待。张蚝退，列阵逼淝水。王师不得渡，遣使对苻融说："
+    },
+    {
+      "personId": "xie-xuan",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 11,
+      "text": "谢玄",
+      "paragraphText": "晋遣都督谢石、徐州刺史谢玄、豫州刺史桓伊、辅国谢琰等水陆七万，相继拒融，离洛涧二十五里，惮成不敢进。"
+    },
+    {
+      "personId": "xie-xuan",
+      "beat": 5,
+      "paragraph": 3,
+      "offset": 11,
+      "text": "谢玄",
+      "paragraphText": "当时张蚝在肥南败谢石，谢玄、谢琰勒卒数万列阵以待。张蚝退，列阵逼淝水。王师不得渡，遣使对苻融说："
+    },
+    {
+      "personId": "liu-laozhi",
+      "beat": 4,
+      "paragraph": 6,
+      "offset": 5,
+      "text": "刘牢之",
+      "paragraphText": "晋龙骧将军刘牢之率劲卒五千，夜袭梁成营垒，攻克，斩梁成及王显、王咏等十将，士卒死者一万五千。谢石等既败梁成，水陆继进。"
+    },
+    {
+      "personId": "dao-an",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "道安",
+      "paragraphText": "道安说：「太子之言是也，愿陛下纳之。」苻坚不听。"
+    },
+    {
+      "personId": "fu-hong-crown",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 2,
+      "text": "苻宏",
+      "paragraphText": "太子苻宏进言：「吴地今年得岁，不可伐。且晋主无罪，人为之用；谢安、桓冲兄弟都是一方俊才，君臣戮力，阻险长江，未可图也。只可厉兵积粟，等他们出了暴主，一举而灭。如今若动而无功，则威名损于外，资财竭于内，所以圣王行师，内断必诚，然后才用。彼若凭长江固守，把江北百姓迁往江南，增城清野，闭门不战，我已疲了，他还没拉弓；土下气疠，不可久留，陛下将怎么办？」"
+    }
+  ]
+}

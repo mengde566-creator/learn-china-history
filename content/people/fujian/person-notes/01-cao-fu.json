@@ -1,0 +1,170 @@
+{
+  "people": [
+    {
+      "id": "fu-hong",
+      "name": "苻洪",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "苻坚的祖父，前秦的奠基者。氐人豪族，随石虎迁邺，家有永贵里；见孙儿有异相而格外爱之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xu-tong",
+      "name": "徐统",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "高平人，有知人之鉴。在路上遇见年幼的苻坚，说他有霸王之相，又屏人密告他日后当大贵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-jian-qin",
+      "name": "苻健",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "前秦的建立者，苻坚的伯父。入关时梦见天神命以苻坚为龙骧将军，次日筑坛授之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-meng",
+      "name": "王猛",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "北海剧人，字景略。被苻坚招致，掌机密、整吏治、灭前燕，官至丞相，临终劝苻坚勿图晋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "001"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fu-hong",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "苻洪",
+      "paragraphText": "祖父苻洪跟着石虎迁到邺城，家在永贵里。"
+    },
+    {
+      "personId": "fu-hong",
+      "beat": 1,
+      "paragraph": 5,
+      "offset": 0,
+      "text": "苻洪",
+      "paragraphText": "苻洪觉得这孙儿奇特，格外爱他，给他起名叫「坚头」。"
+    },
+    {
+      "personId": "fu-hong",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "苻洪",
+      "paragraphText": "苻洪常说：「这孩子的模样气度，心性又过人，不是寻常的相貌。」"
+    },
+    {
+      "personId": "fu-hong",
+      "beat": 3,
+      "paragraph": 7,
+      "offset": 17,
+      "text": "苻洪",
+      "paragraphText": "八岁那年，他请求请老师到家里来教。苻洪说：「你是戎狄异类，世世代代只知饮酒，如今倒要读书了？」高兴地答应了。"
+    },
+    {
+      "personId": "xu-tong",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "徐统",
+      "paragraphText": "高平人徐统有识人之明。他在路上遇见苻坚，觉得奇异，拉住他的手说："
+    },
+    {
+      "personId": "xu-tong",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "徐统",
+      "paragraphText": "徐统对左右说：「这孩子有霸王之相。」左右觉得奇怪，徐统说：「不是你们能懂的。」"
+    },
+    {
+      "personId": "xu-tong",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 25,
+      "text": "徐统",
+      "paragraphText": "徐统对左右说：「这孩子有霸王之相。」左右觉得奇怪，徐统说：「不是你们能懂的。」"
+    },
+    {
+      "personId": "xu-tong",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 7,
+      "text": "徐统",
+      "paragraphText": "后来又遇见他，徐统下车屏退众人，私下说：「苻郎骨相不凡，日后当大贵，只怕我看不到了，怎么办！」"
+    },
+    {
+      "personId": "fu-jian-qin",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "苻健",
+      "paragraphText": "苻健入关的时候，梦见天神派使者，穿朱衣戴赤冠，命拜苻坚为龙骧将军。第二天，苻健就在曲沃筑坛，把这称号授给了他。"
+    },
+    {
+      "personId": "fu-jian-qin",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 37,
+      "text": "苻健",
+      "paragraphText": "苻健入关的时候，梦见天神派使者，穿朱衣戴赤冠，命拜苻坚为龙骧将军。第二天，苻健就在曲沃筑坛，把这称号授给了他。"
+    },
+    {
+      "personId": "fu-jian-qin",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "苻健",
+      "paragraphText": "苻健哭着对他说：「你祖父当年受的就是这个称号，如今你又被神明所命，能不勉力吗！」"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 4,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "王猛",
+      "paragraphText": "王猛、吕婆楼、强汪、梁平老等都有王佐之才，做他的羽翼。"
+    }
+  ]
+}

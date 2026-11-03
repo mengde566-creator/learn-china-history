@@ -1,0 +1,592 @@
+{
+  "people": [
+    {
+      "id": "murong-chui",
+      "name": "慕容垂",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "前燕宗室，避害奔秦。淝水后一军独全，苻坚许其巡抚燕岱，遂据关东起兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quan-yi",
+      "name": "权翼",
+      "versions": [
+        {
+          "from": 1,
+          "to": 3,
+          "text": "略阳人，苻坚的谋臣。劝进、谏杀樊世后的慢骂，又屡谏苻坚勿纵慕容垂。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-chang",
+      "name": "姚苌",
+      "versions": [
+        {
+          "from": 3,
+          "to": 8,
+          "text": "羌人首领，苻坚以为龙骧将军、司马。苻睿败死后惧诛而叛，后缢杀苻坚于新平佛寺。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-rui",
+      "name": "苻睿",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "苻坚之子，封钜鹿公。讨慕容泓时勇果轻敌，不听姚苌之谏，战于华泽败死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-hong",
+      "name": "慕容泓",
+      "versions": [
+        {
+          "from": 3,
+          "to": 5,
+          "text": "前燕宗室。闻慕容垂攻邺，奔关东收鲜卑起兵，众至十余万，进向长安。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-chong",
+      "name": "慕容冲",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "前燕宗室。起兵河东，后进逼长安；苻坚送锦袍一领，他答以「心在天下」。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "murong-wei",
+      "name": "慕容暐",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "前燕末帝。灭燕后被迁长安、封授有差；败后苻坚复其位，他却密使劝慕容泓起兵。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yin-wei",
+      "name": "尹纬",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "姚苌所遣的说客。奉命劝苻坚行尧舜禅代，被苻坚责以「叛贼奈何拟之古人」。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wu-zhong",
+      "name": "吴忠",
+      "versions": [
+        {
+          "from": 7,
+          "to": 7,
+          "text": "姚苌的将军。在五将山围执苻坚，送归新平，幽于别室。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-furen",
+      "name": "张夫人",
+      "versions": [
+        {
+          "from": 8,
+          "to": 8,
+          "text": "苻坚的夫人。淝水败后听苻坚自悔之言；苻坚死时自杀。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "032"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "murong-chui",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "慕容垂",
+      "paragraphText": "诸军尽溃，只有慕容垂一军独全。苻坚带千余骑投奔他。垂子慕容宝劝垂杀坚，垂不从，把兵交还苻坚。"
+    },
+    {
+      "personId": "murong-chui",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "慕容垂",
+      "paragraphText": "还没入关，慕容垂已有贰心，劝苻坚让他去巡抚燕、岱，并请求拜墓，苻坚答应了。权翼固谏以为不可，苻坚不听。"
+    },
+    {
+      "personId": "murong-chui",
+      "beat": 1,
+      "paragraph": 4,
+      "offset": 5,
+      "text": "慕容垂",
+      "paragraphText": "不久他又怕慕容垂生变，后悔了：派石越率三千人戍邺，张蚝率羽林五千戍并州，留四千兵配毛当戍洛阳。"
+    },
+    {
+      "personId": "murong-chui",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 10,
+      "text": "慕容垂",
+      "paragraphText": "权翼说：「寇不可长。慕容垂只能据山东为乱，来不及近逼。如今慕容暐及宗族种类都在京师，鲜卑之众布于畿甸，实是社稷的大忧，宜派重将讨之。」"
+    },
+    {
+      "personId": "murong-chui",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 8,
+      "text": "慕容垂",
+      "paragraphText": "命慕容暐写信招谕慕容垂及慕容泓、慕容冲，使他们息兵回长安，宽恕反叛之咎。而慕容暐暗中派使者对慕容泓说：「如今秦之数已终，长安怪异特甚，当不能再久立。我既是笼中之人，必无还理……社稷不轻，勉建大业，以兴复为务。」慕容泓于是进向长安，改年号燕兴。当时鬼夜哭，三旬而止。"
+    },
+    {
+      "personId": "quan-yi",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 37,
+      "text": "权翼",
+      "paragraphText": "还没入关，慕容垂已有贰心，劝苻坚让他去巡抚燕、岱，并请求拜墓，苻坚答应了。权翼固谏以为不可，苻坚不听。"
+    },
+    {
+      "personId": "quan-yi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "权翼",
+      "paragraphText": "苻坚对权翼说：「我不听卿的话，鲜卑到了这个地步。关东之地，我不再与他们争；可拿慕容泓怎么办？」"
+    },
+    {
+      "personId": "quan-yi",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "权翼",
+      "paragraphText": "权翼说：「寇不可长。慕容垂只能据山东为乱，来不及近逼。如今慕容暐及宗族种类都在京师，鲜卑之众布于畿甸，实是社稷的大忧，宜派重将讨之。」"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 84,
+      "text": "姚苌",
+      "paragraphText": "苻坚于是以广平公苻熙为使持节、都督雍州杂戎诸军事、镇东大将军、雍州刺史，镇蒲阪；征苻睿为都督中外诸军事、卫大将军、司隶校尉、录尚书事，配兵五万，以左将军窦冲为长史、龙骧姚苌为司马，讨慕容泓于华泽。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 37,
+      "text": "姚苌",
+      "paragraphText": "苻睿勇果轻敌，不恤士众。慕容泓听说他到，恐惧，率众要奔关东，苻睿驰兵截击。姚苌谏道：「鲜卑有思归之心，宜驱令出关，不可遏也。」苻睿不听，战于华泽，大败被杀。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 5,
+      "text": "姚苌",
+      "paragraphText": "苻坚大怒。姚苌惧诛，于是叛了。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "姚苌",
+      "paragraphText": "苻坚率步骑二万讨姚苌于北地，驻在赵氏坞，派护军杨璧率游骑三千断其奔路，右军徐成、左军窦冲、镇军毛盛等屡战败之，又断了姚苌运水的路。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 58,
+      "text": "姚苌",
+      "paragraphText": "苻坚率步骑二万讨姚苌于北地，驻在赵氏坞，派护军杨璧率游骑三千断其奔路，右军徐成、左军窦冲、镇军毛盛等屡战败之，又断了姚苌运水的路。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 28,
+      "text": "姚苌",
+      "paragraphText": "冯翊游钦因淮南之败，聚众数千，据守频阳，派军运水运粟接济姚苌，杨璧全部截获。姚苌军渴甚，派其弟镇北尹买率劲卒二万去决堰。窦冲率众败其军于鸛雀渠，斩尹买及首级一万三千。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 38,
+      "text": "姚苌",
+      "paragraphText": "冯翊游钦因淮南之败，聚众数千，据守频阳，派军运水运粟接济姚苌，杨璧全部截获。姚苌军渴甚，派其弟镇北尹买率劲卒二万去决堰。窦冲率众败其军于鸛雀渠，斩尹买及首级一万三千。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "姚苌",
+      "paragraphText": "姚苌众危惧，人有渴死。忽然在姚苌营中降雨，营中水三尺，营外百步，只寸余而已。于是姚苌军大振。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 14,
+      "text": "姚苌",
+      "paragraphText": "姚苌众危惧，人有渴死。忽然在姚苌营中降雨，营中水三尺，营外百步，只寸余而已。于是姚苌军大振。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 40,
+      "text": "姚苌",
+      "paragraphText": "姚苌众危惧，人有渴死。忽然在姚苌营中降雨，营中水三尺，营外百步，只寸余而已。于是姚苌军大振。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "姚苌",
+      "paragraphText": "姚苌又东引慕容泓为援。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "姚苌",
+      "paragraphText": "苻坚到五将山，姚苌派将军吴忠包围他。苻坚的兵都散了，身边只有侍御十几人而已。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 8,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "姚苌",
+      "paragraphText": "姚苌向苻坚求传国玺，说：「苌将要应符历，可以给我吗。」"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 8,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "姚苌",
+      "paragraphText": "姚苌又派尹纬劝他，求尧、舜禅代之事。苻坚责问尹纬：「禅代是圣贤之事，姚苌是叛贼，怎么敢比古人！」"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 8,
+      "paragraph": 2,
+      "offset": 34,
+      "text": "姚苌",
+      "paragraphText": "姚苌又派尹纬劝他，求尧、舜禅代之事。苻坚责问尹纬：「禅代是圣贤之事，姚苌是叛贼，怎么敢比古人！」"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 8,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "姚苌",
+      "paragraphText": "苻坚既不许姚苌禅代，骂而求死，姚苌于是把他缢死在新平佛寺中，时年四十八。中山公苻诜及张夫人一起自杀。这一年是太元十年。"
+    },
+    {
+      "personId": "yao-chang",
+      "beat": 8,
+      "paragraph": 3,
+      "offset": 15,
+      "text": "姚苌",
+      "paragraphText": "苻坚既不许姚苌禅代，骂而求死，姚苌于是把他缢死在新平佛寺中，时年四十八。中山公苻诜及张夫人一起自杀。这一年是太元十年。"
+    },
+    {
+      "personId": "fu-rui",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 41,
+      "text": "苻睿",
+      "paragraphText": "苻坚于是以广平公苻熙为使持节、都督雍州杂戎诸军事、镇东大将军、雍州刺史，镇蒲阪；征苻睿为都督中外诸军事、卫大将军、司隶校尉、录尚书事，配兵五万，以左将军窦冲为长史、龙骧姚苌为司马，讨慕容泓于华泽。"
+    },
+    {
+      "personId": "fu-rui",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "苻睿",
+      "paragraphText": "苻睿勇果轻敌，不恤士众。慕容泓听说他到，恐惧，率众要奔关东，苻睿驰兵截击。姚苌谏道：「鲜卑有思归之心，宜驱令出关，不可遏也。」苻睿不听，战于华泽，大败被杀。"
+    },
+    {
+      "personId": "fu-rui",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 30,
+      "text": "苻睿",
+      "paragraphText": "苻睿勇果轻敌，不恤士众。慕容泓听说他到，恐惧，率众要奔关东，苻睿驰兵截击。姚苌谏道：「鲜卑有思归之心，宜驱令出关，不可遏也。」苻睿不听，战于华泽，大败被杀。"
+    },
+    {
+      "personId": "fu-rui",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 63,
+      "text": "苻睿",
+      "paragraphText": "苻睿勇果轻敌，不恤士众。慕容泓听说他到，恐惧，率众要奔关东，苻睿驰兵截击。姚苌谏道：「鲜卑有思归之心，宜驱令出关，不可遏也。」苻睿不听，战于华泽，大败被杀。"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 39,
+      "text": "慕容泓",
+      "paragraphText": "苻坚对权翼说：「我不听卿的话，鲜卑到了这个地步。关东之地，我不再与他们争；可拿慕容泓怎么办？」"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 91,
+      "text": "慕容泓",
+      "paragraphText": "苻坚于是以广平公苻熙为使持节、都督雍州杂戎诸军事、镇东大将军、雍州刺史，镇蒲阪；征苻睿为都督中外诸军事、卫大将军、司隶校尉、录尚书事，配兵五万，以左将军窦冲为长史、龙骧姚苌为司马，讨慕容泓于华泽。"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 12,
+      "text": "慕容泓",
+      "paragraphText": "苻睿勇果轻敌，不恤士众。慕容泓听说他到，恐惧，率众要奔关东，苻睿驰兵截击。姚苌谏道：「鲜卑有思归之心，宜驱令出关，不可遏也。」苻睿不听，战于华泽，大败被杀。"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "慕容泓",
+      "paragraphText": "慕容泓的兵到了十余万，遣使对苻坚说：「秦为无道，灭我社稷。如今天诱其衷，使秦师倾败，将欲兴复大燕。吴王已定关东，可速备大驾，奉送家兄皇帝及宗室功臣之家。泓当率关中燕人，翼卫皇帝，还返邺都，与秦以武牢为界，分王天下，永为邻好，不复为秦之患。」"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 12,
+      "text": "慕容泓",
+      "paragraphText": "命慕容暐写信招谕慕容垂及慕容泓、慕容冲，使他们息兵回长安，宽恕反叛之咎。而慕容暐暗中派使者对慕容泓说：「如今秦之数已终，长安怪异特甚，当不能再久立。我既是笼中之人，必无还理……社稷不轻，勉建大业，以兴复为务。」慕容泓于是进向长安，改年号燕兴。当时鬼夜哭，三旬而止。"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 46,
+      "text": "慕容泓",
+      "paragraphText": "命慕容暐写信招谕慕容垂及慕容泓、慕容冲，使他们息兵回长安，宽恕反叛之咎。而慕容暐暗中派使者对慕容泓说：「如今秦之数已终，长安怪异特甚，当不能再久立。我既是笼中之人，必无还理……社稷不轻，勉建大业，以兴复为务。」慕容泓于是进向长安，改年号燕兴。当时鬼夜哭，三旬而止。"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 105,
+      "text": "慕容泓",
+      "paragraphText": "命慕容暐写信招谕慕容垂及慕容泓、慕容冲，使他们息兵回长安，宽恕反叛之咎。而慕容暐暗中派使者对慕容泓说：「如今秦之数已终，长安怪异特甚，当不能再久立。我既是笼中之人，必无还理……社稷不轻，勉建大业，以兴复为务。」慕容泓于是进向长安，改年号燕兴。当时鬼夜哭，三旬而止。"
+    },
+    {
+      "personId": "murong-hong",
+      "beat": 5,
+      "paragraph": 4,
+      "offset": 5,
+      "text": "慕容泓",
+      "paragraphText": "姚苌又东引慕容泓为援。"
+    },
+    {
+      "personId": "murong-chong",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 4,
+      "text": "慕容冲",
+      "paragraphText": "平阳太守慕容冲起兵河东，有众二万，进攻蒲阪，苻坚命窦冲讨之。"
+    },
+    {
+      "personId": "murong-chong",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 16,
+      "text": "慕容冲",
+      "paragraphText": "命慕容暐写信招谕慕容垂及慕容泓、慕容冲，使他们息兵回长安，宽恕反叛之咎。而慕容暐暗中派使者对慕容泓说：「如今秦之数已终，长安怪异特甚，当不能再久立。我既是笼中之人，必无还理……社稷不轻，勉建大业，以兴复为务。」慕容泓于是进向长安，改年号燕兴。当时鬼夜哭，三旬而止。"
+    },
+    {
+      "personId": "murong-chong",
+      "beat": 6,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "慕容冲",
+      "paragraphText": "慕容冲进逼长安，苻坚登城观看，叹道：「这虏从哪来的？竟这样强！」"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "慕容暐",
+      "paragraphText": "起初慕容暐屯郧城，姜成等守漳口，晋随郡太守夏侯澄攻姜成，斩之，慕容暐弃众奔还。"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 31,
+      "text": "慕容暐",
+      "paragraphText": "起初慕容暐屯郧城，姜成等守漳口，晋随郡太守夏侯澄攻姜成，斩之，慕容暐弃众奔还。"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 29,
+      "text": "慕容暐",
+      "paragraphText": "权翼说：「寇不可长。慕容垂只能据山东为乱，来不及近逼。如今慕容暐及宗族种类都在京师，鲜卑之众布于畿甸，实是社稷的大忧，宜派重将讨之。」"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "慕容暐",
+      "paragraphText": "苻坚大怒，召慕容暐来责问：「卿父子干纪僭乱，乖逆人神，朕应天行罚，尽兵势而得卿。卿非改迷归善，而合宗蒙宥，兄弟布列上将、纳言，虽说破灭，其实如归。奈何因王师小败，便猖悖若此！垂为长蛇于关东，泓、冲称兵内侮。泓书如此，卿要去，朕当相资。卿之宗族，可谓人面兽心，殆不可以国士期也。」"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "慕容暐",
+      "paragraphText": "慕容暐叩头流血，泣涕陈谢。苻坚过了很久说：「《书》云，父子兄弟无相及也。卿之忠诚，实简朕心，此自三竖之罪，非卿之过。」复其位，待之如初。"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 1,
+      "text": "慕容暐",
+      "paragraphText": "命慕容暐写信招谕慕容垂及慕容泓、慕容冲，使他们息兵回长安，宽恕反叛之咎。而慕容暐暗中派使者对慕容泓说：「如今秦之数已终，长安怪异特甚，当不能再久立。我既是笼中之人，必无还理……社稷不轻，勉建大业，以兴复为务。」慕容泓于是进向长安，改年号燕兴。当时鬼夜哭，三旬而止。"
+    },
+    {
+      "personId": "murong-wei",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 37,
+      "text": "慕容暐",
+      "paragraphText": "命慕容暐写信招谕慕容垂及慕容泓、慕容冲，使他们息兵回长安，宽恕反叛之咎。而慕容暐暗中派使者对慕容泓说：「如今秦之数已终，长安怪异特甚，当不能再久立。我既是笼中之人，必无还理……社稷不轻，勉建大业，以兴复为务。」慕容泓于是进向长安，改年号燕兴。当时鬼夜哭，三旬而止。"
+    },
+    {
+      "personId": "yin-wei",
+      "beat": 8,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "尹纬",
+      "paragraphText": "姚苌又派尹纬劝他，求尧、舜禅代之事。苻坚责问尹纬：「禅代是圣贤之事，姚苌是叛贼，怎么敢比古人！」"
+    },
+    {
+      "personId": "yin-wei",
+      "beat": 8,
+      "paragraph": 2,
+      "offset": 22,
+      "text": "尹纬",
+      "paragraphText": "姚苌又派尹纬劝他，求尧、舜禅代之事。苻坚责问尹纬：「禅代是圣贤之事，姚苌是叛贼，怎么敢比古人！」"
+    },
+    {
+      "personId": "wu-zhong",
+      "beat": 7,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "吴忠",
+      "paragraphText": "苻坚到五将山，姚苌派将军吴忠包围他。苻坚的兵都散了，身边只有侍御十几人而已。"
+    },
+    {
+      "personId": "wu-zhong",
+      "beat": 7,
+      "paragraph": 2,
+      "offset": 2,
+      "text": "吴忠",
+      "paragraphText": "不久吴忠到，擒住苻坚，送到新平，幽禁在别室。"
+    },
+    {
+      "personId": "zhang-furen",
+      "beat": 8,
+      "paragraph": 3,
+      "offset": 42,
+      "text": "张夫人",
+      "paragraphText": "苻坚既不许姚苌禅代，骂而求死，姚苌于是把他缢死在新平佛寺中，时年四十八。中山公苻诜及张夫人一起自杀。这一年是太元十年。"
+    }
+  ]
+}

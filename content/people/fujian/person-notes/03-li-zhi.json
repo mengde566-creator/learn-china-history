@@ -1,0 +1,292 @@
+{
+  "people": [
+    {
+      "id": "wang-meng",
+      "name": "王猛",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "北海剧人，字景略。被苻坚招致，掌机密、整吏治、灭前燕，官至丞相，临终劝苻坚勿图晋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-shi",
+      "name": "樊世",
+      "versions": [
+        {
+          "from": 2,
+          "to": 3,
+          "text": "氐人豪帅，特进，有功于苻氏。当众辱骂王猛、扬言悬其头于城门，被苻坚斩于西厩。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qiang-de",
+      "name": "强德",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "苻健皇后的弟弟，特进。酗酒横暴，为百姓之患，被王猛捕杀、陈尸于市。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deng-qiang",
+      "name": "邓羌",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "前秦中丞，性鲠直，与王猛协规整顿贵戚；后为潞川之战冲锋的猛将。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quan-yi",
+      "name": "权翼",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "略阳人，苻坚的谋臣。劝进、谏杀樊世后的慢骂，又屡谏苻坚勿纵慕容垂。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yang-bi",
+      "name": "杨璧",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "樊世的女婿。苻坚欲以他尚公主，樊世当廷争婚，成为樊世被杀的由头。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "wang-meng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 29,
+      "text": "王猛",
+      "paragraphText": "那时始平一带多是从枋头西归的人，豪右纵横，劫盗充斥，于是把王猛转去做始平令。"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "王猛",
+      "paragraphText": "王猛受宠越来越深，朝政没有不经他手的。"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 26,
+      "text": "王猛",
+      "paragraphText": "特进樊世是氐人豪帅，对苻家有大功，负气倨傲，当众辱骂王猛："
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 13,
+      "text": "王猛",
+      "paragraphText": "不久，樊世入宫奏事。苻坚对王猛说：「我想把杨璧尚公主，杨璧这人怎么样？」"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 0,
+      "text": "王猛",
+      "paragraphText": "王猛责备樊世：「陛下拥有海内，你却敢争婚，这是两个天子，还有上下吗！」"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 7,
+      "text": "王猛",
+      "paragraphText": "樊世怒起，要打王猛，左右拦住了。他于是丑言大骂。苻坚由此发怒，命把樊世斩于西厩。"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 10,
+      "text": "王猛",
+      "paragraphText": "诸氐纷纷不平，争着说王猛的短处；苻坚怒甚，慢骂，甚至在殿庭上鞭打。"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 3,
+      "paragraph": 7,
+      "offset": 11,
+      "text": "王猛",
+      "paragraphText": "从此公卿以下没有不忌惮王猛的。"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 24,
+      "text": "王猛",
+      "paragraphText": "特进强德是苻健皇后的弟弟，酗酒横暴，为百姓之患。王猛捕了他杀掉，把尸首陈在市上。"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 12,
+      "text": "王猛",
+      "paragraphText": "中丞邓羌性情鲠直不挠，与王猛协规齐志。几十天里，贵戚豪强被诛死的二十余人。"
+    },
+    {
+      "personId": "fan-shi",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "樊世",
+      "paragraphText": "特进樊世是氐人豪帅，对苻家有大功，负气倨傲，当众辱骂王猛："
+    },
+    {
+      "personId": "fan-shi",
+      "beat": 2,
+      "paragraph": 4,
+      "offset": 0,
+      "text": "樊世",
+      "paragraphText": "樊世大怒：「早晚要把你的头悬在长安城门上；不然，我就不活在这世上了。」"
+    },
+    {
+      "personId": "fan-shi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 3,
+      "text": "樊世",
+      "paragraphText": "不久，樊世入宫奏事。苻坚对王猛说：「我想把杨璧尚公主，杨璧这人怎么样？」"
+    },
+    {
+      "personId": "fan-shi",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "樊世",
+      "paragraphText": "樊世勃然道：「杨璧是臣的女婿，婚事早已定下，陛下怎么能让他尚公主！」"
+    },
+    {
+      "personId": "fan-shi",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 4,
+      "text": "樊世",
+      "paragraphText": "王猛责备樊世：「陛下拥有海内，你却敢争婚，这是两个天子，还有上下吗！」"
+    },
+    {
+      "personId": "fan-shi",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "樊世",
+      "paragraphText": "樊世怒起，要打王猛，左右拦住了。他于是丑言大骂。苻坚由此发怒，命把樊世斩于西厩。"
+    },
+    {
+      "personId": "fan-shi",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 33,
+      "text": "樊世",
+      "paragraphText": "樊世怒起，要打王猛，左右拦住了。他于是丑言大骂。苻坚由此发怒，命把樊世斩于西厩。"
+    },
+    {
+      "personId": "qiang-de",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "强德",
+      "paragraphText": "特进强德是苻健皇后的弟弟，酗酒横暴，为百姓之患。王猛捕了他杀掉，把尸首陈在市上。"
+    },
+    {
+      "personId": "deng-qiang",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 2,
+      "text": "邓羌",
+      "paragraphText": "中丞邓羌性情鲠直不挠，与王猛协规齐志。几十天里，贵戚豪强被诛死的二十余人。"
+    },
+    {
+      "personId": "quan-yi",
+      "beat": 3,
+      "paragraph": 5,
+      "offset": 0,
+      "text": "权翼",
+      "paragraphText": "权翼进言：「陛下宏达大度，善驭英豪，神武卓荦，录功舍过，有汉祖之风。只是慢易之言，应该除去。」"
+    },
+    {
+      "personId": "yang-bi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 21,
+      "text": "杨璧",
+      "paragraphText": "不久，樊世入宫奏事。苻坚对王猛说：「我想把杨璧尚公主，杨璧这人怎么样？」"
+    },
+    {
+      "personId": "yang-bi",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 27,
+      "text": "杨璧",
+      "paragraphText": "不久，樊世入宫奏事。苻坚对王猛说：「我想把杨璧尚公主，杨璧这人怎么样？」"
+    },
+    {
+      "personId": "yang-bi",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 7,
+      "text": "杨璧",
+      "paragraphText": "樊世勃然道：「杨璧是臣的女婿，婚事早已定下，陛下怎么能让他尚公主！」"
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "people": [
+    {
+      "id": "fu-sheng",
+      "name": "苻生",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "前秦第二位君主，苻健之子。残虐无度，被苻坚等废为越王后杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fu-fa",
+      "name": "苻法",
+      "versions": [
+        {
+          "from": 2,
+          "to": 5,
+          "text": "苻坚的兄长。苻坚弑苻生后让位于他，他以庶孽不敢当；后被苻坚之母派人杀死。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gou-shi",
+      "name": "苟氏",
+      "versions": [
+        {
+          "from": 2,
+          "to": 4,
+          "text": "苻坚的母亲。苻坚即位后尊为皇太后；因苻法得众心，派人杀之。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xue-zan",
+      "name": "薛赞",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "太原人。与权翼同劝苻坚行汤武之事，苻坚即位后为中书侍郎，与王猛同掌机密。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quan-yi",
+      "name": "权翼",
+      "versions": [
+        {
+          "from": 1,
+          "to": 4,
+          "text": "略阳人，苻坚的谋臣。劝进、谏杀樊世后的慢骂，又屡谏苻坚勿纵慕容垂。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-meng",
+      "name": "王猛",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "北海剧人，字景略。被苻坚招致，掌机密、整吏治、灭前燕，官至丞相，临终劝苻坚勿图晋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lv-polou",
+      "name": "吕婆楼",
+      "versions": [
+        {
+          "from": 3,
+          "to": 4,
+          "text": "苻坚的谋士。奉命招引王猛；云龙门之变率麾下继进，后为司隶校尉。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "006"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fu-sheng",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "苻生",
+      "paragraphText": "苻生继位之后，薛赞、权翼来劝苻坚："
+    },
+    {
+      "personId": "fu-sheng",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 0,
+      "text": "苻生",
+      "paragraphText": "苻生既残虐无度，梁平老等屡次以此为言，苻坚于是杀了他，把帝位让给哥哥苻法。"
+    },
+    {
+      "personId": "fu-sheng",
+      "beat": 3,
+      "paragraph": 3,
+      "offset": 0,
+      "text": "苻生",
+      "paragraphText": "苻生还在昏睡，没醒。"
+    },
+    {
+      "personId": "fu-sheng",
+      "beat": 3,
+      "paragraph": 4,
+      "offset": 8,
+      "text": "苻生",
+      "paragraphText": "苻坚的人到了，把苻生带到别的房里，废为越王——不久就杀了他。"
+    },
+    {
+      "personId": "fu-sheng",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 15,
+      "text": "苻生",
+      "paragraphText": "苻坚以升平元年僭称大秦天王，诛苻生的幸臣董龙、赵韶等二十余人，赦其境内，改元永兴。"
+    },
+    {
+      "personId": "fu-fa",
+      "beat": 2,
+      "paragraph": 0,
+      "offset": 34,
+      "text": "苻法",
+      "paragraphText": "苻生既残虐无度，梁平老等屡次以此为言，苻坚于是杀了他，把帝位让给哥哥苻法。"
+    },
+    {
+      "personId": "fu-fa",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "苻法",
+      "paragraphText": "苻法自以为是庶出之子，不敢当。"
+    },
+    {
+      "personId": "fu-fa",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 1,
+      "text": "苻法",
+      "paragraphText": "兄苻法为使持节、侍中、都督中外诸军事、丞相、录尚书；从祖苻侯为太尉，从兄苻柳为车骑大将军、尚书令；封弟苻融为阳平公，苻双为河南公，子苻丕为长乐公，苻晖为平原公，苻熙为广平公，苻睿为钜鹿公。"
+    },
+    {
+      "personId": "fu-fa",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "苻法",
+      "paragraphText": "起初，苻坚的母亲因为苻法年长而贤，又得众心，怕他终成变故——到这时，派人把他杀了。"
+    },
+    {
+      "personId": "fu-fa",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "苻法",
+      "paragraphText": "苻坚性情仁友，与苻法在东堂诀别，恸哭呕血，以本官相赠，谥曰哀，封苻法的儿子苻阳为东海公、苻敷为清河公。"
+    },
+    {
+      "personId": "fu-fa",
+      "beat": 5,
+      "paragraph": 1,
+      "offset": 32,
+      "text": "苻法",
+      "paragraphText": "苻坚性情仁友，与苻法在东堂诀别，恸哭呕血，以本官相赠，谥曰哀，封苻法的儿子苻阳为东海公、苻敷为清河公。"
+    },
+    {
+      "personId": "gou-shi",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 5,
+      "text": "苟氏",
+      "paragraphText": "苻坚和母亲苟氏都担心众人之心未服，难以坐这个位子；群臣再三固请，他才答应。"
+    },
+    {
+      "personId": "gou-shi",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 15,
+      "text": "苟氏",
+      "paragraphText": "追谥父亲苻雄为文桓皇帝，尊母亲苟氏为皇太后，妻苟氏为皇后，子苻宏为皇太子。"
+    },
+    {
+      "personId": "gou-shi",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 23,
+      "text": "苟氏",
+      "paragraphText": "追谥父亲苻雄为文桓皇帝，尊母亲苟氏为皇太后，妻苟氏为皇后，子苻宏为皇太子。"
+    },
+    {
+      "personId": "xue-zan",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 7,
+      "text": "薛赞",
+      "paragraphText": "苻生继位之后，薛赞、权翼来劝苻坚："
+    },
+    {
+      "personId": "xue-zan",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 64,
+      "text": "薛赞",
+      "paragraphText": "李威为卫将军、尚书左仆射；梁平老为右仆射；强汪为领军将军；仇腾为尚书，领选；席宝为丞相长史、行太子詹事；吕婆楼为司隶校尉；王猛、薛赞为中书侍郎；权翼为给事黄门侍郎，与猛、赞同掌机密。"
+    },
+    {
+      "personId": "quan-yi",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 10,
+      "text": "权翼",
+      "paragraphText": "苻生继位之后，薛赞、权翼来劝苻坚："
+    },
+    {
+      "personId": "quan-yi",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 72,
+      "text": "权翼",
+      "paragraphText": "李威为卫将军、尚书左仆射；梁平老为右仆射；强汪为领军将军；仇腾为尚书，领选；席宝为丞相长史、行太子詹事；吕婆楼为司隶校尉；王猛、薛赞为中书侍郎；权翼为给事黄门侍郎，与猛、赞同掌机密。"
+    },
+    {
+      "personId": "wang-meng",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 61,
+      "text": "王猛",
+      "paragraphText": "李威为卫将军、尚书左仆射；梁平老为右仆射；强汪为领军将军；仇腾为尚书，领选；席宝为丞相长史、行太子詹事；吕婆楼为司隶校尉；王猛、薛赞为中书侍郎；权翼为给事黄门侍郎，与猛、赞同掌机密。"
+    },
+    {
+      "personId": "lv-polou",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 31,
+      "text": "吕婆楼",
+      "paragraphText": "于是他与特进梁平老、强汪等率壮士数百人，悄悄摸进云龙门；苻坚与吕婆楼率麾下三百余人，鼓噪着跟进。"
+    },
+    {
+      "personId": "lv-polou",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 52,
+      "text": "吕婆楼",
+      "paragraphText": "李威为卫将军、尚书左仆射；梁平老为右仆射；强汪为领军将军；仇腾为尚书，领选；席宝为丞相长史、行太子詹事；吕婆楼为司隶校尉；王猛、薛赞为中书侍郎；权翼为给事黄门侍郎，与猛、赞同掌机密。"
+    }
+  ]
+}
