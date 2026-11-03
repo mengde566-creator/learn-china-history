@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "chen-mu",
-      "name": "陳睦",
+      "name": "陈睦",
       "versions": [
         {
           "from": 1,
@@ -15,9 +15,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -25,7 +25,7 @@
     },
     {
       "id": "guan-chong",
-      "name": "關寵",
+      "name": "关宠",
       "versions": [
         {
           "from": 1,
@@ -42,9 +42,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -52,7 +52,7 @@
     },
     {
       "id": "xianzong",
-      "name": "顯宗",
+      "name": "显宗",
       "versions": [
         {
           "from": 1,
@@ -65,9 +65,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷二·顯宗孝明帝紀",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷002"
+              "book": "《后汉书》",
+              "section": "卷二·显宗孝明帝纪",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷002"
             }
           ]
         }
@@ -75,7 +75,7 @@
     },
     {
       "id": "houwang-furen",
-      "name": "後王夫人",
+      "name": "后王夫人",
       "versions": [
         {
           "from": 2,
@@ -88,9 +88,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -98,7 +98,7 @@
     },
     {
       "id": "chanyu",
-      "name": "單于",
+      "name": "单于",
       "versions": [
         {
           "from": 4,
@@ -119,9 +119,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -146,9 +146,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }

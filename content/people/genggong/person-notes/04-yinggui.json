@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "guan-chong",
-      "name": "關寵",
+      "name": "关宠",
       "versions": [
         {
           "from": 1,
@@ -19,9 +19,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -29,7 +29,7 @@
     },
     {
       "id": "suzong",
-      "name": "肅宗",
+      "name": "肃宗",
       "versions": [
         {
           "from": 1,
@@ -46,9 +46,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷三·肅宗孝章帝紀",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷003"
+              "book": "《后汉书》",
+              "section": "卷三·肃宗孝章帝纪",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷003"
             }
           ]
         }
@@ -56,7 +56,7 @@
     },
     {
       "id": "diwulun",
-      "name": "第五倫",
+      "name": "第五伦",
       "versions": [
         {
           "from": 1,
@@ -69,9 +69,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷四十一·第五倫傳",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷041"
+              "book": "《后汉书》",
+              "section": "卷四十一·第五伦传",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷041"
             }
           ]
         }
@@ -79,7 +79,7 @@
     },
     {
       "id": "baoyu",
-      "name": "鮑昱",
+      "name": "鲍昱",
       "versions": [
         {
           "from": 1,
@@ -96,9 +96,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷二十九·鮑永傳附鮑昱",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷029"
+              "book": "《后汉书》",
+              "section": "卷二十九·鲍永传附鲍昱",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷029"
             }
           ]
         }
@@ -119,9 +119,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -142,9 +142,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -173,9 +173,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -196,9 +196,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -227,9 +227,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿恭傳附范羌等",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿恭传附范羌等",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }

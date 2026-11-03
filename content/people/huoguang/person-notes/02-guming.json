@@ -2,12 +2,12 @@
   "people": [
     {
       "id": "han-wudi",
-      "name": "漢武帝",
+      "name": "汉武帝",
       "versions": [
         {
           "from": 1,
           "to": 5,
-          "text": "汉武帝是霍光辅政的托付者。征和二年卫太子败后，他属意钩弋子，赐霍光周公负成王图；后元二年病笃，以霍光为大司马大将军，与金日磾等四人受遗诏辅少主。",
+          "text": "汉武帝是霍光辅政的托付者。征和二年卫太子败后，他属意钩弋子，赐霍光周公负成王图；后元二年病笃，以霍光为大司马大将军，与金日䃅等四人受遗诏辅少主。",
           "sources": [
             {
               "kind": "local",
@@ -27,7 +27,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -37,7 +37,7 @@
     },
     {
       "id": "gouyi",
-      "name": "鉤弋趙婕妤",
+      "name": "钩弋赵婕妤",
       "versions": [
         {
           "from": 1,
@@ -54,9 +54,9 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
-              "section": "卷九十七·外戚傳",
-              "url": "https://zh.wikisource.org/wiki/漢書/卷097"
+              "book": "《汉书》",
+              "section": "卷九十七·外戚传",
+              "url": "https://zh.wikisource.org/wiki/汉书/卷097"
             }
           ]
         }
@@ -64,12 +64,12 @@
     },
     {
       "id": "jin-ridi",
-      "name": "金日磾",
+      "name": "金日䃅",
       "versions": [
         {
           "from": 3,
           "to": 5,
-          "text": "金日磾是匈奴休屠王之子，入汉为侍中，与霍光同受遗诏，为车骑将军。霍光让位于他，他以「外国人」推辞；后封秺侯，早卒。",
+          "text": "金日䃅是匈奴休屠王之子，入汉为侍中，与霍光同受遗诏，为车骑将军。霍光让位于他，他以「外国人」推辞；后封秺侯，早卒。",
           "sources": [
             {
               "kind": "local",
@@ -85,8 +85,8 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
-              "section": "卷六十八·金日磾",
+              "book": "《汉书》",
+              "section": "卷六十八·金日䃅",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
           ]
@@ -120,7 +120,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -151,7 +151,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -174,7 +174,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -204,9 +204,9 @@
       "personId": "jin-ridi",
       "beat": 3,
       "paragraph": 0,
-      "offset": 12,
-      "text": "金日磾",
-      "paragraphText": "霍光顿首推让说：「臣不如金日磾。」金日磾也说：「臣外国人，不如光。」"
+      "offset": 17,
+      "text": "金日䃅",
+      "paragraphText": "霍光顿首推让说：「臣不如金日磾。」金日䃅也说：「臣外国人，不如光。」"
     },
     {
       "personId": "shangguan-jie",
@@ -214,7 +214,7 @@
       "paragraph": 0,
       "offset": 22,
       "text": "上官桀",
-      "paragraphText": "武帝以霍光为大司马大将军，金日磾为车骑将军，上官桀为左将军，桑弘羊为御史大夫，皆拜卧内床下，受遗诏辅少主。"
+      "paragraphText": "武帝以霍光为大司马大将军，金日䃅为车骑将军，上官桀为左将军，桑弘羊为御史大夫，皆拜卧内床下，受遗诏辅少主。"
     },
     {
       "personId": "sang-hongyang",
@@ -222,7 +222,7 @@
       "paragraph": 0,
       "offset": 30,
       "text": "桑弘羊",
-      "paragraphText": "武帝以霍光为大司马大将军，金日磾为车骑将军，上官桀为左将军，桑弘羊为御史大夫，皆拜卧内床下，受遗诏辅少主。"
+      "paragraphText": "武帝以霍光为大司马大将军，金日䃅为车骑将军，上官桀为左将军，桑弘羊为御史大夫，皆拜卧内床下，受遗诏辅少主。"
     },
     {
       "personId": "wang-hu",

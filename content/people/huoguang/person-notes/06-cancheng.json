@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "huo-xian",
-      "name": "霍顯",
+      "name": "霍显",
       "versions": [
         {
           "from": 1,
@@ -27,7 +27,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -62,7 +62,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -72,7 +72,7 @@
     },
     {
       "id": "huo-yun",
-      "name": "霍雲",
+      "name": "霍云",
       "versions": [
         {
           "from": 2,
@@ -89,7 +89,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -120,7 +120,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -130,7 +130,7 @@
     },
     {
       "id": "feng-zidu",
-      "name": "馮子都",
+      "name": "冯子都",
       "versions": [
         {
           "from": 1,
@@ -147,7 +147,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -178,7 +178,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -188,7 +188,7 @@
     },
     {
       "id": "xu-huanghou",
-      "name": "許皇后",
+      "name": "许皇后",
       "versions": [
         {
           "from": 5,
@@ -201,9 +201,9 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
-              "section": "卷九十七·外戚傳",
-              "url": "https://zh.wikisource.org/wiki/漢書/卷097"
+              "book": "《汉书》",
+              "section": "卷九十七·外戚传",
+              "url": "https://zh.wikisource.org/wiki/汉书/卷097"
             }
           ]
         }
@@ -228,7 +228,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }

@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "changyi-wang",
-      "name": "昌邑王賀",
+      "name": "昌邑王贺",
       "versions": [
         {
           "from": 2,
@@ -27,7 +27,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -62,7 +62,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -72,7 +72,7 @@
     },
     {
       "id": "zhang-anshi",
-      "name": "張安世",
+      "name": "张安世",
       "versions": [
         {
           "from": 3,
@@ -89,7 +89,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -120,7 +120,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -130,7 +130,7 @@
     },
     {
       "id": "yang-chang",
-      "name": "楊敞",
+      "name": "杨敞",
       "versions": [
         {
           "from": 1,
@@ -151,7 +151,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -161,7 +161,7 @@
     },
     {
       "id": "xiahou-sheng",
-      "name": "夏侯勝",
+      "name": "夏侯胜",
       "versions": [
         {
           "from": 5,
@@ -170,8 +170,8 @@
           "sources": [
             {
               "kind": "external",
-              "book": "《漢書》",
-              "section": "卷六十八·霍光金日磾傳",
+              "book": "《汉书》",
+              "section": "卷六十八·霍光金日䃅传",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
           ]
@@ -189,8 +189,8 @@
           "sources": [
             {
               "kind": "external",
-              "book": "《漢書》",
-              "section": "卷六十八·霍光金日磾傳",
+              "book": "《汉书》",
+              "section": "卷六十八·霍光金日䃅传",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
           ]

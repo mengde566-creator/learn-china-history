@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "you-meng",
-      "name": "優孟",
+      "name": "优孟",
       "versions": [
         {
           "from": 1,
@@ -27,8 +27,8 @@
             },
             {
               "kind": "external",
-              "book": "《史記》",
-              "section": "卷一百二十六·滑稽列傳",
+              "book": "《史记》",
+              "section": "卷一百二十六·滑稽列传",
               "url": "https://www.gushiwen.cn/guwen/bookv_6e1ea79ada87.aspx"
             }
           ]
@@ -37,7 +37,7 @@
     },
     {
       "id": "sunshuao-zi",
-      "name": "孫叔敖之子",
+      "name": "孙叔敖之子",
       "versions": [
         {
           "from": 2,
@@ -58,8 +58,8 @@
             },
             {
               "kind": "external",
-              "book": "《史記》",
-              "section": "卷一百二十六·滑稽列傳",
+              "book": "《史记》",
+              "section": "卷一百二十六·滑稽列传",
               "url": "https://www.gushiwen.cn/guwen/bookv_6e1ea79ada87.aspx"
             }
           ]
@@ -68,7 +68,7 @@
     },
     {
       "id": "chu-zhuangwang",
-      "name": "楚莊王",
+      "name": "楚庄王",
       "versions": [
         {
           "from": 3,
@@ -93,8 +93,8 @@
             },
             {
               "kind": "external",
-              "book": "《史記》",
-              "section": "卷一百二十六·滑稽列傳",
+              "book": "《史记》",
+              "section": "卷一百二十六·滑稽列传",
               "url": "https://www.gushiwen.cn/guwen/bookv_6e1ea79ada87.aspx"
             }
           ]

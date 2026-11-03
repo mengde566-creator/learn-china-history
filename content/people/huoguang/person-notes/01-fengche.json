@@ -23,7 +23,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -33,7 +33,7 @@
     },
     {
       "id": "wei-shaoer",
-      "name": "衛少皃",
+      "name": "卫少皃",
       "versions": [
         {
           "from": 1,
@@ -50,7 +50,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -89,7 +89,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -99,7 +99,7 @@
     },
     {
       "id": "wei-zifu",
-      "name": "衛子夫",
+      "name": "卫子夫",
       "versions": [
         {
           "from": 2,
@@ -112,9 +112,9 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
-              "section": "卷九十七·外戚傳",
-              "url": "https://zh.wikisource.org/wiki/漢書/卷097"
+              "book": "《汉书》",
+              "section": "卷九十七·外戚传",
+              "url": "https://zh.wikisource.org/wiki/汉书/卷097"
             }
           ]
         }
@@ -122,7 +122,7 @@
     },
     {
       "id": "shangfu-xilang",
-      "name": "尚符璽郎",
+      "name": "尚符玺郎",
       "versions": [
         {
           "from": 5,
@@ -135,7 +135,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }

@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "ershi-jiangjun",
-      "name": "貳師將軍",
+      "name": "贰师将军",
       "versions": [
         {
           "from": 4,
@@ -15,9 +15,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }

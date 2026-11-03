@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "zheng-zhong",
-      "name": "鄭眾",
+      "name": "郑众",
       "versions": [
         {
           "from": 1,
@@ -19,9 +19,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -29,7 +29,7 @@
     },
     {
       "id": "baoyu",
-      "name": "鮑昱",
+      "name": "鲍昱",
       "versions": [
         {
           "from": 2,
@@ -42,9 +42,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷二十九·鮑永傳附鮑昱",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷029"
+              "book": "《后汉书》",
+              "section": "卷二十九·鲍永传附鲍昱",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷029"
             }
           ]
         }
@@ -65,9 +65,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -75,7 +75,7 @@
     },
     {
       "id": "zhang-feng",
-      "name": "張封",
+      "name": "张封",
       "versions": [
         {
           "from": 2,
@@ -88,9 +88,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -111,9 +111,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿恭傳附范羌等",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿恭传附范羌等",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -121,7 +121,7 @@
     },
     {
       "id": "ma-fang",
-      "name": "馬防",
+      "name": "马防",
       "versions": [
         {
           "from": 3,
@@ -146,9 +146,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -156,7 +156,7 @@
     },
     {
       "id": "dou-gu",
-      "name": "竇固",
+      "name": "窦固",
       "versions": [
         {
           "from": 4,
@@ -169,9 +169,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -179,7 +179,7 @@
     },
     {
       "id": "li-tan",
-      "name": "李譚",
+      "name": "李谭",
       "versions": [
         {
           "from": 5,
@@ -192,9 +192,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -219,9 +219,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -242,9 +242,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -252,12 +252,12 @@
     },
     {
       "id": "geng-ye",
-      "name": "耿曄",
+      "name": "耿晔",
       "versions": [
         {
           "from": 5,
           "to": 5,
-          "text": "耿曄（底本作「嘩」）是耿溥之子，与兄耿宏同为郎。",
+          "text": "耿晔（底本作「嘩」）是耿溥之子，与兄耿宏同为郎。",
           "sources": [
             {
               "kind": "local",
@@ -265,9 +265,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }

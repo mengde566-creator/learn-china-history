@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "han-xuandi",
-      "name": "漢宣帝",
+      "name": "汉宣帝",
       "versions": [
         {
           "from": 2,
@@ -23,7 +23,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -33,7 +33,7 @@
     },
     {
       "id": "liu-de",
-      "name": "劉德",
+      "name": "刘德",
       "versions": [
         {
           "from": 2,
@@ -46,7 +46,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -77,7 +77,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -112,7 +112,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }
@@ -147,7 +147,7 @@
             },
             {
               "kind": "external",
-              "book": "《漢書》",
+              "book": "《汉书》",
               "section": "卷六十八·霍光",
               "url": "https://www.gushiwen.cn/guwen/bookv_3dc36f4be479.aspx"
             }

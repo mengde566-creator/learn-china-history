@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "chu-zhuangwang",
-      "name": "楚莊王",
+      "name": "楚庄王",
       "versions": [
         {
           "from": 1,
@@ -23,8 +23,8 @@
             },
             {
               "kind": "external",
-              "book": "《史記》",
-              "section": "卷一百一十九·循吏列傳",
+              "book": "《史记》",
+              "section": "卷一百一十九·循吏列传",
               "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
             }
           ]
@@ -50,8 +50,8 @@
             },
             {
               "kind": "external",
-              "book": "《史記》",
-              "section": "卷一百一十九·循吏列傳",
+              "book": "《史记》",
+              "section": "卷一百一十九·循吏列传",
               "url": "https://www.gushiwen.cn/guwen/bookv_443331492f15.aspx"
             }
           ]

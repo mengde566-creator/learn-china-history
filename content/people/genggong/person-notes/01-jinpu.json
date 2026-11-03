@@ -2,7 +2,7 @@
   "people": [
     {
       "id": "geng-guang",
-      "name": "耿廣",
+      "name": "耿广",
       "versions": [
         {
           "from": 1,
@@ -19,9 +19,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -29,7 +29,7 @@
     },
     {
       "id": "liu-zhang",
-      "name": "劉張",
+      "name": "刘张",
       "versions": [
         {
           "from": 1,
@@ -42,9 +42,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -52,7 +52,7 @@
     },
     {
       "id": "dou-gu",
-      "name": "竇固",
+      "name": "窦固",
       "versions": [
         {
           "from": 1,
@@ -69,9 +69,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -96,9 +96,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -106,7 +106,7 @@
     },
     {
       "id": "guan-chong",
-      "name": "關寵",
+      "name": "关宠",
       "versions": [
         {
           "from": 1,
@@ -131,9 +131,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -141,7 +141,7 @@
     },
     {
       "id": "da-kunmi",
-      "name": "大昆彌",
+      "name": "大昆弥",
       "versions": [
         {
           "from": 2,
@@ -154,9 +154,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -177,9 +177,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
@@ -187,7 +187,7 @@
     },
     {
       "id": "houwang-ande",
-      "name": "後王安得",
+      "name": "后王安得",
       "versions": [
         {
           "from": 3,
@@ -200,9 +200,9 @@
             },
             {
               "kind": "external",
-              "book": "《後漢書》",
-              "section": "卷十九·耿弇列傳附耿恭",
-              "url": "https://zh.wikisource.org/wiki/後漢書/卷019"
+              "book": "《后汉书》",
+              "section": "卷十九·耿弇列传附耿恭",
+              "url": "https://zh.wikisource.org/wiki/后汉书/卷019"
             }
           ]
         }
