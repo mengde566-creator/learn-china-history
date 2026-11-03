@@ -412,13 +412,20 @@ body.light-stage{
 }
 /* 选句后浮出来的「评」：跟着选区，不挡字。 */
 .zhupi-pick{
-  position:fixed;z-index:60;transform:translate(-50%,-140%);
-  width:44px;height:44px;border-radius:50%;
-  font-family:var(--f-kai);font-size:15px;color:var(--zhu);
-  background:var(--zhi);border:1px solid rgba(184,64,47,.5);
-  box-shadow:0 6px 18px -8px rgba(0,0,0,.6);cursor:pointer;
+  position:fixed;z-index:60;transform:translate(-50%,-145%);
+  display:inline-flex;align-items:center;gap:9px;
+  height:40px;padding:0 15px 0 12px;border-radius:2px;
+  font-family:var(--f-kai);font-size:13.5px;letter-spacing:.2em;
+  color:var(--zhu);background:var(--zhi);
+  border:1px solid rgba(184,64,47,.28);border-radius:2px;
+  box-shadow:0 10px 22px -16px rgba(0,0,0,.8);
+  cursor:pointer;transition:background-color .2s var(--ease),border-color .2s var(--ease);
 }
-.zhupi-pick:hover{background:#fffdf7}
+/* 左边一道朱线，像一张夹在书里的纸条，而不是一个圆形图标。 */
+.zhupi-pick::before{content:'';flex:none;width:2px;height:15px;background:var(--zhu);border-radius:1px}
+.zhupi-pick:hover{background:#fffdf7;border-color:rgba(184,64,47,.5)}
+.zhupi-pick:focus-visible{outline:2px solid var(--cang);outline-offset:2px}
+@media (max-width:640px){.zhupi-pick{height:44px;font-size:14px}}
 /* 编辑器里先摆出你选中的那句。 */
 .note-quote{
   margin:0 0 9px;padding:8px 12px;border-left:2px solid rgba(184,64,47,.45);

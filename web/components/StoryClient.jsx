@@ -1061,8 +1061,9 @@ export default function StoryClient({ person, story, source }) {
               setTab('notes')
               showPanel(event.currentTarget)
             }}
+            aria-label="给选中的句子写批注"
           >
-            评
+            批注
           </button>
         ), document.body)}
         <div style={{ paddingTop: 24 }}>
