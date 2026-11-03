@@ -571,82 +571,82 @@
  },
  "genggong/01-jinpu": {
   "range": "001–016",
-  "seeds": "1a1ab25dc7a5e2f5",
+  "seeds": "213c86e0179bd420",
   "cards": "8da81ec9b5457e1e"
  },
  "genggong/02-shule": {
   "range": "017–024",
-  "seeds": "410211212348826b",
+  "seeds": "c99acb399ecb63a9",
   "cards": "4785a3475b2aec66"
  },
  "genggong/03-zhunu": {
   "range": "025–035",
-  "seeds": "a13fff3cdfb84ec7",
+  "seeds": "c0e4976d039f2ce7",
   "cards": "ebfbdb04d82d1ff7"
  },
  "genggong/04-yinggui": {
   "range": "036–052",
-  "seeds": "8cb8ec6dd417a0d4",
+  "seeds": "20b9d1aee6cf2efd",
   "cards": "5b25f5584f905479"
  },
  "genggong/05-yumen": {
   "range": "053–070",
-  "seeds": "6c8347549c969967",
+  "seeds": "c1ec6cb73710ba0c",
   "cards": "3e54bdb2f72931c5"
  },
  "huoguang/01-fengche": {
   "range": "001–010",
-  "seeds": "4fd251864e49cab2",
-  "cards": "8eeb82757c8268d6"
+  "seeds": "643b1a826db9c1bf",
+  "cards": "7cbd097e72deaddb"
  },
  "huoguang/02-guming": {
   "range": "011–019",
-  "seeds": "b6b520db3f8ac60b",
-  "cards": "bc840c6dd5ee1fa3"
+  "seeds": "463c969019b5c40d",
+  "cards": "b95dae11208c1188"
  },
  "huoguang/03-yangai": {
   "range": "020–035",
-  "seeds": "a28e49aa7ef61d82",
-  "cards": "b2be5d8a9625db2e"
+  "seeds": "a9e0c1acbb480a10",
+  "cards": "2bc568b88cb21802"
  },
  "huoguang/04-feichangyi": {
   "range": "036–062",
-  "seeds": "4024c6105301cdaa",
-  "cards": "7e832cddc0ab7e70"
+  "seeds": "1b46ca411b68e7c8",
+  "cards": "bdddff98e1be1134"
  },
  "huoguang/05-lixuan": {
   "range": "063–076",
-  "seeds": "501f7914a0373e50",
+  "seeds": "04cd98c0abbfc7b2",
   "cards": "f801c372d842c3bf"
  },
  "huoguang/06-cancheng": {
   "range": "077–086",
-  "seeds": "2fdf820c53b9ff06",
-  "cards": "c177108ca109d502"
+  "seeds": "3bf3a697c0cb6255",
+  "cards": "ac26233cc988a2a8"
  },
  "huoguang/07-zumie": {
   "range": "087–118",
-  "seeds": "8b703a56dd6dff4f",
-  "cards": "1c8267dc6e33504c"
+  "seeds": "1689b5bc9292333e",
+  "cards": "f909eb209437f11d"
  },
  "sunshuao/01-chushi": {
   "range": "001–006",
-  "seeds": "9b5fdb28857bc6bd",
-  "cards": "01b81596851568f2"
+  "seeds": "00ddd8ca11dcc5be",
+  "cards": "2f2e73a57ba4d688"
  },
  "sunshuao/02-gengbi": {
   "range": "007–012",
-  "seeds": "e2c50b7fce020ee4",
-  "cards": "51cfc811fb37ad02"
+  "seeds": "7401fd6a18aebb66",
+  "cards": "bd690449b9d37aae"
  },
  "sunshuao/03-gaoche": {
   "range": "013–015",
-  "seeds": "6838e49c1894d793",
-  "cards": "ca842c67f2bb34dc"
+  "seeds": "e2ce118b7e4a17bc",
+  "cards": "35db326e0a2bdbe0"
  },
  "sunshuao/04-youmeng": {
   "range": "016–026",
-  "seeds": "a17fc6b9faab2ec3",
-  "cards": "6a782ac51a28808f"
+  "seeds": "972691a374ed3bac",
+  "cards": "e8708eba9bba6ecf"
  }
 }
