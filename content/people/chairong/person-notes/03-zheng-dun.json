@@ -1,0 +1,31 @@
+{
+  "people": [
+    {
+      "id": "zhao-kuangyin",
+      "name": "今上",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "即赵匡胤，后为宋太祖。世宗朝任殿前都指挥使、殿前都点检，屡为前锋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "011"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "zhao-kuangyin",
+      "beat": 1,
+      "paragraph": 1,
+      "offset": 27,
+      "text": "今上",
+      "paragraphText": "自从高平一役，他看见诸军不够严整，临阵就退；到这时命「今上」把全军重新简阅，挑出武艺超绝的署为殿前诸班，于是军中有了散员、内殿直、铁骑、控鹤这些名号。"
+    }
+  ]
+}

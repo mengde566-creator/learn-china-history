@@ -678,5 +678,35 @@
   "range": "032–041",
   "seeds": "08760ea89033b0b6",
   "cards": "b5984a3203ee8a7a"
+ },
+ "chairong/01-yang-zi": {
+  "range": "001–007",
+  "seeds": "2b594f47b0d68f4d",
+  "cards": "f1d7a64ee986881b"
+ },
+ "chairong/02-gao-ping": {
+  "range": "008–010",
+  "seeds": "90507e38a2396126",
+  "cards": "1e29fc7876a05002"
+ },
+ "chairong/03-zheng-dun": {
+  "range": "011–017",
+  "seeds": "cc830866daa6e9b3",
+  "cards": "639274a1e2687e08"
+ },
+ "chairong/04-nan-zheng": {
+  "range": "018–026",
+  "seeds": "0b9362c7876204a0",
+  "cards": "5831e99e70c7c1e0"
+ },
+ "chairong/05-bei-fa": {
+  "range": "027–029",
+  "seeds": "f49453665d83773f",
+  "cards": "85cbeb4613c62cea"
+ },
+ "chairong/06-lin-zhong": {
+  "range": "030–035",
+  "seeds": "85e956c31b43b384",
+  "cards": "acee07b63facaeb1"
  }
 }

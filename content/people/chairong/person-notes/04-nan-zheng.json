@@ -1,0 +1,353 @@
+{
+  "people": [
+    {
+      "id": "li-gu",
+      "name": "李穀",
+      "versions": [
+        {
+          "from": 1,
+          "to": 2,
+          "text": "后周宰臣。显德二年出任淮南道前军行营都部署，主持庐、寿行府。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-yanchao",
+      "name": "王彦超",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周许州节度使。淮南之役为行营副部署。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han-lingkun",
+      "name": "韩令坤",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周侍卫马军都指挥使。淮南之役率十二将随行。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-jing",
+      "name": "李景",
+      "versions": [
+        {
+          "from": 3,
+          "to": 6,
+          "text": "南唐国主。后周三次征淮南，李景割地、乞降。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhong-mo",
+      "name": "钟谟",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "南唐使臣。奉表至后周行阙，议割六州之地。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-deming",
+      "name": "李德明",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "南唐使臣。与钟谟同奉表，曾请缓师以取本国之表。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huangfu-hui",
+      "name": "皇甫晖",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "南唐大将。《默记》记其与姚凤提兵十万扼守滁州。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yao-feng",
+      "name": "姚凤",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "南唐监军。《默记》记其与皇甫晖同守滁州。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-kuangyin",
+      "name": "今上",
+      "versions": [
+        {
+          "from": 5,
+          "to": 5,
+          "text": "即赵匡胤，后为宋太祖。世宗朝任殿前都指挥使、殿前都点检，屡为前锋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "si-chao",
+      "name": "司超",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "后周庐寿巡检使。破淮贼三千于盛唐，获高弼。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kang-yan",
+      "name": "康俨",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "后周前济州马军都指挥使。因桥道不谨，被斩于下蔡路左。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "018"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "li-gu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 16,
+      "text": "李穀",
+      "paragraphText": "显德二年十一月乙未朔，朝廷让宰臣李穀做淮南道前军行营都部署，负责庐、寿等州行府的事务；让许州节度使王彦超做行营副部署；命韩令坤等十二将各带征行之号随行。"
+    },
+    {
+      "personId": "li-gu",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 3,
+      "text": "李穀",
+      "paragraphText": "丁酉，李穀奏破淮贼于上窑。戊戌，发丁夫十万城京师罗城。庚子，诏取此月八日幸淮南。"
+    },
+    {
+      "personId": "wang-yanchao",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 49,
+      "text": "王彦超",
+      "paragraphText": "显德二年十一月乙未朔，朝廷让宰臣李穀做淮南道前军行营都部署，负责庐、寿等州行府的事务；让许州节度使王彦超做行营副部署；命韩令坤等十二将各带征行之号随行。"
+    },
+    {
+      "personId": "han-lingkun",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 60,
+      "text": "韩令坤",
+      "paragraphText": "显德二年十一月乙未朔，朝廷让宰臣李穀做淮南道前军行营都部署，负责庐、寿等州行府的事务；让许州节度使王彦超做行营副部署；命韩令坤等十二将各带征行之号随行。"
+    },
+    {
+      "personId": "li-jing",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 9,
+      "text": "李景",
+      "paragraphText": "小注引《默记》说：李景听说世宗亲到淮上，因滁州是控扼之地、又可援救寿州，便命皇甫晖、姚凤领兵十万扼守。"
+    },
+    {
+      "personId": "li-jing",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 2,
+      "text": "李景",
+      "paragraphText": "起初李景派钟谟、李德明奉表到行阙，使者面奏：本国主愿把寿、濠、泗、楚、光、海六州之地割归大朝。"
+    },
+    {
+      "personId": "li-jing",
+      "beat": 6,
+      "paragraph": 1,
+      "offset": 6,
+      "text": "李景",
+      "paragraphText": "辛丑，江南的李景上表乞降，诏书不许。"
+    },
+    {
+      "personId": "zhong-mo",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 5,
+      "text": "钟谟",
+      "paragraphText": "起初李景派钟谟、李德明奉表到行阙，使者面奏：本国主愿把寿、濠、泗、楚、光、海六州之地割归大朝。"
+    },
+    {
+      "personId": "li-deming",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 8,
+      "text": "李德明",
+      "paragraphText": "起初李景派钟谟、李德明奉表到行阙，使者面奏：本国主愿把寿、濠、泗、楚、光、海六州之地割归大朝。"
+    },
+    {
+      "personId": "li-deming",
+      "beat": 4,
+      "paragraph": 2,
+      "offset": 10,
+      "text": "李德明",
+      "paragraphText": "使人见王师急攻寿阳，李德明奏：「愿陛下宽臣数日之诛，容臣自往江南，取本国表，尽献江北之地。」"
+    },
+    {
+      "personId": "huangfu-hui",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 38,
+      "text": "皇甫晖",
+      "paragraphText": "小注引《默记》说：李景听说世宗亲到淮上，因滁州是控扼之地、又可援救寿州，便命皇甫晖、姚凤领兵十万扼守。"
+    },
+    {
+      "personId": "huangfu-hui",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 8,
+      "text": "皇甫晖",
+      "paragraphText": "太祖以周师数千与皇甫晖相遇于清流关隘路，周师大败；皇甫晖整全师入憩滁州城下，次日再出。"
+    },
+    {
+      "personId": "huangfu-hui",
+      "beat": 3,
+      "paragraph": 1,
+      "offset": 25,
+      "text": "皇甫晖",
+      "paragraphText": "太祖以周师数千与皇甫晖相遇于清流关隘路，周师大败；皇甫晖整全师入憩滁州城下，次日再出。"
+    },
+    {
+      "personId": "huangfu-hui",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 9,
+      "text": "皇甫晖",
+      "paragraphText": "太祖兵聚关下，担心皇甫晖的兵再来，问诸村人，村人说有镇州赵学究可问。"
+    },
+    {
+      "personId": "yao-feng",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 42,
+      "text": "姚凤",
+      "paragraphText": "小注引《默记》说：李景听说世宗亲到淮上，因滁州是控扼之地、又可援救寿州，便命皇甫晖、姚凤领兵十万扼守。"
+    },
+    {
+      "personId": "zhao-kuangyin",
+      "beat": 5,
+      "paragraph": 0,
+      "offset": 26,
+      "text": "今上",
+      "paragraphText": "显德四年三月庚寅早晨，他率诸军驻扎在紫金山脚下，命「今上」带亲军上山攻贼，接连打破数寨，斩获数千人，截断贼军来路，使其首尾不能相救。"
+    },
+    {
+      "personId": "zhao-kuangyin",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 48,
+      "text": "今上",
+      "paragraphText": "显德五年三月壬午朔，驾临泰州；丁亥又到广陵；辛卯到迎銮江口。癸巳，他临江望见有贼船数十艘，便命「今上」率战船追击，贼军退走，「今上」直抵对岸，烧了营栅才回。"
+    },
+    {
+      "personId": "zhao-kuangyin",
+      "beat": 5,
+      "paragraph": 2,
+      "offset": 63,
+      "text": "今上",
+      "paragraphText": "显德五年三月壬午朔，驾临泰州；丁亥又到广陵；辛卯到迎銮江口。癸巳，他临江望见有贼船数十艘，便命「今上」率战船追击，贼军退走，「今上」直抵对岸，烧了营栅才回。"
+    },
+    {
+      "personId": "si-chao",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 45,
+      "text": "司超",
+      "paragraphText": "二月丙寅，驾临下蔡。前济州马军都指挥使康俨被斩于路旁，罪名是修桥道不谨慎。戊辰，庐寿巡检使司超奏报在盛唐破淮贼三千，擒获伪吉州刺史高弼来献，诏令释放。"
+    },
+    {
+      "personId": "kang-yan",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 19,
+      "text": "康俨",
+      "paragraphText": "二月丙寅，驾临下蔡。前济州马军都指挥使康俨被斩于路旁，罪名是修桥道不谨慎。戊辰，庐寿巡检使司超奏报在盛唐破淮贼三千，擒获伪吉州刺史高弼来献，诏令释放。"
+    }
+  ]
+}

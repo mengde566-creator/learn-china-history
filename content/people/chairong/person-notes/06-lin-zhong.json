@@ -1,0 +1,247 @@
+{
+  "people": [
+    {
+      "id": "fu-yanqing",
+      "name": "符彦卿",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周魏王。其女于显德六年立为皇后。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chai-zongxun",
+      "name": "宗训",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "柴荣长子。显德六年封梁王，世宗崩后于柩前即位，即后周恭帝。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chai-zongrang",
+      "name": "宗让",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "柴荣次子。显德六年封燕国公。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan-zhi",
+      "name": "范质",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周宰相。小注记其与世宗争赃吏之罪，主张依法交付有司。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-pu2",
+      "name": "王溥",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周宰臣。世宗末年参知枢密院事。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wei-renpu",
+      "name": "魏仁浦",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周枢密使。世宗末年拜相，仍兼枢密使。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhao-kuangyin",
+      "name": "今上",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "即赵匡胤，后为宋太祖。世宗朝任殿前都指挥使、殿前都点检，屡为前锋。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-pu",
+      "name": "王朴",
+      "versions": [
+        {
+          "from": 4,
+          "to": 4,
+          "text": "后周枢密使，精于术数。显德六年卒；曾对世宗问年之语。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dou-yan",
+      "name": "窦俨",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "后周翰林学士、判太常寺事。世宗崩后上谥号与庙号。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "030"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "fu-yanqing",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 6,
+      "text": "符彦卿",
+      "paragraphText": "癸未，立魏王符彦卿的女儿为皇后，命有司择日备礼册命。长子宗训加特进、左卫上将军，封梁王；次子宗让则加左骁卫上将军，封燕国公。"
+    },
+    {
+      "personId": "chai-zongxun",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 28,
+      "text": "宗训",
+      "paragraphText": "癸未，立魏王符彦卿的女儿为皇后，命有司择日备礼册命。长子宗训加特进、左卫上将军，封梁王；次子宗让则加左骁卫上将军，封燕国公。"
+    },
+    {
+      "personId": "chai-zongrang",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 46,
+      "text": "宗让",
+      "paragraphText": "癸未，立魏王符彦卿的女儿为皇后，命有司择日备礼册命。长子宗训加特进、左卫上将军，封梁王；次子宗让则加左骁卫上将军，封燕国公。"
+    },
+    {
+      "personId": "fan-zhi",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 5,
+      "text": "范质",
+      "paragraphText": "己丑，宰臣范质、王溥并参知枢密院事；以枢密使魏仁浦为中书侍郎、平章事、集贤殿大学士。"
+    },
+    {
+      "personId": "wang-pu2",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 8,
+      "text": "王溥",
+      "paragraphText": "己丑，宰臣范质、王溥并参知枢密院事；以枢密使魏仁浦为中书侍郎、平章事、集贤殿大学士。"
+    },
+    {
+      "personId": "wei-renpu",
+      "beat": 1,
+      "paragraph": 3,
+      "offset": 22,
+      "text": "魏仁浦",
+      "paragraphText": "己丑，宰臣范质、王溥并参知枢密院事；以枢密使魏仁浦为中书侍郎、平章事、集贤殿大学士。"
+    },
+    {
+      "personId": "zhao-kuangyin",
+      "beat": 2,
+      "paragraph": 2,
+      "offset": 5,
+      "text": "今上",
+      "paragraphText": "到这时，「今上」始受殿前都点检之命。第二年春，果然由此职以副人望，于是「点检做」之言成了神符。"
+    },
+    {
+      "personId": "wang-pu",
+      "beat": 4,
+      "paragraph": 0,
+      "offset": 26,
+      "text": "王朴",
+      "paragraphText": "小注说：世宗志在四方，常怕自己在位太短、功业不成。因王朴精于术数，一天从容问他，朕还能有多少年。"
+    },
+    {
+      "personId": "wang-pu",
+      "beat": 4,
+      "paragraph": 1,
+      "offset": 0,
+      "text": "王朴",
+      "paragraphText": "王朴答：陛下存心为苍生，天高听卑，自当蒙福；臣用所学推算，三十年以后的事不敢说。"
+    },
+    {
+      "personId": "wang-pu",
+      "beat": 4,
+      "paragraph": 3,
+      "offset": 42,
+      "text": "王朴",
+      "paragraphText": "后来他从瓦桥关回师，还没到关就晏驾了；在位只有五年零六个月——五六是三十的成数，那是王朴婉转的说法。"
+    },
+    {
+      "personId": "dou-yan",
+      "beat": 3,
+      "paragraph": 2,
+      "offset": 5,
+      "text": "窦俨",
+      "paragraphText": "这年八月，窦俨上谥号睿武孝文皇帝，庙号称世宗。十一月初一，葬在庆陵。"
+    }
+  ]
+}

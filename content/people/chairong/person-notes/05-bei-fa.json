@@ -1,0 +1,181 @@
+{
+  "people": [
+    {
+      "id": "wang-pu",
+      "name": "王朴",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周枢密使，精于术数。显德六年卒；曾对世宗问年之语。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wu-yanzuo",
+      "name": "吴延祚",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周宣徽南院使。世宗北征时为权东京留守。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zan-jurun",
+      "name": "昝居润",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周宣徽北院使。世宗北征时为东京留守副使。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhang-mei",
+      "name": "张美",
+      "versions": [
+        {
+          "from": 1,
+          "to": 1,
+          "text": "后周三司使。世宗北征时为大内都部署。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wang-hong",
+      "name": "王洪",
+      "versions": [
+        {
+          "from": 2,
+          "to": 2,
+          "text": "北汉所署宁州刺史。显德六年以城降后周。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gao-yanhui",
+      "name": "高彦晖",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "辽所署瀛州刺史。显德六年以本城归顺。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "li-zhongjin",
+      "name": "李重进",
+      "versions": [
+        {
+          "from": 3,
+          "to": 3,
+          "text": "后周侍卫亲军都指挥使。高平之战将左厢，北伐时率诸将赴行在。",
+          "sources": [
+            {
+              "kind": "local",
+              "id": "027"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "personId": "wang-pu",
+      "beat": 1,
+      "paragraph": 0,
+      "offset": 12,
+      "text": "王朴",
+      "paragraphText": "显德六年三月庚申，枢密使王朴去世。"
+    },
+    {
+      "personId": "wu-yanzuo",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 6,
+      "text": "吴延祚",
+      "paragraphText": "让宣徽南院使吴延祚出任权东京留守，兼判开封府事，又让宣徽北院使昝居润做副使；让三司使张美做大内都部署。命诸将各领马步兵。"
+    },
+    {
+      "personId": "zan-jurun",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 31,
+      "text": "昝居润",
+      "paragraphText": "让宣徽南院使吴延祚出任权东京留守，兼判开封府事，又让宣徽北院使昝居润做副使；让三司使张美做大内都部署。命诸将各领马步兵。"
+    },
+    {
+      "personId": "zhang-mei",
+      "beat": 1,
+      "paragraph": 2,
+      "offset": 42,
+      "text": "张美",
+      "paragraphText": "让宣徽南院使吴延祚出任权东京留守，兼判开封府事，又让宣徽北院使昝居润做副使；让三司使张美做大内都部署。命诸将各领马步兵。"
+    },
+    {
+      "personId": "wang-hong",
+      "beat": 2,
+      "paragraph": 1,
+      "offset": 14,
+      "text": "王洪",
+      "paragraphText": "壬辰，到达乾宁军，伪宁州刺史王洪举城投降。"
+    },
+    {
+      "personId": "gao-yanhui",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 32,
+      "text": "高彦晖",
+      "paragraphText": "五月初一乙巳，他驻在瓦桥关。李重进等诸将陆续到达行在；而瀛州守将高彦晖举城归顺。"
+    },
+    {
+      "personId": "li-zhongjin",
+      "beat": 3,
+      "paragraph": 0,
+      "offset": 14,
+      "text": "李重进",
+      "paragraphText": "五月初一乙巳，他驻在瓦桥关。李重进等诸将陆续到达行在；而瀛州守将高彦晖举城归顺。"
+    }
+  ]
+}
