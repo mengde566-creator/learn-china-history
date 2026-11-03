@@ -479,6 +479,10 @@ export default function StoryClient({ person, story, source }) {
       window.scrollTo({ top: 0, behavior: 'instant' })
       restoring.current = false
       entryScrollY.current = window.scrollY
+      /* 短篇（两段、整页不用滚）在页面末尾不会自己发滚动事件，
+         `locate()` 就永远不跑：末段明明在视口里，「读完之后」和复习卡却不出现。
+         这里主动广播一次，让阅读线算一遍。 */
+      window.dispatchEvent(new Event('scroll'))
       return
     }
     restoring.current = true
@@ -613,10 +617,22 @@ export default function StoryClient({ person, story, source }) {
     window.addEventListener('scroll', schedule, { passive: true })
     window.addEventListener('resize', schedule)
     if (!panelOpen) schedule()
+    /* 首帧量到的段高还没算上字体：短篇可能因此判成「末段不在视口里」，
+       而页面又滚不动、不会再发 scroll，读后区块就永远不出现。
+       字体就绪后再算一次阅读线。 */
+    document.fonts.ready.then(() => { if (!panelOpen) schedule() })
+    /* 版式还在长（字体、图片、读后区块）时也重算阅读线：
+       短篇整页不用滚，没有 scroll 事件可用，只能靠高度变化触发。 */
+    let ro = null
+    if (typeof ResizeObserver !== 'undefined' && stageRef.current) {
+      ro = new ResizeObserver(() => { if (!panelOpen) schedule() })
+      ro.observe(stageRef.current)
+    }
     return () => {
       cancelAnimationFrame(frame)
       window.removeEventListener('scroll', schedule)
       window.removeEventListener('resize', schedule)
+      ro?.disconnect()
     }
   }, [phase, panelOpen, cameFrom, personVisit, widePanel])
 
