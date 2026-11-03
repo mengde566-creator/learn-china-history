@@ -648,5 +648,35 @@
   "range": "016–026",
   "seeds": "972691a374ed3bac",
   "cards": "e8708eba9bba6ecf"
+ },
+ "fujian/01-cao-fu": {
+  "range": "001–005",
+  "seeds": "8d58ae5d93c697bc",
+  "cards": "d2595c62a63ac714"
+ },
+ "fujian/02-yun-long": {
+  "range": "006–010",
+  "seeds": "a8a5c4f2f7549c44",
+  "cards": "485561ada1270860"
+ },
+ "fujian/03-li-zhi": {
+  "range": "011–015",
+  "seeds": "0f941a5ea1b23d06",
+  "cards": "bc5b47c0c21bee01"
+ },
+ "fujian/04-mie-yan": {
+  "range": "016–025",
+  "seeds": "68022e6ceda84da9",
+  "cards": "9843af09ddb0ca86"
+ },
+ "fujian/05-fei-shui": {
+  "range": "026–031",
+  "seeds": "a01f1fa7ef2382c4",
+  "cards": "586f371775955165"
+ },
+ "fujian/06-xin-ping": {
+  "range": "032–041",
+  "seeds": "08760ea89033b0b6",
+  "cards": "b5984a3203ee8a7a"
  }
 }
