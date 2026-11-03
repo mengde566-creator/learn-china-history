@@ -204,8 +204,8 @@
       "beat": 2,
       "paragraph": 0,
       "offset": 0,
-      "text": "贺是武帝之孙",
-      "paragraphText": "贺是武帝之孙、昌邑哀王之子。既至，即位，行淫乱。"
+      "text": "刘贺",
+      "paragraphText": "刘贺是武帝的孙子、昌邑哀王的儿子。到京即位之后，行为淫乱。"
     },
     {
       "personId": "tian-yannian",
@@ -219,9 +219,9 @@
       "personId": "zhang-anshi",
       "beat": 3,
       "paragraph": 0,
-      "offset": 17,
+      "offset": 20,
       "text": "张安世",
-      "paragraphText": "霍光引田延年给事中，暗中与车骑将军张安世图计，遂召丞相、御史、将军、列侯、中二千石、大夫、博士会议未央宫。"
+      "paragraphText": "霍光推荐田延年加给事中衔，暗中与车骑将军张安世谋划，于是召丞相、御史、将军、列侯、中二千石、大夫、博士在未央宫会议。"
     },
     {
       "personId": "huang-taihou",
