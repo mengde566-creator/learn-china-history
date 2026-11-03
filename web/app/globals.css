@@ -404,6 +404,12 @@ body.light-stage{
   box-shadow:inset 0 -1px 0 rgba(184,64,47,.45);
   color:inherit;padding:0 .06em;border-radius:1px;
 }
+/* 暗场上 13% 的朱底几乎看不见（实测截图上分辨不出），改亮一档底色 + 实线朱笔。 */
+.stage .zhupi{
+  background:rgba(184,64,47,.28);
+  box-shadow:inset 0 -2px 0 var(--zhu);
+  color:var(--su);
+}
 /* 选句后浮出来的「评」：跟着选区，不挡字。 */
 .zhupi-pick{
   position:fixed;z-index:60;transform:translate(-50%,-140%);
