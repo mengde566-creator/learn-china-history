@@ -19,9 +19,9 @@ export default function StarButton({ personId, storyId, storyName, className = '
       type="button"
       className={`sc-star${on ? ' on' : ''}${className ? ` ${className}` : ''}`}
       aria-pressed={on}
-      /* 名字固定为「收藏〈篇名〉」，状态交给 aria-pressed。
+      /* 名字固定为「藏〈篇名〉」，状态交给 aria-pressed。
          名字跟着状态翻转的话，读屏会念成「取消收藏〈X〉，已按下」。 */
-      aria-label={`收藏〈${storyName}〉`}
+      aria-label={`藏〈${storyName}〉`}
       title={on ? '取消收藏' : '收藏'}
       onClick={(event) => {
         /* 卡片外面是链接：别让按收藏变成进故事。 */
@@ -30,7 +30,7 @@ export default function StarButton({ personId, storyId, storyName, className = '
         toggleStar(personId, storyId)
       }}
     >
-      收
+      藏
     </button>
   )
 }

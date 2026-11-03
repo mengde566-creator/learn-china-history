@@ -945,8 +945,9 @@ check('书架: 两视图互切、全书目录与收藏', async () => {
       })
       await p.reload({ waitUntil: 'networkidle' })
       const mine = await p.locator('main').innerText()
-      if (!mine.includes('接着读') || !mine.includes('收藏 · 1 篇') || !mine.includes('读过 · 2 篇')) {
-        return fail(`${width}px「我的」三块不全：${mine.slice(0, 120)}`)
+      /* 读到一半的单独成块（可能同时读着好几个人），读完的另算。 */
+      if (!mine.includes('在读 · 1 篇') || !mine.includes('收藏 · 1 篇') || !mine.includes('读完 · 1 篇')) {
+        return fail(`${width}px「我的」三块不全：${mine.slice(0, 140)}`)
       }
 
       await p.getByRole('tab', { name: '全部篇章' }).click()

@@ -72,7 +72,6 @@ export default function ShelfClient({ index }) {
 
   const inProgress = readList.filter((item) => !item.record.done)
   const finished = readList.filter((item) => item.record.done)
-  const latest = readList[0]
 
   const groupByPerson = (list) => {
     const groups = []
@@ -109,7 +108,8 @@ export default function ShelfClient({ index }) {
       <header className="page-head">
         <h1>书 架</h1>
         <p className="sub">
-          {finished.length > 0 ? `读完 ${finished.length} 篇` : '还没有读完一篇'}
+          {inProgress.length > 0 ? `在读 ${inProgress.length} 篇` : finished.length > 0 ? `读完 ${finished.length} 篇` : '还没有读过一篇'}
+          {finished.length > 0 && inProgress.length > 0 && `　·　读完 ${finished.length} 篇`}
           {starList.length > 0 && `　·　收藏 ${starList.length} 篇`}
           {`　·　共 ${total} 篇`}
         </p>
@@ -123,17 +123,20 @@ export default function ShelfClient({ index }) {
         readList.length === 0 && starList.length === 0 ? (
           <div className="shelf-empty">
             <p>这里还是空的。</p>
-            <p className="mt">从<Link href="/">总览</Link>挑一个人物读下去，读过的篇目会出现在这里；在篇目卡上按「收」，就会进收藏。</p>
+            <p className="mt">从<Link href="/">总览</Link>挑一个人物读下去，读过的篇目会出现在这里；在篇目卡上按「藏」，就会进收藏。</p>
           </div>
         ) : (
           <>
-            {latest && (
+            {/* 读到一半的不止一篇：都列出来，按最近推进排序。 */}
+            {inProgress.length > 0 && (
               <section className="sec">
-                <h2 className="sec-title">接着读</h2>
-                <Link href={`/p/${latest.personId}/${latest.storyId}`} className="entry-card">
-                  <b>{latest.record.done ? `读完了 · ${latest.name}` : `读到第 ${latest.beat} 段 · ${latest.name}`}</b>
-                  <span>{latest.personName}　·　{latest.record.done ? '可以再读一遍' : '接着往下读'}</span>
-                </Link>
+                <h2 className="sec-title">在读 · {inProgress.length} 篇</h2>
+                {groupByPerson(inProgress).map((group) => (
+                  <div key={group.personId} className="shelf-group">
+                    <div className="shelf-person">{group.personName}</div>
+                    {group.items.map((item) => row(item))}
+                  </div>
+                ))}
               </section>
             )}
 
@@ -149,21 +152,15 @@ export default function ShelfClient({ index }) {
               </section>
             )}
 
-            {readList.length > 0 && (
+            {finished.length > 0 && (
               <section className="sec">
-                <h2 className="sec-title">读过 · {readList.length} 篇</h2>
-                {inProgress.length > 0 && (
-                  <div className="shelf-group">
-                    <div className="shelf-person">在读</div>
-                    {groupByPerson(inProgress).map((group) => group.items.map((item) => row(item)))}
+                <h2 className="sec-title">读完 · {finished.length} 篇</h2>
+                {groupByPerson(finished).map((group) => (
+                  <div key={group.personId} className="shelf-group">
+                    <div className="shelf-person">{group.personName}</div>
+                    {group.items.map((item) => row(item))}
                   </div>
-                )}
-                {finished.length > 0 && (
-                  <div className="shelf-group">
-                    <div className="shelf-person">读完</div>
-                    {groupByPerson(finished).map((group) => group.items.map((item) => row(item)))}
-                  </div>
-                )}
+                ))}
               </section>
             )}
           </>

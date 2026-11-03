@@ -6,35 +6,51 @@ import { useProgress, resolveResume } from '@/lib/progress'
 /**
  * 首页的「接着读」。
  *
- * 读者回来第一屏应该能回答「我上次读到哪」——原来这件事要再点两级才看得到。
- * **没有进度就整块不渲染**：不给新读者画一个假的「继续阅读」。
+ * **不止一条。** 读者常常同时读着好几个人（曹操读到第 6 段、高欢读到第 3 段），
+ * 只显示「最近那一篇」等于替读者决定先读谁。这里按最近推进排，最多三条，
+ * 其余的去书架看。
  *
- * 只显示一条（`at` 最新的那一篇），不是列表：首页是门厅，不是书架。
+ * 没有进度就整块不渲染：不给新读者画一个假的「继续阅读」。
  */
+const MAX = 3
+
 export default function ContinueRead({ index }) {
   const { progress, ready } = useProgress()
   if (!ready) return null
 
-  let latest = null
-  for (const [key, record] of Object.entries(progress.read || {})) {
-    if (!record || typeof record.at !== 'number') continue
-    const meta = index[key]
-    if (!meta) continue // 内容库里已经没有这一篇了
-    if (!latest || record.at > latest.at) latest = { key, record, meta, at: record.at }
-  }
-  if (!latest) return null
+  const items = Object.entries(progress.read || {})
+    .map(([key, record]) => {
+      const meta = index[key]
+      if (!meta || !record || typeof record.at !== 'number') return null
+      const { beat } = resolveResume(meta.personId, meta.storyId, record, meta.beats)
+      return { key, record, meta, beat, at: record.at }
+    })
+    .filter(Boolean)
 
-  const { record, meta } = latest
-  const { beat } = resolveResume(meta.personId, meta.storyId, record, meta.beats)
-  const label = record.done ? `读完了 · ${meta.storyName}` : `读到第 ${beat} 段 · ${meta.storyName}`
+  /* 先给没读完的；都读完了再给最近读完的那几篇。 */
+  const reading = items.filter((item) => !item.record.done).sort((a, b) => b.at - a.at)
+  const list = (reading.length ? reading : items.filter((item) => item.record.done).sort((a, b) => b.at - a.at)).slice(0, MAX)
+  if (!list.length) return null
 
   return (
     <section className="sec">
       <h2 className="sec-title">接着读</h2>
-      <Link href={`/p/${meta.personId}/${meta.storyId}`} className="entry-card">
-        <b>{label}</b>
-        <span>{record.done ? `${meta.personName} · 可以再读一遍` : `${meta.personName} · 接着往下读`}</span>
-      </Link>
+      {list.map((item) => (
+        <Link
+          key={item.key}
+          href={`/p/${item.meta.personId}/${item.meta.storyId}`}
+          className="entry-card"
+          style={{ marginBottom: 10 }}
+        >
+          <b>{item.record.done ? `读完了 · ${item.meta.storyName}` : `读到第 ${item.beat} 段 · ${item.meta.storyName}`}</b>
+          <span>{item.meta.personName}　·　{item.record.done ? '可以再读一遍' : '接着往下读'}</span>
+        </Link>
+      ))}
+      {reading.length > MAX && (
+        <p className="footnote" style={{ marginTop: 6 }}>
+          还有 {reading.length - MAX} 篇在读，<Link href="/shelf" style={{ color: 'var(--accent)' }}>都在书架</Link>。
+        </p>
+      )}
     </section>
   )
 }
