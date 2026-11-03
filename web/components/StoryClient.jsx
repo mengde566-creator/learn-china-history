@@ -174,12 +174,18 @@ export default function StoryClient({ person, story, source }) {
       const beatEl = el?.closest?.('.beat[data-n]')
       if (!paraEl || !beatEl || !el.closest('.reader')) { pendingQuoteRef.current = null; setPendingQuote(null); return }
       const rect = range.getBoundingClientRect()
+      /* 选区不在屏幕里（程序化选中、或滚走之后）就不要浮按钮。 */
+      if (rect.bottom < 0 || rect.top > window.innerHeight) { pendingQuoteRef.current = null; setPendingQuote(null); return }
+      /* 选区贴着屏幕顶端时，「评」浮在上面会跑出屏幕——那就放到下方。
+         左右也夹在视口内，免得在手机边缘点不到。 */
+      const below = rect.top < 96
       const picked = {
         beat: Number(beatEl.dataset.n),
         para: Number(paraEl.dataset.para),
         text: text.slice(0, 120),
-        x: rect.left + rect.width / 2,
-        y: rect.top,
+        x: Math.min(Math.max(rect.left + rect.width / 2, 30), window.innerWidth - 30),
+        y: below ? rect.bottom + 10 : rect.top,
+        below,
       }
       pendingQuoteRef.current = picked
       setPendingQuote(picked)
@@ -1017,11 +1023,15 @@ export default function StoryClient({ person, story, source }) {
   return (
     <>
       <main className="wrap" style={{ paddingBottom: 80 }}>
-        {pendingQuote && (
+        {pendingQuote && typeof document !== 'undefined' && createPortal((
           <button
             type="button"
             className="zhupi-pick"
-            style={{ left: pendingQuote.x, top: pendingQuote.y }}
+            style={{
+              left: pendingQuote.x,
+              top: pendingQuote.y,
+              transform: pendingQuote.below ? 'translate(-50%, 0)' : 'translate(-50%, -140%)',
+            }}
             onMouseDown={(event) => event.preventDefault()}
             onClick={(event) => {
               const picked = pendingQuoteRef.current || pendingQuote
@@ -1038,7 +1048,7 @@ export default function StoryClient({ person, story, source }) {
           >
             评
           </button>
-        )}
+        ), document.body)}
         <div style={{ paddingTop: 24 }}>
           <Crumbs person={person} story={story} />
         </div>
@@ -1067,9 +1077,23 @@ export default function StoryClient({ person, story, source }) {
                       {b.prose.map((p, i) => {
                         const q = quotes.find((x) => x.at === i)
                         if (q) {
+                          /* 引文也能划线批注：选中的是原文那一句。 */
+                          const quoteMarks = quoteNotes
+                            .filter((note) => note.beat === b.n && note.para === i && q.text.includes(note.quote))
+                            .sort((a, z) => q.text.indexOf(a.quote) - q.text.indexOf(z.quote))
+                          let cursor = 0
+                          const citeParts = []
+                          for (const note of quoteMarks) {
+                            const start = q.text.indexOf(note.quote)
+                            if (start < cursor) continue
+                            citeParts.push(q.text.slice(cursor, start))
+                            citeParts.push(<mark key={note.key} className="zhupi" data-note={note.key}>{note.quote}</mark>)
+                            cursor = start + note.quote.length
+                          }
+                          citeParts.push(q.text.slice(cursor))
                           return (
-                            <div key={i} className="emerge anim-emerge d2">
-                              <cite>{q.text}</cite>
+                            <div key={i} className="emerge anim-emerge d2" data-para={i}>
+                              <cite>{citeParts}</cite>
                               {/* **回译和白话重复时不渲染。** 同一句话在页面上出现三遍
                                   （白话 → 原文 → 回译 → 白话），读者读到的是复述。
                                    白话已经把这句原文译过了，回译就没有存在的理由。 */}

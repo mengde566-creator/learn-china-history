@@ -969,10 +969,34 @@ check('批注: 划线选句→评→引文→朱线', async () => {
 
       await p.reload({ waitUntil: 'networkidle' }); await p.waitForTimeout(700)
       if (await p.locator('mark.zhupi').count() !== 1) return fail(`${width}px 刷新后朱线丢了`)
+
+      /* 原文引文那一行也能批：选中的是引用句本身。 */
+      await p.locator('.reader cite').first().scrollIntoViewIfNeeded()
+      await p.waitForTimeout(400)
+      const cited = await p.evaluate(() => {
+        const cite = [...document.querySelectorAll('.reader cite')]
+          .find((el) => { const r = el.getBoundingClientRect(); return r.top > 160 && r.bottom < innerHeight - 160 })
+        if (!cite) return null
+        const node = cite.firstChild
+        const range = document.createRange()
+        range.setStart(node, 0); range.setEnd(node, Math.min(6, node.textContent.length))
+        const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range)
+        document.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }))
+        return sel.toString()
+      })
+      if (!cited) return fail(`${width}px 选不中原文引文`)
+      if (await p.locator('.zhupi-pick').count() !== 1) return fail(`${width}px 选中原文引文后没有浮出「评」`)
+      await p.locator('.zhupi-pick').click()
+      await panel.locator('.note-input').fill('这一句是原文里的关键')
+      await p.locator('.panel-heading').click()
+      await p.waitForFunction((q) => Object.values(JSON.parse(localStorage.getItem('guanshi.library.v1') || '{}').notes || {}).some((n) => n.quote === q), cited, { timeout: 4000 })
+        .catch(() => {})
+      if (await p.locator('.reader cite mark.zhupi').count() !== 1) return fail(`${width}px 原文引文上没有朱线`)
+
       if (errors.length) return fail(`${width}px 控制台报错：${errors.join('｜')}`)
     } finally { await context.close() }
   }
-  return ok('两尺寸：选句浮出「评」、引文一致、带段落序号保存、正文朱线、刷新保留')
+  return ok('两尺寸：白话选句与原文引文都能批；引文一致、带段落序号、朱线刷新后保留')
 })
 
 check('书架: 两视图互切、全书目录与收藏', async () => {
