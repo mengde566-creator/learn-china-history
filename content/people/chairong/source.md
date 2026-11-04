@@ -13,7 +13,7 @@
 | 阙字 | 未见阙字；电子本自带的校注、小注随文保留 |
 | 优先级 | A＝本篇故事与正文直接依据；B＝脉络／背景段 |
 | 公元纪年 | 底本无；凡出现一律 ○ 外证 |
-| 录文来源 | `hunterhug/china-history` 仓库《旧五代史》卷五至卷十（世宗纪一至六）转录，固定提交 `eeb7ad7` |
+| 录文来源 | `hunterhug/china-history` 仓库《旧五代史》卷五至卷十（世宗纪一至六）转录，固定提交 `eeb7ad7`；用 `npm run refs:chairong` 取六章并拼成 `.refs/chai-rong.txt`（`-- --verify` 只核对） |
 
 ---
 

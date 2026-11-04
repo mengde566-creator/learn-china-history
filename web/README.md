@@ -40,6 +40,7 @@ npm run dev     # 打开 http://localhost:3000
 | `npm run shots` | `node scripts/screenshots.mjs` | 开发用：走一遍流程并截图（默认 `http://127.0.0.1:3100`） | 自查视觉 |
 | `npm run refs` | `node scripts/fetch-refs.mjs` | 把核对用的参考文本取到 `.refs/` + **记 / 校验哈希**（`manifest.json`，不进版本库） | 首次 / 换机器 |
 | `npm run refs:verify` | `node scripts/fetch-refs.mjs --verify` | **只校验不下载**：文件哈希对不上就明确失败，不静默换基准 | 怀疑参考文本变了 |
+| `npm run refs:chairong` | `node scripts/fetch-chairong-ref.mjs` | 柴荣那份是**拼接型**：取《旧五代史》世宗纪六个章节页、抽 `<p>` 正文拼成一份，再记/校验哈希（加 `-- --verify` 只核对） | 换机器 / 核对柴荣的底本 |
 | `npm run ref-grep` | `node scripts/ref-grep.mjs` | 在已核对的底本里检索句子（繁转简、跨底本定位已做好） | 写原文 |
 | `npm run new-story` | `node scripts/new-story.mjs` | 从「故事一览」那一行 ＋ 底本范围生成故事骨架 | 加一篇故事 |
 | `npm run renumber` | `node scripts/renumber.mjs` | 给故事改编号（含文件、种子、复习卡、全部引用） | 调整篇序 |

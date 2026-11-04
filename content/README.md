@@ -504,9 +504,13 @@ npm run renumber -- caocao --dry 01-a=02-b     # 只看要改什么
 不是没核，是**没有可核的东西**。
 
 ```bash
-npm run refs            # 把公版电子本取到 .refs/（不进版本库）
+npm run refs            # 把公版电子本取到 .refs/（不进版本库）；含柴荣那份拼接型底本
 npm run check-sources   # 逐字比对 source.md 和参考文本
 ```
+
+柴荣（`chairong`）是唯一的例外：他的底本横跨《旧五代史》世宗纪一至六，上游拆成六个章节页，
+`npm run refs` 会顺带跑 `fetch-chairong-ref.mjs` 把它们拼成 `.refs/chai-rong.txt`；
+只核对这一份可以单跑 `npm run refs:chairong -- --verify`。
 
 参考文本是公版电子本，谁都能重新下载、自己复核一遍：
 
