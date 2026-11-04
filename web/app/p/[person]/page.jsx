@@ -40,11 +40,18 @@ export default async function PersonPage({ params }) {
         </p>
       </header>
 
-      {person.portrait && (
-        <div className="portrait">
-          <img src={person.portrait} alt={person.name} />
-        </div>
-      )}
+      {/* 画像位：有图放图；没有图也占住同样大小的一块，别让读者以为这一页漏了什么。
+          **界面上不谈图从哪来**——产品里没有「生成」这件事，只写「待补」。 */}
+      <div className={person.portrait ? 'portrait' : 'portrait portrait-empty'}>
+        {person.portrait
+          ? <img src={person.portrait} alt={person.name} />
+          : (
+            <div className="portrait-slot" role="img" aria-label={`${person.name}的画像待补`}>
+              <span className="sl">画像待补</span>
+              <span className="nm">{person.name}</span>
+            </div>
+          )}
+      </div>
 
       {person.intro.length > 0 && (
         <section className="prose-block">

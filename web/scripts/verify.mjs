@@ -391,6 +391,46 @@ check('geometry: 分节标题与正文有层级差，且朱标和分割线都渲
     : ok(`${r.titles.length} 个标题　${r.titles[0].size}px 对正文 ${r.body}px　朱标 ${r.titles[0].barW}×${r.titles[0].barH}　线宽 ${Math.round(r.titles[0].ruleW)}`)
 })
 
+/* 画像位：有图放图，没有图也要占住 3:4 的一块地方。
+   守的是两件事：**别显示破图**（src 空着会出来一个碎图标），
+   以及**别把标题挤掉**——它是浮动的，宽度一错就压到 h1 上。
+   形貌写在引子里，这里顺手验一句：引子要真的引到那个人长得怎么样。 */
+check('person: 画像位留白与引子里的形貌', async () => {
+  const target = PEOPLE.find((p) => p.id === 'wangmeng') || SAMPLE.person
+  const prev = page.viewportSize()
+  const bad = []
+  for (const width of [390, 1324]) {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto(`${BASE}/p/${target.id}`, { waitUntil: 'networkidle' })
+    const r = await page.evaluate(() => {
+      const el = document.querySelector('.portrait')
+      if (!el) return { miss: true }
+      const box = el.getBoundingClientRect()
+      const img = el.querySelector('img')
+      const h1 = document.querySelector('h1').getBoundingClientRect()
+      return {
+        width: box.width, height: box.height, ratio: box.height / box.width,
+        empty: el.classList.contains('portrait-empty'),
+        hasImg: !!img, hasSlot: !!el.querySelector('.portrait-slot'),
+        broken: img ? img.naturalWidth === 0 : false,
+        top: box.top, h1Bottom: h1.bottom, right: box.right, vw: innerWidth,
+        why: [...document.querySelectorAll('.why p')].map((p) => p.textContent).join(''),
+      }
+    })
+    if (r.miss) { bad.push(`${width}px 没有画像位`); continue }
+    if (r.hasImg && r.broken) bad.push(`${width}px 没有画像却留着空 img（会显示破图）`)
+    if (r.empty && !r.hasSlot) bad.push(`${width}px 占位里没有文字`)
+    if (Math.abs(r.ratio - 4 / 3) > 0.12) bad.push(`${width}px 画框比例 ${r.ratio.toFixed(2)}，不是 3:4`)
+    if (r.top < r.h1Bottom - 1) bad.push(`${width}px 画像位压到标题`)
+    if (r.right > r.vw + 1) bad.push(`${width}px 画像位超出视口`)
+    if (!r.why.includes('瑰姿俊偉')) bad.push(`${width}px 引子里没有形貌记载`)
+  }
+  if (prev) await page.setViewportSize(prev)
+  return bad.length
+    ? fail(bad.join('；'))
+    : ok('两尺寸：3:4 占位、「画像待补」、引子引到「猛瑰姿俊偉」')
+})
+
 /* 正文里挂「原文」牌子的那一行，必须真的出自底本。
    守的是曾经那段代码：判别用「有没有引号」，49 行独立引文里 45 行是白话，
    全被挂到了「原文」标题底下——读者看到的就是"标了原文又用翻译"。

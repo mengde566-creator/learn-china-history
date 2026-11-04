@@ -845,7 +845,31 @@ body.light-stage{
   border:1px solid var(--xuan-4);border-radius:3px;overflow:hidden;
 }
 .portrait img{display:block;width:100%;height:auto}
-@media (max-width:640px){.portrait{float:none;width:100%;margin:0 0 20px}}
+
+/* 画像位：图还没有时留出**同样大小的一块地方**——不显示破图，也不留一片空白。
+   画框用虚线，是为了让人一眼看出这是待补的位置，不是排版漏了。 */
+.portrait-empty{
+  border-style:dashed;
+  background:color-mix(in srgb, var(--xuan-2) 60%, transparent);
+}
+.portrait-slot{
+  aspect-ratio:3/4;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;
+}
+.portrait-slot .sl{
+  writing-mode:vertical-rl;letter-spacing:.34em;text-indent:.34em;
+  font-family:var(--f-kai);font-size:13px;
+  color:var(--su-dim);
+}
+.portrait-slot .nm{
+  font-family:var(--f-kai);font-size:11px;letter-spacing:.22em;text-indent:.22em;
+  color:var(--su-mute);
+}
+@media (max-width:640px){
+  .portrait{float:none;width:100%;margin:0 0 20px}
+  /* 手机上不占满一整行：缩到 120px、继续浮在正文右侧 */
+  .portrait-empty{float:right;width:108px;margin:0 0 14px 16px}
+}
 
 /* 故事卡缩略图 */
 .story-card .thumb{
