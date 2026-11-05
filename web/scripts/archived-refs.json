@@ -393,5 +393,16 @@
   "sha256": "98c4b98c822318856fa834ce2b8b944441e7d5345a0c819e93a9cd3879eeaed0",
   "min": 5000,
   "note": "HTML，check-sources 会抽 <p> 正文后比对"
+ },
+ {
+  "file": "houhanshu-gengyan.html",
+  "title": "《后汉书·耿弇列传》（含耿恭）",
+  "url": "https://raw.githubusercontent.com/hunterhug/china-history/eeb7ad7eb0fc04b10caf6e15c3427bd1648455fb/%E5%90%8E%E6%B1%89%E4%B9%A6/%E5%88%97%E4%BC%A0/%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E8%80%BF%E5%BC%9A%E5%88%97%E4%BC%A0-%E5%8E%9F%E6%96%87.html",
+  "about": "https://github.com/hunterhug/china-history",
+  "revision": "eeb7ad7eb0fc04b10caf6e15c3427bd1648455fb",
+  "archive": "content/references/houhanshu-gengyan.html",
+  "sha256": "ae43d8e59082b27541595d958297f89d0b7b8ff53c9c9c487cde0251d5a33644",
+  "min": 5000,
+  "note": "HTML，check-sources 抽 <p> 正文后比对"
  }
 ]
